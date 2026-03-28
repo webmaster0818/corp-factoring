@@ -1,7 +1,8 @@
 import { ComparisonTable } from "@/components/ComparisonTable";
 import { CompanyDetail } from "@/components/CompanyDetail";
 import { FAQ } from "@/components/FAQ";
-import { factoringCompanies } from "@/data/companies";
+import { CategoryRanking } from "@/components/CategoryRanking";
+import { factoringCompanies, getCompaniesByCategory } from "@/data/companies";
 
 export default function Home() {
   return (
@@ -175,30 +176,67 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Ranking Section */}
+      {/* Ranking Section - Full 15 Companies */}
       <section id="ranking" className="container mx-auto px-4 py-12 max-w-6xl">
         <h2 className="text-3xl font-bold text-gray-900 mb-6">
-          【総合ランキング】おすすめファクタリング会社TOP3（モックアップ）
+          【総合ランキング】おすすめファクタリング会社TOP15
         </h2>
         
         <div className="bg-white rounded-lg shadow-lg p-6">
-          <ComparisonTable companies={factoringCompanies.slice(0, 3)} />
-        </div>
-
-        <div className="mt-6 text-center">
-          <p className="text-sm text-gray-600">
-            ※ この比較表は動作確認用のモックアップです（3社のみ表示）
-          </p>
+          <ComparisonTable companies={factoringCompanies} />
         </div>
       </section>
 
-      {/* Company Detail Section */}
+      {/* Category Rankings */}
+      <section id="comparison" className="bg-gray-50 py-12">
+        <div className="container mx-auto px-4 max-w-6xl">
+          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
+            項目別ランキング
+          </h2>
+          
+          <div className="grid md:grid-cols-1 gap-8">
+            {/* 手数料が安い */}
+            <CategoryRanking
+              title="手数料が安い会社TOP5"
+              icon="💰"
+              companies={factoringCompanies
+                .sort((a, b) => a.fees.min - b.fees.min)
+                .slice(0, 5)}
+            />
+
+            {/* 審査が通りやすい */}
+            <CategoryRanking
+              title="審査が通りやすい会社TOP5"
+              icon="✅"
+              companies={getCompaniesByCategory("審査甘い").slice(0, 5)}
+            />
+
+            {/* 即日対応 */}
+            <CategoryRanking
+              title="即日入金対応の会社TOP5"
+              icon="⚡"
+              companies={getCompaniesByCategory("即日").slice(0, 5)}
+            />
+          </div>
+        </div>
+      </section>
+
+      {/* Company Details Section - All 15 Companies */}
       <section className="container mx-auto px-4 py-12 max-w-4xl">
-        <h2 className="text-3xl font-bold text-gray-900 mb-6">
-          1位: ビートレーディング 詳細レビュー（モックアップ）
+        <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
+          各社の詳細レビュー（全15社）
         </h2>
         
-        <CompanyDetail company={factoringCompanies[0]} />
+        <div className="space-y-16">
+          {factoringCompanies.map((company, index) => (
+            <div key={company.id} id={`company-${company.slug}`}>
+              <h3 className="text-2xl font-bold text-gray-900 mb-6 border-b-2 border-blue-500 pb-2">
+                {index + 1}位: {company.name}
+              </h3>
+              <CompanyDetail company={company} />
+            </div>
+          ))}
+        </div>
       </section>
 
       {/* FAQ Section */}
