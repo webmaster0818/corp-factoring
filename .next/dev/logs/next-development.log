@@ -7,3 +7,8 @@
 {"timestamp":"00:00:01.095","source":"Server","level":"LOG","message":"  \t- jsx was set to react-jsx (next.js uses the React automatic runtime)"}
 {"timestamp":"00:00:01.095","source":"Server","level":"LOG","message":""}
 {"timestamp":"00:00:01.127","source":"Server","level":"LOG","message":""}
+{"timestamp":"07:20:35.453","source":"Server","level":"LOG","message":"✓ Compiled in 44ms"}
+{"timestamp":"07:20:57.311","source":"Server","level":"LOG","message":"✓ Compiled in 24ms"}
+{"timestamp":"07:21:11.156","source":"Server","level":"LOG","message":"✓ Compiled in 36ms"}
+{"timestamp":"18:24:07.505","source":"Server","level":"LOG","message":"✓ Compiled in 22ms"}
+{"timestamp":"18:24:14.813","source":"Server","level":"LOG","message":"✓ Compiled in 40ms"}
