@@ -2,6 +2,7 @@ import { ComparisonTable } from "@/components/ComparisonTable";
 import { CompanyDetail } from "@/components/CompanyDetail";
 import { FAQ } from "@/components/FAQ";
 import { CategoryRanking } from "@/components/CategoryRanking";
+import { DiagnosisTool } from "@/components/DiagnosisTool";
 import { factoringCompanies, getCompaniesByCategory } from "@/data/companies";
 
 export default function Home() {
@@ -185,6 +186,19 @@ export default function Home() {
         <div className="bg-white rounded-lg shadow-lg p-6">
           <ComparisonTable companies={factoringCompanies} />
         </div>
+      </section>
+
+      {/* Diagnosis Tool */}
+      <section id="diagnosis" className="container mx-auto px-4 py-12">
+        <div className="text-center mb-8">
+          <h2 className="text-3xl font-bold text-gray-900 mb-4">
+            🧮 最適なファクタリング会社診断
+          </h2>
+          <p className="text-gray-600">
+            4つの質問に答えるだけで、あなたに最適なファクタリング会社が見つかります
+          </p>
+        </div>
+        <DiagnosisTool />
       </section>
 
       {/* Category Rankings */}
