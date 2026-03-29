@@ -3,6 +3,7 @@ import { CompanyDetail } from "@/components/CompanyDetail";
 import { FAQ } from "@/components/FAQ";
 import { CategoryRanking } from "@/components/CategoryRanking";
 import { DiagnosisTool } from "@/components/DiagnosisTool";
+import { FeeSimulator } from "@/components/FeeSimulator";
 import { factoringCompanies, getCompaniesByCategory } from "@/data/companies";
 
 export default function Home() {
@@ -199,6 +200,21 @@ export default function Home() {
           </p>
         </div>
         <DiagnosisTool />
+      </section>
+
+      {/* Fee Simulator */}
+      <section id="simulator" className="bg-gray-50 py-12">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-8">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              💰 手数料シミュレーター
+            </h2>
+            <p className="text-gray-600">
+              売掛金額と期間を入力して、手数料の目安を確認できます
+            </p>
+          </div>
+          <FeeSimulator />
+        </div>
       </section>
 
       {/* Category Rankings */}
