@@ -13,9 +13,58 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Hero Section */}
-      <section className="bg-gradient-to-b from-blue-600 to-blue-700 text-white py-16">
-        <div className="container mx-auto px-4 text-center">
+      {/* Global Navigation */}
+      <nav className="bg-white shadow-md sticky top-0 z-50">
+        <div className="container mx-auto px-4">
+          <div className="flex items-center justify-between h-16">
+            {/* Logo */}
+            <div className="flex items-center">
+              <Link href="/" className="text-xl font-bold text-blue-600">
+                ファクタリング比較ナビ
+              </Link>
+            </div>
+
+            {/* Navigation Menu */}
+            <div className="hidden md:flex items-center space-x-6">
+              <Link
+                href="#ranking"
+                className="text-gray-700 hover:text-blue-600 font-medium"
+              >
+                ランキング
+              </Link>
+              <Link
+                href="#comparison"
+                className="text-gray-700 hover:text-blue-600 font-medium"
+              >
+                比較表
+              </Link>
+              <Link
+                href="#diagnosis"
+                className="text-gray-700 hover:text-blue-600 font-medium"
+              >
+                診断ツール
+              </Link>
+              <Link
+                href="#faq"
+                className="text-gray-700 hover:text-blue-600 font-medium"
+              >
+                FAQ
+              </Link>
+              <Button size="sm" className="bg-blue-600 text-white">
+                無料見積もり
+              </Button>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      {/* Hero Section with Background Image */}
+      <section className="relative bg-gradient-to-b from-blue-600 to-blue-700 text-white py-24 overflow-hidden">
+        {/* Background Pattern/Image Placeholder */}
+        <div className="absolute inset-0 opacity-10">
+          <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAxMCAwIEwgMCAwIDAgMTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIxIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyaWQpIi8+PC9zdmc+')] bg-repeat"></div>
+        </div>
+        <div className="container mx-auto px-4 text-center relative z-10">
           <div className="mb-6">
             <Badge className="bg-white text-blue-700 text-sm font-semibold px-4 py-1">
               2026年3月 最新版｜15社を徹底比較
@@ -221,7 +270,7 @@ export default function Home() {
       </section>
 
       {/* COMPARISON Section */}
-      <section className="py-16 bg-white">
+      <section id="comparison" className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
             <Badge className="mb-4 text-sm">📊 COMPARISON</Badge>
@@ -352,7 +401,7 @@ export default function Home() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-16 bg-white">
+      <section id="faq" className="py-16 bg-white">
         <div className="container mx-auto px-4 max-w-5xl">
           <div className="text-center mb-12">
             <Badge className="mb-4 text-sm">💬 FAQ</Badge>
