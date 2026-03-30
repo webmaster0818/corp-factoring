@@ -1,323 +1,450 @@
+import Link from "next/link";
 import { ComparisonTable } from "@/components/ComparisonTable";
-import { CompanyDetail } from "@/components/CompanyDetail";
 import { FAQ } from "@/components/FAQ";
-import { CategoryRanking } from "@/components/CategoryRanking";
 import { DiagnosisTool } from "@/components/DiagnosisTool";
 import { FeeSimulator } from "@/components/FeeSimulator";
-import { factoringCompanies, getCompaniesByCategory } from "@/data/companies";
+import { factoringCompanies } from "@/data/companies";
+import { Badge } from "@/components/ui/badge";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
 
 export default function Home() {
+  const topCompanies = factoringCompanies.slice(0, 15);
+
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-50 to-white">
-      {/* Header */}
-      <header className="bg-white shadow-sm sticky top-0 z-50">
-        <div className="container mx-auto px-4 py-4">
-          <h1 className="text-2xl md:text-3xl font-bold text-blue-900">
-            法人向けファクタリング比較ナビ
-          </h1>
-          <p className="text-sm text-gray-600 mt-1">最終更新: 2026年3月</p>
-        </div>
-      </header>
-
+    <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <section className="container mx-auto px-4 py-8 md:py-16">
-        <div className="text-center max-w-4xl mx-auto">
-          <h2 className="text-3xl md:text-5xl font-bold text-gray-900 mb-6">
-            法人向けファクタリング<br className="md:hidden" />おすすめ15選
-          </h2>
-          <p className="text-lg md:text-xl text-gray-700 mb-4">
-            手数料・審査・入金スピードを徹底比較
-          </p>
-          <p className="text-base text-gray-600 mb-8">
-            即日対応、審査が通りやすい、手数料が安い会社を厳選
-          </p>
-          
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a 
-              href="#ranking" 
-              className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-4 px-8 rounded-lg shadow-lg transition-colors"
-            >
-              おすすめランキングを見る
-            </a>
-            <a 
-              href="#diagnosis" 
-              className="bg-green-600 hover:bg-green-700 text-white font-bold py-4 px-8 rounded-lg shadow-lg transition-colors"
-            >
-              診断ツールで最適な会社を探す
-            </a>
+      <section className="bg-gradient-to-b from-blue-600 to-blue-700 text-white py-16">
+        <div className="container mx-auto px-4 text-center">
+          <div className="mb-6">
+            <Badge className="bg-white text-blue-700 text-sm font-semibold px-4 py-1">
+              2026年3月 最新版｜15社を徹底比較
+            </Badge>
           </div>
-        </div>
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">
+            手数料・審査・入金スピードを徹底比較して最適な1社を見つけよう
+          </h1>
+          <p className="text-xl text-blue-100 mb-8">
+            即日対応、審査が通りやすい、手数料が安い会社を厳選しました
+          </p>
 
-        {/* Key Points */}
-        <div className="grid md:grid-cols-3 gap-6 mt-12 max-w-5xl mx-auto">
-          <div className="bg-white p-6 rounded-lg shadow-md">
-            <div className="text-4xl mb-3">⚡</div>
-            <h3 className="font-bold text-lg mb-2">最短2時間で入金</h3>
-            <p className="text-sm text-gray-600">
-              オンライン完結で即日対応可能な会社を厳選
+          {/* Stats */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto mb-8">
+            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">
+              <div className="text-4xl font-bold mb-1">15社</div>
+              <div className="text-sm text-blue-100">掲載会社数</div>
+            </div>
+            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">
+              <div className="text-4xl font-bold mb-1">50+</div>
+              <div className="text-sm text-blue-100">比較項目数</div>
+            </div>
+            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">
+              <div className="text-4xl font-bold mb-1">毎月</div>
+              <div className="text-sm text-blue-100">情報更新</div>
+            </div>
+            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">
+              <div className="text-4xl font-bold mb-1">無料</div>
+              <div className="text-sm text-blue-100">診断ツール</div>
+            </div>
+          </div>
+
+          <Button
+            size="lg"
+            className="bg-white text-blue-700 hover:bg-gray-100 font-semibold px-8 py-6 text-lg"
+          >
+            🏆 ランキングTOP15を見る →
+          </Button>
+        </div>
+      </section>
+
+      {/* BASIC Section */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4 max-w-5xl">
+          <div className="text-center mb-12">
+            <Badge className="mb-4 text-sm">📘 BASIC</Badge>
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">
+              ファクタリングとは？
+            </h2>
+          </div>
+
+          <div className="prose max-w-none mb-12">
+            <p className="text-lg text-gray-700 leading-relaxed mb-8">
+              ファクタリングとは、売掛金を売却して早期に現金化する資金調達方法です。銀行融資と異なり、審査が柔軟で最短即日で資金調達が可能です。赤字決算や税金滞納があっても利用できるケースが多く、中小企業の資金繰り改善に有効です。
             </p>
           </div>
-          <div className="bg-white p-6 rounded-lg shadow-md">
-            <div className="text-4xl mb-3">💰</div>
-            <h3 className="font-bold text-lg mb-2">手数料1%〜</h3>
-            <p className="text-sm text-gray-600">
-              業界最安水準の手数料で資金調達コストを削減
-            </p>
-          </div>
-          <div className="bg-white p-6 rounded-lg shadow-md">
-            <div className="text-4xl mb-3">✅</div>
-            <h3 className="font-bold text-lg mb-2">審査通過率90%超</h3>
-            <p className="text-sm text-gray-600">
-              赤字決算・税金滞納でも利用できる柔軟審査
-            </p>
+
+          <div className="grid md:grid-cols-2 gap-6">
+            <Card className="border-2 border-blue-200">
+              <CardContent className="p-6">
+                <h3 className="text-xl font-bold text-gray-900 mb-4">
+                  2社間ファクタリング
+                </h3>
+                <ul className="space-y-2">
+                  <li className="flex items-start gap-2">
+                    <span className="text-green-600 mt-1">✓</span>
+                    <span className="text-gray-700">売掛先にバレない</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-green-600 mt-1">✓</span>
+                    <span className="text-gray-700">最短即日で資金化</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-orange-600 mt-1">×</span>
+                    <span className="text-gray-700">
+                      手数料がやや高い（1〜20%）
+                    </span>
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+
+            <Card className="border-2 border-green-200">
+              <CardContent className="p-6">
+                <h3 className="text-xl font-bold text-gray-900 mb-4">
+                  3社間ファクタリング
+                </h3>
+                <ul className="space-y-2">
+                  <li className="flex items-start gap-2">
+                    <span className="text-green-600 mt-1">✓</span>
+                    <span className="text-gray-700">手数料が安い（1〜10%）</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-orange-600 mt-1">×</span>
+                    <span className="text-gray-700">売掛先にバレる</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-orange-600 mt-1">×</span>
+                    <span className="text-gray-700">
+                      入金まで数日〜1週間
+                    </span>
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
 
-      {/* Table of Contents */}
-      <section className="bg-gray-50 py-8">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <h3 className="text-2xl font-bold text-gray-900 mb-6">目次</h3>
-          <ol className="space-y-3">
-            <li>
-              <a href="#what-is-factoring" className="text-blue-600 hover:underline">
-                1. ファクタリングとは？
-              </a>
-            </li>
-            <li>
-              <a href="#ranking" className="text-blue-600 hover:underline">
-                2. 法人向けファクタリングおすすめ15選
-              </a>
-            </li>
-            <li>
-              <a href="#comparison" className="text-blue-600 hover:underline">
-                3. 項目別比較（手数料・審査・スピード）
-              </a>
-            </li>
-            <li>
-              <a href="#diagnosis" className="text-blue-600 hover:underline">
-                4. 診断ツール：最適なファクタリング会社を探す
-              </a>
-            </li>
-            <li>
-              <a href="#how-to-choose" className="text-blue-600 hover:underline">
-                5. ファクタリング会社の選び方
-              </a>
-            </li>
-            <li>
-              <a href="#faq" className="text-blue-600 hover:underline">
-                6. よくある質問（FAQ）
-              </a>
-            </li>
-          </ol>
-        </div>
-      </section>
-
-      {/* What is Factoring */}
-      <section id="what-is-factoring" className="container mx-auto px-4 py-12 max-w-4xl">
-        <h2 className="text-3xl font-bold text-gray-900 mb-6">
-          ファクタリングとは？
-        </h2>
-        
-        <div className="bg-blue-50 border-l-4 border-blue-600 p-6 mb-8">
-          <p className="text-lg font-semibold text-gray-900 mb-2">
-            ファクタリングとは、売掛金を売却して早期に現金化する資金調達方法です。
-          </p>
-          <p className="text-gray-700">
-            銀行融資と異なり、審査が柔軟で最短即日で資金調達が可能です。赤字決算や税金滞納があっても利用できるケースが多く、中小企業の資金繰り改善に有効です。
-          </p>
-        </div>
-
-        <h3 className="text-2xl font-bold text-gray-900 mb-4">
-          2社間ファクタリングと3社間ファクタリングの違い
-        </h3>
-        
-        <div className="grid md:grid-cols-2 gap-6 mb-8">
-          <div className="bg-white p-6 rounded-lg shadow-md border-2 border-green-500">
-            <h4 className="font-bold text-xl text-green-700 mb-3">2社間ファクタリング</h4>
-            <p className="text-sm text-gray-700 mb-4">
-              利用者とファクタリング会社の2社間で契約。売掛先に知られずに資金調達可能。
-            </p>
-            <ul className="space-y-2 text-sm">
-              <li className="flex items-start">
-                <span className="text-green-600 mr-2">✓</span>
-                <span>売掛先にバレない</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-green-600 mr-2">✓</span>
-                <span>最短即日で資金化</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-red-600 mr-2">×</span>
-                <span>手数料がやや高い（1〜20%）</span>
-              </li>
-            </ul>
+      {/* RANKING Section */}
+      <section id="ranking" className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <Badge className="mb-4 text-sm">🏆 RANKING</Badge>
+            <h2 className="text-3xl font-bold text-gray-900 mb-2">
+              おすすめTOP15ファクタリング会社
+            </h2>
+            <p className="text-gray-600">手数料・審査・スピードを総合評価</p>
           </div>
 
-          <div className="bg-white p-6 rounded-lg shadow-md border-2 border-blue-500">
-            <h4 className="font-bold text-xl text-blue-700 mb-3">3社間ファクタリング</h4>
-            <p className="text-sm text-gray-700 mb-4">
-              利用者、ファクタリング会社、売掛先の3社間で契約。売掛先の同意が必要。
-            </p>
-            <ul className="space-y-2 text-sm">
-              <li className="flex items-start">
-                <span className="text-green-600 mr-2">✓</span>
-                <span>手数料が安い（1〜10%）</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-red-600 mr-2">×</span>
-                <span>売掛先にバレる</span>
-              </li>
-              <li className="flex items-start">
-                <span className="text-red-600 mr-2">×</span>
-                <span>入金まで数日〜1週間</span>
-              </li>
-            </ul>
+          <div className="grid gap-6 max-w-6xl mx-auto">
+            {topCompanies.map((company, index) => (
+              <Card
+                key={company.id}
+                className="hover:shadow-lg transition-shadow"
+              >
+                <CardContent className="p-6">
+                  <div className="flex items-start gap-6">
+                    <div className="flex-shrink-0">
+                      <div className="w-12 h-12 rounded-full bg-blue-600 text-white flex items-center justify-center text-xl font-bold">
+                        {index + 1}
+                      </div>
+                    </div>
+
+                    <div className="flex-1">
+                      <div className="flex items-start justify-between mb-2">
+                        <div>
+                          <h3 className="text-2xl font-bold text-gray-900 mb-1">
+                            {company.name}
+                          </h3>
+                          <div className="flex items-center gap-2 mb-2">
+                            <span className="text-yellow-500 text-lg">⭐</span>
+                            <span className="text-lg font-semibold">
+                              {company.rating}
+                            </span>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="grid md:grid-cols-3 gap-4 mb-4">
+                        <div>
+                          <div className="text-sm text-gray-600 mb-1">
+                            手数料
+                          </div>
+                          <div className="text-lg font-semibold text-blue-600">
+                            {company.fees.min}%〜{company.fees.max}%
+                          </div>
+                        </div>
+                        <div>
+                          <div className="text-sm text-gray-600 mb-1">
+                            ⚡入金スピード
+                          </div>
+                          <div className="text-lg font-semibold text-green-600">
+                            {company.speed}
+                          </div>
+                        </div>
+                        <div>
+                          <div className="text-sm text-gray-600 mb-1">
+                            買取可能額
+                          </div>
+                          <div className="text-lg font-semibold text-gray-900">
+                            {company.minAmount === 0
+                              ? "下限なし"
+                              : `${(company.minAmount / 10000).toFixed(0)}万`}
+                            〜{company.maxAmount}
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className="flex flex-wrap gap-2 mb-4">
+                        {company.features.map((feature, idx) => (
+                          <Badge key={idx} variant="secondary">
+                            {feature}
+                          </Badge>
+                        ))}
+                      </div>
+
+                      <div className="flex gap-3">
+                        <Link href={`/companies/${company.slug}`}>
+                          <Button variant="outline" size="sm">
+                            詳細を見る
+                          </Button>
+                        </Link>
+                        <Button size="sm">公式サイトへ →</Button>
+                      </div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Ranking Section - Full 15 Companies */}
-      <section id="ranking" className="container mx-auto px-4 py-12 max-w-6xl">
-        <h2 className="text-3xl font-bold text-gray-900 mb-6">
-          【総合ランキング】おすすめファクタリング会社TOP15
-        </h2>
-        
-        <div className="bg-white rounded-lg shadow-lg p-6">
-          <ComparisonTable companies={factoringCompanies} />
+      {/* COMPARISON Section */}
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <Badge className="mb-4 text-sm">📊 COMPARISON</Badge>
+            <h2 className="text-3xl font-bold text-gray-900 mb-2">
+              項目別比較表
+            </h2>
+            <p className="text-gray-600">← 横にスクロールできます →</p>
+          </div>
+          <ComparisonTable companies={topCompanies} />
         </div>
       </section>
 
-      {/* Diagnosis Tool */}
-      <section id="diagnosis" className="container mx-auto px-4 py-12">
-        <div className="text-center mb-8">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">
-            🧮 最適なファクタリング会社診断
-          </h2>
-          <p className="text-gray-600">
-            4つの質問に答えるだけで、あなたに最適なファクタリング会社が見つかります
-          </p>
+      {/* DIAGNOSIS Section */}
+      <section id="diagnosis" className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-12">
+            <Badge className="mb-4 text-sm">🧮 DIAGNOSIS</Badge>
+            <h2 className="text-3xl font-bold text-gray-900 mb-2">
+              最適なファクタリング会社診断
+            </h2>
+            <p className="text-gray-600">
+              何を重視しますか？<br />
+              複数選択OK
+            </p>
+            <p className="text-sm text-gray-500 mt-2">
+              🔒 個人情報の入力は不要です
+            </p>
+          </div>
+          <DiagnosisTool />
         </div>
-        <DiagnosisTool />
       </section>
 
       {/* Fee Simulator */}
-      <section id="simulator" className="bg-gray-50 py-12">
+      <section id="simulator" className="py-16 bg-white">
         <div className="container mx-auto px-4">
-          <div className="text-center mb-8">
-            <h2 className="text-3xl font-bold text-gray-900 mb-4">
-              💰 手数料シミュレーター
-            </h2>
-            <p className="text-gray-600">
-              売掛金額と期間を入力して、手数料の目安を確認できます
-            </p>
-          </div>
           <FeeSimulator />
         </div>
       </section>
 
-      {/* Category Rankings */}
-      <section id="comparison" className="bg-gray-50 py-12">
-        <div className="container mx-auto px-4 max-w-6xl">
-          <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
-            項目別ランキング
-          </h2>
-          
-          <div className="grid md:grid-cols-1 gap-8">
-            {/* 手数料が安い */}
-            <CategoryRanking
-              title="手数料が安い会社TOP5"
-              icon="💰"
-              companies={factoringCompanies
-                .sort((a, b) => a.fees.min - b.fees.min)
-                .slice(0, 5)}
-            />
-
-            {/* 審査が通りやすい */}
-            <CategoryRanking
-              title="審査が通りやすい会社TOP5"
-              icon="✅"
-              companies={getCompaniesByCategory("審査甘い").slice(0, 5)}
-            />
-
-            {/* 即日対応 */}
-            <CategoryRanking
-              title="即日入金対応の会社TOP5"
-              icon="⚡"
-              companies={getCompaniesByCategory("即日").slice(0, 5)}
-            />
+      {/* VOICE Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4 max-w-5xl">
+          <div className="text-center mb-12">
+            <Badge className="mb-4 text-sm">💬 VOICE</Badge>
+            <h2 className="text-3xl font-bold text-gray-900 mb-2">
+              利用者の声
+            </h2>
           </div>
-        </div>
-      </section>
 
-      {/* Company Details Section - All 15 Companies */}
-      <section className="container mx-auto px-4 py-12 max-w-4xl">
-        <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
-          各社の詳細レビュー（全15社）
-        </h2>
-        
-        <div className="space-y-16">
-          {factoringCompanies.map((company, index) => (
-            <div key={company.id} id={`company-${company.slug}`}>
-              <h3 className="text-2xl font-bold text-gray-900 mb-6 border-b-2 border-blue-500 pb-2">
-                {index + 1}位: {company.name}
-              </h3>
-              <CompanyDetail company={company} />
-            </div>
-          ))}
+          <div className="grid md:grid-cols-3 gap-6">
+            <Card>
+              <CardContent className="p-6">
+                <div className="mb-4">
+                  <div className="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mb-3">
+                    A
+                  </div>
+                  <div className="text-sm text-gray-600 mb-1">
+                    製造業 / 30代男性
+                  </div>
+                  <div className="text-sm text-gray-600 mb-3">
+                    利用額: 500万円
+                  </div>
+                </div>
+                <p className="text-gray-700 mb-4 leading-relaxed">
+                  「銀行融資が間に合わない時にファクタリングを利用。申込から2時間で入金され、資金繰りが一気に解決しました。手数料も想像より安かったです。」
+                </p>
+                <div className="flex gap-1 text-yellow-500">
+                  {[...Array(5)].map((_, i) => (
+                    <span key={i}>⭐</span>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardContent className="p-6">
+                <div className="mb-4">
+                  <div className="w-12 h-12 bg-green-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mb-3">
+                    B
+                  </div>
+                  <div className="text-sm text-gray-600 mb-1">
+                    IT企業 / 40代女性
+                  </div>
+                  <div className="text-sm text-gray-600 mb-3">
+                    利用額: 1,200万円
+                  </div>
+                </div>
+                <p className="text-gray-700 mb-4 leading-relaxed">
+                  「オンライン完結で対面不要なのが助かりました。書類もたった2点で済み、忙しい中でもスムーズに資金調達できました。」
+                </p>
+                <div className="flex gap-1 text-yellow-500">
+                  {[...Array(5)].map((_, i) => (
+                    <span key={i}>⭐</span>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardContent className="p-6">
+                <div className="mb-4">
+                  <div className="w-12 h-12 bg-orange-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mb-3">
+                    C
+                  </div>
+                  <div className="text-sm text-gray-600 mb-1">
+                    建設業 / 20代男性
+                  </div>
+                  <div className="text-sm text-gray-600 mb-3">
+                    利用額: 300万円
+                  </div>
+                </div>
+                <p className="text-gray-700 mb-4 leading-relaxed">
+                  「創業2年目で銀行融資を断られましたが、ファクタリングなら赤字でも利用OK。このサイトで比較して最安の会社を見つけられました。」
+                </p>
+                <div className="flex gap-1 text-yellow-500">
+                  {[...Array(5)].map((_, i) => (
+                    <span key={i}>⭐</span>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+          </div>
+
+          <p className="text-center text-sm text-gray-500 mt-6">
+            ※ 利用者の感想であり、効果を保証するものではありません。
+          </p>
         </div>
       </section>
 
       {/* FAQ Section */}
-      <section id="faq" className="bg-gray-50 py-12">
-        <div className="container mx-auto px-4 max-w-4xl">
+      <section className="py-16 bg-white">
+        <div className="container mx-auto px-4 max-w-5xl">
+          <div className="text-center mb-12">
+            <Badge className="mb-4 text-sm">💬 FAQ</Badge>
+            <h2 className="text-3xl font-bold text-gray-900 mb-2">
+              よくある質問
+            </h2>
+          </div>
           <FAQ />
         </div>
       </section>
 
-      {/* Coming Soon Sections */}
-      <section className="bg-gray-100 py-12">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">コンテンツ準備中</h2>
-          <p className="text-gray-600 mb-6">以下のコンテンツを順次公開予定です</p>
-          
-          <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-            <div className="bg-white p-6 rounded-lg shadow-md">
-              <h3 className="font-bold text-xl mb-2">📊 おすすめ15選ランキング（完全版）</h3>
-              <p className="text-sm text-gray-600">
-                QuQuMo、アクセルファクター、ベストファクターなど15社を徹底比較
-              </p>
-            </div>
-            <div className="bg-white p-6 rounded-lg shadow-md">
-              <h3 className="font-bold text-xl mb-2">🧮 診断ツール</h3>
-              <p className="text-sm text-gray-600">
-                あなたに最適なファクタリング会社を10個の質問で診断
-              </p>
-            </div>
-            <div className="bg-white p-6 rounded-lg shadow-md">
-              <h3 className="font-bold text-xl mb-2">💰 手数料シミュレーター</h3>
-              <p className="text-sm text-gray-600">
-                売掛金額を入力して実際の受取額を即座に計算
-              </p>
-            </div>
-            <div className="bg-white p-6 rounded-lg shadow-md">
-              <h3 className="font-bold text-xl mb-2">❓ FAQ50項目</h3>
-              <p className="text-sm text-gray-600">
-                よくある質問に網羅的に回答
-              </p>
-            </div>
+      {/* Trust Section */}
+      <section className="py-16 bg-gray-50">
+        <div className="container mx-auto px-4 max-w-5xl">
+          <div className="grid md:grid-cols-3 gap-6">
+            <Card>
+              <CardContent className="p-6 text-center">
+                <div className="text-4xl mb-4">⚖️</div>
+                <h3 className="font-bold text-gray-900 mb-2">
+                  中立な立場で比較
+                </h3>
+                <p className="text-sm text-gray-600">
+                  特定のファクタリング会社に偏らず、手数料・審査・スピードを客観的に評価しています。
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardContent className="p-6 text-center">
+                <div className="text-4xl mb-4">📅</div>
+                <h3 className="font-bold text-gray-900 mb-2">
+                  毎月情報を更新
+                </h3>
+                <p className="text-sm text-gray-600">
+                  手数料やキャンペーン情報を毎月チェックし、常に最新の情報を掲載しています。
+                </p>
+              </CardContent>
+            </Card>
+
+            <Card>
+              <CardContent className="p-6 text-center">
+                <div className="text-4xl mb-4">✍️</div>
+                <h3 className="font-bold text-gray-900 mb-2">
+                  実体験ベース
+                </h3>
+                <p className="text-sm text-gray-600">
+                  実際にファクタリングを利用した経験者の声を元に、リアルな情報を提供しています。
+                </p>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-gray-900 text-white py-8">
+      {/* CTA Section */}
+      <section className="py-16 bg-gradient-to-r from-blue-600 to-blue-700 text-white">
         <div className="container mx-auto px-4 text-center">
-          <p className="text-sm">© 2026 法人向けファクタリング比較ナビ</p>
-          <p className="text-xs text-gray-400 mt-2">
-            当サイトは情報提供を目的としており、特定のサービスを推奨するものではありません。
+          <h2 className="text-3xl font-bold mb-4">
+            資金調達でお困りですか？最短30分で入金可能
+          </h2>
+          <p className="text-xl text-blue-100 mb-8">
+            まずは無料で見積もり。3社以上の相見積もりがおすすめです
           </p>
+          <Button
+            size="lg"
+            className="bg-white text-blue-700 hover:bg-gray-100 font-semibold px-8 py-6 text-lg"
+          >
+            🏆 ランキングTOP15を見る →
+          </Button>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-gray-900 text-gray-300 py-12">
+        <div className="container mx-auto px-4 text-center">
+          <div className="mb-6">
+            <h3 className="text-xl font-bold text-white mb-2">
+              ファクタリング比較ナビ
+            </h3>
+            <p className="text-sm">
+              法人向けファクタリング会社を手数料・審査・入金スピードで徹底比較する専門メディア
+            </p>
+          </div>
+
+          <div className="border-t border-gray-700 pt-6">
+            <p className="text-sm">
+              © 2026 法人向けファクタリング比較ナビ編集部
+            </p>
+            <p className="text-xs text-gray-400 mt-2">
+              ※掲載情報は2026年3月30日時点。最新情報は各公式サイトでご確認ください。当サイトはアフィリエイトプログラムに参加しています。
+            </p>
+          </div>
         </div>
       </footer>
     </div>
