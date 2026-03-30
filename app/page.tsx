@@ -67,8 +67,19 @@ export default function Home() {
         </div>
       </nav>
 
+      {/* Breadcrumbs */}
+      <nav className="bg-gray-50 py-3">
+        <div className="container mx-auto px-4">
+          <div className="text-sm text-gray-600">
+            <Link href="/" className="hover:text-orange-600">ホーム</Link>
+            <span className="mx-2">＞</span>
+            <span className="text-gray-900 font-medium">法人向けファクタリング比較</span>
+          </div>
+        </div>
+      </nav>
+
       {/* Hero Section - Redesigned */}
-      <section className="bg-[#3B82F6] text-white py-20">
+      <section className="bg-[#F97316] text-white py-20">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-8 items-center">
             {/* Left Content */}
