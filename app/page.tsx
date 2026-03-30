@@ -62,65 +62,69 @@ export default function Home() {
         </div>
       </nav>
 
-      {/* Hero Section - Redesigned */}
-      <section className="bg-[#F97316] text-white py-20">
-        <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-8 items-center">
-            {/* Left Content */}
-            <div className="text-center md:text-left">
-              {/* Badge */}
-              <div className="mb-6">
-                <div className="inline-block bg-white/20 backdrop-blur-sm rounded-full px-6 py-2 text-sm font-medium text-white">
-                  2026年3月 最新版｜15社を徹底比較
-                </div>
-              </div>
+      {/* Hero Section with Eyecatch Image */}
+      <section className="relative overflow-hidden bg-gradient-to-b from-sky-50 via-orange-50/30 to-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-12 lg:pt-12 lg:pb-20">
+          {/* Eyecatch Image */}
+          <div className="relative rounded-3xl overflow-hidden shadow-2xl mb-10 mx-auto">
+            <img
+              src="/images/hero-eyecatch.png"
+              alt="法人向けファクタリングおすすめ15選 - 手数料・審査・入金スピード徹底比較2026年最新版"
+              className="w-full h-auto"
+              width="1200"
+              height="630"
+            />
+          </div>
 
-              {/* Main Copy */}
-              <h1 className="text-3xl md:text-4xl font-bold mb-4 leading-tight">
-                手数料・審査・入金スピードを徹底比較して最適な1社を見つけよう
-              </h1>
-
-              {/* Sub Copy */}
-              <p className="text-base md:text-lg mb-10 text-white/90">
-                即日対応、審査が通りやすい、手数料が安い会社を厳選しました
-              </p>
-
-              {/* Stats Cards - Glassmorphism */}
-              <div className="grid grid-cols-2 gap-4 mb-10">
-                <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6">
-                  <div className="text-4xl font-bold mb-1">15社</div>
-                  <div className="text-sm text-white/80">掲載会社数</div>
-                </div>
-                <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6">
-                  <div className="text-4xl font-bold mb-1">50+</div>
-                  <div className="text-sm text-white/80">比較項目数</div>
-                </div>
-                <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6">
-                  <div className="text-4xl font-bold mb-1">毎月</div>
-                  <div className="text-sm text-white/80">情報更新</div>
-                </div>
-                <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6">
-                  <div className="text-4xl font-bold mb-1">無料</div>
-                  <div className="text-sm text-white/80">診断ツール</div>
-                </div>
-              </div>
-
-              {/* CTA Button */}
-              <Button
-                size="lg"
-                className="bg-white text-blue-600 hover:bg-gray-100 font-semibold px-8 py-6 text-base shadow-lg"
-              >
-                🏆 ランキングTOP15を見る →
-              </Button>
+          <div className="text-center">
+            <div className="inline-flex items-center gap-2 bg-orange-50 border border-orange-200 px-5 py-2 rounded-full text-sm font-medium mb-6">
+              <span className="text-gray-700">2026年3月 最新版｜<span className="text-orange-600 font-bold">15社</span>を徹底比較</span>
             </div>
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-gray-900 leading-[1.2] mb-5">
+              手数料・審査・入金スピードを<br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 via-amber-500 to-sky-500">徹底比較</span>
+              して最適な1社を見つけよう
+            </h1>
+            <p className="text-gray-500 text-lg max-w-2xl mx-auto leading-relaxed mb-8">
+              即日対応、審査が通りやすい、手数料が安い会社を<strong className="text-gray-700">厳選</strong>しました
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link
+                href="#ranking"
+                className="bg-gradient-to-r from-orange-500 to-amber-500 text-white font-black py-4 px-10 rounded-2xl text-lg text-center shadow-lg shadow-orange-500/25"
+              >
+                🏆 ランキングTOP15を見る
+              </Link>
+              <Link
+                href="#diagnosis"
+                className="bg-white border-2 border-sky-500 text-sky-600 font-bold py-4 px-10 rounded-2xl hover:bg-sky-50 transition text-center"
+              >
+                🧮 無料診断ツール →
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
 
-            {/* Right Image */}
-            <div className="flex justify-center">
-              <img
-                src="/images/hero-eyecatch.png"
-                alt="ファクタリング比較イメージ"
-                className="w-full max-w-lg rounded-2xl shadow-2xl"
-              />
+      {/* Social Proof */}
+      <section className="py-12 bg-white border-b border-gray-100">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
+            <div>
+              <p className="text-3xl lg:text-4xl font-black text-orange-500">15社</p>
+              <p className="text-gray-500 text-sm mt-1">掲載会社数</p>
+            </div>
+            <div>
+              <p className="text-3xl lg:text-4xl font-black text-sky-500">50+</p>
+              <p className="text-gray-500 text-sm mt-1">比較項目数</p>
+            </div>
+            <div>
+              <p className="text-3xl lg:text-4xl font-black text-amber-500">毎月</p>
+              <p className="text-gray-500 text-sm mt-1">情報更新</p>
+            </div>
+            <div>
+              <p className="text-3xl lg:text-4xl font-black text-emerald-500">無料</p>
+              <p className="text-gray-500 text-sm mt-1">診断ツール</p>
             </div>
           </div>
         </div>
