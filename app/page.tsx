@@ -19,6 +19,13 @@ export default function Home() {
           <div className="flex justify-between items-center h-16 lg:h-20">
             {/* Logo */}
             <Link href="/" className="flex items-center gap-2 group">
+              <img
+                src="/images/logo.png"
+                alt="ファクタリングナビ ロゴ"
+                className="h-10 lg:h-12 w-auto"
+                width="120"
+                height="48"
+              />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-sky-600 font-black text-base lg:text-lg tracking-tight">
                 ファクタリング比較ナビ
               </span>
