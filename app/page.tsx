@@ -63,7 +63,7 @@ export default function Home() {
       </nav>
 
       {/* Hero Section with Eyecatch Image */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-sky-50 via-orange-50/30 to-white">
+      <section className="bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-12 lg:pt-12 lg:pb-20">
           {/* Eyecatch Image */}
           <div className="relative rounded-3xl overflow-hidden shadow-2xl mb-10 mx-auto">
