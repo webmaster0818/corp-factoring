@@ -26,7 +26,7 @@ export default function Home() {
                 width="120"
                 height="48"
               />
-              <span className="text-gray-900 font-bold text-lg">
+              <span className="text-[#F08C1E] font-bold text-lg">
                 ファクタリング比較ナビ
               </span>
             </Link>
