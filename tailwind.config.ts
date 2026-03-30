@@ -9,6 +9,9 @@ export default {
   ],
   theme: {
     extend: {
+      spacing: {
+        '17': '68px',
+      },
       keyframes: {
         "accordion-down": {
           from: { height: "0" },

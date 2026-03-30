@@ -14,66 +14,42 @@ export default function Home() {
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Global Navigation */}
-      <nav className="fixed top-0 w-full bg-white z-50 border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center" style={{ height: '68px' }}>
-            {/* Logo */}
-            <Link href="/" className="flex items-center gap-2">
-              <img
-                src="/images/logo.png"
-                alt="ファクタリングナビ ロゴ"
-                className="h-10 w-auto"
-                width="120"
-                height="48"
-              />
-              <span className="text-[#F08C1E] font-bold text-lg">
-                ファクタリング比較ナビ
-              </span>
-            </Link>
+      <header className="bg-white border-b border-gray-200 sticky top-0 z-50">
+        <div className="max-w-7xl mx-auto px-6 h-17 flex items-center justify-between">
+          {/* Logo */}
+          <Link href="/" className="flex items-center gap-2.5">
+            <img src="/images/logo.png" alt="" className="w-11 h-11" />
+            <span className="text-[19px] font-bold text-[#F08C1E] tracking-wide">
+              ファクタリング比較ナビ
+            </span>
+          </Link>
 
-            {/* Navigation Menu */}
-            <div className="hidden md:flex items-center gap-6">
-              <Link
-                href="#ranking"
-                className="text-gray-700 hover:text-orange-600 font-medium text-sm"
-              >
-                ランキング
-              </Link>
-              <Link
-                href="#comparison"
-                className="text-gray-700 hover:text-orange-600 font-medium text-sm"
-              >
-                比較表
-              </Link>
-              <Link
-                href="#diagnosis"
-                className="text-gray-700 hover:text-orange-600 font-medium text-sm"
-              >
-                診断
-              </Link>
-              <Link
-                href="#faq"
-                className="text-gray-700 hover:text-orange-600 font-medium text-sm"
-              >
-                FAQ
-              </Link>
-              <Link
-                href="#about"
-                className="text-gray-700 hover:text-orange-600 font-medium text-sm"
-              >
-                運営情報
-              </Link>
-              <Link
-                href="#diagnosis"
-                className="bg-orange-500 text-white px-6 py-2 rounded-full font-bold text-sm hover:bg-orange-600"
-              >
-                無料診断する
-              </Link>
-            </div>
+          {/* Navigation Menu */}
+          <div className="hidden md:flex items-center gap-7">
+            <Link href="#ranking" className="text-gray-600 hover:text-blue font-medium text-sm">
+              ランキング
+            </Link>
+            <Link href="#comparison" className="text-gray-600 hover:text-blue font-medium text-sm">
+              比較表
+            </Link>
+            <Link href="#diagnosis" className="text-gray-600 hover:text-blue font-medium text-sm">
+              診断
+            </Link>
+            <Link href="#faq" className="text-gray-600 hover:text-blue font-medium text-sm">
+              FAQ
+            </Link>
+            <Link href="#about" className="text-gray-600 hover:text-blue font-medium text-sm">
+              運営情報
+            </Link>
+            <Link
+              href="#diagnosis"
+              className="bg-gradient-to-b from-[#F5A623] to-[#E8841A] text-white px-6 py-2.5 rounded-full font-bold text-sm shadow-md shadow-orange-500/20"
+            >
+              ⚡ 無料診断する
+            </Link>
           </div>
         </div>
-      </nav>
-      <div style={{ height: '68px' }}></div>
+      </header>
 
       {/* Breadcrumbs */}
       <nav className="bg-gray-50 py-3">
