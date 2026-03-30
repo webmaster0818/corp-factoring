@@ -58,48 +58,50 @@ export default function Home() {
         </div>
       </nav>
 
-      {/* Hero Section with Background Image */}
-      <section className="relative bg-gradient-to-b from-blue-600 to-blue-700 text-white py-24 overflow-hidden">
-        {/* Background Pattern/Image Placeholder */}
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute inset-0 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PHBhdHRlcm4gaWQ9ImdyaWQiIHdpZHRoPSI2MCIgaGVpZ2h0PSI2MCIgcGF0dGVyblVuaXRzPSJ1c2VyU3BhY2VPblVzZSI+PHBhdGggZD0iTSAxMCAwIEwgMCAwIDAgMTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2ZmZiIgc3Ryb2tlLXdpZHRoPSIxIi8+PC9wYXR0ZXJuPjwvZGVmcz48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSJ1cmwoI2dyaWQpIi8+PC9zdmc+')] bg-repeat"></div>
-        </div>
-        <div className="container mx-auto px-4 text-center relative z-10">
+      {/* Hero Section - Redesigned */}
+      <section className="bg-[#3B82F6] text-white py-20">
+        <div className="container mx-auto px-4 text-center">
+          {/* Badge */}
           <div className="mb-6">
-            <Badge className="bg-white text-blue-700 text-sm font-semibold px-4 py-1">
+            <div className="inline-block bg-white/20 backdrop-blur-sm rounded-full px-6 py-2 text-sm font-medium text-white">
               2026年3月 最新版｜15社を徹底比較
-            </Badge>
+            </div>
           </div>
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">
+
+          {/* Main Copy */}
+          <h1 className="text-3xl md:text-4xl font-bold mb-4 leading-tight">
             手数料・審査・入金スピードを徹底比較して最適な1社を見つけよう
           </h1>
-          <p className="text-xl text-blue-100 mb-8">
+
+          {/* Sub Copy */}
+          <p className="text-base md:text-lg mb-10 text-white/90">
             即日対応、審査が通りやすい、手数料が安い会社を厳選しました
           </p>
 
-          {/* Stats */}
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto mb-8">
-            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">
+          {/* Stats Cards - Glassmorphism */}
+          <div className="grid grid-cols-2 gap-4 max-w-3xl mx-auto mb-10">
+            <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6">
               <div className="text-4xl font-bold mb-1">15社</div>
-              <div className="text-sm text-blue-100">掲載会社数</div>
+              <div className="text-sm text-white/80">掲載会社数</div>
             </div>
-            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">
+            <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6">
               <div className="text-4xl font-bold mb-1">50+</div>
-              <div className="text-sm text-blue-100">比較項目数</div>
+              <div className="text-sm text-white/80">比較項目数</div>
             </div>
-            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">
+            <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6">
               <div className="text-4xl font-bold mb-1">毎月</div>
-              <div className="text-sm text-blue-100">情報更新</div>
+              <div className="text-sm text-white/80">情報更新</div>
             </div>
-            <div className="bg-white/10 backdrop-blur-sm rounded-lg p-6">
+            <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6">
               <div className="text-4xl font-bold mb-1">無料</div>
-              <div className="text-sm text-blue-100">診断ツール</div>
+              <div className="text-sm text-white/80">診断ツール</div>
             </div>
           </div>
 
+          {/* CTA Button */}
           <Button
             size="lg"
-            className="bg-white text-blue-700 hover:bg-gray-100 font-semibold px-8 py-6 text-lg"
+            className="bg-white text-blue-600 hover:bg-gray-100 font-semibold px-8 py-6 text-base shadow-lg"
           >
             🏆 ランキングTOP15を見る →
           </Button>
