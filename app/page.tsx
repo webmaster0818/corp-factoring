@@ -17,9 +17,12 @@ export default function Home() {
       <nav className="bg-white shadow-md sticky top-0 z-50">
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-16">
-            {/* Logo */}
-            <div className="flex items-center">
-              <Link href="/" className="text-xl font-bold text-blue-600">
+            {/* Logo with Icon */}
+            <div className="flex items-center gap-2">
+              <div className="w-8 h-8 bg-orange-500 rounded-full flex items-center justify-center text-white font-bold text-sm">
+                F
+              </div>
+              <Link href="/" className="text-xl font-bold text-gray-900">
                 ファクタリング比較ナビ
               </Link>
             </div>
@@ -28,30 +31,36 @@ export default function Home() {
             <div className="hidden md:flex items-center space-x-6">
               <Link
                 href="#ranking"
-                className="text-gray-700 hover:text-blue-600 font-medium"
+                className="text-gray-700 hover:text-orange-600 font-medium"
               >
                 ランキング
               </Link>
               <Link
                 href="#comparison"
-                className="text-gray-700 hover:text-blue-600 font-medium"
+                className="text-gray-700 hover:text-orange-600 font-medium"
               >
                 比較表
               </Link>
               <Link
                 href="#diagnosis"
-                className="text-gray-700 hover:text-blue-600 font-medium"
+                className="text-gray-700 hover:text-orange-600 font-medium"
               >
-                診断ツール
+                診断
               </Link>
               <Link
                 href="#faq"
-                className="text-gray-700 hover:text-blue-600 font-medium"
+                className="text-gray-700 hover:text-orange-600 font-medium"
               >
                 FAQ
               </Link>
-              <Button size="sm" className="bg-blue-600 text-white">
-                無料見積もり
+              <Link
+                href="#about"
+                className="text-gray-700 hover:text-orange-600 font-medium"
+              >
+                運営情報
+              </Link>
+              <Button size="sm" className="bg-orange-500 text-white hover:bg-orange-600">
+                無料診断する
               </Button>
             </div>
           </div>
@@ -60,51 +69,65 @@ export default function Home() {
 
       {/* Hero Section - Redesigned */}
       <section className="bg-[#3B82F6] text-white py-20">
-        <div className="container mx-auto px-4 text-center">
-          {/* Badge */}
-          <div className="mb-6">
-            <div className="inline-block bg-white/20 backdrop-blur-sm rounded-full px-6 py-2 text-sm font-medium text-white">
-              2026年3月 最新版｜15社を徹底比較
+        <div className="container mx-auto px-4">
+          <div className="grid md:grid-cols-2 gap-8 items-center">
+            {/* Left Content */}
+            <div className="text-center md:text-left">
+              {/* Badge */}
+              <div className="mb-6">
+                <div className="inline-block bg-white/20 backdrop-blur-sm rounded-full px-6 py-2 text-sm font-medium text-white">
+                  2026年3月 最新版｜15社を徹底比較
+                </div>
+              </div>
+
+              {/* Main Copy */}
+              <h1 className="text-3xl md:text-4xl font-bold mb-4 leading-tight">
+                手数料・審査・入金スピードを徹底比較して最適な1社を見つけよう
+              </h1>
+
+              {/* Sub Copy */}
+              <p className="text-base md:text-lg mb-10 text-white/90">
+                即日対応、審査が通りやすい、手数料が安い会社を厳選しました
+              </p>
+
+              {/* Stats Cards - Glassmorphism */}
+              <div className="grid grid-cols-2 gap-4 mb-10">
+                <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6">
+                  <div className="text-4xl font-bold mb-1">15社</div>
+                  <div className="text-sm text-white/80">掲載会社数</div>
+                </div>
+                <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6">
+                  <div className="text-4xl font-bold mb-1">50+</div>
+                  <div className="text-sm text-white/80">比較項目数</div>
+                </div>
+                <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6">
+                  <div className="text-4xl font-bold mb-1">毎月</div>
+                  <div className="text-sm text-white/80">情報更新</div>
+                </div>
+                <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6">
+                  <div className="text-4xl font-bold mb-1">無料</div>
+                  <div className="text-sm text-white/80">診断ツール</div>
+                </div>
+              </div>
+
+              {/* CTA Button */}
+              <Button
+                size="lg"
+                className="bg-white text-blue-600 hover:bg-gray-100 font-semibold px-8 py-6 text-base shadow-lg"
+              >
+                🏆 ランキングTOP15を見る →
+              </Button>
+            </div>
+
+            {/* Right Image */}
+            <div className="flex justify-center">
+              <img
+                src="/images/hero-eyecatch.png"
+                alt="ファクタリング比較イメージ"
+                className="w-full max-w-lg rounded-2xl shadow-2xl"
+              />
             </div>
           </div>
-
-          {/* Main Copy */}
-          <h1 className="text-3xl md:text-4xl font-bold mb-4 leading-tight">
-            手数料・審査・入金スピードを徹底比較して最適な1社を見つけよう
-          </h1>
-
-          {/* Sub Copy */}
-          <p className="text-base md:text-lg mb-10 text-white/90">
-            即日対応、審査が通りやすい、手数料が安い会社を厳選しました
-          </p>
-
-          {/* Stats Cards - Glassmorphism */}
-          <div className="grid grid-cols-2 gap-4 max-w-3xl mx-auto mb-10">
-            <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6">
-              <div className="text-4xl font-bold mb-1">15社</div>
-              <div className="text-sm text-white/80">掲載会社数</div>
-            </div>
-            <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6">
-              <div className="text-4xl font-bold mb-1">50+</div>
-              <div className="text-sm text-white/80">比較項目数</div>
-            </div>
-            <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6">
-              <div className="text-4xl font-bold mb-1">毎月</div>
-              <div className="text-sm text-white/80">情報更新</div>
-            </div>
-            <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-2xl p-6">
-              <div className="text-4xl font-bold mb-1">無料</div>
-              <div className="text-sm text-white/80">診断ツール</div>
-            </div>
-          </div>
-
-          {/* CTA Button */}
-          <Button
-            size="lg"
-            className="bg-white text-blue-600 hover:bg-gray-100 font-semibold px-8 py-6 text-base shadow-lg"
-          >
-            🏆 ランキングTOP15を見る →
-          </Button>
         </div>
       </section>
 
