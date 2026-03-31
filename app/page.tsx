@@ -55,9 +55,7 @@ export default function Home() {
       <nav className="bg-gray-50 py-3">
         <div className="container mx-auto px-4">
           <div className="text-sm text-gray-600">
-            <Link href="/" className="hover:text-orange-600">ホーム</Link>
-            <span className="mx-2">＞</span>
-            <span className="text-gray-900 font-medium">法人向けファクタリング比較</span>
+            <span className="text-gray-900 font-medium">法人ファクタリング比較ホーム</span>
           </div>
         </div>
       </nav>
