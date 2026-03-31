@@ -56,7 +56,7 @@ export default function Home() {
       <nav className="bg-gray-50 py-3">
         <div className="container mx-auto px-4">
           <div className="text-sm text-gray-600">
-            <span className="text-gray-900 font-medium">法人ファクタリング比較ホーム</span>
+            <span className="text-gray-900 font-medium">法人向けファクタリングおすすめ15選比較</span>
           </div>
         </div>
       </nav>
