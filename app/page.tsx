@@ -3,6 +3,7 @@ import { ComparisonTable } from "@/components/ComparisonTable";
 import { FAQ } from "@/components/FAQ";
 import { DiagnosisTool } from "@/components/DiagnosisTool";
 import { FeeSimulator } from "@/components/FeeSimulator";
+import { Footer } from "@/components/Footer";
 import { factoringCompanies } from "@/data/companies";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -497,27 +498,7 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-900 text-gray-300 py-12">
-        <div className="container mx-auto px-4 text-center">
-          <div className="mb-6">
-            <h3 className="text-xl font-bold text-white mb-2">
-              ファクタリング比較ナビ
-            </h3>
-            <p className="text-sm">
-              法人向けファクタリング会社を手数料・審査・入金スピードで徹底比較する専門メディア
-            </p>
-          </div>
-
-          <div className="border-t border-gray-700 pt-6">
-            <p className="text-sm">
-              © 2026 法人向けファクタリング比較ナビ編集部
-            </p>
-            <p className="text-xs text-gray-400 mt-2">
-              ※掲載情報は2026年3月30日時点。最新情報は各公式サイトでご確認ください。当サイトはアフィリエイトプログラムに参加しています。
-            </p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 }
