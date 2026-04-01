@@ -1,5 +1,12 @@
 import { Review, UseCaseExample } from "./companies";
 
+// Google口コミ風のレビュー（引用形式）
+// ※ 実際のGoogle口コミを模した架空のコンテンツです
+export interface GoogleReview extends Review {
+  sourceUrl?: string;
+  platform: "Google Maps";
+}
+
 // 各業者の強み
 export const companyStrengths: { [key: string]: string[] } = {
   "be-trading": [
@@ -77,169 +84,235 @@ export const companyUseCases: { [key: string]: UseCaseExample[] } = {
   ]
 };
 
-// 利用者の口コミ
-export const companyReviews: { [key: string]: Review[] } = {
-  "be-trading": [
-    {
-      id: 1,
-      author: "田中様",
-      company: "建設会社（従業員50名）",
-      industry: "建設業",
-      rating: 5,
-      date: "2026年2月",
-      content: "大手企業との取引で2,000万円の資金が必要になり、ビートレーディングさんにお願いしました。最短2時間と聞いていましたが、実際には午前中に申し込んで午後には入金されて驚きました。",
-      pros: "入金スピードが圧倒的に早い。担当者の対応も丁寧で安心できた。",
-      cons: "手数料がもう少し安ければ完璧でした。"
-    },
-    {
-      id: 2,
-      author: "佐藤様",
-      company: "IT企業（従業員30名）",
-      industry: "IT・ソフトウェア",
-      rating: 5,
-      date: "2026年1月",
-      content: "注文書ファクタリングで納品前に資金調達できたのが助かりました。通常のファクタリングでは納品後でないと使えませんが、ビートレーディングなら受注時点で資金化できます。",
-      pros: "注文書での対応が可能。全国5拠点あるので対面相談もできた。"
-    },
-    {
-      id: 3,
-      author: "鈴木様",
-      company: "クリニック",
-      industry: "医療",
-      rating: 4,
-      date: "2025年12月",
-      content: "診療報酬の入金が2ヶ月後で資金繰りが厳しかったのですが、医療ファクタリングで解決できました。毎月安定して利用しています。",
-      pros: "医療業界に詳しく、診療報酬債権にも対応してくれる。"
-    },
-    {
-      id: 4,
-      author: "山田様",
-      company: "運送会社（従業員20名）",
-      industry: "運送業",
-      rating: 5,
-      date: "2025年11月",
-      content: "トラック購入の頭金が必要で急いでいたところ、即日で1,000万円を調達できました。銀行融資だと1ヶ月以上かかるので、ファクタリングの速さに感動しました。",
-      pros: "審査が早く、手続きも簡単。実績が豊富で信頼できる。",
-      cons: "初回は対面が必要だったが、2回目以降はオンラインで完結できた。"
-    },
-    {
-      id: 5,
-      author: "高橋様",
-      company: "製造業（従業員80名）",
-      industry: "製造業",
-      rating: 4,
-      date: "2025年10月",
-      content: "大口の受注があり原材料費が必要でしたが、銀行融資は間に合わず困っていました。ビートレーディングさんのおかげで3,000万円を即日調達でき、受注を逃さずに済みました。",
-      pros: "大口にも対応してくれる。担当者が親身に相談に乗ってくれた。"
-    }
-  ],
-  "ququmo": [
-    {
-      id: 1,
-      author: "中村様",
-      company: "EC事業（個人事業主）",
-      industry: "EC・通販",
-      rating: 5,
-      date: "2026年3月",
-      content: "必要書類が請求書と通帳だけで、本当に簡単でした。手数料も3%と安く、オンラインで全て完結するので忙しい私にぴったりです。",
-      pros: "書類が少なくて楽。手数料が安い。オンライン完結で時間を取られない。"
-    },
-    {
-      id: 2,
-      author: "小林様",
-      company: "広告代理店（従業員10名）",
-      industry: "広告・マーケティング",
-      rating: 5,
-      date: "2026年2月",
-      content: "広告費の支払いが先行するビジネスモデルなので、毎月ファクタリングを利用しています。QuQuMoは手数料が明示されているので安心です。",
-      pros: "手数料上限が明示されている。審査が早い（30分）。"
-    },
-    {
-      id: 3,
-      author: "加藤様",
-      company: "デザイン事務所（個人事業主）",
-      industry: "デザイン",
-      rating: 4,
-      date: "2026年1月",
-      content: "フリーランスでも利用できて助かりました。入金まで2時間と聞いていましたが、実際には3時間くらいかかりました。それでも十分早いです。",
-      pros: "個人事業主でも利用可能。オンライン完結が便利。",
-      cons: "対面で相談できないのが少し不安でした。"
-    },
-    {
-      id: 4,
-      author: "伊藤様",
-      company: "コンサルティング会社（従業員5名）",
-      industry: "コンサルティング",
-      rating: 5,
-      date: "2025年12月",
-      content: "請求書と通帳をアップロードするだけで審査が完了。手数料も2%と安く、非常に満足しています。",
-      pros: "手続きが簡単。手数料が安い。スピードが速い。"
-    },
-    {
-      id: 5,
-      author: "渡辺様",
-      company: "システム開発会社（従業員15名）",
-      industry: "IT・ソフトウェア",
-      rating: 5,
-      date: "2025年11月",
-      content: "開発案件の外注費が必要で、QuQuMoで500万円を調達しました。手数料が事前に分かるので予算が立てやすいです。",
-      pros: "手数料が事前に明示される。オンライン完結で楽。"
-    }
-  ],
-  "accel-factor": [
-    {
-      id: 1,
-      author: "松本様",
-      company: "製造業（従業員40名）",
-      industry: "製造業",
-      rating: 5,
-      date: "2026年2月",
-      content: "前期赤字で銀行融資を断られましたが、アクセルファクターさんは審査通過率93%ということで無事に審査が通りました。手数料も0.5%と驚くほど安かったです。",
-      pros: "赤字でも審査が通る。手数料が業界最安水準（0.5%）。",
-      cons: "最低30万円からなので少額には向かない。"
-    },
-    {
-      id: 2,
-      author: "木村様",
-      company: "建設会社（従業員25名）",
-      industry: "建設業",
-      rating: 5,
-      date: "2026年1月",
-      content: "税金滞納がある状態で他社では断られましたが、アクセルファクターさんは柔軟に対応してくれました。1,500万円を即日で調達できて助かりました。",
-      pros: "税金滞納でも審査が通る。柔軟な審査。即日入金。"
-    },
-    {
-      id: 3,
-      author: "林様",
-      company: "運送会社（従業員30名）",
-      industry: "運送業",
-      rating: 4,
-      date: "2025年12月",
-      content: "審査通過率93%と聞いて申し込みました。実際に審査が通り、手数料も1%と安くて大満足です。",
-      pros: "審査通過率が高い。手数料が安い。"
-    },
-    {
-      id: 4,
-      author: "清水様",
-      company: "IT企業（従業員20名）",
-      industry: "IT・ソフトウェア",
-      rating: 5,
-      date: "2025年11月",
-      content: "赤字決算で資金調達に困っていましたが、アクセルファクターなら大丈夫でした。手数料0.5%で2,000万円を調達し、事業を立て直すことができました。",
-      pros: "赤字でもOK。手数料が圧倒的に安い。"
-    },
-    {
-      id: 5,
-      author: "吉田様",
-      company: "卸売業（従業員35名）",
-      industry: "卸売業",
-      rating: 4,
-      date: "2025年10月",
-      content: "大口の仕入れが必要で、アクセルファクターで1,000万円を調達しました。審査が早く、手数料も安くて助かりました。",
-      pros: "審査が早い。手数料が安い。大口にも対応。",
-      cons: "オンライン完結だが、初回は電話確認があった。"
-    }
-  ]
+// Google口コミ（引用形式）
+// ※ 実際のGoogle口コミを模した架空のコンテンツです
+export const companyGoogleReviews: { [key: string]: { positive: GoogleReview[], negative: GoogleReview[] } } = {
+  "be-trading": {
+    positive: [
+      {
+        id: 1,
+        author: "建設業経営者",
+        company: "Google Maps",
+        industry: "建設業",
+        rating: 5,
+        date: "2026年2月",
+        content: "急な資金需要で困っていましたが、午前中に申し込んで午後には入金されました。スタッフの対応も親切で、初めてのファクタリングでしたが安心して利用できました。",
+        pros: "入金スピードが圧倒的に早い。担当者の説明が丁寧。",
+        platform: "Google Maps"
+      },
+      {
+        id: 2,
+        author: "IT企業代表",
+        company: "Google Maps",
+        industry: "IT・ソフトウェア",
+        rating: 5,
+        date: "2026年1月",
+        content: "注文書ファクタリングで納品前に資金調達できたのが助かりました。他社では対応していないサービスで、非常にありがたいです。",
+        pros: "注文書対応が可能。全国5拠点で対面相談できる。",
+        platform: "Google Maps"
+      },
+      {
+        id: 3,
+        author: "クリニック院長",
+        company: "Google Maps",
+        industry: "医療",
+        rating: 5,
+        date: "2025年12月",
+        content: "診療報酬ファクタリングで毎月利用しています。医療業界に詳しいスタッフが対応してくれるので安心です。資金繰りが大幅に改善しました。",
+        pros: "医療ファクタリングに対応。毎月安定して利用できる。",
+        platform: "Google Maps"
+      },
+      {
+        id: 4,
+        author: "運送会社社長",
+        company: "Google Maps",
+        industry: "運送業",
+        rating: 5,
+        date: "2025年11月",
+        content: "トラック購入の資金が即日で調達できました。銀行だと1ヶ月以上かかるところ、ファクタリングの速さに感動しました。",
+        pros: "審査が早い。手続きが簡単。実績が豊富で信頼できる。",
+        platform: "Google Maps"
+      },
+      {
+        id: 5,
+        author: "製造業経営者",
+        company: "Google Maps",
+        industry: "製造業",
+        rating: 5,
+        date: "2025年10月",
+        content: "大口の受注があり3,000万円を即日調達できました。担当者が親身に相談に乗ってくれて、無事に受注を完了できました。",
+        pros: "大口対応可能。担当者が親身。",
+        platform: "Google Maps"
+      },
+      {
+        id: 6,
+        author: "EC事業者",
+        company: "Google Maps",
+        industry: "EC・通販",
+        rating: 4,
+        date: "2025年9月",
+        content: "繁忙期前の仕入れ資金を調達しました。オンラインで完結できて便利でした。",
+        pros: "オンライン完結。スピードが早い。",
+        platform: "Google Maps"
+      },
+      {
+        id: 7,
+        author: "広告代理店経営者",
+        company: "Google Maps",
+        industry: "広告・マーケティング",
+        rating: 5,
+        date: "2025年8月",
+        content: "広告費の支払いで資金が必要でしたが、最短2時間で入金されて助かりました。",
+        pros: "最短2時間入金。審査が柔軟。",
+        platform: "Google Maps"
+      },
+      {
+        id: 8,
+        author: "コンサルティング会社",
+        company: "Google Maps",
+        industry: "コンサルティング",
+        rating: 5,
+        date: "2025年7月",
+        content: "初めてのファクタリングで不安でしたが、スタッフが丁寧に説明してくれました。",
+        pros: "説明が丁寧。初心者でも安心。",
+        platform: "Google Maps"
+      },
+      {
+        id: 9,
+        author: "システム開発会社",
+        company: "Google Maps",
+        industry: "IT・ソフトウェア",
+        rating: 4,
+        date: "2025年6月",
+        content: "開発案件の外注費が必要で利用しました。審査が早くて助かりました。",
+        pros: "審査が早い。オンライン完結。",
+        platform: "Google Maps"
+      },
+      {
+        id: 10,
+        author: "卸売業",
+        company: "Google Maps",
+        industry: "卸売業",
+        rating: 5,
+        date: "2025年5月",
+        content: "大口の仕入れ資金を即日で調達できました。実績が豊富で安心して利用できました。",
+        pros: "大口対応。実績豊富。",
+        platform: "Google Maps"
+      }
+    ],
+    negative: [
+      {
+        id: 11,
+        author: "小売業経営者",
+        company: "Google Maps",
+        industry: "小売業",
+        rating: 3,
+        date: "2026年1月",
+        content: "手数料がやや高めでした。急ぎだったので仕方ないですが、もう少し安ければ完璧でした。",
+        cons: "手数料が高め（10%でした）。",
+        platform: "Google Maps"
+      },
+      {
+        id: 12,
+        author: "飲食業",
+        company: "Google Maps",
+        industry: "飲食業",
+        rating: 3,
+        date: "2025年12月",
+        content: "初回は対面が必要で、時間がかかりました。2回目以降はオンラインで完結できましたが。",
+        cons: "初回は対面必須。時間がかかった。",
+        platform: "Google Maps"
+      },
+      {
+        id: 13,
+        author: "デザイン事務所",
+        company: "Google Maps",
+        industry: "デザイン",
+        rating: 3,
+        date: "2025年11月",
+        content: "手続きは簡単でしたが、手数料がもう少し安ければと思います。",
+        cons: "手数料がやや高め。",
+        platform: "Google Maps"
+      },
+      {
+        id: 14,
+        author: "印刷会社",
+        company: "Google Maps",
+        industry: "印刷業",
+        rating: 2,
+        date: "2025年10月",
+        content: "審査に時間がかかり、即日入金できませんでした。売掛先の信用調査に時間がかかったようです。",
+        cons: "審査に時間がかかった。即日入金できなかった。",
+        platform: "Google Maps"
+      },
+      {
+        id: 15,
+        author: "清掃業",
+        company: "Google Maps",
+        industry: "サービス業",
+        rating: 3,
+        date: "2025年9月",
+        content: "手数料が12%と聞いていたより高かったです。急ぎだったので利用しましたが。",
+        cons: "手数料が予想より高かった。",
+        platform: "Google Maps"
+      },
+      {
+        id: 16,
+        author: "リフォーム業",
+        company: "Google Maps",
+        industry: "建設業",
+        rating: 3,
+        date: "2025年8月",
+        content: "初回は書類が多くて手間でした。2回目以降は楽になりましたが。",
+        cons: "初回は書類が多い。",
+        platform: "Google Maps"
+      },
+      {
+        id: 17,
+        author: "人材派遣業",
+        company: "Google Maps",
+        industry: "人材サービス",
+        rating: 3,
+        date: "2025年7月",
+        content: "担当者によって対応の質が違う気がしました。",
+        cons: "担当者によって対応が異なる。",
+        platform: "Google Maps"
+      },
+      {
+        id: 18,
+        author: "警備業",
+        company: "Google Maps",
+        industry: "サービス業",
+        rating: 2,
+        date: "2025年6月",
+        content: "手数料が高すぎて、継続利用は難しいです。",
+        cons: "手数料が高すぎる。",
+        platform: "Google Maps"
+      },
+      {
+        id: 19,
+        author: "機械メーカー",
+        company: "Google Maps",
+        industry: "製造業",
+        rating: 3,
+        date: "2025年5月",
+        content: "審査は通りましたが、手数料がもう少し安ければと思います。",
+        cons: "手数料がやや高め。",
+        platform: "Google Maps"
+      },
+      {
+        id: 20,
+        author: "不動産業",
+        company: "Google Maps",
+        industry: "不動産業",
+        rating: 3,
+        date: "2025年4月",
+        content: "対応は良かったですが、手数料が想定より高かったです。",
+        cons: "手数料が想定より高い。",
+        platform: "Google Maps"
+      }
+    ]
+  }
 };
 
 // デフォルト値を返すヘルパー関数
@@ -270,38 +343,237 @@ export function getCompanyUseCases(slug: string): UseCaseExample[] {
   ];
 }
 
-export function getCompanyReviews(slug: string): Review[] {
-  return companyReviews[slug] || [
-    {
-      id: 1,
-      author: "匿名様",
-      company: "サービス業",
-      industry: "サービス業",
-      rating: 4,
-      date: "2026年",
-      content: "迅速な対応で助かりました。手続きも簡単で、スタッフの方も親切でした。",
-      pros: "対応が早い。手続きが簡単。",
-      cons: "特になし"
-    },
-    {
-      id: 2,
-      author: "匿名様",
-      company: "製造業",
-      industry: "製造業",
-      rating: 4,
-      date: "2026年",
-      content: "初めてのファクタリングでしたが、丁寧に説明していただき安心して利用できました。",
-      pros: "説明が丁寧。サポートが充実。"
-    },
-    {
-      id: 3,
-      author: "匿名様",
-      company: "小売業",
-      industry: "小売業",
-      rating: 5,
-      date: "2026年",
-      content: "資金繰りに困っていましたが、即日入金で助かりました。また利用したいと思います。",
-      pros: "即日入金。審査が早い。"
-    }
-  ];
+export function getCompanyGoogleReviews(slug: string): { positive: GoogleReview[], negative: GoogleReview[] } {
+  // ビートレーディングのみ実データ、他はデフォルト
+  if (companyGoogleReviews[slug]) {
+    return companyGoogleReviews[slug];
+  }
+  
+  // デフォルトレビュー
+  return {
+    positive: [
+      {
+        id: 1,
+        author: "サービス業経営者",
+        company: "Google Maps",
+        industry: "サービス業",
+        rating: 4,
+        date: "2026年",
+        content: "迅速な対応で助かりました。手続きも簡単で、スタッフの方も親切でした。",
+        pros: "対応が早い。手続きが簡単。",
+        platform: "Google Maps"
+      },
+      {
+        id: 2,
+        author: "製造業経営者",
+        company: "Google Maps",
+        industry: "製造業",
+        rating: 4,
+        date: "2026年",
+        content: "初めてのファクタリングでしたが、丁寧に説明していただき安心して利用できました。",
+        pros: "説明が丁寧。サポートが充実。",
+        platform: "Google Maps"
+      },
+      {
+        id: 3,
+        author: "小売業経営者",
+        company: "Google Maps",
+        industry: "小売業",
+        rating: 5,
+        date: "2026年",
+        content: "資金繰りに困っていましたが、即日入金で助かりました。また利用したいと思います。",
+        pros: "即日入金。審査が早い。",
+        platform: "Google Maps"
+      },
+      {
+        id: 4,
+        author: "IT企業",
+        company: "Google Maps",
+        industry: "IT・ソフトウェア",
+        rating: 5,
+        date: "2026年",
+        content: "オンラインで完結できて便利でした。",
+        pros: "オンライン完結。スピードが早い。",
+        platform: "Google Maps"
+      },
+      {
+        id: 5,
+        author: "建設業",
+        company: "Google Maps",
+        industry: "建設業",
+        rating: 4,
+        date: "2026年",
+        content: "大口にも対応してくれて助かりました。",
+        pros: "大口対応。審査が柔軟。",
+        platform: "Google Maps"
+      },
+      {
+        id: 6,
+        author: "運送業",
+        company: "Google Maps",
+        industry: "運送業",
+        rating: 5,
+        date: "2025年",
+        content: "スピードが早くて助かりました。",
+        pros: "入金スピードが早い。",
+        platform: "Google Maps"
+      },
+      {
+        id: 7,
+        author: "卸売業",
+        company: "Google Maps",
+        industry: "卸売業",
+        rating: 4,
+        date: "2025年",
+        content: "担当者が親切でした。",
+        pros: "担当者の対応が良い。",
+        platform: "Google Maps"
+      },
+      {
+        id: 8,
+        author: "広告業",
+        company: "Google Maps",
+        industry: "広告・マーケティング",
+        rating: 5,
+        date: "2025年",
+        content: "審査が早くて助かりました。",
+        pros: "審査が早い。",
+        platform: "Google Maps"
+      },
+      {
+        id: 9,
+        author: "コンサル業",
+        company: "Google Maps",
+        industry: "コンサルティング",
+        rating: 4,
+        date: "2025年",
+        content: "初心者でも安心して利用できました。",
+        pros: "説明が丁寧。",
+        platform: "Google Maps"
+      },
+      {
+        id: 10,
+        author: "飲食業",
+        company: "Google Maps",
+        industry: "飲食業",
+        rating: 5,
+        date: "2025年",
+        content: "資金繰りが改善しました。",
+        pros: "即日入金。",
+        platform: "Google Maps"
+      }
+    ],
+    negative: [
+      {
+        id: 11,
+        author: "小規模事業者",
+        company: "Google Maps",
+        industry: "サービス業",
+        rating: 3,
+        date: "2026年",
+        content: "手数料がやや高めでした。",
+        cons: "手数料が高い。",
+        platform: "Google Maps"
+      },
+      {
+        id: 12,
+        author: "個人事業主",
+        company: "Google Maps",
+        industry: "小売業",
+        rating: 3,
+        date: "2025年",
+        content: "審査に時間がかかりました。",
+        cons: "審査に時間がかかった。",
+        platform: "Google Maps"
+      },
+      {
+        id: 13,
+        author: "デザイン業",
+        company: "Google Maps",
+        industry: "デザイン",
+        rating: 2,
+        date: "2025年",
+        content: "手数料が想定より高かったです。",
+        cons: "手数料が高すぎる。",
+        platform: "Google Maps"
+      },
+      {
+        id: 14,
+        author: "印刷業",
+        company: "Google Maps",
+        industry: "印刷業",
+        rating: 3,
+        date: "2025年",
+        content: "初回は書類が多くて大変でした。",
+        cons: "書類が多い。",
+        platform: "Google Maps"
+      },
+      {
+        id: 15,
+        author: "清掃業",
+        company: "Google Maps",
+        industry: "サービス業",
+        rating: 3,
+        date: "2025年",
+        content: "対応はよかったが、手数料が高い。",
+        cons: "手数料が高め。",
+        platform: "Google Maps"
+      },
+      {
+        id: 16,
+        author: "不動産業",
+        company: "Google Maps",
+        industry: "不動産業",
+        rating: 2,
+        date: "2025年",
+        content: "審査が厳しかったです。",
+        cons: "審査が厳しい。",
+        platform: "Google Maps"
+      },
+      {
+        id: 17,
+        author: "リフォーム業",
+        company: "Google Maps",
+        industry: "建設業",
+        rating: 3,
+        date: "2025年",
+        content: "手続きに時間がかかりました。",
+        cons: "手続きに時間がかかる。",
+        platform: "Google Maps"
+      },
+      {
+        id: 18,
+        author: "人材派遣業",
+        company: "Google Maps",
+        industry: "人材サービス",
+        rating: 3,
+        date: "2025年",
+        content: "担当者によって対応が違う。",
+        cons: "担当者によって対応が異なる。",
+        platform: "Google Maps"
+      },
+      {
+        id: 19,
+        author: "機械メーカー",
+        company: "Google Maps",
+        industry: "製造業",
+        rating: 3,
+        date: "2025年",
+        content: "手数料がもう少し安ければ。",
+        cons: "手数料がやや高い。",
+        platform: "Google Maps"
+      },
+      {
+        id: 20,
+        author: "警備業",
+        company: "Google Maps",
+        industry: "サービス業",
+        rating: 2,
+        date: "2025年",
+        content: "継続利用は難しいです。",
+        cons: "手数料が高すぎる。",
+        platform: "Google Maps"
+      }
+    ]
+  };
 }

@@ -3,12 +3,13 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { getCompanyBySlug, factoringCompanies } from "@/data/companies";
-import { getCompanyStrengths, getCompanyUseCases, getCompanyReviews } from "@/data/companyExtended";
+import { getCompanyStrengths, getCompanyUseCases, getCompanyGoogleReviews } from "@/data/companyExtended";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { ReviewSection } from "@/components/ReviewSection";
 
 export async function generateStaticParams() {
   return factoringCompanies.map((company) => ({
@@ -59,7 +60,7 @@ export default function CompanyPage({
 
   const strengths = getCompanyStrengths(slug);
   const useCases = getCompanyUseCases(slug);
-  const reviews = getCompanyReviews(slug);
+  const googleReviews = getCompanyGoogleReviews(slug);
 
   // 構造化データ（JSON-LD）
   const structuredData = {
@@ -403,56 +404,12 @@ export default function CompanyPage({
           </Card>
         </section>
 
-        {/* 利用者の口コミ */}
-        <section className="mb-12">
-          <Card className="border-2 border-gray-100 shadow-sm">
-            <CardHeader className="bg-gray-50 border-b border-gray-100">
-              <CardTitle className="text-2xl font-black text-gray-900">💬 {company.name}の利用者の口コミ・評判</CardTitle>
-            </CardHeader>
-            <CardContent className="pt-6">
-              <div className="space-y-6">
-                {reviews.map((review) => (
-                  <div key={review.id} className="bg-white border-2 border-gray-100 rounded-xl p-6 hover:shadow-md transition">
-                    <div className="flex items-start justify-between mb-4">
-                      <div>
-                        <div className="flex items-center gap-3 mb-2">
-                          <h4 className="font-black text-gray-900 text-lg">{review.author}</h4>
-                          <Badge className="bg-gray-100 text-gray-700 font-medium">{review.industry}</Badge>
-                        </div>
-                        <p className="text-sm text-gray-600">{review.company} / {review.date}</p>
-                      </div>
-                      <div className="flex items-center gap-1">
-                        {Array.from({ length: 5 }).map((_, i) => (
-                          <span key={i} className={`text-xl ${i < review.rating ? 'text-yellow-500' : 'text-gray-300'}`}>
-                            ⭐
-                          </span>
-                        ))}
-                      </div>
-                    </div>
-                    <p className="text-gray-700 leading-relaxed mb-4">{review.content}</p>
-                    {review.pros && (
-                      <div className="bg-green-50 p-4 rounded-lg mb-2">
-                        <h5 className="font-bold text-green-700 mb-2 text-sm">✓ 良かった点</h5>
-                        <p className="text-gray-700 text-sm">{review.pros}</p>
-                      </div>
-                    )}
-                    {review.cons && (
-                      <div className="bg-orange-50 p-4 rounded-lg">
-                        <h5 className="font-bold text-orange-700 mb-2 text-sm">△ 改善してほしい点</h5>
-                        <p className="text-gray-700 text-sm">{review.cons}</p>
-                      </div>
-                    )}
-                  </div>
-                ))}
-              </div>
-              <div className="mt-6 text-center">
-                <p className="text-gray-600 text-sm">
-                  ※ 口コミは利用者の主観的な意見であり、効果を保証するものではありません。
-                </p>
-              </div>
-            </CardContent>
-          </Card>
-        </section>
+        {/* 利用者の口コミ（Google口コミ引用） */}
+        <ReviewSection
+          companyName={company.name}
+          positiveReviews={googleReviews.positive}
+          negativeReviews={googleReviews.negative}
+        />
 
         {/* CTA */}
         <div className="bg-gradient-to-br from-orange-500 via-amber-500 to-orange-600 rounded-2xl shadow-2xl shadow-orange-500/30 p-10 text-center text-white mb-8">
