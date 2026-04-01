@@ -1,3 +1,22 @@
+export interface Review {
+  id: number;
+  author: string;
+  company: string;
+  industry: string;
+  rating: number;
+  date: string;
+  content: string;
+  pros?: string;
+  cons?: string;
+}
+
+export interface UseCaseExample {
+  title: string;
+  situation: string;
+  solution: string;
+  result: string;
+}
+
 export interface FactoringCompany {
   id: number;
   name: string;
@@ -26,6 +45,9 @@ export interface FactoringCompany {
   requiredDocuments: string[];
   url: string;
   category: string[];
+  strengths?: string[];
+  useCases?: UseCaseExample[];
+  reviews?: Review[];
 }
 
 export const factoringCompanies: FactoringCompany[] = [

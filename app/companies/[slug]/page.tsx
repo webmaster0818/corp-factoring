@@ -1,7 +1,9 @@
 import React from "react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import type { Metadata } from "next";
 import { getCompanyBySlug, factoringCompanies } from "@/data/companies";
+import { getCompanyStrengths, getCompanyUseCases, getCompanyReviews } from "@/data/companyExtended";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -12,6 +14,35 @@ export async function generateStaticParams() {
   return factoringCompanies.map((company) => ({
     slug: company.slug,
   }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const company = getCompanyBySlug(slug);
+
+  if (!company) {
+    return {
+      title: "ページが見つかりません",
+      description: "お探しのページは見つかりませんでした。",
+    };
+  }
+
+  const categoryText = company.category.slice(0, 3).join("・");
+  
+  return {
+    title: `${company.name}の評判・口コミ【2026年最新】手数料${company.fees.min}%〜 | ${categoryText}`,
+    description: `${company.name}のファクタリングサービスを徹底解説。手数料${company.fees.min}%〜${company.fees.max}%、${company.speed}で入金可能。${company.reviewCount}件の実績、利用者の口コミ・評判、メリット・デメリットを詳しく紹介。`,
+    keywords: `${company.name},${company.nameKana},ファクタリング,評判,口コミ,手数料,${categoryText}`,
+    openGraph: {
+      title: `${company.name}の評判・口コミ | ファクタリング手数料${company.fees.min}%〜`,
+      description: `${company.description}`,
+      type: "article",
+    },
+  };
 }
 
 export default function CompanyPage({
@@ -25,6 +56,38 @@ export default function CompanyPage({
   if (!company) {
     notFound();
   }
+
+  const strengths = getCompanyStrengths(slug);
+  const useCases = getCompanyUseCases(slug);
+  const reviews = getCompanyReviews(slug);
+
+  // 構造化データ（JSON-LD）
+  const structuredData = {
+    "@context": "https://schema.org",
+    "@type": "FinancialProduct",
+    "name": company.name,
+    "description": company.description,
+    "provider": {
+      "@type": "Organization",
+      "name": company.name,
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": company.companyInfo.address,
+      }
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": company.rating,
+      "reviewCount": company.reviewCount,
+      "bestRating": 5,
+      "worstRating": 1
+    },
+    "offers": {
+      "@type": "Offer",
+      "price": `${company.fees.min}-${company.fees.max}%`,
+      "priceCurrency": "JPY"
+    }
+  };
 
   return (
     <div className="min-h-screen bg-white">
@@ -289,6 +352,108 @@ export default function CompanyPage({
           </CardContent>
         </Card>
 
+        {/* 強み */}
+        <section className="mb-12">
+          <Card className="border-2 border-gray-100 shadow-sm">
+            <CardHeader className="bg-gray-50 border-b border-gray-100">
+              <CardTitle className="text-2xl font-black text-gray-900">💎 {company.name}の強み</CardTitle>
+            </CardHeader>
+            <CardContent className="pt-6">
+              <ul className="space-y-4">
+                {strengths.map((strength, index) => (
+                  <li key={index} className="flex items-start gap-4 bg-blue-50 p-5 rounded-xl border border-blue-100">
+                    <span className="text-2xl font-black text-blue-600">{index + 1}</span>
+                    <p className="text-gray-700 leading-relaxed font-medium flex-1">{strength}</p>
+                  </li>
+                ))}
+              </ul>
+            </CardContent>
+          </Card>
+        </section>
+
+        {/* 利用シーン・ユースケース */}
+        <section className="mb-12">
+          <Card className="border-2 border-gray-100 shadow-sm">
+            <CardHeader className="bg-gray-50 border-b border-gray-100">
+              <CardTitle className="text-2xl font-black text-gray-900">📖 {company.name}の活用事例</CardTitle>
+            </CardHeader>
+            <CardContent className="pt-6">
+              <div className="space-y-6">
+                {useCases.map((useCase, index) => (
+                  <div key={index} className="bg-gradient-to-br from-amber-50 to-orange-50 p-6 rounded-xl border border-amber-100">
+                    <h3 className="font-black text-gray-900 mb-4 text-xl">{useCase.title}</h3>
+                    <div className="space-y-4">
+                      <div>
+                        <h4 className="font-bold text-gray-700 mb-2 text-sm">💡 状況</h4>
+                        <p className="text-gray-600 leading-relaxed pl-4 border-l-4 border-amber-500">{useCase.situation}</p>
+                      </div>
+                      <div>
+                        <h4 className="font-bold text-gray-700 mb-2 text-sm">🔧 解決策</h4>
+                        <p className="text-gray-600 leading-relaxed pl-4 border-l-4 border-blue-500">{useCase.solution}</p>
+                      </div>
+                      <div>
+                        <h4 className="font-bold text-gray-700 mb-2 text-sm">✅ 結果</h4>
+                        <p className="text-gray-700 font-medium leading-relaxed pl-4 border-l-4 border-green-500">{useCase.result}</p>
+                      </div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
+        </section>
+
+        {/* 利用者の口コミ */}
+        <section className="mb-12">
+          <Card className="border-2 border-gray-100 shadow-sm">
+            <CardHeader className="bg-gray-50 border-b border-gray-100">
+              <CardTitle className="text-2xl font-black text-gray-900">💬 {company.name}の利用者の口コミ・評判</CardTitle>
+            </CardHeader>
+            <CardContent className="pt-6">
+              <div className="space-y-6">
+                {reviews.map((review) => (
+                  <div key={review.id} className="bg-white border-2 border-gray-100 rounded-xl p-6 hover:shadow-md transition">
+                    <div className="flex items-start justify-between mb-4">
+                      <div>
+                        <div className="flex items-center gap-3 mb-2">
+                          <h4 className="font-black text-gray-900 text-lg">{review.author}</h4>
+                          <Badge className="bg-gray-100 text-gray-700 font-medium">{review.industry}</Badge>
+                        </div>
+                        <p className="text-sm text-gray-600">{review.company} / {review.date}</p>
+                      </div>
+                      <div className="flex items-center gap-1">
+                        {Array.from({ length: 5 }).map((_, i) => (
+                          <span key={i} className={`text-xl ${i < review.rating ? 'text-yellow-500' : 'text-gray-300'}`}>
+                            ⭐
+                          </span>
+                        ))}
+                      </div>
+                    </div>
+                    <p className="text-gray-700 leading-relaxed mb-4">{review.content}</p>
+                    {review.pros && (
+                      <div className="bg-green-50 p-4 rounded-lg mb-2">
+                        <h5 className="font-bold text-green-700 mb-2 text-sm">✓ 良かった点</h5>
+                        <p className="text-gray-700 text-sm">{review.pros}</p>
+                      </div>
+                    )}
+                    {review.cons && (
+                      <div className="bg-orange-50 p-4 rounded-lg">
+                        <h5 className="font-bold text-orange-700 mb-2 text-sm">△ 改善してほしい点</h5>
+                        <p className="text-gray-700 text-sm">{review.cons}</p>
+                      </div>
+                    )}
+                  </div>
+                ))}
+              </div>
+              <div className="mt-6 text-center">
+                <p className="text-gray-600 text-sm">
+                  ※ 口コミは利用者の主観的な意見であり、効果を保証するものではありません。
+                </p>
+              </div>
+            </CardContent>
+          </Card>
+        </section>
+
         {/* CTA */}
         <div className="bg-gradient-to-br from-orange-500 via-amber-500 to-orange-600 rounded-2xl shadow-2xl shadow-orange-500/30 p-10 text-center text-white mb-8">
           <h2 className="text-3xl font-black mb-4">
@@ -325,6 +490,12 @@ export default function CompanyPage({
       </div>
 
       <Footer />
+
+      {/* 構造化データ（JSON-LD） */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
     </div>
   );
 }
