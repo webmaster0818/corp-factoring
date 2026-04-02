@@ -110,8 +110,81 @@ export default function CompanyPage({
       </nav>
 
       <div className="container mx-auto px-4 max-w-5xl py-12">
+        {/* ファーストビュー画像 */}
+        <div className="mb-8">
+          <img 
+            src={`/images/companies/${slug}.jpg`} 
+            alt={`${company.name}の公式サイト`}
+            className="w-full rounded-2xl shadow-lg border border-gray-200"
+          />
+        </div>
+
+        {/* 目次 */}
+        <nav className="mb-12 bg-gradient-to-br from-orange-50 to-amber-50 rounded-2xl shadow-md p-8 border border-orange-100">
+          <h2 className="text-2xl font-black text-gray-900 mb-6 flex items-center gap-3">
+            <span className="text-orange-500">📋</span>
+            目次
+          </h2>
+          <div className="grid md:grid-cols-2 gap-4">
+            <a href="#overview" className="text-gray-700 hover:text-orange-600 font-medium py-2 px-4 bg-white rounded-lg hover:bg-orange-50 transition border border-gray-200 flex items-center gap-2">
+              <span className="text-orange-500">▶</span>
+              会社概要・基本情報
+            </a>
+            {details.performance && details.performance.length > 0 && (
+              <a href="#performance" className="text-gray-700 hover:text-orange-600 font-medium py-2 px-4 bg-white rounded-lg hover:bg-orange-50 transition border border-gray-200 flex items-center gap-2">
+                <span className="text-orange-500">▶</span>
+                実績推移データ
+              </a>
+            )}
+            {details.mediaCoverage && details.mediaCoverage.length > 0 && (
+              <a href="#media" className="text-gray-700 hover:text-orange-600 font-medium py-2 px-4 bg-white rounded-lg hover:bg-orange-50 transition border border-gray-200 flex items-center gap-2">
+                <span className="text-orange-500">▶</span>
+                メディア掲載実績
+              </a>
+            )}
+            <a href="#pros-cons" className="text-gray-700 hover:text-orange-600 font-medium py-2 px-4 bg-white rounded-lg hover:bg-orange-50 transition border border-gray-200 flex items-center gap-2">
+              <span className="text-orange-500">▶</span>
+              メリット・デメリット
+            </a>
+            <a href="#strengths" className="text-gray-700 hover:text-orange-600 font-medium py-2 px-4 bg-white rounded-lg hover:bg-orange-50 transition border border-gray-200 flex items-center gap-2">
+              <span className="text-orange-500">▶</span>
+              {company.name}の強み
+            </a>
+            <a href="#use-cases" className="text-gray-700 hover:text-orange-600 font-medium py-2 px-4 bg-white rounded-lg hover:bg-orange-50 transition border border-gray-200 flex items-center gap-2">
+              <span className="text-orange-500">▶</span>
+              活用事例
+            </a>
+            <a href="#reviews" className="text-gray-700 hover:text-orange-600 font-medium py-2 px-4 bg-white rounded-lg hover:bg-orange-50 transition border border-gray-200 flex items-center gap-2">
+              <span className="text-orange-500">▶</span>
+              利用者の口コミ
+            </a>
+            <a href="#offices" className="text-gray-700 hover:text-orange-600 font-medium py-2 px-4 bg-white rounded-lg hover:bg-orange-50 transition border border-gray-200 flex items-center gap-2">
+              <span className="text-orange-500">▶</span>
+              営業時間・拠点
+            </a>
+            <a href="#audit" className="text-gray-700 hover:text-orange-600 font-medium py-2 px-4 bg-white rounded-lg hover:bg-orange-50 transition border border-gray-200 flex items-center gap-2">
+              <span className="text-orange-500">▶</span>
+              審査について
+            </a>
+            <a href="#flow" className="text-gray-700 hover:text-orange-600 font-medium py-2 px-4 bg-white rounded-lg hover:bg-orange-50 transition border border-gray-200 flex items-center gap-2">
+              <span className="text-orange-500">▶</span>
+              利用の流れ
+            </a>
+            <a href="#faq" className="text-gray-700 hover:text-orange-600 font-medium py-2 px-4 bg-white rounded-lg hover:bg-orange-50 transition border border-gray-200 flex items-center gap-2">
+              <span className="text-orange-500">▶</span>
+              よくある質問
+            </a>
+            {details.comparisons.length > 0 && (
+              <a href="#comparison" className="text-gray-700 hover:text-orange-600 font-medium py-2 px-4 bg-white rounded-lg hover:bg-orange-50 transition border border-gray-200 flex items-center gap-2">
+                <span className="text-orange-500">▶</span>
+                他社比較
+              </a>
+            )}
+          </div>
+        </nav>
+
         {/* ヘッダー */}
-        <div className="bg-gradient-to-br from-orange-50 to-amber-50 rounded-2xl shadow-lg p-8 mb-8 border border-orange-100">
+        <div id="overview" className="bg-gradient-to-br from-orange-50 to-amber-50 rounded-2xl shadow-lg p-8 mb-8 border border-orange-100 scroll-mt-4">
           <div className="flex items-start gap-6 mb-6">
             <div className="flex-1">
               <h1 className="text-4xl font-black text-gray-900 mb-3 leading-tight">
@@ -202,7 +275,7 @@ export default function CompanyPage({
 
         {/* 実績データの推移 */}
         {details.performance && details.performance.length > 0 && (
-          <section className="mb-12">
+          <section id="performance" className="mb-12 scroll-mt-4">
             <Card className="border-2 border-gray-100 shadow-sm">
               <CardHeader className="bg-gray-50 border-b border-gray-100">
                 <CardTitle className="text-2xl font-black text-gray-900">📊 {company.name}の実績推移</CardTitle>
@@ -238,7 +311,7 @@ export default function CompanyPage({
 
         {/* メディア掲載実績 */}
         {details.mediaCoverage && details.mediaCoverage.length > 0 && (
-          <section className="mb-12">
+          <section id="media" className="mb-12 scroll-mt-4">
             <Card className="border-2 border-gray-100 shadow-sm">
               <CardHeader className="bg-gray-50 border-b border-gray-100">
                 <CardTitle className="text-2xl font-black text-gray-900">📰 {company.name}のメディア掲載実績</CardTitle>
@@ -280,7 +353,7 @@ export default function CompanyPage({
         )}
 
         {/* メリット・デメリット */}
-        <Card className="mb-8 border-2 border-gray-100 shadow-sm">
+        <Card id="pros-cons" className="mb-8 border-2 border-gray-100 shadow-sm scroll-mt-4">
           <CardHeader className="bg-gray-50 border-b border-gray-100">
             <CardTitle className="text-2xl font-black text-gray-900">⚖️ メリット・デメリット</CardTitle>
           </CardHeader>
@@ -372,7 +445,7 @@ export default function CompanyPage({
         </Card>
 
         {/* こんな人におすすめ */}
-        <Card className="mb-8 border-2 border-gray-100 shadow-sm">
+        <Card id="strengths" className="mb-8 border-2 border-gray-100 shadow-sm scroll-mt-4">
           <CardHeader className="bg-gray-50 border-b border-gray-100">
             <CardTitle className="text-2xl font-black text-gray-900">👥 こんな人におすすめ</CardTitle>
           </CardHeader>
@@ -454,7 +527,7 @@ export default function CompanyPage({
         </section>
 
         {/* 利用シーン・ユースケース */}
-        <section className="mb-12">
+        <section id="use-cases" className="mb-12 scroll-mt-4">
           <Card className="border-2 border-gray-100 shadow-sm">
             <CardHeader className="bg-gray-50 border-b border-gray-100">
               <CardTitle className="text-2xl font-black text-gray-900">📖 {company.name}の活用事例</CardTitle>
@@ -493,7 +566,7 @@ export default function CompanyPage({
         />
 
         {/* 営業時間・事業拠点 */}
-        <section className="mb-12">
+        <section id="offices" className="mb-12 scroll-mt-4">
           <Card className="border-2 border-gray-100 shadow-sm">
             <CardHeader className="bg-gray-50 border-b border-gray-100">
               <CardTitle className="text-2xl font-black text-gray-900">🏢 {company.name}の営業時間・事業拠点</CardTitle>
@@ -552,7 +625,7 @@ export default function CompanyPage({
         </section>
 
         {/* 審査について */}
-        <section className="mb-12">
+        <section id="audit" className="mb-12 scroll-mt-4">
           <Card className="border-2 border-gray-100 shadow-sm">
             <CardHeader className="bg-gray-50 border-b border-gray-100">
               <CardTitle className="text-2xl font-black text-gray-900">📋 {company.name}の審査について</CardTitle>
@@ -578,7 +651,7 @@ export default function CompanyPage({
         </section>
 
         {/* 利用の流れ */}
-        <section className="mb-12">
+        <section id="flow" className="mb-12 scroll-mt-4">
           <Card className="border-2 border-gray-100 shadow-sm">
             <CardHeader className="bg-gray-50 border-b border-gray-100">
               <CardTitle className="text-2xl font-black text-gray-900">📝 {company.name}の利用の流れ</CardTitle>
@@ -607,7 +680,7 @@ export default function CompanyPage({
         </section>
 
         {/* よくある質問（FAQ） */}
-        <section className="mb-12">
+        <section id="faq" className="mb-12 scroll-mt-4">
           <Card className="border-2 border-gray-100 shadow-sm">
             <CardHeader className="bg-gray-50 border-b border-gray-100">
               <CardTitle className="text-2xl font-black text-gray-900">❓ {company.name}のよくある質問</CardTitle>
@@ -627,7 +700,7 @@ export default function CompanyPage({
 
         {/* 他社比較 */}
         {details.comparisons.length > 0 && (
-          <section className="mb-12">
+          <section id="comparison" className="mb-12 scroll-mt-4">
             <Card className="border-2 border-gray-100 shadow-sm">
               <CardHeader className="bg-gray-50 border-b border-gray-100">
                 <CardTitle className="text-2xl font-black text-gray-900">⚖️ {company.name}と他社の比較</CardTitle>

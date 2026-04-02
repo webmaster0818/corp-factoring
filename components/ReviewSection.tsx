@@ -20,7 +20,7 @@ export function ReviewSection({ companyName, positiveReviews, negativeReviews }:
   const displayReviews = showAll ? currentReviews : currentReviews.slice(0, 5);
 
   return (
-    <section className="mb-12">
+    <section id="reviews" className="mb-12 scroll-mt-4">
       <Card className="border-2 border-gray-100 shadow-sm">
         <CardHeader className="bg-gray-50 border-b border-gray-100">
           <CardTitle className="text-2xl font-black text-gray-900">
