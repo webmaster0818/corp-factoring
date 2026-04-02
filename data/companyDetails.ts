@@ -201,6 +201,77 @@ const beTradingDetails: CompanyDetailData = {
   ]
 };
 
+// QuQuMo（ククモ）の詳細情報
+const quQuMoDetails: CompanyDetailData = {
+  operatingHours: {
+    weekdays: "平日 9:00 〜 18:00（オンライン申込は24時間受付）",
+    saturday: "定休日",
+    sunday: "定休日",
+    holidays: "定休日"
+  },
+  offices: [
+    {
+      name: "本社",
+      address: "〒171-0022 東京都豊島区南池袋2-13-10 南池袋山本ビル3階"
+    }
+  ],
+  audit: {
+    features: [
+      "オンライン完結で柔軟な審査",
+      "必要書類は請求書と通帳の2点のみ",
+      "手数料1%〜と業界最安水準",
+      "売掛金があれば個人事業主も利用可能"
+    ]
+  },
+  flow: [
+    {
+      step: 1,
+      title: "お申込み",
+      description: "メールアドレスとパスワードを登録。Webフォームから必要情報を入力。",
+      duration: "10分"
+    },
+    {
+      step: 2,
+      title: "お見積り",
+      description: "請求書と通帳（3ヶ月分）をアップロード。審査後、買取額と手数料を提示。",
+      duration: "30分"
+    },
+    {
+      step: 3,
+      title: "ご契約・送金",
+      description: "クラウドサインで契約締結。契約後、最短で振込。",
+      duration: "1時間"
+    }
+  ],
+  faqs: [
+    {
+      question: "融資とは違うのでしょうか？",
+      answer: "違います。融資とは違い弊社が売掛金を買取する事で資金調達を行えます。"
+    },
+    {
+      question: "担保は必要でしょうか？",
+      answer: "いいえ、必要ございません。"
+    },
+    {
+      question: "売掛先が倒産した場合はどうしたらいいのでしょうか？",
+      answer: "売掛先の倒産リスクも含めてお買取をさせていただきますので、お客様に返済の義務はございません。QuQuMoではノンリコース【償還請求権なし】での契約になりますのでご安心ください。"
+    },
+    {
+      question: "銀行借入がありますが、資金調達は可能でしょうか？",
+      answer: "はい、売掛金があれば可能です。QuQuMoの契約は借入とは異なる為、信用情報にも一切関わりなくご利用いただけます。"
+    },
+    {
+      question: "契約や利用するにあたり面談はありますでしょうか？",
+      answer: "いいえ、必要ございません。申込から契約締結まで全てオンライン完結で利用可能です。ただし、お客様の状況に応じてサポート窓口よりお電話にて簡単なヒアリングをさせていただく場合があります。"
+    },
+    {
+      question: "入金までどのくらいの時間がかかりますか？",
+      answer: "最短で申込から入金まで2時間です。ただし、必要書類がそろっている前提となります。"
+    }
+  ],
+  comparisons: []
+};
+
 // デフォルトの詳細情報（他の業者用）
 const defaultDetails: CompanyDetailData = {
   operatingHours: {
@@ -254,11 +325,49 @@ const defaultDetails: CompanyDetailData = {
   comparisons: []
 };
 
+import { getCompanyBySlug } from "./companies";
+
 export function getCompanyDetails(slug: string): CompanyDetailData {
   switch (slug) {
     case "be-trading":
       return beTradingDetails;
+    case "ququmo":
+      return quQuMoDetails;
     default:
-      return defaultDetails;
+      // 既存のcompanyInfoから詳細データを生成
+      const company = getCompanyBySlug(slug);
+      if (!company) return defaultDetails;
+      
+      return {
+        ...defaultDetails,
+        offices: [
+          {
+            name: "本社",
+            address: company.companyInfo.address
+          }
+        ],
+        faqs: [
+          {
+            question: "土日に対応していますか？",
+            answer: "営業時間については公式サイトをご確認ください。"
+          },
+          {
+            question: "利用できない業種はありますか？",
+            answer: "基本的にどの業種でもご利用いただけます。詳しくはお問い合わせください。"
+          },
+          {
+            question: "初めてのファクタリングでも利用できますか？",
+            answer: "はい、初めての方でも安心してご利用いただけます。専任担当者が丁寧にサポートいたします。"
+          },
+          {
+            question: "審査に必要な書類は？",
+            answer: `基本的には${company.requiredDocuments.join("、")}が必要です。状況に応じて追加書類をお願いする場合がございます。`
+          },
+          {
+            question: "手数料はどのくらいですか？",
+            answer: `手数料は${company.fees.min}%〜${company.fees.max}%程度です。売掛先の信用力や取引履歴によって変動します。`
+          }
+        ]
+      };
   }
 }
