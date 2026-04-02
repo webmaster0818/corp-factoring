@@ -200,6 +200,85 @@ export default function CompanyPage({
           </CardContent>
         </Card>
 
+        {/* 実績データの推移 */}
+        {details.performance && details.performance.length > 0 && (
+          <section className="mb-12">
+            <Card className="border-2 border-gray-100 shadow-sm">
+              <CardHeader className="bg-gray-50 border-b border-gray-100">
+                <CardTitle className="text-2xl font-black text-gray-900">📊 {company.name}の実績推移</CardTitle>
+              </CardHeader>
+              <CardContent className="pt-6">
+                <div className="overflow-x-auto">
+                  <table className="w-full text-sm">
+                    <thead>
+                      <tr className="border-b-2 border-gray-300">
+                        <th className="text-left p-3 font-black bg-gray-100">年度</th>
+                        <th className="text-right p-3 font-black bg-gray-100">買取債権額</th>
+                        <th className="text-right p-3 font-black bg-gray-100">利用者数</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {details.performance.map((data, index) => (
+                        <tr key={data.year} className={index % 2 === 0 ? "bg-white" : "bg-gray-50"}>
+                          <td className="p-3 font-bold text-gray-700">{data.year}年</td>
+                          <td className="p-3 text-right font-medium text-orange-600">{data.amount}</td>
+                          <td className="p-3 text-right font-medium text-blue-600">{data.users}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+                <p className="mt-4 text-sm text-gray-600">
+                  ※ 2024年3月時点のデータです。継続的な成長を続けており、多くの企業に信頼されています。
+                </p>
+              </CardContent>
+            </Card>
+          </section>
+        )}
+
+        {/* メディア掲載実績 */}
+        {details.mediaCoverage && details.mediaCoverage.length > 0 && (
+          <section className="mb-12">
+            <Card className="border-2 border-gray-100 shadow-sm">
+              <CardHeader className="bg-gray-50 border-b border-gray-100">
+                <CardTitle className="text-2xl font-black text-gray-900">📰 {company.name}のメディア掲載実績</CardTitle>
+              </CardHeader>
+              <CardContent className="pt-6">
+                <div className="space-y-4">
+                  {details.mediaCoverage.map((media, index) => (
+                    <div key={index} className="bg-gradient-to-r from-orange-50 to-amber-50 p-6 rounded-lg border border-orange-100">
+                      <div className="flex items-start gap-4">
+                        <div className="flex-shrink-0 w-12 h-12 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-lg">
+                          📰
+                        </div>
+                        <div className="flex-grow">
+                          <h3 className="font-bold text-xl mb-2 text-gray-900">{media.name}</h3>
+                          {media.description && (
+                            <p className="text-gray-700 mb-3">{media.description}</p>
+                          )}
+                          {media.url && (
+                            <a 
+                              href={media.url} 
+                              target="_blank" 
+                              rel="noopener noreferrer"
+                              className="text-orange-600 hover:text-orange-700 font-medium text-sm inline-flex items-center gap-1"
+                            >
+                              詳細を見る →
+                            </a>
+                          )}
+                          {media.date && (
+                            <p className="text-sm text-gray-500 mt-2">掲載日: {media.date}</p>
+                          )}
+                        </div>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+          </section>
+        )}
+
         {/* メリット・デメリット */}
         <Card className="mb-8 border-2 border-gray-100 shadow-sm">
           <CardHeader className="bg-gray-50 border-b border-gray-100">
