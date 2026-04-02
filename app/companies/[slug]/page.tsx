@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { getCompanyBySlug, factoringCompanies } from "@/data/companies";
 import { getCompanyStrengths, getCompanyUseCases, getCompanyGoogleReviews } from "@/data/companyExtended";
+import { getCompanyDetails } from "@/data/companyDetails";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -61,6 +62,7 @@ export default function CompanyPage({
   const strengths = getCompanyStrengths(slug);
   const useCases = getCompanyUseCases(slug);
   const googleReviews = getCompanyGoogleReviews(slug);
+  const details = getCompanyDetails(slug);
 
   // 構造化データ（JSON-LD）
   const structuredData = {
@@ -410,6 +412,189 @@ export default function CompanyPage({
           positiveReviews={googleReviews.positive}
           negativeReviews={googleReviews.negative}
         />
+
+        {/* 営業時間・事業拠点 */}
+        <section className="mb-12">
+          <Card className="border-2 border-gray-100 shadow-sm">
+            <CardHeader className="bg-gray-50 border-b border-gray-100">
+              <CardTitle className="text-2xl font-black text-gray-900">🏢 {company.name}の営業時間・事業拠点</CardTitle>
+            </CardHeader>
+            <CardContent className="pt-6">
+              <div className="mb-8">
+                <h3 className="font-bold text-xl mb-4">営業時間</h3>
+                <div className="bg-gray-50 p-6 rounded-lg">
+                  <div className="grid grid-cols-2 gap-4">
+                    <div>
+                      <p className="text-gray-600 text-sm mb-1">平日</p>
+                      <p className="font-bold text-lg">{details.operatingHours.weekdays}</p>
+                    </div>
+                    {details.operatingHours.saturday && (
+                      <div>
+                        <p className="text-gray-600 text-sm mb-1">土曜日</p>
+                        <p className="font-bold text-lg">{details.operatingHours.saturday}</p>
+                      </div>
+                    )}
+                    {details.operatingHours.sunday && (
+                      <div>
+                        <p className="text-gray-600 text-sm mb-1">日曜・祝日</p>
+                        <p className="font-bold text-lg">{details.operatingHours.sunday}</p>
+                      </div>
+                    )}
+                  </div>
+                  {details.operatingHours.note && (
+                    <p className="mt-4 text-gray-600 text-sm">{details.operatingHours.note}</p>
+                  )}
+                </div>
+              </div>
+
+              <div>
+                <h3 className="font-bold text-xl mb-4">事業拠点</h3>
+                <div className="space-y-4">
+                  {details.offices.map((office, index) => (
+                    <div key={index} className="bg-gray-50 p-6 rounded-lg">
+                      <h4 className="font-bold text-lg mb-2">{office.name}</h4>
+                      <p className="text-gray-700 mb-2">{office.address}</p>
+                      {office.mapUrl && (
+                        <a 
+                          href={office.mapUrl} 
+                          target="_blank" 
+                          rel="noopener noreferrer"
+                          className="text-orange-600 hover:text-orange-700 font-medium text-sm inline-flex items-center gap-1"
+                        >
+                          📍 Googleマップで見る →
+                        </a>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </CardContent>
+          </Card>
+        </section>
+
+        {/* 審査について */}
+        <section className="mb-12">
+          <Card className="border-2 border-gray-100 shadow-sm">
+            <CardHeader className="bg-gray-50 border-b border-gray-100">
+              <CardTitle className="text-2xl font-black text-gray-900">📋 {company.name}の審査について</CardTitle>
+            </CardHeader>
+            <CardContent className="pt-6">
+              {details.audit.passRate && (
+                <div className="mb-6 bg-orange-50 p-6 rounded-lg border-2 border-orange-100">
+                  <h3 className="font-bold text-lg mb-2">審査通過率</h3>
+                  <p className="text-3xl font-black text-orange-600">{details.audit.passRate}</p>
+                </div>
+              )}
+              <h3 className="font-bold text-xl mb-4">審査の特徴</h3>
+              <ul className="space-y-3">
+                {details.audit.features.map((feature, index) => (
+                  <li key={index} className="flex items-start gap-3">
+                    <span className="text-orange-500 text-xl mt-1">✓</span>
+                    <span className="text-gray-700">{feature}</span>
+                  </li>
+                ))}
+              </ul>
+            </CardContent>
+          </Card>
+        </section>
+
+        {/* 利用の流れ */}
+        <section className="mb-12">
+          <Card className="border-2 border-gray-100 shadow-sm">
+            <CardHeader className="bg-gray-50 border-b border-gray-100">
+              <CardTitle className="text-2xl font-black text-gray-900">📝 {company.name}の利用の流れ</CardTitle>
+            </CardHeader>
+            <CardContent className="pt-6">
+              <div className="space-y-6">
+                {details.flow.map((step) => (
+                  <div key={step.step} className="flex gap-6">
+                    <div className="flex-shrink-0">
+                      <div className="w-16 h-16 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-2xl">
+                        {step.step}
+                      </div>
+                    </div>
+                    <div className="flex-grow">
+                      <h3 className="font-bold text-xl mb-2">{step.title}</h3>
+                      <p className="text-gray-700 mb-2">{step.description}</p>
+                      {step.duration && (
+                        <p className="text-orange-600 font-medium text-sm">⏱ {step.duration}</p>
+                      )}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
+        </section>
+
+        {/* よくある質問（FAQ） */}
+        <section className="mb-12">
+          <Card className="border-2 border-gray-100 shadow-sm">
+            <CardHeader className="bg-gray-50 border-b border-gray-100">
+              <CardTitle className="text-2xl font-black text-gray-900">❓ {company.name}のよくある質問</CardTitle>
+            </CardHeader>
+            <CardContent className="pt-6">
+              <div className="space-y-6">
+                {details.faqs.map((faq, index) => (
+                  <div key={index} className="border-b border-gray-200 pb-6 last:border-0 last:pb-0">
+                    <h3 className="font-bold text-lg mb-3 text-gray-900">Q. {faq.question}</h3>
+                    <p className="text-gray-700 pl-6">{faq.answer}</p>
+                  </div>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
+        </section>
+
+        {/* 他社比較 */}
+        {details.comparisons.length > 0 && (
+          <section className="mb-12">
+            <Card className="border-2 border-gray-100 shadow-sm">
+              <CardHeader className="bg-gray-50 border-b border-gray-100">
+                <CardTitle className="text-2xl font-black text-gray-900">⚖️ {company.name}と他社の比較</CardTitle>
+              </CardHeader>
+              <CardContent className="pt-6">
+                <div className="overflow-x-auto">
+                  <table className="w-full">
+                    <thead>
+                      <tr className="border-b-2 border-gray-200">
+                        <th className="text-left p-4 font-black">業者名</th>
+                        <th className="text-left p-4 font-black">取扱額</th>
+                        <th className="text-left p-4 font-black">入金スピード</th>
+                        <th className="text-left p-4 font-black">対象</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr className="bg-orange-50 border-b border-gray-100">
+                        <td className="p-4 font-bold">{company.name}</td>
+                        <td className="p-4">{company.minAmount}万円〜{company.maxAmount}</td>
+                        <td className="p-4">{company.speed}</td>
+                        <td className="p-4">{company.personalSupport ? "個人事業主・法人" : "法人"}</td>
+                      </tr>
+                      {details.comparisons.map((comp, index) => (
+                        <tr key={index} className="border-b border-gray-100">
+                          <td className="p-4 font-bold">{comp.companyName}</td>
+                          <td className="p-4">{comp.amount}</td>
+                          <td className="p-4">{comp.speed}</td>
+                          <td className="p-4">{comp.target}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+                <div className="mt-6 space-y-2">
+                  {details.comparisons.map((comp, index) => (
+                    comp.note && (
+                      <p key={index} className="text-sm text-gray-600">
+                        ※ {comp.companyName}: {comp.note}
+                      </p>
+                    )
+                  ))}
+                </div>
+              </CardContent>
+            </Card>
+          </section>
+        )}
 
         {/* CTA */}
         <div className="bg-gradient-to-br from-orange-500 via-amber-500 to-orange-600 rounded-2xl shadow-2xl shadow-orange-500/30 p-10 text-center text-white mb-8">
