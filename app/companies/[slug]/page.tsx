@@ -110,23 +110,6 @@ export default function CompanyPage({
       </nav>
 
       <div className="container mx-auto px-4 max-w-5xl py-12">
-        {/* ファーストビュー画像 + タイトルオーバーレイ */}
-        <div className="relative mb-8">
-          <img 
-            src={`/images/companies/${slug}.${slug === 'be-trading' || slug === 'ququmo' || slug === 'best-factor' ? 'png' : 'jpg'}`} 
-            alt={`${company.name}の公式サイト`}
-            className="w-full rounded-2xl shadow-lg border border-gray-200"
-          />
-          {/* タイトルオーバーレイ */}
-          <div className="absolute inset-0 flex items-center justify-center px-4 md:px-8">
-            <h1 className="text-2xl md:text-4xl lg:text-5xl font-black text-white leading-tight text-center drop-shadow-2xl">
-              <span className="inline-block bg-blue-600 px-3 py-2 md:px-4 md:py-3 rounded-lg mb-2">【{company.name}】の</span>{" "}
-              <span className="inline-block bg-blue-600 px-3 py-2 md:px-4 md:py-3 rounded-lg mb-2">評判・口コミ・手数料</span>{" "}
-              <span className="inline-block bg-blue-600 px-3 py-2 md:px-4 md:py-3 rounded-lg">を徹底解説【2026年最新】</span>
-            </h1>
-          </div>
-        </div>
-
         {/* 目次 */}
         <nav className="mb-12 bg-gradient-to-br from-orange-50 to-amber-50 rounded-2xl shadow-md p-8 border border-orange-100">
           <h2 className="text-2xl font-black text-gray-900 mb-6 flex items-center gap-3">
