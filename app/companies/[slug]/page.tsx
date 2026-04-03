@@ -110,6 +110,11 @@ export default function CompanyPage({
       </nav>
 
       <div className="container mx-auto px-4 max-w-5xl py-12">
+        {/* 記事タイトル */}
+        <h1 className="text-3xl md:text-4xl font-black text-gray-900 mb-6 text-center leading-tight">
+          【{company.name}】の評判・口コミ・手数料を徹底解説【2026年最新】
+        </h1>
+
         {/* ファーストビュー画像 */}
         <div className="mb-8">
           <img 
