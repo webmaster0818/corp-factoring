@@ -113,7 +113,7 @@ export default function CompanyPage({
         {/* ファーストビュー画像 */}
         <div className="mb-8">
           <img 
-            src={`/images/companies/${slug}.jpg`} 
+            src={`/images/companies/${slug}.${slug === 'be-trading' ? 'png' : 'jpg'}`} 
             alt={`${company.name}の公式サイト`}
             className="w-full rounded-2xl shadow-lg border border-gray-200"
           />
