@@ -110,6 +110,17 @@ export default function CompanyPage({
       </nav>
 
       <div className="container mx-auto px-4 max-w-5xl py-12">
+        {/* ヒーロー画像 */}
+        {(slug === 'ququmo' || slug === 'accel-factor' || slug === 'best-factor') && (
+          <div className="mb-8">
+            <img 
+              src={`/images/companies/${slug}.png`} 
+              alt={`${company.name}の評判・口コミ・手数料を徹底解説`}
+              className="w-full rounded-lg shadow-md"
+            />
+          </div>
+        )}
+
         {/* 目次 */}
         <nav className="mb-12 bg-white rounded-lg shadow-sm p-8 border border-gray-200">
           <h2 className="text-2xl font-bold text-gray-900 mb-6 pb-3 border-b border-gray-200">
