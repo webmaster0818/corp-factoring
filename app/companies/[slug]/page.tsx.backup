@@ -100,9 +100,9 @@ export default function CompanyPage({
       <nav className="bg-gray-50 py-3 border-b border-gray-100">
         <div className="container mx-auto px-4 max-w-5xl">
           <div className="text-sm text-gray-600">
-            <Link href="/" className="hover:text-blue-600">ホーム</Link>
+            <Link href="/" className="hover:text-orange-600">ホーム</Link>
             <span className="mx-2">＞</span>
-            <Link href="/#ranking" className="hover:text-blue-600">ランキング</Link>
+            <Link href="/#ranking" className="hover:text-orange-600">ランキング</Link>
             <span className="mx-2">＞</span>
             <span className="text-gray-900 font-medium">{company.name}</span>
           </div>
@@ -241,7 +241,7 @@ export default function CompanyPage({
                   {company.speed}
                 </p>
               </div>
-              <div className="bg-gray-50 p-5 rounded-xl border border-gray-200">
+              <div className="bg-amber-50 p-5 rounded-xl border border-amber-100">
                 <h3 className="font-bold text-gray-700 mb-2 text-sm">📈 買取可能額</h3>
                 <p className="text-xl font-bold text-gray-900">
                   {company.minAmount === 0
@@ -254,9 +254,9 @@ export default function CompanyPage({
                 <h3 className="font-bold text-gray-700 mb-2 text-sm">👤 個人事業主</h3>
                 <p className="text-xl font-bold text-gray-900">
                   {company.personalSupport ? (
-                    <span className="text-green-600 font-black">対応</span>
+                    <span className="text-green-600 font-black">✓ 対応</span>
                   ) : (
-                    <span className="text-gray-500 font-bold">非対応</span>
+                    <span className="text-gray-500 font-bold">✗ 非対応</span>
                   )}
                 </p>
               </div>
@@ -285,7 +285,7 @@ export default function CompanyPage({
                       {details.performance.map((data, index) => (
                         <tr key={data.year} className={index % 2 === 0 ? "bg-white" : "bg-gray-50"}>
                           <td className="p-3 font-bold text-gray-700">{data.year}年</td>
-                          <td className="p-3 text-right font-medium text-blue-600">{data.amount}</td>
+                          <td className="p-3 text-right font-medium text-orange-600">{data.amount}</td>
                           <td className="p-3 text-right font-medium text-blue-600">{data.users}</td>
                         </tr>
                       ))}
@@ -310,9 +310,9 @@ export default function CompanyPage({
               <CardContent className="pt-6">
                 <div className="space-y-4">
                   {details.mediaCoverage.map((media, index) => (
-                    <div key={index} className="bg-gradient-to-r from-blue-50 to-gray-50 p-6 rounded-lg border border-blue-100">
+                    <div key={index} className="bg-gradient-to-r from-orange-50 to-amber-50 p-6 rounded-lg border border-orange-100">
                       <div className="flex items-start gap-4">
-                        <div className="flex-shrink-0 w-12 h-12 bg-blue-500 text-white rounded-full flex items-center justify-center font-black text-lg">
+                        <div className="flex-shrink-0 w-12 h-12 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-lg">
                           📰
                         </div>
                         <div className="flex-grow">
@@ -325,7 +325,7 @@ export default function CompanyPage({
                               href={media.url} 
                               target="_blank" 
                               rel="noopener noreferrer"
-                              className="text-blue-600 hover:text-blue-700 font-medium text-sm inline-flex items-center gap-1"
+                              className="text-orange-600 hover:text-orange-700 font-medium text-sm inline-flex items-center gap-1"
                             >
                               詳細を見る →
                             </a>
@@ -353,7 +353,7 @@ export default function CompanyPage({
               {/* メリット */}
               <div className="bg-green-50 p-6 rounded-xl border border-green-100">
                 <h3 className="font-black text-green-700 mb-4 text-xl">
-                  メリット
+                  ✓ メリット
                 </h3>
                 <ul className="space-y-3">
                   {company.pros.map((pro, index) => (
@@ -366,14 +366,14 @@ export default function CompanyPage({
               </div>
 
               {/* デメリット */}
-              <div className="bg-blue-50 p-6 rounded-xl border border-blue-100">
-                <h3 className="font-black text-blue-700 mb-4 text-xl">
-                  デメリット
+              <div className="bg-orange-50 p-6 rounded-xl border border-orange-100">
+                <h3 className="font-black text-orange-700 mb-4 text-xl">
+                  ✗ デメリット
                 </h3>
                 <ul className="space-y-3">
                   {company.cons.map((con, index) => (
                     <li key={index} className="flex items-start gap-3">
-                      <span className="text-blue-600 mt-0.5 text-lg font-bold">✗</span>
+                      <span className="text-orange-600 mt-0.5 text-lg font-bold">✗</span>
                       <span className="text-gray-700 leading-relaxed">{con}</span>
                     </li>
                   ))}
@@ -420,7 +420,7 @@ export default function CompanyPage({
                   <h3 className="font-bold text-gray-700 mb-2 text-sm">カテゴリ</h3>
                   <div className="flex flex-wrap gap-1.5">
                     {company.category.map((cat, index) => (
-                      <Badge key={index} className="bg-blue-100 text-blue-700 border-blue-200 text-xs font-bold">
+                      <Badge key={index} className="bg-orange-100 text-orange-700 border-orange-200 text-xs font-bold">
                         {cat}
                       </Badge>
                     ))}
@@ -443,7 +443,7 @@ export default function CompanyPage({
           <CardContent className="pt-6">
             <div className="space-y-4">
               {company.category.includes("即日") && (
-                <div className="flex items-start gap-4 bg-gray-50 p-5 rounded-xl border border-gray-200">
+                <div className="flex items-start gap-4 bg-amber-50 p-5 rounded-xl border border-amber-100">
                   <span className="text-3xl">⚡</span>
                   <div>
                     <h4 className="font-black text-gray-900 mb-2 text-lg">
@@ -526,12 +526,12 @@ export default function CompanyPage({
             <CardContent className="pt-6">
               <div className="space-y-6">
                 {useCases.map((useCase, index) => (
-                  <div key={index} className="bg-gradient-to-br from-gray-50 to-blue-50 p-6 rounded-xl border border-gray-200">
+                  <div key={index} className="bg-gradient-to-br from-amber-50 to-orange-50 p-6 rounded-xl border border-amber-100">
                     <h3 className="font-black text-gray-900 mb-4 text-xl">{useCase.title}</h3>
                     <div className="space-y-4">
                       <div>
                         <h4 className="font-bold text-gray-700 mb-2 text-sm">💡 状況</h4>
-                        <p className="text-gray-600 leading-relaxed pl-4 border-l-4 border-gray-500">{useCase.situation}</p>
+                        <p className="text-gray-600 leading-relaxed pl-4 border-l-4 border-amber-500">{useCase.situation}</p>
                       </div>
                       <div>
                         <h4 className="font-bold text-gray-700 mb-2 text-sm">🔧 解決策</h4>
@@ -602,7 +602,7 @@ export default function CompanyPage({
                           href={office.mapUrl} 
                           target="_blank" 
                           rel="noopener noreferrer"
-                          className="text-blue-600 hover:text-blue-700 font-medium text-sm inline-flex items-center gap-1"
+                          className="text-orange-600 hover:text-orange-700 font-medium text-sm inline-flex items-center gap-1"
                         >
                           📍 Googleマップで見る →
                         </a>
@@ -623,16 +623,16 @@ export default function CompanyPage({
             </CardHeader>
             <CardContent className="pt-6">
               {details.audit.passRate && (
-                <div className="mb-6 bg-blue-50 p-6 rounded-lg border-2 border-blue-100">
+                <div className="mb-6 bg-orange-50 p-6 rounded-lg border-2 border-orange-100">
                   <h3 className="font-bold text-lg mb-2">審査通過率</h3>
-                  <p className="text-3xl font-black text-blue-600">{details.audit.passRate}</p>
+                  <p className="text-3xl font-black text-orange-600">{details.audit.passRate}</p>
                 </div>
               )}
               <h3 className="font-bold text-xl mb-4">審査の特徴</h3>
               <ul className="space-y-3">
                 {details.audit.features.map((feature, index) => (
                   <li key={index} className="flex items-start gap-3">
-                    <span className="text-blue-500 text-xl mt-1">✓</span>
+                    <span className="text-orange-500 text-xl mt-1">✓</span>
                     <span className="text-gray-700">{feature}</span>
                   </li>
                 ))}
@@ -652,7 +652,7 @@ export default function CompanyPage({
                 {details.flow.map((step) => (
                   <div key={step.step} className="flex gap-6">
                     <div className="flex-shrink-0">
-                      <div className="w-16 h-16 bg-blue-500 text-white rounded-full flex items-center justify-center font-black text-2xl">
+                      <div className="w-16 h-16 bg-orange-500 text-white rounded-full flex items-center justify-center font-black text-2xl">
                         {step.step}
                       </div>
                     </div>
@@ -660,7 +660,7 @@ export default function CompanyPage({
                       <h3 className="font-bold text-xl mb-2">{step.title}</h3>
                       <p className="text-gray-700 mb-2">{step.description}</p>
                       {step.duration && (
-                        <p className="text-blue-600 font-medium text-sm">{step.duration}</p>
+                        <p className="text-orange-600 font-medium text-sm">⏱ {step.duration}</p>
                       )}
                     </div>
                   </div>
@@ -708,7 +708,7 @@ export default function CompanyPage({
                       </tr>
                     </thead>
                     <tbody>
-                      <tr className="bg-blue-50 border-b border-gray-100">
+                      <tr className="bg-orange-50 border-b border-gray-100">
                         <td className="p-4 font-bold">{company.name}</td>
                         <td className="p-4">{company.minAmount}万円〜{company.maxAmount}</td>
                         <td className="p-4">{company.speed}</td>
@@ -740,23 +740,23 @@ export default function CompanyPage({
         )}
 
         {/* CTA */}
-        <div className="bg-gradient-to-br from-blue-500 via-gray-500 to-blue-600 rounded-2xl shadow-2xl shadow-blue-500/30 p-10 text-center text-white mb-8">
+        <div className="bg-gradient-to-br from-orange-500 via-amber-500 to-orange-600 rounded-2xl shadow-2xl shadow-orange-500/30 p-10 text-center text-white mb-8">
           <h2 className="text-3xl font-black mb-4">
             {company.name}で無料見積もり
           </h2>
-          <p className="mb-8 text-blue-100 text-lg leading-relaxed">
+          <p className="mb-8 text-orange-100 text-lg leading-relaxed">
             まずは無料で見積もりを依頼してみましょう。手数料や条件を確認できます。
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="#"
-              className="bg-white text-blue-600 font-black py-4 px-10 rounded-2xl hover:bg-gray-100 transition shadow-lg"
+              className="bg-white text-orange-600 font-black py-4 px-10 rounded-2xl hover:bg-gray-100 transition shadow-lg"
             >
               公式サイトへ →
             </Link>
             <Link
               href="/#diagnosis"
-              className="bg-blue-700 text-white font-bold py-4 px-10 rounded-2xl hover:bg-orange-800 transition border-2 border-orange-400"
+              className="bg-orange-700 text-white font-bold py-4 px-10 rounded-2xl hover:bg-orange-800 transition border-2 border-orange-400"
             >
               🧮 無料診断ツール
             </Link>
@@ -767,7 +767,7 @@ export default function CompanyPage({
         <div className="text-center">
           <Link
             href="/"
-            className="text-blue-600 hover:text-blue-700 font-bold text-lg inline-flex items-center gap-2"
+            className="text-orange-600 hover:text-orange-700 font-bold text-lg inline-flex items-center gap-2"
           >
             ← トップページに戻る
           </Link>
