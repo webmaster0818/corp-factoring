@@ -26,6 +26,9 @@ export function Header() {
           <Link href="/#faq" className="text-gray-600 hover:text-blue font-medium text-sm">
             FAQ
           </Link>
+          <Link href="/articles" className="text-gray-600 hover:text-blue font-medium text-sm">
+            コラム
+          </Link>
           <Link href="/#about" className="text-gray-600 hover:text-blue font-medium text-sm">
             運営情報
           </Link>
