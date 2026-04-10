@@ -20,33 +20,33 @@ export default function Home() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2.5">
             <img src="/images/logo.png" alt="" className="w-11 h-11" />
-            <span className="text-[19px] font-bold text-[#F08C1E] tracking-wide">
+            <span className="text-[19px] font-bold text-[#1B3A5C] tracking-wide">
               ファクタリング比較ナビ
             </span>
           </Link>
 
           {/* Navigation Menu */}
           <div className="hidden md:flex items-center gap-7">
-            <Link href="#ranking" className="text-gray-600 hover:text-blue font-medium text-sm">
+            <Link href="#ranking" className="text-gray-600 hover:text-[#1B3A5C] font-medium text-sm">
               ランキング
             </Link>
-            <Link href="#comparison" className="text-gray-600 hover:text-blue font-medium text-sm">
+            <Link href="#comparison" className="text-gray-600 hover:text-[#1B3A5C] font-medium text-sm">
               比較表
             </Link>
-            <Link href="#diagnosis" className="text-gray-600 hover:text-blue font-medium text-sm">
+            <Link href="#diagnosis" className="text-gray-600 hover:text-[#1B3A5C] font-medium text-sm">
               診断
             </Link>
-            <Link href="#faq" className="text-gray-600 hover:text-blue font-medium text-sm">
-              FAQ
+            <Link href="/articles" className="text-gray-600 hover:text-[#1B3A5C] font-medium text-sm">
+              コラム
             </Link>
-            <Link href="#about" className="text-gray-600 hover:text-blue font-medium text-sm">
-              運営情報
+            <Link href="#faq" className="text-gray-600 hover:text-[#1B3A5C] font-medium text-sm">
+              FAQ
             </Link>
             <Link
               href="#diagnosis"
-              className="bg-gradient-to-b from-[#F5A623] to-[#E8841A] text-white px-6 py-2.5 rounded-full font-bold text-sm shadow-md shadow-orange-500/20"
+              className="bg-[#1B3A5C] text-white px-6 py-2.5 rounded-md font-bold text-sm hover:bg-[#152d47] transition"
             >
-              ⚡ 無料診断する
+              無料診断する
             </Link>
           </div>
         </div>
@@ -76,12 +76,12 @@ export default function Home() {
           </div>
 
           <div className="text-center">
-            <div className="inline-flex items-center gap-2 bg-orange-50 border border-orange-200 px-5 py-2 rounded-full text-sm font-medium mb-6">
-              <span className="text-gray-700">2026年3月 最新版｜<span className="text-orange-600 font-bold">15社</span>を徹底比較</span>
+            <div className="inline-flex items-center gap-2 bg-blue-50 border border-blue-200 px-5 py-2 rounded-md text-sm font-medium mb-6">
+              <span className="text-gray-700">2026年4月 最新版｜<span className="text-[#1B3A5C] font-bold">15社</span>を徹底比較</span>
             </div>
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-gray-900 leading-[1.2] mb-5">
               手数料・審査・入金スピードを<br />
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 via-amber-500 to-sky-500">徹底比較</span>
+              <span className="text-[#1B3A5C]">徹底比較</span>
               して最適な1社を見つけよう
             </h1>
             <p className="text-gray-500 text-lg max-w-2xl mx-auto leading-relaxed mb-8">
@@ -90,15 +90,15 @@ export default function Home() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 href="#ranking"
-                className="bg-gradient-to-r from-orange-500 to-amber-500 text-white font-black py-4 px-10 rounded-2xl text-lg text-center shadow-lg shadow-orange-500/25"
+                className="bg-[#1B3A5C] text-white font-bold py-4 px-10 rounded-md text-lg text-center hover:bg-[#152d47] transition"
               >
-                🏆 ランキングTOP15を見る
+                ランキングTOP15を見る
               </Link>
               <Link
                 href="#diagnosis"
-                className="bg-white border-2 border-sky-500 text-sky-600 font-bold py-4 px-10 rounded-2xl hover:bg-sky-50 transition text-center"
+                className="bg-white border-2 border-[#1B3A5C] text-[#1B3A5C] font-bold py-4 px-10 rounded-md hover:bg-blue-50 transition text-center"
               >
-                🧮 無料診断ツール →
+                無料診断ツール →
               </Link>
             </div>
           </div>
@@ -110,19 +110,19 @@ export default function Home() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
             <div>
-              <p className="text-3xl lg:text-4xl font-black text-orange-500">15社</p>
+              <p className="text-3xl lg:text-4xl font-black text-[#1B3A5C]">15社</p>
               <p className="text-gray-500 text-sm mt-1">掲載会社数</p>
             </div>
             <div>
-              <p className="text-3xl lg:text-4xl font-black text-sky-500">50+</p>
+              <p className="text-3xl lg:text-4xl font-black text-[#2B5F8A]">50+</p>
               <p className="text-gray-500 text-sm mt-1">比較項目数</p>
             </div>
             <div>
-              <p className="text-3xl lg:text-4xl font-black text-amber-500">毎月</p>
+              <p className="text-3xl lg:text-4xl font-black text-[#3A7CA5]">毎月</p>
               <p className="text-gray-500 text-sm mt-1">情報更新</p>
             </div>
             <div>
-              <p className="text-3xl lg:text-4xl font-black text-emerald-500">無料</p>
+              <p className="text-3xl lg:text-4xl font-black text-[#4A9BC5]">無料</p>
               <p className="text-gray-500 text-sm mt-1">診断ツール</p>
             </div>
           </div>
@@ -133,7 +133,7 @@ export default function Home() {
       <section className="py-16 bg-white">
         <div className="container mx-auto px-4 max-w-5xl">
           <div className="text-center mb-12">
-            <Badge className="mb-4 text-sm">📘 BASIC</Badge>
+            <Badge className="mb-4 text-sm bg-[#1B3A5C] text-white">BASIC</Badge>
             <h2 className="text-3xl font-bold text-gray-900 mb-4">
               ファクタリングとは？
             </h2>
@@ -201,7 +201,7 @@ export default function Home() {
       <section id="ranking" className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <Badge className="mb-4 text-sm">🏆 RANKING</Badge>
+            <Badge className="mb-4 text-sm bg-[#1B3A5C] text-white">RANKING</Badge>
             <h2 className="text-3xl font-bold text-gray-900 mb-2">
               おすすめTOP15ファクタリング会社
             </h2>
@@ -217,7 +217,12 @@ export default function Home() {
                 <CardContent className="p-6">
                   <div className="flex items-start gap-6">
                     <div className="flex-shrink-0">
-                      <div className="w-12 h-12 rounded-full bg-blue-600 text-white flex items-center justify-center text-xl font-bold">
+                      <div className={`w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold ${
+                        index === 0 ? 'bg-gradient-to-b from-yellow-400 to-yellow-600 text-white' :
+                        index === 1 ? 'bg-gradient-to-b from-gray-300 to-gray-500 text-white' :
+                        index === 2 ? 'bg-gradient-to-b from-amber-600 to-amber-800 text-white' :
+                        'bg-[#1B3A5C] text-white'
+                      }`}>
                         {index + 1}
                       </div>
                     </div>
@@ -229,7 +234,7 @@ export default function Home() {
                             {company.name}
                           </h3>
                           <div className="flex items-center gap-2 mb-2">
-                            <span className="text-yellow-500 text-lg">⭐</span>
+                            <span className="text-yellow-500 text-lg">★</span>
                             <span className="text-lg font-semibold">
                               {company.rating}
                             </span>
@@ -248,7 +253,7 @@ export default function Home() {
                         </div>
                         <div>
                           <div className="text-sm text-gray-600 mb-1">
-                            ⚡入金スピード
+                            入金スピード
                           </div>
                           <div className="text-lg font-semibold text-green-600">
                             {company.speed}
@@ -296,7 +301,7 @@ export default function Home() {
       <section id="comparison" className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <Badge className="mb-4 text-sm">📊 COMPARISON</Badge>
+            <Badge className="mb-4 text-sm bg-[#1B3A5C] text-white">COMPARISON</Badge>
             <h2 className="text-3xl font-bold text-gray-900 mb-2">
               項目別比較表
             </h2>
@@ -310,7 +315,7 @@ export default function Home() {
       <section id="diagnosis" className="py-16 bg-gray-50">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12">
-            <Badge className="mb-4 text-sm">🧮 DIAGNOSIS</Badge>
+            <Badge className="mb-4 text-sm bg-[#1B3A5C] text-white">DIAGNOSIS</Badge>
             <h2 className="text-3xl font-bold text-gray-900 mb-2">
               最適なファクタリング会社診断
             </h2>
@@ -319,7 +324,7 @@ export default function Home() {
               複数選択OK
             </p>
             <p className="text-sm text-gray-500 mt-2">
-              🔒 個人情報の入力は不要です
+              個人情報の入力は不要です
             </p>
           </div>
           <DiagnosisTool />
@@ -337,7 +342,7 @@ export default function Home() {
       <section className="py-16 bg-gray-50">
         <div className="container mx-auto px-4 max-w-5xl">
           <div className="text-center mb-12">
-            <Badge className="mb-4 text-sm">💬 VOICE</Badge>
+            <Badge className="mb-4 text-sm bg-[#1B3A5C] text-white">VOICE</Badge>
             <h2 className="text-3xl font-bold text-gray-900 mb-2">
               利用者の声
             </h2>
@@ -362,7 +367,7 @@ export default function Home() {
                 </p>
                 <div className="flex gap-1 text-yellow-500">
                   {[...Array(5)].map((_, i) => (
-                    <span key={i}>⭐</span>
+                    <span key={i}>★</span>
                   ))}
                 </div>
               </CardContent>
@@ -386,7 +391,7 @@ export default function Home() {
                 </p>
                 <div className="flex gap-1 text-yellow-500">
                   {[...Array(5)].map((_, i) => (
-                    <span key={i}>⭐</span>
+                    <span key={i}>★</span>
                   ))}
                 </div>
               </CardContent>
@@ -410,7 +415,7 @@ export default function Home() {
                 </p>
                 <div className="flex gap-1 text-yellow-500">
                   {[...Array(5)].map((_, i) => (
-                    <span key={i}>⭐</span>
+                    <span key={i}>★</span>
                   ))}
                 </div>
               </CardContent>
@@ -427,7 +432,7 @@ export default function Home() {
       <section id="faq" className="py-16 bg-white">
         <div className="container mx-auto px-4 max-w-5xl">
           <div className="text-center mb-12">
-            <Badge className="mb-4 text-sm">💬 FAQ</Badge>
+            <Badge className="mb-4 text-sm bg-[#1B3A5C] text-white">FAQ</Badge>
             <h2 className="text-3xl font-bold text-gray-900 mb-2">
               よくある質問
             </h2>
@@ -442,7 +447,7 @@ export default function Home() {
           <div className="grid md:grid-cols-3 gap-6">
             <Card>
               <CardContent className="p-6 text-center">
-                <div className="text-4xl mb-4">⚖️</div>
+                <div className="w-12 h-12 bg-blue-100 text-[#1B3A5C] rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">01</div>
                 <h3 className="font-bold text-gray-900 mb-2">
                   中立な立場で比較
                 </h3>
@@ -454,7 +459,7 @@ export default function Home() {
 
             <Card>
               <CardContent className="p-6 text-center">
-                <div className="text-4xl mb-4">📅</div>
+                <div className="w-12 h-12 bg-blue-100 text-[#1B3A5C] rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">02</div>
                 <h3 className="font-bold text-gray-900 mb-2">
                   毎月情報を更新
                 </h3>
@@ -466,7 +471,7 @@ export default function Home() {
 
             <Card>
               <CardContent className="p-6 text-center">
-                <div className="text-4xl mb-4">✍️</div>
+                <div className="w-12 h-12 bg-blue-100 text-[#1B3A5C] rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">03</div>
                 <h3 className="font-bold text-gray-900 mb-2">
                   実体験ベース
                 </h3>
@@ -480,19 +485,19 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-gradient-to-r from-blue-600 to-blue-700 text-white">
+      <section className="py-16 bg-[#1B3A5C] text-white">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold mb-4">
             資金調達でお困りですか？最短30分で入金可能
           </h2>
-          <p className="text-xl text-blue-100 mb-8">
+          <p className="text-xl text-blue-200 mb-8">
             まずは無料で見積もり。3社以上の相見積もりがおすすめです
           </p>
           <Button
             size="lg"
-            className="bg-white text-blue-700 hover:bg-gray-100 font-semibold px-8 py-6 text-lg"
+            className="bg-white text-[#1B3A5C] hover:bg-gray-100 font-semibold px-8 py-6 text-lg"
           >
-            🏆 ランキングTOP15を見る →
+            ランキングTOP15を見る →
           </Button>
         </div>
       </section>
