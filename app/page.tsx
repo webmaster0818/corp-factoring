@@ -67,7 +67,7 @@ export default function Home() {
           {/* Eyecatch Image */}
           <div className="relative rounded-3xl overflow-hidden shadow-2xl mb-10 mx-auto">
             <img
-              src="/images/hero-eyecatch.png"
+              src="/images/hero-eyecatch-new.png"
               alt="法人向けファクタリングおすすめ15選 - 手数料・審査・入金スピード徹底比較2026年最新版"
               className="w-full h-auto"
               width="1200"
