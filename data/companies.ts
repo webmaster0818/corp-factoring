@@ -359,7 +359,7 @@ export const factoringCompanies: FactoringCompany[] = [
   },
   {
     id: 10,
-    name: "マネーフォワード アーリーペイメント",
+    name: "Money Forward 早期入金",
     nameKana: "まねーふぉわーど あーりーぺいめんと",
     slug: "mf-earlypayment",
     rating: 4.3,
