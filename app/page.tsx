@@ -64,15 +64,31 @@ export default function Home() {
       {/* Hero Section with Eyecatch Image */}
       <section className="bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-12 lg:pt-12 lg:pb-20">
-          {/* Eyecatch Image */}
-          <div className="relative rounded-3xl overflow-hidden shadow-2xl mb-10 mx-auto">
+          {/* Eyecatch Image with Text Overlay */}
+          <div className="relative rounded-2xl overflow-hidden shadow-xl mb-10 mx-auto">
             <img
-              src="/images/hero-eyecatch-v2.png"
+              src="/images/hero-eyecatch-v3.png"
               alt="法人向けファクタリングおすすめ15選 - 手数料・審査・入金スピード徹底比較2026年最新版"
               className="w-full h-auto"
-              width="1200"
-              height="630"
+              width="1344"
+              height="768"
             />
+            <div className="absolute inset-0 bg-gradient-to-r from-white/90 via-white/70 to-transparent flex items-center">
+              <div className="pl-8 sm:pl-12 lg:pl-16 max-w-lg">
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-[#1B3A5C] leading-tight mb-3">
+                  資金繰りの悩みを<br />即解決
+                </h2>
+                <p className="text-sm sm:text-base text-gray-600 mb-4">
+                  フリーランス・個人事業主・法人向け<br />ファクタリング比較
+                </p>
+                <Link
+                  href="#ranking"
+                  className="inline-block bg-[#1B3A5C] text-white font-bold py-2.5 px-6 rounded-md text-sm hover:bg-[#152d47] transition"
+                >
+                  おすすめ15社を見る →
+                </Link>
+              </div>
+            </div>
           </div>
 
           <div className="text-center">
