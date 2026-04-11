@@ -236,9 +236,9 @@ export default function Home() {
                     <img
                       src={`/images/companies/${company.slug}.png`}
                       alt={`${company.name}公式サイト`}
-                      className="w-full h-24 object-cover object-top"
+                      className={`w-full object-cover object-top ${company.slug === 'ququmo' ? 'h-24' : 'h-40'}`}
                       width="1200"
-                      height="96"
+                      height="160"
                     />
                   </div>
                   <div className="flex items-start gap-6">
