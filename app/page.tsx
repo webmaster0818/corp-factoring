@@ -31,7 +31,7 @@ export default function Home() {
       <section className="bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-12 lg:pt-12 lg:pb-20">
           {/* Eyecatch Image with Text Overlay */}
-          <div className="relative rounded-2xl overflow-hidden shadow-xl mb-10 mx-auto" style={{ maxHeight: '420px' }}>
+          <div className="relative rounded-2xl overflow-hidden shadow-xl mb-10 mx-auto" style={{ maxHeight: '300px' }}>
             <img
               src="/images/hero-eyecatch-v3.png"
               alt="法人向けファクタリングおすすめ15選 - 手数料・審査・入金スピード徹底比較2026年最新版"
