@@ -231,6 +231,16 @@ export default function Home() {
                 className="hover:shadow-lg transition-shadow"
               >
                 <CardContent className="p-6">
+                  {/* Company Screenshot */}
+                  <div className="mb-4 rounded-lg overflow-hidden border border-gray-200">
+                    <img
+                      src={`/images/companies/${company.slug}.png`}
+                      alt={`${company.name}公式サイト`}
+                      className="w-full h-40 object-cover object-top"
+                      width="1200"
+                      height="160"
+                    />
+                  </div>
                   <div className="flex items-start gap-6">
                     <div className="flex-shrink-0">
                       <div className={`w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold ${
