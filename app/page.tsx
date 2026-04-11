@@ -39,7 +39,7 @@ export default function Home() {
               width="1344"
               height="768"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-white/90 via-white/70 to-transparent flex items-center">
+            <div className="absolute inset-0 bg-gradient-to-r from-white/90 via-white/70 to-transparent flex items-start pt-8 sm:pt-10">
               <div className="pl-8 sm:pl-12 lg:pl-16 max-w-lg">
                 <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-[#1B3A5C] leading-tight mb-3">
                   資金繰りの悩みを<br />即解決
