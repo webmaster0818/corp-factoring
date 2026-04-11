@@ -35,7 +35,7 @@ export default function Home() {
             <img
               src="/images/hero-eyecatch-v3.png"
               alt="法人向けファクタリングおすすめ15選 - 手数料・審査・入金スピード徹底比較2026年最新版"
-              className="w-full h-full object-cover object-center"
+              className="w-full h-full object-cover" style={{ objectPosition: '50% 55%' }}
               width="1344"
               height="768"
             />
