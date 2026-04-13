@@ -8,7 +8,7 @@ export function Footer() {
           {/* サイト情報 */}
           <div>
             <div className="flex items-center gap-2.5 mb-4">
-              <img src="/images/logo.png" alt="" className="w-11 h-11" />
+              <img src="/images/logo.png" alt="ファクタリング比較ナビ ロゴ" className="w-11 h-11" width="44" height="44" />
               <span className="text-lg font-bold text-[#F5A623]">
                 ファクタリング比較ナビ
               </span>

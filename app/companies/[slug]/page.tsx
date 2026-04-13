@@ -117,10 +117,13 @@ export default function CompanyPage({
         {/* ヒーロー画像 */}
         {(slug === 'ququmo' || slug === 'accel-factor' || slug === 'best-factor') && (
           <div className="mb-8">
-            <img 
-              src={`/images/companies/${slug}.png`} 
+            <img
+              src={`/images/companies/${slug}.png`}
               alt={`${company.name}の評判・口コミ・手数料を徹底解説`}
               className="w-full rounded-lg shadow-md"
+              width="1200"
+              height="630"
+              loading="lazy"
             />
           </div>
         )}

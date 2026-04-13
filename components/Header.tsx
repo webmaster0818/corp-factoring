@@ -58,7 +58,7 @@ export function Header() {
       <div className="max-w-7xl mx-auto px-6 h-17 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2.5">
-          <img src="/images/logo.png" alt="" className="w-11 h-11" />
+          <img src="/images/logo.png" alt="ファクタリング比較ナビ ロゴ" className="w-11 h-11" width="44" height="44" />
           <span className="text-[19px] font-bold text-[#1B3A5C] tracking-wide">
             ファクタリング比較ナビ
           </span>

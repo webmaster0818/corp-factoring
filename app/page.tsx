@@ -201,10 +201,11 @@ export default function Home() {
                   <div className="mb-4 rounded-lg overflow-hidden border border-gray-200">
                     <img
                       src={`/images/companies/${company.slug}.png`}
-                      alt={`${company.name}公式サイト`}
+                      alt={`${company.name}公式サイトのスクリーンショット - ファクタリング手数料${company.fees.min}%〜${company.fees.max}%`}
                       className={`w-full object-cover object-top ${company.slug === 'ququmo' ? 'h-24' : 'h-40'}`}
                       width="1200"
                       height="160"
+                      loading="lazy"
                     />
                   </div>
                   <div className="flex items-start gap-6">
@@ -485,12 +486,12 @@ export default function Home() {
           <p className="text-xl text-blue-200 mb-8">
             まずは無料で見積もり。3社以上の相見積もりがおすすめです
           </p>
-          <Button
-            size="lg"
-            className="bg-white text-[#1B3A5C] hover:bg-gray-100 font-semibold px-8 py-6 text-lg"
+          <Link
+            href="#ranking"
+            className="inline-block bg-white text-[#1B3A5C] hover:bg-gray-100 font-semibold px-8 py-6 text-lg rounded-md"
           >
             ランキングTOP15を見る →
-          </Button>
+          </Link>
         </div>
       </section>
 
