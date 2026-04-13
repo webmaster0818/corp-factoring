@@ -8,14 +8,14 @@ export const metadata: Metadata = {
   },
   description: "法人向けファクタリング会社を徹底比較。手数料、審査スピード、入金速度を詳しく解説。即日対応、審査が通りやすい、手数料が安い会社を紹介します。",
   keywords: "ファクタリング,法人,おすすめ,比較,手数料,審査,即日",
-  metadataBase: new URL("https://corp-factoring-deploy.pages.dev"),
+  metadataBase: new URL("https://corp-factoring.com"),
   alternates: {
     canonical: "/",
   },
   openGraph: {
     title: "法人向けファクタリングおすすめ15選【2026年最新】",
     description: "手数料・審査・入金スピードを徹底比較。最適なファクタリング会社が見つかります。",
-    url: "https://corp-factoring-deploy.pages.dev/",
+    url: "https://corp-factoring.com/",
     siteName: "ファクタリング比較ナビ",
     locale: "ja_JP",
     type: "website",
@@ -53,8 +53,8 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "Organization",
               "name": "ファクタリング比較ナビ",
-              "url": "https://corp-factoring-deploy.pages.dev",
-              "logo": "https://corp-factoring-deploy.pages.dev/images/logo.png"
+              "url": "https://corp-factoring.com",
+              "logo": "https://corp-factoring.com/images/logo.png"
             })
           }}
         />
@@ -65,7 +65,7 @@ export default function RootLayout({
               "@context": "https://schema.org",
               "@type": "WebSite",
               "name": "ファクタリング比較ナビ",
-              "url": "https://corp-factoring-deploy.pages.dev"
+              "url": "https://corp-factoring.com"
             })
           }}
         />
@@ -80,7 +80,7 @@ export default function RootLayout({
                   "@type": "ListItem",
                   "position": 1,
                   "name": "ホーム",
-                  "item": "https://corp-factoring-deploy.pages.dev"
+                  "item": "https://corp-factoring.com"
                 }
               ]
             })

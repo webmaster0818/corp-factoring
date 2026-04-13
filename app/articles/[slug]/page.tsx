@@ -218,9 +218,9 @@ export default async function ArticlePage({
             "@context": "https://schema.org",
             "@type": "BreadcrumbList",
             "itemListElement": [
-              { "@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://corp-factoring-deploy.pages.dev" },
-              { "@type": "ListItem", "position": 2, "name": "コラム", "item": "https://corp-factoring-deploy.pages.dev/articles" },
-              { "@type": "ListItem", "position": 3, "name": article.title, "item": `https://corp-factoring-deploy.pages.dev/articles/${slug}` },
+              { "@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://corp-factoring.com" },
+              { "@type": "ListItem", "position": 2, "name": "コラム", "item": "https://corp-factoring.com/articles" },
+              { "@type": "ListItem", "position": 3, "name": article.title, "item": `https://corp-factoring.com/articles/${slug}` },
             ],
           }),
         }}

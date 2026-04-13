@@ -804,9 +804,9 @@ export default function CompanyPage({
             "@context": "https://schema.org",
             "@type": "BreadcrumbList",
             "itemListElement": [
-              { "@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://corp-factoring-deploy.pages.dev" },
-              { "@type": "ListItem", "position": 2, "name": "おすすめランキング", "item": "https://corp-factoring-deploy.pages.dev/#ranking" },
-              { "@type": "ListItem", "position": 3, "name": company.name, "item": `https://corp-factoring-deploy.pages.dev/companies/${slug}` },
+              { "@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://corp-factoring.com" },
+              { "@type": "ListItem", "position": 2, "name": "おすすめランキング", "item": "https://corp-factoring.com/#ranking" },
+              { "@type": "ListItem", "position": 3, "name": company.name, "item": `https://corp-factoring.com/companies/${slug}` },
             ],
           }),
         }}

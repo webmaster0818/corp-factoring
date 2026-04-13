@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 Disallow: /_next/
-Sitemap: https://corp-factoring-deploy.pages.dev/sitemap.xml
+Sitemap: https://corp-factoring.com/sitemap.xml

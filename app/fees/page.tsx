@@ -404,8 +404,8 @@ export default function FeesPage() {
             "@context": "https://schema.org",
             "@type": "BreadcrumbList",
             "itemListElement": [
-              { "@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://corp-factoring-deploy.pages.dev" },
-              { "@type": "ListItem", "position": 2, "name": "手数料比較", "item": "https://corp-factoring-deploy.pages.dev/fees" },
+              { "@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://corp-factoring.com" },
+              { "@type": "ListItem", "position": 2, "name": "手数料比較", "item": "https://corp-factoring.com/fees" },
             ],
           }),
         }}
