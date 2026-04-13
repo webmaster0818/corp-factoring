@@ -31,6 +31,11 @@ export async function generateMetadata({
     alternates: {
       canonical: `/articles/${slug}`,
     },
+    openGraph: {
+      title: `${article.title}｜ファクタリング比較ナビ`,
+      description: `${article.title}。${article.keyword}について詳しく解説します。`,
+      type: "article",
+    },
   };
 }
 

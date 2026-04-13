@@ -13,6 +13,16 @@ export const metadata = {
   alternates: {
     canonical: "/fees",
   },
+  openGraph: {
+    title: "ファクタリング手数料が安い会社10選【2026年最新】",
+    description: "ファクタリング手数料の相場、計算方法、手数料が安い業者ランキング10選を徹底解説。",
+    type: "article",
+  },
+  twitter: {
+    card: "summary",
+    title: "ファクタリング手数料が安い会社10選【2026年最新】",
+    description: "ファクタリング手数料の相場、計算方法、手数料が安い業者ランキング10選を徹底解説。",
+  },
 };
 
 export default function FeesPage() {

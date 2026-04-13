@@ -11,6 +11,7 @@ import { Button } from "@/components/ui/button";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { ReviewSection } from "@/components/ReviewSection";
+import { getAllArticles } from "@/lib/articles";
 
 export async function generateStaticParams() {
   return factoringCompanies.map((company) => ({
@@ -776,6 +777,40 @@ export default function CompanyPage({
             </Link>
           </div>
         </div>
+
+        {/* 関連コラム */}
+        {(() => {
+          const articles = getAllArticles().slice(0, 3);
+          return articles.length > 0 ? (
+            <section className="mb-12">
+              <h2 className="text-2xl font-bold text-gray-900 mb-6">関連コラム</h2>
+              <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                {articles.map((article) => (
+                  <Link
+                    key={article.slug}
+                    href={`/articles/${article.slug}`}
+                    className="block border border-gray-200 rounded-xl p-5 hover:shadow-md transition bg-white"
+                  >
+                    {article.keyword && (
+                      <span
+                        className="inline-block text-xs font-semibold px-2.5 py-1 rounded-full mb-3 text-white"
+                        style={{ backgroundColor: "#1B3A5C" }}
+                      >
+                        {article.keyword}
+                      </span>
+                    )}
+                    <h3 className="text-sm font-bold text-gray-800 leading-snug mb-3 line-clamp-2">
+                      {article.title}
+                    </h3>
+                    <span className="text-xs font-semibold" style={{ color: "#1B3A5C" }}>
+                      記事を読む →
+                    </span>
+                  </Link>
+                ))}
+              </div>
+            </section>
+          ) : null;
+        })()}
 
         {/* 戻るリンク */}
         <div className="text-center">

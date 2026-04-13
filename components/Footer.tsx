@@ -4,7 +4,7 @@ export function Footer() {
   return (
     <footer className="bg-gray-900 text-white py-12 mt-16">
       <div className="container mx-auto px-4 max-w-6xl">
-        <div className="grid md:grid-cols-3 gap-8 mb-8">
+        <div className="grid md:grid-cols-4 gap-8 mb-8">
           {/* サイト情報 */}
           <div>
             <div className="flex items-center gap-2.5 mb-4">
@@ -18,7 +18,7 @@ export function Footer() {
             </p>
           </div>
 
-          {/* ナビゲーション */}
+          {/* サイトマップ */}
           <div>
             <h3 className="font-bold text-white mb-4">サイトマップ</h3>
             <ul className="space-y-2 text-sm">
@@ -38,6 +38,16 @@ export function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/fees" className="text-gray-400 hover:text-white transition">
+                  手数料比較
+                </Link>
+              </li>
+              <li>
+                <Link href="/articles" className="text-gray-400 hover:text-white transition">
+                  コラム
+                </Link>
+              </li>
+              <li>
                 <Link href="/#faq" className="text-gray-400 hover:text-white transition">
                   よくある質問
                 </Link>
@@ -45,6 +55,43 @@ export function Footer() {
               <li>
                 <Link href="/#about" className="text-gray-400 hover:text-white transition">
                   運営情報
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* 人気コラム */}
+          <div>
+            <h3 className="font-bold text-white mb-4">人気コラム</h3>
+            <ul className="space-y-2 text-sm">
+              <li>
+                <Link href="/articles/article-factoring-toha" className="text-gray-400 hover:text-white transition">
+                  ファクタリングとは？
+                </Link>
+              </li>
+              <li>
+                <Link href="/articles/article-factoring-merit-demerit" className="text-gray-400 hover:text-white transition">
+                  メリット・デメリット
+                </Link>
+              </li>
+              <li>
+                <Link href="/articles/article-factoring-tesuryo" className="text-gray-400 hover:text-white transition">
+                  手数料の仕組み
+                </Link>
+              </li>
+              <li>
+                <Link href="/articles/article-factoring-osusume" className="text-gray-400 hover:text-white transition">
+                  おすすめ20選
+                </Link>
+              </li>
+              <li>
+                <Link href="/articles/article-factoring-sokujitsu" className="text-gray-400 hover:text-white transition">
+                  即日対応15選
+                </Link>
+              </li>
+              <li>
+                <Link href="/articles/article-factoring-kuchikomi" className="text-gray-400 hover:text-white transition">
+                  口コミ・評判
                 </Link>
               </li>
             </ul>
