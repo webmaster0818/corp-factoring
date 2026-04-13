@@ -45,6 +45,11 @@ export async function generateMetadata({
       description: `手数料${company.fees.min}%〜${company.fees.max}%、${company.speed}で入金。${company.description}`,
       type: "article",
     },
+    twitter: {
+      card: "summary",
+      title: `【${company.name}】の評判・口コミ・手数料を徹底解説【2026年最新】`,
+      description: `手数料${company.fees.min}%〜${company.fees.max}%、${company.speed}で入金。${company.description}`,
+    },
     alternates: {
       canonical: `/companies/${slug}`,
     },

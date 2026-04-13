@@ -230,6 +230,35 @@ export default async function ArticlePage({
           }),
         }}
       />
+
+      {/* 記事構造化データ（JSON-LD） */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Article",
+            "headline": article.title,
+            "description": `${article.title}。${article.keyword}について詳しく解説します。`,
+            "author": {
+              "@type": "Organization",
+              "name": "ファクタリング比較ナビ",
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "ファクタリング比較ナビ",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://corp-factoring.com/images/logo.png",
+              },
+            },
+            "mainEntityOfPage": {
+              "@type": "WebPage",
+              "@id": `https://corp-factoring.com/articles/${slug}`,
+            },
+          }),
+        }}
+      />
     </div>
   );
 }

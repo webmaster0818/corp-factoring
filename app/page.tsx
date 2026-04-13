@@ -495,6 +495,26 @@ export default function Home() {
         </div>
       </section>
 
+      {/* ItemList Structured Data for Rich Results */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ItemList",
+            "name": "おすすめファクタリング会社TOP15",
+            "itemListOrder": "https://schema.org/ItemListOrderDescending",
+            "numberOfItems": topCompanies.length,
+            "itemListElement": topCompanies.map((company, index) => ({
+              "@type": "ListItem",
+              "position": index + 1,
+              "name": company.name,
+              "url": `https://corp-factoring.com/companies/${company.slug}`
+            }))
+          })
+        }}
+      />
+
       {/* Footer */}
       <Footer />
     </div>
