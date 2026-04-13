@@ -31,15 +31,15 @@ export default function Home() {
       <section className="bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-12 lg:pt-12 lg:pb-20">
           {/* Eyecatch Image with Text Overlay */}
-          <div className="relative rounded-2xl overflow-hidden shadow-xl mb-10 mx-auto" style={{ maxHeight: '300px' }}>
+          <div className="relative rounded-2xl overflow-hidden shadow-xl mb-10 mx-auto h-[280px] sm:h-[320px] lg:h-[400px]">
             <img
               src="/images/hero-eyecatch-v3.png"
               alt="法人向けファクタリングおすすめ15選 - 手数料・審査・入金スピード徹底比較2026年最新版"
-              className="w-full h-full object-cover" style={{ objectPosition: '50% 55%' }}
+              className="w-full h-full object-cover object-[50%_30%] lg:object-[50%_35%]"
               width="1344"
               height="768"
             />
-            <div className="absolute inset-0 bg-gradient-to-r from-white/90 via-white/70 to-transparent flex items-start pt-8 sm:pt-10">
+            <div className="absolute inset-0 bg-gradient-to-r from-white/90 via-white/60 to-transparent flex items-start pt-8 sm:pt-10 lg:pt-16">
               <div className="pl-8 sm:pl-12 lg:pl-16 max-w-lg">
                 <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-[#1B3A5C] leading-tight mb-3">
                   資金繰りの悩みを<br />即解決
