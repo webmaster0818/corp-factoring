@@ -46,6 +46,46 @@ export default function RootLayout({
       </head>
       <body className="antialiased">
         {children}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "Organization",
+              "name": "ファクタリング比較ナビ",
+              "url": "https://corp-factoring-deploy.pages.dev",
+              "logo": "https://corp-factoring-deploy.pages.dev/images/logo.png"
+            })
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              "name": "ファクタリング比較ナビ",
+              "url": "https://corp-factoring-deploy.pages.dev"
+            })
+          }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "ホーム",
+                  "item": "https://corp-factoring-deploy.pages.dev"
+                }
+              ]
+            })
+          }}
+        />
       </body>
     </html>
   );
