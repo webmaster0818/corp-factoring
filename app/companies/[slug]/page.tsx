@@ -44,6 +44,9 @@ export async function generateMetadata({
       description: `手数料${company.fees.min}%〜${company.fees.max}%、${company.speed}で入金。${company.description}`,
       type: "article",
     },
+    alternates: {
+      canonical: `/companies/${slug}`,
+    },
   };
 }
 
@@ -791,6 +794,22 @@ export default function CompanyPage({
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
+
+      {/* パンくずリスト構造化データ（JSON-LD） */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://corp-factoring-deploy.pages.dev" },
+              { "@type": "ListItem", "position": 2, "name": "おすすめランキング", "item": "https://corp-factoring-deploy.pages.dev/#ranking" },
+              { "@type": "ListItem", "position": 3, "name": company.name, "item": `https://corp-factoring-deploy.pages.dev/companies/${slug}` },
+            ],
+          }),
+        }}
       />
     </div>
   );

@@ -178,8 +178,25 @@ const faqItems: FAQItem[] = [
 export function FAQ() {
   const categories = Array.from(new Set(faqItems.map(item => item.category)));
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": faqItems.map(item => ({
+      "@type": "Question",
+      "name": item.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": item.answer
+      }
+    }))
+  };
+
   return (
     <div className="space-y-8">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <div className="text-center mb-8">
         <h2 className="text-3xl font-bold text-gray-900 mb-2">
           よくある質問（FAQ）

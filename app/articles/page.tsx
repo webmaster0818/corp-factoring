@@ -8,6 +8,9 @@ export const metadata: Metadata = {
   title: "ファクタリングコラム一覧｜ファクタリング比較ナビ",
   description:
     "ファクタリングに関する基礎知識、手数料、審査、おすすめ会社など、資金調達に役立つ記事を掲載。個人事業主・フリーランス・法人向けの情報を幅広くお届けします。",
+  alternates: {
+    canonical: "/articles",
+  },
 };
 
 export default function ArticlesPage() {

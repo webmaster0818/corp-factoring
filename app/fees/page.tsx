@@ -10,6 +10,9 @@ export const metadata = {
   title: "ファクタリング手数料が安い会社10選【2026年最新】相場・計算方法・抑えるコツ",
   description: "ファクタリング手数料の相場、計算方法、手数料が安い業者ランキング10選を徹底解説。手数料を抑えるポイント、無料シミュレーターも提供。2社間・3社間の違いも詳しく紹介します。",
   keywords: "ファクタリング,手数料,安い,相場,計算,シミュレーター",
+  alternates: {
+    canonical: "/fees",
+  },
 };
 
 export default function FeesPage() {
@@ -392,6 +395,21 @@ export default function FeesPage() {
       </div>
 
       <Footer />
+
+      {/* パンくずリスト構造化データ（JSON-LD） */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "BreadcrumbList",
+            "itemListElement": [
+              { "@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://corp-factoring-deploy.pages.dev" },
+              { "@type": "ListItem", "position": 2, "name": "手数料比較", "item": "https://corp-factoring-deploy.pages.dev/fees" },
+            ],
+          }),
+        }}
+      />
     </div>
   );
 }
