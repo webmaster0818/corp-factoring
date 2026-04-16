@@ -112,8 +112,25 @@ export function Footer() {
           </div>
         </div>
 
+        {/* ポリシーリンク */}
+        <div className="border-t border-gray-800 pt-6 pb-2">
+          <div className="flex flex-wrap justify-center gap-4 text-sm">
+            <Link href="/terms/" className="text-gray-400 hover:text-white transition">
+              利用規約
+            </Link>
+            <span className="text-gray-700">|</span>
+            <Link href="/privacy/" className="text-gray-400 hover:text-white transition">
+              プライバシーポリシー
+            </Link>
+            <span className="text-gray-700">|</span>
+            <Link href="/content-policy/" className="text-gray-400 hover:text-white transition">
+              記事の制作ポリシー
+            </Link>
+          </div>
+        </div>
+
         {/* コピーライト */}
-        <div className="border-t border-gray-800 pt-8 text-center">
+        <div className="border-t border-gray-800 pt-6 text-center">
           <p className="text-gray-400 text-sm">
             © 2026 ファクタリング比較ナビ. All rights reserved.
           </p>
