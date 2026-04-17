@@ -10,7 +10,7 @@ export interface GoogleReview extends Review {
 // 各業者の強み
 export const companyStrengths: { [key: string]: string[] } = {
   "be-trading": [
-    "業界最大級の実績（累計取引71,000社、買取額1,550億円）",
+    "業界最大級の実績（累計取引91,000社以上、買取額1,824億円）",
     "全国5拠点で対面相談可能（東京、仙台、大阪、名古屋、福岡）",
     "注文書・医療ファクタリングなど多様な取引に対応",
     "最短2時間での入金実績",
