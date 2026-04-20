@@ -92,20 +92,36 @@ export default async function ArticlePage({
         </div>
       </div>
 
+      {/* Article Eyecatch */}
+      {(() => {
+        const slug_str = slug;
+        const isGyoushu = slug_str.includes('kensetsu') || slug_str.includes('unsou') || slug_str.includes('iryou') || slug_str.includes('seizou') || slug_str.includes('gyoushu');
+        const isKojin = slug_str.includes('kojin') || slug_str.includes('freelance') || slug_str.includes('sogyo') || slug_str.includes('kaigyo') || slug_str.includes('shikin') || slug_str.includes('akaji') || slug_str.includes('seido-yuushi') || slug_str.includes('business-loan') || slug_str.includes('jfc') || slug_str.includes('hojokin') || slug_str.includes('kakuteishinkoku');
+        const eyecatchSrc = isGyoushu ? '/images/articles/gyoushu-article.jpg' : isKojin ? '/images/articles/kojin-jigyonushi.jpg' : '/images/articles/factoring-article.jpg';
+        return (
+          <div className="max-w-4xl mx-auto px-6 mt-8">
+            <div className="rounded-xl overflow-hidden shadow-sm">
+              <img src={eyecatchSrc} alt={article.title} className="w-full h-48 md:h-64 object-cover" />
+            </div>
+          </div>
+        );
+      })()}
+
       {/* Article Content */}
-      <main className="max-w-4xl mx-auto px-6 py-12">
+      <main className="max-w-4xl mx-auto px-6 py-8">
         <article>
-          <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-8 leading-tight">
+          <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-tight">
             {article.title}
           </h1>
 
-          {article.keyword && (
-            <div className="mb-8 flex items-center gap-2">
-              <span className="bg-blue-100 text-blue-700 text-xs font-medium px-3 py-1 rounded-full">
+          <div className="mb-6 flex items-center gap-3 text-sm text-gray-500">
+            <span>更新日: 2026年4月</span>
+            {article.keyword && (
+              <span className="bg-[#1B3A5C]/10 text-[#1B3A5C] text-xs font-medium px-3 py-1 rounded-full">
                 {article.keyword}
               </span>
-            </div>
-          )}
+            )}
+          </div>
 
           <div
             className="prose prose-gray max-w-none
