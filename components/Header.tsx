@@ -54,7 +54,15 @@ export function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <header className="bg-white border-b border-gray-200 sticky top-0 z-50">
+    <header className="sticky top-0 z-50">
+      {/* 景品表示法対応: 広告表記バー */}
+      <div className="bg-gray-100 border-b border-gray-200">
+        <div className="max-w-7xl mx-auto px-6 py-1.5 flex items-center justify-center gap-2 text-xs text-gray-500">
+          <span className="bg-blue-600 text-white font-bold px-2 py-0.5 rounded text-[10px]">PR</span>
+          <span>当サイトはアフィリエイトプログラムによる収益を得ています。掲載の順番はサービスへの評価に影響しません。</span>
+        </div>
+      </div>
+      <div className="bg-white border-b border-gray-200">
       <div className="max-w-7xl mx-auto px-6 h-17 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2.5">
@@ -138,6 +146,7 @@ export function Header() {
           </div>
         </div>
       )}
+      </div>
     </header>
   );
 }
