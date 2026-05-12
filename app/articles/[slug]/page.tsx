@@ -97,7 +97,8 @@ export default async function ArticlePage({
         const slug_str = slug;
         const isGyoushu = slug_str.includes('kensetsu') || slug_str.includes('unsou') || slug_str.includes('iryou') || slug_str.includes('seizou') || slug_str.includes('gyoushu');
         const isKojin = slug_str.includes('kojin') || slug_str.includes('freelance') || slug_str.includes('sogyo') || slug_str.includes('kaigyo') || slug_str.includes('shikin') || slug_str.includes('akaji') || slug_str.includes('seido-yuushi') || slug_str.includes('business-loan') || slug_str.includes('jfc') || slug_str.includes('hojokin') || slug_str.includes('kakuteishinkoku');
-        const eyecatchSrc = isGyoushu ? '/images/articles/gyoushu-article.jpg' : isKojin ? '/images/articles/kojin-jigyonushi.jpg' : '/images/articles/factoring-article.jpg';
+        const isSeikyushoKaitori = slug_str === 'article-seikyusho-kaitori';
+        const eyecatchSrc = isSeikyushoKaitori ? '/images/seikyusho-kaitori-hero.png' : isGyoushu ? '/images/articles/gyoushu-article.jpg' : isKojin ? '/images/articles/kojin-jigyonushi.jpg' : '/images/articles/factoring-article.jpg';
         return (
           <div className="max-w-4xl mx-auto px-6 mt-8">
             <div className="rounded-xl overflow-hidden shadow-sm">
