@@ -257,9 +257,12 @@ export default async function ArticlePage({
             "@type": "Article",
             "headline": article.title,
             "description": `${article.title}。${article.keyword}について詳しく解説します。`,
+            "datePublished": article.datePublished,
+            "dateModified": article.dateModified,
             "author": {
               "@type": "Organization",
               "name": "ファクタリング比較ナビ",
+              "url": "https://corp-factoring.com/about",
             },
             "publisher": {
               "@type": "Organization",
@@ -276,6 +279,27 @@ export default async function ArticlePage({
           }),
         }}
       />
+
+      {/* FAQ構造化データ（JSON-LD） */}
+      {article.faqs && article.faqs.length > 0 && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              "mainEntity": article.faqs.map((faq) => ({
+                "@type": "Question",
+                "name": faq.question,
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": faq.answer,
+                },
+              })),
+            }),
+          }}
+        />
+      )}
     </div>
   );
 }

@@ -10,6 +10,35 @@ export interface Article {
   title: string;
   keyword: string;
   content: string;
+  datePublished: string;
+  dateModified: string;
+  faqs: { question: string; answer: string }[];
+}
+
+function extractFaqs(markdown: string): { question: string; answer: string }[] {
+  // Find the FAQ section (## よくある質問 ...) and parse Q/A pairs
+  const faqSectionMatch = markdown.match(/##\s*よくある質問[\s\S]*?$/);
+  if (!faqSectionMatch) return [];
+  const section = faqSectionMatch[0];
+  const faqs: { question: string; answer: string }[] = [];
+  const lines = section.split('\n');
+  let currentQ: string | null = null;
+  let currentA: string[] = [];
+  for (const line of lines) {
+    const qm = line.match(/^\*\*Q:\s*(.+?)\*\*/);
+    const am = line.match(/^A:\s*(.+)$/);
+    if (qm) {
+      if (currentQ) faqs.push({ question: currentQ, answer: currentA.join(' ').trim() });
+      currentQ = qm[1].trim();
+      currentA = [];
+    } else if (am && currentQ) {
+      currentA.push(am[1].trim());
+    } else if (currentQ && line.trim() && !line.startsWith('#') && !line.startsWith('**Q:')) {
+      currentA.push(line.trim());
+    }
+  }
+  if (currentQ) faqs.push({ question: currentQ, answer: currentA.join(' ').trim() });
+  return faqs.filter(f => f.question && f.answer);
 }
 
 function extractTitle(markdown: string): string {
@@ -47,9 +76,11 @@ export async function getArticleBySlug(slug: string): Promise<Article | null> {
   }
 
   const fileContents = fs.readFileSync(fullPath, 'utf8');
+  const stats = fs.statSync(fullPath);
   const title = extractTitle(fileContents);
   const keyword = extractKeyword(fileContents);
   const contentMarkdown = extractContent(fileContents);
+  const faqs = extractFaqs(fileContents);
 
   const processedContent = await remark()
     .use(html)
@@ -60,6 +91,9 @@ export async function getArticleBySlug(slug: string): Promise<Article | null> {
     title,
     keyword,
     content: processedContent.toString(),
+    datePublished: stats.birthtime.toISOString(),
+    dateModified: stats.mtime.toISOString(),
+    faqs,
   };
 }
 
