@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { getAllArticles } from "@/lib/articles";
+import { topics } from "@/data/topics";
 
 export const metadata: Metadata = {
   title: "ファクタリングコラム一覧｜ファクタリング比較ナビ",
@@ -57,6 +58,29 @@ export default function ArticlesPage() {
 
       {/* Articles Grid */}
       <main className="max-w-6xl mx-auto px-6 py-12">
+        {/* Topic hubs */}
+        <section className="mb-12">
+          <h2 className="text-lg font-bold text-gray-900 mb-4">カテゴリから探す</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+            {topics.map((topic) => (
+              <Link
+                key={topic.slug}
+                href={`/topics/${topic.slug}`}
+                className="bg-white rounded-lg border border-gray-200 p-5 hover:shadow-lg hover:border-blue-300 transition group"
+              >
+                <h3 className="text-base font-bold text-gray-900 group-hover:text-blue-600 transition mb-2">
+                  {topic.name}
+                </h3>
+                <p className="text-xs text-gray-500 leading-relaxed mb-3">
+                  全{topic.groups.reduce((n, g) => n + g.slugs.length, 0)}記事
+                </p>
+                <span className="text-blue-600 text-sm font-medium">一覧を見る →</span>
+              </Link>
+            ))}
+          </div>
+        </section>
+
+        <h2 className="text-lg font-bold text-gray-900 mb-4">すべての記事</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {articles.map((article) => (
             <Link

@@ -4,6 +4,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { getAllArticleSlugs, getArticleBySlug, getAllArticles } from "@/lib/articles";
 import { factoringCompanies } from "@/data/companies";
+import { getTopicForArticle, getRelatedSlugs } from "@/data/topics";
 
 export async function generateStaticParams() {
   const slugs = getAllArticleSlugs();
@@ -47,10 +48,13 @@ export default async function ArticlePage({
   const { slug } = await params;
   const article = await getArticleBySlug(slug);
 
-  // Get related articles (3 random, excluding current)
-  const allArticles = getAllArticles().filter((a) => a.slug !== slug);
-  const shuffled = allArticles.sort(() => 0.5 - Math.random());
-  const relatedArticles = shuffled.slice(0, 3);
+  // Get related articles from the same topic cluster (deterministic)
+  const topic = getTopicForArticle(slug);
+  const allArticles = getAllArticles();
+  const articleBySlug = new Map(allArticles.map((a) => [a.slug, a]));
+  const relatedArticles = getRelatedSlugs(slug, 6)
+    .map((s) => articleBySlug.get(s))
+    .filter((a): a is NonNullable<typeof a> => Boolean(a));
 
   // Get top 3 companies for internal linking
   const topCompanies = factoringCompanies.slice(0, 3);
@@ -86,6 +90,14 @@ export default async function ArticlePage({
             <Link href="/articles" className="hover:text-gray-700 transition">
               コラム
             </Link>
+            {topic && (
+              <>
+                {" > "}
+                <Link href={`/topics/${topic.slug}`} className="hover:text-gray-700 transition">
+                  {topic.name}
+                </Link>
+              </>
+            )}
             {" > "}
             <span className="text-gray-600">{article.title.slice(0, 30)}...</span>
           </nav>
@@ -220,7 +232,15 @@ export default async function ArticlePage({
         )}
 
         {/* Back to articles */}
-        <div className="mt-8 text-center">
+        <div className="mt-8 text-center space-x-6">
+          {topic && (
+            <Link
+              href={`/topics/${topic.slug}`}
+              className="text-[#1B3A5C] hover:underline text-sm font-medium transition"
+            >
+              {topic.name}の記事一覧を見る →
+            </Link>
+          )}
           <Link
             href="/articles"
             className="text-gray-500 hover:text-gray-700 text-sm transition"
@@ -239,11 +259,18 @@ export default async function ArticlePage({
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "BreadcrumbList",
-            "itemListElement": [
-              { "@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://corp-factoring.com" },
-              { "@type": "ListItem", "position": 2, "name": "コラム", "item": "https://corp-factoring.com/articles" },
-              { "@type": "ListItem", "position": 3, "name": article.title, "item": `https://corp-factoring.com/articles/${slug}` },
-            ],
+            "itemListElement": topic
+              ? [
+                  { "@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://corp-factoring.com" },
+                  { "@type": "ListItem", "position": 2, "name": "コラム", "item": "https://corp-factoring.com/articles" },
+                  { "@type": "ListItem", "position": 3, "name": topic.name, "item": `https://corp-factoring.com/topics/${topic.slug}` },
+                  { "@type": "ListItem", "position": 4, "name": article.title, "item": `https://corp-factoring.com/articles/${slug}` },
+                ]
+              : [
+                  { "@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://corp-factoring.com" },
+                  { "@type": "ListItem", "position": 2, "name": "コラム", "item": "https://corp-factoring.com/articles" },
+                  { "@type": "ListItem", "position": 3, "name": article.title, "item": `https://corp-factoring.com/articles/${slug}` },
+                ],
           }),
         }}
       />

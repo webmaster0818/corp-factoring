@@ -48,6 +48,26 @@ export function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/topics/kiso" className="text-gray-400 hover:text-white transition">
+                  基礎知識・審査・法律
+                </Link>
+              </li>
+              <li>
+                <Link href="/topics/hikaku" className="text-gray-400 hover:text-white transition">
+                  比較・おすすめ
+                </Link>
+              </li>
+              <li>
+                <Link href="/topics/gyoushu" className="text-gray-400 hover:text-white transition">
+                  業種別ファクタリング
+                </Link>
+              </li>
+              <li>
+                <Link href="/topics/kojin" className="text-gray-400 hover:text-white transition">
+                  個人事業主・フリーランス
+                </Link>
+              </li>
+              <li>
                 <Link href="/#faq" className="text-gray-400 hover:text-white transition">
                   よくある質問
                 </Link>
