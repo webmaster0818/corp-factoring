@@ -56,8 +56,14 @@ export default async function ArticlePage({
     .map((s) => articleBySlug.get(s))
     .filter((a): a is NonNullable<typeof a> => Boolean(a));
 
-  // Get top 3 companies for internal linking
-  const topCompanies = factoringCompanies.slice(0, 3);
+  // Rotate company links deterministically per article so all 16 companies
+  // receive internal links (previously only the top 3 were ever linked)
+  const slugHash = [...slug].reduce((h, c) => (h * 31 + c.charCodeAt(0)) >>> 0, 0);
+  const start = slugHash % factoringCompanies.length;
+  const topCompanies = Array.from(
+    { length: 3 },
+    (_, i) => factoringCompanies[(start + i) % factoringCompanies.length]
+  );
 
   if (!article) {
     return (
