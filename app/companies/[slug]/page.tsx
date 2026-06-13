@@ -3,7 +3,8 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { getCompanyBySlug, factoringCompanies } from "@/data/companies";
-import { getCompanyStrengths, getCompanyUseCases, getCompanyGoogleReviews } from "@/data/companyExtended";
+import { getCompanyStrengths, getCompanyUseCases } from "@/data/companyExtended";
+import { getRealRating } from "@/data/realRatings";
 import { getCompanyDetails } from "@/data/companyDetails";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -70,7 +71,7 @@ export default function CompanyPage({
 
   const strengths = getCompanyStrengths(slug);
   const useCases = getCompanyUseCases(slug);
-  const googleReviews = getCompanyGoogleReviews(slug);
+  const realRating = getRealRating(slug);
   const details = getCompanyDetails(slug);
 
   // 構造化データ（JSON-LD）
@@ -575,8 +576,9 @@ export default function CompanyPage({
         {/* 利用者の口コミ（Google口コミ引用） */}
         <ReviewSection
           companyName={company.name}
-          positiveReviews={googleReviews.positive}
-          negativeReviews={googleReviews.negative}
+          realRating={realRating}
+          pros={company.pros}
+          cons={company.cons}
         />
 
         {/* 営業時間・事業拠点 */}
