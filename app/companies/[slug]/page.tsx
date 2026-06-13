@@ -39,7 +39,7 @@ export async function generateMetadata({
   
   return {
     title: `【${company.name}】の評判・口コミ・手数料を徹底解説【2026年最新】`,
-    description: `${company.name}のファクタリングサービスを徹底解説。手数料${company.fees.min}%〜${company.fees.max}%、${company.speed}で入金可能。累計${company.reviewCount}件の実績。利用者の口コミ・評判、メリット・デメリット、活用事例を詳しく紹介。${categoryText}に最適なファクタリング業者です。`,
+    description: `${company.name}のファクタリングサービスを徹底解説。手数料${company.fees.min}%〜${company.fees.max}%、${company.speed}で入金可能。Google Maps実評価・メリット・デメリット・必要書類・活用事例を詳しく紹介。${categoryText}に最適なファクタリング業者です。`,
     keywords: `${company.name},${company.nameKana},ファクタリング,評判,口コミ,手数料,${categoryText},徹底解説`,
     openGraph: {
       title: `【${company.name}】の評判・口コミ・手数料を徹底解説【2026年最新】`,
@@ -74,7 +74,8 @@ export default function CompanyPage({
   const realRating = getRealRating(slug);
   const details = getCompanyDetails(slug);
 
-  // 構造化データ（JSON-LD）
+  // 構造化データ（JSON-LD）。aggregateRating は Google Maps の実評価が
+  // 確認できた会社のみ実値で出力し、未確認の会社では出力しない（架空評価を出さない）。
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "FinancialProduct",
@@ -88,13 +89,17 @@ export default function CompanyPage({
         "addressLocality": company.companyInfo.address,
       }
     },
-    "aggregateRating": {
-      "@type": "AggregateRating",
-      "ratingValue": company.rating,
-      "reviewCount": company.reviewCount,
-      "bestRating": 5,
-      "worstRating": 1
-    },
+    ...(realRating
+      ? {
+          aggregateRating: {
+            "@type": "AggregateRating",
+            ratingValue: realRating.rating,
+            reviewCount: realRating.count,
+            bestRating: 5,
+            worstRating: 1,
+          },
+        }
+      : {}),
     "offers": {
       "@type": "Offer",
       "price": `${company.fees.min}-${company.fees.max}%`,
@@ -207,18 +212,20 @@ export default function CompanyPage({
               <p className="text-gray-600 text-lg mb-4 leading-relaxed">
                 {company.description}
               </p>
-              <div className="flex items-center gap-4 mb-4">
-                <div className="flex items-center gap-2 bg-gray-50 px-4 py-2 rounded-lg border border-gray-200">
-                  <span className="text-xl font-bold text-gray-900">
-                    {company.rating}
-                  </span>
-                  <span className="text-gray-500">/</span>
-                  <span className="text-sm text-gray-500">5.0</span>
-                  <span className="text-gray-400 text-sm ml-2">
-                    ({company.reviewCount}件の評価)
-                  </span>
+              {realRating && (
+                <div className="flex items-center gap-4 mb-4">
+                  <div className="flex items-center gap-2 bg-amber-50 px-4 py-2 rounded-lg border border-amber-200">
+                    <span className="text-xl font-bold text-amber-600">
+                      ★ {realRating.rating.toFixed(1)}
+                    </span>
+                    <span className="text-gray-500">/</span>
+                    <span className="text-sm text-gray-500">5.0</span>
+                    <span className="text-gray-400 text-sm ml-2">
+                      （Google Maps実評価 {realRating.count.toLocaleString()}件・{realRating.fetchedAt}時点）
+                    </span>
+                  </div>
                 </div>
-              </div>
+              )}
               <div className="flex flex-wrap gap-2">
                 {company.features.map((feature, index) => (
                   <Badge key={index} className="bg-blue-600 hover:bg-blue-700 text-white font-medium">
@@ -840,6 +847,24 @@ export default function CompanyPage({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
+
+      {/* FAQ構造化データ（JSON-LD） */}
+      {details.faqs.length > 0 && (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "FAQPage",
+              mainEntity: details.faqs.map((faq) => ({
+                "@type": "Question",
+                name: faq.question,
+                acceptedAnswer: { "@type": "Answer", text: faq.answer },
+              })),
+            }),
+          }}
+        />
+      )}
 
       {/* パンくずリスト構造化データ（JSON-LD） */}
       <script
