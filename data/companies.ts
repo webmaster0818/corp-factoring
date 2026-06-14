@@ -82,7 +82,7 @@ export const factoringCompanies: FactoringCompany[] = [
       address: "東京都港区芝大門一丁目2-18 野依ビル3階・4階"
     },
     requiredDocuments: ["請求書", "通帳"],
-    url: "https://example.com/be-trading",
+    url: "https://betrading.jp/",
     category: ["総合", "即日", "実績"]
   },
   {
@@ -116,7 +116,7 @@ export const factoringCompanies: FactoringCompany[] = [
       address: "東京都豊島区東池袋3-1-1 サンシャイン60 45階"
     },
     requiredDocuments: ["請求書", "通帳"],
-    url: "https://example.com/ququmo",
+    url: "https://ququmo.com/",
     category: ["総合", "手数料安い", "即日"]
   },
   {
@@ -150,7 +150,7 @@ export const factoringCompanies: FactoringCompany[] = [
       address: "東京都新宿区西新宿8-17-1 住友不動産新宿グランドタワー38階"
     },
     requiredDocuments: ["請求書", "通帳", "身分証明書"],
-    url: "https://example.com/accel-factor",
+    url: "https://accelfacter.co.jp/",
     category: ["手数料安い", "審査甘い", "即日"]
   },
   {
@@ -180,11 +180,11 @@ export const factoringCompanies: FactoringCompany[] = [
     reviewCount: 1420,
     companyInfo: {
       established: "2017年",
-      capital: "3,000万円",
+      capital: "7,000万円",
       address: "東京都新宿区西新宿3-7-1 新宿パークタワーN棟28階"
     },
     requiredDocuments: ["請求書", "通帳", "身分証明書"],
-    url: "https://example.com/best-factor",
+    url: "https://bestfactor.jp/",
     category: ["審査甘い", "少額", "個人事業主"]
   },
   {
@@ -213,7 +213,7 @@ export const factoringCompanies: FactoringCompany[] = [
     ],
     reviewCount: 980,
     companyInfo: {
-      established: "2019年",
+      established: "2015年6月",
       capital: "2,000万円",
       address: "東京都港区赤坂2-14-27 国際新赤坂ビル東館17階"
     },
@@ -248,11 +248,11 @@ export const factoringCompanies: FactoringCompany[] = [
     reviewCount: 2150,
     companyInfo: {
       established: "2019年",
-      capital: "5億円",
+      capital: "14億4,244万円",
       address: "東京都港区赤坂1-12-32 アーク森ビル3階"
     },
     requiredDocuments: ["請求書", "身分証明書", "通帳"],
-    url: "https://example.com/paytner",
+    url: "https://paytner.co.jp/",
     category: ["個人事業主", "少額", "即日"]
   },
   {
@@ -282,11 +282,11 @@ export const factoringCompanies: FactoringCompany[] = [
     reviewCount: 1680,
     companyInfo: {
       established: "2021年",
-      capital: "3億円",
+      capital: "5,000万円",
       address: "東京都渋谷区渋谷2-24-12 渋谷スクランブルスクエア39階"
     },
     requiredDocuments: ["請求書", "身分証明書", "通帳"],
-    url: "https://example.com/labol",
+    url: "https://labol.co.jp/",
     category: ["個人事業主", "少額", "審査甘い"]
   },
   {
@@ -320,7 +320,7 @@ export const factoringCompanies: FactoringCompany[] = [
       address: "東京都港区南青山2-2-15 ウィン青山836"
     },
     requiredDocuments: ["請求書", "通帳"],
-    url: "https://example.com/paytoday",
+    url: "https://paytoday.jp/",
     category: ["手数料安い", "即日"]
   },
   {
@@ -354,7 +354,7 @@ export const factoringCompanies: FactoringCompany[] = [
       address: "東京都港区芝公園一丁目3-5 ジー・イー・ジャパンビル2階"
     },
     requiredDocuments: ["請求書", "通帳", "身分証明書"],
-    url: "https://example.com/support-kinyu",
+    url: "https://chushokigyo-support.or.jp/",
     category: ["手数料安い", "信頼性"]
   },
   {
@@ -422,7 +422,7 @@ export const factoringCompanies: FactoringCompany[] = [
       address: "東京都千代田区鍛冶町1-4-3 竹内ビル2階"
     },
     requiredDocuments: ["請求書", "通帳", "身分証明書", "商業登記簿謄本"],
-    url: "https://example.com/top-management",
+    url: "https://top-management.co.jp/",
     category: ["高額", "3社間"]
   },
   {
@@ -451,12 +451,12 @@ export const factoringCompanies: FactoringCompany[] = [
     ],
     reviewCount: 720,
     companyInfo: {
-      established: "2016年",
+      established: "2009年9月",
       capital: "3,000万円",
       address: "東京都新宿区新宿4-3-17 FORECAST新宿SOUTH 8階"
     },
     requiredDocuments: ["請求書", "通帳", "身分証明書"],
-    url: "https://example.com/mentor-capital",
+    url: "https://mentor-capital.jp/",
     category: ["審査甘い", "即日"]
   },
   {
@@ -490,7 +490,7 @@ export const factoringCompanies: FactoringCompany[] = [
       address: "東京都台東区東上野3-5-9 本池田第一ビル4階"
     },
     requiredDocuments: ["請求書", "通帳", "身分証明書"],
-    url: "https://example.com/ennavi",
+    url: "https://ennavi.tokyo/",
     category: ["即日", "24時間"]
   },
   {
@@ -524,7 +524,7 @@ export const factoringCompanies: FactoringCompany[] = [
       address: "東京都渋谷区桜丘町26-1 セルリアンタワー"
     },
     requiredDocuments: ["請求書", "身分証明書"],
-    url: "https://example.com/freenance",
+    url: "https://freenance.net/",
     category: ["個人事業主", "少額", "信頼性"]
   },
   {
