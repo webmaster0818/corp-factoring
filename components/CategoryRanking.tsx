@@ -1,6 +1,7 @@
 "use client";
 
 import { FactoringCompany } from "@/data/companies";
+import { getRealRating } from "@/data/realRatings";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -35,11 +36,16 @@ export function CategoryRanking({ title, companies, icon }: CategoryRankingProps
               {/* 会社情報 */}
               <div className="flex-grow">
                 <div className="font-bold text-lg mb-1">{company.name}</div>
-                <div className="flex items-center gap-2 text-sm text-gray-600 mb-2">
-                  <span>⭐ {company.rating}</span>
-                  <span>•</span>
-                  <span>{company.reviewCount}件</span>
-                </div>
+                {(() => {
+                  const rr = getRealRating(company.slug);
+                  return rr ? (
+                    <div className="flex items-center gap-2 text-sm text-gray-600 mb-2">
+                      <span>★ {rr.rating.toFixed(1)}</span>
+                      <span>•</span>
+                      <span>Google {rr.count.toLocaleString()}件</span>
+                    </div>
+                  ) : null;
+                })()}
                 <div className="flex flex-wrap gap-2">
                   {company.features.slice(0, 3).map((feature, idx) => (
                     <Badge key={idx} variant="secondary" className="text-xs">

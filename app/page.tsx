@@ -6,6 +6,7 @@ import { FeeSimulator } from "@/components/FeeSimulator";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { factoringCompanies } from "@/data/companies";
+import { getRealRating } from "@/data/realRatings";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
@@ -226,12 +227,16 @@ export default function Home() {
                           <h3 className="text-2xl font-bold text-gray-900 mb-1">
                             {company.name}
                           </h3>
-                          <div className="flex items-center gap-2 mb-2">
-                            <span className="text-yellow-500 text-lg">★</span>
-                            <span className="text-lg font-semibold">
-                              {company.rating}
-                            </span>
-                          </div>
+                          {(() => {
+                            const rr = getRealRating(company.slug);
+                            return rr ? (
+                              <div className="flex items-center gap-2 mb-2">
+                                <span className="text-yellow-500 text-lg">★</span>
+                                <span className="text-lg font-semibold">{rr.rating.toFixed(1)}</span>
+                                <span className="text-xs text-gray-500">Google {rr.count.toLocaleString()}件</span>
+                              </div>
+                            ) : null;
+                          })()}
                         </div>
                       </div>
 

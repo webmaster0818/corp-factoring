@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { FactoringCompany, factoringCompanies } from "@/data/companies";
+import { getRealRating } from "@/data/realRatings";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -156,12 +157,17 @@ export function DiagnosisTool() {
                         <div className="text-xs text-gray-600 mb-1">入金スピード</div>
                         <div className="font-bold text-green-700">⚡{company.speed}</div>
                       </div>
-                      <div className="bg-purple-50 p-3 rounded">
-                        <div className="text-xs text-gray-600 mb-1">評価</div>
-                        <div className="font-bold text-purple-700">
-                          ⭐{company.rating} ({company.reviewCount}件)
-                        </div>
-                      </div>
+                      {(() => {
+                        const rr = getRealRating(company.slug);
+                        return rr ? (
+                          <div className="bg-purple-50 p-3 rounded">
+                            <div className="text-xs text-gray-600 mb-1">Google評価</div>
+                            <div className="font-bold text-purple-700">
+                              ★{rr.rating.toFixed(1)} ({rr.count.toLocaleString()}件)
+                            </div>
+                          </div>
+                        ) : null;
+                      })()}
                     </div>
 
                     <div className="flex flex-wrap gap-2 mb-3">

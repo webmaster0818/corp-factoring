@@ -173,32 +173,9 @@ const beTradingDetails: CompanyDetailData = {
       note: "少額の資金調達が得意"
     }
   ],
-  performance: [
-    { year: 2013, amount: "1億円", users: "350社" },
-    { year: 2014, amount: "32億円", users: "1,450社" },
-    { year: 2015, amount: "61億円", users: "2,420社" },
-    { year: 2016, amount: "80億円", users: "3,150社" },
-    { year: 2017, amount: "105億円", users: "4,120社" },
-    { year: 2018, amount: "125億円", users: "4,610社" },
-    { year: 2019, amount: "142億円", users: "5,250社" },
-    { year: 2020, amount: "144億円", users: "5,320社" },
-    { year: 2021, amount: "156億円", users: "7,700社" },
-    { year: 2022, amount: "173億円", users: "9,300社" },
-    { year: 2023, amount: "216億円", users: "11,200社" },
-    { year: 2024, amount: "250億円", users: "12,600社" }
-  ],
-  mediaCoverage: [
-    {
-      name: "日本経済新聞",
-      url: "https://www.nikkei.com/article/DGXZQOGC225T70S1A120C2000000/",
-      description: "ファクタリングサービスの先駆者として紹介"
-    },
-    {
-      name: "東京MIX",
-      url: "https://www.youtube.com/watch?v=w6U8biQ7BJQ",
-      description: "おすすめのファクタリング会社として特集"
-    }
-  ]
+  // 実績推移データ・メディア掲載は出典の一次確認が取れていないため非表示（架空情報を出さない方針 2026-06-14）
+  performance: [],
+  mediaCoverage: []
 };
 
 // QuQuMo（ククモ）の詳細情報

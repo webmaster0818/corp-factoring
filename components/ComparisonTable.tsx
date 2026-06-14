@@ -1,6 +1,7 @@
 "use client";
 
 import { FactoringCompany } from "@/data/companies";
+import { getRealRating } from "@/data/realRatings";
 import {
   Table,
   TableBody,
@@ -44,9 +45,14 @@ export function ComparisonTable({ companies }: ComparisonTableProps) {
               <TableCell>
                 <div>
                   <div className="font-bold text-base">{company.name}</div>
-                  <div className="text-xs text-gray-500 mt-1">
-                    ⭐ {company.rating} ({company.reviewCount}件)
-                  </div>
+                  {(() => {
+                    const rr = getRealRating(company.slug);
+                    return rr ? (
+                      <div className="text-xs text-gray-500 mt-1">
+                        ★ {rr.rating.toFixed(1)} (Google {rr.count.toLocaleString()}件)
+                      </div>
+                    ) : null;
+                  })()}
                 </div>
               </TableCell>
               <TableCell>

@@ -39,7 +39,7 @@ export async function generateMetadata({
   
   return {
     title: `【${company.name}】の評判・口コミ・手数料を徹底解説【2026年最新】`,
-    description: `${company.name}のファクタリングサービスを徹底解説。手数料${company.fees.min}%〜${company.fees.max}%、${company.speed}で入金可能。Google Maps実評価・メリット・デメリット・必要書類・活用事例を詳しく紹介。${categoryText}に最適なファクタリング業者です。`,
+    description: `${company.name}のファクタリングサービスを徹底解説。手数料${company.fees.min}%〜${company.fees.max}%、${company.speed}で入金可能。Google Maps実評価・メリット・デメリット・必要書類・活用シーンを詳しく紹介。${categoryText}に最適なファクタリング業者です。`,
     keywords: `${company.name},${company.nameKana},ファクタリング,評判,口コミ,手数料,${categoryText},徹底解説`,
     openGraph: {
       title: `【${company.name}】の評判・口コミ・手数料を徹底解説【2026年最新】`,
@@ -171,7 +171,7 @@ export default function CompanyPage({
             </a>
             <a href="#use-cases" className="text-gray-700 hover:text-blue-600 font-medium py-3 px-4 bg-gray-50 rounded hover:bg-blue-50 transition border border-transparent hover:border-blue-200 flex items-center gap-3">
               <span className="text-blue-600">→</span>
-              活用事例
+              活用シーン
             </a>
             <a href="#reviews" className="text-gray-700 hover:text-blue-600 font-medium py-3 px-4 bg-gray-50 rounded hover:bg-blue-50 transition border border-transparent hover:border-blue-200 flex items-center gap-3">
               <span className="text-blue-600">→</span>
@@ -552,7 +552,10 @@ export default function CompanyPage({
         <section id="use-cases" className="mb-12 scroll-mt-4">
           <Card className="border-2 border-gray-100 shadow-sm">
             <CardHeader className="bg-gray-50 border-b border-gray-100">
-              <CardTitle className="text-2xl font-black text-gray-900">📖 {company.name}の活用事例</CardTitle>
+              <CardTitle className="text-2xl font-black text-gray-900">{company.name}が向いている活用シーン</CardTitle>
+              <p className="text-sm text-gray-500 mt-2">
+                ※ 以下は一般的な利用シーンのイメージです。特定の利用者の実例ではありません。
+              </p>
             </CardHeader>
             <CardContent className="pt-6">
               <div className="space-y-6">
@@ -561,16 +564,12 @@ export default function CompanyPage({
                     <h3 className="font-black text-gray-900 mb-4 text-xl">{useCase.title}</h3>
                     <div className="space-y-4">
                       <div>
-                        <h4 className="font-bold text-gray-700 mb-2 text-sm">💡 状況</h4>
+                        <h4 className="font-bold text-gray-700 mb-2 text-sm">想定される状況</h4>
                         <p className="text-gray-600 leading-relaxed pl-4 border-l-4 border-gray-500">{useCase.situation}</p>
                       </div>
                       <div>
-                        <h4 className="font-bold text-gray-700 mb-2 text-sm">🔧 解決策</h4>
+                        <h4 className="font-bold text-gray-700 mb-2 text-sm">{company.name}での対応イメージ</h4>
                         <p className="text-gray-600 leading-relaxed pl-4 border-l-4 border-blue-500">{useCase.solution}</p>
-                      </div>
-                      <div>
-                        <h4 className="font-bold text-gray-700 mb-2 text-sm">✅ 結果</h4>
-                        <p className="text-gray-700 font-medium leading-relaxed pl-4 border-l-4 border-green-500">{useCase.result}</p>
                       </div>
                     </div>
                   </div>

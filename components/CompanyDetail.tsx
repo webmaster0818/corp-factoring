@@ -1,6 +1,7 @@
 "use client";
 
 import { FactoringCompany } from "@/data/companies";
+import { getRealRating } from "@/data/realRatings";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -18,9 +19,14 @@ export function CompanyDetail({ company }: CompanyDetailProps) {
           <div className="flex items-center justify-between">
             <div>
               <CardTitle className="text-3xl">{company.name}</CardTitle>
-              <CardDescription className="text-lg mt-2">
-                ⭐ {company.rating} ({company.reviewCount}件のレビュー)
-              </CardDescription>
+              {(() => {
+                const rr = getRealRating(company.slug);
+                return rr ? (
+                  <CardDescription className="text-lg mt-2">
+                    ★ {rr.rating.toFixed(1)} (Google {rr.count.toLocaleString()}件のレビュー)
+                  </CardDescription>
+                ) : null;
+              })()}
             </div>
             <Button size="lg" className="whitespace-nowrap">
               公式サイトへ
