@@ -57,7 +57,7 @@ export const factoringCompanies: FactoringCompany[] = [
     nameKana: "びーとれーでぃんぐ",
     slug: "be-trading",
     rating: 4.8,
-    fees: { min: 2.0, max: 12.0 },
+    fees: { min: 6.4, max: 9.7 },
     speed: "最短2時間",
     minAmount: 0,
     maxAmount: "無制限",
@@ -116,7 +116,7 @@ export const factoringCompanies: FactoringCompany[] = [
       address: "東京都豊島区東池袋3-1-1 サンシャイン60 45階"
     },
     requiredDocuments: ["請求書", "通帳"],
-    url: "https://ququmo.com/",
+    url: "https://ququmo.net/",
     category: ["総合", "手数料安い", "即日"]
   },
   {
@@ -218,7 +218,7 @@ export const factoringCompanies: FactoringCompany[] = [
       address: "東京都港区赤坂2-14-27 国際新赤坂ビル東館17階"
     },
     requiredDocuments: ["請求書", "通帳", "身分証明書"],
-    url: "https://example.com/pmg",
+    url: "https://p-m-g.tokyo/",
     category: ["即日", "手数料安い"]
   },
   {
@@ -363,7 +363,7 @@ export const factoringCompanies: FactoringCompany[] = [
     nameKana: "まねーふぉわーど あーりーぺいめんと",
     slug: "mf-earlypayment",
     rating: 4.3,
-    fees: { min: 1.0, max: 10.0 },
+    fees: { min: 0.5, max: 10.0 },
     speed: "最短2営業日",
     minAmount: 0,
     maxAmount: "無制限",
@@ -388,7 +388,7 @@ export const factoringCompanies: FactoringCompany[] = [
       address: "東京都港区芝浦3-1-21 msb Tamachi 田町ステーションタワーS 21階"
     },
     requiredDocuments: ["請求書", "通帳"],
-    url: "https://example.com/mf-earlypayment",
+    url: "https://mfkessai.co.jp/fast-receivables/top",
     category: ["信頼性", "手数料安い"]
   },
   {
@@ -397,7 +397,7 @@ export const factoringCompanies: FactoringCompany[] = [
     nameKana: "とっぷまねじめんと",
     slug: "top-management",
     rating: 4.2,
-    fees: { min: 3.5, max: 12.5 },
+    fees: { min: 0.5, max: 12.5 },
     speed: "最短即日",
     minAmount: 300000,
     maxAmount: "3億円",
@@ -490,7 +490,7 @@ export const factoringCompanies: FactoringCompany[] = [
       address: "東京都台東区東上野3-5-9 本池田第一ビル4階"
     },
     requiredDocuments: ["請求書", "通帳", "身分証明書"],
-    url: "https://ennavi.tokyo/",
+    url: "https://ennavi-factoring.net/",
     category: ["即日", "24時間"]
   },
   {
@@ -558,7 +558,7 @@ export const factoringCompanies: FactoringCompany[] = [
       address: "東京都中央区銀座7-13-6 サガミビル2階"
     },
     requiredDocuments: ["請求書", "通帳", "身分証明書"],
-    url: "https://example.com/minna-factoring",
+    url: "https://minnanofactoring.net/",
     category: ["個人事業主", "即日"]
   }
 ];
