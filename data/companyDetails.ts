@@ -304,6 +304,18 @@ const defaultDetails: CompanyDetailData = {
 
 import { getCompanyBySlug } from "./companies";
 
+// 各社公式サイトで確認した営業時間（確認日 2026年7月8日）。公式に明示のないものは note に「公式では確認できず」と記載。
+const operatingHoursMap: { [slug: string]: CompanyOperatingHours } = {
+  "ennavi": { weekdays: "24時間365日 対応（受付）", note: "公式に「24時間365日対応」と記載。オンライン申込は常時受付。具体的な電話受付時間帯・定休日は公式では確認できず（2026年7月8日確認）。" },
+  "accel-factor": { weekdays: "電話受付 平日 10:00〜18:30", saturday: "休業", sunday: "休業", holidays: "休業", note: "オンライン見積フォームは24時間365日受付（公式・2026年7月8日確認）。" },
+  "freenance": { weekdays: "オンライン完結（即日払いは当日16:30までの承認で当日振込・以降翌営業日）", note: "営業時間・定休日・土日対応の明示は公式では確認できず（2026年7月8日確認）。" },
+  "paytoday": { weekdays: "平日 9:00〜17:00", note: "問い合わせフォームは24時間受付。AI審査でオンライン完結（公式FAQ・2026年7月8日確認）。" },
+  "support-kinyu": { weekdays: "平日 9:30〜18:00", note: "24時間受付・土日祝対応の明示は公式では確認できず（2026年7月8日確認）。" },
+  "paytner": { weekdays: "365日 振込対応（オンライン）", note: "審査は365日実施ではなく、営業時間外の申請は翌営業日入金。具体的な受付時刻は公式では確認できず（2026年7月8日確認）。" },
+  "labol": { weekdays: "24時間365日 随時対応（オンライン完結）", note: "最短30分入金。年始等の休業日が設定される場合あり（公式・2026年7月8日確認）。" },
+  "pmg": { weekdays: "電話受付 8:00〜20:00", note: "24時間受付・土日対応・定休日の明示は公式では確認できず（2026年7月8日確認）。" },
+};
+
 export function getCompanyDetails(slug: string): CompanyDetailData {
   switch (slug) {
     case "be-trading":
@@ -314,9 +326,11 @@ export function getCompanyDetails(slug: string): CompanyDetailData {
       // 既存のcompanyInfoから詳細データを生成
       const company = getCompanyBySlug(slug);
       if (!company) return defaultDetails;
-      
+      const hours = operatingHoursMap[slug];
+
       return {
         ...defaultDetails,
+        operatingHours: hours ?? defaultDetails.operatingHours,
         offices: [
           {
             name: "本社",
@@ -325,8 +339,10 @@ export function getCompanyDetails(slug: string): CompanyDetailData {
         ],
         faqs: [
           {
-            question: "土日に対応していますか？",
-            answer: "営業時間については公式サイトをご確認ください。"
+            question: "営業時間・土日対応は？",
+            answer: hours
+              ? `${company.name}の営業時間は「${hours.weekdays}」です（2026年7月8日に公式サイトで確認）。${hours.note ?? ""}`
+              : "営業時間については公式サイトをご確認ください。"
           },
           {
             question: "利用できない業種はありますか？",
@@ -342,7 +358,9 @@ export function getCompanyDetails(slug: string): CompanyDetailData {
           },
           {
             question: "手数料はどのくらいですか？",
-            answer: `手数料は${company.fees.min}%〜${company.fees.max}%程度です。売掛先の信用力や取引履歴によって変動します。`
+            answer: (["ennavi", "mentor-capital", "minna-factoring"].includes(slug))
+              ? `${company.name}は公式サイトで手数料率を明示しておらず、売掛先の信用力や取引内容に応じた見積もりで決まります（2026年7月8日確認）。相場は2社間で概ね10%前後、3社間で数%程度とされますが、必ず見積もりで確認してください。`
+              : `手数料は${company.fees.min}%〜${company.fees.max}%程度です。売掛先の信用力や取引履歴によって変動します。`
           }
         ]
       };
