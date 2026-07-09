@@ -5,6 +5,7 @@ import type { Metadata } from "next";
 import { getCompanyBySlug, factoringCompanies } from "@/data/companies";
 import { getCompanyStrengths, getCompanyUseCases } from "@/data/companyExtended";
 import { getRealRating } from "@/data/realRatings";
+import { getReviewTrend } from "@/data/reviewTrends";
 import { getCompanyDetails } from "@/data/companyDetails";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -72,6 +73,7 @@ export default function CompanyPage({
   const strengths = getCompanyStrengths(slug);
   const useCases = getCompanyUseCases(slug);
   const realRating = getRealRating(slug);
+  const reviewTrend = getReviewTrend(slug);
   const details = getCompanyDetails(slug);
 
   // 構造化データ（JSON-LD）。aggregateRating は Google Maps の実評価が
@@ -578,6 +580,36 @@ export default function CompanyPage({
             </CardContent>
           </Card>
         </section>
+
+        {/* 公開口コミの傾向（出典・調査年月つき） */}
+        {reviewTrend && (
+          <section id="review-trends" className="mb-8 scroll-mt-4">
+            <Card className="border-2 border-gray-100 shadow-sm">
+              <div className="p-6 md:p-8">
+                <h2 className="text-xl md:text-2xl font-bold text-gray-900 mb-1">{company.name}の公開口コミの傾向</h2>
+                <p className="text-xs text-gray-500 mb-5">出典：{reviewTrend.source}。口コミは傾向の要約で、個別の体験には差があります。</p>
+                <div className="grid md:grid-cols-2 gap-5">
+                  <div>
+                    <p className="font-bold text-emerald-700 text-sm mb-2">好意的な傾向</p>
+                    <ul className="space-y-2">
+                      {reviewTrend.good.map((g, i) => (
+                        <li key={i} className="flex gap-2 text-sm text-gray-700 leading-relaxed"><span className="text-emerald-600 shrink-0">◎</span><span>{g}</span></li>
+                      ))}
+                    </ul>
+                  </div>
+                  <div>
+                    <p className="font-bold text-orange-700 text-sm mb-2">気になる/否定的な傾向</p>
+                    <ul className="space-y-2">
+                      {reviewTrend.bad.map((b, i) => (
+                        <li key={i} className="flex gap-2 text-sm text-gray-700 leading-relaxed"><span className="text-orange-500 shrink-0">△</span><span>{b}</span></li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </Card>
+          </section>
+        )}
 
         {/* 利用者の口コミ（Google口コミ引用） */}
         <ReviewSection
