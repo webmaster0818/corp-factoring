@@ -297,6 +297,21 @@ export default function CompanyPage({
           </CardContent>
         </Card>
 
+        {/* 手数料比較ハブへの内部リンク（回遊強化） */}
+        <div className="mb-12 rounded-xl border border-blue-100 bg-blue-50/60 p-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+          <p className="text-sm text-gray-700 leading-relaxed">
+            手数料や入金スピードは会社ごとに大きく異なります。
+            <span className="font-bold">ファクタリング15社を公式サイトで一次確認して比較</span>し、
+            {company.name}の条件を相場と見比べてみましょう。
+          </p>
+          <Link
+            href="/fees/"
+            className="shrink-0 inline-flex items-center justify-center rounded-lg bg-blue-600 px-4 py-2 text-sm font-bold text-white hover:bg-blue-700 transition-colors"
+          >
+            15社の手数料・入金スピードを比較する →
+          </Link>
+        </div>
+
         {/* 実績データの推移 */}
         {details.performance && details.performance.length > 0 && (
           <section id="performance" className="mb-12 scroll-mt-4">
