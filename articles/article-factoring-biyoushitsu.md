@@ -210,6 +210,6 @@ A. 業務委託（個人事業主）への報酬は給与ではありません�
 
 - [ファクタリングとは？仕組みをわかりやすく解説](/articles/article-factoring-toha/)
 - [業種別ファクタリング活用ガイド](/articles/article-factoring-gyoushu-guide/)
-- [ファクタリングおすすめ20選｜手数料・即日対応を徹底比較](/articles/article-factoring-osusume/)
-- [ファクタリング手数料の相場と安い会社12選](/articles/article-factoring-tesuryo/)
+- [請求書買取サービスおすすめ20選｜手数料・入金スピードで比較](/articles/article-seikyusho-kaitori/)
+- [ファクタリング15社 手数料・入金スピード比較（公式を実確認）](/fees/)
 - [ファクタリングの審査基準と通過率を高めるコツ](/articles/article-factoring-shinsa/)
