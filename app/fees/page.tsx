@@ -5,6 +5,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { FeeSimulator } from "@/components/FeeSimulator";
 import { factoringCompanies } from "@/data/companies";
+import { feeIndex, feeCheckedAt } from "@/data/feeIndex";
 
 export const metadata = {
   title: "ファクタリング手数料が安い会社10選【2026年最新】相場・計算方法・抑えるコツ",
@@ -184,6 +185,53 @@ export default function FeesPage() {
                   </div>
                 </div>
               </div>
+            </CardContent>
+          </Card>
+        </section>
+
+        {/* 一次確認 手数料・入金スピード比較インデックス */}
+        <section id="fee-index" className="mb-12">
+          <Card className="border-2 border-gray-100 shadow-sm">
+            <CardHeader className="bg-gray-50 border-b border-gray-100">
+              <CardTitle className="text-2xl font-black text-gray-900">ファクタリング15社 手数料・入金スピード比較（公式を実確認）</CardTitle>
+            </CardHeader>
+            <CardContent className="pt-6">
+              <p className="text-sm text-gray-700 leading-relaxed mb-2">
+                主要15社の<strong>手数料率（2社間/3社間）・最短入金・利用可能額・対象・オンライン完結</strong>を、各社公式サイトで<strong>{feeCheckedAt}に一件ずつ確認</strong>して一覧化しました。公式に手数料率を明示していない社は「非公示（要見積もり）」と正直に記載しています（改定が速い分野のため月次で再確認・更新）。
+              </p>
+              <div className="overflow-x-auto rounded-xl border border-gray-200 mb-3">
+                <table className="w-full text-xs sm:text-sm min-w-[900px]">
+                  <thead>
+                    <tr className="bg-gray-800 text-white">
+                      <th className="px-3 py-3 text-left font-bold whitespace-nowrap">会社</th>
+                      <th className="px-3 py-3 text-left font-bold">2社間 手数料</th>
+                      <th className="px-3 py-3 text-left font-bold">3社間 手数料</th>
+                      <th className="px-3 py-3 text-left font-bold">最短入金</th>
+                      <th className="px-3 py-3 text-left font-bold">利用可能額</th>
+                      <th className="px-3 py-3 text-left font-bold">対象</th>
+                      <th className="px-3 py-3 text-left font-bold">オンライン</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {feeIndex.map((r, i) => (
+                      <tr key={r.slug} className={i % 2 ? "bg-gray-50" : "bg-white"}>
+                        <td className="px-3 py-2.5 font-bold text-gray-900 align-top whitespace-nowrap">
+                          <Link href={`/companies/${r.slug}`} className="text-blue-700 hover:underline">{r.name}</Link>
+                        </td>
+                        <td className="px-3 py-2.5 text-gray-700 align-top">{r.fee2}</td>
+                        <td className="px-3 py-2.5 text-gray-700 align-top">{r.fee3}</td>
+                        <td className="px-3 py-2.5 text-gray-700 align-top whitespace-nowrap">{r.speed}</td>
+                        <td className="px-3 py-2.5 text-gray-700 align-top">{r.amount}</td>
+                        <td className="px-3 py-2.5 text-gray-700 align-top">{r.target}</td>
+                        <td className="px-3 py-2.5 text-gray-700 align-top">{r.online}</td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </div>
+              <p className="text-xs text-gray-500">
+                ※ 各社公式サイトの表示を{feeCheckedAt}に当サイトが確認したものです。「〜」は下限、「非公示」は公式に手数料率の記載がないことを示します。実際の手数料・入金時間は売掛先の信用力・契約内容・申込時間帯で変動します。契約前に各社の見積もりで総額をご確認ください。
+              </p>
             </CardContent>
           </Card>
         </section>
