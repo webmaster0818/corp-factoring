@@ -446,7 +446,7 @@ export const factoringCompanies: FactoringCompany[] = [
       "全国対応"
     ],
     cons: [
-      "手数料上限20%とやや高め",
+      "手数料率が公式で非公示のため、事前に見積もりでの確認が必要",
       "最低買取額30万円"
     ],
     reviewCount: 720,
@@ -480,7 +480,7 @@ export const factoringCompanies: FactoringCompany[] = [
       "即日対応"
     ],
     cons: [
-      "手数料5%〜20%とやや高め",
+      "手数料率が公式で非公示のため、事前に見積もりでの確認が必要",
       "3社間非対応"
     ],
     reviewCount: 580,
@@ -548,7 +548,7 @@ export const factoringCompanies: FactoringCompany[] = [
       "柔軟審査"
     ],
     cons: [
-      "手数料3%〜15%とやや高め",
+      "手数料率が公式で非公示のため、事前に見積もりでの確認が必要",
       "実績が少ない"
     ],
     reviewCount: 420,

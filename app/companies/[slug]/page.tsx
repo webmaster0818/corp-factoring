@@ -7,6 +7,7 @@ import { getCompanyStrengths, getCompanyUseCases } from "@/data/companyExtended"
 import { getRealRating } from "@/data/realRatings";
 import { getReviewTrend } from "@/data/reviewTrends";
 import { getCompanyDetails } from "@/data/companyDetails";
+import { feeIndex } from "@/data/feeIndex";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -37,20 +38,23 @@ export async function generateMetadata({
   }
 
   const categoryText = company.category.slice(0, 3).join("・");
+  const metaFeeRow = feeIndex.find((r) => r.slug === slug);
+  const metaFeeUndisclosed = !!metaFeeRow && /非公示|確認できず|個別査定/.test(metaFeeRow.fee2);
+  const feeText = metaFeeUndisclosed ? "手数料は要見積もり" : `手数料${company.fees.min}%〜${company.fees.max}%`;
   
   return {
     title: `【${company.name}】の評判・口コミ・手数料を徹底解説【2026年最新】`,
-    description: `${company.name}のファクタリングサービスを徹底解説。手数料${company.fees.min}%〜${company.fees.max}%、${company.speed}で入金可能。Google Maps実評価・メリット・デメリット・必要書類・活用シーンを詳しく紹介。${categoryText}に最適なファクタリング業者です。`,
+    description: `${company.name}のファクタリングサービスを徹底解説。${feeText}、${company.speed}で入金可能。Google Maps実評価・メリット・デメリット・必要書類・活用シーンを詳しく紹介。${categoryText}に最適なファクタリング業者です。`,
     keywords: `${company.name},${company.nameKana},ファクタリング,評判,口コミ,手数料,${categoryText},徹底解説`,
     openGraph: {
       title: `【${company.name}】の評判・口コミ・手数料を徹底解説【2026年最新】`,
-      description: `手数料${company.fees.min}%〜${company.fees.max}%、${company.speed}で入金。${company.description}`,
+      description: `${feeText}、${company.speed}で入金。${company.description}`,
       type: "article",
     },
     twitter: {
       card: "summary",
       title: `【${company.name}】の評判・口コミ・手数料を徹底解説【2026年最新】`,
-      description: `手数料${company.fees.min}%〜${company.fees.max}%、${company.speed}で入金。${company.description}`,
+      description: `${feeText}、${company.speed}で入金。${company.description}`,
     },
     alternates: {
       canonical: `/companies/${slug}`,
@@ -75,6 +79,8 @@ export default function CompanyPage({
   const realRating = getRealRating(slug);
   const reviewTrend = getReviewTrend(slug);
   const details = getCompanyDetails(slug);
+  const feeRow = feeIndex.find((f) => f.slug === slug);
+  const feeUndisclosed = !!feeRow && /非公示|確認できず|個別査定/.test(feeRow.fee2);
 
   // 構造化データ（JSON-LD）。aggregateRating は Google Maps の実評価が
   // 確認できた会社のみ実値で出力し、未確認の会社では出力しない（架空評価を出さない）。
@@ -102,11 +108,15 @@ export default function CompanyPage({
           },
         }
       : {}),
-    "offers": {
-      "@type": "Offer",
-      "price": `${company.fees.min}-${company.fees.max}%`,
-      "priceCurrency": "JPY"
-    }
+    ...(feeUndisclosed
+      ? {}
+      : {
+          offers: {
+            "@type": "Offer",
+            price: `${company.fees.min}-${company.fees.max}%`,
+            priceCurrency: "JPY",
+          },
+        })
   };
 
   return (
@@ -255,6 +265,64 @@ export default function CompanyPage({
           </div>
         </div>
 
+        {/* サブ意図クイックアンサー（営業時間・審査スピード・必要書類などの即答） */}
+        <section id="quick-answer" className="mb-8 scroll-mt-4">
+          <Card className="border-2 border-blue-100 shadow-sm">
+            <CardHeader className="bg-blue-50 border-b border-blue-100">
+              <CardTitle className="text-xl font-black text-gray-900">{company.name}の営業時間・審査スピード・必要書類【早わかり】</CardTitle>
+            </CardHeader>
+            <CardContent className="pt-5">
+              <p className="text-sm text-gray-700 leading-relaxed mb-4">
+                {company.name}は<strong>最短{company.speed}での入金</strong>に対応し、
+                {company.personalSupport ? "個人事業主・フリーランスも利用できます。" : "主に法人向けのサービスです。"}
+                営業時間・必要書類・手数料などのよく調べられる項目を、公式サイトで確認した情報をもとにまとめました。
+              </p>
+              <div className="overflow-x-auto">
+                <table className="w-full text-sm border border-gray-200 rounded-lg">
+                  <tbody>
+                    <tr className="border-b border-gray-100">
+                      <th className="text-left align-top bg-gray-50 px-3 py-2.5 font-bold text-gray-700 w-36 whitespace-nowrap">営業時間</th>
+                      <td className="px-3 py-2.5 text-gray-800">
+                        {details.operatingHours.weekdays}
+                        {details.operatingHours.saturday && <>／土 {details.operatingHours.saturday}</>}
+                        {details.operatingHours.sunday && <>／日 {details.operatingHours.sunday}</>}
+                      </td>
+                    </tr>
+                    <tr className="border-b border-gray-100">
+                      <th className="text-left align-top bg-gray-50 px-3 py-2.5 font-bold text-gray-700 whitespace-nowrap">審査・入金スピード</th>
+                      <td className="px-3 py-2.5 text-gray-800">最短{company.speed}</td>
+                    </tr>
+                    <tr className="border-b border-gray-100">
+                      <th className="text-left align-top bg-gray-50 px-3 py-2.5 font-bold text-gray-700 whitespace-nowrap">手数料</th>
+                      <td className="px-3 py-2.5 text-gray-800">
+                        {feeRow ? feeRow.fee2 : `${company.fees.min}%〜${company.fees.max}%`}（<Link href="/fees/" className="text-blue-600 hover:underline">15社の手数料を一次確認で比較</Link>）
+                      </td>
+                    </tr>
+                    <tr className="border-b border-gray-100">
+                      <th className="text-left align-top bg-gray-50 px-3 py-2.5 font-bold text-gray-700 whitespace-nowrap">買取可能額</th>
+                      <td className="px-3 py-2.5 text-gray-800">
+                        {company.minAmount === 0 ? "下限なし" : `${(company.minAmount / 10000).toFixed(0)}万円`}〜{company.maxAmount}
+                      </td>
+                    </tr>
+                    <tr className="border-b border-gray-100">
+                      <th className="text-left align-top bg-gray-50 px-3 py-2.5 font-bold text-gray-700 whitespace-nowrap">必要書類</th>
+                      <td className="px-3 py-2.5 text-gray-800">{company.requiredDocuments.slice(0, 4).join("・")}</td>
+                    </tr>
+                    <tr>
+                      <th className="text-left align-top bg-gray-50 px-3 py-2.5 font-bold text-gray-700 whitespace-nowrap">個人事業主・フリーランス</th>
+                      <td className="px-3 py-2.5 text-gray-800">{company.personalSupport ? "対応" : "要問い合わせ（主に法人向け）"}</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              {details.operatingHours.note && (
+                <p className="mt-3 text-xs text-gray-500 leading-relaxed">※ 営業時間：{details.operatingHours.note}</p>
+              )}
+              <p className="mt-2 text-xs text-gray-500">※ 最新の条件は公式サイトでご確認ください。手数料の非公示社は「要見積もり」が実態です。</p>
+            </CardContent>
+          </Card>
+        </section>
+
         {/* 基本情報 */}
         <Card className="mb-8 border-2 border-gray-100 shadow-sm">
           <CardHeader className="bg-gray-50 border-b border-gray-100">
@@ -265,7 +333,7 @@ export default function CompanyPage({
               <div className="bg-blue-50 p-5 rounded-xl border border-blue-100">
                 <h3 className="font-bold text-gray-700 mb-2 text-sm">💰 手数料</h3>
                 <p className="text-3xl font-black text-blue-600">
-                  {company.fees.min}%〜{company.fees.max}%
+                  {feeUndisclosed ? "要見積もり" : `${company.fees.min}%〜${company.fees.max}%`}
                 </p>
               </div>
               <div className="bg-green-50 p-5 rounded-xl border border-green-100">
