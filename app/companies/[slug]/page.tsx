@@ -43,17 +43,17 @@ export async function generateMetadata({
   const feeText = metaFeeUndisclosed ? "手数料は要見積もり" : `手数料${company.fees.min}%〜${company.fees.max}%`;
   
   return {
-    title: `【${company.name}】の評判・口コミ・手数料を徹底解説【2026年最新】`,
+    title: `【${company.name}】の評判・口コミ・手数料を徹底解説【2026年7月】`,
     description: `${company.name}のファクタリングサービスを徹底解説。${feeText}、${company.speed}で入金可能。Google Maps実評価・メリット・デメリット・必要書類・活用シーンを詳しく紹介。${categoryText}に最適なファクタリング業者です。`,
     keywords: `${company.name},${company.nameKana},ファクタリング,評判,口コミ,手数料,${categoryText},徹底解説`,
     openGraph: {
-      title: `【${company.name}】の評判・口コミ・手数料を徹底解説【2026年最新】`,
+      title: `【${company.name}】の評判・口コミ・手数料を徹底解説【2026年7月】`,
       description: `${feeText}、${company.speed}で入金。${company.description}`,
       type: "article",
     },
     twitter: {
       card: "summary",
-      title: `【${company.name}】の評判・口コミ・手数料を徹底解説【2026年最新】`,
+      title: `【${company.name}】の評判・口コミ・手数料を徹底解説【2026年7月】`,
       description: `${feeText}、${company.speed}で入金。${company.description}`,
     },
     alternates: {
