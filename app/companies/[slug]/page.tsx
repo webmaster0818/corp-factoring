@@ -319,6 +319,15 @@ export default function CompanyPage({
                 <p className="mt-3 text-xs text-gray-500 leading-relaxed">※ 営業時間：{details.operatingHours.note}</p>
               )}
               <p className="mt-2 text-xs text-gray-500">※ 最新の条件は公式サイトでご確認ください。手数料の非公示社は「要見積もり」が実態です。</p>
+              <div className="mt-4 border-t border-gray-100 pt-3">
+                <p className="text-xs font-bold text-gray-600 mb-2">もっと詳しく：</p>
+                <div className="flex flex-wrap gap-x-4 gap-y-1.5 text-xs">
+                  <Link href="/articles/article-factoring-shinsa/" className="text-blue-600 hover:underline">ファクタリングの審査基準・通過のコツ →</Link>
+                  <Link href="/articles/article-factoring-nyuukin-jikan/" className="text-blue-600 hover:underline">最短入金・即日対応の実態 →</Link>
+                  <Link href="/articles/article-factoring-hitsuyou-shorui/" className="text-blue-600 hover:underline">必要書類の一覧 →</Link>
+                  <Link href="/fees/" className="text-blue-600 hover:underline">15社の手数料を比較 →</Link>
+                </div>
+              </div>
             </CardContent>
           </Card>
         </section>
