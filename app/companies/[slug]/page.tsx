@@ -82,6 +82,33 @@ export default function CompanyPage({
   const feeRow = feeIndex.find((f) => f.slug === slug);
   const feeUndisclosed = !!feeRow && /非公示|確認できず|個別査定/.test(feeRow.fee2);
 
+  // 指名×具体サブ意図（営業時間・審査・必要書類・個人事業主可否）の即答FAQ。
+  // 早見表と同じ一次確認済みフィールドから生成し、検索クエリと同じ言い回しで
+  // FAQPage構造化データにも反映する（架空データなし）。
+  const subIntentFaqs = details
+    ? [
+        {
+          question: `${company.name}の営業時間は？`,
+          answer: `${company.name}の営業時間は、平日 ${details.operatingHours.weekdays}${details.operatingHours.saturday ? `／土 ${details.operatingHours.saturday}` : ""}${details.operatingHours.sunday ? `／日 ${details.operatingHours.sunday}` : ""} です。${details.operatingHours.note ? details.operatingHours.note : "最新の受付時間は公式サイトでご確認ください。"}`,
+        },
+        {
+          question: `${company.name}の審査・入金スピードはどのくらいですか？`,
+          answer: `${company.name}は最短${company.speed}での入金が可能とされています。実際の所要時間は、申込時間・提出書類・売掛先の状況により変動します。`,
+        },
+        {
+          question: `${company.name}の必要書類は？`,
+          answer: `主な必要書類は「${company.requiredDocuments.slice(0, 4).join("・")}」などです。会社や審査状況により追加書類を求められる場合があるため、詳細は公式サイトでご確認ください。`,
+        },
+        {
+          question: `${company.name}は個人事業主・フリーランスでも使えますか？`,
+          answer: company.personalSupport
+            ? `${company.name}は個人事業主・フリーランスの利用にも対応しています。`
+            : `${company.name}は主に法人向けのサービスで、個人事業主・フリーランスの利用は要問い合わせです。`,
+        },
+      ]
+    : [];
+  const allFaqs = [...subIntentFaqs, ...(details?.faqs ?? [])];
+
   // 構造化データ（JSON-LD）。aggregateRating は Google Maps の実評価が
   // 確認できた会社のみ実値で出力し、未確認の会社では出力しない（架空評価を出さない）。
   const structuredData = {
@@ -833,7 +860,7 @@ export default function CompanyPage({
             </CardHeader>
             <CardContent className="pt-6">
               <div className="space-y-6">
-                {details.faqs.map((faq, index) => (
+                {allFaqs.map((faq, index) => (
                   <div key={index} className="border-b border-gray-200 pb-6 last:border-0 last:pb-0">
                     <h3 className="font-bold text-lg mb-3 text-gray-900">Q. {faq.question}</h3>
                     <p className="text-gray-700 pl-6">{faq.answer}</p>
@@ -979,7 +1006,7 @@ export default function CompanyPage({
             __html: JSON.stringify({
               "@context": "https://schema.org",
               "@type": "FAQPage",
-              mainEntity: details.faqs.map((faq) => ({
+              mainEntity: allFaqs.map((faq) => ({
                 "@type": "Question",
                 name: faq.question,
                 acceptedAnswer: { "@type": "Answer", text: faq.answer },
