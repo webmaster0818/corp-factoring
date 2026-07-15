@@ -232,6 +232,19 @@ export default function FeesPage() {
               <p className="text-xs text-gray-500">
                 ※ 各社公式サイトの表示を{feeCheckedAt}に当サイトが確認したものです。「〜」は下限、「非公示」は公式に手数料率の記載がないことを示します。実際の手数料・入金時間は売掛先の信用力・契約内容・申込時間帯で変動します。契約前に各社の見積もりで総額をご確認ください。
               </p>
+
+              {/* このデータについて（集計方法）＝E-E-A-T・引用されやすい一次データの透明化 */}
+              <div className="mt-5 rounded-lg border border-gray-200 bg-gray-50 p-4 text-sm text-gray-700">
+                <p className="font-bold text-gray-900 mb-2">このデータについて（集計方法）</p>
+                <ul className="space-y-1.5 list-disc pl-5">
+                  <li><strong>対象：</strong>ファクタリング主要{feeIndex.length}社</li>
+                  <li><strong>確認方法：</strong>各社の公式サイトに表示された手数料率（2社間／3社間）・最短入金・利用可能額・対象・オンライン完結可否を、当サイト編集部が一件ずつ確認</li>
+                  <li><strong>確認日：</strong>{feeCheckedAt}</li>
+                  <li><strong>非公示の扱い：</strong>公式に手数料率の記載がない社は、推測で埋めず「非公示（要見積もり）」と記載</li>
+                  <li><strong>更新方針：</strong>改定の速い分野のため、月次を目安に再確認して更新</li>
+                  <li><strong>運営・編集：</strong>本データの作成方針・運営者情報は<a href="/about/" className="text-blue-600 underline">運営者情報・編集方針</a>をご覧ください。実際の手数料・入金時間は契約条件等で変動するため、契約前に各社の見積もりで総額をご確認ください。</li>
+                </ul>
+              </div>
             </CardContent>
           </Card>
         </section>
@@ -465,6 +478,27 @@ export default function FeesPage() {
               { "@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://corp-factoring.com" },
               { "@type": "ListItem", "position": 2, "name": "手数料比較", "item": "https://corp-factoring.com/fees" },
             ],
+          }),
+        }}
+      />
+
+      {/* Dataset 構造化データ＝一次確認データ資産を「引用可能なデータセット」として明示（AI/検索の権威づけ） */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Dataset",
+            "name": `ファクタリング${feeIndex.length}社 手数料・入金スピード比較データ（公式一次確認）`,
+            "description": `ファクタリング主要${feeIndex.length}社の手数料率（2社間／3社間）・最短入金・利用可能額・対象・オンライン完結可否を、各社公式サイトで一件ずつ確認して集計したデータセット。`,
+            "creator": { "@type": "Organization", "name": "corp-factoring 編集部", "url": "https://corp-factoring.com/" },
+            "temporalCoverage": "2026-07-07",
+            "dateModified": "2026-07-07",
+            "spatialCoverage": { "@type": "Place", "name": "日本" },
+            "measurementTechnique": "各社公式サイトに表示された手数料率・入金スピード・条件の確認",
+            "variableMeasured": ["2社間手数料率", "3社間手数料率", "最短入金", "利用可能額", "オンライン完結可否"],
+            "isAccessibleForFree": true,
+            "url": "https://corp-factoring.com/fees/",
           }),
         }}
       />
