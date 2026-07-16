@@ -64,6 +64,26 @@ export default function AboutPage() {
         </section>
 
         <section className="mb-10 prose prose-gray max-w-none text-sm leading-relaxed space-y-4">
+          <h2 className="text-xl font-bold mt-2 mb-3">料金・条件データの一次確認プロセス</h2>
+          <p>
+            ファクタリングの手数料・入金スピード・利用条件は改定が速く、まとめサイトの情報が古くなりがちな分野です。当サイトでは、<a href="/fees/" className="text-blue-600 hover:underline">手数料・入金スピード比較インデックス</a>をはじめとする料金・条件データについて、次のプロセスで正確性を担保しています。
+          </p>
+          <ul className="list-disc pl-6 space-y-1">
+            <li><strong>各社公式サイトを一件ずつ確認</strong>：手数料率（2社間／3社間）・最短入金・利用可能額・対象・オンライン完結可否を、編集部が各社の公式サイトで直接確認します</li>
+            <li><strong>確認日を明記</strong>：いつ時点の情報かが分かるよう、確認日を各データに記載します</li>
+            <li><strong>非公示は推測で埋めない</strong>：公式に手数料率の記載がない社は「非公示（要見積もり）」と正直に記載し、根拠のない数値は掲載しません</li>
+            <li><strong>月次で再確認</strong>：改定の速い分野のため、月次を目安に再確認して更新します</li>
+          </ul>
+        </section>
+
+        <section className="mb-10 prose prose-gray max-w-none text-sm leading-relaxed space-y-4">
+          <h2 className="text-xl font-bold mt-2 mb-3">架空データを掲載しない方針</h2>
+          <p>
+            当サイトは、<strong>架空の口コミ・体験談、根拠のない料金・評価（★）を一切掲載しません</strong>。口コミ・評判は出典と調査時点を明記し、公式に確認できない情報は「確認できず」「非公示」と正直に記載します。利用者の資金調達の意思決定に関わる情報だからこそ、正確性と誠実さを最優先します。
+          </p>
+        </section>
+
+        <section className="mb-10 prose prose-gray max-w-none text-sm leading-relaxed space-y-4">
           <h2 className="text-xl font-bold mt-2 mb-3">AI利用方針</h2>
           <p>
             当サイトでは、編集効率化のためにAIツール（大規模言語モデル等）を活用する場合があります。ただし、すべてのAI生成コンテンツは人間の編集者による事実確認・編集・改善を経た上で公開されています。Googleの「Scaled Content Abuse」ポリシーに準拠し、ユーザーに価値を提供しない大量生成コンテンツの公開は行いません。
@@ -80,9 +100,23 @@ export default function AboutPage() {
           </p>
         </section>
 
-        <p className="text-xs text-gray-500 mt-12">最終更新日：2026年5月21日</p>
+        <p className="text-xs text-gray-500 mt-12">最終更新日：2026年7月16日</p>
       </main>
       <Footer />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "株式会社MediaX",
+            "url": "https://corp-factoring.com/",
+            "email": "webmaster@mediax.biz",
+            "description": "ファクタリングの比較・情報サイト『ファクタリング比較ナビ』の運営。各社公式サイトの一次確認に基づく料金・条件データを提供。",
+            "knowsAbout": ["ファクタリング", "資金調達", "売掛金", "請求書買取"],
+          }),
+        }}
+      />
     </div>
   );
 }
