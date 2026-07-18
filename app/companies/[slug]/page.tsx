@@ -107,7 +107,16 @@ export default function CompanyPage({
         },
       ]
     : [];
-  const allFaqs = [...subIntentFaqs, ...(details?.faqs ?? [])];
+  // 指名×「手数料」サブ意図の即答FAQ。/fees/の一次確認feeIndexから生成（架空なし）。
+  const feeFaqs = feeRow
+    ? [
+        {
+          question: `${company.name}の手数料はいくらですか？`,
+          answer: `${company.name}の手数料は、公式表示で2社間ファクタリングが「${feeRow.fee2}」${/^[―—\-\s]*$|非対応/.test(feeRow.fee3) ? "" : `、3社間が「${feeRow.fee3}」`}です。実際の手数料は売掛先の信用力・買取金額・継続利用の有無などで変動します。最新の一次確認値は当サイトの15社手数料比較（/fees/）でご確認いただけます。`,
+        },
+      ]
+    : [];
+  const allFaqs = [...subIntentFaqs, ...feeFaqs, ...(details?.faqs ?? [])];
 
   // 構造化データ（JSON-LD）。aggregateRating は Google Maps の実評価が
   // 確認できた会社のみ実値で出力し、未確認の会社では出力しない（架空評価を出さない）。
