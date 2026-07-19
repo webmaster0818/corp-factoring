@@ -206,6 +206,19 @@ export default async function ArticlePage({
           </Link>
         </div>
 
+        {/* 手数料記事 → /fees/ データ資産への導線（手数料クラスタの相互リンク） */}
+        {slug.includes("tesuryo") && (
+          <section className="mt-12 bg-[#F0F6FC] border border-[#1B3A5C]/15 rounded-xl p-6">
+            <h2 className="text-lg font-bold text-[#1B3A5C] mb-2">15社の手数料を一次確認データで比較する</h2>
+            <p className="text-sm text-gray-700 mb-4">
+              各社の手数料（2社間・3社間の実値）は、当サイトが各社公式サイトを1件ずつ確認して掲載しています。会社ごとの手数料は下の比較表で確認できます。
+            </p>
+            <Link href="/fees/" className="inline-block bg-[#1B3A5C] text-white text-sm font-bold px-5 py-2.5 rounded-lg hover:opacity-90 transition">
+              15社の手数料比較表を見る →
+            </Link>
+          </section>
+        )}
+
         {/* 関連記事 */}
         {relatedArticles.length > 0 && (
           <section className="mt-12">

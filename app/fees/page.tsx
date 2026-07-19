@@ -430,6 +430,23 @@ export default function FeesPage() {
           </Card>
         </section>
 
+        {/* 手数料クラスタの関連記事（相互リンク） */}
+        <section className="mb-8">
+          <h2 className="text-lg font-bold text-[#1B3A5C] mb-4">手数料をもっと詳しく知る</h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
+            {[
+              { slug: "article-factoring-tesuryo", label: "ファクタリング手数料の相場と内訳｜2社間・3社間の違い" },
+              { slug: "article-factoring-tesuryo-yasui", label: "ファクタリング手数料が安い会社の選び方" },
+              { slug: "article-factoring-tesuryo-koushou", label: "ファクタリング手数料の交渉術・下げ方" },
+            ].map((a) => (
+              <Link key={a.slug} href={`/articles/${a.slug}`} className="block bg-white border border-gray-200 rounded-xl p-4 hover:border-[#1B3A5C] hover:shadow-md transition">
+                <span className="text-xs font-semibold text-[#1B3A5C] bg-[#F0F6FC] px-2 py-0.5 rounded-full">解説記事</span>
+                <p className="mt-2 text-sm font-medium text-gray-800 leading-snug">{a.label}</p>
+              </Link>
+            ))}
+          </div>
+        </section>
+
         {/* CTA */}
         <div className="bg-gradient-to-br from-orange-500 via-amber-500 to-orange-600 rounded-2xl shadow-2xl shadow-orange-500/30 p-10 text-center text-white mb-8">
           <h2 className="text-3xl font-black mb-4">

@@ -331,7 +331,7 @@ export default function CompanyPage({
                     <tr className="border-b border-gray-100">
                       <th className="text-left align-top bg-gray-50 px-3 py-2.5 font-bold text-gray-700 whitespace-nowrap">手数料</th>
                       <td className="px-3 py-2.5 text-gray-800">
-                        {feeRow ? feeRow.fee2 : `${company.fees.min}%〜${company.fees.max}%`}（<Link href="/fees/" className="text-blue-600 hover:underline">15社の手数料を一次確認で比較</Link>）
+                        {feeRow ? feeRow.fee2 : `${company.fees.min}%〜${company.fees.max}%`}（<Link href="/fees/" className="text-blue-600 hover:underline">15社の手数料を一次確認で比較</Link>／<Link href="/articles/article-factoring-tesuryo-yasui" className="text-blue-600 hover:underline">手数料の相場と安い会社</Link>）
                       </td>
                     </tr>
                     <tr className="border-b border-gray-100">
