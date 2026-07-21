@@ -1,4 +1,4 @@
-// ファクタリング15社の手数料・入金スピード等を各社公式サイトで一次確認（確認日 2026年7月7日）。
+// ファクタリング15社の手数料・入金スピード等を各社公式サイトで一次確認（確認日 2026年7月21日。前回7月7日）。
 // 公式に明示のない手数料率は「非公示（要見積もり）」と正直に記載。月次で再確認して更新する。
 
 export interface FeeIndexRow {
@@ -12,10 +12,10 @@ export interface FeeIndexRow {
   online: string; // オンライン完結
 }
 
-export const feeCheckedAt = "2026年7月7日";
+export const feeCheckedAt = "2026年7月21日";
 
 export const feeIndex: FeeIndexRow[] = [
-  { slug: "be-trading", name: "ビートレーディング", fee2: "平均9.4%（段階制 7.3〜9.7%）", fee3: "平均6.4%", speed: "最短2時間", amount: "1万円〜無制限（実績7億円）", target: "法人・個人・フリーランス", online: "可（クラウドサイン）" },
+  { slug: "be-trading", name: "ビートレーディング", fee2: "4〜12%", fee3: "2〜9%", speed: "最短2時間", amount: "1万円〜無制限（実績7億円）", target: "法人・個人・フリーランス", online: "可（クラウドサイン）" },
   { slug: "ququmo", name: "QuQuMo", fee2: "1%〜（上限は公式非公表）", fee3: "非対応", speed: "最短2時間", amount: "上限なし", target: "法人・個人・フリーランス", online: "可" },
   { slug: "accel-factor", name: "アクセルファクター", fee2: "1〜12%", fee3: "0.5〜10.5%", speed: "最短3時間（即日）", amount: "30万円〜無制限", target: "法人・個人事業主", online: "可（遠方はオンライン）" },
   { slug: "best-factor", name: "ベストファクター", fee2: "2%〜（下限のみ）", fee3: "非公示（要見積もり）", speed: "最短即日〜3営業日", amount: "30万円〜1億円", target: "法人・個人", online: "不可（契約時に面談要）" },
