@@ -322,6 +322,9 @@ export default function CompanyPage({
                         {details.operatingHours.weekdays}
                         {details.operatingHours.saturday && <>／土 {details.operatingHours.saturday}</>}
                         {details.operatingHours.sunday && <>／日 {details.operatingHours.sunday}</>}
+                        {["labol","paytner","accel-factor","paytoday","support-kinyu","pmg","ennavi","freenance"].includes(slug) && (
+                          <> — <Link href={`/companies/${slug}/eigyo-jikan/`} className="text-blue-600 underline whitespace-nowrap">営業時間を詳しく</Link></>
+                        )}
                       </td>
                     </tr>
                     <tr className="border-b border-gray-100">
