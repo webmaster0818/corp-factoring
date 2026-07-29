@@ -644,7 +644,7 @@ export const factoringCompanies: FactoringCompany[] = [
     maxAmount: "公式では確認できず",
     personalSupport: false,
     features: ["審査通過率90%以上", "24時間対応", "2社間・3社間対応"],
-    description: "手数料4%〜・最短即日（公式は平均2.3日という実測値も公表）。2社間・3社間の両方に対応し、審査通過率90%以上を公式表示。※「いーばんく」は広告・プロモーション上の名称で、公式サイトの表記は「アクシアプラスのファクタリング」。",
+    description: "手数料4%〜・最短即日（公式は平均2.3日という実測値も公表）。2社間・3社間の両方に対応し、審査通過率90%以上を公式表示。※「いーばんく」は広告・プロモーション上の名称で、公式サイトの表記は「アクシアプラスのファクタリング」。同社は「インボイスファクター」も運営。",
     pros: [
       "手数料4%〜（下限を公式表示）",
       "最短即日・平均2.3日という実測値を公式が公表",
@@ -666,6 +666,39 @@ export const factoringCompanies: FactoringCompany[] = [
     requiredDocuments: ["公式サイトに明示なし（問い合わせ時に案内）"],
     url: "https://tomodachi-my.com/",
     category: ["審査甘い", "即日"]
+  },
+  {
+    id: 19,
+    name: "インボイスファクター",
+    nameKana: "いんぼいすふぁくたー",
+    slug: "invoice-factor",
+    rating: 0,
+    fees: { min: 0, max: 0 },
+    speed: "最短即日",
+    minAmount: 0,
+    maxAmount: "公式では確認できず",
+    personalSupport: false,
+    features: ["即日入金", "アクシアプラス運営", "いーばんくと同運営"],
+    description: "株式会社アクシアプラス（「いーばんく」と同じ運営会社）のファクタリングサービス。公式LPで即日入金を訴求。手数料・買取可能額などの詳細は公式LPに明示がなく、要問い合わせ。",
+    pros: [
+      "即日入金（公式LP表示）",
+      "運営会社は「いーばんく」と同じ株式会社アクシアプラス（法人実体を一次確認済み）",
+      "参考: 同運営の「いーばんく」では手数料4%〜・2社間/3社間対応を公式表示"
+    ],
+    cons: [
+      "手数料・買取可能額・必要書類・対象（個人事業主可否）が公式LPに明示されておらず要問い合わせ",
+      "公式サイトがLPのみでサービス情報の記載が限定的",
+      "設立2019年4月と比較的新しい"
+    ],
+    reviewCount: 0,
+    companyInfo: {
+      established: "2019年4月",
+      capital: "1,000万円",
+      address: "東京都千代田区神田小川町2-3-7 6F"
+    },
+    requiredDocuments: ["公式LPに明示なし（問い合わせ時に案内）"],
+    url: "https://invoice-factor.jp/lp/",
+    category: ["即日"]
   }
 ];
 

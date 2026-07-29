@@ -118,7 +118,7 @@ export default function CompanyPage({
     ? [
         {
           question: `${company.name}の手数料はいくらですか？`,
-          answer: `${company.name}の手数料は、公式表示で2社間ファクタリングが「${feeRow.fee2}」${/^[―—\-\s]*$|非対応/.test(feeRow.fee3) ? "" : `、3社間が「${feeRow.fee3}」`}です。実際の手数料は売掛先の信用力・買取金額・継続利用の有無などで変動します。最新の一次確認値は当サイトの18社手数料比較（/fees/）でご確認いただけます。`,
+          answer: `${company.name}の手数料は、公式表示で2社間ファクタリングが「${feeRow.fee2}」${/^[―—\-\s]*$|非対応/.test(feeRow.fee3) ? "" : `、3社間が「${feeRow.fee3}」`}です。実際の手数料は売掛先の信用力・買取金額・継続利用の有無などで変動します。最新の一次確認値は当サイトの19社手数料比較（/fees/）でご確認いただけます。`,
         },
       ]
     : [];
@@ -340,7 +340,7 @@ export default function CompanyPage({
                     <tr className="border-b border-gray-100">
                       <th className="text-left align-top bg-gray-50 px-3 py-2.5 font-bold text-gray-700 whitespace-nowrap">手数料</th>
                       <td className="px-3 py-2.5 text-gray-800">
-                        {feeRow ? feeRow.fee2 : `${company.fees.min}%〜${company.fees.max}%`}（<Link href="/fees/" className="text-blue-600 hover:underline">18社の手数料を一次確認で比較</Link>／<Link href="/articles/article-factoring-tesuryo-yasui" className="text-blue-600 hover:underline">手数料の相場と安い会社</Link>）
+                        {feeRow ? feeRow.fee2 : `${company.fees.min}%〜${company.fees.max}%`}（<Link href="/fees/" className="text-blue-600 hover:underline">19社の手数料を一次確認で比較</Link>／<Link href="/articles/article-factoring-tesuryo-yasui" className="text-blue-600 hover:underline">手数料の相場と安い会社</Link>）
                       </td>
                     </tr>
                     <tr className="border-b border-gray-100">
@@ -370,7 +370,7 @@ export default function CompanyPage({
                   <Link href="/articles/article-factoring-shinsa/" className="text-blue-600 hover:underline">ファクタリングの審査基準・通過のコツ →</Link>
                   <Link href="/articles/article-factoring-nyuukin-jikan/" className="text-blue-600 hover:underline">最短入金・即日対応の実態 →</Link>
                   <Link href="/articles/article-factoring-hitsuyou-shorui/" className="text-blue-600 hover:underline">必要書類の一覧 →</Link>
-                  <Link href="/fees/" className="text-blue-600 hover:underline">18社の手数料を比較 →</Link>
+                  <Link href="/fees/" className="text-blue-600 hover:underline">19社の手数料を比較 →</Link>
                 </div>
               </div>
             </CardContent>
@@ -423,14 +423,14 @@ export default function CompanyPage({
         <div className="mb-12 rounded-xl border border-blue-100 bg-blue-50/60 p-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
           <p className="text-sm text-gray-700 leading-relaxed">
             手数料や入金スピードは会社ごとに大きく異なります。
-            <span className="font-bold">ファクタリング18社を公式サイトで一次確認して比較</span>し、
+            <span className="font-bold">ファクタリング19社を公式サイトで一次確認して比較</span>し、
             {company.name}の条件を相場と見比べてみましょう。
           </p>
           <Link
             href="/fees/"
             className="shrink-0 inline-flex items-center justify-center rounded-lg bg-blue-600 px-4 py-2 text-sm font-bold text-white hover:bg-blue-700 transition-colors"
           >
-            18社の手数料・入金スピードを比較する →
+            19社の手数料・入金スピードを比較する →
           </Link>
         </div>
 
