@@ -175,12 +175,14 @@ export default async function ArticlePage({
                   <h3 className="text-sm font-bold text-gray-900 group-hover:text-[#1B3A5C] transition">
                     {company.name}
                   </h3>
-                  <span className="text-xs font-semibold text-amber-600 bg-amber-50 px-2 py-0.5 rounded">
-                    ★ {company.rating}
-                  </span>
+                  {company.rating > 0 && (
+                    <span className="text-xs font-semibold text-amber-600 bg-amber-50 px-2 py-0.5 rounded">
+                      ★ {company.rating}
+                    </span>
+                  )}
                 </div>
                 <p className="text-xs text-gray-500 mb-2">
-                  手数料 {company.fees.min}%〜{company.fees.max}% ／ {company.speed}
+                  手数料 {company.fees.max > 0 ? `${company.fees.min}%〜${company.fees.max}%` : "要見積もり"} ／ {company.speed}
                 </p>
                 <span className="text-xs text-[#1B3A5C] font-medium group-hover:underline">
                   詳細を見る →
@@ -209,12 +211,12 @@ export default async function ArticlePage({
         {/* 手数料記事 → /fees/ データ資産への導線（手数料クラスタの相互リンク） */}
         {slug.includes("tesuryo") && (
           <section className="mt-12 bg-[#F0F6FC] border border-[#1B3A5C]/15 rounded-xl p-6">
-            <h2 className="text-lg font-bold text-[#1B3A5C] mb-2">15社の手数料を一次確認データで比較する</h2>
+            <h2 className="text-lg font-bold text-[#1B3A5C] mb-2">17社の手数料を一次確認データで比較する</h2>
             <p className="text-sm text-gray-700 mb-4">
               各社の手数料（2社間・3社間の実値）は、当サイトが各社公式サイトを1件ずつ確認して掲載しています。会社ごとの手数料は下の比較表で確認できます。
             </p>
             <Link href="/fees/" className="inline-block bg-[#1B3A5C] text-white text-sm font-bold px-5 py-2.5 rounded-lg hover:opacity-90 transition">
-              15社の手数料比較表を見る →
+              17社の手数料比較表を見る →
             </Link>
           </section>
         )}

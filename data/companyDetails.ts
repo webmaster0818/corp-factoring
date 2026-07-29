@@ -314,6 +314,7 @@ const operatingHoursMap: { [slug: string]: CompanyOperatingHours } = {
   "paytner": { weekdays: "365日 振込対応（オンライン）", note: "審査は365日実施ではなく、営業時間外の申請は翌営業日入金。具体的な受付時刻は公式では確認できず（2026年7月8日確認）。" },
   "labol": { weekdays: "24時間365日 随時対応（オンライン完結）", note: "最短30分入金。年始等の休業日が設定される場合あり（公式・2026年7月8日確認）。" },
   "pmg": { weekdays: "電話受付 8:00〜20:00", note: "24時間受付・土日対応・定休日の明示は公式では確認できず（2026年7月8日確認）。" },
+  "jtc": { weekdays: "電話受付 平日 9:00〜18:00", note: "土日祝も電話対応可・メール/FAXは24時間受付。契約は事前予約制（公式・2026年7月29日確認）。" },
 };
 
 export function getCompanyDetails(slug: string): CompanyDetailData {

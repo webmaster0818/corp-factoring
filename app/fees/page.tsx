@@ -29,6 +29,7 @@ export const metadata = {
 export default function FeesPage() {
   // 手数料が安い順に並べ替え
   const lowFeeCompanies = [...factoringCompanies]
+    .filter((c) => c.fees.max > 0)
     .sort((a, b) => a.fees.min - b.fees.min)
     .slice(0, 10);
 
@@ -193,11 +194,11 @@ export default function FeesPage() {
         <section id="fee-index" className="mb-12">
           <Card className="border-2 border-gray-100 shadow-sm">
             <CardHeader className="bg-gray-50 border-b border-gray-100">
-              <CardTitle className="text-2xl font-black text-gray-900">ファクタリング15社 手数料・入金スピード比較（公式を実確認）</CardTitle>
+              <CardTitle className="text-2xl font-black text-gray-900">ファクタリング17社 手数料・入金スピード比較（公式を実確認）</CardTitle>
             </CardHeader>
             <CardContent className="pt-6">
               <p className="text-sm text-gray-700 leading-relaxed mb-2">
-                主要15社の<strong>手数料率（2社間/3社間）・最短入金・利用可能額・対象・オンライン完結</strong>を、各社公式サイトで<strong>{feeCheckedAt}に一件ずつ確認</strong>して一覧化しました。公式に手数料率を明示していない社は「非公示（要見積もり）」と正直に記載しています（改定が速い分野のため月次で再確認・更新）。
+                主要17社の<strong>手数料率（2社間/3社間）・最短入金・利用可能額・対象・オンライン完結</strong>を、各社公式サイトで<strong>{feeCheckedAt}に一件ずつ確認</strong>して一覧化しました。公式に手数料率を明示していない社は「非公示（要見積もり）」と正直に記載しています（改定が速い分野のため月次で再確認・更新）。
               </p>
               <div className="overflow-x-auto rounded-xl border border-gray-200 mb-3">
                 <table className="w-full text-xs sm:text-sm min-w-[900px]">

@@ -11,6 +11,7 @@ const SITE = "https://corp-factoring.com";
 // GSCで「会社名 営業時間」等のサブ意図に表示実績があり、かつ公式一次確認の営業時間データを持つ会社のみ切り出す。
 // （表示実績の無い意図は親レビューのFAQに留め、薄いページ・カニバリを避ける方針）
 const HOURS_SLUGS = [
+  "jtc",
   "labol",
   "paytner",
   "accel-factor",

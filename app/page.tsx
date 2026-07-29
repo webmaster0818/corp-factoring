@@ -12,7 +12,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 
 export default function Home() {
-  const topCompanies = factoringCompanies.slice(0, 15);
+  const topCompanies = factoringCompanies;
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -52,7 +52,7 @@ export default function Home() {
                   href="#ranking"
                   className="inline-block bg-[#1B3A5C] text-white font-bold py-2.5 px-6 rounded-md text-sm hover:bg-[#152d47] transition"
                 >
-                  おすすめ15社を見る →
+                  おすすめ17社を見る →
                 </Link>
               </div>
             </div>
@@ -60,7 +60,7 @@ export default function Home() {
 
           <div className="text-center">
             <div className="inline-flex items-center gap-2 bg-blue-50 border border-blue-200 px-5 py-2 rounded-md text-sm font-medium mb-6">
-              <span className="text-gray-700">2026年4月 最新版｜<span className="text-[#1B3A5C] font-bold">15社</span>を徹底比較</span>
+              <span className="text-gray-700">2026年4月 最新版｜<span className="text-[#1B3A5C] font-bold">17社</span>を徹底比較</span>
             </div>
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-gray-900 leading-[1.2] mb-5">
               手数料・審査・入金スピードを<br />
@@ -93,7 +93,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
             <div>
-              <p className="text-3xl lg:text-4xl font-black text-[#1B3A5C]">15社</p>
+              <p className="text-3xl lg:text-4xl font-black text-[#1B3A5C]">17社</p>
               <p className="text-gray-500 text-sm mt-1">掲載会社数</p>
             </div>
             <div>

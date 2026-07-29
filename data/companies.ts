@@ -334,12 +334,13 @@ export const factoringCompanies: FactoringCompany[] = [
     minAmount: 0,
     maxAmount: "無制限",
     personalSupport: true,
-    features: ["非営利団体", "経営革新等支援機関", "信頼性高"],
-    description: "経営革新等支援機関認定の非営利団体。手数料1.5%〜10%と低水準。",
+    features: ["FACTOR⁺U（ファクトル）", "経営革新等支援機関", "非営利団体"],
+    description: "経営革新等支援機関認定の非営利団体。ファクタリングサービスの正式名称は「FACTOR⁺U（ファクトル）」。手数料1.5%〜10%と低水準。",
     pros: [
       "非営利団体運営で信頼性高",
       "経営革新等支援機関認定",
       "手数料1.5%〜10%",
+      "ファクタリングサービス「FACTOR⁺U（ファクトル）」はAI審査・必要書類2点・Web完結（公式・2026年7月29日確認）",
       "郵送契約可能",
       "個人事業主OK"
     ],
@@ -560,6 +561,76 @@ export const factoringCompanies: FactoringCompany[] = [
     requiredDocuments: ["請求書", "通帳", "身分証明書"],
     url: "https://minnanofactoring.net/",
     category: ["個人事業主", "即日"]
+  },
+  {
+    id: 16,
+    name: "JTC",
+    nameKana: "じぇいてぃーしー",
+    slug: "jtc",
+    rating: 0,
+    fees: { min: 1.2, max: 10.0 },
+    speed: "最短即日",
+    minAmount: 1000000,
+    maxAmount: "上限なし（売掛金の範囲内）",
+    personalSupport: true,
+    features: ["手数料1.2%〜", "取扱1万件超", "全国対応"],
+    description: "2013年設立・名古屋本社の老舗。手数料1.2%〜10%、取扱件数1万件超・取扱金額500億円の実績。100万円以上の中〜高額債権に強い。",
+    pros: [
+      "手数料1.2%〜10%と低水準（公式表示）",
+      "2013年設立・取扱1万件超の実績",
+      "2社間・3社間の両方に対応",
+      "名古屋・東京・大阪の3拠点で全国対応（出張あり）",
+      "ISO27001（ISMS）認証取得"
+    ],
+    cons: [
+      "最低買取額が100万円以上で少額利用には不向き",
+      "個人事業主の利用は売掛先の承諾（3社間）が前提",
+      "契約は事前予約制"
+    ],
+    reviewCount: 0,
+    companyInfo: {
+      established: "2013年6月",
+      capital: "8,000万円",
+      address: "愛知県名古屋市中区錦2-17-28 CK15伏見ビル5階"
+    },
+    requiredDocuments: ["入金予定申請フォーム（仮審査・公式サイトでダウンロード）", "請求書（直近3回分）", "通帳（3ヶ月分）"],
+    url: "https://j-t-c.info/",
+    category: ["即日", "高額対応"]
+  },
+  {
+    id: 17,
+    name: "¥Today（エントゥデイ）",
+    nameKana: "えんとぅでい",
+    slug: "yen-today",
+    rating: 0,
+    fees: { min: 0, max: 0 },
+    speed: "最短30分",
+    minAmount: 0,
+    maxAmount: "紹介先による",
+    personalSupport: false,
+    features: ["一括申込サービス", "完全無料", "法人専用"],
+    description: "法人専用のファクタリング一括申込サービス。1回の入力で最大3社に一括申込みでき、条件を比較して契約先を選べる。申込サービス自体は完全無料。",
+    pros: [
+      "一括申込サービスの利用は完全無料",
+      "最大3社の条件を比較してから契約先を選べる",
+      "必要書類は請求書（注文書）と銀行通帳の2点",
+      "最短30分で振込完了（公式表示）",
+      "オンライン完結"
+    ],
+    cons: [
+      "法人専用（個人事業主・フリーランスは利用不可）",
+      "手数料は紹介先各社の見積もり次第（サービス側では決まらない）",
+      "運営会社の設立が2026年3月と新しく実績の蓄積はこれから"
+    ],
+    reviewCount: 0,
+    companyInfo: {
+      established: "2026年3月",
+      capital: "公式サイトでは確認できず",
+      address: "東京都品川区上大崎3丁目14番34号 プラスワン402"
+    },
+    requiredDocuments: ["請求書（注文書）", "銀行通帳"],
+    url: "https://www.yen-today.jp/",
+    category: ["法人専用", "一括申込"]
   }
 ];
 
