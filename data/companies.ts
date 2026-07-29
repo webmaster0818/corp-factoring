@@ -631,6 +631,41 @@ export const factoringCompanies: FactoringCompany[] = [
     requiredDocuments: ["請求書（注文書）", "銀行通帳"],
     url: "https://www.yen-today.jp/",
     category: ["法人専用", "一括申込"]
+  },
+  {
+    id: 18,
+    name: "いーばんく（アクシアプラス）",
+    nameKana: "いーばんく",
+    slug: "ebank",
+    rating: 0,
+    fees: { min: 4.0, max: 0 },
+    speed: "最短即日",
+    minAmount: 0,
+    maxAmount: "公式では確認できず",
+    personalSupport: false,
+    features: ["審査通過率90%以上", "24時間対応", "2社間・3社間対応"],
+    description: "手数料4%〜・最短即日（公式は平均2.3日という実測値も公表）。2社間・3社間の両方に対応し、審査通過率90%以上を公式表示。※「いーばんく」は広告・プロモーション上の名称で、公式サイトの表記は「アクシアプラスのファクタリング」。",
+    pros: [
+      "手数料4%〜（下限を公式表示）",
+      "最短即日・平均2.3日という実測値を公式が公表",
+      "2社間・3社間の両方に対応",
+      "24時間対応（公式表示）",
+      "審査通過率90%以上（公式表示）"
+    ],
+    cons: [
+      "手数料の上限・買取可能額・必要書類が公式サイトに明示されておらず要問い合わせ",
+      "個人事業主の利用可否が公式サイトに明示されていない",
+      "設立2019年4月と比較的新しい"
+    ],
+    reviewCount: 0,
+    companyInfo: {
+      established: "2019年4月",
+      capital: "1,000万円",
+      address: "東京都千代田区神田小川町2-3-7 6F"
+    },
+    requiredDocuments: ["公式サイトに明示なし（問い合わせ時に案内）"],
+    url: "https://tomodachi-my.com/",
+    category: ["審査甘い", "即日"]
   }
 ];
 

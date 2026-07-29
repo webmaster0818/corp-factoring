@@ -315,6 +315,7 @@ const operatingHoursMap: { [slug: string]: CompanyOperatingHours } = {
   "labol": { weekdays: "24時間365日 随時対応（オンライン完結）", note: "最短30分入金。年始等の休業日が設定される場合あり（公式・2026年7月8日確認）。" },
   "pmg": { weekdays: "電話受付 8:00〜20:00", note: "24時間受付・土日対応・定休日の明示は公式では確認できず（2026年7月8日確認）。" },
   "jtc": { weekdays: "電話受付 平日 9:00〜18:00", note: "土日祝も電話対応可・メール/FAXは24時間受付。契約は事前予約制（公式・2026年7月29日確認）。" },
+  "ebank": { weekdays: "24時間対応（公式表示）", note: "具体的な電話受付時間帯・定休日は公式では確認できず（2026年7月29日確認）。" },
 };
 
 export function getCompanyDetails(slug: string): CompanyDetailData {

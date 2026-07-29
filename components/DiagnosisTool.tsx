@@ -90,8 +90,8 @@ export function DiagnosisTool() {
 
     // 優先度でソート
     if (answers.priority === "fee") {
-      // 手数料非公示（max 0）の社は末尾へ回す
-      filtered.sort((a, b) => (a.fees.max > 0 ? a.fees.min : 999) - (b.fees.max > 0 ? b.fees.min : 999));
+      // 手数料が全く公示されていない社（min/maxとも0）は末尾へ回す
+      filtered.sort((a, b) => (a.fees.min > 0 ? a.fees.min : 999) - (b.fees.min > 0 ? b.fees.min : 999));
     } else if (answers.priority === "speed") {
       filtered.sort((a, b) => {
         const aSpeed = a.speed.includes("30分") ? 0 : a.speed.includes("2時間") ? 1 : 2;
@@ -151,7 +151,7 @@ export function DiagnosisTool() {
                       <div className="bg-blue-50 p-3 rounded">
                         <div className="text-xs text-gray-600 mb-1">手数料</div>
                         <div className="font-bold text-blue-700">
-                          {company.fees.max > 0 ? `${company.fees.min}%〜${company.fees.max}%` : "要見積もり"}
+                          {company.fees.max > 0 ? `${company.fees.min}%〜${company.fees.max}%` : company.fees.min > 0 ? `${company.fees.min}%〜（上限は要問い合わせ）` : "要見積もり"}
                         </div>
                       </div>
                       <div className="bg-green-50 p-3 rounded">
