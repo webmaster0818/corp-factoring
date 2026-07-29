@@ -12,6 +12,9 @@ const SITE = "https://corp-factoring.com";
 // （表示実績の無い意図は親レビューのFAQに留め、薄いページ・カニバリを避ける方針）
 const HOURS_SLUGS = [
   "jtc",
+  "no1",
+  "factor-plan",
+  "try",
   "labol",
   "paytner",
   "accel-factor",

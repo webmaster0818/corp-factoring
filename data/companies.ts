@@ -44,6 +44,7 @@ export interface FactoringCompany {
   };
   requiredDocuments: string[];
   url: string;
+  affiliateUrl?: string; // アフィリエイトリンク（設定時はCTAがこちらを優先・rel="sponsored nofollow"）
   category: string[];
   strengths?: string[];
   useCases?: UseCaseExample[];
@@ -253,6 +254,7 @@ export const factoringCompanies: FactoringCompany[] = [
     },
     requiredDocuments: ["請求書", "身分証明書", "通帳"],
     url: "https://paytner.co.jp/",
+    affiliateUrl: "https://px.a8.net/svt/ejp?a8mat=4B650J+5CB9NU+4PF6+609HU",
     category: ["個人事業主", "少額", "即日"]
   },
   {
@@ -458,6 +460,7 @@ export const factoringCompanies: FactoringCompany[] = [
     },
     requiredDocuments: ["請求書", "通帳", "身分証明書"],
     url: "https://mentor-capital.jp/",
+    affiliateUrl: "https://px.a8.net/svt/ejp?a8mat=4B650J+510162+5U0K+5YJRM",
     category: ["審査甘い", "即日"]
   },
   {
@@ -665,6 +668,7 @@ export const factoringCompanies: FactoringCompany[] = [
     },
     requiredDocuments: ["公式サイトに明示なし（問い合わせ時に案内）"],
     url: "https://tomodachi-my.com/",
+    affiliateUrl: "https://px.a8.net/svt/ejp?a8mat=4B650J+56CXM2+4HV8+60OXE",
     category: ["審査甘い", "即日"]
   },
   {
@@ -698,7 +702,189 @@ export const factoringCompanies: FactoringCompany[] = [
     },
     requiredDocuments: ["公式LPに明示なし（問い合わせ時に案内）"],
     url: "https://invoice-factor.jp/lp/",
+    affiliateUrl: "https://px.a8.net/svt/ejp?a8mat=4B650J+55RI0A+4HV8+BWVTE",
     category: ["即日"]
+  },
+  {
+    id: 20,
+    name: "株式会社No.1",
+    nameKana: "なんばーわん",
+    slug: "no1",
+    rating: 0,
+    fees: { min: 0.5, max: 15.0 },
+    speed: "最短30分",
+    minAmount: 500000,
+    maxAmount: "3億円（以上は相談可）",
+    personalSupport: true,
+    features: ["手数料0.5%〜", "2社間・3社間対応", "診療・介護報酬対応"],
+    description: "2016年設立・東池袋本社。手数料0.5%〜15%、最短30分で振込。2社間・3社間両対応で、診療報酬・介護報酬ファクタリングにも対応。",
+    pros: [
+      "手数料0.5%〜15%（公式表示）",
+      "最短30分で振込（公式表示）",
+      "2社間・3社間の両方に対応",
+      "審査通過率95%以上（公式表示）",
+      "診療報酬・介護報酬ファクタリングに対応",
+      "名古屋・福岡支社あり・全国対応"
+    ],
+    cons: [
+      "最低買取額が50万円〜で少額には不向き",
+      "受付は平日9:00〜19:00のみ（土日祝休）"
+    ],
+    reviewCount: 0,
+    companyInfo: {
+      established: "2016年1月",
+      capital: "8,000万円",
+      address: "東京都豊島区東池袋1-18-1 Hareza Tower 20F"
+    },
+    requiredDocuments: ["請求書", "通帳コピー"],
+    url: "https://no1service.co.jp/",
+    affiliateUrl: "https://px.a8.net/svt/ejp?a8mat=4B650J+48F84Q+4EKW+TS3OI",
+    category: ["手数料安い", "即日"]
+  },
+  {
+    id: 21,
+    name: "セーフトラスト",
+    nameKana: "せーふとらすと",
+    slug: "safe-trust",
+    rating: 0,
+    fees: { min: 0, max: 0 },
+    speed: "最短即日",
+    minAmount: 0,
+    maxAmount: "1億円",
+    personalSupport: true,
+    features: ["最大1億円", "2社間対応", "オンライン完結"],
+    description: "2社間ファクタリング・最大1億円・最短即日入金のSAFE TRUST株式会社。手数料は売掛先の与信や債権内容により個別決定（率の公式表示なし）。",
+    pros: [
+      "最短即日入金",
+      "最大1億円まで対応",
+      "審査通過率90%以上（公式表示）",
+      "オンライン完結可",
+      "法人・個人事業主とも対応",
+      "売掛先への通知は原則なし・赤字決算でも相談可"
+    ],
+    cons: [
+      "手数料率の公式表示がなく個別査定",
+      "設立年・資本金・代表者が公式サイトで確認できず",
+      "給与ファクタリング・個人間取引は不可"
+    ],
+    reviewCount: 0,
+    companyInfo: {
+      established: "公式サイトでは確認できず",
+      capital: "公式サイトでは確認できず",
+      address: "公式サイトでは確認できず"
+    },
+    requiredDocuments: ["公式サイトに明示なし（問い合わせ時に案内）"],
+    url: "https://safe-trust.co.jp/",
+    affiliateUrl: "https://px.a8.net/svt/ejp?a8mat=4B650J+50ELKA+5VEA+5YRHE",
+    category: ["即日", "個人事業主"]
+  },
+  {
+    id: 22,
+    name: "エーストラスト",
+    nameKana: "えーすとらすと",
+    slug: "ace-trust",
+    rating: 0,
+    fees: { min: 0, max: 0 },
+    speed: "最短2時間",
+    minAmount: 0,
+    maxAmount: "公式では確認できず",
+    personalSupport: false,
+    features: ["最短2時間", "オンライン完結", "INBUYS"],
+    description: "港区西新橋の債権買取会社。最短2時間で送金、来店・面談不要のオンライン完結型サービス「INBUYS」を提供。手数料は業界最安級を標榜（率は実質個別査定）。",
+    pros: [
+      "最短2時間で送金（公式表示）",
+      "来店・面談不要のオンライン完結型（INBUYS）",
+      "審査通過率90%以上（公式表示）",
+      "2社間ファクタリング対応"
+    ],
+    cons: [
+      "手数料表記がサイト内で1%〜と2%〜で混在しており実質は個別査定",
+      "設立年・資本金が公式サイトで確認できず",
+      "買取可能額・必要書類の明示なし",
+      "個人事業主の利用可否が明示されていない"
+    ],
+    reviewCount: 0,
+    companyInfo: {
+      established: "公式サイトでは確認できず",
+      capital: "公式サイトでは確認できず",
+      address: "東京都港区西新橋2-6-1 第二菊家ビル4階"
+    },
+    requiredDocuments: ["公式サイトに明示なし（問い合わせ時に案内）"],
+    url: "https://ace-trust.com/",
+    affiliateUrl: "https://px.a8.net/svt/ejp?a8mat=4B650J+5BPU22+5T7O+5YJRM",
+    category: ["即日"]
+  },
+  {
+    id: 23,
+    name: "ファクタープラン",
+    nameKana: "ふぁくたーぷらん",
+    slug: "factor-plan",
+    rating: 0,
+    fees: { min: 0, max: 0 },
+    speed: "最短即日",
+    minAmount: 500000,
+    maxAmount: "公式では確認できず",
+    personalSupport: false,
+    features: ["法人限定", "最短即日", "クラウドサイン契約"],
+    description: "株式会社ワイズコーポレーション運営の法人限定ファクタリング。最短即日資金化・クラウドサイン電子契約で来店不要（印紙代0円）。最低買取額50万円〜。",
+    pros: [
+      "法人専門で専任担当者が一貫サポート",
+      "最短即日で資金化",
+      "クラウドサイン電子契約・来店不要（印紙代0円）",
+      "担保・保証人不要",
+      "取扱実績1万件超（公式表示）"
+    ],
+    cons: [
+      "法人限定（個人事業主・フリーランスは利用不可）",
+      "手数料率の公式表示がなく要見積もり（「明朗手数料」表記のみ）",
+      "最低買取額50万円〜"
+    ],
+    reviewCount: 0,
+    companyInfo: {
+      established: "公式サイトでは確認できず（運営: 株式会社ワイズコーポレーション）",
+      capital: "公式サイトでは確認できず",
+      address: "東京都豊島区池袋2-50-9 第三共立ビル3F"
+    },
+    requiredDocuments: ["公式サイトに明示なし（問い合わせ時に案内）"],
+    url: "https://factorplan.net/",
+    affiliateUrl: "https://px.a8.net/svt/ejp?a8mat=4B650J+53Z76Y+5RC6+5YJRM",
+    category: ["法人専用", "即日"]
+  },
+  {
+    id: 24,
+    name: "ファクタリングのTRY",
+    nameKana: "ふぁくたりんぐのとらい",
+    slug: "try",
+    rating: 0,
+    fees: { min: 3.0, max: 0 },
+    speed: "最短2時間",
+    minAmount: 0,
+    maxAmount: "1億円",
+    personalSupport: true,
+    features: ["365日24時間受付", "債権譲渡登記不要", "2社間・3社間対応"],
+    description: "株式会社SKO運営。365日24時間受付・オンライン契約なら最短2時間入金。手数料は2社間3%〜/3社間1.2%〜、債権譲渡登記不要。",
+    pros: [
+      "365日24時間受付（公式表示）",
+      "最短2時間入金（オンライン契約時・公式表示）",
+      "手数料2社間3%〜・3社間1.2%〜（公式表示）",
+      "債権譲渡登記不要で利用可能",
+      "審査通過率97%（公式表示）",
+      "信用情報機関への照会なし"
+    ],
+    cons: [
+      "設立年・資本金・代表者が公式サイトで確認できず",
+      "必要書類の明示なし"
+    ],
+    reviewCount: 0,
+    companyInfo: {
+      established: "公式サイトでは確認できず（運営: 株式会社SKO）",
+      capital: "公式サイトでは確認できず",
+      address: "東京都台東区東上野2-21-1 ケーワイビル4F"
+    },
+    requiredDocuments: ["公式サイトに明示なし（問い合わせ時に案内）"],
+    url: "https://www.factoring-try-sko.co.jp/",
+    affiliateUrl: "https://px.a8.net/svt/ejp?a8mat=4B650J+4BEE5M+50EQ+5YJRM",
+    category: ["即日", "審査甘い"]
   }
 ];
 
