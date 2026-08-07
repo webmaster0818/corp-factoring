@@ -118,6 +118,8 @@ A: 売掛金が回収できなくなる場合に備えて、業者との契約�
 
 ## 関連記事
 
+- [即日ファクタリング完全ガイド｜今日中に入金する方法](/articles/article-factoring-sokujitsu/)
+
 - [ファクタリング 個人事業主](/articles/article-factoring-kojin-jigyonushi)
 - [ファクタリング インフルエンサー](/articles/article-factoring-influencer)
 - [ファクタリング AI 審査](/articles/article-factoring-ai-shinsa)
