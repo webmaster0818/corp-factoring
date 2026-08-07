@@ -49,17 +49,17 @@ export async function generateMetadata({
         : "手数料は要見積もり";
   
   return {
-    title: `【${company.name}】の評判・口コミ・手数料を徹底解説【2026年7月】`,
+    title: `${company.name}の評判・手数料・営業時間・必要書類【2026年8月公式確認】`,
     description: `${company.name}のファクタリングサービスを徹底解説。${feeText}、${company.speed}で入金可能。Google Maps実評価・メリット・デメリット・必要書類・活用シーンを詳しく紹介。${categoryText}に最適なファクタリング業者です。`,
     keywords: `${company.name},${company.nameKana},ファクタリング,評判,口コミ,手数料,${categoryText},徹底解説`,
     openGraph: {
-      title: `【${company.name}】の評判・口コミ・手数料を徹底解説【2026年7月】`,
+      title: `${company.name}の評判・手数料・営業時間・必要書類【2026年8月公式確認】`,
       description: `${feeText}、${company.speed}で入金。${company.description}`,
       type: "article",
     },
     twitter: {
       card: "summary",
-      title: `【${company.name}】の評判・口コミ・手数料を徹底解説【2026年7月】`,
+      title: `${company.name}の評判・手数料・営業時間・必要書類【2026年8月公式確認】`,
       description: `${feeText}、${company.speed}で入金。${company.description}`,
     },
     alternates: {
@@ -95,7 +95,7 @@ export default function CompanyPage({
     ? [
         {
           question: `${company.name}の営業時間は？`,
-          answer: `${company.name}の営業時間は、平日 ${details.operatingHours.weekdays}${details.operatingHours.saturday ? `／土 ${details.operatingHours.saturday}` : ""}${details.operatingHours.sunday ? `／日 ${details.operatingHours.sunday}` : ""} です。${details.operatingHours.note ? details.operatingHours.note : "最新の受付時間は公式サイトでご確認ください。"}`,
+          answer: `${company.name}の営業・受付時間は「${details.operatingHours.weekdays}${details.operatingHours.saturday ? `／土: ${details.operatingHours.saturday}` : ""}${details.operatingHours.sunday ? `／日: ${details.operatingHours.sunday}` : ""}」です。${details.operatingHours.note ? details.operatingHours.note : "最新の受付時間は公式サイトでご確認ください。"}`,
         },
         {
           question: `${company.name}の審査・入金スピードはどのくらいですか？`,

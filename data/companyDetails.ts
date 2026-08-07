@@ -252,10 +252,9 @@ const quQuMoDetails: CompanyDetailData = {
 // デフォルトの詳細情報（他の業者用）
 const defaultDetails: CompanyDetailData = {
   operatingHours: {
-    weekdays: "平日 9:00 〜 18:00",
-    saturday: "定休日",
-    sunday: "定休日",
-    holidays: "定休日"
+    // 個別確認が済んでいない会社のフォールバック。実測値はoperatingHoursMapに登録すること（架空の時刻を置かない）
+    weekdays: "公式サイトの最新の受付時間をご確認ください",
+    note: "営業時間・定休日は公式サイトで直接ご確認ください。"
   },
   offices: [
     {
@@ -319,6 +318,16 @@ const operatingHoursMap: { [slug: string]: CompanyOperatingHours } = {
   "no1": { weekdays: "電話受付 平日 9:00〜19:00", saturday: "休業", sunday: "休業", holidays: "休業", note: "公式サイトで確認（2026年7月29日確認）。" },
   "factor-plan": { weekdays: "電話受付 平日 9:00〜19:00", note: "LINEでの問い合わせは24時間受付（公式・2026年7月29日確認）。" },
   "try": { weekdays: "365日24時間 受付", note: "オンライン契約なら最短2時間入金（公式・2026年7月29日確認）。" },
+  // ▼ 2026年8月7日 公式サイト一次確認分（P0: 実務情報ブロック統一装填）
+  "best-factor": { weekdays: "電話受付 平日 10:00〜19:00", note: "Webフォームは24時間受付。審査は来店不要だが契約時は面談が必要（来社または訪問）。土日祝の電話対応は公式では確認できず（2026年8月7日確認）。" },
+  "mf-earlypayment": { weekdays: "オンライン完結（AI仮審査は24時間利用可）", note: "面談は原則不要でオンライン完結。電話受付時間・土日祝対応の明示は公式では確認できず（2026年8月7日確認）。" },
+  "top-management": { weekdays: "10:00〜19:00", saturday: "休業", sunday: "休業", holidays: "休業（年末年始も休業）", note: "申込から契約までオンライン完結に対応（公式・2026年8月7日確認）。" },
+  "mentor-capital": { weekdays: "電話受付 平日 9:30〜18:30", note: "公式には「365日24時間全国対応可能」の記載もあり。契約はクラウド・来社・訪問から選択可。土日祝の電話対応の明示は公式では確認できず（2026年8月7日確認）。" },
+  "minna-factoring": { weekdays: "オンライン完結（土日でも最短60分で入金）", note: "電話不要・来社不要・現地確認不要のオンライン完結型。受付時間の時刻の明示は公式では確認できず（2026年8月7日確認）。" },
+  "yen-today": { weekdays: "24時間受付（オンライン契約完結）", note: "PC・スマホでオンライン契約が完結（来店不要）。電話受付時間・土日祝の個別明示は公式では確認できず（2026年8月7日確認）。" },
+  "invoice-factor": { weekdays: "営業時間の明示は公式では確認できず", note: "電話（フリーダイヤルあり）・メールでの問い合わせが可能。受付時間・契約方法の詳細は公式サイトでご確認ください（2026年8月7日確認）。" },
+  "safe-trust": { weekdays: "メール・LINE 年中無休24時間受付", note: "基本的にオンラインで完結（必要時のみ電話連絡）。電話受付の営業時間の明示は公式では確認できず（2026年8月7日確認）。" },
+  "ace-trust": { weekdays: "電話受付 平日 9:30〜18:30", note: "Webフォームは24時間受付。来店・面談不要のオンライン完結型。土日祝の電話対応は公式では確認できず（2026年8月7日確認）。" },
 };
 
 export function getCompanyDetails(slug: string): CompanyDetailData {
