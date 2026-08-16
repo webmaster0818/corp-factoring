@@ -7,6 +7,7 @@ import { getCompanyStrengths, getCompanyUseCases } from "@/data/companyExtended"
 import { getRealRating } from "@/data/realRatings";
 import { getReviewTrend } from "@/data/reviewTrends";
 import { getCompanyDetails } from "@/data/companyDetails";
+import { getEditorialVerification } from "@/data/editorialVerification";
 import { feeIndex } from "@/data/feeIndex";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -14,6 +15,7 @@ import { Button } from "@/components/ui/button";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { ReviewSection } from "@/components/ReviewSection";
+import { EditorialVerificationSection } from "@/components/EditorialVerification";
 import { getAllArticles } from "@/lib/articles";
 
 export async function generateStaticParams() {
@@ -85,6 +87,7 @@ export default function CompanyPage({
   const realRating = getRealRating(slug);
   const reviewTrend = getReviewTrend(slug);
   const details = getCompanyDetails(slug);
+  const editorialVerification = getEditorialVerification(slug);
   const feeRow = feeIndex.find((f) => f.slug === slug);
   const feeUndisclosed = !!feeRow && /非公示|確認できず|個別査定/.test(feeRow.fee2);
 
@@ -330,7 +333,7 @@ export default function CompanyPage({
                         {details.operatingHours.weekdays}
                         {details.operatingHours.saturday && <>／土 {details.operatingHours.saturday}</>}
                         {details.operatingHours.sunday && <>／日 {details.operatingHours.sunday}</>}
-                        {["labol","paytner","accel-factor","paytoday","support-kinyu","pmg","ennavi","freenance"].includes(slug) && (
+                        {["labol","paytner","accel-factor","paytoday","support-kinyu","pmg","ennavi","freenance","top-management"].includes(slug) && (
                           <> — <Link href={`/companies/${slug}/eigyo-jikan/`} className="text-blue-600 underline whitespace-nowrap">営業時間を詳しく</Link></>
                         )}
                       </td>
@@ -748,6 +751,14 @@ export default function CompanyPage({
               </div>
             </Card>
           </section>
+        )}
+
+        {/* 編集部の検証欄（一次確認できた事実のみ・データがある会社のみ表示） */}
+        {editorialVerification && (
+          <EditorialVerificationSection
+            companyName={company.name}
+            data={editorialVerification}
+          />
         )}
 
         {/* 利用者の口コミ（Google口コミ引用） */}
