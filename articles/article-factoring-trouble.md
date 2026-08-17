@@ -206,6 +206,8 @@ A. 実績（累計取引額・社数）が公開されており、手数料の�
 - [ファクタリングとは？仕組みをわかりやすく解説](/articles/article-factoring-toha/)
 - [ファクタリングのメリット・デメリット完全解説](/articles/article-factoring-merit-demerit/)
 - [ファクタリングおすすめ20選｜手数料・即日対応を徹底比較](/articles/article-factoring-osusume/)
+- [ファクタリングのトラブル・法務ガイド（相談窓口まとめ）](/guide/trouble/)
+- [ファクタリングをやめたい人が取れる4つの選択肢](/articles/article-factoring-yametai/)
 
 ---
 

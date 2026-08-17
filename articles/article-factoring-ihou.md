@@ -203,6 +203,8 @@
 - [ファクタリングの審査基準と落ちる理由7選](/articles/article-factoring-shinsa/)
 - [ファクタリングの口コミ・評判まとめ](/articles/article-factoring-kuchikomi/)
 - [個人事業主の資金調達方法10選](/articles/article-kojin-shikin-chotatsu/)
+- [ファクタリングのトラブル・法務ガイド（相談窓口まとめ）](/guide/trouble/)
+- [ファクタリングをやめたい人が取れる4つの選択肢](/articles/article-factoring-yametai/)
 
 
 ---

@@ -108,3 +108,5 @@ A: BtoB 取引のため適用外。ただし業者独自のクーリングオフ
 - [ファクタリング 違法業者](/articles/article-factoring-ihou-gyousha)
 - [ファクタリング 契約](/articles/article-factoring-keiyaku)
 - [ファクタリング トラブル](/articles/article-factoring-trouble)
+- [ファクタリングをやめたい人が取れる4つの選択肢](/articles/article-factoring-yametai/)
+- [ファクタリングのトラブル・法務ガイド（相談窓口まとめ）](/guide/trouble/)

@@ -68,6 +68,11 @@ export function Footer() {
                 </Link>
               </li>
               <li>
+                <Link href="/guide/trouble/" className="text-gray-400 hover:text-white transition">
+                  トラブル・法務ガイド
+                </Link>
+              </li>
+              <li>
                 <Link href="/#faq" className="text-gray-400 hover:text-white transition">
                   よくある質問
                 </Link>

@@ -276,6 +276,7 @@ export const topics: Topic[] = [
           "article-factoring-ihou-gyousha",
           "article-factoring-sagi",
           "article-factoring-trouble",
+          "article-factoring-yametai",
           "article-factoring-soshou",
           "article-factoring-bengoshi",
           "article-factoring-minpou",
