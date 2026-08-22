@@ -9,6 +9,7 @@ import { getReviewTrend } from "@/data/reviewTrends";
 import { getCompanyDetails } from "@/data/companyDetails";
 import { getEditorialVerification } from "@/data/editorialVerification";
 import { feeIndex } from "@/data/feeIndex";
+import { HOURS_LINK_SLUGS } from "@/data/hoursPages";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -333,7 +334,7 @@ export default function CompanyPage({
                         {details.operatingHours.weekdays}
                         {details.operatingHours.saturday && <>／土 {details.operatingHours.saturday}</>}
                         {details.operatingHours.sunday && <>／日 {details.operatingHours.sunday}</>}
-                        {["labol","paytner","accel-factor","paytoday","support-kinyu","pmg","ennavi","freenance","top-management"].includes(slug) && (
+                        {HOURS_LINK_SLUGS.includes(slug) && (
                           <> — <Link href={`/companies/${slug}/eigyo-jikan/`} className="text-blue-600 underline whitespace-nowrap">営業時間を詳しく</Link></>
                         )}
                       </td>

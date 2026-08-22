@@ -180,11 +180,13 @@ const beTradingDetails: CompanyDetailData = {
 
 // QuQuMo（ククモ）の詳細情報
 const quQuMoDetails: CompanyDetailData = {
+  // 2026年8月22日に公式サイト（https://ququmo.net/）で一次確認。
+  // 旧値「平日 9:00〜18:00／土日祝 定休日」は Phase8 の自動生成値で公式表示と不一致だったため、
+  // 公式のフリーダイヤル表記（TEL:0120-670-680 平日 9:00〜19:00）に置き換え、
+  // 公式に明示のない定休日の記載は削除した（架空情報を出さない方針）。
   operatingHours: {
-    weekdays: "平日 9:00 〜 18:00（オンライン申込は24時間受付）",
-    saturday: "定休日",
-    sunday: "定休日",
-    holidays: "定休日"
+    weekdays: "電話受付 平日 9:00〜19:00",
+    note: "公式サイトのフリーダイヤル表記（0120-670-680）に「平日 9:00〜19:00」と記載。土日祝の対応・定休日の明示は公式では確認できず（2026年8月22日確認）。"
   },
   offices: [
     {
