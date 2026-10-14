@@ -211,11 +211,7 @@ export default async function ArticlePage({
                   <h3 className="text-sm font-bold text-gray-900 group-hover:text-[#1B3A5C] transition">
                     {company.name}
                   </h3>
-                  {company.rating > 0 && (
-                    <span className="text-xs font-semibold text-amber-600 bg-amber-50 px-2 py-0.5 rounded">
-                      ★ {company.rating}
-                    </span>
-                  )}
+                  {/* ★は companies.ts の rating（3月モックアップの値・出典なし）だったため非表示（2026-10-14） */}
                 </div>
                 <p className="text-xs text-gray-500 mb-2">
                   手数料 {company.fees.max > 0 ? `${company.fees.min}%〜${company.fees.max}%` : company.fees.min > 0 ? `${company.fees.min}%〜（上限は要問い合わせ）` : "要見積もり"} ／ {company.speed}
