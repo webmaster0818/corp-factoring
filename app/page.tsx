@@ -10,6 +10,23 @@ import { getRealRating } from "@/data/realRatings";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import type { Metadata } from "next";
+import { DEFAULT_OG_IMAGES } from "@/lib/og";
+
+// canonical はページごとに自己参照で指定する（ルートレイアウトの canonical: "/" 既定値は全ページ継承の事故源のため撤去）
+// og:url もルートレイアウトから撤去し（下層ページが TOP の URL を継承していたため）、TOP でのみ指定する
+export const metadata: Metadata = {
+  alternates: { canonical: "/" },
+  openGraph: {
+    title: "法人向けファクタリングおすすめ15選【2026年最新】",
+    description: "手数料・審査・入金スピードを徹底比較。最適なファクタリング会社が見つかります。",
+    url: "https://corp-factoring.com/",
+    siteName: "ファクタリング比較ナビ",
+    locale: "ja_JP",
+    type: "website",
+    images: DEFAULT_OG_IMAGES,
+  },
+};
 
 export default function Home() {
   const topCompanies = factoringCompanies;

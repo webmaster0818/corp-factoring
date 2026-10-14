@@ -4,6 +4,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { getAllArticles } from "@/lib/articles";
 import { feeCheckedAt } from "@/data/feeIndex";
+import { DEFAULT_OG_IMAGES } from "@/lib/og";
 
 const PAGE_URL = "https://corp-factoring.com/guide/trouble/";
 const CHECKED_AT = "2026年8月17日";
@@ -20,6 +21,7 @@ export const metadata: Metadata = {
     description:
       "違法業者の見分け方、契約書で確認する条項、契約後のトラブル対処、公的な相談窓口までをまとめた法務ハブです。",
     type: "article",
+    images: DEFAULT_OG_IMAGES,
   },
 };
 

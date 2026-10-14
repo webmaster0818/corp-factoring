@@ -4,6 +4,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { getAllArticles } from "@/lib/articles";
 import { topics, getTopicBySlug } from "@/data/topics";
+import { DEFAULT_OG_IMAGES } from "@/lib/og";
 
 export async function generateStaticParams() {
   return topics.map((t) => ({ topic: t.slug }));
@@ -31,6 +32,7 @@ export async function generateMetadata({
       title: `${topic.title}｜ファクタリング比較ナビ`,
       description: topic.description,
       type: "website",
+      images: DEFAULT_OG_IMAGES,
     },
   };
 }
@@ -168,7 +170,7 @@ export default async function TopicPage({
           </p>
           <div className="flex flex-wrap gap-4">
             <Link
-              href="/companies"
+              href="/#ranking"
               className="px-6 py-3 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition"
             >
               ファクタリング会社一覧を見る

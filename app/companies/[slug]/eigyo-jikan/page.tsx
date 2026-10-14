@@ -7,6 +7,8 @@ import { feeIndex, feeCheckedAt } from "@/data/feeIndex";
 import { HOURS_SLUGS, HOURS_CHECKED_AT, HOURS_COMPARE_POOL } from "@/data/hoursPages";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { OtherHoursLinks } from "@/components/OtherHoursLinks";
+import { DEFAULT_OG_IMAGES } from "@/lib/og";
 
 const SITE = "https://corp-factoring.com";
 const PAGE_UPDATED = "2026年8月22日";
@@ -36,7 +38,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
     title,
     description,
     alternates: { canonical: `/companies/${slug}/eigyo-jikan/` },
-    openGraph: { title, description, url: `${SITE}/companies/${slug}/eigyo-jikan/`, type: "article" },
+    openGraph: { title, description, url: `${SITE}/companies/${slug}/eigyo-jikan/`, type: "article", images: DEFAULT_OG_IMAGES },
   };
 }
 
@@ -281,6 +283,8 @@ export default async function CompanyHoursPage({ params }: { params: Promise<{ s
         </section>
 
         {/* 親ページへの導線 */}
+        <OtherHoursLinks currentSlug={slug} />
+
         <section className="mt-8 rounded-lg bg-gray-50 p-5">
           <p className="text-sm font-bold text-gray-800">あわせて確認</p>
           <ul className="mt-2 space-y-1.5 text-sm">

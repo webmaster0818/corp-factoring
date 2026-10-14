@@ -18,6 +18,7 @@ import { Footer } from "@/components/Footer";
 import { ReviewSection } from "@/components/ReviewSection";
 import { EditorialVerificationSection } from "@/components/EditorialVerification";
 import { getAllArticles } from "@/lib/articles";
+import { DEFAULT_OG_IMAGES, DEFAULT_OG_IMAGE_URL } from "@/lib/og";
 
 export async function generateStaticParams() {
   return factoringCompanies.map((company) => ({
@@ -59,9 +60,11 @@ export async function generateMetadata({
       title: `${company.name}の評判・手数料・営業時間・必要書類【2026年8月公式確認】`,
       description: `${feeText}、${company.speed}で入金。${company.description}`,
       type: "article",
+      images: DEFAULT_OG_IMAGES,
     },
     twitter: {
       card: "summary",
+      images: [DEFAULT_OG_IMAGE_URL],
       title: `${company.name}の評判・手数料・営業時間・必要書類【2026年8月公式確認】`,
       description: `${feeText}、${company.speed}で入金。${company.description}`,
     },
@@ -174,8 +177,6 @@ export default function CompanyPage({
         <div className="container mx-auto px-4 max-w-5xl">
           <div className="text-sm text-gray-600">
             <Link href="/" className="hover:text-blue-600">ホーム</Link>
-            <span className="mx-2">＞</span>
-            <Link href="/#ranking" className="hover:text-blue-600">ランキング</Link>
             <span className="mx-2">＞</span>
             <span className="text-gray-900 font-medium">{company.name}</span>
           </div>
@@ -1059,8 +1060,7 @@ export default function CompanyPage({
             "@type": "BreadcrumbList",
             "itemListElement": [
               { "@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://corp-factoring.com" },
-              { "@type": "ListItem", "position": 2, "name": "おすすめランキング", "item": "https://corp-factoring.com/#ranking" },
-              { "@type": "ListItem", "position": 3, "name": company.name, "item": `https://corp-factoring.com/companies/${slug}` },
+              { "@type": "ListItem", "position": 2, "name": company.name, "item": `https://corp-factoring.com/companies/${slug}` },
             ],
           }),
         }}

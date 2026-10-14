@@ -78,8 +78,8 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/#about" className="text-gray-400 hover:text-white transition">
-                  運営情報
+                <Link href="/about/" className="text-gray-400 hover:text-white transition">
+                  運営者情報
                 </Link>
               </li>
             </ul>

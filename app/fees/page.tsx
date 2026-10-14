@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { FeeSimulator } from "@/components/FeeSimulator";
 import { factoringCompanies } from "@/data/companies";
 import { feeIndex, feeCheckedAt } from "@/data/feeIndex";
+import { DEFAULT_OG_IMAGES, DEFAULT_OG_IMAGE_URL } from "@/lib/og";
 
 export const metadata = {
   title: "ファクタリング手数料が安い会社10選【2026年最新】相場・計算方法・抑えるコツ",
@@ -18,9 +19,11 @@ export const metadata = {
     title: "ファクタリング手数料が安い会社10選【2026年最新】",
     description: "ファクタリング手数料の相場、計算方法、手数料が安い業者ランキング10選を徹底解説。",
     type: "article",
+    images: DEFAULT_OG_IMAGES,
   },
   twitter: {
     card: "summary",
+    images: [DEFAULT_OG_IMAGE_URL],
     title: "ファクタリング手数料が安い会社10選【2026年最新】",
     description: "ファクタリング手数料の相場、計算方法、手数料が安い業者ランキング10選を徹底解説。",
   },

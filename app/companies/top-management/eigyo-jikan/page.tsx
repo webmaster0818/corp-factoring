@@ -5,6 +5,8 @@ import { getCompanyDetails } from "@/data/companyDetails";
 import { feeIndex } from "@/data/feeIndex";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { OtherHoursLinks } from "@/components/OtherHoursLinks";
+import { DEFAULT_OG_IMAGES } from "@/lib/og";
 
 const SITE = "https://corp-factoring.com";
 const SLUG = "top-management";
@@ -27,6 +29,7 @@ export async function generateMetadata(): Promise<Metadata> {
       description,
       url: `${SITE}/companies/${SLUG}/eigyo-jikan/`,
       type: "article",
+      images: DEFAULT_OG_IMAGES,
     },
   };
 }
@@ -233,6 +236,8 @@ export default function TopManagementHoursPage() {
         </section>
 
         {/* 親ページへの導線 */}
+        <OtherHoursLinks currentSlug={SLUG} />
+
         <section className="mt-8 rounded-lg bg-gray-50 p-5">
           <p className="text-sm font-bold text-gray-800">あわせて確認</p>
           <ul className="mt-2 space-y-1.5 text-sm">

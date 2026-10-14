@@ -4,6 +4,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { getAllArticles } from "@/lib/articles";
 import { topics } from "@/data/topics";
+import { DEFAULT_OG_IMAGES, DEFAULT_OG_IMAGE_URL } from "@/lib/og";
 
 export const metadata: Metadata = {
   title: "ファクタリングコラム一覧｜ファクタリング比較ナビ",
@@ -16,9 +17,11 @@ export const metadata: Metadata = {
     title: "ファクタリングコラム一覧｜ファクタリング比較ナビ",
     description: "ファクタリングに関する基礎知識、手数料、審査、おすすめ会社など、資金調達に役立つ記事を掲載。",
     type: "website",
+    images: DEFAULT_OG_IMAGES,
   },
   twitter: {
     card: "summary",
+    images: [DEFAULT_OG_IMAGE_URL],
     title: "ファクタリングコラム一覧｜ファクタリング比較ナビ",
     description: "ファクタリングに関する基礎知識、手数料、審査、おすすめ会社など、資金調達に役立つ記事を掲載。",
   },

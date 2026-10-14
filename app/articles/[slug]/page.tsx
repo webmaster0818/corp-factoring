@@ -5,6 +5,7 @@ import { Footer } from "@/components/Footer";
 import { getAllArticleSlugs, getArticleBySlug, getAllArticles } from "@/lib/articles";
 import { factoringCompanies } from "@/data/companies";
 import { getTopicForArticle, getRelatedSlugs } from "@/data/topics";
+import { DEFAULT_OG_IMAGES } from "@/lib/og";
 
 export async function generateStaticParams() {
   const slugs = getAllArticleSlugs();
@@ -36,6 +37,7 @@ export async function generateMetadata({
       title: `${article.title}｜ファクタリング比較ナビ`,
       description: `${article.title}。${article.keyword}について詳しく解説します。`,
       type: "article",
+      images: DEFAULT_OG_IMAGES,
     },
   };
 }
