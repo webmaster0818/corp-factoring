@@ -28,14 +28,15 @@ export async function generateMetadata({
   }
 
   return {
-    title: `${article.title}｜ファクタリング比較ナビ`,
-    description: `${article.title}。${article.keyword}について詳しく解説します。`,
+    // サイト名はルートlayoutの title.template（%s｜ファクタリング比較ナビ）で付与されるため、ここでは付けない（二重付与の解消）
+    title: article.title,
+    description: article.description ?? `${article.title}。${article.keyword}について詳しく解説します。`,
     alternates: {
       canonical: `/articles/${slug}`,
     },
     openGraph: {
       title: `${article.title}｜ファクタリング比較ナビ`,
-      description: `${article.title}。${article.keyword}について詳しく解説します。`,
+      description: article.description ?? `${article.title}。${article.keyword}について詳しく解説します。`,
       type: "article",
       images: DEFAULT_OG_IMAGES,
     },
@@ -66,6 +67,24 @@ export default async function ArticlePage({
     { length: 3 },
     (_, i) => factoringCompanies[(start + i) % factoringCompanies.length]
   );
+
+  // 本文に登場する会社の個別ページ（口コミ・評判・公式確認値）への内部リンク。
+  // 社名の誤検出を避けるため、会社ごとの検出語を明示する（例: 「No.1」は「株式会社No.1」のみ）。
+  const MENTION_ALIASES: { [slug: string]: string[] } = {
+    no1: ["株式会社No.1"],
+    try: ["ファクタリングのTRY"],
+    ebank: ["いーばんく", "アクシアプラス"],
+    pmg: ["PMG", "ピーエムジー"],
+    "mf-earlypayment": ["Money Forward 早期入金", "マネーフォワード早期入金", "マネーフォワード 早期入金"],
+    "yen-today": ["¥Today", "エントゥデイ"],
+  };
+  const articleText = article ? article.content.replace(/<[^>]+>/g, " ") : "";
+  const mentionedCompanies = article
+    ? factoringCompanies.filter((c) => {
+        const words = MENTION_ALIASES[c.slug] ?? [c.name];
+        return words.some((w) => articleText.includes(w));
+      })
+    : [];
 
   if (!article) {
     return (
@@ -159,6 +178,21 @@ export default async function ArticlePage({
             dangerouslySetInnerHTML={{ __html: article.content }}
           />
         </article>
+
+        {/* この記事に登場する会社の個別ページ */}
+        {mentionedCompanies.length > 0 && (
+          <section className="mt-12 bg-white border border-gray-200 rounded-xl p-6">
+            <h2 className="text-lg font-bold text-[#1B3A5C] mb-2">この記事に登場する会社の口コミ・評判</h2>
+            <p className="text-xs text-gray-500 mb-4">各社ページでは、公式サイトで確認した手数料・入金スピード・会社概要（確認日つき）と、口コミの出典をまとめています。</p>
+            <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2 text-sm">
+              {mentionedCompanies.map((c) => (
+                <li key={c.slug}>
+                  <Link href={`/companies/${c.slug}/`} className="text-blue-600 hover:underline">{c.name}の口コミ・評判・手数料 →</Link>
+                </li>
+              ))}
+            </ul>
+          </section>
+        )}
 
         {/* おすすめファクタリング会社 */}
         <section className="mt-12">

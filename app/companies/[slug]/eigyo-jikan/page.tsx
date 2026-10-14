@@ -16,6 +16,17 @@ const PAGE_UPDATED_ISO = "2026-08-22";
 
 const SLUGS: string[] = [...HOURS_SLUGS];
 
+// 検索で使われる別表記（例：「ピーエムジー 営業時間」）を title/H1 に併記する
+const NAME_ALIAS: { [slug: string]: string } = { pmg: "PMG（ピーエムジー）" };
+// 営業時間を再確認したページは最終確認日も更新する
+const PAGE_UPDATED_OVERRIDE: { [slug: string]: [string, string] } = {
+  pmg: ["2026年10月14日", "2026-10-14"],
+  paytner: ["2026年10月14日", "2026-10-14"],
+  no1: ["2026年10月14日", "2026-10-14"],
+  "factor-plan": ["2026年10月14日", "2026-10-14"],
+  try: ["2026年10月14日", "2026-10-14"],
+};
+
 export function generateStaticParams() {
   return SLUGS.map((slug) => ({ slug }));
 }
@@ -32,8 +43,8 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   if (!company || !SLUGS.includes(slug)) return { title: "ページが見つかりません" };
   const h = getCompanyDetails(slug).operatingHours;
   const checkedAt = HOURS_CHECKED_AT[slug] ?? "";
-  const title = `${company.name}の営業時間・受付時間は？【${toMonthLabel(checkedAt)}公式確認】`;
-  const description = `${company.name}の受付時間は公式表示で「${h.weekdays}」。公式サイトで一次確認した営業時間・土日祝の扱い・営業時間外の申し込み・他社との受付時間比較を、確認日つきで整理しました。`;
+  const title = `${NAME_ALIAS[slug] ?? company.name}の営業時間・受付時間は？【${toMonthLabel(checkedAt)}公式確認】`;
+  const description = `${NAME_ALIAS[slug] ?? company.name}の受付時間は公式表示で「${h.weekdays}」。公式サイトで一次確認した営業時間・土日祝の扱い・営業時間外の申し込み・他社との受付時間比較を、確認日つきで整理しました。`;
   return {
     title,
     description,
@@ -112,14 +123,16 @@ export default async function CompanyHoursPage({ params }: { params: Promise<{ s
     })
     .filter((r) => Boolean(getCompanyBySlug(r.slug)));
 
-  const pageTitle = `${company.name}の営業時間・受付時間は？【${monthLabel}公式確認】`;
+  const displayName = NAME_ALIAS[slug] ?? company.name;
+  const [pageUpdated, pageUpdatedIso] = PAGE_UPDATED_OVERRIDE[slug] ?? [PAGE_UPDATED, PAGE_UPDATED_ISO];
+  const pageTitle = `${displayName}の営業時間・受付時間は？【${monthLabel}公式確認】`;
 
   const articleLd = {
     "@context": "https://schema.org",
     "@type": "Article",
     headline: pageTitle,
     description: `${company.name}の営業時間・受付時間を公式サイトの一次確認値で解説。土日祝の扱い・営業時間外の申し込み・他社比較を掲載。`,
-    dateModified: PAGE_UPDATED_ISO,
+    dateModified: pageUpdatedIso,
     author: { "@type": "Organization", name: "ファクタリング比較ナビ", url: `${SITE}/about` },
     publisher: {
       "@type": "Organization",
@@ -162,10 +175,10 @@ export default async function CompanyHoursPage({ params }: { params: Promise<{ s
         </nav>
 
         <h1 className="text-2xl font-bold text-gray-900 md:text-3xl">
-          {company.name}の営業時間・受付時間
+          {displayName}の営業時間・受付時間
         </h1>
         <p className="mt-2 text-xs text-gray-500">
-          最終確認日：{PAGE_UPDATED}（営業時間の公式一次確認：{checkedAt}）
+          最終確認日：{pageUpdated}（営業時間の公式一次確認：{checkedAt}）
         </p>
 
         {/* 結論の即答（H1直下） */}

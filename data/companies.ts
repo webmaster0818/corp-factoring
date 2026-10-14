@@ -215,8 +215,8 @@ export const factoringCompanies: FactoringCompany[] = [
     reviewCount: 980,
     companyInfo: {
       established: "2015年6月",
-      capital: "2,000万円",
-      address: "東京都港区赤坂2-14-27 国際新赤坂ビル東館17階"
+      capital: "1億円",
+      address: "東京都新宿区西新宿2丁目4番1号 新宿NSビル25F"
     },
     requiredDocuments: ["請求書", "通帳", "身分証明書"],
     url: "https://p-m-g.tokyo/",
@@ -229,12 +229,12 @@ export const factoringCompanies: FactoringCompany[] = [
     slug: "paytner",
     rating: 4.4,
     fees: { min: 10.0, max: 10.0 },
-    speed: "最短10分",
+    speed: "最短即日",
     minAmount: 10000,
-    maxAmount: "1000万円",
+    maxAmount: "300万円（初回50万円）",
     personalSupport: true,
-    features: ["手数料一律10%", "超速", "個人特化"],
-    description: "フリーランス・個人事業主特化。手数料一律10%で分かりやすい。最短10分入金。",
+    features: ["手数料一律10%", "最短即日", "個人特化"],
+    description: "フリーランス・個人事業主・一人法人向け。手数料一律10%（別途振込手数料330円）で分かりやすく、審査後最短即日入金。",
     pros: [
       "手数料一律10%で分かりやすい",
       "最短10分で入金",
@@ -248,11 +248,11 @@ export const factoringCompanies: FactoringCompany[] = [
     ],
     reviewCount: 2150,
     companyInfo: {
-      established: "2019年",
-      capital: "14億4,244万円",
-      address: "東京都港区赤坂1-12-32 アーク森ビル3階"
+      established: "2019年2月",
+      capital: "8億6,745万円（資本準備金含む・2026年1月の公式発表時点）",
+      address: "東京都港区虎ノ門5-9-1 麻布台ヒルズ ガーデンプラザB 5F"
     },
-    requiredDocuments: ["請求書", "身分証明書", "通帳"],
+    requiredDocuments: ["請求書", "本人確認書類（初回のみ）", "直近3ヶ月分の入出金明細"],
     url: "https://paytner.co.jp/",
     affiliateUrl: "https://px.a8.net/svt/ejp?a8mat=4B650J+5CB9NU+4PF6+609HU",
     category: ["個人事業主", "少額", "即日"]
@@ -434,13 +434,13 @@ export const factoringCompanies: FactoringCompany[] = [
     nameKana: "めんたーきゃぴたる",
     slug: "mentor-capital",
     rating: 4.1,
-    fees: { min: 2.0, max: 20.0 },
+    fees: { min: 0, max: 0 },
     speed: "最短即日",
     minAmount: 300000,
-    maxAmount: "無制限",
+    maxAmount: "公式では確認できず",
     personalSupport: true,
-    features: ["審査通過率90%超", "柔軟審査", "全国対応"],
-    description: "審査通過率90%超。赤字決算・税金滞納でも対応可能。",
+    features: ["審査通過率92%（2023年実績）", "対面・来社不要", "ノンリコース"],
+    description: "2社間ファクタリングが中心。償還請求権なし（ノンリコース）・登記と取引先への通知は原則留保。審査通過率92%（2023年実績・公式表示）、最短即日現金化。",
     pros: [
       "審査通過率90%超",
       "赤字決算・税金滞納OK",
@@ -454,11 +454,11 @@ export const factoringCompanies: FactoringCompany[] = [
     ],
     reviewCount: 720,
     companyInfo: {
-      established: "2009年9月",
+      established: "公式サイトでは確認できず",
       capital: "3,000万円",
-      address: "東京都新宿区新宿4-3-17 FORECAST新宿SOUTH 8階"
+      address: "東京都新宿区四谷4-30-13 クロスシー新宿御苑前ビル4F"
     },
-    requiredDocuments: ["請求書", "通帳", "身分証明書"],
+    requiredDocuments: ["通帳のコピー（表紙付き・直近3か月分）", "売掛金に関する資料（請求書・契約書など）"],
     url: "https://mentor-capital.jp/",
     affiliateUrl: "https://px.a8.net/svt/ejp?a8mat=4B650J+510162+5U0K+5YJRM",
     category: ["審査甘い", "即日"]
@@ -644,7 +644,7 @@ export const factoringCompanies: FactoringCompany[] = [
     fees: { min: 4.0, max: 0 },
     speed: "最短即日",
     minAmount: 0,
-    maxAmount: "公式では確認できず",
+    maxAmount: "2,000万円（リーズナブルプランは50万円）",
     personalSupport: false,
     features: ["審査通過率90%以上", "24時間対応", "2社間・3社間対応"],
     description: "手数料4%〜・最短即日（公式は平均2.3日という実測値も公表）。2社間・3社間の両方に対応し、審査通過率90%以上を公式表示。※「いーばんく」は広告・プロモーション上の名称で、公式サイトの表記は「アクシアプラスのファクタリング」。同社は「インボイスファクター」も運営。",
@@ -664,7 +664,7 @@ export const factoringCompanies: FactoringCompany[] = [
     companyInfo: {
       established: "2019年4月",
       capital: "1,000万円",
-      address: "東京都千代田区神田小川町2-3-7 6F"
+      address: "東京都千代田区神田小川町2-3-7-6F"
     },
     requiredDocuments: ["公式サイトに明示なし（問い合わせ時に案内）"],
     url: "https://tomodachi-my.com/",
@@ -677,13 +677,13 @@ export const factoringCompanies: FactoringCompany[] = [
     nameKana: "いんぼいすふぁくたー",
     slug: "invoice-factor",
     rating: 0,
-    fees: { min: 0, max: 0 },
-    speed: "最短即日",
+    fees: { min: 0.5, max: 0 },
+    speed: "最短2時間",
     minAmount: 0,
-    maxAmount: "公式では確認できず",
+    maxAmount: "無制限（公式LPの比較表表記）",
     personalSupport: false,
-    features: ["即日入金", "アクシアプラス運営", "いーばんくと同運営"],
-    description: "株式会社アクシアプラス（「いーばんく」と同じ運営会社）のファクタリングサービス。公式LPで即日入金を訴求。手数料・買取可能額などの詳細は公式LPに明示がなく、要問い合わせ。",
+    features: ["最短2時間入金", "手数料0.5%〜", "アクシアプラス運営"],
+    description: "株式会社アクシアプラス（「いーばんく」と同じ運営会社）のファクタリングサービス。公式LPで手数料0.5%〜・最短2時間入金・審査通過率98%以上を表示。2社間・3社間に対応し、契約は非対面・対面・郵送から選択。",
     pros: [
       "即日入金（公式LP表示）",
       "運営会社は「いーばんく」と同じ株式会社アクシアプラス（法人実体を一次確認済み）",
@@ -698,7 +698,7 @@ export const factoringCompanies: FactoringCompany[] = [
     companyInfo: {
       established: "2019年4月",
       capital: "1,000万円",
-      address: "東京都千代田区神田小川町2-3-7 6F"
+      address: "東京都千代田区神田小川町2-3-7-6F"
     },
     requiredDocuments: ["公式LPに明示なし（問い合わせ時に案内）"],
     url: "https://invoice-factor.jp/lp/",
@@ -736,7 +736,7 @@ export const factoringCompanies: FactoringCompany[] = [
       capital: "8,000万円",
       address: "東京都豊島区東池袋1-18-1 Hareza Tower 20F"
     },
-    requiredDocuments: ["請求書", "通帳コピー"],
+    requiredDocuments: ["請求書", "通帳コピー", "決算書（直近二期分・契約前の確認時）", "取引先との基本契約書（契約前の確認時）"],
     url: "https://no1service.co.jp/",
     affiliateUrl: "https://px.a8.net/svt/ejp?a8mat=4B650J+48F84Q+4EKW+TS3OI",
     category: ["手数料安い", "即日"]
@@ -749,7 +749,7 @@ export const factoringCompanies: FactoringCompany[] = [
     rating: 0,
     fees: { min: 0, max: 0 },
     speed: "最短即日",
-    minAmount: 0,
+    minAmount: 200000,
     maxAmount: "1億円",
     personalSupport: true,
     features: ["最大1億円", "2社間対応", "オンライン完結"],
@@ -770,10 +770,10 @@ export const factoringCompanies: FactoringCompany[] = [
     reviewCount: 0,
     companyInfo: {
       established: "公式サイトでは確認できず",
-      capital: "公式サイトでは確認できず",
-      address: "公式サイトでは確認できず"
+      capital: "900万円",
+      address: "大阪府大阪市中央区北久宝寺町3-6-1 本町南ガーデンシティ7階"
     },
-    requiredDocuments: ["公式サイトに明示なし（問い合わせ時に案内）"],
+    requiredDocuments: ["請求書", "直近3か月分の通帳履歴", "顔写真付き身分証明書", "決算書（法人）"],
     url: "https://safe-trust.co.jp/",
     affiliateUrl: "https://px.a8.net/svt/ejp?a8mat=4B650J+50ELKA+5VEA+5YRHE",
     category: ["即日", "個人事業主"]
@@ -784,13 +784,13 @@ export const factoringCompanies: FactoringCompany[] = [
     nameKana: "えーすとらすと",
     slug: "ace-trust",
     rating: 0,
-    fees: { min: 0, max: 0 },
+    fees: { min: 1.0, max: 15.0 },
     speed: "最短2時間",
     minAmount: 0,
-    maxAmount: "公式では確認できず",
+    maxAmount: "5,000万円（審査により1億円）",
     personalSupport: false,
     features: ["最短2時間", "オンライン完結", "INBUYS"],
-    description: "港区西新橋の債権買取会社。最短2時間で送金、来店・面談不要のオンライン完結型サービス「INBUYS」を提供。手数料は業界最安級を標榜（率は実質個別査定）。",
+    description: "港区西新橋の債権買取会社。最短2時間で送金、来店・面談不要のオンライン完結型サービス「INBUYS」（2社間のみ）を提供。手数料は2社間5〜15%以内・3社間1.0〜4.9%以内（公式表示）。償還請求権なし。",
     pros: [
       "最短2時間で送金（公式表示）",
       "来店・面談不要のオンライン完結型（INBUYS）",
@@ -809,7 +809,7 @@ export const factoringCompanies: FactoringCompany[] = [
       capital: "公式サイトでは確認できず",
       address: "東京都港区西新橋2-6-1 第二菊家ビル4階"
     },
-    requiredDocuments: ["公式サイトに明示なし（問い合わせ時に案内）"],
+    requiredDocuments: ["銀行口座の通帳（直近3か月分）", "請求書（発注書・請書・納品書など）", "身分証明書"],
     url: "https://ace-trust.com/",
     affiliateUrl: "https://px.a8.net/svt/ejp?a8mat=4B650J+5BPU22+5T7O+5YJRM",
     category: ["即日"]
@@ -823,7 +823,7 @@ export const factoringCompanies: FactoringCompany[] = [
     fees: { min: 0, max: 0 },
     speed: "最短即日",
     minAmount: 500000,
-    maxAmount: "公式では確認できず",
+    maxAmount: "5,000万円",
     personalSupport: false,
     features: ["法人限定", "最短即日", "クラウドサイン契約"],
     description: "株式会社ワイズコーポレーション運営の法人限定ファクタリング。最短即日資金化・クラウドサイン電子契約で来店不要（印紙代0円）。最低買取額50万円〜。",
@@ -841,11 +841,11 @@ export const factoringCompanies: FactoringCompany[] = [
     ],
     reviewCount: 0,
     companyInfo: {
-      established: "公式サイトでは確認できず（運営: 株式会社ワイズコーポレーション）",
+      established: "2017年3月（運営: 株式会社ワイズコーポレーション）",
       capital: "公式サイトでは確認できず",
       address: "東京都豊島区池袋2-50-9 第三共立ビル3F"
     },
-    requiredDocuments: ["公式サイトに明示なし（問い合わせ時に案内）"],
+    requiredDocuments: ["通帳の写し（過去3ヶ月分）", "売掛先との契約書・請求書・発注書等", "（契約時）会社謄本・印鑑証明書", "（契約時）代表者の住民票・顔写真付き身分証明証"],
     url: "https://factorplan.net/",
     affiliateUrl: "https://px.a8.net/svt/ejp?a8mat=4B650J+53Z76Y+5RC6+5YJRM",
     category: ["法人専用", "即日"]
@@ -858,7 +858,7 @@ export const factoringCompanies: FactoringCompany[] = [
     rating: 0,
     fees: { min: 3.0, max: 0 },
     speed: "最短2時間",
-    minAmount: 0,
+    minAmount: 100000,
     maxAmount: "1億円",
     personalSupport: true,
     features: ["365日24時間受付", "債権譲渡登記不要", "2社間・3社間対応"],
@@ -877,11 +877,11 @@ export const factoringCompanies: FactoringCompany[] = [
     ],
     reviewCount: 0,
     companyInfo: {
-      established: "公式サイトでは確認できず（運営: 株式会社SKO）",
-      capital: "公式サイトでは確認できず",
+      established: "2018年2月（運営: 株式会社SKO）",
+      capital: "1,000万円",
       address: "東京都台東区東上野2-21-1 ケーワイビル4F"
     },
-    requiredDocuments: ["公式サイトに明示なし（問い合わせ時に案内）"],
+    requiredDocuments: ["請求書", "発注書または契約書", "売掛先の住所・連絡先", "銀行通帳（3か月分）"],
     url: "https://www.factoring-try-sko.co.jp/",
     affiliateUrl: "https://px.a8.net/svt/ejp?a8mat=4B650J+4BEE5M+50EQ+5YJRM",
     category: ["即日", "審査甘い"]

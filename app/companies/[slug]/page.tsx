@@ -10,6 +10,7 @@ import { getCompanyDetails } from "@/data/companyDetails";
 import { getEditorialVerification } from "@/data/editorialVerification";
 import { feeIndex } from "@/data/feeIndex";
 import { HOURS_LINK_SLUGS } from "@/data/hoursPages";
+import { getCompanyLead } from "@/data/companyLead";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -52,6 +53,18 @@ export async function generateMetadata({
         ? `手数料${company.fees.min}%〜（上限は要問い合わせ）`
         : "手数料は要見積もり";
   
+  const lead = getCompanyLead(slug);
+  if (lead) {
+    return {
+      title: lead.metaTitle,
+      description: lead.metaDescription,
+      keywords: `${company.name},${company.nameKana},口コミ,評判,ファクタリング,手数料,営業時間`,
+      openGraph: { title: lead.metaTitle, description: lead.metaDescription, type: "article", images: DEFAULT_OG_IMAGES },
+      twitter: { card: "summary", images: [DEFAULT_OG_IMAGE_URL], title: lead.metaTitle, description: lead.metaDescription },
+      alternates: { canonical: `/companies/${slug}` },
+    };
+  }
+
   return {
     title: `${company.name}の評判・手数料・営業時間・必要書類【2026年8月公式確認】`,
     description: `${company.name}のファクタリングサービスを徹底解説。${feeText}、${company.speed}で入金可能。Google Maps実評価・メリット・デメリット・必要書類・活用シーンを詳しく紹介。${categoryText}に最適なファクタリング業者です。`,
@@ -94,6 +107,14 @@ export default function CompanyPage({
   const editorialVerification = getEditorialVerification(slug);
   const feeRow = feeIndex.find((f) => f.slug === slug);
   const feeUndisclosed = !!feeRow && /非公示|確認できず|個別査定/.test(feeRow.fee2);
+  const lead = getCompanyLead(slug);
+  // 買取可能額：公式で再確認した会社（lead あり）は /fees/ と同じ一次確認値を表示する
+  const amountLabel =
+    lead && feeRow
+      ? feeRow.amount
+      : `${company.minAmount === 0 ? "下限なし" : `${(company.minAmount / 10000).toFixed(0)}万円`}〜${company.maxAmount}`;
+  // speed は「最短即日」「即日」など表記が混在するため、「最短」の二重表記を防ぐ
+  const speedLabel = company.speed.startsWith("最短") ? company.speed : `最短${company.speed}`;
 
   // 指名×具体サブ意図（営業時間・審査・必要書類・個人事業主可否）の即答FAQ。
   // 早見表と同じ一次確認済みフィールドから生成し、検索クエリと同じ言い回しで
@@ -106,7 +127,7 @@ export default function CompanyPage({
         },
         {
           question: `${company.name}の審査・入金スピードはどのくらいですか？`,
-          answer: `${company.name}は最短${company.speed}での入金が可能とされています。実際の所要時間は、申込時間・提出書類・売掛先の状況により変動します。`,
+          answer: `${company.name}は${speedLabel}での入金が可能とされています。実際の所要時間は、申込時間・提出書類・売掛先の状況により変動します。`,
         },
         {
           question: `${company.name}の必要書類は？`,
@@ -129,7 +150,7 @@ export default function CompanyPage({
         },
       ]
     : [];
-  const allFaqs = [...subIntentFaqs, ...feeFaqs, ...(details?.faqs ?? [])];
+  const allFaqs = [...(lead?.faqs ?? []), ...subIntentFaqs, ...feeFaqs, ...(details?.faqs ?? [])];
 
   // 構造化データ（JSON-LD）。aggregateRating は Google Maps の実評価が
   // 確認できた会社のみ実値で出力し、未確認の会社では出力しない（架空評価を出さない）。
@@ -198,79 +219,35 @@ export default function CompanyPage({
           </div>
         )}
 
-        {/* 目次 */}
-        <nav className="mb-12 bg-white rounded-lg shadow-sm p-8 border border-gray-200">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6 pb-3 border-b border-gray-200">
-            目次
-          </h2>
-          <div className="grid md:grid-cols-2 gap-3">
-            <a href="#overview" className="text-gray-700 hover:text-blue-600 font-medium py-3 px-4 bg-gray-50 rounded hover:bg-blue-50 transition border border-transparent hover:border-blue-200 flex items-center gap-3">
-              <span className="text-blue-600">→</span>
-              会社概要・基本情報
-            </a>
-            {details.performance && details.performance.length > 0 && (
-              <a href="#performance" className="text-gray-700 hover:text-blue-600 font-medium py-3 px-4 bg-gray-50 rounded hover:bg-blue-50 transition border border-transparent hover:border-blue-200 flex items-center gap-3">
-                <span className="text-blue-600">→</span>
-                実績推移データ
-              </a>
-            )}
-            {details.mediaCoverage && details.mediaCoverage.length > 0 && (
-              <a href="#media" className="text-gray-700 hover:text-blue-600 font-medium py-3 px-4 bg-gray-50 rounded hover:bg-blue-50 transition border border-transparent hover:border-blue-200 flex items-center gap-3">
-                <span className="text-blue-600">→</span>
-                メディア掲載実績
-              </a>
-            )}
-            <a href="#pros-cons" className="text-gray-700 hover:text-blue-600 font-medium py-3 px-4 bg-gray-50 rounded hover:bg-blue-50 transition border border-transparent hover:border-blue-200 flex items-center gap-3">
-              <span className="text-blue-600">→</span>
-              メリット・デメリット
-            </a>
-            <a href="#strengths" className="text-gray-700 hover:text-blue-600 font-medium py-3 px-4 bg-gray-50 rounded hover:bg-blue-50 transition border border-transparent hover:border-blue-200 flex items-center gap-3">
-              <span className="text-blue-600">→</span>
-              {company.name}の強み
-            </a>
-            <a href="#use-cases" className="text-gray-700 hover:text-blue-600 font-medium py-3 px-4 bg-gray-50 rounded hover:bg-blue-50 transition border border-transparent hover:border-blue-200 flex items-center gap-3">
-              <span className="text-blue-600">→</span>
-              活用シーン
-            </a>
-            <a href="#reviews" className="text-gray-700 hover:text-blue-600 font-medium py-3 px-4 bg-gray-50 rounded hover:bg-blue-50 transition border border-transparent hover:border-blue-200 flex items-center gap-3">
-              <span className="text-blue-600">→</span>
-              利用者の口コミ
-            </a>
-            <a href="#offices" className="text-gray-700 hover:text-blue-600 font-medium py-3 px-4 bg-gray-50 rounded hover:bg-blue-50 transition border border-transparent hover:border-blue-200 flex items-center gap-3">
-              <span className="text-blue-600">→</span>
-              営業時間・拠点
-            </a>
-            <a href="#audit" className="text-gray-700 hover:text-blue-600 font-medium py-3 px-4 bg-gray-50 rounded hover:bg-blue-50 transition border border-transparent hover:border-blue-200 flex items-center gap-3">
-              <span className="text-blue-600">→</span>
-              審査について
-            </a>
-            <a href="#flow" className="text-gray-700 hover:text-blue-600 font-medium py-3 px-4 bg-gray-50 rounded hover:bg-blue-50 transition border border-transparent hover:border-blue-200 flex items-center gap-3">
-              <span className="text-blue-600">→</span>
-              利用の流れ
-            </a>
-            <a href="#faq" className="text-gray-700 hover:text-blue-600 font-medium py-3 px-4 bg-gray-50 rounded hover:bg-blue-50 transition border border-transparent hover:border-blue-200 flex items-center gap-3">
-              <span className="text-blue-600">→</span>
-              よくある質問
-            </a>
-            {details.comparisons.length > 0 && (
-              <a href="#comparison" className="text-gray-700 hover:text-blue-600 font-medium py-3 px-4 bg-gray-50 rounded hover:bg-blue-50 transition border border-transparent hover:border-blue-200 flex items-center gap-3">
-                <span className="text-blue-600">→</span>
-                他社比較
-              </a>
-            )}
-          </div>
-        </nav>
-
         {/* ヘッダー */}
         <div id="overview" className="bg-white rounded-lg shadow-sm p-8 mb-8 border border-gray-200 scroll-mt-4">
           <div className="flex items-start gap-6 mb-6">
             <div className="flex-1">
               <h1 className="text-4xl font-bold text-gray-900 mb-3 leading-tight">
-                {company.name}
+                {lead?.h1 ?? company.name}
               </h1>
               <p className="text-gray-600 text-lg mb-4 leading-relaxed">
                 {company.description}
               </p>
+              {lead && (
+                <div id="lead-answer" className="mb-5 rounded-lg border-l-4 border-blue-500 bg-blue-50 p-4">
+                  <p className="text-base font-bold text-blue-900 mb-2">{lead.leadHeading}</p>
+                  <div className="space-y-2">
+                    {lead.leadBody.map((t, i) => (
+                      <p key={i} className="text-sm leading-relaxed text-gray-800">{t}</p>
+                    ))}
+                  </div>
+                  <p className="mt-2 text-xs text-gray-500">
+                    公式サイト等で{lead.checkedAt}に確認。
+                    {HOURS_LINK_SLUGS.includes(slug) && !lead.sources && (
+                      <> <Link href={`/companies/${slug}/eigyo-jikan/`} className="text-blue-600 underline">{company.name}の営業時間・土日の扱いを詳しく見る →</Link></>
+                    )}
+                    {lead.sources && lead.sources.length > 0 && (
+                      <> <a href="#review-sources" className="text-blue-600 underline">口コミの出典一覧へ</a>／<a href="#editorial-check" className="text-blue-600 underline">公式で確認した事実へ</a></>
+                    )}
+                  </p>
+                </div>
+              )}
               {realRating && (
                 <div className="flex items-center gap-4 mb-4">
                   <div className="flex items-center gap-2 bg-amber-50 px-4 py-2 rounded-lg border border-amber-200">
@@ -322,7 +299,7 @@ export default function CompanyPage({
             </CardHeader>
             <CardContent className="pt-5">
               <p className="text-sm text-gray-700 leading-relaxed mb-4">
-                {company.name}は<strong>最短{company.speed}での入金</strong>に対応し、
+                {company.name}は<strong>{speedLabel}での入金</strong>に対応し、
                 {company.personalSupport ? "個人事業主・フリーランスも利用できます。" : "主に法人向けのサービスです。"}
                 営業時間・必要書類・手数料などのよく調べられる項目を、公式サイトで確認した情報をもとにまとめました。
               </p>
@@ -342,7 +319,7 @@ export default function CompanyPage({
                     </tr>
                     <tr className="border-b border-gray-100">
                       <th className="text-left align-top bg-gray-50 px-3 py-2.5 font-bold text-gray-700 whitespace-nowrap">審査・入金スピード</th>
-                      <td className="px-3 py-2.5 text-gray-800">最短{company.speed}</td>
+                      <td className="px-3 py-2.5 text-gray-800">{speedLabel}</td>
                     </tr>
                     <tr className="border-b border-gray-100">
                       <th className="text-left align-top bg-gray-50 px-3 py-2.5 font-bold text-gray-700 whitespace-nowrap">手数料</th>
@@ -353,7 +330,7 @@ export default function CompanyPage({
                     <tr className="border-b border-gray-100">
                       <th className="text-left align-top bg-gray-50 px-3 py-2.5 font-bold text-gray-700 whitespace-nowrap">買取可能額</th>
                       <td className="px-3 py-2.5 text-gray-800">
-                        {company.minAmount === 0 ? "下限なし" : `${(company.minAmount / 10000).toFixed(0)}万円`}〜{company.maxAmount}
+                        {amountLabel}
                       </td>
                     </tr>
                     <tr className="border-b border-gray-100">
@@ -384,6 +361,81 @@ export default function CompanyPage({
           </Card>
         </section>
 
+        {/* 目次 */}
+        <nav className="mb-12 bg-white rounded-lg shadow-sm p-8 border border-gray-200">
+          <h2 className="text-2xl font-bold text-gray-900 mb-6 pb-3 border-b border-gray-200">
+            目次
+          </h2>
+          <div className="grid md:grid-cols-2 gap-3">
+            <a href="#overview" className="text-gray-700 hover:text-blue-600 font-medium py-3 px-4 bg-gray-50 rounded hover:bg-blue-50 transition border border-transparent hover:border-blue-200 flex items-center gap-3">
+              <span className="text-blue-600">→</span>
+              会社概要・基本情報
+            </a>
+            {details.performance && details.performance.length > 0 && (
+              <a href="#performance" className="text-gray-700 hover:text-blue-600 font-medium py-3 px-4 bg-gray-50 rounded hover:bg-blue-50 transition border border-transparent hover:border-blue-200 flex items-center gap-3">
+                <span className="text-blue-600">→</span>
+                実績推移データ
+              </a>
+            )}
+            {details.mediaCoverage && details.mediaCoverage.length > 0 && (
+              <a href="#media" className="text-gray-700 hover:text-blue-600 font-medium py-3 px-4 bg-gray-50 rounded hover:bg-blue-50 transition border border-transparent hover:border-blue-200 flex items-center gap-3">
+                <span className="text-blue-600">→</span>
+                メディア掲載実績
+              </a>
+            )}
+            <a href="#pros-cons" className="text-gray-700 hover:text-blue-600 font-medium py-3 px-4 bg-gray-50 rounded hover:bg-blue-50 transition border border-transparent hover:border-blue-200 flex items-center gap-3">
+              <span className="text-blue-600">→</span>
+              メリット・デメリット
+            </a>
+            <a href="#strengths" className="text-gray-700 hover:text-blue-600 font-medium py-3 px-4 bg-gray-50 rounded hover:bg-blue-50 transition border border-transparent hover:border-blue-200 flex items-center gap-3">
+              <span className="text-blue-600">→</span>
+              {company.name}の強み
+            </a>
+            <a href="#use-cases" className="text-gray-700 hover:text-blue-600 font-medium py-3 px-4 bg-gray-50 rounded hover:bg-blue-50 transition border border-transparent hover:border-blue-200 flex items-center gap-3">
+              <span className="text-blue-600">→</span>
+              活用シーン
+            </a>
+            {lead?.sources && lead.sources.length > 0 && (
+              <a href="#review-sources" className="text-gray-700 hover:text-blue-600 font-medium py-3 px-4 bg-gray-50 rounded hover:bg-blue-50 transition border border-transparent hover:border-blue-200 flex items-center gap-3">
+                <span className="text-blue-600">→</span>
+                口コミ・評判の出典
+              </a>
+            )}
+            {editorialVerification && (
+              <a href="#editorial-check" className="text-gray-700 hover:text-blue-600 font-medium py-3 px-4 bg-gray-50 rounded hover:bg-blue-50 transition border border-transparent hover:border-blue-200 flex items-center gap-3">
+                <span className="text-blue-600">→</span>
+                公式で確認した事実（会社概要・手数料）
+              </a>
+            )}
+            <a href="#reviews" className="text-gray-700 hover:text-blue-600 font-medium py-3 px-4 bg-gray-50 rounded hover:bg-blue-50 transition border border-transparent hover:border-blue-200 flex items-center gap-3">
+              <span className="text-blue-600">→</span>
+              利用者の口コミ
+            </a>
+            <a href="#offices" className="text-gray-700 hover:text-blue-600 font-medium py-3 px-4 bg-gray-50 rounded hover:bg-blue-50 transition border border-transparent hover:border-blue-200 flex items-center gap-3">
+              <span className="text-blue-600">→</span>
+              営業時間・拠点
+            </a>
+            <a href="#audit" className="text-gray-700 hover:text-blue-600 font-medium py-3 px-4 bg-gray-50 rounded hover:bg-blue-50 transition border border-transparent hover:border-blue-200 flex items-center gap-3">
+              <span className="text-blue-600">→</span>
+              審査について
+            </a>
+            <a href="#flow" className="text-gray-700 hover:text-blue-600 font-medium py-3 px-4 bg-gray-50 rounded hover:bg-blue-50 transition border border-transparent hover:border-blue-200 flex items-center gap-3">
+              <span className="text-blue-600">→</span>
+              利用の流れ
+            </a>
+            <a href="#faq" className="text-gray-700 hover:text-blue-600 font-medium py-3 px-4 bg-gray-50 rounded hover:bg-blue-50 transition border border-transparent hover:border-blue-200 flex items-center gap-3">
+              <span className="text-blue-600">→</span>
+              よくある質問
+            </a>
+            {details.comparisons.length > 0 && (
+              <a href="#comparison" className="text-gray-700 hover:text-blue-600 font-medium py-3 px-4 bg-gray-50 rounded hover:bg-blue-50 transition border border-transparent hover:border-blue-200 flex items-center gap-3">
+                <span className="text-blue-600">→</span>
+                他社比較
+              </a>
+            )}
+          </div>
+        </nav>
+
         {/* 基本情報 */}
         <Card className="mb-8 border-2 border-gray-100 shadow-sm">
           <CardHeader className="bg-gray-50 border-b border-gray-100">
@@ -394,7 +446,7 @@ export default function CompanyPage({
               <div className="bg-blue-50 p-5 rounded-xl border border-blue-100">
                 <h3 className="font-bold text-gray-700 mb-2 text-sm">💰 手数料</h3>
                 <p className="text-3xl font-black text-blue-600">
-                  {feeUndisclosed ? "要見積もり" : `${company.fees.min}%〜${company.fees.max}%`}
+                  {feeUndisclosed || company.fees.min === 0 ? "要見積もり" : company.fees.max > 0 ? `${company.fees.min}%〜${company.fees.max}%` : `${company.fees.min}%〜`}
                 </p>
               </div>
               <div className="bg-green-50 p-5 rounded-xl border border-green-100">
@@ -406,10 +458,7 @@ export default function CompanyPage({
               <div className="bg-gray-50 p-5 rounded-xl border border-gray-200">
                 <h3 className="font-bold text-gray-700 mb-2 text-sm">📈 買取可能額</h3>
                 <p className="text-xl font-bold text-gray-900">
-                  {company.minAmount === 0
-                    ? "下限なし"
-                    : `${(company.minAmount / 10000).toFixed(0)}万円`}
-                  〜{company.maxAmount}
+                  {amountLabel}
                 </p>
               </div>
               <div className="bg-sky-50 p-5 rounded-xl border border-sky-100">
@@ -418,7 +467,7 @@ export default function CompanyPage({
                   {company.personalSupport ? (
                     <span className="text-green-600 font-black">対応</span>
                   ) : (
-                    <span className="text-gray-500 font-bold">非対応</span>
+                    <span className="text-gray-500 font-bold">要問い合わせ（主に法人向け）</span>
                   )}
                 </p>
               </div>
@@ -725,6 +774,45 @@ export default function CompanyPage({
           </Card>
         </section>
 
+        {/* 口コミ・評判の出典一覧（掲載サイト・確認日のみ。本文の転載はしない） */}
+        {lead?.sources && lead.sources.length > 0 && (
+          <section id="review-sources" className="mb-8 scroll-mt-4">
+            <Card className="border-2 border-gray-100 shadow-sm">
+              <CardHeader className="bg-gray-50 border-b border-gray-100">
+                <CardTitle className="text-2xl font-black text-gray-900">{company.name}の口コミ・評判はどこで確認できる？（出典一覧）</CardTitle>
+                <p className="text-sm text-gray-600 mt-2">
+                  {company.name}の口コミが掲載されている主なサイトと、{lead.checkedAt}時点の掲載状況です。当サイトは口コミ本文の転載や体験談の創作はせず、掲載先と件数だけを示しています。評価は投稿の時期・件数で変わるため、気になる方は各サイトで原文を確認してください。
+                </p>
+              </CardHeader>
+              <CardContent className="pt-6">
+                <div className="overflow-x-auto rounded-lg border border-gray-200">
+                  <table className="w-full min-w-[520px] text-sm">
+                    <thead>
+                      <tr className="border-b-2 border-gray-200 bg-gray-50">
+                        <th className="px-3 py-2.5 text-left font-bold text-gray-700 w-40">掲載サイト</th>
+                        <th className="px-3 py-2.5 text-left font-bold text-gray-700">掲載状況（{lead.checkedAt}確認）</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {lead.sources.map((src, i) => (
+                        <tr key={i} className="border-b border-gray-100 last:border-0 align-top">
+                          <td className="px-3 py-2.5 font-semibold text-gray-800">
+                            <a href={src.url} target="_blank" rel="nofollow noopener noreferrer" className="text-blue-600 hover:underline">{src.site}</a>
+                          </td>
+                          <td className="px-3 py-2.5 text-gray-700 leading-relaxed">{src.note}</td>
+                        </tr>
+                      ))}
+                    </tbody>
+                  </table>
+                </div>
+                <p className="mt-4 text-xs text-gray-500 leading-relaxed">
+                  ※口コミは個人の体験で、手数料や審査結果は売掛先・請求書の内容によって変わります。条件は下の「編集部の検証欄」（公式サイトで確認した事実）とあわせてご確認ください。
+                </p>
+              </CardContent>
+            </Card>
+          </section>
+        )}
+
         {/* 公開口コミの傾向（出典・調査年月つき） */}
         {reviewTrend && (
           <section id="review-trends" className="mb-8 scroll-mt-4">
@@ -845,7 +933,7 @@ export default function CompanyPage({
               )}
               <h3 className="font-bold text-xl mb-4">審査の特徴</h3>
               <ul className="space-y-3">
-                {details.audit.features.map((feature, index) => (
+                {(lead?.auditFacts ?? details.audit.features).map((feature, index) => (
                   <li key={index} className="flex items-start gap-3">
                     <span className="text-blue-500 text-xl mt-1">✓</span>
                     <span className="text-gray-700">{feature}</span>
@@ -864,7 +952,7 @@ export default function CompanyPage({
             </CardHeader>
             <CardContent className="pt-6">
               <div className="space-y-6">
-                {details.flow.map((step) => (
+                {(lead?.flow ?? details.flow).map((step) => (
                   <div key={step.step} className="flex gap-6">
                     <div className="flex-shrink-0">
                       <div className="w-16 h-16 bg-blue-500 text-white rounded-full flex items-center justify-center font-black text-2xl">
@@ -925,7 +1013,7 @@ export default function CompanyPage({
                     <tbody>
                       <tr className="bg-blue-50 border-b border-gray-100">
                         <td className="p-4 font-bold">{company.name}</td>
-                        <td className="p-4">{company.minAmount}万円〜{company.maxAmount}</td>
+                        <td className="p-4">{company.minAmount === 0 ? "下限なし" : `${(company.minAmount / 10000).toFixed(0)}万円`}〜{company.maxAmount}</td>
                         <td className="p-4">{company.speed}</td>
                         <td className="p-4">{company.personalSupport ? "個人事業主・法人" : "法人"}</td>
                       </tr>
@@ -1034,7 +1122,7 @@ export default function CompanyPage({
       />
 
       {/* FAQ構造化データ（JSON-LD） */}
-      {details.faqs.length > 0 && (
+      {allFaqs.length > 0 && (
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{

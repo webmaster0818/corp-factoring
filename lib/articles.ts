@@ -9,6 +9,7 @@ export interface Article {
   slug: string;
   title: string;
   keyword: string;
+  description?: string;
   content: string;
   datePublished: string;
   dateModified: string;
@@ -51,6 +52,12 @@ function extractKeyword(markdown: string): string {
   return match ? match[1].trim() : '';
 }
 
+// 任意: 記事冒頭メタに「**メタdescription:** ...」があれば meta description に使う
+function extractDescription(markdown: string): string | undefined {
+  const match = markdown.match(/\*\*メタdescription:\*\*\s*(.+)$/m);
+  return match ? match[1].trim() : undefined;
+}
+
 function extractContent(markdown: string): string {
   // Remove the metadata section (everything before the first ---)
   const parts = markdown.split(/\n---\n/);
@@ -90,6 +97,7 @@ export async function getArticleBySlug(slug: string): Promise<Article | null> {
     slug,
     title,
     keyword,
+    description: extractDescription(fileContents),
     content: processedContent.toString(),
     datePublished: stats.birthtime.toISOString(),
     dateModified: stats.mtime.toISOString(),
