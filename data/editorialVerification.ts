@@ -85,13 +85,13 @@ export const editorialVerifications: { [slug: string]: EditorialVerification } =
       {
         label: "運営会社",
         value:
-          "設立2017年・資本金1,000万円。運営法人の商号は当編集部の確認範囲では特定できておらず、公式サイトでのご確認をおすすめします",
+          "株式会社インターテック（公式「会社情報」の会社名表記）",
         source: "公式サイト会社概要（当サイト一次確認）",
       },
       {
         label: "所在地",
-        value: "東京都台東区東上野3-5-9 本池田第一ビル4階",
-        source: "公式サイト会社概要（当サイト一次確認）",
+        value: "〒110-0015 東京都台東区東上野3丁目5-9 本池田第二ビル4階",
+        source: "公式「会社情報」（2026年10月14日確認）",
       },
       {
         label: "許認可・登録",
@@ -112,8 +112,8 @@ export const editorialVerifications: { [slug: string]: EditorialVerification } =
       },
       {
         label: "買取可能額",
-        value: "50万円〜5,000万円（公式表示）",
-        source: "公式サイト（2026年7月21日一次確認）",
+        value: "30万円〜5,000万円（公式表示：FAQ「最低30万円から買取」）",
+        source: "公式サイト・FAQ（2026年10月14日確認）",
       },
       {
         label: "営業時間",
@@ -132,7 +132,7 @@ export const editorialVerifications: { [slug: string]: EditorialVerification } =
       "「24時間365日対応」と公式に記載があるが、電話受付の時間帯や審査・入金が実際に行われる時間帯は公式では確認できないため、急ぎの場合は申込前に受付体制を確認する",
       "契約形態（2社間か3社間か）と、償還請求権の有無（ノンリコースかどうか）を契約前に確認する",
       "債権譲渡登記の要否と、登記が必要な場合の費用負担を確認する",
-      "買取可能額が50万円〜5,000万円と公式表示のため、希望額がこの範囲に収まるかを申込前に確認する",
+      "買取可能額が30万円〜5,000万円と公式表示のため、希望額がこの範囲に収まるかを申込前に確認する",
     ],
   },
 
@@ -166,12 +166,12 @@ export const editorialVerifications: { [slug: string]: EditorialVerification } =
       },
       {
         label: "入金スピード",
-        value: "審査最短60分・24時間365日入金（公式表示）",
-        source: "公式サイト（2026年7月21日一次確認）",
+        value: "最短30分・24時間365日入金（公式表示）",
+        source: "公式FAQ「申請から入金までの所要時間は最短30分」（2026年10月14日確認）",
       },
       {
         label: "買取可能額",
-        value: "1万円〜（公式表示）。上限額の明示は公式サイトでは確認できず",
+        value: "1万円〜（公式表示）。買取上限額は審査で利用者ごとに設定（公式FAQ）。固定の上限額の公表はなし",
         source: "公式サイト（2026年7月21日一次確認）",
       },
       {
@@ -208,8 +208,8 @@ export const editorialVerifications: { [slug: string]: EditorialVerification } =
       },
       {
         label: "所在地",
-        value: "東京都新宿区西新宿8-17-1 住友不動産新宿グランドタワー38階",
-        source: "公式サイト会社概要（当サイト一次確認）",
+        value: "東京本社 〒171-0033 東京都豊島区高田3丁目32番1号 大東ビル3階",
+        source: "公式「会社概要」（2026年10月14日確認）",
       },
       {
         label: "許認可・登録",
@@ -224,8 +224,8 @@ export const editorialVerifications: { [slug: string]: EditorialVerification } =
       },
       {
         label: "入金スピード",
-        value: "最短3時間（即日／公式表示）",
-        source: "公式サイト（2026年7月21日一次確認）",
+        value: "最短即日・審査最短1時間（公式表示）",
+        source: "公式FAQ・サービスページ（2026年10月14日確認）",
       },
       {
         label: "買取可能額",

@@ -219,7 +219,7 @@ export default function Home() {
                   <div className="mb-4 rounded-lg overflow-hidden border border-gray-200">
                     <img
                       src={`/images/companies/${company.slug}.png`}
-                      alt={`${company.name}公式サイトのスクリーンショット - ファクタリング手数料${company.fees.min}%〜${company.fees.max}%`}
+                      alt={`${company.name}公式サイトのスクリーンショット - ファクタリング手数料${company.fees.min}%〜${company.fees.max > 0 ? `${company.fees.max}%` : ""}`}
                       className={`w-full object-cover object-top ${company.slug === 'ququmo' ? 'h-24' : 'h-40'}`}
                       width="1200"
                       height="160"
@@ -263,7 +263,7 @@ export default function Home() {
                             手数料
                           </div>
                           <div className="text-lg font-semibold text-blue-600">
-                            {company.fees.min}%〜{company.fees.max}%
+                            {company.fees.max > 0 ? `${company.fees.min}%〜${company.fees.max}%` : `${company.fees.min}%〜`}
                           </div>
                         </div>
                         <div>

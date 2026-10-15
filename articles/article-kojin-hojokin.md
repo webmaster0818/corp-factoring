@@ -216,7 +216,7 @@
 **つまり、一時的に100万円の資金が必要です。**
 
 **資金が足りない場合の解決策:**
-- **[ファクタリング](/articles/article-factoring-kojin-jigyonushi/):** 手持ちの請求書を即日現金化（最短10分）
+- **[ファクタリング](/articles/article-factoring-kojin-jigyonushi/):** 手持ちの請求書を最短即日で現金化
 - **[日本政策金融公庫](/articles/article-jfc-kojin/):** 補助金交付までのつなぎ融資
 - **[ビジネスローン](/articles/article-business-loan-kojin/):** 即日〜翌日の短期借入
 
@@ -298,7 +298,7 @@ URL: https://gbiz-id.go.jp/
 → IT導入補助金、ものづくり補助金など。
 
 **補助金入金までの資金が足りない場合:**
-→ ファクタリング（最短10分で請求書を現金化）でつなぐのが最速の解決策。
+→ ファクタリング（最短即日で請求書を現金化）でつなぐのが最速の解決策。
 
 ---
 

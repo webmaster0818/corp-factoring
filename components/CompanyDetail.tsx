@@ -57,7 +57,7 @@ export function CompanyDetail({ company }: CompanyDetailProps) {
               <div className="flex justify-between border-b pb-2">
                 <span className="font-semibold text-gray-700">手数料</span>
                 <span className="text-primary font-bold">
-                  {company.fees.min}%〜{company.fees.max}%
+                  {company.fees.max > 0 ? `${company.fees.min}%〜${company.fees.max}%` : `${company.fees.min}%〜`}
                 </span>
               </div>
               <div className="flex justify-between border-b pb-2">

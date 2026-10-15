@@ -167,8 +167,8 @@ const beTradingDetails: CompanyDetailData = {
     },
     {
       companyName: "ペイトナー",
-      amount: "1万円〜30万円（初回）",
-      speed: "最短10分",
+      amount: "1万円〜（初回50万円・最大300万円）",
+      speed: "最短即日",
       target: "個人事業主・フリーランス",
       note: "少額の資金調達が得意"
     }

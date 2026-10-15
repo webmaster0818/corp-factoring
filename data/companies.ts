@@ -92,7 +92,7 @@ export const factoringCompanies: FactoringCompany[] = [
     nameKana: "ククモ",
     slug: "ququmo",
     rating: 4.7,
-    fees: { min: 1.0, max: 14.8 },
+    fees: { min: 1.0, max: 0 },
     speed: "最短2時間",
     minAmount: 0,
     maxAmount: "無制限",
@@ -114,7 +114,7 @@ export const factoringCompanies: FactoringCompany[] = [
     companyInfo: {
       established: "2017年",
       capital: "1億円",
-      address: "東京都豊島区東池袋3-1-1 サンシャイン60 45階"
+      address: "東京都豊島区南池袋2-13-10 南池袋山本ビル3階"
     },
     requiredDocuments: ["請求書", "通帳"],
     url: "https://ququmo.net/",
@@ -126,13 +126,13 @@ export const factoringCompanies: FactoringCompany[] = [
     nameKana: "あくせるふぁくたー",
     slug: "accel-factor",
     rating: 4.6,
-    fees: { min: 0.5, max: 12.0 },
-    speed: "最短2時間",
+    fees: { min: 1.0, max: 12.0 },
+    speed: "最短即日",
     minAmount: 300000,
     maxAmount: "上限なし",
     personalSupport: true,
     features: ["超低手数料", "柔軟審査", "全国対応"],
-    description: "手数料0.5%〜と業界最低水準。審査通過率93%と高い通過率を誇る。",
+    description: "手数料は2社間1〜12%・3社間0.5〜10.5%（公式表示）。審査通過率93%と高い通過率を誇る。",
     pros: [
       "手数料0.5%〜と業界最低",
       "審査通過率93%",
@@ -148,7 +148,7 @@ export const factoringCompanies: FactoringCompany[] = [
     companyInfo: {
       established: "2018年",
       capital: "5,000万円",
-      address: "東京都新宿区西新宿8-17-1 住友不動産新宿グランドタワー38階"
+      address: "東京都豊島区高田3丁目32番1号 大東ビル3階"
     },
     requiredDocuments: ["請求書", "通帳", "身分証明書"],
     url: "https://accelfacter.co.jp/",
@@ -266,7 +266,7 @@ export const factoringCompanies: FactoringCompany[] = [
     fees: { min: 10.0, max: 10.0 },
     speed: "最短30分",
     minAmount: 10000,
-    maxAmount: "無制限",
+    maxAmount: "上限は審査で個別設定",
     personalSupport: true,
     features: ["手数料一律10%", "個人特化", "開業直後OK"],
     description: "個人事業主・フリーランス特化。開業直後でも利用可能。手数料一律10%。",
@@ -470,12 +470,12 @@ export const factoringCompanies: FactoringCompany[] = [
     slug: "ennavi",
     rating: 4.0,
     fees: { min: 5.0, max: 20.0 },
-    speed: "最短即日",
-    minAmount: 500000,
+    speed: "最短1日",
+    minAmount: 300000,
     maxAmount: "5000万円",
     personalSupport: false,
-    features: ["少額対応", "24時間対応", "個人OK"],
-    description: "50万円から対応。24時間対応で土日祝も申込可能。",
+    features: ["少額対応", "24時間対応", "法人向け"],
+    description: "30万円から対応（最短1日で入金）。24時間対応で土日祝も申込可能。",
     pros: [
       "50万円から対応",
       "24時間対応",
@@ -491,7 +491,7 @@ export const factoringCompanies: FactoringCompany[] = [
     companyInfo: {
       established: "2017年",
       capital: "1,000万円",
-      address: "東京都台東区東上野3-5-9 本池田第一ビル4階"
+      address: "東京都台東区東上野3丁目5-9 本池田第二ビル4階"
     },
     requiredDocuments: ["請求書", "通帳", "身分証明書"],
     url: "https://ennavi-factoring.net/",

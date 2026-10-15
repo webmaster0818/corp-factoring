@@ -963,7 +963,7 @@ export default function CompanyPage({
                       <h3 className="font-bold text-xl mb-2">{step.title}</h3>
                       <p className="text-gray-700 mb-2">{step.description}</p>
                       {step.duration && (
-                        <p className="text-blue-600 font-medium text-sm">{step.duration}</p>
+                        <p className="text-blue-600 font-medium text-sm">{step.duration === "最短即日" && step.title.includes("入金") && !speedLabel.includes("即日") ? speedLabel : step.duration}</p>
                       )}
                     </div>
                   </div>

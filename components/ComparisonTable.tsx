@@ -57,7 +57,7 @@ export function ComparisonTable({ companies }: ComparisonTableProps) {
               </TableCell>
               <TableCell>
                 <div className="font-semibold text-primary">
-                  {company.fees.min}%〜{company.fees.max}%
+                  {company.fees.max > 0 ? `${company.fees.min}%〜${company.fees.max}%` : `${company.fees.min}%〜`}
                 </div>
               </TableCell>
               <TableCell>
