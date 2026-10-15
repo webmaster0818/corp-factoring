@@ -298,7 +298,7 @@ export default function Home() {
                       <div className="flex gap-3">
                         <Link href={`/companies/${company.slug}`}>
                           <Button variant="outline" size="sm">
-                            詳細を見る
+                            {company.name}の口コミ・評判
                           </Button>
                         </Link>
                         <Button size="sm">公式サイトへ →</Button>
@@ -531,7 +531,7 @@ export default function Home() {
               "@type": "ListItem",
               "position": index + 1,
               "name": company.name,
-              "url": `https://corp-factoring.com/companies/${company.slug}`
+              "url": `https://corp-factoring.com/companies/${company.slug}/`
             }))
           })
         }}
