@@ -11,7 +11,7 @@
 
 ---
 
-## 事例の前提：ファクタリング活用の基礎知識
+## 事例の前提となるファクタリング活用の基礎知識
 
 ファクタリングは、[売掛金の現金化](/articles/article-factoring-urikakekin/)によって資金を調達する方法です。[銀行融資との違い](/articles/article-factoring-vs-ginkou/)を理解したうえで、以下の事例をご覧ください。
 
