@@ -203,8 +203,8 @@ export const editorialVerifications: { [slug: string]: EditorialVerification } =
     facts: [
       {
         label: "運営会社",
-        value: "株式会社アクセルファクター（2018年設立・資本金5,000万円）",
-        source: "公式サイト会社概要（当サイト一次確認）",
+        value: "株式会社アクセルファクター（2018年10月設立・資本金2億7,052万円〔グループ総資本金〕）",
+        source: "公式「会社概要」（2026年10月16日確認）",
       },
       {
         label: "所在地",

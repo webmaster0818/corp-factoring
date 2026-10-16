@@ -2,6 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import { remark } from 'remark';
 import html from 'remark-html';
+import gfm from 'remark-gfm'; // Markdown の表を <table> に（無いと表が | 区切りの文字のまま出ていた）
 
 const articlesDirectory = path.join(process.cwd(), 'articles');
 
@@ -90,6 +91,7 @@ export async function getArticleBySlug(slug: string): Promise<Article | null> {
   const faqs = extractFaqs(fileContents);
 
   const processedContent = await remark()
+    .use(gfm, { singleTilde: false }) // 「1~12%」のような範囲表記が取り消し線にならないように
     .use(html)
     .process(contentMarkdown);
 

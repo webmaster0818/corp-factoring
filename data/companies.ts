@@ -147,7 +147,7 @@ export const factoringCompanies: FactoringCompany[] = [
     reviewCount: 1650,
     companyInfo: {
       established: "2018年",
-      capital: "5,000万円",
+      capital: "2億7,052万円（グループ総資本金）",
       address: "東京都豊島区高田3丁目32番1号 大東ビル3階"
     },
     requiredDocuments: ["請求書", "通帳", "身分証明書"],

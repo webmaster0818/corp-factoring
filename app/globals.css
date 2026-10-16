@@ -35,3 +35,8 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* 記事本文の表（remark-gfm で出力）。typography プラグインが無いので最低限の見た目をここで付ける。スマホでは横スクロール */
+.prose table { display: block; max-width: 100%; overflow-x: auto; border-collapse: collapse; margin: 1.25rem 0; font-size: 0.9rem; }
+.prose th, .prose td { border: 1px solid #e5e7eb; padding: 0.5rem 0.75rem; text-align: left; vertical-align: top; white-space: normal; min-width: 6rem; }
+.prose th { background: #f3f4f6; font-weight: 700; color: #111827; }
