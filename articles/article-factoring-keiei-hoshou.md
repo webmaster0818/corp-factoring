@@ -94,7 +94,7 @@
 
 ### 法的根拠
 - 民法466条以下：債権譲渡
-- 最高裁判例H29.12.19：[ファクタリングの適法性](/articles/article-factoring-soshou/)
+- 金融庁「ファクタリングの利用に関する注意喚起」：ファクタリングは法的には債権の売買（債権譲渡）契約（[出典](https://www.fsa.go.jp/user/factoring.html)・[ファクタリングの裁判例](/articles/article-factoring-soshou/)）
 
 [経営者保証ガイドラインの適用要件を満たさない企業](/articles/article-factoring-vs-ginkou/)でも、ファクタリングは利用できます。
 
