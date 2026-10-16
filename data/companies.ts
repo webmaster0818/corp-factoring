@@ -331,13 +331,13 @@ export const factoringCompanies: FactoringCompany[] = [
     nameKana: "にほんちゅうしょうきぎょうきんゆうさぽーときこう",
     slug: "support-kinyu",
     rating: 4.5,
-    fees: { min: 1.5, max: 10.0 },
+    fees: { min: 1.5, max: 0 }, // 上限率は公式で確認できず（2026年10月16日確認。公式表示は「1.5%〜」のみ）
     speed: "最短3時間",
     minAmount: 0,
     maxAmount: "無制限",
     personalSupport: true,
     features: ["FACTOR⁺U（ファクトル）", "経営革新等支援機関", "非営利団体"],
-    description: "経営革新等支援機関認定の非営利団体。ファクタリングサービスの正式名称は「FACTOR⁺U（ファクトル）」。手数料1.5%〜10%と低水準。",
+    description: "経営革新等支援機関の認定を受けた一般社団法人。従来型のファクタリング（最短3時間入金・非対面/対面/郵送で契約）に加え、2024年10月からオンライン完結のAIファクタリング「FACTOR⁺U（ファクトル）」（審査最短10分・入金最短40分）を運営。手数料はどちらも1.5%〜（公式・2026年10月16日確認）。",
     pros: [
       "非営利団体運営で信頼性高",
       "経営革新等支援機関認定",
@@ -352,11 +352,11 @@ export const factoringCompanies: FactoringCompany[] = [
     ],
     reviewCount: 1250,
     companyInfo: {
-      established: "2017年",
-      capital: "非営利団体",
-      address: "東京都港区芝公園一丁目3-5 ジー・イー・ジャパンビル2階"
+      established: "2017年5月",
+      capital: "一般社団法人（資本金の制度なし）",
+      address: "東京都港区芝大門1-2-18-2F（商業登記上の本店：東京都中央区銀座六丁目6番1号）"
     },
-    requiredDocuments: ["請求書", "通帳", "身分証明書"],
+    requiredDocuments: ["口座の入出金履歴（直近3か月分）", "売掛金に関する書類（請求書・契約書など）", "代表者の身分証（FACTOR⁺Uのユーザー登録時）"],
     url: "https://chushokigyo-support.or.jp/",
     category: ["手数料安い", "信頼性"]
   },
@@ -612,7 +612,7 @@ export const factoringCompanies: FactoringCompany[] = [
     maxAmount: "紹介先による",
     personalSupport: false,
     features: ["一括申込サービス", "完全無料", "法人専用"],
-    description: "法人専用のファクタリング一括申込サービス。1回の入力で最大3社に一括申込みでき、条件を比較して契約先を選べる。申込サービス自体は完全無料。",
+    description: "株式会社ミネルバが運営する法人専用のファクタリング一括申込サービス。1回の入力で提携会社のうち3社に申込みが配信され、条件を比較して契約先を選べる。¥Todayの利用料は無料（手数料は契約先に支払う）。",
     pros: [
       "一括申込サービスの利用は完全無料",
       "最大3社の条件を比較してから契約先を選べる",

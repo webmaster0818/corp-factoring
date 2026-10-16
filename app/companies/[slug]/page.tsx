@@ -246,6 +246,29 @@ export default function CompanyPage({
                       <> <a href="#review-sources" className="text-blue-600 underline">口コミの出典一覧へ</a>／<a href="#editorial-check" className="text-blue-600 underline">公式で確認した事実へ</a></>
                     )}
                   </p>
+                  {lead.officialLinks && lead.officialLinks.length > 0 && (
+                    <p className="mt-1 text-xs text-gray-500 leading-relaxed">
+                      出典：
+                      {lead.officialLinks.map((l, i) => (
+                        <React.Fragment key={l.url}>
+                          {i > 0 && "／"}
+                          <a href={l.url} target="_blank" rel="noopener noreferrer" className="text-blue-600 underline">{l.label}</a>
+                        </React.Fragment>
+                      ))}
+                      （{lead.checkedAt}確認）
+                    </p>
+                  )}
+                  {lead.related && lead.related.length > 0 && (
+                    <p className="mt-1 text-xs text-gray-600 leading-relaxed">
+                      関連：
+                      {lead.related.map((r, i) => (
+                        <React.Fragment key={r.href}>
+                          {i > 0 && "／"}
+                          <Link href={r.href} className="text-blue-600 underline">{r.label}</Link>
+                        </React.Fragment>
+                      ))}
+                    </p>
+                  )}
                 </div>
               )}
               {realRating && (
