@@ -21,6 +21,24 @@ import { EditorialVerificationSection } from "@/components/EditorialVerification
 import { getAllArticles } from "@/lib/articles";
 import { DEFAULT_OG_IMAGES, DEFAULT_OG_IMAGE_URL } from "@/lib/og";
 
+// category はロジック用の内部キー。画面表示はこのラベルを使う（ビジネス文書基準 2026-10-16）
+const CATEGORY_LABEL: { [key: string]: string } = {
+  総合: "総合力",
+  即日: "即日入金",
+  実績: "取引実績",
+  手数料安い: "低手数料",
+  審査甘い: "柔軟な審査",
+  少額: "少額対応",
+  高額: "高額対応",
+  高額対応: "高額対応",
+  個人事業主: "個人事業主対応",
+  "3社間": "3社間対応",
+  信頼性: "信頼性",
+  "24時間": "24時間受付",
+  法人専用: "法人専用",
+  一括申込: "一括申込",
+};
+
 export async function generateStaticParams() {
   return factoringCompanies.map((company) => ({
     slug: company.slug,
@@ -42,7 +60,7 @@ export async function generateMetadata({
     };
   }
 
-  const categoryText = company.category.slice(0, 3).join("・");
+  const categoryText = company.category.slice(0, 3).map((c) => CATEGORY_LABEL[c] ?? c).join("・");
   const metaFeeRow = feeIndex.find((r) => r.slug === slug);
   const metaFeeUndisclosed = !!metaFeeRow && /非公示|確認できず|個別査定/.test(metaFeeRow.fee2);
   const feeText = metaFeeUndisclosed
@@ -67,8 +85,8 @@ export async function generateMetadata({
 
   return {
     title: `${company.name}の評判・手数料・営業時間・必要書類【2026年8月公式確認】`,
-    description: `${company.name}のファクタリングサービスを徹底解説。${feeText}、${company.speed}で入金可能。Google Maps実評価・メリット・デメリット・必要書類・活用シーンを詳しく紹介。${categoryText}に最適なファクタリング業者です。`,
-    keywords: `${company.name},${company.nameKana},ファクタリング,評判,口コミ,手数料,${categoryText},徹底解説`,
+    description: `${company.name}のファクタリングサービスについて解説しています。${feeText}、${company.speed}で入金が可能です。Googleマップの評価、メリット・デメリット、必要書類、活用シーンを掲載しています。`,
+    keywords: `${company.name},${company.nameKana},ファクタリング,評判,口コミ,手数料,${categoryText}`,
     openGraph: {
       title: `${company.name}の評判・手数料・営業時間・必要書類【2026年8月公式確認】`,
       description: `${feeText}、${company.speed}で入金。${company.description}`,
@@ -127,14 +145,14 @@ export default function CompanyPage({
         },
         {
           question: `${company.name}の審査・入金スピードはどのくらいですか？`,
-          answer: `${company.name}は${speedLabel}での入金が可能とされています。実際の所要時間は、申込時間・提出書類・売掛先の状況により変動します。`,
+          answer: `${company.name}は、${speedLabel}での入金が可能とされています。実際の所要時間は、申込の時間帯・提出書類・売掛先の状況によって変動します。`,
         },
         {
           question: `${company.name}の必要書類は？`,
           answer: `主な必要書類は「${company.requiredDocuments.slice(0, 4).join("・")}」などです。会社や審査状況により追加書類を求められる場合があるため、詳細は公式サイトでご確認ください。`,
         },
         {
-          question: `${company.name}は個人事業主・フリーランスでも使えますか？`,
+          question: `${company.name}は個人事業主・フリーランスでも利用できますか？`,
           answer: company.personalSupport
             ? `${company.name}は個人事業主・フリーランスの利用にも対応しています。`
             : `${company.name}は主に法人向けのサービスで、個人事業主・フリーランスの利用は要問い合わせです。`,
@@ -146,7 +164,7 @@ export default function CompanyPage({
     ? [
         {
           question: `${company.name}の手数料はいくらですか？`,
-          answer: `${company.name}の手数料は、公式表示で2社間ファクタリングが「${feeRow.fee2}」${/^[―—\-\s]*$|非対応/.test(feeRow.fee3) ? "" : `、3社間が「${feeRow.fee3}」`}です。実際の手数料は売掛先の信用力・買取金額・継続利用の有無などで変動します。最新の一次確認値は当サイトの24社手数料比較（/fees/）でご確認いただけます。`,
+          answer: `${company.name}の手数料は、公式表示で2社間ファクタリングが「${feeRow.fee2}」${/^[―—\-\s]*$|非対応/.test(feeRow.fee3) ? "" : `、3社間が「${feeRow.fee3}」`}です。実際の手数料は売掛先の信用力・買取金額・継続利用の有無などで変動します。公式サイトで確認した最新の値は、当サイトの24社の手数料比較（/fees/）でご確認いただけます。`,
         },
       ]
     : [];
@@ -210,7 +228,7 @@ export default function CompanyPage({
           <div className="mb-8">
             <img
               src={`/images/companies/${slug}.png`}
-              alt={`${company.name}の評判・口コミ・手数料を徹底解説`}
+              alt={`${company.name}の評判・口コミ・手数料の解説`}
               className="w-full rounded-lg shadow-md"
               width="1200"
               height="630"
@@ -240,7 +258,7 @@ export default function CompanyPage({
                   <p className="mt-2 text-xs text-gray-500">
                     公式サイト等で{lead.checkedAt}に確認。
                     {HOURS_LINK_SLUGS.includes(slug) && !lead.sources && (
-                      <> <Link href={`/companies/${slug}/eigyo-jikan/`} className="text-blue-600 underline">{company.name}の営業時間・土日の扱いを詳しく見る →</Link></>
+                      <> <Link href={`/companies/${slug}/eigyo-jikan/`} className="text-blue-600 underline">{company.name}の営業時間・土日の扱いはこちら →</Link></>
                     )}
                     {lead.sources && lead.sources.length > 0 && (
                       <> <a href="#review-sources" className="text-blue-600 underline">口コミの出典一覧へ</a>／<a href="#editorial-check" className="text-blue-600 underline">公式で確認した事実へ</a></>
@@ -309,7 +327,7 @@ export default function CompanyPage({
               href="/#diagnosis"
               className="bg-white border-2 border-sky-500 text-sky-600 font-bold py-4 px-10 rounded-2xl hover:bg-sky-50 transition text-center"
             >
-              🧮 無料診断ツール
+              無料診断ツール
             </Link>
           </div>
         </div>
@@ -318,13 +336,13 @@ export default function CompanyPage({
         <section id="quick-answer" className="mb-8 scroll-mt-4">
           <Card className="border-2 border-blue-100 shadow-sm">
             <CardHeader className="bg-blue-50 border-b border-blue-100">
-              <CardTitle className="text-xl font-black text-gray-900">{company.name}の営業時間・審査スピード・必要書類【早わかり】</CardTitle>
+              <CardTitle className="text-xl font-black text-gray-900">{company.name}の営業時間・審査スピード・必要書類の概要</CardTitle>
             </CardHeader>
             <CardContent className="pt-5">
               <p className="text-sm text-gray-700 leading-relaxed mb-4">
                 {company.name}は<strong>{speedLabel}での入金</strong>に対応し、
                 {company.personalSupport ? "個人事業主・フリーランスも利用できます。" : "主に法人向けのサービスです。"}
-                営業時間・必要書類・手数料などのよく調べられる項目を、公式サイトで確認した情報をもとにまとめました。
+                営業時間・必要書類・手数料など、問い合わせの多い項目を、公式サイトで確認した情報をもとに掲載しています。
               </p>
               <div className="overflow-x-auto">
                 <table className="w-full text-sm border border-gray-200 rounded-lg">
@@ -336,7 +354,7 @@ export default function CompanyPage({
                         {details.operatingHours.saturday && <>／土 {details.operatingHours.saturday}</>}
                         {details.operatingHours.sunday && <>／日 {details.operatingHours.sunday}</>}
                         {HOURS_LINK_SLUGS.includes(slug) && (
-                          <> — <Link href={`/companies/${slug}/eigyo-jikan/`} className="text-blue-600 underline whitespace-nowrap">営業時間を詳しく</Link></>
+                          <> — <Link href={`/companies/${slug}/eigyo-jikan/`} className="text-blue-600 underline whitespace-nowrap">営業時間の詳細</Link></>
                         )}
                       </td>
                     </tr>
@@ -347,7 +365,7 @@ export default function CompanyPage({
                     <tr className="border-b border-gray-100">
                       <th className="text-left align-top bg-gray-50 px-3 py-2.5 font-bold text-gray-700 whitespace-nowrap">手数料</th>
                       <td className="px-3 py-2.5 text-gray-800">
-                        {feeRow ? feeRow.fee2 : `${company.fees.min}%〜${company.fees.max}%`}（<Link href="/fees/" className="text-blue-600 hover:underline">24社の手数料を一次確認で比較</Link>／<Link href="/articles/article-factoring-tesuryo-yasui" className="text-blue-600 hover:underline">手数料の相場と安い会社</Link>）
+                        {feeRow ? feeRow.fee2 : `${company.fees.min}%〜${company.fees.max}%`}（<Link href="/fees/" className="text-blue-600 hover:underline">24社の手数料の比較</Link>／<Link href="/articles/article-factoring-tesuryo-yasui" className="text-blue-600 hover:underline">手数料の相場と安い会社</Link>）
                       </td>
                     </tr>
                     <tr className="border-b border-gray-100">
@@ -370,12 +388,12 @@ export default function CompanyPage({
               {details.operatingHours.note && (
                 <p className="mt-3 text-xs text-gray-500 leading-relaxed">※ 営業時間：{details.operatingHours.note}</p>
               )}
-              <p className="mt-2 text-xs text-gray-500">※ 最新の条件は公式サイトでご確認ください。手数料の非公示社は「要見積もり」が実態です。</p>
+              <p className="mt-2 text-xs text-gray-500">※ ご利用前に、公式サイトにて最新の条件をご確認ください。手数料を公表していない会社は、見積もりにより個別に提示されます。</p>
               <div className="mt-4 border-t border-gray-100 pt-3">
-                <p className="text-xs font-bold text-gray-600 mb-2">もっと詳しく：</p>
+                <p className="text-xs font-bold text-gray-600 mb-2">関連記事：</p>
                 <div className="flex flex-wrap gap-x-4 gap-y-1.5 text-xs">
-                  <Link href="/articles/article-factoring-shinsa/" className="text-blue-600 hover:underline">ファクタリングの審査基準・通過のコツ →</Link>
-                  <Link href="/articles/article-factoring-nyuukin-jikan/" className="text-blue-600 hover:underline">最短入金・即日対応の実態 →</Link>
+                  <Link href="/articles/article-factoring-shinsa/" className="text-blue-600 hover:underline">ファクタリングの審査基準と通過のポイント →</Link>
+                  <Link href="/articles/article-factoring-nyuukin-jikan/" className="text-blue-600 hover:underline">最短入金・即日対応の実情 →</Link>
                   <Link href="/articles/article-factoring-hitsuyou-shorui/" className="text-blue-600 hover:underline">必要書類の一覧 →</Link>
                   <Link href="/fees/" className="text-blue-600 hover:underline">24社の手数料を比較 →</Link>
                 </div>
@@ -462,30 +480,30 @@ export default function CompanyPage({
         {/* 基本情報 */}
         <Card className="mb-8 border-2 border-gray-100 shadow-sm">
           <CardHeader className="bg-gray-50 border-b border-gray-100">
-            <CardTitle className="text-2xl font-black text-gray-900">📊 基本情報</CardTitle>
+            <CardTitle className="text-2xl font-black text-gray-900">基本情報</CardTitle>
           </CardHeader>
           <CardContent className="pt-6">
             <div className="grid md:grid-cols-2 gap-6">
               <div className="bg-blue-50 p-5 rounded-xl border border-blue-100">
-                <h3 className="font-bold text-gray-700 mb-2 text-sm">💰 手数料</h3>
+                <h3 className="font-bold text-gray-700 mb-2 text-sm">手数料</h3>
                 <p className="text-3xl font-black text-blue-600">
                   {feeUndisclosed || company.fees.min === 0 ? "要見積もり" : company.fees.max > 0 ? `${company.fees.min}%〜${company.fees.max}%` : `${company.fees.min}%〜`}
                 </p>
               </div>
               <div className="bg-green-50 p-5 rounded-xl border border-green-100">
-                <h3 className="font-bold text-gray-700 mb-2 text-sm">⚡ 入金スピード</h3>
+                <h3 className="font-bold text-gray-700 mb-2 text-sm">入金スピード</h3>
                 <p className="text-3xl font-black text-green-600">
                   {company.speed}
                 </p>
               </div>
               <div className="bg-gray-50 p-5 rounded-xl border border-gray-200">
-                <h3 className="font-bold text-gray-700 mb-2 text-sm">📈 買取可能額</h3>
+                <h3 className="font-bold text-gray-700 mb-2 text-sm">買取可能額</h3>
                 <p className="text-xl font-bold text-gray-900">
                   {amountLabel}
                 </p>
               </div>
               <div className="bg-sky-50 p-5 rounded-xl border border-sky-100">
-                <h3 className="font-bold text-gray-700 mb-2 text-sm">👤 個人事業主</h3>
+                <h3 className="font-bold text-gray-700 mb-2 text-sm">個人事業主</h3>
                 <p className="text-xl font-bold text-gray-900">
                   {company.personalSupport ? (
                     <span className="text-green-600 font-black">対応</span>
@@ -501,9 +519,9 @@ export default function CompanyPage({
         {/* 手数料比較ハブへの内部リンク（回遊強化） */}
         <div className="mb-12 rounded-xl border border-blue-100 bg-blue-50/60 p-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
           <p className="text-sm text-gray-700 leading-relaxed">
-            手数料や入金スピードは会社ごとに大きく異なります。
-            <span className="font-bold">ファクタリング24社を公式サイトで一次確認して比較</span>し、
-            {company.name}の条件を相場と見比べてみましょう。
+            手数料や入金スピードは、会社ごとに大きく異なります。
+            <span className="font-bold">公式サイトで確認したファクタリング24社の比較表</span>で、
+            {company.name}の条件を相場と比較いただけます。
           </p>
           <Link
             href="/fees/"
@@ -518,7 +536,7 @@ export default function CompanyPage({
           <section id="performance" className="mb-12 scroll-mt-4">
             <Card className="border-2 border-gray-100 shadow-sm">
               <CardHeader className="bg-gray-50 border-b border-gray-100">
-                <CardTitle className="text-2xl font-black text-gray-900">📊 {company.name}の実績推移</CardTitle>
+                <CardTitle className="text-2xl font-black text-gray-900">{company.name}の実績推移</CardTitle>
               </CardHeader>
               <CardContent className="pt-6">
                 <div className="overflow-x-auto">
@@ -542,7 +560,7 @@ export default function CompanyPage({
                   </table>
                 </div>
                 <p className="mt-4 text-sm text-gray-600">
-                  ※ 2024年3月時点のデータです。継続的な成長を続けており、多くの企業に信頼されています。
+                  ※ 2024年3月時点のデータです。
                 </p>
               </CardContent>
             </Card>
@@ -554,7 +572,7 @@ export default function CompanyPage({
           <section id="media" className="mb-12 scroll-mt-4">
             <Card className="border-2 border-gray-100 shadow-sm">
               <CardHeader className="bg-gray-50 border-b border-gray-100">
-                <CardTitle className="text-2xl font-black text-gray-900">📰 {company.name}のメディア掲載実績</CardTitle>
+                <CardTitle className="text-2xl font-black text-gray-900">{company.name}のメディア掲載実績</CardTitle>
               </CardHeader>
               <CardContent className="pt-6">
                 <div className="space-y-4">
@@ -562,8 +580,7 @@ export default function CompanyPage({
                     <div key={index} className="bg-gradient-to-r from-blue-50 to-gray-50 p-6 rounded-lg border border-blue-100">
                       <div className="flex items-start gap-4">
                         <div className="flex-shrink-0 w-12 h-12 bg-blue-500 text-white rounded-full flex items-center justify-center font-black text-lg">
-                          📰
-                        </div>
+                                                  </div>
                         <div className="flex-grow">
                           <h3 className="font-bold text-xl mb-2 text-gray-900">{media.name}</h3>
                           {media.description && (
@@ -595,7 +612,7 @@ export default function CompanyPage({
         {/* メリット・デメリット */}
         <Card id="pros-cons" className="mb-8 border-2 border-gray-100 shadow-sm scroll-mt-4">
           <CardHeader className="bg-gray-50 border-b border-gray-100">
-            <CardTitle className="text-2xl font-black text-gray-900">⚖️ メリット・デメリット</CardTitle>
+            <CardTitle className="text-2xl font-black text-gray-900">メリット・デメリット</CardTitle>
           </CardHeader>
           <CardContent className="pt-6">
             <div className="grid md:grid-cols-2 gap-6">
@@ -635,13 +652,13 @@ export default function CompanyPage({
         {/* 必要書類 */}
         <Card className="mb-8 border-2 border-gray-100 shadow-sm">
           <CardHeader className="bg-gray-50 border-b border-gray-100">
-            <CardTitle className="text-2xl font-black text-gray-900">📄 必要書類</CardTitle>
+            <CardTitle className="text-2xl font-black text-gray-900">必要書類</CardTitle>
           </CardHeader>
           <CardContent className="pt-6">
             <ul className="space-y-3">
               {company.requiredDocuments.map((doc, index) => (
                 <li key={index} className="flex items-center gap-3 bg-blue-50 p-4 rounded-lg border border-blue-100">
-                  <span className="text-blue-600 text-xl">📄</span>
+                  <span className="text-blue-600 text-xl"></span>
                   <span className="text-gray-700 font-medium">{doc}</span>
                 </li>
               ))}
@@ -652,7 +669,7 @@ export default function CompanyPage({
         {/* 会社情報 */}
         <Card className="mb-8 border-2 border-gray-100 shadow-sm">
           <CardHeader className="bg-gray-50 border-b border-gray-100">
-            <CardTitle className="text-2xl font-black text-gray-900">🏢 会社情報</CardTitle>
+            <CardTitle className="text-2xl font-black text-gray-900">会社情報</CardTitle>
           </CardHeader>
           <CardContent className="pt-6">
             <div className="space-y-4">
@@ -670,7 +687,7 @@ export default function CompanyPage({
                   <div className="flex flex-wrap gap-1.5">
                     {company.category.map((cat, index) => (
                       <Badge key={index} className="bg-blue-100 text-blue-700 border-blue-200 text-xs font-bold">
-                        {cat}
+                        {CATEGORY_LABEL[cat] ?? cat}
                       </Badge>
                     ))}
                   </div>
@@ -687,32 +704,32 @@ export default function CompanyPage({
         {/* こんな人におすすめ */}
         <Card id="strengths" className="mb-8 border-2 border-gray-100 shadow-sm scroll-mt-4">
           <CardHeader className="bg-gray-50 border-b border-gray-100">
-            <CardTitle className="text-2xl font-black text-gray-900">👥 こんな人におすすめ</CardTitle>
+            <CardTitle className="text-2xl font-black text-gray-900">このような方におすすめです</CardTitle>
           </CardHeader>
           <CardContent className="pt-6">
             <div className="space-y-4">
               {company.category.includes("即日") && (
                 <div className="flex items-start gap-4 bg-gray-50 p-5 rounded-xl border border-gray-200">
-                  <span className="text-3xl">⚡</span>
+                  <span className="text-3xl"></span>
                   <div>
                     <h4 className="font-black text-gray-900 mb-2 text-lg">
-                      今すぐ資金が必要な方
+                      急ぎで資金が必要な方
                     </h4>
                     <p className="text-gray-600 leading-relaxed">
-                      {company.speed}で入金可能なので、緊急の資金調達に最適です。
+                      {company.speed}で入金が可能なため、急ぎの資金調達に適しています。
                     </p>
                   </div>
                 </div>
               )}
               {company.category.includes("手数料安い") && (
                 <div className="flex items-start gap-4 bg-green-50 p-5 rounded-xl border border-green-100">
-                  <span className="text-3xl">💰</span>
+                  <span className="text-3xl"></span>
                   <div>
                     <h4 className="font-black text-gray-900 mb-2 text-lg">
                       手数料を抑えたい方
                     </h4>
                     <p className="text-gray-600 leading-relaxed">
-                      手数料{company.fees.min}%〜と業界最安水準なので、コストを抑えられます。
+                      手数料は{company.fees.min}%からと業界でも低い水準のため、費用を抑えられます。
                     </p>
                   </div>
                 </div>
@@ -722,20 +739,20 @@ export default function CompanyPage({
                   <span className="text-3xl">✅</span>
                   <div>
                     <h4 className="font-black text-gray-900 mb-2 text-lg">
-                      審査が不安な方
+                      審査に不安がある方
                     </h4>
                     <p className="text-gray-600 leading-relaxed">
-                      柔軟な審査で赤字決算や税金滞納でも対応可能です。
+                      審査が柔軟で、赤字決算や税金滞納がある場合でも利用できる可能性があります。
                     </p>
                   </div>
                 </div>
               )}
               {company.personalSupport && (
                 <div className="flex items-start gap-4 bg-sky-50 p-5 rounded-xl border border-sky-100">
-                  <span className="text-3xl">👤</span>
+                  <span className="text-3xl"></span>
                   <div>
                     <h4 className="font-black text-gray-900 mb-2 text-lg">
-                      個人事業主・フリーランス
+                      個人事業主・フリーランスの方
                     </h4>
                     <p className="text-gray-600 leading-relaxed">
                       個人事業主・フリーランスにも対応しています。
@@ -751,7 +768,7 @@ export default function CompanyPage({
         <section className="mb-12">
           <Card className="border-2 border-gray-100 shadow-sm">
             <CardHeader className="bg-gray-50 border-b border-gray-100">
-              <CardTitle className="text-2xl font-black text-gray-900">💎 {company.name}の強み</CardTitle>
+              <CardTitle className="text-2xl font-black text-gray-900">{company.name}の強み</CardTitle>
             </CardHeader>
             <CardContent className="pt-6">
               <ul className="space-y-4">
@@ -802,9 +819,9 @@ export default function CompanyPage({
           <section id="review-sources" className="mb-8 scroll-mt-4">
             <Card className="border-2 border-gray-100 shadow-sm">
               <CardHeader className="bg-gray-50 border-b border-gray-100">
-                <CardTitle className="text-2xl font-black text-gray-900">{company.name}の口コミ・評判はどこで確認できる？（出典一覧）</CardTitle>
+                <CardTitle className="text-2xl font-black text-gray-900">{company.name}の口コミ・評判の掲載先（出典一覧）</CardTitle>
                 <p className="text-sm text-gray-600 mt-2">
-                  {company.name}の口コミが掲載されている主なサイトと、{lead.checkedAt}時点の掲載状況です。当サイトは口コミ本文の転載や体験談の創作はせず、掲載先と件数だけを示しています。評価は投稿の時期・件数で変わるため、気になる方は各サイトで原文を確認してください。
+                  {company.name}の口コミが掲載されている主なサイトと、{lead.checkedAt}時点の掲載状況です。当サイトでは、口コミ本文の転載や体験談の作成は行わず、掲載先と件数のみを掲載しています。評価は投稿の時期・件数によって変わるため、各サイトにて原文をご確認ください。
                 </p>
               </CardHeader>
               <CardContent className="pt-6">
@@ -829,7 +846,7 @@ export default function CompanyPage({
                   </table>
                 </div>
                 <p className="mt-4 text-xs text-gray-500 leading-relaxed">
-                  ※口コミは個人の体験で、手数料や審査結果は売掛先・請求書の内容によって変わります。条件は下の「編集部の検証欄」（公式サイトで確認した事実）とあわせてご確認ください。
+                  ※口コミは個人の体験にもとづくものであり、手数料や審査結果は売掛先・請求書の内容によって変わります。条件は、以下の「編集部が確認した事実」（公式サイトで確認した内容）とあわせてご確認ください。
                 </p>
               </CardContent>
             </Card>
@@ -842,7 +859,7 @@ export default function CompanyPage({
             <Card className="border-2 border-gray-100 shadow-sm">
               <div className="p-6 md:p-8">
                 <h2 className="text-xl md:text-2xl font-bold text-gray-900 mb-1">{company.name}の公開口コミの傾向</h2>
-                <p className="text-xs text-gray-500 mb-5">出典：{reviewTrend.source}。口コミは傾向の要約で、個別の体験には差があります。</p>
+                <p className="text-xs text-gray-500 mb-5">出典：{reviewTrend.source}。口コミの傾向を要約したものであり、個別の体験には差があります。</p>
                 <div className="grid md:grid-cols-2 gap-5">
                   <div>
                     <p className="font-bold text-emerald-700 text-sm mb-2">好意的な傾向</p>
@@ -853,7 +870,7 @@ export default function CompanyPage({
                     </ul>
                   </div>
                   <div>
-                    <p className="font-bold text-orange-700 text-sm mb-2">気になる/否定的な傾向</p>
+                    <p className="font-bold text-orange-700 text-sm mb-2">否定的な傾向・注意点</p>
                     <ul className="space-y-2">
                       {reviewTrend.bad.map((b, i) => (
                         <li key={i} className="flex gap-2 text-sm text-gray-700 leading-relaxed"><span className="text-orange-500 shrink-0">△</span><span>{b}</span></li>
@@ -886,7 +903,7 @@ export default function CompanyPage({
         <section id="offices" className="mb-12 scroll-mt-4">
           <Card className="border-2 border-gray-100 shadow-sm">
             <CardHeader className="bg-gray-50 border-b border-gray-100">
-              <CardTitle className="text-2xl font-black text-gray-900">🏢 {company.name}の営業時間・事業拠点</CardTitle>
+              <CardTitle className="text-2xl font-black text-gray-900">{company.name}の営業時間・事業拠点</CardTitle>
             </CardHeader>
             <CardContent className="pt-6">
               <div className="mb-8">
@@ -930,7 +947,7 @@ export default function CompanyPage({
                           rel="noopener noreferrer"
                           className="text-blue-600 hover:text-blue-700 font-medium text-sm inline-flex items-center gap-1"
                         >
-                          📍 Googleマップで見る →
+                          Googleマップで見る →
                         </a>
                       )}
                     </div>
@@ -945,7 +962,7 @@ export default function CompanyPage({
         <section id="audit" className="mb-12 scroll-mt-4">
           <Card className="border-2 border-gray-100 shadow-sm">
             <CardHeader className="bg-gray-50 border-b border-gray-100">
-              <CardTitle className="text-2xl font-black text-gray-900">📋 {company.name}の審査について</CardTitle>
+              <CardTitle className="text-2xl font-black text-gray-900">{company.name}の審査について</CardTitle>
             </CardHeader>
             <CardContent className="pt-6">
               {details.audit.passRate && (
@@ -971,7 +988,7 @@ export default function CompanyPage({
         <section id="flow" className="mb-12 scroll-mt-4">
           <Card className="border-2 border-gray-100 shadow-sm">
             <CardHeader className="bg-gray-50 border-b border-gray-100">
-              <CardTitle className="text-2xl font-black text-gray-900">📝 {company.name}の利用の流れ</CardTitle>
+              <CardTitle className="text-2xl font-black text-gray-900">{company.name}の利用の流れ</CardTitle>
             </CardHeader>
             <CardContent className="pt-6">
               <div className="space-y-6">
@@ -1000,7 +1017,7 @@ export default function CompanyPage({
         <section id="faq" className="mb-12 scroll-mt-4">
           <Card className="border-2 border-gray-100 shadow-sm">
             <CardHeader className="bg-gray-50 border-b border-gray-100">
-              <CardTitle className="text-2xl font-black text-gray-900">❓ {company.name}のよくある質問</CardTitle>
+              <CardTitle className="text-2xl font-black text-gray-900">{company.name}のよくある質問</CardTitle>
             </CardHeader>
             <CardContent className="pt-6">
               <div className="space-y-6">
@@ -1020,14 +1037,14 @@ export default function CompanyPage({
           <section id="comparison" className="mb-12 scroll-mt-4">
             <Card className="border-2 border-gray-100 shadow-sm">
               <CardHeader className="bg-gray-50 border-b border-gray-100">
-                <CardTitle className="text-2xl font-black text-gray-900">⚖️ {company.name}と他社の比較</CardTitle>
+                <CardTitle className="text-2xl font-black text-gray-900">{company.name}と他社の比較</CardTitle>
               </CardHeader>
               <CardContent className="pt-6">
                 <div className="overflow-x-auto">
                   <table className="w-full">
                     <thead>
                       <tr className="border-b-2 border-gray-200">
-                        <th className="text-left p-4 font-black">業者名</th>
+                        <th className="text-left p-4 font-black">会社名</th>
                         <th className="text-left p-4 font-black">取扱額</th>
                         <th className="text-left p-4 font-black">入金スピード</th>
                         <th className="text-left p-4 font-black">対象</th>
@@ -1071,7 +1088,7 @@ export default function CompanyPage({
             {company.name}で無料見積もり
           </h2>
           <p className="mb-8 text-blue-100 text-lg leading-relaxed">
-            まずは無料で見積もりを依頼してみましょう。手数料や条件を確認できます。
+            見積もりは無料です。見積もりを依頼すると、手数料や条件を確認できます。
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
@@ -1086,7 +1103,7 @@ export default function CompanyPage({
               href="/#diagnosis"
               className="bg-blue-700 text-white font-bold py-4 px-10 rounded-2xl hover:bg-orange-800 transition border-2 border-orange-400"
             >
-              🧮 無料診断ツール
+              無料診断ツール
             </Link>
           </div>
         </div>

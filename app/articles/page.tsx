@@ -9,13 +9,13 @@ import { DEFAULT_OG_IMAGES, DEFAULT_OG_IMAGE_URL } from "@/lib/og";
 export const metadata: Metadata = {
   title: "ファクタリングコラム一覧｜ファクタリング比較ナビ",
   description:
-    "ファクタリングに関する基礎知識、手数料、審査、おすすめ会社など、資金調達に役立つ記事を掲載。個人事業主・フリーランス・法人向けの情報を幅広くお届けします。",
+    "ファクタリングの基礎知識、手数料、審査、おすすめの会社など、資金調達に関する記事を掲載しています。法人・個人事業主・フリーランス向けの情報を扱っています。",
   alternates: {
     canonical: "/articles",
   },
   openGraph: {
     title: "ファクタリングコラム一覧｜ファクタリング比較ナビ",
-    description: "ファクタリングに関する基礎知識、手数料、審査、おすすめ会社など、資金調達に役立つ記事を掲載。",
+    description: "ファクタリングの基礎知識、手数料、審査、おすすめの会社など、資金調達に関する記事を掲載しています。",
     type: "website",
     images: DEFAULT_OG_IMAGES,
   },
@@ -23,7 +23,7 @@ export const metadata: Metadata = {
     card: "summary",
     images: [DEFAULT_OG_IMAGE_URL],
     title: "ファクタリングコラム一覧｜ファクタリング比較ナビ",
-    description: "ファクタリングに関する基礎知識、手数料、審査、おすすめ会社など、資金調達に役立つ記事を掲載。",
+    description: "ファクタリングの基礎知識、手数料、審査、おすすめの会社など、資金調達に関する記事を掲載しています。",
   },
 };
 
@@ -54,7 +54,7 @@ export default function ArticlesPage() {
             ファクタリングコラム
           </h1>
           <p className="text-gray-600 leading-relaxed">
-            ファクタリングの基礎知識から実践的な活用法まで、資金調達に役立つ情報をお届けします。
+            ファクタリングの基礎知識から実務での活用方法まで、資金調達に関する情報を掲載しています。
           </p>
         </div>
       </section>
@@ -109,16 +109,16 @@ export default function ArticlesPage() {
         {/* CTA */}
         <div className="mt-16 bg-gradient-to-r from-blue-600 to-blue-700 rounded-xl p-8 text-white text-center">
           <h2 className="text-xl font-bold mb-3">
-            あなたに最適なファクタリング会社を見つけよう
+            条件に合うファクタリング会社を診断できます
           </h2>
           <p className="text-blue-100 mb-6 text-sm">
-            30秒の簡単診断で、最適な業者がわかります
+            いくつかの質問に回答すると、条件に合うファクタリング会社を表示します
           </p>
           <Link
             href="/#diagnosis"
             className="inline-block bg-white text-blue-700 px-8 py-3 rounded-full font-bold text-sm hover:bg-blue-50 transition"
           >
-            無料診断スタート →
+            無料診断を始める →
           </Link>
         </div>
       </main>

@@ -11,7 +11,7 @@ export function OtherHoursLinks({ currentSlug }: { currentSlug: string }) {
   return (
     <section className="mt-8">
       <h2 className="text-lg font-bold text-gray-900">他社の営業時間・受付時間</h2>
-      <p className="mt-2 text-sm text-gray-600">公式サイトで営業時間を一次確認した他社のページです。</p>
+      <p className="mt-2 text-sm text-gray-600">公式サイトで営業時間を確認した他社のページです。</p>
       <ul className="mt-3 grid gap-2 sm:grid-cols-2 text-sm">
         {items.map(({ slug, company }) => (
           <li key={slug}>

@@ -9,15 +9,15 @@ import { feeIndex, feeCheckedAt } from "@/data/feeIndex";
 import { DEFAULT_OG_IMAGES, DEFAULT_OG_IMAGE_URL } from "@/lib/og";
 
 export const metadata = {
-  title: "ファクタリング手数料が安い会社10選【2026年最新】相場・計算方法・抑えるコツ",
-  description: "ファクタリング手数料の相場、計算方法、手数料が安い業者ランキング10選を徹底解説。手数料を抑えるポイント、無料シミュレーターも提供。2社間・3社間の違いも詳しく紹介します。",
+  title: "ファクタリング手数料が安い会社10選【2026年最新】相場・計算方法・抑える方法",
+  description: "ファクタリング手数料の相場と計算方法、手数料が安いファクタリング会社10社を解説しています。手数料を抑えるためのポイント、2社間・3社間の違いもあわせて掲載し、無料の手数料シミュレーターも提供しています。",
   keywords: "ファクタリング,手数料,安い,相場,計算,シミュレーター",
   alternates: {
     canonical: "/fees",
   },
   openGraph: {
     title: "ファクタリング手数料が安い会社10選【2026年最新】",
-    description: "ファクタリング手数料の相場、計算方法、手数料が安い業者ランキング10選を徹底解説。",
+    description: "ファクタリング手数料の相場と計算方法、手数料が安いファクタリング会社10社を解説しています。",
     type: "article",
     images: DEFAULT_OG_IMAGES,
   },
@@ -25,7 +25,7 @@ export const metadata = {
     card: "summary",
     images: [DEFAULT_OG_IMAGE_URL],
     title: "ファクタリング手数料が安い会社10選【2026年最新】",
-    description: "ファクタリング手数料の相場、計算方法、手数料が安い業者ランキング10選を徹底解説。",
+    description: "ファクタリング手数料の相場と計算方法、手数料が安いファクタリング会社10社を解説しています。",
   },
 };
 
@@ -55,12 +55,12 @@ export default function FeesPage() {
         {/* ヘッダー */}
         <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl shadow-lg p-8 mb-8 border border-green-100">
           <div className="text-center">
-            <Badge className="mb-4 bg-green-500 hover:bg-green-600 text-white font-bold">💰 手数料特化記事</Badge>
+            <Badge className="mb-4 bg-green-500 hover:bg-green-600 text-white font-bold">手数料の解説</Badge>
             <h1 className="text-4xl font-black text-gray-900 mb-4 leading-tight">
               ファクタリング手数料が安い会社10選
             </h1>
             <p className="text-gray-600 text-lg leading-relaxed">
-              手数料の相場、計算方法、手数料を抑えるコツを徹底解説。無料シミュレーターで手取り額もすぐに確認できます。
+              手数料の相場と計算方法、手数料を抑えるための方法を解説します。無料の手数料シミュレーターで、入金額の目安も確認できます。
             </p>
           </div>
         </div>
@@ -68,7 +68,7 @@ export default function FeesPage() {
         {/* 目次 */}
         <Card className="mb-8 border-2 border-gray-100 shadow-sm">
           <CardHeader className="bg-gray-50 border-b border-gray-100">
-            <CardTitle className="text-2xl font-black text-gray-900">📖 目次</CardTitle>
+            <CardTitle className="text-2xl font-black text-gray-900">目次</CardTitle>
           </CardHeader>
           <CardContent className="pt-6">
             <ul className="space-y-2">
@@ -105,7 +105,7 @@ export default function FeesPage() {
         <section id="market" className="mb-12">
           <Card className="border-2 border-gray-100 shadow-sm">
             <CardHeader className="bg-gray-50 border-b border-gray-100">
-              <CardTitle className="text-2xl font-black text-gray-900">📊 ファクタリング手数料の相場</CardTitle>
+              <CardTitle className="text-2xl font-black text-gray-900">ファクタリング手数料の相場</CardTitle>
             </CardHeader>
             <CardContent className="pt-6">
               <div className="space-y-6">
@@ -131,11 +131,11 @@ export default function FeesPage() {
                         </li>
                         <li className="flex items-start gap-2">
                           <span className="text-green-600">✓</span>
-                          <span>即日入金可能</span>
+                          <span>即日入金に対応</span>
                         </li>
                         <li className="flex items-start gap-2">
                           <span className="text-orange-600">✗</span>
-                          <span>手数料が高め</span>
+                          <span>手数料が比較的高い</span>
                         </li>
                       </ul>
                     </div>
@@ -151,7 +151,7 @@ export default function FeesPage() {
                       <ul className="space-y-2 text-sm text-gray-700">
                         <li className="flex items-start gap-2">
                           <span className="text-green-600">✓</span>
-                          <span>手数料が安い</span>
+                          <span>手数料が比較的低い</span>
                         </li>
                         <li className="flex items-start gap-2">
                           <span className="text-green-600">✓</span>
@@ -159,7 +159,7 @@ export default function FeesPage() {
                         </li>
                         <li className="flex items-start gap-2">
                           <span className="text-orange-600">✗</span>
-                          <span>売掛先に通知必要</span>
+                          <span>売掛先への通知が必要</span>
                         </li>
                       </ul>
                     </div>
@@ -168,23 +168,23 @@ export default function FeesPage() {
 
                 {/* 手数料に影響する要因 */}
                 <div>
-                  <h3 className="font-black text-gray-900 mb-4 text-xl">💡 手数料に影響する要因</h3>
+                  <h3 className="font-black text-gray-900 mb-4 text-xl">手数料に影響する要因</h3>
                   <div className="grid md:grid-cols-2 gap-4">
                     <div className="bg-gray-50 p-4 rounded-lg">
                       <h4 className="font-bold text-gray-700 mb-2">取引金額</h4>
-                      <p className="text-sm text-gray-600">金額が大きいほど手数料率は低くなる傾向</p>
+                      <p className="text-sm text-gray-600">金額が大きいほど、手数料率は低くなる傾向があります</p>
                     </div>
                     <div className="bg-gray-50 p-4 rounded-lg">
                       <h4 className="font-bold text-gray-700 mb-2">売掛先の信用力</h4>
-                      <p className="text-sm text-gray-600">大手企業や上場企業ほど手数料が安い</p>
+                      <p className="text-sm text-gray-600">売掛先が大手企業や上場企業である場合、手数料は低くなる傾向があります</p>
                     </div>
                     <div className="bg-gray-50 p-4 rounded-lg">
                       <h4 className="font-bold text-gray-700 mb-2">初回・2回目以降</h4>
-                      <p className="text-sm text-gray-600">2回目以降は手数料が下がることが多い</p>
+                      <p className="text-sm text-gray-600">2回目以降の利用では、手数料が下がることが多くあります</p>
                     </div>
                     <div className="bg-gray-50 p-4 rounded-lg">
                       <h4 className="font-bold text-gray-700 mb-2">入金スピード</h4>
-                      <p className="text-sm text-gray-600">即日入金は手数料が高くなる傾向</p>
+                      <p className="text-sm text-gray-600">即日入金を希望する場合、手数料は高くなる傾向があります</p>
                     </div>
                   </div>
                 </div>
@@ -197,11 +197,11 @@ export default function FeesPage() {
         <section id="fee-index" className="mb-12">
           <Card className="border-2 border-gray-100 shadow-sm">
             <CardHeader className="bg-gray-50 border-b border-gray-100">
-              <CardTitle className="text-2xl font-black text-gray-900">ファクタリング24社 手数料・入金スピード比較（公式を実確認）</CardTitle>
+              <CardTitle className="text-2xl font-black text-gray-900">ファクタリング24社 手数料・入金スピード比較（公式サイトで確認）</CardTitle>
             </CardHeader>
             <CardContent className="pt-6">
               <p className="text-sm text-gray-700 leading-relaxed mb-2">
-                主要24社の<strong>手数料率（2社間/3社間）・最短入金・利用可能額・対象・オンライン完結</strong>を、各社公式サイトで<strong>{feeCheckedAt}に一件ずつ確認</strong>して一覧化しました。公式に手数料率を明示していない社は「非公示（要見積もり）」と正直に記載しています（改定が速い分野のため月次で再確認・更新）。
+                主要24社の<strong>手数料率（2社間/3社間）・最短入金・利用可能額・対象・オンライン完結</strong>を、各社の公式サイトで<strong>{feeCheckedAt}に1件ずつ確認</strong>し、一覧にしています。公式サイトに手数料率の記載がない会社は「非公示（要見積もり）」と記載しています。改定の頻度が高い分野のため、月に1回を目安に再確認し、更新しています。
               </p>
               <div className="overflow-x-auto rounded-xl border border-gray-200 mb-3">
                 <table className="w-full text-xs sm:text-sm min-w-[900px]">
@@ -234,7 +234,7 @@ export default function FeesPage() {
                 </table>
               </div>
               <p className="text-xs text-gray-500">
-                ※ 各社公式サイトの表示を{feeCheckedAt}に当サイトが確認したものです。「〜」は下限、「非公示」は公式に手数料率の記載がないことを示します。実際の手数料・入金時間は売掛先の信用力・契約内容・申込時間帯で変動します。契約前に各社の見積もりで総額をご確認ください。
+                ※ 各社公式サイトの表示を{feeCheckedAt}に当サイトが確認したものです。「〜」は下限、「非公示」は公式に手数料率の記載がないことを示します。実際の手数料・入金時間は、売掛先の信用力・契約内容・申込の時間帯によって変動します。契約前に、各社の見積もりにて総額をご確認ください。
               </p>
 
               {/* このデータについて（集計方法）＝E-E-A-T・引用されやすい一次データの透明化 */}
@@ -242,11 +242,11 @@ export default function FeesPage() {
                 <p className="font-bold text-gray-900 mb-2">このデータについて（集計方法）</p>
                 <ul className="space-y-1.5 list-disc pl-5">
                   <li><strong>対象：</strong>ファクタリング主要{feeIndex.length}社</li>
-                  <li><strong>確認方法：</strong>各社の公式サイトに表示された手数料率（2社間／3社間）・最短入金・利用可能額・対象・オンライン完結可否を、当サイト編集部が一件ずつ確認</li>
+                  <li><strong>確認方法：</strong>各社の公式サイトに表示された手数料率（2社間／3社間）・最短入金・利用可能額・対象・オンライン完結可否を、当サイト編集部が1件ずつ確認</li>
                   <li><strong>確認日：</strong>{feeCheckedAt}</li>
-                  <li><strong>非公示の扱い：</strong>公式に手数料率の記載がない社は、推測で埋めず「非公示（要見積もり）」と記載</li>
-                  <li><strong>更新方針：</strong>改定の速い分野のため、月次を目安に再確認して更新</li>
-                  <li><strong>運営・編集：</strong>本データの作成方針・運営者情報は<a href="/about/" className="text-blue-600 underline">運営者情報・編集方針</a>をご覧ください。実際の手数料・入金時間は契約条件等で変動するため、契約前に各社の見積もりで総額をご確認ください。</li>
+                  <li><strong>非公示の扱い：</strong>公式サイトに手数料率の記載がない会社は、推測で補完せず「非公示（要見積もり）」と記載</li>
+                  <li><strong>更新方針：</strong>改定の頻度が高い分野のため、月に1回を目安に再確認して更新</li>
+                  <li><strong>運営・編集：</strong>本データの作成方針・運営者情報は<a href="/about/" className="text-blue-600 underline">運営者情報・編集方針</a>をご覧ください。実際の手数料・入金時間は契約条件等によって変動するため、契約前に各社の見積もりにて総額をご確認ください。</li>
                 </ul>
               </div>
             </CardContent>
@@ -257,7 +257,7 @@ export default function FeesPage() {
         <section id="ranking" className="mb-12">
           <Card className="border-2 border-gray-100 shadow-sm">
             <CardHeader className="bg-gray-50 border-b border-gray-100">
-              <CardTitle className="text-2xl font-black text-gray-900">🏆 手数料が安い会社ランキングTOP10</CardTitle>
+              <CardTitle className="text-2xl font-black text-gray-900">手数料が安い会社ランキングTOP10</CardTitle>
             </CardHeader>
             <CardContent className="pt-6">
               <div className="space-y-4">
@@ -326,38 +326,38 @@ export default function FeesPage() {
         <section id="tips" className="mb-12">
           <Card className="border-2 border-gray-100 shadow-sm">
             <CardHeader className="bg-gray-50 border-b border-gray-100">
-              <CardTitle className="text-2xl font-black text-gray-900">💡 手数料を抑える5つのポイント</CardTitle>
+              <CardTitle className="text-2xl font-black text-gray-900">手数料を抑える5つのポイント</CardTitle>
             </CardHeader>
             <CardContent className="pt-6">
               <div className="space-y-6">
                 {[
                   {
                     title: "1. 複数社で相見積もりを取る",
-                    description: "少なくとも3社から見積もりを取り、手数料を比較しましょう。相見積もりを取ることで、各社の競争意識が働き、手数料が下がる可能性があります。",
-                    icon: "📊",
+                    description: "少なくとも3社から見積もりを取り、手数料を比較してください。相見積もりを取ることで各社の間に競争が生じ、手数料が下がる可能性があります。",
+                    icon: "",
                     color: "blue"
                   },
                   {
                     title: "2. 売掛金額を大きくまとめる",
-                    description: "少額の売掛金を何度も売却するより、ある程度まとめて売却する方が手数料率は低くなります。目安として100万円以上がおすすめです。",
-                    icon: "💰",
+                    description: "少額の売掛金を何度も売却するより、ある程度まとめて売却するほうが手数料率は低くなります。目安として、100万円以上にまとめることをおすすめします。",
+                    icon: "",
                     color: "green"
                   },
                   {
                     title: "3. 信用力の高い売掛先を選ぶ",
-                    description: "大手企業や上場企業の売掛金は、ファクタリング会社にとってリスクが低いため、手数料が安くなります。",
-                    icon: "🏢",
+                    description: "大手企業や上場企業に対する売掛金は、ファクタリング会社にとってリスクが低いため、手数料が低くなります。",
+                    icon: "",
                     color: "amber"
                   },
                   {
                     title: "4. 2回目以降の利用で交渉する",
-                    description: "初回の取引実績があれば、2回目以降は手数料の引き下げ交渉がしやすくなります。継続利用を前提に交渉してみましょう。",
-                    icon: "🤝",
+                    description: "初回の取引実績があれば、2回目以降は手数料の引き下げを交渉しやすくなります。継続利用を前提に交渉することをおすすめします。",
+                    icon: "",
                     color: "sky"
                   },
                   {
                     title: "5. 3社間ファクタリングを検討する",
-                    description: "売掛先への通知が問題ない場合は、3社間ファクタリングを選ぶことで手数料を大幅に抑えられます（1%〜10%程度）。",
+                    description: "売掛先への通知に支障がない場合は、3社間ファクタリングを選ぶことで手数料を大幅に抑えられます（1%〜10%程度）。",
                     icon: "✅",
                     color: "emerald"
                   }
@@ -381,11 +381,11 @@ export default function FeesPage() {
         <section id="simulator" className="mb-12">
           <Card className="border-2 border-gray-100 shadow-sm">
             <CardHeader className="bg-gray-50 border-b border-gray-100">
-              <CardTitle className="text-2xl font-black text-gray-900">🧮 手数料シミュレーター（無料）</CardTitle>
+              <CardTitle className="text-2xl font-black text-gray-900">手数料シミュレーター（無料）</CardTitle>
             </CardHeader>
             <CardContent className="pt-6">
               <p className="text-gray-700 leading-relaxed mb-6">
-                売掛金額と手数料を入力するだけで、実際の入金額を簡単に計算できます。複数のパターンで比較してみましょう。
+                売掛金額と入金までの期間を入力すると、入金額の目安を計算できます。複数の条件で比較する際にご利用ください。
               </p>
               <FeeSimulator />
             </CardContent>
@@ -396,7 +396,7 @@ export default function FeesPage() {
         <section id="faq" className="mb-12">
           <Card className="border-2 border-gray-100 shadow-sm">
             <CardHeader className="bg-gray-50 border-b border-gray-100">
-              <CardTitle className="text-2xl font-black text-gray-900">❓ よくある質問</CardTitle>
+              <CardTitle className="text-2xl font-black text-gray-900">よくある質問</CardTitle>
             </CardHeader>
             <CardContent className="pt-6">
               <div className="space-y-6">
@@ -406,16 +406,16 @@ export default function FeesPage() {
                     a: "2社間ファクタリングは5%〜20%、3社間ファクタリングは1%〜10%が相場です。取引金額や売掛先の信用力によって変動します。"
                   },
                   {
-                    q: "手数料が安い業者は信頼できますか？",
-                    a: "手数料が安いからといって必ずしも信頼できないわけではありません。ただし、極端に安い場合は隠れコストがないか確認が必要です。当サイトでは信頼性と手数料の両面で厳選した業者のみを紹介しています。"
+                    q: "手数料が安いファクタリング会社は信頼できますか？",
+                    a: "手数料が安いことが、信頼性が低いことを意味するわけではありません。ただし、手数料が極端に安い場合は、別途費用が発生しないかを確認する必要があります。当サイトでは、信頼性と手数料の両面から選定したファクタリング会社を掲載しています。"
                   },
                   {
                     q: "手数料以外にかかる費用はありますか？",
-                    a: "一般的には、審査手数料（無料の場合も多い）、債権譲渡登記費用（3社間の場合）、振込手数料などがかかる場合があります。事前に総コストを確認しましょう。"
+                    a: "一般的には、審査手数料（無料の場合も多い）、債権譲渡登記費用（3社間の場合）、振込手数料などがかかる場合があります。契約前に総費用を確認してください。"
                   },
                   {
                     q: "手数料は交渉できますか？",
-                    a: "交渉は可能です。特に2回目以降の利用や、大口取引の場合は交渉の余地があります。複数社の見積もりを提示することで、より有利な条件を引き出せる可能性があります。"
+                    a: "交渉は可能です。特に2回目以降の利用や、大口取引の場合は交渉の余地があります。複数社の見積もりを提示することで、より有利な条件で契約できる可能性があります。"
                   },
                   {
                     q: "手数料が高いのはどんな場合ですか？",
@@ -436,12 +436,12 @@ export default function FeesPage() {
 
         {/* 手数料クラスタの関連記事（相互リンク） */}
         <section className="mb-8">
-          <h2 className="text-lg font-bold text-[#1B3A5C] mb-4">手数料をもっと詳しく知る</h2>
+          <h2 className="text-lg font-bold text-[#1B3A5C] mb-4">手数料に関する解説記事</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {[
               { slug: "article-factoring-tesuryo", label: "ファクタリング手数料の相場と内訳｜2社間・3社間の違い" },
               { slug: "article-factoring-tesuryo-yasui", label: "ファクタリング手数料が安い会社の選び方" },
-              { slug: "article-factoring-tesuryo-koushou", label: "ファクタリング手数料の交渉術・下げ方" },
+              { slug: "article-factoring-tesuryo-koushou", label: "ファクタリング手数料の交渉方法・引き下げ方" },
             ].map((a) => (
               <Link key={a.slug} href={`/articles/${a.slug}`} className="block bg-white border border-gray-200 rounded-xl p-4 hover:border-[#1B3A5C] hover:shadow-md transition">
                 <span className="text-xs font-semibold text-[#1B3A5C] bg-[#F0F6FC] px-2 py-0.5 rounded-full">解説記事</span>
@@ -454,23 +454,23 @@ export default function FeesPage() {
         {/* CTA */}
         <div className="bg-gradient-to-br from-orange-500 via-amber-500 to-orange-600 rounded-2xl shadow-2xl shadow-orange-500/30 p-10 text-center text-white mb-8">
           <h2 className="text-3xl font-black mb-4">
-            手数料が安い業者を今すぐ見つける
+            手数料が安いファクタリング会社を診断する
           </h2>
           <p className="mb-8 text-orange-100 text-lg leading-relaxed">
-            無料診断ツールで、あなたに最適な低手数料業者を自動マッチング
+            無料診断ツールでは、選択した条件に合う手数料の低いファクタリング会社を表示します
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/#diagnosis"
               className="bg-white text-orange-600 font-black py-4 px-10 rounded-2xl hover:bg-gray-100 transition shadow-lg"
             >
-              🧮 無料診断を始める
+              無料診断を始める
             </Link>
             <Link
               href="/#ranking"
               className="bg-orange-700 text-white font-bold py-4 px-10 rounded-2xl hover:bg-orange-800 transition border-2 border-orange-400"
             >
-              🏆 ランキングTOP15を見る
+              ランキングTOP15を見る
             </Link>
           </div>
         </div>
@@ -510,8 +510,8 @@ export default function FeesPage() {
           __html: JSON.stringify({
             "@context": "https://schema.org",
             "@type": "Dataset",
-            "name": `ファクタリング${feeIndex.length}社 手数料・入金スピード比較データ（公式一次確認）`,
-            "description": `ファクタリング主要${feeIndex.length}社の手数料率（2社間／3社間）・最短入金・利用可能額・対象・オンライン完結可否を、各社公式サイトで一件ずつ確認して集計したデータセット。`,
+            "name": `ファクタリング${feeIndex.length}社 手数料・入金スピード比較データ（公式サイトで確認）`,
+            "description": `ファクタリング主要${feeIndex.length}社の手数料率（2社間／3社間）・最短入金・利用可能額・対象・オンライン完結可否を、各社の公式サイトで1件ずつ確認して集計したデータセットです。`,
             "creator": { "@type": "Organization", "name": "corp-factoring 編集部", "url": "https://corp-factoring.com/" },
             "temporalCoverage": "2026-07-07",
             "dateModified": "2026-07-07",

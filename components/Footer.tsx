@@ -14,7 +14,7 @@ export function Footer() {
               </span>
             </div>
             <p className="text-gray-400 text-sm leading-relaxed">
-              法人向けファクタリングサービスを徹底比較。手数料・審査・入金スピードを元に、あなたに最適な1社を見つけるお手伝いをします。
+              法人・個人事業主向けのファクタリング会社を、手数料・審査・入金スピードの観点から比較する情報サイトです。各社の公式サイトで公開されている情報をもとに掲載しています。
             </p>
           </div>
 
@@ -126,7 +126,7 @@ export function Footer() {
           <div>
             <h3 className="font-bold text-white mb-4">お問い合わせ</h3>
             <p className="text-gray-400 text-sm leading-relaxed mb-4">
-              ご不明な点やご質問がございましたら、お気軽にお問い合わせください。
+              掲載内容に関するご質問・ご指摘は、こちらからお問い合わせください。
             </p>
             <Link
               href="/#contact"

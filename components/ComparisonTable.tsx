@@ -62,7 +62,7 @@ export function ComparisonTable({ companies }: ComparisonTableProps) {
               </TableCell>
               <TableCell>
                 <Badge variant="secondary" className="whitespace-nowrap">
-                  ⚡{company.speed}
+                  {company.speed}
                 </Badge>
               </TableCell>
               <TableCell>

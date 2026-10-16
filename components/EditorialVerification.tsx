@@ -15,7 +15,7 @@ export function EditorialVerificationSection({ companyName, data }: EditorialVer
       <Card className="border-2 border-blue-100 shadow-sm">
         <CardHeader className="bg-blue-50 border-b border-blue-100">
           <CardTitle className="text-2xl font-black text-gray-900">
-            編集部の検証欄：{companyName}について確認できた事実
+            {companyName}について編集部が確認した事実
           </CardTitle>
           <p className="text-sm text-gray-600 mt-2">
             編集部確認日：{data.checkedAt}。{data.intro}
@@ -58,7 +58,7 @@ export function EditorialVerificationSection({ companyName, data }: EditorialVer
           </div>
 
           <p className="mt-5 text-xs text-gray-500 leading-relaxed">
-            ※この欄は編集部が公式サイト等を直接確認した事実のみで構成しており、利用者の口コミ・体験談は含みません。条件は変更される場合があるため、最新情報は公式サイトでご確認ください。
+            ※この欄は、編集部が公式サイト等で直接確認した事実のみを掲載しており、利用者の口コミ・体験談は含みません。条件は変更される場合があります。ご利用前に、公式サイトにて最新情報をご確認ください。
           </p>
         </CardContent>
       </Card>

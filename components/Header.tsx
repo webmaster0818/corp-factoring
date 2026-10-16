@@ -19,7 +19,7 @@ const menuCategories = [
       { href: "/articles/article-factoring-merit-demerit", label: "メリット・デメリット" },
       { href: "/articles/article-factoring-tesuryo", label: "手数料の仕組み" },
       { href: "/articles/article-factoring-shinsa", label: "審査のポイント" },
-      { href: "/articles/article-factoring-ihou", label: "違法？安全性について" },
+      { href: "/articles/article-factoring-ihou", label: "違法性と安全性" },
     ],
   },
   {
@@ -27,7 +27,7 @@ const menuCategories = [
     links: [
       { href: "/articles/article-factoring-osusume", label: "おすすめ20選" },
       { href: "/articles/article-factoring-sokujitsu", label: "即日対応15選" },
-      { href: "/articles/article-factoring-hikaku", label: "徹底比較" },
+      { href: "/articles/article-factoring-hikaku", label: "ファクタリング会社比較" },
       { href: "/articles/article-factoring-kuchikomi", label: "口コミ・評判" },
     ],
   },

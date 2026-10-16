@@ -61,7 +61,7 @@ export function CategoryRanking({ title, companies, icon }: CategoryRankingProps
                   {company.fees.max > 0 ? `${company.fees.min}%〜${company.fees.max}%` : `${company.fees.min}%〜`}
                 </div>
                 <div className="text-sm text-gray-600 mb-2">
-                  ⚡{company.speed}
+                  {company.speed}
                 </div>
                 <Button size="sm" variant="outline">
                   詳細を見る

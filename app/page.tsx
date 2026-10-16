@@ -52,7 +52,7 @@ export default function Home() {
           <div className="relative rounded-2xl overflow-hidden shadow-xl mb-10 mx-auto h-[280px] sm:h-[320px] lg:h-[400px]">
             <img
               src="/images/hero-eyecatch-v3.png"
-              alt="法人向けファクタリングおすすめ15選 - 手数料・審査・入金スピード徹底比較2026年最新版"
+              alt="法人向けファクタリングおすすめ15選 - 手数料・審査・入金スピードの比較（2026年最新版）"
               className="w-full h-full object-cover object-[50%_30%] lg:object-[50%_35%]"
               width="1344"
               height="768"
@@ -60,7 +60,7 @@ export default function Home() {
             <div className="absolute inset-0 bg-gradient-to-r from-white/90 via-white/60 to-transparent flex items-start pt-8 sm:pt-10 lg:pt-16">
               <div className="pl-8 sm:pl-12 lg:pl-16 max-w-lg">
                 <h2 className="text-2xl sm:text-3xl lg:text-4xl font-black text-[#1B3A5C] leading-tight mb-3">
-                  資金繰りの悩みを<br />即解決
+                  資金調達の選択肢を<br />比較・検討する
                 </h2>
                 <p className="text-sm sm:text-base text-gray-600 mb-4">
                   フリーランス・個人事業主・法人向け<br />ファクタリング比較
@@ -69,7 +69,7 @@ export default function Home() {
                   href="#ranking"
                   className="inline-block bg-[#1B3A5C] text-white font-bold py-2.5 px-6 rounded-md text-sm hover:bg-[#152d47] transition"
                 >
-                  おすすめ24社を見る →
+                  掲載24社を見る →
                 </Link>
               </div>
             </div>
@@ -77,15 +77,15 @@ export default function Home() {
 
           <div className="text-center">
             <div className="inline-flex items-center gap-2 bg-blue-50 border border-blue-200 px-5 py-2 rounded-md text-sm font-medium mb-6">
-              <span className="text-gray-700">2026年4月 最新版｜<span className="text-[#1B3A5C] font-bold">24社</span>を徹底比較</span>
+              <span className="text-gray-700">2026年4月 最新版｜<span className="text-[#1B3A5C] font-bold">24社</span>を比較</span>
             </div>
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-gray-900 leading-[1.2] mb-5">
-              手数料・審査・入金スピードを<br />
-              <span className="text-[#1B3A5C]">徹底比較</span>
-              して最適な1社を見つけよう
+              ファクタリング会社の<br />
+              <span className="text-[#1B3A5C]">手数料・審査・入金スピード</span>
+              を比較
             </h1>
             <p className="text-gray-500 text-lg max-w-2xl mx-auto leading-relaxed mb-8">
-              即日対応、審査が通りやすい、手数料が安い会社を<strong className="text-gray-700">厳選</strong>しました
+              即日入金への対応状況、審査の基準、手数料の目安を、<strong className="text-gray-700">各社の公式サイトの情報</strong>にもとづいて掲載しています
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
@@ -141,7 +141,7 @@ export default function Home() {
 
           <div className="prose max-w-none mb-12">
             <p className="text-lg text-gray-700 leading-relaxed mb-8">
-              ファクタリングとは、売掛金を売却して早期に現金化する資金調達方法です。銀行融資と異なり、審査が柔軟で最短即日で資金調達が可能です。赤字決算や税金滞納があっても利用できるケースが多く、中小企業の資金繰り改善に有効です。
+              ファクタリングとは、売掛金をファクタリング会社に売却し、入金期日より前に現金化する資金調達方法です。審査では主に売掛先の信用力が確認されるため、銀行融資とは審査の観点が異なり、最短即日で資金調達できる場合があります。赤字決算や税金滞納がある場合でも利用できることが多く、中小企業の資金繰りの改善に用いられています。
             </p>
           </div>
 
@@ -154,7 +154,7 @@ export default function Home() {
                 <ul className="space-y-2">
                   <li className="flex items-start gap-2">
                     <span className="text-green-600 mt-1">✓</span>
-                    <span className="text-gray-700">売掛先にバレない</span>
+                    <span className="text-gray-700">売掛先に通知されない</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-green-600 mt-1">✓</span>
@@ -182,7 +182,7 @@ export default function Home() {
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-orange-600 mt-1">×</span>
-                    <span className="text-gray-700">売掛先にバレる</span>
+                    <span className="text-gray-700">売掛先への通知が必要</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-orange-600 mt-1">×</span>
@@ -205,7 +205,7 @@ export default function Home() {
             <h2 className="text-3xl font-bold text-gray-900 mb-2">
               おすすめTOP15ファクタリング会社
             </h2>
-            <p className="text-gray-600">手数料・審査・スピードを総合評価</p>
+            <p className="text-gray-600">手数料・審査・入金スピードをもとに総合的に評価しています</p>
           </div>
 
           <div className="grid gap-6 max-w-6xl mx-auto">
@@ -320,7 +320,7 @@ export default function Home() {
             <h2 className="text-3xl font-bold text-gray-900 mb-2">
               項目別比較表
             </h2>
-            <p className="text-gray-600">← 横にスクロールできます →</p>
+            <p className="text-gray-600">表は横にスクロールしてご覧いただけます</p>
           </div>
           <ComparisonTable companies={topCompanies} />
         </div>
@@ -332,11 +332,11 @@ export default function Home() {
           <div className="text-center mb-12">
             <Badge className="mb-4 text-sm bg-[#1B3A5C] text-white">DIAGNOSIS</Badge>
             <h2 className="text-3xl font-bold text-gray-900 mb-2">
-              最適なファクタリング会社診断
+              ファクタリング会社診断
             </h2>
             <p className="text-gray-600">
-              何を重視しますか？<br />
-              複数選択OK
+              重視する項目を選択してください<br />
+              （複数選択可）
             </p>
             <p className="text-sm text-gray-500 mt-2">
               個人情報の入力は不要です
@@ -464,10 +464,10 @@ export default function Home() {
               <CardContent className="p-6 text-center">
                 <div className="w-12 h-12 bg-blue-100 text-[#1B3A5C] rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">01</div>
                 <h3 className="font-bold text-gray-900 mb-2">
-                  中立な立場で比較
+                  中立的な立場で比較します
                 </h3>
                 <p className="text-sm text-gray-600">
-                  特定のファクタリング会社に偏らず、手数料・審査・スピードを客観的に評価しています。
+                  特定のファクタリング会社に偏らず、手数料・審査・入金スピードを同一の基準で評価しています。
                 </p>
               </CardContent>
             </Card>
@@ -476,10 +476,10 @@ export default function Home() {
               <CardContent className="p-6 text-center">
                 <div className="w-12 h-12 bg-blue-100 text-[#1B3A5C] rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">02</div>
                 <h3 className="font-bold text-gray-900 mb-2">
-                  毎月情報を更新
+                  掲載情報を毎月更新します
                 </h3>
                 <p className="text-sm text-gray-600">
-                  手数料やキャンペーン情報を毎月チェックし、常に最新の情報を掲載しています。
+                  手数料やキャンペーンの情報を毎月確認し、変更があった項目を更新しています。
                 </p>
               </CardContent>
             </Card>
@@ -488,10 +488,10 @@ export default function Home() {
               <CardContent className="p-6 text-center">
                 <div className="w-12 h-12 bg-blue-100 text-[#1B3A5C] rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">03</div>
                 <h3 className="font-bold text-gray-900 mb-2">
-                  実体験ベース
+                  利用者の声を参考にしています
                 </h3>
                 <p className="text-sm text-gray-600">
-                  実際にファクタリングを利用した経験者の声を元に、リアルな情報を提供しています。
+                  実際にファクタリングを利用した方の声を参考に、利用時の実情に即した情報の提供に努めます。
                 </p>
               </CardContent>
             </Card>
@@ -503,10 +503,10 @@ export default function Home() {
       <section className="py-16 bg-[#1B3A5C] text-white">
         <div className="container mx-auto px-4 text-center">
           <h2 className="text-3xl font-bold mb-4">
-            資金調達でお困りですか？最短30分で入金可能
+            ファクタリング会社によっては最短30分で入金されます
           </h2>
           <p className="text-xl text-blue-200 mb-8">
-            まずは無料で見積もり。3社以上の相見積もりがおすすめです
+            見積もりは無料です。手数料を比較するため、3社以上から見積もりを取ることをおすすめします
           </p>
           <Link
             href="#ranking"

@@ -27,10 +27,10 @@ export default function AboutPage() {
         <section className="mb-10 prose prose-gray max-w-none text-sm leading-relaxed space-y-4">
           <h2 className="text-xl font-bold mt-2 mb-3">{SITE_NAME} について</h2>
           <p>
-            {SITE_NAME} は、株式会社MediaXが運営する比較・情報サイトです。利用者が業者選び・サービス選定で失敗しないよう、独自調査・公式情報・業界データに基づく信頼できるコンテンツを提供することを目的としています。
+            {SITE_NAME} は、株式会社MediaXが運営する比較・情報サイトです。利用者がファクタリング会社やサービスを適切に選定できるよう、独自の調査、公式情報および業界データにもとづく情報を提供することを目的としています。
           </p>
           <p>
-            当サイトのコンテンツは、最新の業界動向・公式発表・公的データを参照し、編集部による事実確認(ファクトチェック)を経て公開しています。執筆プロセスにAIツールを活用する場合がありますが、すべての記事は人間の編集者による監督・編集を経た上で公開されます。
+            当サイトのコンテンツは、業界動向・公式発表・公的データを参照し、編集部による事実確認（ファクトチェック）を経て公開しています。執筆の過程でAIツールを活用する場合がありますが、すべての記事は編集者による確認・編集を経たうえで公開しています。
           </p>
         </section>
 
@@ -55,45 +55,45 @@ export default function AboutPage() {
         <section className="mb-10 prose prose-gray max-w-none text-sm leading-relaxed space-y-4">
           <h2 className="text-xl font-bold mt-2 mb-3">編集方針</h2>
           <ul className="list-disc pl-6 space-y-1">
-            <li><strong>独自性</strong>：他サイトの転載ではなく、独自の調査・分析・比較に基づき作成しています</li>
+            <li><strong>独自性</strong>：他サイトの転載ではなく、独自の調査・分析・比較にもとづいて作成しています</li>
             <li><strong>正確性</strong>：公式サイト・公的データを参照し、事実確認を経て公開しています</li>
-            <li><strong>中立性</strong>：特定の事業者を不当に優遇することなく、客観的な比較情報を提供します</li>
+            <li><strong>中立性</strong>：特定の事業者を不当に優遇することなく、同一の基準で比較情報を提供します</li>
             <li><strong>透明性</strong>：アフィリエイトリンクの存在を明示し、収益構造を開示しています</li>
             <li><strong>更新性</strong>：法令・サービス内容の変更に応じて、コンテンツを継続的に更新しています</li>
           </ul>
         </section>
 
         <section className="mb-10 prose prose-gray max-w-none text-sm leading-relaxed space-y-4">
-          <h2 className="text-xl font-bold mt-2 mb-3">料金・条件データの一次確認プロセス</h2>
+          <h2 className="text-xl font-bold mt-2 mb-3">料金・条件データの確認手順</h2>
           <p>
-            ファクタリングの手数料・入金スピード・利用条件は改定が速く、まとめサイトの情報が古くなりがちな分野です。当サイトでは、<a href="/fees/" className="text-blue-600 hover:underline">手数料・入金スピード比較インデックス</a>をはじめとする料金・条件データについて、次のプロセスで正確性を担保しています。
+            ファクタリングの手数料・入金スピード・利用条件は改定の頻度が高く、掲載情報が古くなりやすい分野です。当サイトでは、<a href="/fees/" className="text-blue-600 hover:underline">手数料・入金スピード比較インデックス</a>をはじめとする料金・条件データについて、次の手順で正確性の確保に努めています。
           </p>
           <ul className="list-disc pl-6 space-y-1">
             <li><strong>各社公式サイトを一件ずつ確認</strong>：手数料率（2社間／3社間）・最短入金・利用可能額・対象・オンライン完結可否を、編集部が各社の公式サイトで直接確認します</li>
-            <li><strong>確認日を明記</strong>：いつ時点の情報かが分かるよう、確認日を各データに記載します</li>
-            <li><strong>非公示は推測で埋めない</strong>：公式に手数料率の記載がない社は「非公示（要見積もり）」と正直に記載し、根拠のない数値は掲載しません</li>
-            <li><strong>月次で再確認</strong>：改定の速い分野のため、月次を目安に再確認して更新します</li>
+            <li><strong>確認日を明記</strong>：情報の時点を明らかにするため、各データに確認日を記載しています</li>
+            <li><strong>非公示の項目は推測で補完しない</strong>：公式サイトに手数料率の記載がない会社は「非公示（要見積もり）」と記載し、根拠のない数値は掲載しません</li>
+            <li><strong>月次で再確認</strong>：改定の頻度が高い分野のため、月に1回を目安に再確認し、変更があった項目を更新します</li>
           </ul>
         </section>
 
         <section className="mb-10 prose prose-gray max-w-none text-sm leading-relaxed space-y-4">
           <h2 className="text-xl font-bold mt-2 mb-3">架空データを掲載しない方針</h2>
           <p>
-            当サイトは、<strong>架空の口コミ・体験談、根拠のない料金・評価（★）を一切掲載しません</strong>。口コミ・評判は出典と調査時点を明記し、公式に確認できない情報は「確認できず」「非公示」と正直に記載します。利用者の資金調達の意思決定に関わる情報だからこそ、正確性と誠実さを最優先します。
+            当サイトは、<strong>架空の口コミ・体験談、根拠のない料金・評価（★）を一切掲載しません</strong>。口コミ・評判には出典と調査時点を明記し、公式に確認できない情報は「確認できず」「非公示」と記載します。利用者の資金調達の判断に関わる情報であるため、正確性を最も重視しています。
           </p>
         </section>
 
         <section className="mb-10 prose prose-gray max-w-none text-sm leading-relaxed space-y-4">
           <h2 className="text-xl font-bold mt-2 mb-3">AI利用方針</h2>
           <p>
-            当サイトでは、編集効率化のためにAIツール（大規模言語モデル等）を活用する場合があります。ただし、すべてのAI生成コンテンツは人間の編集者による事実確認・編集・改善を経た上で公開されています。Googleの「Scaled Content Abuse」ポリシーに準拠し、ユーザーに価値を提供しない大量生成コンテンツの公開は行いません。
+            当サイトでは、編集作業の効率化のためにAIツール（大規模言語モデル等）を活用する場合があります。ただし、AIを用いて作成したコンテンツは、すべて編集者による事実確認・編集を経たうえで公開しています。また、Googleの「Scaled Content Abuse」ポリシーに準拠し、利用者にとって価値のない大量生成コンテンツは公開しません。
           </p>
         </section>
 
         <section className="mb-10 prose prose-gray max-w-none text-sm leading-relaxed space-y-4">
           <h2 className="text-xl font-bold mt-2 mb-3">お問い合わせ</h2>
           <p>
-            記事の内容に関するお問い合わせ、修正依頼、取材・掲載のご相談は以下までご連絡ください。
+            記事の内容に関するお問い合わせ、修正のご依頼、取材・掲載のご相談は、以下までご連絡ください。
           </p>
           <p>
             メール：<a href="mailto:webmaster@mediax.biz" className="text-blue-600 hover:underline">webmaster@mediax.biz</a>
@@ -112,7 +112,7 @@ export default function AboutPage() {
             "name": "株式会社MediaX",
             "url": "https://corp-factoring.com/",
             "email": "webmaster@mediax.biz",
-            "description": "ファクタリングの比較・情報サイト『ファクタリング比較ナビ』の運営。各社公式サイトの一次確認に基づく料金・条件データを提供。",
+            "description": "ファクタリングの比較・情報サイト『ファクタリング比較ナビ』の運営。各社公式サイトの確認にもとづく料金・条件データを提供しています。",
             "knowsAbout": ["ファクタリング", "資金調達", "売掛金", "請求書買取"],
           }),
         }}

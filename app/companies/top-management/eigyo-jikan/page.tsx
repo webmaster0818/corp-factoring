@@ -19,7 +19,7 @@ export async function generateMetadata(): Promise<Metadata> {
   const title =
     "トップマネジメントの営業時間・受付時間は？【2026年8月公式確認】";
   const description =
-    "トップマネジメントの営業時間は平日10:00〜19:00（土日祝・年末年始は休業）。公式サイトで一次確認した受付時間・営業時間外の申し込みの扱い・他社との営業時間比較を、確認日つきで解説します。";
+    "トップマネジメントの営業時間は平日10:00〜19:00（土日祝・年末年始は休業）。公式サイトで確認した受付時間、営業時間外の申込の扱い、他社との営業時間の比較を解説します。掲載情報には確認日を記載しています。";
   return {
     title,
     description,
@@ -61,15 +61,15 @@ export default function TopManagementHoursPage() {
     },
     {
       question: `${company.name}は土日祝も対応していますか？`,
-      answer: `土曜・日曜・祝日は休業です（年末年始も休業）。土日に急ぎで資金化したい場合は、24時間365日受付をうたう会社など、休日対応の会社を検討する選択肢もあります（各社の受付体制は公式サイトの一次確認値を本ページの比較表に掲載）。`,
+      answer: `土曜・日曜・祝日は休業です（年末年始も休業）。土日に急ぎで資金化したい場合は、24時間365日受付を掲げる会社など、休日に対応している会社を検討する方法もあります（各社の受付体制は、公式サイトで確認した内容を本ページの比較表に掲載しています）。`,
     },
     {
-      question: `${company.name}に営業時間外に申し込んだらどうなりますか？`,
-      answer: `営業時間外（平日19時以降・土日祝）に申し込んだ場合の受付の扱い（受付可否や翌営業日対応の有無）は、公式サイトでは確認できませんでした（${CHECKED_AT}時点）。確実に当日中の対応を受けたい場合は、平日10:00〜19:00の営業時間内に問い合わせるのが確実です。`,
+      question: `${company.name}に営業時間外に申し込んだ場合、どのように扱われますか？`,
+      answer: `営業時間外（平日19時以降・土日祝）に申し込んだ場合の受付の扱い（受付可否や翌営業日対応の有無）は、公式サイトでは確認できませんでした（${CHECKED_AT}時点）。確実に当日中の対応を受けたい場合は、平日10:00〜19:00の営業時間内にお問い合わせください。`,
     },
     {
       question: `${company.name}で即日入金を受けるにはいつ申し込めばよいですか？`,
-      answer: `公式表示の入金スピードは「最短即日」です（2026年7月21日確認）。営業時間が平日10:00〜19:00のため、即日入金を目指すなら同日の営業時間内に申込〜審査〜契約まで完了させる必要があります。即日扱いの具体的な締切時刻は公式サイトでは確認できなかったため、時間に余裕を持って午前中など早い時間帯に申し込み、直接確認することをおすすめします。`,
+      answer: `公式表示の入金スピードは「最短即日」です（2026年7月21日確認）。営業時間が平日10:00〜19:00のため、即日入金を希望する場合は、同日の営業時間内に申込〜審査〜契約まで完了させる必要があります。即日扱いの具体的な締切時刻は公式サイトでは確認できなかったため、時間に余裕を持って午前中など早い時間帯に申し込み、直接確認することをおすすめします。`,
     },
   ];
 
@@ -78,7 +78,7 @@ export default function TopManagementHoursPage() {
     "@type": "Article",
     headline: "トップマネジメントの営業時間・受付時間は？【2026年8月公式確認】",
     description:
-      "トップマネジメントの営業時間・受付時間を公式サイトの一次確認値で解説。土日祝の扱い・営業時間外の申し込み・他社比較を掲載。",
+      "トップマネジメントの営業時間・受付時間を公式サイトで確認した内容をもとに解説しています。土日祝の扱い、営業時間外の申込の扱い、他社との比較も掲載しています。",
     dateModified: "2026-08-16",
     author: {
       "@type": "Organization",
@@ -131,18 +131,18 @@ export default function TopManagementHoursPage() {
           {company.name}の営業時間・受付時間
         </h1>
         <p className="mt-2 text-xs text-gray-500">
-          最終確認日：2026年8月16日（営業時間の公式一次確認：{CHECKED_AT}）
+          最終確認日：2026年8月16日（営業時間の公式サイト確認日：{CHECKED_AT}）
         </p>
 
         {/* 結論の即答（H1直下） */}
         <div className="mt-5 rounded-lg border-l-4 border-blue-500 bg-blue-50 p-4">
-          <p className="text-sm font-bold text-blue-900">結論</p>
+          <p className="text-sm font-bold text-blue-900">回答</p>
           <p className="mt-1 text-sm leading-relaxed text-gray-800">{answer}</p>
         </div>
 
         {/* 営業時間・定休日の詳細 */}
         <section className="mt-8">
-          <h2 className="text-lg font-bold text-gray-900">{company.name}の営業時間・定休日（公式一次確認）</h2>
+          <h2 className="text-lg font-bold text-gray-900">{company.name}の営業時間・定休日（公式サイトで確認）</h2>
           <div className="mt-3 overflow-hidden rounded-lg border border-gray-200">
             <table className="w-full text-sm">
               <tbody>
@@ -157,7 +157,7 @@ export default function TopManagementHoursPage() {
           </div>
           {h.note && <p className="mt-3 text-xs leading-relaxed text-gray-500">※{h.note}</p>}
           <p className="mt-2 text-xs leading-relaxed text-gray-500">
-            ※本ページの営業時間は{company.name}公式サイトを当サイトが{CHECKED_AT}に確認したものです。公式に明示がない項目は「確認できず」と記載しています。最新の受付時間は
+            ※本ページの営業時間は{company.name}公式サイトを当サイトが{CHECKED_AT}に確認したものです。公式サイトに記載がない項目は「確認できず」と記載しています。最新の受付時間は
             <a href={company.url} target="_blank" rel="nofollow noopener" className="text-blue-600 underline">公式サイト</a>
             でご確認ください。
           </p>
@@ -168,11 +168,11 @@ export default function TopManagementHoursPage() {
           <h2 className="text-lg font-bold text-gray-900">申込から入金までの時間帯の目安</h2>
           <p className="mt-3 text-sm leading-relaxed text-gray-800">
             {company.name}の入金スピードは公式表示で「{feeRow.speed}」です（2026年7月21日確認）。
-            営業時間が平日10:00〜19:00のため、<strong>即日入金を目指す場合は、同日の営業時間内に申込・審査・契約まで完了させる</strong>ことが前提になります。
+            営業時間が平日10:00〜19:00のため、<strong>即日入金を希望する場合は、同日の営業時間内に申込・審査・契約まで完了させる</strong>ことが前提になります。
             申込から契約まではオンライン完結（{feeRow.online}）に対応しています。
           </p>
           <p className="mt-3 text-sm leading-relaxed text-gray-800">
-            なお、即日扱いとなる申込の締切時刻は公式サイトでは確認できませんでした。日程に余裕がない場合は、午前中など早い時間帯に申し込み、担当者に当日入金の可否を直接確認するのが確実です。
+            なお、即日扱いとなる申込の締切時刻は公式サイトでは確認できませんでした。日程に余裕がない場合は、午前中など早い時間帯に申し込み、担当者に当日入金の可否を直接確認することをおすすめします。
           </p>
         </section>
 
@@ -180,16 +180,16 @@ export default function TopManagementHoursPage() {
         <section className="mt-8">
           <h2 className="text-lg font-bold text-gray-900">営業時間外・土日祝の申し込みの扱い</h2>
           <p className="mt-3 text-sm leading-relaxed text-gray-800">
-            {company.name}は土日祝・年末年始が休業です。平日19時以降や休業日に申し込んだ場合の扱い（Webフォーム受付の可否や、翌営業日の対応になるのか等）は、<strong>公式サイトでは確認できませんでした</strong>（{CHECKED_AT}時点）。
+            {company.name}は土日祝・年末年始が休業です。平日19時以降や休業日に申し込んだ場合の扱い（Webフォームでの受付の可否、翌営業日の対応となるか等）は、<strong>公式サイトでは確認できませんでした</strong>（{CHECKED_AT}時点）。
           </p>
           <p className="mt-3 text-sm leading-relaxed text-gray-800">
-            土日祝に受付・対応してほしい場合は、24時間365日受付をうたう会社を含めて比較するのも選択肢です。下の比較表で、当サイトが公式サイトを一次確認した各社の受付時間を確認できます。
+            土日祝の受付・対応を希望する場合は、24時間365日受付を掲げる会社を含めて比較することをおすすめします。以下の比較表に、当サイトが公式サイトで確認した各社の受付時間を掲載しています。
           </p>
         </section>
 
         {/* 他社との営業時間比較 */}
         <section className="mt-8">
-          <h2 className="text-lg font-bold text-gray-900">他社との営業時間比較（公式一次確認値）</h2>
+          <h2 className="text-lg font-bold text-gray-900">他社との営業時間の比較（公式サイトで確認）</h2>
           <div className="mt-3 overflow-x-auto rounded-lg border border-gray-200">
             <table className="w-full min-w-[560px] text-sm">
               <thead>
@@ -218,7 +218,7 @@ export default function TopManagementHoursPage() {
             </table>
           </div>
           <p className="mt-2 text-xs leading-relaxed text-gray-500">
-            ※各社の営業時間は当サイトが各社公式サイトで一次確認した値です（確認日は2026年7月8日〜8月7日・会社により異なります）。「公式では確認できず」は公式サイトに明示がなかった項目です。
+            ※各社の営業時間は当サイトが各社の公式サイトで確認した内容です（確認日は2026年7月8日〜8月7日・会社により異なります）。「公式では確認できず」は、公式サイトに記載がなかった項目です。
           </p>
         </section>
 
@@ -239,11 +239,11 @@ export default function TopManagementHoursPage() {
         <OtherHoursLinks currentSlug={SLUG} />
 
         <section className="mt-8 rounded-lg bg-gray-50 p-5">
-          <p className="text-sm font-bold text-gray-800">あわせて確認</p>
+          <p className="text-sm font-bold text-gray-800">関連ページ</p>
           <ul className="mt-2 space-y-1.5 text-sm">
-            <li>・<Link href={`/companies/${SLUG}/`} className="text-blue-600 underline">{company.name}の評判・手数料・必要書類を総合解説</Link></li>
+            <li>・<Link href={`/companies/${SLUG}/`} className="text-blue-600 underline">{company.name}の評判・手数料・必要書類の解説</Link></li>
             <li>・<Link href="/articles/article-ennavi-vs-top-management/" className="text-blue-600 underline">えんナビと{company.name}の比較（手数料・入金スピード・営業時間）</Link></li>
-            <li>・<Link href="/fees/" className="text-blue-600 underline">ファクタリング24社の手数料・最短入金を一次確認で比較</Link></li>
+            <li>・<Link href="/fees/" className="text-blue-600 underline">ファクタリング24社の手数料・最短入金の比較（公式サイトで確認）</Link></li>
           </ul>
         </section>
 

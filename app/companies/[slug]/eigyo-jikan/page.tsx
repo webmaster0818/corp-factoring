@@ -44,7 +44,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const h = getCompanyDetails(slug).operatingHours;
   const checkedAt = HOURS_CHECKED_AT[slug] ?? "";
   const title = `${NAME_ALIAS[slug] ?? company.name}の営業時間・受付時間は？【${toMonthLabel(checkedAt)}公式確認】`;
-  const description = `${NAME_ALIAS[slug] ?? company.name}の受付時間は公式表示で「${h.weekdays}」。公式サイトで一次確認した営業時間・土日祝の扱い・営業時間外の申し込み・他社との受付時間比較を、確認日つきで整理しました。`;
+  const description = `${NAME_ALIAS[slug] ?? company.name}の受付時間は公式表示で「${h.weekdays}」。公式サイトで確認した営業時間、土日祝の扱い、営業時間外の申込の扱い、他社との受付時間の比較を掲載しています。掲載情報には確認日を記載しています。`;
   return {
     title,
     description,
@@ -86,13 +86,13 @@ export default async function CompanyHoursPage({ params }: { params: Promise<{ s
   const offHoursAnswer =
     is24h || offHoursDocumented
       ? `${company.name}の公式表示は「${h.weekdays}」です。ただし、申込の受付と、実際に審査・入金処理が行われる時間帯が同じとは限りません。本ページの受付時間欄・注記に記載した内容が公式サイトで確認できた範囲で、それ以外の運用（審査担当者が対応する時間帯、休業日の設定など）までは公式サイトでは確認できませんでした（${checkedAt}時点）。`
-      : `受付時間外に申し込んだ場合の扱い（Webフォーム受付の可否、翌営業日対応になるのか等）は、公式サイトでは確認できませんでした（${checkedAt}時点）。確実に当日中の対応を受けたい場合は、公式表示の受付時間内に問い合わせるのが確実です。`;
+      : `受付時間外に申し込んだ場合の扱い（Webフォームでの受付の可否、翌営業日の対応となるか等）は、公式サイトでは確認できませんでした（${checkedAt}時点）。確実に当日中の対応を受けたい場合は、公式に表示されている受付時間内にお問い合わせください。`;
 
   const sokujitsuAnswer = feeRow
     ? `${company.name}の入金スピードは公式表示で「${feeRow.speed}」です（${feeCheckedAt}確認）。受付時間は「${h.weekdays}」のため、${
         is24h
-          ? "オンラインでの申込自体は時間帯を問わず可能と公式に表示されていますが、審査・契約の実処理が行われる時間帯は公式サイトでは確認できませんでした。"
-          : "即日入金を目指す場合は、同日の受付時間内に申込・審査・契約まで完了させることが前提になります。"
+          ? "オンラインでの申込は時間帯を問わず可能と公式に表示されていますが、審査・契約の処理が行われる時間帯は公式サイトでは確認できませんでした。"
+          : "即日入金を希望する場合は、同日の受付時間内に申込・審査・契約まで完了させることが前提になります。"
       }${
         cutoffDocumented
           ? "即日扱いの締切については、本ページの受付時間欄・注記に記載した公式表示をご確認ください。"
@@ -106,11 +106,11 @@ export default async function CompanyHoursPage({ params }: { params: Promise<{ s
       question: `${company.name}は土日祝も対応していますか？`,
       answer: `${weekendSentence}${
         weekendExplicit && /休業|定休/.test(`${h.saturday ?? ""}${h.sunday ?? ""}${h.holidays ?? ""}`)
-          ? "土日に急ぎで資金化したい場合は、24時間365日受付をうたう会社など、休日対応の会社を検討する選択肢もあります（各社の受付体制は本ページの比較表に公式一次確認値を掲載）。"
-          : "各社の受付体制は会社によって大きく異なるため、本ページの比較表に掲載した公式一次確認値もあわせてご確認ください。"
+          ? "土日に急ぎで資金化したい場合は、24時間365日受付を掲げる会社など、休日に対応している会社を検討する方法もあります（各社の受付体制は、公式サイトで確認した内容を本ページの比較表に掲載しています）。"
+          : "各社の受付体制は会社によって大きく異なるため、本ページの比較表に掲載した、公式サイトで確認した内容もあわせてご確認ください。"
       }`,
     },
-    { question: `${company.name}に営業時間外に申し込んだらどうなりますか？`, answer: offHoursAnswer },
+    { question: `${company.name}に営業時間外に申し込んだ場合、どのように扱われますか？`, answer: offHoursAnswer },
     { question: `${company.name}で即日入金を受けるにはいつ申し込めばよいですか？`, answer: sokujitsuAnswer },
   ];
 
@@ -131,7 +131,7 @@ export default async function CompanyHoursPage({ params }: { params: Promise<{ s
     "@context": "https://schema.org",
     "@type": "Article",
     headline: pageTitle,
-    description: `${company.name}の営業時間・受付時間を公式サイトの一次確認値で解説。土日祝の扱い・営業時間外の申し込み・他社比較を掲載。`,
+    description: `${company.name}の営業時間・受付時間を公式サイトで確認した内容をもとに解説しています。土日祝の扱い、営業時間外の申込の扱い、他社との比較も掲載しています。`,
     dateModified: pageUpdatedIso,
     author: { "@type": "Organization", name: "ファクタリング比較ナビ", url: `${SITE}/about` },
     publisher: {
@@ -178,18 +178,18 @@ export default async function CompanyHoursPage({ params }: { params: Promise<{ s
           {displayName}の営業時間・受付時間
         </h1>
         <p className="mt-2 text-xs text-gray-500">
-          最終確認日：{pageUpdated}（営業時間の公式一次確認：{checkedAt}）
+          最終確認日：{pageUpdated}（営業時間の公式サイト確認日：{checkedAt}）
         </p>
 
         {/* 結論の即答（H1直下） */}
         <div className="mt-5 rounded-lg border-l-4 border-blue-500 bg-blue-50 p-4">
-          <p className="text-sm font-bold text-blue-900">結論</p>
+          <p className="text-sm font-bold text-blue-900">回答</p>
           <p className="mt-1 text-sm leading-relaxed text-gray-800">{answer}</p>
         </div>
 
         {/* 営業時間・定休日の詳細 */}
         <section className="mt-8">
-          <h2 className="text-lg font-bold text-gray-900">{company.name}の営業時間・定休日（公式一次確認）</h2>
+          <h2 className="text-lg font-bold text-gray-900">{company.name}の営業時間・定休日（公式サイトで確認）</h2>
           <div className="mt-3 overflow-hidden rounded-lg border border-gray-200">
             <table className="w-full text-sm">
               <tbody>
@@ -204,7 +204,7 @@ export default async function CompanyHoursPage({ params }: { params: Promise<{ s
           </div>
           {h.note && <p className="mt-3 text-xs leading-relaxed text-gray-500">※{h.note}</p>}
           <p className="mt-2 text-xs leading-relaxed text-gray-500">
-            ※本ページの営業時間は{company.name}公式サイトを当サイトが{checkedAt}に確認したものです。公式に明示がない項目は「公式サイトでは確認できず」と記載しています。最新の受付時間は
+            ※本ページの営業時間は{company.name}公式サイトを当サイトが{checkedAt}に確認したものです。公式サイトに記載がない項目は「公式サイトでは確認できず」と記載しています。最新の受付時間は
             <a href={company.url} target="_blank" rel="sponsored nofollow noopener" className="text-blue-600 underline">公式サイト</a>
             でご確認ください。
           </p>
@@ -221,13 +221,13 @@ export default async function CompanyHoursPage({ params }: { params: Promise<{ s
               </p>
               <p className="mt-3 text-sm leading-relaxed text-gray-800">
                 {is24h
-                  ? "オンラインでの申込自体は時間帯を問わず可能と公式に表示されていますが、審査・契約の実処理が何時から何時まで行われるかは公式サイトでは確認できませんでした。"
-                  : "即日入金を目指す場合は、同日の受付時間内に申込・審査・契約まで完了させることが前提になります。"}
+                  ? "オンラインでの申込は時間帯を問わず可能と公式に表示されていますが、審査・契約の処理が何時から何時まで行われるかは公式サイトでは確認できませんでした。"
+                  : "即日入金を希望する場合は、同日の受付時間内に申込・審査・契約まで完了させることが前提になります。"}
               </p>
               <p className="mt-3 text-sm leading-relaxed text-gray-800">
                 {cutoffDocumented
-                  ? "即日扱いの締切時刻については、上の受付時間欄・注記に記載した公式表示をご確認ください。条件の詳細は公式サイトで直接ご確認いただくのが確実です。"
-                  : `なお、即日扱いとなる申込の締切時刻は公式サイトでは確認できませんでした（${checkedAt}時点）。日程に余裕がない場合は、午前中など早い時間帯に申し込み、当日入金の可否を担当者に直接確認するのが確実です。`}
+                  ? "即日扱いの締切時刻については、上の受付時間欄・注記に記載した公式表示をご確認ください。条件の詳細は、公式サイトにて直接ご確認ください。"
+                  : `なお、即日扱いとなる申込の締切時刻は公式サイトでは確認できませんでした（${checkedAt}時点）。日程に余裕がない場合は、午前中など早い時間帯に申し込み、当日入金の可否を担当者に直接確認することをおすすめします。`}
               </p>
             </>
           ) : (
@@ -243,13 +243,13 @@ export default async function CompanyHoursPage({ params }: { params: Promise<{ s
           <p className="mt-3 text-sm leading-relaxed text-gray-800">{weekendSentence}</p>
           <p className="mt-3 text-sm leading-relaxed text-gray-800">{offHoursAnswer}</p>
           <p className="mt-3 text-sm leading-relaxed text-gray-800">
-            土日祝に受付・対応してほしい場合は、24時間365日受付をうたう会社を含めて比較するのも選択肢です。下の比較表で、当サイトが公式サイトを一次確認した各社の受付時間を確認できます。
+            土日祝の受付・対応を希望する場合は、24時間365日受付を掲げる会社を含めて比較することをおすすめします。以下の比較表に、当サイトが公式サイトで確認した各社の受付時間を掲載しています。
           </p>
         </section>
 
         {/* 他社との営業時間比較 */}
         <section className="mt-8">
-          <h2 className="text-lg font-bold text-gray-900">他社との営業時間比較（公式一次確認値）</h2>
+          <h2 className="text-lg font-bold text-gray-900">他社との営業時間の比較（公式サイトで確認）</h2>
           <div className="mt-3 overflow-x-auto rounded-lg border border-gray-200">
             <table className="w-full min-w-[560px] text-sm">
               <thead>
@@ -278,7 +278,7 @@ export default async function CompanyHoursPage({ params }: { params: Promise<{ s
             </table>
           </div>
           <p className="mt-2 text-xs leading-relaxed text-gray-500">
-            ※各社の営業時間は当サイトが各社公式サイトで一次確認した値です（確認日は2026年7月8日〜8月22日・会社により異なります）。「公式では確認できず」は公式サイトに明示がなかった項目です。
+            ※各社の営業時間は当サイトが各社の公式サイトで確認した内容です（確認日は2026年7月8日〜8月22日・会社により異なります）。「公式では確認できず」は、公式サイトに記載がなかった項目です。
           </p>
         </section>
 
@@ -299,11 +299,11 @@ export default async function CompanyHoursPage({ params }: { params: Promise<{ s
         <OtherHoursLinks currentSlug={slug} />
 
         <section className="mt-8 rounded-lg bg-gray-50 p-5">
-          <p className="text-sm font-bold text-gray-800">あわせて確認</p>
+          <p className="text-sm font-bold text-gray-800">関連ページ</p>
           <ul className="mt-2 space-y-1.5 text-sm">
-            <li>・<Link href={`/companies/${slug}/`} className="text-blue-600 underline">{company.name}の評判・手数料・必要書類を総合解説</Link></li>
-            <li>・<Link href="/fees/" className="text-blue-600 underline">ファクタリング24社の手数料・最短入金を一次確認で比較</Link></li>
-            <li>・<Link href="/#comparison" className="text-blue-600 underline">ファクタリング会社の比較一覧から他社を確認する</Link></li>
+            <li>・<Link href={`/companies/${slug}/`} className="text-blue-600 underline">{company.name}の評判・手数料・必要書類の解説</Link></li>
+            <li>・<Link href="/fees/" className="text-blue-600 underline">ファクタリング24社の手数料・最短入金の比較（公式サイトで確認）</Link></li>
+            <li>・<Link href="/#comparison" className="text-blue-600 underline">ファクタリング会社の比較一覧</Link></li>
           </ul>
         </section>
 

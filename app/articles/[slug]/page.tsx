@@ -30,13 +30,13 @@ export async function generateMetadata({
   return {
     // サイト名はルートlayoutの title.template（%s｜ファクタリング比較ナビ）で付与されるため、ここでは付けない（二重付与の解消）
     title: article.title,
-    description: article.description ?? `${article.title}。${article.keyword}について詳しく解説します。`,
+    description: article.description ?? `${article.title}について、公式情報や公的資料をもとに解説しています。`,
     alternates: {
       canonical: `/articles/${slug}`,
     },
     openGraph: {
       title: `${article.title}｜ファクタリング比較ナビ`,
-      description: article.description ?? `${article.title}。${article.keyword}について詳しく解説します。`,
+      description: article.description ?? `${article.title}について、公式情報や公的資料をもとに解説しています。`,
       type: "article",
       images: DEFAULT_OG_IMAGES,
     },
@@ -183,7 +183,7 @@ export default async function ArticlePage({
         {mentionedCompanies.length > 0 && (
           <section className="mt-12 bg-white border border-gray-200 rounded-xl p-6">
             <h2 className="text-lg font-bold text-[#1B3A5C] mb-2">この記事に登場する会社の口コミ・評判</h2>
-            <p className="text-xs text-gray-500 mb-4">各社ページでは、公式サイトで確認した手数料・入金スピード・会社概要（確認日つき）と、口コミの出典をまとめています。</p>
+            <p className="text-xs text-gray-500 mb-4">各社のページでは、公式サイトで確認した手数料・入金スピード・会社概要と、口コミの出典を掲載しています。掲載情報には確認日を記載しています。</p>
             <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2 text-sm">
               {mentionedCompanies.map((c) => (
                 <li key={c.slug}>
@@ -227,25 +227,25 @@ export default async function ArticlePage({
         {/* CTA */}
         <div className="mt-12 bg-gradient-to-r from-[#1B3A5C] to-[#2a5280] rounded-xl p-8 text-white text-center">
           <h2 className="text-xl font-bold mb-3">
-            あなたに最適なファクタリング会社を見つけよう
+            条件に合うファクタリング会社を診断できます
           </h2>
           <p className="text-blue-200 mb-6 text-sm">
-            30秒の簡単診断で、最適な業者がわかります
+            いくつかの質問に回答すると、条件に合うファクタリング会社を表示します
           </p>
           <Link
             href="/#diagnosis"
             className="inline-block bg-white text-[#1B3A5C] px-8 py-3 rounded-full font-bold text-sm hover:bg-gray-100 transition"
           >
-            無料診断スタート →
+            無料診断を始める →
           </Link>
         </div>
 
         {/* 手数料記事 → /fees/ データ資産への導線（手数料クラスタの相互リンク） */}
         {slug.includes("tesuryo") && (
           <section className="mt-12 bg-[#F0F6FC] border border-[#1B3A5C]/15 rounded-xl p-6">
-            <h2 className="text-lg font-bold text-[#1B3A5C] mb-2">24社の手数料を一次確認データで比較する</h2>
+            <h2 className="text-lg font-bold text-[#1B3A5C] mb-2">24社の手数料を公式サイトの確認データで比較できます</h2>
             <p className="text-sm text-gray-700 mb-4">
-              各社の手数料（2社間・3社間の実値）は、当サイトが各社公式サイトを1件ずつ確認して掲載しています。会社ごとの手数料は下の比較表で確認できます。
+              各社の手数料（2社間・3社間の公表値）は、当サイトが各社の公式サイトを1件ずつ確認して掲載しています。会社ごとの手数料は、以下の比較表でご確認いただけます。
             </p>
             <Link href="/fees/" className="inline-block bg-[#1B3A5C] text-white text-sm font-bold px-5 py-2.5 rounded-lg hover:opacity-90 transition">
               24社の手数料比較表を見る →
@@ -336,7 +336,7 @@ export default async function ArticlePage({
             "@context": "https://schema.org",
             "@type": "Article",
             "headline": article.title,
-            "description": `${article.title}。${article.keyword}について詳しく解説します。`,
+            "description": `${article.title}について、公式情報や公的資料をもとに解説しています。`,
             "datePublished": article.datePublished,
             "dateModified": article.dateModified,
             "author": {

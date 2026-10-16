@@ -163,10 +163,10 @@ export default async function TopicPage({
         {/* CTA to comparison content */}
         <section className="mt-16 bg-white rounded-xl border border-gray-200 p-8">
           <h2 className="text-xl font-bold text-gray-900 mb-3">
-            サービス選びに進む方へ
+            ファクタリング会社の比較
           </h2>
           <p className="text-gray-600 mb-6">
-            知識を押さえたら、次は自社に合うサービス選びです。手数料・入金スピード・対応規模で比較できます。
+            自社に合うファクタリング会社は、手数料・入金スピード・対応規模の観点から比較いただけます。
           </p>
           <div className="flex flex-wrap gap-4">
             <Link

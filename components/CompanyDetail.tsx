@@ -23,7 +23,7 @@ export function CompanyDetail({ company }: CompanyDetailProps) {
                 const rr = getRealRating(company.slug);
                 return rr ? (
                   <CardDescription className="text-lg mt-2">
-                    ★ {rr.rating.toFixed(1)} (Google {rr.count.toLocaleString()}件のレビュー)
+                    ★ {rr.rating.toFixed(1)} (Google {rr.count.toLocaleString()}件の評価)
                   </CardDescription>
                 ) : null;
               })()}
@@ -62,7 +62,7 @@ export function CompanyDetail({ company }: CompanyDetailProps) {
               </div>
               <div className="flex justify-between border-b pb-2">
                 <span className="font-semibold text-gray-700">入金スピード</span>
-                <span className="font-bold">⚡{company.speed}</span>
+                <span className="font-bold">{company.speed}</span>
               </div>
               <div className="flex justify-between border-b pb-2">
                 <span className="font-semibold text-gray-700">買取可能額</span>
@@ -75,7 +75,7 @@ export function CompanyDetail({ company }: CompanyDetailProps) {
             <div className="space-y-3">
               <div className="flex justify-between border-b pb-2">
                 <span className="font-semibold text-gray-700">個人事業主対応</span>
-                <span>{company.personalSupport ? "✅ 対応" : "❌ 非対応"}</span>
+                <span>{company.personalSupport ? "対応" : "非対応"}</span>
               </div>
               <div className="flex justify-between border-b pb-2">
                 <span className="font-semibold text-gray-700">設立年</span>
@@ -93,7 +93,7 @@ export function CompanyDetail({ company }: CompanyDetailProps) {
       {/* おすすめポイント */}
       <Card>
         <CardHeader>
-          <CardTitle>✅ おすすめポイント</CardTitle>
+          <CardTitle>おすすめポイント</CardTitle>
         </CardHeader>
         <CardContent>
           <ul className="space-y-2">
@@ -110,7 +110,7 @@ export function CompanyDetail({ company }: CompanyDetailProps) {
       {/* 注意点 */}
       <Card>
         <CardHeader>
-          <CardTitle>⚠️ 注意点</CardTitle>
+          <CardTitle>注意点</CardTitle>
         </CardHeader>
         <CardContent>
           <ul className="space-y-2">
@@ -127,7 +127,7 @@ export function CompanyDetail({ company }: CompanyDetailProps) {
       {/* 必要書類 */}
       <Card>
         <CardHeader>
-          <CardTitle>📄 必要書類</CardTitle>
+          <CardTitle>必要書類</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="flex flex-wrap gap-2">
@@ -143,24 +143,24 @@ export function CompanyDetail({ company }: CompanyDetailProps) {
       {/* こんな人におすすめ */}
       <Card className="bg-blue-50 border-blue-200">
         <CardHeader>
-          <CardTitle className="text-blue-900">👤 こんな人におすすめ</CardTitle>
+          <CardTitle className="text-blue-900">このような方におすすめです</CardTitle>
         </CardHeader>
         <CardContent>
           <ul className="space-y-2">
             {company.category.includes("総合") && (
-              <li className="text-blue-900">• 総合的にバランスの良い会社を探している</li>
+              <li className="text-blue-900">• 手数料・入金スピード・審査のバランスを重視する方</li>
             )}
             {company.category.includes("即日") && (
-              <li className="text-blue-900">• 今日中に資金が必要</li>
+              <li className="text-blue-900">• 当日中に資金が必要な方</li>
             )}
             {company.category.includes("手数料安い") && (
-              <li className="text-blue-900">• コストを抑えたい</li>
+              <li className="text-blue-900">• 手数料を抑えたい方</li>
             )}
             {company.category.includes("審査甘い") && (
-              <li className="text-blue-900">• 審査に不安がある</li>
+              <li className="text-blue-900">• 審査に不安がある方</li>
             )}
             {company.category.includes("個人事業主") && (
-              <li className="text-blue-900">• 個人事業主・フリーランス</li>
+              <li className="text-blue-900">• 個人事業主・フリーランスの方</li>
             )}
           </ul>
         </CardContent>
@@ -169,7 +169,7 @@ export function CompanyDetail({ company }: CompanyDetailProps) {
       {/* 会社情報 */}
       <Card>
         <CardHeader>
-          <CardTitle>🏢 会社情報</CardTitle>
+          <CardTitle>会社情報</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="space-y-2 text-sm">

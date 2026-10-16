@@ -15,7 +15,7 @@ export function ReviewSection({ companyName, realRating, pros, cons }: ReviewSec
       <Card className="border-2 border-gray-100 shadow-sm">
         <CardHeader className="bg-gray-50 border-b border-gray-100">
           <CardTitle className="text-2xl font-black text-gray-900">
-            💬 {companyName}の口コミ・評判
+            {companyName}の口コミ・評判
           </CardTitle>
           <p className="text-sm text-gray-600 mt-2">
             当サイトでは出典が確認できた評価データのみ掲載しています。個別の口コミ本文はGoogleマップの各社ページでご確認ください。
@@ -60,7 +60,7 @@ export function ReviewSection({ companyName, realRating, pros, cons }: ReviewSec
               </ul>
             </div>
             <div>
-              <h3 className="font-bold text-amber-700 mb-3">気をつけたい点</h3>
+              <h3 className="font-bold text-amber-700 mb-3">注意が必要な点</h3>
               <ul className="space-y-2">
                 {cons.map((c, i) => (
                   <li key={i} className="text-sm text-gray-700 flex gap-2">

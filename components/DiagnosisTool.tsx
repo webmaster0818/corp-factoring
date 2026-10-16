@@ -29,7 +29,7 @@ const questions: Question[] = [
   },
   {
     id: "business-type",
-    question: "事業形態を教えてください",
+    question: "事業形態を選択してください",
     options: [
       { label: "法人（株式会社・合同会社など）", value: "corporation", nextQuestion: "priority" },
       { label: "個人事業主・フリーランス", value: "individual", nextQuestion: "priority" },
@@ -37,7 +37,7 @@ const questions: Question[] = [
   },
   {
     id: "priority",
-    question: "最も重視するポイントは何ですか？",
+    question: "最も重視する項目を選択してください",
     options: [
       { label: "手数料の安さ", value: "fee", nextQuestion: "urgency" },
       { label: "入金スピード", value: "speed", nextQuestion: "urgency" },
@@ -120,15 +120,15 @@ export function DiagnosisTool() {
     return (
       <Card className="w-full max-w-4xl mx-auto">
         <CardHeader>
-          <CardTitle className="text-2xl text-center">🎯 診断結果</CardTitle>
+          <CardTitle className="text-2xl text-center">診断結果</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="mb-6 text-center">
             <p className="text-lg font-semibold text-gray-700 mb-2">
-              あなたにおすすめのファクタリング会社
+              条件に合うファクタリング会社
             </p>
             <p className="text-sm text-gray-600">
-              以下の3社があなたの条件に最適です
+              選択された条件に合う会社は、以下の3社です
             </p>
           </div>
 
@@ -156,7 +156,7 @@ export function DiagnosisTool() {
                       </div>
                       <div className="bg-green-50 p-3 rounded">
                         <div className="text-xs text-gray-600 mb-1">入金スピード</div>
-                        <div className="font-bold text-green-700">⚡{company.speed}</div>
+                        <div className="font-bold text-green-700">{company.speed}</div>
                       </div>
                       {(() => {
                         const rr = getRealRating(company.slug);
@@ -208,7 +208,7 @@ export function DiagnosisTool() {
     <Card className="w-full max-w-2xl mx-auto">
       <CardHeader>
         <CardTitle className="text-2xl text-center">
-          🧮 最適なファクタリング会社診断
+          ファクタリング会社診断
         </CardTitle>
         <div className="mt-4">
           <div className="w-full bg-gray-200 rounded-full h-2">

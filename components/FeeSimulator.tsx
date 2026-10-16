@@ -44,10 +44,10 @@ export function FeeSimulator() {
     <Card className="w-full max-w-4xl mx-auto">
       <CardHeader>
         <CardTitle className="text-2xl text-center">
-          💰 手数料シミュレーター
+          手数料シミュレーター
         </CardTitle>
         <p className="text-center text-sm text-gray-600">
-          売掛金額と入金までの期間を入力して、手数料を試算してみましょう
+          売掛金額と入金までの期間を入力すると、手数料の目安を試算できます
         </p>
       </CardHeader>
       <CardContent>
@@ -202,24 +202,24 @@ export function FeeSimulator() {
               {/* 補足情報 */}
               <div className="bg-gray-50 rounded-lg p-6">
                 <h4 className="font-semibold text-gray-900 mb-3">
-                  💡 手数料を抑えるポイント
+                  手数料を抑えるためのポイント
                 </h4>
                 <ul className="space-y-2 text-sm text-gray-700">
                   <li className="flex items-start gap-2">
                     <span className="text-blue-600 mt-0.5">✓</span>
-                    <span>2社間より3社間ファクタリングの方が手数料が安い（1%〜10%）</span>
+                    <span>3社間ファクタリングは、2社間ファクタリングより手数料が低い傾向があります（1%〜10%）</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-blue-600 mt-0.5">✓</span>
-                    <span>売掛金額が大きいほど手数料率が低くなる傾向</span>
+                    <span>売掛金額が大きいほど、手数料率は低くなる傾向があります</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-blue-600 mt-0.5">✓</span>
-                    <span>入金までの期間が短いほど手数料が抑えられる</span>
+                    <span>入金までの期間が短いほど、手数料は低くなります</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-blue-600 mt-0.5">✓</span>
-                    <span>信用力の高い売掛先の方が審査に有利</span>
+                    <span>売掛先の信用力が高いほど、審査では有利になります</span>
                   </li>
                 </ul>
               </div>
@@ -227,7 +227,7 @@ export function FeeSimulator() {
               {/* CTA */}
               <div className="text-center pt-4">
                 <p className="text-sm text-gray-600 mb-4">
-                  正確な見積もりは各社の無料査定をご利用ください
+                  正確な手数料は、各社の無料見積もりにてご確認ください
                 </p>
                 <Button variant="outline" className="px-6">
                   おすすめ会社を見る →

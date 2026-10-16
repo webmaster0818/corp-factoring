@@ -64,7 +64,7 @@ export const factoringCompanies: FactoringCompany[] = [
     maxAmount: "無制限",
     personalSupport: true,
     features: ["実績豊富", "注文書対応", "医療対応", "全国対応"],
-    description: "業界トップクラスの実績を誇る大手ファクタリング会社。累計取引91,000社以上、累計買取1,824億円の圧倒的な実績。",
+    description: "業界でも上位の実績を持つ大手ファクタリング会社です。累計取引社数は91,000社以上、累計買取額は1,824億円です。",
     pros: [
       "累計取引91,000社以上の実績",
       "注文書ファクタリング対応",
@@ -97,8 +97,8 @@ export const factoringCompanies: FactoringCompany[] = [
     minAmount: 0,
     maxAmount: "無制限",
     personalSupport: true,
-    features: ["書類2点のみ", "オンライン完結", "手数料明示"],
-    description: "必要書類2点のみ、オンライン完結で最短2時間入金。手数料1%〜と業界最安水準。",
+    features: ["必要書類2点", "オンライン完結", "手数料明示"],
+    description: "必要書類は2点で、オンラインで完結し、最短2時間で入金されます。手数料は1%からと、業界でも低い水準です。",
     pros: [
       "手数料1%〜と業界最安水準",
       "必要書類2点のみ（請求書、通帳）",
@@ -131,8 +131,8 @@ export const factoringCompanies: FactoringCompany[] = [
     minAmount: 300000,
     maxAmount: "上限なし",
     personalSupport: true,
-    features: ["超低手数料", "柔軟審査", "全国対応"],
-    description: "手数料は2社間1〜12%・3社間0.5〜10.5%（公式表示）。審査通過率93%と高い通過率を誇る。",
+    features: ["低手数料", "柔軟な審査", "全国対応"],
+    description: "手数料は2社間1〜12%・3社間0.5〜10.5%（公式表示）です。審査通過率は93%と高い水準です。",
     pros: [
       "手数料0.5%〜と業界最低",
       "審査通過率93%",
@@ -165,8 +165,8 @@ export const factoringCompanies: FactoringCompany[] = [
     minAmount: 300000,
     maxAmount: "1億円",
     personalSupport: true,
-    features: ["少額対応", "審査通過率92.25%", "個人OK"],
-    description: "10万円から対応、審査通過率92.25%。個人事業主・フリーランスに強い。",
+    features: ["少額対応", "審査通過率92.25%", "個人事業主に対応"],
+    description: "10万円から利用でき、審査通過率は92.25%です。個人事業主・フリーランスの利用に適しています。",
     pros: [
       "10万円から少額対応",
       "審査通過率92.25%と高い",
@@ -199,8 +199,8 @@ export const factoringCompanies: FactoringCompany[] = [
     minAmount: 500000,
     maxAmount: "2億円（応相談）",
     personalSupport: true,
-    features: ["超速入金", "手数料安い", "オンライン完結"],
-    description: "最短2時間で入金可能。手数料1%〜と低水準で、スピードとコストを両立。",
+    features: ["迅速な入金", "低手数料", "オンライン完結"],
+    description: "最短2時間で入金が可能です。手数料は1%からと低い水準で、入金スピードと費用の両面に優れています。",
     pros: [
       "最短2時間で入金",
       "手数料1%〜と低水準",
@@ -233,8 +233,8 @@ export const factoringCompanies: FactoringCompany[] = [
     minAmount: 10000,
     maxAmount: "300万円（初回50万円）",
     personalSupport: true,
-    features: ["手数料一律10%", "最短即日", "個人特化"],
-    description: "フリーランス・個人事業主・一人法人向け。手数料一律10%（別途振込手数料330円）で分かりやすく、審査後最短即日入金。",
+    features: ["手数料一律10%", "最短即日", "個人事業主向け"],
+    description: "フリーランス・個人事業主・一人法人向けのサービスです。手数料は一律10%（別途振込手数料330円）で、審査後、最短即日で入金されます。",
     pros: [
       "手数料一律10%で分かりやすい",
       "最短10分で入金",
@@ -268,8 +268,8 @@ export const factoringCompanies: FactoringCompany[] = [
     minAmount: 10000,
     maxAmount: "上限は審査で個別設定",
     personalSupport: true,
-    features: ["手数料一律10%", "個人特化", "開業直後OK"],
-    description: "個人事業主・フリーランス特化。開業直後でも利用可能。手数料一律10%。",
+    features: ["手数料一律10%", "個人事業主向け", "開業直後も利用可"],
+    description: "個人事業主・フリーランス向けのサービスです。開業直後でも利用でき、手数料は一律10%です。",
     pros: [
       "手数料一律10%",
       "1万円から対応",
@@ -302,8 +302,8 @@ export const factoringCompanies: FactoringCompany[] = [
     minAmount: 100000,
     maxAmount: "無制限",
     personalSupport: true,
-    features: ["超低手数料", "AI審査", "超速"],
-    description: "手数料1%〜9.5%と業界最安。AI審査で最短30分入金。",
+    features: ["低手数料", "AI審査", "迅速な入金"],
+    description: "手数料は1%〜9.5%と、業界でも低い水準です。AI審査により、最短30分で入金されます。",
     pros: [
       "手数料1%〜9.5%と業界最安",
       "最短30分で入金",
@@ -337,7 +337,7 @@ export const factoringCompanies: FactoringCompany[] = [
     maxAmount: "無制限",
     personalSupport: true,
     features: ["FACTOR⁺U（ファクトル）", "経営革新等支援機関", "非営利団体"],
-    description: "経営革新等支援機関の認定を受けた一般社団法人。従来型のファクタリング（最短3時間入金・非対面/対面/郵送で契約）に加え、2024年10月からオンライン完結のAIファクタリング「FACTOR⁺U（ファクトル）」（審査最短10分・入金最短40分）を運営。手数料はどちらも1.5%〜（公式・2026年10月16日確認）。",
+    description: "経営革新等支援機関の認定を受けた一般社団法人。従来型のファクタリング（最短3時間入金・非対面/対面/郵送で契約）に加え、2024年10月からオンライン完結のAIファクタリング「FACTOR⁺U（ファクトル）」（審査最短10分・入金最短40分）を運営しています。手数料はいずれも1.5%〜です（公式・2026年10月16日確認）。",
     pros: [
       "非営利団体運営で信頼性高",
       "経営革新等支援機関認定",
@@ -371,8 +371,8 @@ export const factoringCompanies: FactoringCompany[] = [
     minAmount: 0,
     maxAmount: "無制限",
     personalSupport: false,
-    features: ["東証プライム上場", "会計ソフト連携", "信頼性抜群"],
-    description: "マネーフォワードグループが提供。会計ソフト連携でスムーズ。信頼性抜群。",
+    features: ["東証プライム上場", "会計ソフト連携", "上場企業グループ"],
+    description: "マネーフォワードグループが提供するサービスです。会計ソフトと連携しており、手続きを円滑に進められます。",
     pros: [
       "東証プライム上場企業運営",
       "会計ソフトと連携",
@@ -406,7 +406,7 @@ export const factoringCompanies: FactoringCompany[] = [
     maxAmount: "3億円",
     personalSupport: true,
     features: ["高額対応", "3社間対応", "長期実績"],
-    description: "13年の実績。3社間ファクタリング対応。高額案件に強い。",
+    description: "13年の実績があり、3社間ファクタリングにも対応しています。高額の案件に強みがあります。",
     pros: [
       "13年の長期実績",
       "3社間ファクタリング対応",
@@ -440,7 +440,7 @@ export const factoringCompanies: FactoringCompany[] = [
     maxAmount: "公式では確認できず",
     personalSupport: true,
     features: ["審査通過率92%（2023年実績）", "対面・来社不要", "ノンリコース"],
-    description: "2社間ファクタリングが中心。償還請求権なし（ノンリコース）・登記と取引先への通知は原則留保。審査通過率92%（2023年実績・公式表示）、最短即日現金化。",
+    description: "2社間ファクタリングを中心に提供しています。償還請求権はなく（ノンリコース）、債権譲渡登記と取引先への通知は原則として留保されます。審査通過率は92%（2023年実績・公式表示）で、最短即日で現金化できます。",
     pros: [
       "審査通過率90%超",
       "赤字決算・税金滞納OK",
@@ -475,7 +475,7 @@ export const factoringCompanies: FactoringCompany[] = [
     maxAmount: "5000万円",
     personalSupport: false,
     features: ["少額対応", "24時間対応", "法人向け"],
-    description: "30万円から対応（最短1日で入金）。24時間対応で土日祝も申込可能。",
+    description: "30万円から利用でき、最短1日で入金されます。24時間受付で、土日祝も申し込むことができます。",
     pros: [
       "50万円から対応",
       "24時間対応",
@@ -508,8 +508,8 @@ export const factoringCompanies: FactoringCompany[] = [
     minAmount: 10000,
     maxAmount: "1000万円",
     personalSupport: true,
-    features: ["GMO運営", "損害賠償保険付", "個人特化"],
-    description: "GMOクリエイターズネットワーク運営。損害賠償保険付き。",
+    features: ["GMOグループ運営", "損害賠償保険付帯", "個人事業主向け"],
+    description: "GMOクリエイターズネットワークが運営するサービスです。損害賠償保険が付帯しています。",
     pros: [
       "GMO運営で信頼性高",
       "損害賠償保険付き",
@@ -542,8 +542,8 @@ export const factoringCompanies: FactoringCompany[] = [
     minAmount: 0,
     maxAmount: "無制限",
     personalSupport: true,
-    features: ["オンライン完結", "個人OK", "柔軟審査"],
-    description: "オンライン完結で最短2時間入金。個人事業主・フリーランスOK。",
+    features: ["オンライン完結", "個人事業主に対応", "柔軟な審査"],
+    description: "オンラインで完結し、最短2時間で入金されます。個人事業主・フリーランスも利用できます。",
     pros: [
       "オンライン完結",
       "最短2時間入金",
@@ -577,7 +577,7 @@ export const factoringCompanies: FactoringCompany[] = [
     maxAmount: "上限なし（売掛金の範囲内）",
     personalSupport: true,
     features: ["手数料1.2%〜", "取扱1万件超", "全国対応"],
-    description: "2013年設立・名古屋本社の老舗。手数料1.2%〜10%、取扱件数1万件超・取扱金額500億円の実績。100万円以上の中〜高額債権に強い。",
+    description: "2013年設立、名古屋に本社を置く会社です。手数料は1.2%〜10%で、取扱件数1万件超・取扱金額500億円の実績があります。100万円以上の中〜高額の債権に強みがあります。",
     pros: [
       "手数料1.2%〜10%と低水準（公式表示）",
       "2013年設立・取扱1万件超の実績",
@@ -611,8 +611,8 @@ export const factoringCompanies: FactoringCompany[] = [
     minAmount: 0,
     maxAmount: "紹介先による",
     personalSupport: false,
-    features: ["一括申込サービス", "完全無料", "法人専用"],
-    description: "株式会社ミネルバが運営する法人専用のファクタリング一括申込サービス。1回の入力で提携会社のうち3社に申込みが配信され、条件を比較して契約先を選べる。¥Todayの利用料は無料（手数料は契約先に支払う）。",
+    features: ["一括申込サービス", "利用料無料", "法人専用"],
+    description: "株式会社ミネルバが運営する、法人専用のファクタリング一括申込サービスです。1回の入力で提携会社のうち3社に申込が配信され、条件を比較して契約先を選べます。¥Todayの利用料は無料です（手数料は契約先に支払います）。",
     pros: [
       "一括申込サービスの利用は完全無料",
       "最大3社の条件を比較してから契約先を選べる",
@@ -647,7 +647,7 @@ export const factoringCompanies: FactoringCompany[] = [
     maxAmount: "2,000万円（リーズナブルプランは50万円）",
     personalSupport: false,
     features: ["審査通過率90%以上", "24時間対応", "2社間・3社間対応"],
-    description: "手数料4%〜・最短即日（公式は平均2.3日という実測値も公表）。2社間・3社間の両方に対応し、審査通過率90%以上を公式表示。※「いーばんく」は広告・プロモーション上の名称で、公式サイトの表記は「アクシアプラスのファクタリング」。同社は「インボイスファクター」も運営。",
+    description: "手数料は4%〜、入金は最短即日です（公式サイトでは平均2.3日という実績値も公表されています）。2社間・3社間の両方に対応し、審査通過率90%以上を公式に表示しています。※「いーばんく」は広告・プロモーション上の名称で、公式サイトの表記は「アクシアプラスのファクタリング」です。同社は「インボイスファクター」も運営しています。",
     pros: [
       "手数料4%〜（下限を公式表示）",
       "最短即日・平均2.3日という実測値を公式が公表",
@@ -683,7 +683,7 @@ export const factoringCompanies: FactoringCompany[] = [
     maxAmount: "無制限（公式LPの比較表表記）",
     personalSupport: false,
     features: ["最短2時間入金", "手数料0.5%〜", "アクシアプラス運営"],
-    description: "株式会社アクシアプラス（「いーばんく」と同じ運営会社）のファクタリングサービス。公式LPで手数料0.5%〜・最短2時間入金・審査通過率98%以上を表示。2社間・3社間に対応し、契約は非対面・対面・郵送から選択。",
+    description: "株式会社アクシアプラス（「いーばんく」と同じ運営会社）のファクタリングサービス。公式LPで手数料0.5%〜・最短2時間入金・審査通過率98%以上を表示しています。2社間・3社間に対応し、契約は非対面・対面・郵送から選択できます。",
     pros: [
       "即日入金（公式LP表示）",
       "運営会社は「いーばんく」と同じ株式会社アクシアプラス（法人実体を一次確認済み）",
@@ -717,7 +717,7 @@ export const factoringCompanies: FactoringCompany[] = [
     maxAmount: "3億円（以上は相談可）",
     personalSupport: true,
     features: ["手数料0.5%〜", "2社間・3社間対応", "診療・介護報酬対応"],
-    description: "2016年設立・東池袋本社。手数料0.5%〜15%、最短30分で振込。2社間・3社間両対応で、診療報酬・介護報酬ファクタリングにも対応。",
+    description: "2016年設立、東池袋に本社を置く会社です。手数料は0.5%〜15%で、最短30分で振り込まれます。2社間・3社間の両方に対応し、診療報酬・介護報酬ファクタリングにも対応しています。",
     pros: [
       "手数料0.5%〜15%（公式表示）",
       "最短30分で振込（公式表示）",
@@ -753,7 +753,7 @@ export const factoringCompanies: FactoringCompany[] = [
     maxAmount: "1億円",
     personalSupport: true,
     features: ["最大1億円", "2社間対応", "オンライン完結"],
-    description: "2社間ファクタリング・最大1億円・最短即日入金のSAFE TRUST株式会社。手数料は売掛先の与信や債権内容により個別決定（率の公式表示なし）。",
+    description: "2社間ファクタリング・最大1億円・最短即日入金のSAFE TRUST株式会社。手数料は、売掛先の与信や債権の内容により個別に決定されます（手数料率の公式表示はありません）。",
     pros: [
       "最短即日入金",
       "最大1億円まで対応",
@@ -790,7 +790,7 @@ export const factoringCompanies: FactoringCompany[] = [
     maxAmount: "5,000万円（審査により1億円）",
     personalSupport: false,
     features: ["最短2時間", "オンライン完結", "INBUYS"],
-    description: "港区西新橋の債権買取会社。最短2時間で送金、来店・面談不要のオンライン完結型サービス「INBUYS」（2社間のみ）を提供。手数料は2社間5〜15%以内・3社間1.0〜4.9%以内（公式表示）。償還請求権なし。",
+    description: "港区西新橋の債権買取会社。最短2時間で送金、来店・面談不要のオンライン完結型サービス「INBUYS」（2社間のみ）を提供しています。手数料は2社間5〜15%以内・3社間1.0〜4.9%以内（公式表示）で、償還請求権はありません。",
     pros: [
       "最短2時間で送金（公式表示）",
       "来店・面談不要のオンライン完結型（INBUYS）",
@@ -826,7 +826,7 @@ export const factoringCompanies: FactoringCompany[] = [
     maxAmount: "5,000万円",
     personalSupport: false,
     features: ["法人限定", "最短即日", "クラウドサイン契約"],
-    description: "株式会社ワイズコーポレーション運営の法人限定ファクタリング。最短即日資金化・クラウドサイン電子契約で来店不要（印紙代0円）。最低買取額50万円〜。",
+    description: "株式会社ワイズコーポレーションが運営する、法人限定のファクタリングです。最短即日で資金化でき、クラウドサインによる電子契約のため来店は不要です（印紙代0円）。最低買取額は50万円です。",
     pros: [
       "法人専門で専任担当者が一貫サポート",
       "最短即日で資金化",
@@ -862,7 +862,7 @@ export const factoringCompanies: FactoringCompany[] = [
     maxAmount: "1億円",
     personalSupport: true,
     features: ["365日24時間受付", "債権譲渡登記不要", "2社間・3社間対応"],
-    description: "株式会社SKO運営。365日24時間受付・オンライン契約なら最短2時間入金。手数料は2社間3%〜/3社間1.2%〜、債権譲渡登記不要。",
+    description: "株式会社SKOが運営しています。365日24時間受付で、オンライン契約の場合は最短2時間で入金されます。手数料は2社間3%〜・3社間1.2%〜で、債権譲渡登記は不要です。",
     pros: [
       "365日24時間受付（公式表示）",
       "最短2時間入金（オンライン契約時・公式表示）",
