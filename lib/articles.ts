@@ -26,7 +26,9 @@ function extractFaqs(markdown: string): { question: string; answer: string }[] {
   const lines = section.split('\n');
   let currentQ: string | null = null;
   let currentA: string[] = [];
-  for (const line of lines) {
+  for (const [i, line] of lines.entries()) {
+    // FAQ 見出しの次の h2（## まとめ 等）や区切り線で終了（以前は記事末尾まで最後の回答に連結されていた）
+    if (i > 0 && (/^##\s/.test(line) || /^---\s*$/.test(line))) break;
     const qm = line.match(/^\*\*Q:\s*(.+?)\*\*/);
     const am = line.match(/^A:\s*(.+)$/);
     if (qm) {
