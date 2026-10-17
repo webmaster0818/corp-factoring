@@ -201,7 +201,7 @@ export default function FeesPage() {
             </CardHeader>
             <CardContent className="pt-6">
               <p className="text-sm text-gray-700 leading-relaxed mb-2">
-                主要24社の<strong>手数料率（2社間/3社間）・最短入金・利用可能額・対象・オンライン完結</strong>を、各社の公式サイトで<strong>{feeCheckedAt}に1件ずつ確認</strong>し、一覧にしています。公式サイトに手数料率の記載がない会社は「非公示（要見積もり）」と記載しています。改定の頻度が高い分野のため、月に1回を目安に再確認し、更新しています。
+                主要24社の<strong>手数料率（2社間/3社間）・最短入金・利用可能額・対象・オンライン完結</strong>を、各社の公式サイトで<strong>{feeCheckedAt}に1件ずつ確認</strong>し、一覧にしています（その後に再確認した会社は、会社名の下に確認日を記載しています）。公式サイトに手数料率の記載がない会社は「非公示（要見積もり）」と記載しています。改定の頻度が高い分野のため、月に1回を目安に再確認し、更新しています。
               </p>
               <div className="overflow-x-auto rounded-xl border border-gray-200 mb-3">
                 <table className="w-full text-xs sm:text-sm min-w-[900px]">
@@ -221,6 +221,7 @@ export default function FeesPage() {
                       <tr key={r.slug} className={i % 2 ? "bg-gray-50" : "bg-white"}>
                         <td className="px-3 py-2.5 font-bold text-gray-900 align-top whitespace-nowrap">
                           <Link href={`/companies/${r.slug}`} className="text-blue-700 hover:underline">{r.name}</Link>
+                          {r.recheck && <span className="block text-[11px] font-normal text-gray-500">{r.recheck}</span>}
                         </td>
                         <td className="px-3 py-2.5 text-gray-700 align-top">{r.fee2}</td>
                         <td className="px-3 py-2.5 text-gray-700 align-top">{r.fee3}</td>
@@ -243,7 +244,7 @@ export default function FeesPage() {
                 <ul className="space-y-1.5 list-disc pl-5">
                   <li><strong>対象：</strong>ファクタリング主要{feeIndex.length}社</li>
                   <li><strong>確認方法：</strong>各社の公式サイトに表示された手数料率（2社間／3社間）・最短入金・利用可能額・対象・オンライン完結可否を、当サイト編集部が1件ずつ確認</li>
-                  <li><strong>確認日：</strong>{feeCheckedAt}</li>
+                  <li><strong>確認日：</strong>{feeCheckedAt}（その後に再確認した会社は、表の会社名の下に確認日を記載）</li>
                   <li><strong>非公示の扱い：</strong>公式サイトに手数料率の記載がない会社は、推測で補完せず「非公示（要見積もり）」と記載</li>
                   <li><strong>更新方針：</strong>改定の頻度が高い分野のため、月に1回を目安に再確認して更新</li>
                   <li><strong>運営・編集：</strong>本データの作成方針・運営者情報は<a href="/about/" className="text-blue-600 underline">運営者情報・編集方針</a>をご覧ください。実際の手数料・入金時間は契約条件等によって変動するため、契約前に各社の見積もりにて総額をご確認ください。</li>

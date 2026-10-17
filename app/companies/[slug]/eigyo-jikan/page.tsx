@@ -95,7 +95,7 @@ export default async function CompanyHoursPage({ params }: { params: Promise<{ s
       : `受付時間外に申し込んだ場合の扱い（Webフォームでの受付の可否、翌営業日の対応となるか等）は、公式サイトでは確認できませんでした（${checkedAt}時点）。確実に当日中の対応を受けたい場合は、公式に表示されている受付時間内にお問い合わせください。`;
 
   const sokujitsuAnswer = feeRow
-    ? `${company.name}の入金スピードは公式表示で「${feeRow.speed}」です（${feeCheckedAt}確認）。受付時間は「${h.weekdays}」のため、${
+    ? `${company.name}の入金スピードは公式表示で「${feeRow.speed}」です（${feeRow.speedCheckedAt ?? feeCheckedAt}確認）。受付時間は「${h.weekdays}」のため、${
         is24h
           ? "オンラインでの申込は時間帯を問わず可能と公式に表示されていますが、審査・契約の処理が行われる時間帯は公式サイトでは確認できませんでした。"
           : "即日入金を希望する場合は、同日の受付時間内に申込・審査・契約まで完了させることが前提になります。"
@@ -222,7 +222,7 @@ export default async function CompanyHoursPage({ params }: { params: Promise<{ s
           {feeRow ? (
             <>
               <p className="mt-3 text-sm leading-relaxed text-gray-800">
-                {company.name}の入金スピードは公式表示で「<strong>{feeRow.speed}</strong>」です（{feeCheckedAt}確認）。
+                {company.name}の入金スピードは公式表示で「<strong>{feeRow.speed}</strong>」です（{feeRow.speedCheckedAt ?? feeCheckedAt}確認）。
                 受付時間は「{h.weekdays}」で、申込から契約までのオンライン完結は「{feeRow.online}」です。
               </p>
               <p className="mt-3 text-sm leading-relaxed text-gray-800">
