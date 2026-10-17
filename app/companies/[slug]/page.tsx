@@ -84,11 +84,11 @@ export async function generateMetadata({
   }
 
   return {
-    title: `${company.name}の評判・手数料・営業時間・必要書類【2026年8月公式確認】`,
+    title: `${company.name}の評判・手数料・営業時間・必要書類【公式確認】`,
     description: `${company.name}のファクタリングサービスについて解説しています。${feeText}、${company.speed}で入金が可能です。Googleマップの評価、メリット・デメリット、必要書類、活用シーンを掲載しています。`,
     keywords: `${company.name},${company.nameKana},ファクタリング,評判,口コミ,手数料,${categoryText}`,
     openGraph: {
-      title: `${company.name}の評判・手数料・営業時間・必要書類【2026年8月公式確認】`,
+      title: `${company.name}の評判・手数料・営業時間・必要書類【公式確認】`,
       description: `${feeText}、${company.speed}で入金。${company.description}`,
       type: "article",
       images: DEFAULT_OG_IMAGES,
@@ -96,7 +96,7 @@ export async function generateMetadata({
     twitter: {
       card: "summary",
       images: [DEFAULT_OG_IMAGE_URL],
-      title: `${company.name}の評判・手数料・営業時間・必要書類【2026年8月公式確認】`,
+      title: `${company.name}の評判・手数料・営業時間・必要書類【公式確認】`,
       description: `${feeText}、${company.speed}で入金。${company.description}`,
     },
     alternates: {

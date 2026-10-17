@@ -37,13 +37,20 @@ function toMonthLabel(checkedAt: string): string {
   return m ? `${m[1]}年${m[2]}月` : checkedAt;
 }
 
+// タイトルの月表記は、確認月がビルド月と同じ場合のみ表示する（古い月表記をタイトルに残さない）
+function titleLabel(checkedAt: string): string {
+  const now = new Date();
+  const current = `${now.getFullYear()}年${now.getMonth() + 1}月`;
+  return toMonthLabel(checkedAt) === current ? `【${current}公式確認】` : "【公式確認】";
+}
+
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
   const company = getCompanyBySlug(slug);
   if (!company || !SLUGS.includes(slug)) return { title: "ページが見つかりません" };
   const h = getCompanyDetails(slug).operatingHours;
   const checkedAt = HOURS_CHECKED_AT[slug] ?? "";
-  const title = `${NAME_ALIAS[slug] ?? company.name}の営業時間・受付時間は？【${toMonthLabel(checkedAt)}公式確認】`;
+  const title = `${NAME_ALIAS[slug] ?? company.name}の営業時間・受付時間は？${titleLabel(checkedAt)}`;
   const description = `${NAME_ALIAS[slug] ?? company.name}の受付時間は公式表示で「${h.weekdays}」。公式サイトで確認した営業時間、土日祝の扱い、営業時間外の申込の扱い、他社との受付時間の比較を掲載しています。掲載情報には確認日を記載しています。`;
   return {
     title,
@@ -62,7 +69,6 @@ export default async function CompanyHoursPage({ params }: { params: Promise<{ s
   const h = getCompanyDetails(slug).operatingHours;
   const feeRow = feeIndex.find((f) => f.slug === slug);
   const checkedAt = HOURS_CHECKED_AT[slug] ?? "";
-  const monthLabel = toMonthLabel(checkedAt);
 
   // 公式表示から機械的に判定できる範囲だけを条件分岐に使う（推測で断定しない）
   const is24h = /24時間|365日|常時/.test(h.weekdays);
@@ -125,7 +131,7 @@ export default async function CompanyHoursPage({ params }: { params: Promise<{ s
 
   const displayName = NAME_ALIAS[slug] ?? company.name;
   const [pageUpdated, pageUpdatedIso] = PAGE_UPDATED_OVERRIDE[slug] ?? [PAGE_UPDATED, PAGE_UPDATED_ISO];
-  const pageTitle = `${displayName}の営業時間・受付時間は？【${monthLabel}公式確認】`;
+  const pageTitle = `${displayName}の営業時間・受付時間は？${titleLabel(checkedAt)}`;
 
   const articleLd = {
     "@context": "https://schema.org",

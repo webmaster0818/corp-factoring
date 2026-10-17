@@ -17,7 +17,7 @@ const COMPARE_SLUGS = ["ennavi", "labol", "pmg", "accel-factor", "no1"];
 
 export async function generateMetadata(): Promise<Metadata> {
   const title =
-    "トップマネジメントの営業時間・受付時間は？【2026年8月公式確認】";
+    "トップマネジメントの営業時間・受付時間は？【公式確認】";
   const description =
     "トップマネジメントの営業時間は平日10:00〜19:00（土日祝・年末年始は休業）。公式サイトで確認した受付時間、営業時間外の申込の扱い、他社との営業時間の比較を解説します。掲載情報には確認日を記載しています。";
   return {
@@ -76,7 +76,7 @@ export default function TopManagementHoursPage() {
   const articleLd = {
     "@context": "https://schema.org",
     "@type": "Article",
-    headline: "トップマネジメントの営業時間・受付時間は？【2026年8月公式確認】",
+    headline: "トップマネジメントの営業時間・受付時間は？【公式確認】",
     description:
       "トップマネジメントの営業時間・受付時間を公式サイトで確認した内容をもとに解説しています。土日祝の扱い、営業時間外の申込の扱い、他社との比較も掲載しています。",
     dateModified: "2026-08-16",
