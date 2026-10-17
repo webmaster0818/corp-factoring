@@ -67,9 +67,13 @@ export function ComparisonTable({ companies }: ComparisonTableProps) {
               </TableCell>
               <TableCell>
                 <div className="text-sm">
-                  {company.minAmount === 0 ? "制限なし" : `${(company.minAmount / 10000).toFixed(0)}万円`}
-                  〜
-                  {company.maxAmount}
+                  {company.amountText ?? (
+                    <>
+                      {company.minAmount === 0 ? "制限なし" : `${(company.minAmount / 10000).toFixed(0)}万円`}
+                      〜
+                      {company.maxAmount}
+                    </>
+                  )}
                 </div>
               </TableCell>
               <TableCell className="text-center">

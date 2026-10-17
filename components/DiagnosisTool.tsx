@@ -80,7 +80,8 @@ export function DiagnosisTool() {
 
     // 金額で絞り込み
     if (answers.amount === "small") {
-      filtered = filtered.filter((c) => c.minAmount <= 100000);
+      // 買取可能額が公式に記載のない会社（amountText あり）は少額の条件に含めない
+      filtered = filtered.filter((c) => !c.amountText && c.minAmount <= 100000);
     }
 
     // 事業形態で絞り込み

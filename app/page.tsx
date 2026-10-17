@@ -279,10 +279,14 @@ export default function Home() {
                             買取可能額
                           </div>
                           <div className="text-lg font-semibold text-gray-900">
-                            {company.minAmount === 0
-                              ? "下限なし"
-                              : `${(company.minAmount / 10000).toFixed(0)}万`}
-                            〜{company.maxAmount}
+                            {company.amountText ?? (
+                              <>
+                                {company.minAmount === 0
+                                  ? "下限なし"
+                                  : `${(company.minAmount / 10000).toFixed(0)}万`}
+                                〜{company.maxAmount}
+                              </>
+                            )}
                           </div>
                         </div>
                       </div>

@@ -130,7 +130,7 @@ export default function CompanyPage({
   const amountLabel =
     lead && feeRow
       ? feeRow.amount
-      : `${company.minAmount === 0 ? "下限なし" : `${(company.minAmount / 10000).toFixed(0)}万円`}〜${company.maxAmount}`;
+      : company.amountText ?? `${company.minAmount === 0 ? "下限なし" : `${(company.minAmount / 10000).toFixed(0)}万円`}〜${company.maxAmount}`;
   // speed は「最短即日」「即日」など表記が混在するため、「最短」の二重表記を防ぐ
   const speedLabel = company.speed.startsWith("最短") ? company.speed : `最短${company.speed}`;
 
@@ -1053,7 +1053,7 @@ export default function CompanyPage({
                     <tbody>
                       <tr className="bg-blue-50 border-b border-gray-100">
                         <td className="p-4 font-bold">{company.name}</td>
-                        <td className="p-4">{company.minAmount === 0 ? "下限なし" : `${(company.minAmount / 10000).toFixed(0)}万円`}〜{company.maxAmount}</td>
+                        <td className="p-4">{company.amountText ?? `${company.minAmount === 0 ? "下限なし" : `${(company.minAmount / 10000).toFixed(0)}万円`}〜${company.maxAmount}`}</td>
                         <td className="p-4">{company.speed}</td>
                         <td className="p-4">{company.personalSupport ? "個人事業主・法人" : "法人"}</td>
                       </tr>

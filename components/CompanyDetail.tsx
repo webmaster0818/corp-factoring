@@ -67,8 +67,12 @@ export function CompanyDetail({ company }: CompanyDetailProps) {
               <div className="flex justify-between border-b pb-2">
                 <span className="font-semibold text-gray-700">買取可能額</span>
                 <span>
-                  {company.minAmount === 0 ? "制限なし" : `${(company.minAmount / 10000).toFixed(0)}万円`}
-                  〜{company.maxAmount}
+                  {company.amountText ?? (
+                    <>
+                      {company.minAmount === 0 ? "制限なし" : `${(company.minAmount / 10000).toFixed(0)}万円`}
+                      〜{company.maxAmount}
+                    </>
+                  )}
                 </span>
               </div>
             </div>

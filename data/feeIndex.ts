@@ -1,4 +1,4 @@
-// ファクタリング24社の手数料・入金スピード等を各社公式サイトで一次確認（確認日 2026年7月21日。前回7月7日。jtc/yen-todayは2026年7月29日追加確認。A8提携9社＝paytner/mentor-capital/ebank/invoice-factor/no1/safe-trust/ace-trust/factor-plan/try の行は2026年10月14日に再確認して更新。support-kinyu/yen-today は2026年10月16日に再確認）。
+// ファクタリング24社の手数料・入金スピード等を各社公式サイトで一次確認（確認日 2026年7月21日。前回7月7日。jtc/yen-todayは2026年7月29日追加確認。A8提携9社＝paytner/mentor-capital/ebank/invoice-factor/no1/safe-trust/ace-trust/factor-plan/try の行は2026年10月14日に再確認して更新。support-kinyu/yen-today は2026年10月16日に再確認。be-trading/best-factor の手数料と accel-factor の利用可能額は2026年10月17日に再確認して更新）。
 // 公式に明示のない手数料率は「非公示（要見積もり）」と正直に記載。月次で再確認して更新する。
 
 export interface FeeIndexRow {
@@ -15,10 +15,10 @@ export interface FeeIndexRow {
 export const feeCheckedAt = "2026年7月21日";
 
 export const feeIndex: FeeIndexRow[] = [
-  { slug: "be-trading", name: "ビートレーディング", fee2: "4〜12%", fee3: "2〜9%", speed: "最短2時間", amount: "1万円〜無制限（実績7億円）", target: "法人・個人・フリーランス", online: "可（クラウドサイン）" },
+  { slug: "be-trading", name: "ビートレーディング", fee2: "4%〜（上限は公式に記載なし。2024年度平均10.3%）", fee3: "2%〜（上限は公式に記載なし。2024年度平均6.8%）", speed: "最短2時間", amount: "1万円〜無制限（実績7億円）", target: "法人・個人・フリーランス", online: "可（クラウドサイン）" },
   { slug: "ququmo", name: "QuQuMo", fee2: "1%〜（上限は公式非公表）", fee3: "非対応", speed: "最短2時間", amount: "上限なし", target: "法人・個人・フリーランス", online: "可" },
-  { slug: "accel-factor", name: "アクセルファクター", fee2: "1〜12%", fee3: "0.5〜10.5%", speed: "最短即日（審査最短1時間）", amount: "30万円〜無制限", target: "法人・個人事業主", online: "可（遠方はオンライン）" },
-  { slug: "best-factor", name: "ベストファクター", fee2: "2%〜（下限のみ）", fee3: "非公示（要見積もり）", speed: "最短即日〜3営業日", amount: "30万円〜1億円", target: "法人・個人", online: "不可（契約時に面談要）" },
+  { slug: "accel-factor", name: "アクセルファクター", fee2: "1〜12%", fee3: "0.5〜10.5%", speed: "最短即日（審査最短1時間）", amount: "公式に記載なし", target: "法人・個人事業主", online: "可（遠方はオンライン）" },
+  { slug: "best-factor", name: "ベストファクター", fee2: "2〜20%（買取金額で変動・公式の目安表）", fee3: "2〜15%（買取金額で変動・公式の目安表）", speed: "最短即日〜3営業日", amount: "30万円〜1億円（公式FAQ。トップには「10万円〜」の表記あり）", target: "法人・個人", online: "不可（契約時に面談要）" },
   { slug: "pmg", name: "PMG", fee2: "個別査定（買取率98%表記＝手数料2%相当。率は非公示）", fee3: "個別査定", speed: "最短即日", amount: "50万円〜上限なし（最大2億円）", target: "法人中心", online: "可" },
   { slug: "paytner", name: "ペイトナー", fee2: "一律10%（別途振込手数料330円）", fee3: "―", speed: "最短即日（審査は毎日10:00〜19:00）", amount: "1万円〜（初回50万円・実績に応じ最大300万円）", target: "個人事業主・一人法人（法人も可）", online: "可（面談不要）" },
   { slug: "labol", name: "ラボル", fee2: "一律10%", fee3: "―", speed: "最短30分・24時間365日入金", amount: "1万円〜（上限は審査で個別設定）", target: "フリーランス・個人", online: "可（Web完結）" },

@@ -31,6 +31,7 @@ export interface FactoringCompany {
   speed: string;
   minAmount: number;
   maxAmount: string;
+  amountText?: string; // 設定時は買取可能額をこの文字列で表示する（公式に記載がない場合など）
   personalSupport: boolean;
   features: string[];
   description: string;
@@ -58,7 +59,7 @@ export const factoringCompanies: FactoringCompany[] = [
     nameKana: "びーとれーでぃんぐ",
     slug: "be-trading",
     rating: 4.8,
-    fees: { min: 6.4, max: 9.7 },
+    fees: { min: 2.0, max: 0 }, // 公式表示は「手数料2%〜」（2社間4%〜・3社間2%〜）。上限率は公式に記載なし（2026年10月17日確認）
     speed: "最短2時間",
     minAmount: 0,
     maxAmount: "無制限",
@@ -112,8 +113,8 @@ export const factoringCompanies: FactoringCompany[] = [
     ],
     reviewCount: 1820,
     companyInfo: {
-      established: "2017年",
-      capital: "1億円",
+      established: "公式に記載なし",
+      capital: "公式に記載なし",
       address: "東京都豊島区南池袋2-13-10 南池袋山本ビル3階"
     },
     requiredDocuments: ["請求書", "通帳"],
@@ -128,8 +129,9 @@ export const factoringCompanies: FactoringCompany[] = [
     rating: 4.6,
     fees: { min: 1.0, max: 12.0 },
     speed: "最短即日",
-    minAmount: 300000,
-    maxAmount: "上限なし",
+    minAmount: 0,
+    maxAmount: "",
+    amountText: "公式に記載なし", // 下限・上限とも公式サイト（トップ・サービス・FAQ・会社概要）に記載なし（2026年10月17日確認）
     personalSupport: true,
     features: ["低手数料", "柔軟な審査", "全国対応"],
     description: "手数料は2社間1〜12%・3社間0.5〜10.5%（公式表示）です。審査通過率は93%と高い水準です。",
@@ -166,7 +168,7 @@ export const factoringCompanies: FactoringCompany[] = [
     maxAmount: "1億円",
     personalSupport: true,
     features: ["少額対応", "審査通過率92.25%", "個人事業主に対応"],
-    description: "10万円から利用でき、審査通過率は92.25%です。個人事業主・フリーランスの利用に適しています。",
+    description: "公式FAQでは売掛債権の請求額30万円以上から利用でき、審査通過率は92.25%です。個人事業主・フリーランスの利用に適しています。",
     pros: [
       "10万円から少額対応",
       "審査通過率92.25%と高い",
@@ -469,7 +471,7 @@ export const factoringCompanies: FactoringCompany[] = [
     nameKana: "えんなび",
     slug: "ennavi",
     rating: 4.0,
-    fees: { min: 5.0, max: 20.0 },
+    fees: { min: 5.0, max: 0 }, // 公式は「手数料5%」の表示のみ。上限率は公式に記載なし（2026年10月17日確認）
     speed: "最短1日",
     minAmount: 300000,
     maxAmount: "5000万円",
@@ -489,8 +491,8 @@ export const factoringCompanies: FactoringCompany[] = [
     ],
     reviewCount: 580,
     companyInfo: {
-      established: "2017年",
-      capital: "1,000万円",
+      established: "公式に記載なし",
+      capital: "公式に記載なし",
       address: "東京都台東区東上野3丁目5-9 本池田第二ビル4階"
     },
     requiredDocuments: ["請求書", "通帳", "身分証明書"],
