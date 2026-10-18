@@ -257,6 +257,26 @@ export default function CompanyPage({
                       <p key={i} className="text-sm leading-relaxed text-gray-800">{t}</p>
                     ))}
                   </div>
+                  {lead.leadTable && (
+                    <div className="mt-3 overflow-x-auto">
+                      <table className="w-full text-sm border border-blue-200 bg-white">
+                        <thead>
+                          <tr className="bg-blue-100">
+                            <th className="px-3 py-2 text-left font-bold text-blue-900 whitespace-nowrap">{lead.leadTable.head[0]}</th>
+                            <th className="px-3 py-2 text-left font-bold text-blue-900">{lead.leadTable.head[1]}</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {lead.leadTable.rows.map(([k, v]) => (
+                            <tr key={k} className="border-t border-blue-100">
+                              <th scope="row" className="px-3 py-2 text-left font-medium text-gray-700 whitespace-nowrap align-top">{k}</th>
+                              <td className="px-3 py-2 text-gray-800 leading-relaxed">{v}</td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+                  )}
                   <p className="mt-2 text-xs text-gray-500">
                     公式サイト等で{lead.checkedAt}に確認。
                     {HOURS_LINK_SLUGS.includes(slug) && !lead.sources && (
@@ -727,7 +747,7 @@ export default function CompanyPage({
                   </div>
                 </div>
               )}
-              {company.category.includes("手数料安い") && (
+              {company.category.includes("手数料安い") && !feeUndisclosed && (
                 <div className="flex items-start gap-4 bg-green-50 p-5 rounded-xl border border-green-100">
                   <span className="text-3xl"></span>
                   <div>
@@ -941,11 +961,13 @@ export default function CompanyPage({
 
               <div>
                 <h3 className="font-bold text-xl mb-4">事業拠点</h3>
+                {details.officesNote && <p className="text-sm text-gray-600 mb-4 leading-relaxed">{details.officesNote}</p>}
                 <div className="space-y-4">
                   {details.offices.map((office, index) => (
                     <div key={index} className="bg-gray-50 p-6 rounded-lg">
                       <h4 className="font-bold text-lg mb-2">{office.name}</h4>
                       <p className="text-gray-700 mb-2">{office.address}</p>
+                      {office.tel && <p className="text-gray-600 text-sm mb-2">TEL {office.tel}</p>}
                       {office.mapUrl && (
                         <a 
                           href={office.mapUrl} 

@@ -11,6 +11,7 @@ export interface CompanyOperatingHours {
 export interface CompanyOffice {
   name: string;
   address: string;
+  tel?: string;
   mapUrl?: string;
 }
 
@@ -55,6 +56,7 @@ export interface CompanyMediaCoverage {
 export interface CompanyDetailData {
   operatingHours: CompanyOperatingHours;
   offices: CompanyOffice[];
+  officesNote?: string; // 事業拠点の補足（出典・確認日など）
   audit: CompanyAudit;
   flow: CompanyFlowStep[];
   faqs: CompanyFAQ[];
@@ -314,7 +316,7 @@ const operatingHoursMap: { [slug: string]: CompanyOperatingHours } = {
   "support-kinyu": { weekdays: "平日 9:30〜18:00", note: "機構の受付時間は平日9:30〜18:00です。オンラインのFACTOR⁺U（ファクトル）も営業時間は平日9:30〜18:00で、申請は24時間受け付けていますが、対応は翌営業日となります。契約の締結が17時以降の場合、銀行によっては入金が翌営業日となります。土日祝の対応は、公式サイトでは確認できませんでした（2026年10月16日確認）。" },
   "paytner": { weekdays: "審査 毎日10:00〜19:00（申込は24時間受付）", saturday: "審査 10:00〜19:00", sunday: "審査 10:00〜19:00", holidays: "審査 10:00〜19:00", note: "公式FAQに「審査について 土日祝を含む毎日10:00〜19:00に対応」「お申し込み自体は年中無休・24時間」と記載。原則として当日19:00までの申込であれば当日中に審査結果が連絡され、時間外の申請は翌営業日の入金となります。問い合わせはチャットのみで受け付けています（2026年10月14日確認）。" },
   "labol": { weekdays: "24時間365日 随時対応（オンライン完結）", note: "最短30分で入金されます。年始等に休業日が設定される場合があります（公式・2026年7月8日確認）。" },
-  "pmg": { weekdays: "電話 8:00〜20:00（Webフォームは24時間受付）", saturday: "電話 8:00〜20:00（Webフォームは24時間受付）", sunday: "電話 8:00〜20:00（Webフォームは24時間受付）", holidays: "電話 8:00〜20:00（Webフォームは24時間受付）", note: "公式の土日ファクタリングのページに「電話 受付時間：8:00-20:00（平日/土日/祝日）」「WEBお問合せフォーム 受付時間：24時間（平日/土日/祝日）」と記載されています。振込時間外に契約が完了した場合は、翌営業日の振込となります。公式サイトの一部のページ下部には「電話サポート 営業時間：8:00〜22:00」との表記もあります（2026年10月14日確認）。" },
+  "pmg": { weekdays: "電話 8:00〜20:00（Webフォームは24時間受付）", saturday: "電話 8:00〜20:00（Webフォームは24時間受付）", sunday: "電話 8:00〜20:00（Webフォームは24時間受付）", holidays: "電話 8:00〜20:00（Webフォームは24時間受付）", note: "公式の土日ファクタリングのページに「電話 受付時間：8:00-20:00（平日/土日/祝日）」「WEBお問合せフォーム 受付時間：24時間（平日/土日/祝日）」と記載されています。振込時間外に契約が完了した場合は、翌営業日の振込となります。公式サイトの一部のページ下部には「電話サポート 営業時間：8:00〜22:00」との表記もあります。公式は、書類の不備に備えて午前9時〜11時など早い時間の申込と、24時間振込に対応した銀行口座の指定をすすめています（2026年10月18日確認）。" },
   "jtc": { weekdays: "電話受付 平日 9:00〜18:00", note: "土日祝も電話での対応が可能で、メール・FAXは24時間受け付けています。契約は事前予約制です（公式・2026年7月29日確認）。" },
   "ebank": { weekdays: "24時間対応（公式表示）", note: "電話・メールとも24時間対応と公式に表示されています。具体的な定休日は、公式サイトでは確認できませんでした（2026年10月14日確認）。" },
   "no1": { weekdays: "電話受付 平日 9:00〜19:00", saturday: "休業", sunday: "休業", holidays: "休業", note: "公式サイト全ページに「受付時間 平日 9：00 ～ 19：00（土日祝休）」と記載されています（2026年10月14日確認）。" },
@@ -332,6 +334,27 @@ const operatingHoursMap: { [slug: string]: CompanyOperatingHours } = {
   "ace-trust": { weekdays: "電話受付 平日 9:30〜18:30", note: "Webフォームは24時間受け付けています。来店・面談が不要なオンライン完結型のサービス（INBUYS）です。土日祝の電話対応は、公式サイトでは確認できませんでした（2026年10月14日確認）。" },
 };
 
+// 公式のアクセスページで確認した拠点（確認日 2026年10月18日）。登録がない会社は companyInfo.address の本社のみ表示する。
+const officesMap: { [slug: string]: { offices: CompanyOffice[]; note: string } } = {
+  pmg: {
+    offices: [
+      { name: "東京本社", address: "〒163-0825 東京都新宿区西新宿2丁目4番1号 新宿NSビル25F", tel: "03-3347-3333" },
+      { name: "大阪支店", address: "〒532-0003 大阪府大阪市淀川区宮原3-4-30 ニッセイ新大阪ビル18F", tel: "06-6396-8740" },
+      { name: "福岡支店", address: "〒812-0012 福岡県福岡市博多区博多駅中央街7番26号 博多駅センタータワー7F", tel: "092-432-0310" },
+      { name: "札幌営業所", address: "〒060-0042 北海道札幌市中央区大通西1丁目14番2号 桂和大通ビル50 9F", tel: "011-600-2453" },
+      { name: "仙台営業所", address: "〒980-0013 宮城県仙台市青葉区花京院2丁目1番61号 タカノボル第5ビル 1F", tel: "022-200-2809" },
+      { name: "西新宿営業所", address: "〒160-0023 東京都新宿区西新宿3-2-26 立花新宿ビル9階", tel: "0120-901-680" },
+      { name: "渋谷営業所", address: "〒150-0046 東京都渋谷区松濤2-3-1", tel: "0120-901-680" },
+      { name: "さいたま営業所", address: "〒330-0854 埼玉県さいたま市大宮区桜木町1丁目266番3号 シンワKIビル 2F", tel: "048-606-2695" },
+      { name: "千葉営業所", address: "〒260-0015 千葉県千葉市中央区富士見1丁目14番13号 千葉大栄ビル 8F", tel: "043-400-0185" },
+      { name: "横浜営業所", address: "〒220-0004 神奈川県横浜市西区北幸1丁目11番5号 相鉄KSビル 9F", tel: "045-900-1348" },
+      { name: "名古屋営業所", address: "〒450-0002 愛知県名古屋市中村区名駅4丁目6番23号 名古屋第三堀内ビル 9F", tel: "052-990-1084" },
+      { name: "広島営業所", address: "〒730-0022 広島県広島市中区銀山町3丁目1番 ひろしまハイビル21 16F", tel: "082-909-2819" },
+    ],
+    note: "出典：PMG公式のアクセスページ（https://p-m-g.tokyo/company-info/access ・2026年10月18日確認）。フリーダイヤル0120-901-680は全国共通です。拠点ごとの受付時間・来店の受付時間は公式サイトに記載がないため、来店する場合は事前に電話で確認してください。",
+  },
+};
+
 export function getCompanyDetails(slug: string): CompanyDetailData {
   switch (slug) {
     case "be-trading":
@@ -347,12 +370,13 @@ export function getCompanyDetails(slug: string): CompanyDetailData {
       return {
         ...defaultDetails,
         operatingHours: hours ?? defaultDetails.operatingHours,
-        offices: [
+        offices: officesMap[slug]?.offices ?? [
           {
             name: "本社",
             address: company.companyInfo.address
           }
         ],
+        officesNote: officesMap[slug]?.note,
         // 営業時間・必要書類・手数料のFAQは会社ページ側で一次確認値（hours/feeIndex）から生成するため、
         // ここでは重複・未確認の汎用回答（「どの業種でも利用可」等）を出さない。
         faqs: [

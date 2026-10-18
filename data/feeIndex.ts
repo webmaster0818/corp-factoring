@@ -22,7 +22,7 @@ export const feeIndex: FeeIndexRow[] = [
   { slug: "ququmo", name: "QuQuMo", fee2: "1%〜（上限は公式非公表）", fee3: "非対応", speed: "最短2時間", amount: "上限なし", target: "法人・個人・フリーランス", online: "可" },
   { slug: "accel-factor", name: "アクセルファクター", fee2: "1〜12%", fee3: "0.5〜10.5%", speed: "入金までの時間は公式に記載なし（審査結果は最短1時間・公式FAQ）", amount: "公式に記載なし", target: "法人・個人事業主", online: "可（遠方はオンライン）", recheck: "2026年10月17日再確認（利用可能額）・10月18日再確認（入金スピード）", speedCheckedAt: "2026年10月18日" },
   { slug: "best-factor", name: "ベストファクター", fee2: "2〜20%（買取金額で変動・公式の目安表）", fee3: "2〜15%（買取金額で変動・公式の目安表）", speed: "最短6時間（2社間・必要書類が揃っている場合。3社間は数日〜1週間程度）", amount: "30万円〜1億円（公式FAQ。トップには「10万円〜」の表記あり）", target: "法人・個人", online: "公式内で記載が異なる（トップは「オンライン完結可能・来店不要」、FAQは「契約時に面談が必要」）", recheck: "2026年10月17日再確認（手数料・入金・利用可能額）・10月18日再確認（契約方法）", speedCheckedAt: "2026年10月17日" },
-  { slug: "pmg", name: "PMG", fee2: "個別査定（買取率98%表記＝手数料2%相当。率は非公示）", fee3: "個別査定", speed: "最短即日", amount: "50万円〜上限なし（最大2億円）", target: "法人中心", online: "可" },
+  { slug: "pmg", name: "PMG", fee2: "個別査定（率は非公示。公式に「買取率は98%」「掛け目は通常97〜92%」の表記）", fee3: "個別査定", speed: "最短即日", amount: "50万円〜上限なし（最大2億円）", target: "法人中心", online: "可" },
   { slug: "paytner", name: "ペイトナー", fee2: "一律10%（別途振込手数料330円）", fee3: "―", speed: "最短即日（審査は毎日10:00〜19:00）", amount: "1万円〜（初回50万円・実績に応じ最大300万円）", target: "個人事業主・一人法人（法人も可）", online: "可（面談不要）", recheck: "2026年10月14日再確認", speedCheckedAt: "2026年10月14日" },
   { slug: "labol", name: "ラボル", fee2: "一律10%", fee3: "―", speed: "最短30分・24時間365日入金", amount: "1万円〜（上限は審査で個別設定）", target: "フリーランス・個人", online: "可（Web完結）" },
   { slug: "paytoday", name: "PayToday", fee2: "1〜9.5%", fee3: "―", speed: "最短30分", amount: "10万円〜上限なし", target: "法人・個人・フリーランス", online: "可（AI審査）" },

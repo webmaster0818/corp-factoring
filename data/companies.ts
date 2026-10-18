@@ -203,8 +203,8 @@ export const factoringCompanies: FactoringCompany[] = [
     minAmount: 500000,
     maxAmount: "2億円（応相談）",
     personalSupport: true,
-    features: ["迅速な入金", "低手数料", "オンライン完結"],
-    description: "最短2時間で入金が可能です。手数料は1%からと低い水準で、入金スピードと費用の両面に優れています。",
+    features: ["迅速な入金", "土日祝も受付", "オンライン完結"],
+    description: "ピーエムジー株式会社（東京本社・大阪支店・福岡支店ほか全国12拠点）のファクタリングです。電話は8:00〜20:00、Webは24時間受付で、どちらも土日祝に対応しています。買取額は50万円からで、入金は最短2時間です（2026年10月18日公式確認）。",
     pros: [
       "最短2時間で入金",
       "手数料1%〜と低水準",
@@ -222,7 +222,7 @@ export const factoringCompanies: FactoringCompany[] = [
       capital: "1億円",
       address: "東京都新宿区西新宿2丁目4番1号 新宿NSビル25F"
     },
-    requiredDocuments: ["請求書", "通帳", "身分証明書"],
+    requiredDocuments: ["請求書・納品書などの成因資料", "身分証明書などの本人確認書類", "口座の入出金明細", "直近の決算書・確定申告書など（公式の土日ファクタリングのページに記載）"],
     url: "https://p-m-g.tokyo/",
     category: ["即日", "手数料安い"]
   },
@@ -495,7 +495,7 @@ export const factoringCompanies: FactoringCompany[] = [
     companyInfo: {
       established: "公式に記載なし",
       capital: "公式に記載なし",
-      address: "東京都台東区東上野3丁目5-9 本池田第二ビル4階"
+      address: "東京都中央区日本橋本町4-3-4 東海日本橋ビル3階" // 公式2サイトのフッター・ennavi.tokyo 会社概要（2026年10月18日確認）。ennavi-factoring.net の会社情報ページは旧所在地（東上野）のまま
     },
     requiredDocuments: ["請求書", "通帳", "身分証明書"],
     url: "https://ennavi-factoring.net/",

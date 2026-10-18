@@ -20,7 +20,7 @@ const SLUGS: string[] = [...HOURS_SLUGS];
 const NAME_ALIAS: { [slug: string]: string } = { pmg: "PMG（ピーエムジー）" };
 // 営業時間を再確認したページは最終確認日も更新する
 const PAGE_UPDATED_OVERRIDE: { [slug: string]: [string, string] } = {
-  pmg: ["2026年10月14日", "2026-10-14"],
+  pmg: ["2026年10月18日", "2026-10-18"],
   paytner: ["2026年10月14日", "2026-10-14"],
   no1: ["2026年10月14日", "2026-10-14"],
   "factor-plan": ["2026年10月14日", "2026-10-14"],

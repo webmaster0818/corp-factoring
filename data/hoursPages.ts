@@ -39,7 +39,7 @@ export const HOURS_CHECKED_AT: { [slug: string]: string } = {
   "support-kinyu": "2026年10月16日",
   paytner: "2026年10月14日",
   labol: "2026年7月8日",
-  pmg: "2026年10月14日",
+  pmg: "2026年10月18日",
   jtc: "2026年7月29日",
   no1: "2026年10月14日",
   "factor-plan": "2026年10月14日",
