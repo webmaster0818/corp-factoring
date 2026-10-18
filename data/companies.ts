@@ -29,6 +29,7 @@ export interface FactoringCompany {
     max: number;
   };
   speed: string;
+  speedIsReview?: boolean; // true: speed は入金までではなく審査結果までの時間（入金までの時間が公式に記載されていない会社）
   minAmount: number;
   maxAmount: string;
   amountText?: string; // 設定時は買取可能額をこの文字列で表示する（公式に記載がない場合など）
@@ -128,7 +129,8 @@ export const factoringCompanies: FactoringCompany[] = [
     slug: "accel-factor",
     rating: 4.6,
     fees: { min: 1.0, max: 12.0 },
-    speed: "最短即日",
+    speed: "最短1時間で審査結果", // 公式FAQ「営業時間内かつご提出書類が揃っていれば、最短1時間で審査結果がでます」。入金までの時間は公式（トップ・FAQ）に記載なし（2026年10月18日確認）
+    speedIsReview: true,
     minAmount: 0,
     maxAmount: "",
     amountText: "公式に記載なし", // 下限・上限とも公式サイト（トップ・サービス・FAQ・会社概要）に記載なし（2026年10月17日確認）
@@ -154,7 +156,7 @@ export const factoringCompanies: FactoringCompany[] = [
     },
     requiredDocuments: ["請求書", "通帳", "身分証明書"],
     url: "https://accelfacter.co.jp/",
-    category: ["手数料安い", "審査甘い", "即日"]
+    category: ["手数料安い", "審査甘い"]
   },
   {
     id: 4,

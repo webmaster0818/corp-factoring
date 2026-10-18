@@ -224,8 +224,8 @@ export const editorialVerifications: { [slug: string]: EditorialVerification } =
       },
       {
         label: "入金スピード",
-        value: "最短即日・審査最短1時間（公式表示）",
-        source: "公式FAQ・サービスページ（2026年10月14日確認）",
+        value: "営業時間内で提出書類がそろっていれば、最短1時間で審査結果が出る（公式FAQ）。入金までの時間は、公式サイト（トップ・FAQ）に記載なし",
+        source: "公式「よくあるご質問」（2026年10月18日確認）",
       },
       {
         label: "買取可能額",

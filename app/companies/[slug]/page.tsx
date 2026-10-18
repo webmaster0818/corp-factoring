@@ -85,11 +85,11 @@ export async function generateMetadata({
 
   return {
     title: `${company.name}の評判・手数料・営業時間・必要書類【公式確認】`,
-    description: `${company.name}のファクタリングサービスについて解説しています。${feeText}、${company.speed}で入金が可能です。Googleマップの評価、メリット・デメリット、必要書類、活用シーンを掲載しています。`,
+    description: `${company.name}のファクタリングサービスについて解説しています。${company.speedIsReview ? `${feeText}で、公式FAQでは${company.speed}が出るとされています。` : `${feeText}、${company.speed}で入金が可能です。`}Googleマップの評価、メリット・デメリット、必要書類、活用シーンを掲載しています。`,
     keywords: `${company.name},${company.nameKana},ファクタリング,評判,口コミ,手数料,${categoryText}`,
     openGraph: {
       title: `${company.name}の評判・手数料・営業時間・必要書類【公式確認】`,
-      description: `${feeText}、${company.speed}で入金。${company.description}`,
+      description: `${feeText}、${company.speed}${company.speedIsReview ? "" : "で入金"}。${company.description}`,
       type: "article",
       images: DEFAULT_OG_IMAGES,
     },
@@ -97,7 +97,7 @@ export async function generateMetadata({
       card: "summary",
       images: [DEFAULT_OG_IMAGE_URL],
       title: `${company.name}の評判・手数料・営業時間・必要書類【公式確認】`,
-      description: `${feeText}、${company.speed}で入金。${company.description}`,
+      description: `${feeText}、${company.speed}${company.speedIsReview ? "" : "で入金"}。${company.description}`,
     },
     alternates: {
       canonical: `/companies/${slug}`,
@@ -145,7 +145,9 @@ export default function CompanyPage({
         },
         {
           question: `${company.name}の審査・入金スピードはどのくらいですか？`,
-          answer: `${company.name}は、${speedLabel}での入金が可能とされています。実際の所要時間は、申込の時間帯・提出書類・売掛先の状況によって変動します。`,
+          answer: company.speedIsReview
+            ? `${company.name}の公式FAQでは、営業時間内で提出書類がそろっていれば、${company.speed}が出るとされています。入金までの時間は、公式サイトに記載がありません。実際の所要時間は、申込の時間帯・提出書類・売掛先の状況によって変動します。`
+            : `${company.name}は、${speedLabel}での入金が可能とされています。実際の所要時間は、申込の時間帯・提出書類・売掛先の状況によって変動します。`,
         },
         {
           question: `${company.name}の必要書類は？`,
@@ -340,7 +342,11 @@ export default function CompanyPage({
             </CardHeader>
             <CardContent className="pt-5">
               <p className="text-sm text-gray-700 leading-relaxed mb-4">
-                {company.name}は<strong>{speedLabel}での入金</strong>に対応し、
+                {company.speedIsReview ? (
+                  <>{company.name}は、公式FAQで<strong>{company.speed}</strong>が出るとされ、</>
+                ) : (
+                  <>{company.name}は<strong>{speedLabel}での入金</strong>に対応し、</>
+                )}
                 {company.personalSupport ? "個人事業主・フリーランスも利用できます。" : "主に法人向けのサービスです。"}
                 営業時間・必要書類・手数料など、問い合わせの多い項目を、公式サイトで確認した情報をもとに掲載しています。
               </p>
@@ -1003,7 +1009,7 @@ export default function CompanyPage({
                       <h3 className="font-bold text-xl mb-2">{step.title}</h3>
                       <p className="text-gray-700 mb-2">{step.description}</p>
                       {step.duration && (
-                        <p className="text-blue-600 font-medium text-sm">{step.duration === "最短即日" && step.title.includes("入金") && !speedLabel.includes("即日") ? speedLabel : step.duration}</p>
+                        <p className="text-blue-600 font-medium text-sm">{company.speedIsReview ? (step.title.includes("入金") ? "入金までの時間は公式に記載なし" : step.title.includes("審査") ? company.speed : step.duration) : step.duration === "最短即日" && step.title.includes("入金") && !speedLabel.includes("即日") ? speedLabel : step.duration}</p>
                       )}
                     </div>
                   </div>

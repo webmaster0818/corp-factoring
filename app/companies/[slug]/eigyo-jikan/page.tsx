@@ -68,6 +68,13 @@ export default async function CompanyHoursPage({ params }: { params: Promise<{ s
 
   const h = getCompanyDetails(slug).operatingHours;
   const feeRow = feeIndex.find((f) => f.slug === slug);
+  // 入金までの時間が公式に記載されていない会社は「入金スピードは公式表示で〜」と書かず、記載がない旨と審査時間を分けて表示する
+  const SPEED_UNDOCUMENTED = "入金までの時間は公式に記載なし";
+  const speedLead = feeRow
+    ? feeRow.speed.startsWith(SPEED_UNDOCUMENTED)
+      ? `${company.name}の入金までの時間は、公式サイトに記載がありません${feeRow.speed.slice(SPEED_UNDOCUMENTED.length)}`
+      : `${company.name}の入金スピードは公式表示で「${feeRow.speed}」です`
+    : "";
   const checkedAt = HOURS_CHECKED_AT[slug] ?? "";
 
   // 公式表示から機械的に判定できる範囲だけを条件分岐に使う（推測で断定しない）
@@ -95,7 +102,7 @@ export default async function CompanyHoursPage({ params }: { params: Promise<{ s
       : `受付時間外に申し込んだ場合の扱い（Webフォームでの受付の可否、翌営業日の対応となるか等）は、公式サイトでは確認できませんでした（${checkedAt}時点）。確実に当日中の対応を受けたい場合は、公式に表示されている受付時間内にお問い合わせください。`;
 
   const sokujitsuAnswer = feeRow
-    ? `${company.name}の入金スピードは公式表示で「${feeRow.speed}」です（${feeRow.speedCheckedAt ?? feeCheckedAt}確認）。受付時間は「${h.weekdays}」のため、${
+    ? `${speedLead}（${feeRow.speedCheckedAt ?? feeCheckedAt}確認）。受付時間は「${h.weekdays}」のため、${
         is24h
           ? "オンラインでの申込は時間帯を問わず可能と公式に表示されていますが、審査・契約の処理が行われる時間帯は公式サイトでは確認できませんでした。"
           : "即日入金を希望する場合は、同日の受付時間内に申込・審査・契約まで完了させることが前提になります。"
@@ -222,7 +229,7 @@ export default async function CompanyHoursPage({ params }: { params: Promise<{ s
           {feeRow ? (
             <>
               <p className="mt-3 text-sm leading-relaxed text-gray-800">
-                {company.name}の入金スピードは公式表示で「<strong>{feeRow.speed}</strong>」です（{feeRow.speedCheckedAt ?? feeCheckedAt}確認）。
+                {feeRow.speed.startsWith(SPEED_UNDOCUMENTED) ? speedLead : <>{company.name}の入金スピードは公式表示で「<strong>{feeRow.speed}</strong>」です</>}（{feeRow.speedCheckedAt ?? feeCheckedAt}確認）。
                 受付時間は「{h.weekdays}」で、申込から契約までのオンライン完結は「{feeRow.online}」です。
               </p>
               <p className="mt-3 text-sm leading-relaxed text-gray-800">
