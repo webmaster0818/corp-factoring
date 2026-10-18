@@ -229,7 +229,7 @@ export default async function CompanyHoursPage({ params }: { params: Promise<{ s
           {feeRow ? (
             <>
               <p className="mt-3 text-sm leading-relaxed text-gray-800">
-                {feeRow.speed.startsWith(SPEED_UNDOCUMENTED) ? speedLead : <>{company.name}の入金スピードは公式表示で「<strong>{feeRow.speed}</strong>」です</>}（{feeRow.speedCheckedAt ?? feeCheckedAt}確認）。
+                {feeRow.speed.startsWith(SPEED_UNDOCUMENTED) ? `${speedLead}（${feeRow.speedCheckedAt ?? feeCheckedAt}確認）。` : <>{company.name}の入金スピードは公式表示で「<strong>{feeRow.speed}</strong>」です（{feeRow.speedCheckedAt ?? feeCheckedAt}確認）。</>}
                 受付時間は「{h.weekdays}」で、申込から契約までのオンライン完結は「{feeRow.online}」です。
               </p>
               <p className="mt-3 text-sm leading-relaxed text-gray-800">
