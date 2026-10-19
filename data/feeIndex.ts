@@ -30,7 +30,7 @@ export const feeIndex: FeeIndexRow[] = [
   { slug: "mf-earlypayment", name: "マネーフォワード 早期入金", fee2: "0.5%〜（下限のみ）", fee3: "―", speed: "最短即日", amount: "数万円〜数億円", target: "法人のみ（個人不可）", online: "可" },
   { slug: "top-management", name: "トップ・マネジメント", fee2: "3.5%〜（3.5〜12.5%）", fee3: "0.5%〜", speed: "最短即日", amount: "上限：売掛先1社1億円／総額3億円", target: "法人・個人事業主", online: "可（電ふぁく）" },
   { slug: "mentor-capital", name: "メンターキャピタル", fee2: "非公示（要見積もり／買取率最大98%表記）", fee3: "非公示", speed: "最短即日（査定結果は最短30分）", amount: "公式では確認できず", target: "法人・個人", online: "可（クラウド・来社・訪問から選択／対面・来社不要）", recheck: "2026年10月14日再確認", speedCheckedAt: "2026年10月14日" },
-  { slug: "ennavi", name: "えんナビ", fee2: "5%〜（上限は公式に記載なし）", fee3: "非公示", speed: "最短1日", amount: "30万円〜5,000万円", target: "法人（個人事業主は要問い合わせ）", online: "可", recheck: "2026年10月17日再確認（手数料・入金・利用可能額）", speedCheckedAt: "2026年10月17日" },
+  { slug: "ennavi", name: "えんナビ", fee2: "5%〜（上限は公式に記載なし）", fee3: "非公示", speed: "最短1日", amount: "30万円〜5,000万円", target: "法人・個人事業主（ennavi.tokyo の表示）", online: "可", recheck: "2026年10月17日再確認（手数料・入金・利用可能額）。対象は2026年10月19日確認", speedCheckedAt: "2026年10月17日" },
   { slug: "freenance", name: "FREENANCE（フリーナンス）", fee2: "3〜10%（受取口座の指定なしは一律10%）", fee3: "―", speed: "最短5分", amount: "1万円〜（上限額なし・審査）", target: "フリーランス・個人", online: "可" },
   { slug: "minna-factoring", name: "みんなのファクタリング", fee2: "公式では確認できず（JS描画のため取得不可）", fee3: "確認できず", speed: "最短60分", amount: "公式では確認できず", target: "法人・個人・フリーランス限定", online: "可" },
   { slug: "jtc", name: "JTC", fee2: "1.2〜10%（2社間/3社間の内訳は公式非明記）", fee3: "対応あり（率の内訳は非明記）", speed: "最短即日", amount: "100万円〜上限なし（売掛金の範囲内）", target: "法人・個人事業主（個人は売掛先の承諾前提）", online: "可（契約は事前予約制・出張対応あり）" },

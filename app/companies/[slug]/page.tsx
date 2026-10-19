@@ -279,7 +279,7 @@ export default function CompanyPage({
                   )}
                   <p className="mt-2 text-xs text-gray-500">
                     公式サイト等で{lead.checkedAt}に確認。
-                    {HOURS_LINK_SLUGS.includes(slug) && !lead.sources && (
+                    {HOURS_LINK_SLUGS.includes(slug) && !lead.related?.some((r) => r.href.endsWith("/eigyo-jikan/")) && (
                       <> <Link href={`/companies/${slug}/eigyo-jikan/`} className="text-blue-600 underline">{company.name}の営業時間・土日の扱いはこちら →</Link></>
                     )}
                     {lead.sources && lead.sources.length > 0 && (
@@ -847,7 +847,7 @@ export default function CompanyPage({
               <CardHeader className="bg-gray-50 border-b border-gray-100">
                 <CardTitle className="text-2xl font-black text-gray-900">{company.name}の口コミ・評判の掲載先（出典一覧）</CardTitle>
                 <p className="text-sm text-gray-600 mt-2">
-                  {company.name}の口コミが掲載されている主なサイトと、{lead.checkedAt}時点の掲載状況です。当サイトでは、口コミ本文の転載や体験談の作成は行わず、掲載先と件数のみを掲載しています。評価は投稿の時期・件数によって変わるため、各サイトにて原文をご確認ください。
+                  {company.name}の口コミが掲載されている主なサイトと、{lead.sourcesCheckedAt ?? lead.checkedAt}時点の掲載状況です。当サイトでは、口コミ本文の転載や体験談の作成は行わず、掲載先と件数のみを掲載しています。評価は投稿の時期・件数によって変わるため、各サイトにて原文をご確認ください。
                 </p>
               </CardHeader>
               <CardContent className="pt-6">
@@ -856,7 +856,7 @@ export default function CompanyPage({
                     <thead>
                       <tr className="border-b-2 border-gray-200 bg-gray-50">
                         <th className="px-3 py-2.5 text-left font-bold text-gray-700 w-40">掲載サイト</th>
-                        <th className="px-3 py-2.5 text-left font-bold text-gray-700">掲載状況（{lead.checkedAt}確認）</th>
+                        <th className="px-3 py-2.5 text-left font-bold text-gray-700">掲載状況（{lead.sourcesCheckedAt ?? lead.checkedAt}確認）</th>
                       </tr>
                     </thead>
                     <tbody>

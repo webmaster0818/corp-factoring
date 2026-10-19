@@ -471,7 +471,7 @@ export const factoringCompanies: FactoringCompany[] = [
     speed: "最短1日",
     minAmount: 300000,
     maxAmount: "5000万円",
-    personalSupport: false,
+    personalSupport: true, // ennavi.tokyo「法人様から個人事業主様まで対応」（2026年10月19日確認。ennavi-factoring.net には利用対象の記載なし）
     features: ["少額対応", "24時間対応", "法人向け"],
     description: "30万円から利用でき、最短1日で入金されます。24時間受付で、土日祝も申し込むことができます。",
     pros: [
@@ -535,12 +535,12 @@ export const factoringCompanies: FactoringCompany[] = [
     slug: "minna-factoring",
     rating: 4.0,
     fees: { min: 3.0, max: 15.0 },
-    speed: "最短2時間",
+    speed: "最短60分", // サービスサイト「土日祝でも最短60分でお振込」（2026年10月19日確認）
     minAmount: 0,
     maxAmount: "無制限",
     personalSupport: true,
     features: ["オンライン完結", "個人事業主に対応", "柔軟な審査"],
-    description: "オンラインで完結し、最短2時間で入金されます。個人事業主・フリーランスも利用できます。",
+    description: "登録から契約までWEBで完結し、土日祝でも最短60分で振り込まれます。毎日19時まで営業しています（運営会社の事業紹介・2026年10月19日確認）。",
     pros: [
       "オンライン完結",
       "最短2時間入金",
@@ -554,9 +554,9 @@ export const factoringCompanies: FactoringCompany[] = [
     ],
     reviewCount: 420,
     companyInfo: {
-      established: "2020年",
+      established: "2023年1月20日", // 運営 株式会社チェンジ 会社概要（2026年10月19日確認）
       capital: "1,000万円",
-      address: "東京都中央区銀座7-13-6 サガミビル2階"
+      address: "東京都中央区日本橋室町一丁目11番12号"
     },
     requiredDocuments: ["請求書", "通帳", "身分証明書"],
     url: "https://minnanofactoring.net/",

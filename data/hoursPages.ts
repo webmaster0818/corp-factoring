@@ -32,12 +32,12 @@ export const HOURS_LINK_SLUGS: string[] = [...HOURS_SLUGS, ...HOURS_STATIC_SLUGS
 
 // 各社の営業時間を公式サイトで一次確認した日
 export const HOURS_CHECKED_AT: { [slug: string]: string } = {
-  ennavi: "2026年7月8日",
+  ennavi: "2026年10月19日",
   "accel-factor": "2026年7月8日",
   freenance: "2026年7月8日",
   paytoday: "2026年7月8日",
   "support-kinyu": "2026年10月16日",
-  paytner: "2026年10月14日",
+  paytner: "2026年10月19日",
   labol: "2026年7月8日",
   pmg: "2026年10月18日",
   jtc: "2026年7月29日",
