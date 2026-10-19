@@ -194,7 +194,7 @@ export const factoringCompanies: FactoringCompany[] = [
     nameKana: "ぴーえむじー",
     slug: "pmg",
     rating: 4.5,
-    fees: { min: 1.0, max: 10.0 },
+    fees: { min: 0, max: 0 }, // 公式は手数料の範囲を記載せず「買取率98%（売買手数料2%）」と表示・実際の率は個別査定（2026年10月19日確認）。旧値 1〜10% は公式で確認できず
     speed: "最短2時間",
     minAmount: 500000,
     maxAmount: "2億円（応相談）",
