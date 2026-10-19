@@ -26,7 +26,6 @@ export const companyStrengths: { [key: string]: string[] } = {
   ],
   "accel-factor": [
     "手数料は2社間1〜12%・3社間0.5〜10.5%（公式表示）",
-    "審査通過率93%と高い水準",
     "赤字決算・税金滞納がある場合も柔軟に審査",
     "審査結果は最短1時間（公式FAQ）。面談は必須ではなく、オンラインでの面談にも対応（公式FAQ）"
   ]
@@ -72,7 +71,7 @@ export const companyUseCases: { [key: string]: UseCaseExample[] } = {
     {
       title: "赤字決算企業の資金調達",
       situation: "前期赤字で銀行融資が難しいが、大口受注があり外注費が必要",
-      solution: "審査通過率93%のアクセルファクターで売掛債権を売却",
+      solution: "赤字決算でも利用できるアクセルファクター（公式FAQ）で売掛債権を売却",
       result: "売掛債権を売却して外注費を確保し、受注案件を予定どおり進行"
     },
     {
