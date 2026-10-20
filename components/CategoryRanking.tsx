@@ -1,6 +1,6 @@
 "use client";
 
-import { FactoringCompany } from "@/data/companies";
+import { FactoringCompany, feeRange } from "@/data/companies";
 import { getRealRating } from "@/data/realRatings";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -58,7 +58,7 @@ export function CategoryRanking({ title, companies, icon }: CategoryRankingProps
               {/* 主要情報 */}
               <div className="flex-shrink-0 text-right">
                 <div className="font-bold text-primary text-lg mb-1">
-                  {company.fees.max > 0 ? `${company.fees.min}%〜${company.fees.max}%` : company.fees.min > 0 ? `${company.fees.min}%〜` : "要見積もり"}
+                  {company.fees.max > 0 ? `${feeRange(company.fees)}` : company.fees.min > 0 ? `${company.fees.min}%〜` : "要見積もり"}
                 </div>
                 <div className="text-sm text-gray-600 mb-2">
                   {company.speed}

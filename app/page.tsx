@@ -5,7 +5,7 @@ import { DiagnosisTool } from "@/components/DiagnosisTool";
 import { FeeSimulator } from "@/components/FeeSimulator";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { factoringCompanies } from "@/data/companies";
+import { factoringCompanies, feeRange } from "@/data/companies";
 import { getRealRating } from "@/data/realRatings";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -219,7 +219,7 @@ export default function Home() {
                   <div className="mb-4 rounded-lg overflow-hidden border border-gray-200">
                     <img
                       src={`/images/companies/${company.slug}.png`}
-                      alt={`${company.name}公式サイトのスクリーンショット - ファクタリング手数料${company.fees.min > 0 ? `${company.fees.min}%〜${company.fees.max > 0 ? `${company.fees.max}%` : ""}` : "要見積もり"}`}
+                      alt={`${company.name}公式サイトのスクリーンショット - ファクタリング手数料${company.fees.min > 0 ? (company.fees.max > 0 ? feeRange(company.fees) : `${company.fees.min}%〜`) : "要見積もり"}`}
                       className={`w-full object-cover object-top ${company.slug === 'ququmo' ? 'h-24' : 'h-40'}`}
                       width="1200"
                       height="160"
@@ -263,7 +263,7 @@ export default function Home() {
                             手数料
                           </div>
                           <div className="text-lg font-semibold text-blue-600">
-                            {company.fees.max > 0 ? `${company.fees.min}%〜${company.fees.max}%` : company.fees.min > 0 ? `${company.fees.min}%〜` : "要見積もり"}
+                            {company.fees.max > 0 ? `${feeRange(company.fees)}` : company.fees.min > 0 ? `${company.fees.min}%〜` : "要見積もり"}
                           </div>
                         </div>
                         <div>

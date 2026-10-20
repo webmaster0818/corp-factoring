@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
-import { getCompanyBySlug, factoringCompanies } from "@/data/companies";
+import { getCompanyBySlug, factoringCompanies, feeRange } from "@/data/companies";
 import { getCompanyStrengths, getCompanyUseCases } from "@/data/companyExtended";
 import { getRealRating } from "@/data/realRatings";
 import { getReviewTrend } from "@/data/reviewTrends";
@@ -66,7 +66,7 @@ export async function generateMetadata({
   const feeText = metaFeeUndisclosed
     ? "手数料は要見積もり"
     : company.fees.max > 0
-      ? `手数料${company.fees.min}%〜${company.fees.max}%`
+      ? `手数料${feeRange(company.fees)}`
       : company.fees.min > 0
         ? `手数料${company.fees.min}%〜（上限は要問い合わせ）`
         : "手数料は要見積もり";
@@ -391,7 +391,7 @@ export default function CompanyPage({
                     <tr className="border-b border-gray-100">
                       <th className="text-left align-top bg-gray-50 px-3 py-2.5 font-bold text-gray-700 whitespace-nowrap">手数料</th>
                       <td className="px-3 py-2.5 text-gray-800">
-                        {feeRow ? feeRow.fee2 : `${company.fees.min}%〜${company.fees.max}%`}（<Link href="/fees/" className="text-blue-600 hover:underline">24社の手数料の比較</Link>／<Link href="/articles/article-factoring-tesuryo-yasui" className="text-blue-600 hover:underline">手数料の相場と安い会社</Link>）
+                        {feeRow ? feeRow.fee2 : `${feeRange(company.fees)}`}（<Link href="/fees/" className="text-blue-600 hover:underline">24社の手数料の比較</Link>／<Link href="/articles/article-factoring-tesuryo-yasui" className="text-blue-600 hover:underline">手数料の相場と安い会社</Link>）
                       </td>
                     </tr>
                     <tr className="border-b border-gray-100">
@@ -513,7 +513,7 @@ export default function CompanyPage({
               <div className="bg-blue-50 p-5 rounded-xl border border-blue-100">
                 <h3 className="font-bold text-gray-700 mb-2 text-sm">手数料</h3>
                 <p className="text-3xl font-black text-blue-600">
-                  {feeUndisclosed || company.fees.min === 0 ? "要見積もり" : company.fees.max > 0 ? `${company.fees.min}%〜${company.fees.max}%` : `${company.fees.min}%〜`}
+                  {feeUndisclosed || company.fees.min === 0 ? "要見積もり" : company.fees.max > 0 ? `${feeRange(company.fees)}` : `${company.fees.min}%〜`}
                 </p>
               </div>
               <div className="bg-green-50 p-5 rounded-xl border border-green-100">

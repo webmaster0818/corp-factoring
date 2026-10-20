@@ -440,7 +440,7 @@ export const factoringCompanies: FactoringCompany[] = [
     features: ["審査通過率92%（2023年実績）", "対面・来社不要", "ノンリコース"],
     description: "2社間ファクタリングを中心に提供しています。償還請求権はなく（ノンリコース）、債権譲渡登記と取引先への通知は原則として留保されます。審査通過率は92%（2023年実績・公式表示）で、最短即日で現金化できます。",
     pros: [
-      "審査通過率90%超",
+      "審査通過率92%（2023年1〜12月実績・公式表示）",
       "赤字決算・税金滞納OK",
       "柔軟な審査",
       "即日対応",
@@ -896,3 +896,7 @@ export const getCompaniesByCategory = (category: string): FactoringCompany[] => 
 export const getTopCompanies = (limit: number = 15): FactoringCompany[] => {
   return factoringCompanies.slice(0, limit);
 };
+
+// 手数料の範囲表示（上限と下限が同じ一律手数料は「10%」のように1つの値で表示する）
+export const feeRange = (fees: { min: number; max: number }): string =>
+  fees.min === fees.max ? `${fees.min}%` : `${fees.min}%〜${fees.max}%`;

@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { getAllArticleSlugs, getArticleBySlug, getAllArticles } from "@/lib/articles";
-import { factoringCompanies } from "@/data/companies";
+import { factoringCompanies, feeRange } from "@/data/companies";
 import { getTopicForArticle, getRelatedSlugs } from "@/data/topics";
 import { DEFAULT_OG_IMAGES } from "@/lib/og";
 
@@ -214,7 +214,7 @@ export default async function ArticlePage({
                   {/* ★は companies.ts の rating（3月モックアップの値・出典なし）だったため非表示（2026-10-14） */}
                 </div>
                 <p className="text-xs text-gray-500 mb-2">
-                  手数料 {company.fees.max > 0 ? `${company.fees.min}%〜${company.fees.max}%` : company.fees.min > 0 ? `${company.fees.min}%〜（上限は要問い合わせ）` : "要見積もり"} ／ {company.speed}
+                  手数料 {company.fees.max > 0 ? `${feeRange(company.fees)}` : company.fees.min > 0 ? `${company.fees.min}%〜（上限は要問い合わせ）` : "要見積もり"} ／ {company.speed}
                 </p>
                 <span className="text-xs text-[#1B3A5C] font-medium group-hover:underline">
                   詳細を見る →

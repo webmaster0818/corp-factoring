@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { FactoringCompany, factoringCompanies } from "@/data/companies";
+import { FactoringCompany, factoringCompanies, feeRange } from "@/data/companies";
 import { getRealRating } from "@/data/realRatings";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -152,7 +152,7 @@ export function DiagnosisTool() {
                       <div className="bg-blue-50 p-3 rounded">
                         <div className="text-xs text-gray-600 mb-1">手数料</div>
                         <div className="font-bold text-blue-700">
-                          {company.fees.max > 0 ? `${company.fees.min}%〜${company.fees.max}%` : company.fees.min > 0 ? `${company.fees.min}%〜（上限は要問い合わせ）` : "要見積もり"}
+                          {company.fees.max > 0 ? `${feeRange(company.fees)}` : company.fees.min > 0 ? `${company.fees.min}%〜（上限は要問い合わせ）` : "要見積もり"}
                         </div>
                       </div>
                       <div className="bg-green-50 p-3 rounded">

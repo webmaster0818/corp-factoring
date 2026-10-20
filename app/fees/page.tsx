@@ -4,7 +4,7 @@ import { Footer } from "@/components/Footer";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { FeeSimulator } from "@/components/FeeSimulator";
-import { factoringCompanies } from "@/data/companies";
+import { factoringCompanies, feeRange } from "@/data/companies";
 import { feeIndex, feeCheckedAt } from "@/data/feeIndex";
 import { DEFAULT_OG_IMAGES, DEFAULT_OG_IMAGE_URL } from "@/lib/og";
 
@@ -289,7 +289,7 @@ export default function FeesPage() {
                           <div className="text-right">
                             <p className="text-sm text-gray-600 mb-1">手数料</p>
                             <p className="text-2xl font-black text-green-600">
-                              {company.fees.min}%〜
+                              {company.fees.min === company.fees.max ? feeRange(company.fees) : `${company.fees.min}%〜`}
                             </p>
                           </div>
                         </div>
