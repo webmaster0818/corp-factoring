@@ -329,7 +329,7 @@ export default function Home() {
           <ComparisonTable companies={topCompanies} />
           <p className="text-sm text-gray-600 mt-6 max-w-3xl mx-auto">
             病院・クリニック・調剤薬局が社保・国保連に請求する診療報酬を資金化する場合は、銀行系・医療専門のサービスを含めた
-            <Link href="/articles/article-factoring-iryou/" className="text-blue-600 hover:underline">診療報酬ファクタリング会社6社の比較（手数料・調達可能額・入金スピード）</Link>
+            <Link href="/articles/article-factoring-iryou/" className="text-blue-600 hover:underline">診療報酬ファクタリング会社6社の比較（手数料・調達可能額・入金スピード・必要書類）</Link>
             を、介護事業所の場合は
             <Link href="/articles/article-factoring-kaigo/" className="text-blue-600 hover:underline">介護報酬ファクタリングの解説</Link>
             をご覧ください。

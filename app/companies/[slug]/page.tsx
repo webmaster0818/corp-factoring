@@ -999,6 +999,33 @@ export default function CompanyPage({
                   <p className="text-3xl font-black text-blue-600">{details.audit.passRate}</p>
                 </div>
               )}
+              {lead?.auditTable && (
+                <div className="mb-8">
+                  <h3 className="font-bold text-xl mb-4">{lead.auditTable.heading}</h3>
+                  <div className="overflow-x-auto">
+                    <table className="w-full text-sm border border-gray-200">
+                      <thead className="bg-gray-50">
+                        <tr>
+                          {lead.auditTable.head.map((h, i) => (
+                            <th key={i} className="px-3 py-2.5 text-left font-bold text-gray-700 border-b border-gray-200">{h}</th>
+                          ))}
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {lead.auditTable.rows.map((row, i) => (
+                          <tr key={i} className="border-b border-gray-100 align-top">
+                            <td className="px-3 py-2.5 font-bold text-gray-800 whitespace-nowrap">{row[0]}</td>
+                            <td className="px-3 py-2.5 text-gray-700">{row[1]}</td>
+                            <td className="px-3 py-2.5 text-gray-700 whitespace-nowrap">{row[2]}</td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                  {lead.auditTable.note && <p className="text-sm text-gray-600 mt-3 leading-relaxed">{lead.auditTable.note}</p>}
+                  <p className="text-xs text-gray-500 mt-2">出典：{lead.auditTable.source}</p>
+                </div>
+              )}
               <h3 className="font-bold text-xl mb-4">審査の特徴</h3>
               <ul className="space-y-3">
                 {(lead?.auditFacts ?? details.audit.features).map((feature, index) => (
