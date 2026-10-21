@@ -138,7 +138,7 @@ export const factoringCompanies: FactoringCompany[] = [
     description: "手数料は2社間1〜12%・3社間0.5〜10.5%（公式表示）です。審査結果は最短1時間で出ます（公式FAQ）。",
     pros: [
       "手数料の目安は3社間0.5〜10.5%・2社間1〜12%（公式FAQ）",
-      "原則即日対応（公式表示）",
+      "原則即日対応（公式表示）", // accelfacter.co.jp/service/factoring/ 本文の特長欄「原則即日対応」（2026年10月21日確認）
       "オンラインで完結（公式表示）。面談は必須ではなく、オンライン面談も可能（公式FAQ）",
       "個人事業主OK"
     ],
@@ -436,6 +436,7 @@ export const factoringCompanies: FactoringCompany[] = [
     speed: "最短即日",
     minAmount: 300000,
     maxAmount: "公式では確認できず",
+    amountText: "公式に記載なし", // 下限・上限とも公式サイト（トップ・FAQ・会社概要）に記載なし（2026年10月21日確認）
     personalSupport: true,
     features: ["審査通過率92%（2023年実績）", "対面・来社不要", "ノンリコース"],
     description: "2社間ファクタリングを中心に提供しています。償還請求権はなく（ノンリコース）、債権譲渡登記と取引先への通知は原則として留保されます。審査通過率は92%（2023年実績・公式表示）で、最短即日で現金化できます。",
@@ -448,7 +449,7 @@ export const factoringCompanies: FactoringCompany[] = [
     ],
     cons: [
       "手数料率が公式で非公示のため、事前に見積もりでの確認が必要",
-      "最低買取額30万円"
+      "買取額の下限・上限が公式に記載されていない"
     ],
     reviewCount: 720,
     companyInfo: {
@@ -472,7 +473,7 @@ export const factoringCompanies: FactoringCompany[] = [
     minAmount: 300000,
     maxAmount: "5000万円",
     personalSupport: true, // ennavi.tokyo「法人様から個人事業主様まで対応」（2026年10月19日確認。ennavi-factoring.net には利用対象の記載なし）
-    features: ["少額対応", "24時間対応", "法人向け"],
+    features: ["少額対応", "24時間対応", "法人・個人事業主に対応"],
     description: "30万円から利用でき、最短1日で入金されます。24時間受付で、土日祝も申し込むことができます。",
     pros: [
       "下限は30万円（ennavi-factoring.net）／50万円（ennavi.tokyo）と公式の表記が異なる",
@@ -505,10 +506,10 @@ export const factoringCompanies: FactoringCompany[] = [
     minAmount: 10000,
     maxAmount: "1000万円",
     personalSupport: true,
-    features: ["GMOグループ運営", "損害賠償保険付帯", "個人事業主向け"],
-    description: "GMOクリエイターズネットワークが運営するサービスです。損害賠償保険が付帯しています。",
+    features: ["フリー株式会社（freee）運営", "損害賠償保険付帯", "個人事業主向け"],
+    description: "東証グロース上場のフリー株式会社（freee）が運営するサービスです。損害賠償保険が付帯しています。", // freenance.net トップ・利用規約第1条（2026年10月21日確認）
     pros: [
-      "GMO運営で信頼性高",
+      "東証グロース上場のfreeeが運営",
       "損害賠償保険付き",
       "1万円から対応",
       "個人事業主・フリーランス特化",
@@ -520,9 +521,9 @@ export const factoringCompanies: FactoringCompany[] = [
     ],
     reviewCount: 1380,
     companyInfo: {
-      established: "2018年",
-      capital: "GMOグループ",
-      address: "東京都渋谷区桜丘町26-1 セルリアンタワー"
+      established: "2012年7月（運営会社 フリー株式会社）", // corp.freee.co.jp/company/（2026年10月21日確認）
+      capital: "公式に記載なし",
+      address: "東京都品川区大崎1-2-2 アートヴィレッジ大崎セントラルタワー21階"
     },
     requiredDocuments: ["請求書", "身分証明書"],
     url: "https://freenance.net/",
