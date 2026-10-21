@@ -504,7 +504,7 @@ export const factoringCompanies: FactoringCompany[] = [
     fees: { min: 3.0, max: 10.0 },
     speed: "最短即日",
     minAmount: 10000,
-    maxAmount: "1000万円",
+    maxAmount: "上限なし", // 公式FAQ「初回利用時でも1万円〜上限額なしで利用できます」https://freenance.net/archives/faq/3850/（2026年10月21日確認）
     personalSupport: true,
     features: ["フリー株式会社（freee）運営", "損害賠償保険付帯", "個人事業主向け"],
     description: "東証グロース上場のフリー株式会社（freee）が運営するサービスです。損害賠償保険が付帯しています。", // freenance.net トップ・利用規約第1条（2026年10月21日確認）
@@ -516,7 +516,6 @@ export const factoringCompanies: FactoringCompany[] = [
       "手数料3%〜10%"
     ],
     cons: [
-      "法人には不向き",
       "審査がやや厳しい"
     ],
     reviewCount: 1380,
