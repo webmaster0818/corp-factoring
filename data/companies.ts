@@ -63,12 +63,12 @@ export const factoringCompanies: FactoringCompany[] = [
     fees: { min: 2.0, max: 0 }, // 公式表示は「手数料2%〜」（2社間4%〜・3社間2%〜）。上限率は公式に記載なし（2026年10月17日確認）
     speed: "最短2時間",
     minAmount: 0,
-    maxAmount: "無制限",
+    maxAmount: "無制限", // 公式サービスページ「3者間ファクタリングの特長 買取金額無制限」。トップは法人窓口「300万〜30億円」・Web審査「1万円〜300万円」（2026年10月22日確認）
     personalSupport: true,
     features: ["実績豊富", "注文書対応", "医療対応", "全国対応"],
-    description: "業界でも上位の実績を持つ大手ファクタリング会社です。累計取引社数は91,000社以上、累計買取額は1,824億円です。",
+    description: "業界でも上位の実績を持つ大手ファクタリング会社です。取引実績は9.1万社以上、累計買取額は1,824億円です（公式トップ・2026年3月時点）。", // betrading.jp（2026年10月22日確認）
     pros: [
-      "累計取引91,000社以上の実績",
+      "取引実績9.1万社以上（公式・2026年3月時点）",
       "注文書ファクタリング対応",
       "医療ファクタリング対応",
       "全国5拠点（東京、仙台、大阪、名古屋、福岡）",
@@ -97,8 +97,8 @@ export const factoringCompanies: FactoringCompany[] = [
     fees: { min: 1.0, max: 0 },
     speed: "最短2時間",
     minAmount: 0,
-    maxAmount: "無制限",
-    personalSupport: true,
+    maxAmount: "無制限", // 公式トップ「金額上限なし」（2026年10月22日確認）
+    personalSupport: true, // 公式トップ「どなたでも 法人様・個人事業主様」（2026年10月22日確認）
     features: ["必要書類2点", "オンライン完結", "手数料明示"],
     description: "必要書類は2点で、オンラインで完結し、最短2時間で入金されます。手数料は1%からと、業界でも低い水準です。",
     pros: [
@@ -109,7 +109,7 @@ export const factoringCompanies: FactoringCompany[] = [
     ],
     cons: [
       "対面相談は不可",
-      "3社間ファクタリング非対応"
+      "2社間ファクタリングのみ（公式「当社との直接の2社間ファクタリング」）" // ququmo.net（2026年10月22日確認）
     ],
     reviewCount: 1820,
     companyInfo: {
@@ -238,12 +238,11 @@ export const factoringCompanies: FactoringCompany[] = [
       "手数料一律10%で分かりやすい",
       "審査後、最短即日で入金（公式）",
       "1万円から対応",
-      "AI審査で24時間対応",
-      "個人事業主・フリーランス特化"
+      "申込は年中無休・24時間受付（審査結果は原則19:00までの申込で当日中・公式FAQ）", // paytner.co.jp/faq/business-hours/（2026年10月22日確認）
+      "個人事業主・一人法人向け（公式表示）" // paytner.co.jp トップ（2026年10月22日確認）
     ],
     cons: [
-      "手数料が一律10%（少額だと割高）",
-      "法人には不向き"
+      "手数料が一律10%（少額だと割高）"
     ],
     reviewCount: 2150,
     companyInfo: {
@@ -277,7 +276,7 @@ export const factoringCompanies: FactoringCompany[] = [
     ],
     cons: [
       "手数料が一律10%",
-      "法人には不向き"
+      "買取対象は法人が取引先となる請求書のみ（公式FAQ）" // labol.co.jp トップのFAQ「個人間での取引の請求書は利用できますか？」（2026年10月22日確認）
     ],
     reviewCount: 1680,
     companyInfo: {
@@ -515,9 +514,7 @@ export const factoringCompanies: FactoringCompany[] = [
       "個人事業主・フリーランス特化",
       "手数料3%〜10%"
     ],
-    cons: [
-      "審査がやや厳しい"
-    ],
+    cons: [], // 旧「審査がやや厳しい」は出典なしのため削除（2026年10月22日）
     reviewCount: 1380,
     companyInfo: {
       established: "2012年7月（運営会社 フリー株式会社）", // corp.freee.co.jp/company/（2026年10月21日確認）
@@ -534,31 +531,32 @@ export const factoringCompanies: FactoringCompany[] = [
     nameKana: "みんなのふぁくたりんぐ",
     slug: "minna-factoring",
     rating: 4.0,
-    fees: { min: 3.0, max: 15.0 },
-    speed: "最短60分", // サービスサイト「土日祝でも最短60分でお振込」（2026年10月19日確認）
+    fees: { min: 0, max: 0 }, // 手数料はサービスサイト・利用規約・運営会社の事業紹介に記載なし（2026年10月22日確認）。旧値 3〜15% は出典なし
+    speed: "最短60分", // サービスサイト「土日祝でも最短60分でお振込」（2026年10月22日確認）
     minAmount: 0,
-    maxAmount: "無制限",
-    personalSupport: true,
-    features: ["オンライン完結", "個人事業主に対応", "柔軟な審査"],
-    description: "登録から契約までWEBで完結し、土日祝でも最短60分で振り込まれます。毎日19時まで営業しています（運営会社の事業紹介・2026年10月19日確認）。",
+    maxAmount: "",
+    amountText: "公式に記載なし", // 下限・上限ともサービスサイト・利用規約・事業紹介に記載なし（2026年10月22日確認）
+    personalSupport: true, // 事業紹介「事業主様向け」「請求書をお持ちで事業をしている方限定」。利用規約は利用者が法人の場合の条件を別に定める（2026年10月22日確認）
+    features: ["オンライン完結", "2社間限定", "独自のAI審査"],
+    description: "登録から契約までWEBで完結し、土日祝でも最短60分で振り込まれます。毎日19時まで営業しています（運営会社の事業紹介・2026年10月22日確認）。",
     pros: [
-      "オンライン完結",
-      "最短2時間入金",
-      "個人事業主OK",
-      "少額対応",
-      "柔軟審査"
+      "登録から契約までWEB完結・非対面（公式）",
+      "土日祝でも最短60分で振込（公式）",
+      "毎日19時まで営業・土日祝対応（運営会社の事業紹介）",
+      "決算書・事業計画は不要、独自のAI審査（運営会社の事業紹介）",
+      "2社間限定で、債権譲渡登記は原則なし（運営会社の事業紹介）"
     ],
     cons: [
       "手数料率が公式で非公示のため、事前に見積もりでの確認が必要",
-      "実績が少ない"
+      "電話対応なし（運営会社の事業紹介）"
     ],
     reviewCount: 420,
     companyInfo: {
-      established: "2023年1月20日", // 運営 株式会社チェンジ 会社概要（2026年10月19日確認）
+      established: "2023年1月20日", // 運営 株式会社チェンジ 会社概要 change-corp.jp/company/（2026年10月22日再確認・資本金 10,000,000円・住所とも一致）
       capital: "1,000万円",
       address: "東京都中央区日本橋室町一丁目11番12号"
     },
-    requiredDocuments: ["請求書", "通帳", "身分証明書"],
+    requiredDocuments: ["公式に記載なし（決算書・事業計画は不要と運営会社の事業紹介に記載）"],
     url: "https://minnanofactoring.net/",
     category: ["個人事業主", "即日"]
   },

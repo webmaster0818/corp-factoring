@@ -59,6 +59,7 @@ export function ReviewSection({ companyName, realRating, pros, cons }: ReviewSec
                 ))}
               </ul>
             </div>
+            {cons.length > 0 && (
             <div>
               <h3 className="font-bold text-amber-700 mb-3">注意が必要な点</h3>
               <ul className="space-y-2">
@@ -70,6 +71,7 @@ export function ReviewSection({ companyName, realRating, pros, cons }: ReviewSec
                 ))}
               </ul>
             </div>
+            )}
           </div>
         </CardContent>
       </Card>

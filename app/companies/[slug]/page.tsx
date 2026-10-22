@@ -657,7 +657,8 @@ export default function CompanyPage({
                 </ul>
               </div>
 
-              {/* デメリット */}
+              {/* デメリット（出典のある項目が無い会社は表示しない） */}
+              {company.cons.length > 0 && (
               <div className="bg-blue-50 p-6 rounded-xl border border-blue-100">
                 <h3 className="font-black text-blue-700 mb-4 text-xl">
                   デメリット
@@ -671,6 +672,7 @@ export default function CompanyPage({
                   ))}
                 </ul>
               </div>
+              )}
             </div>
           </CardContent>
         </Card>
