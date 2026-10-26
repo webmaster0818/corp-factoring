@@ -37,7 +37,7 @@ export const topics: Topic[] = [
       },
       {
         heading: "医療・介護",
-        description: "診療報酬・介護報酬債権は公的債権のため手数料が低い傾向があります。",
+        description: "診療報酬・介護報酬債権を入金前に資金化する方法と、選び方を解説しています。",
         slugs: [
           "article-factoring-iryou",
           "article-factoring-kaigo",
