@@ -280,11 +280,11 @@ export const factoringCompanies: FactoringCompany[] = [
     ],
     reviewCount: 1680,
     companyInfo: {
-      established: "2021年",
-      capital: "5,000万円",
-      address: "東京都渋谷区渋谷2-24-12 渋谷スクランブルスクエア39階"
-    },
-    requiredDocuments: ["請求書", "身分証明書", "通帳"],
+      established: "2021年12月",
+      capital: "8億6,300万円（2025年12月31日現在・資本準備金含む）",
+      address: "東京都渋谷区道玄坂1-20-8 寿パークビル7F"
+    }, // labol.co.jp/corp/ の会社概要（2026年10月26日確認。旧値：資本金5,000万円・渋谷スクランブルスクエア39階）
+    requiredDocuments: ["請求書", "本人確認書類", "取引を示すエビデンス（取引先とのメール・チャット、通帳の入出金履歴など）"], // 公式FAQ（2026年10月26日確認）
     url: "https://labol.co.jp/",
     category: ["個人事業主", "少額", "審査甘い"]
   },
