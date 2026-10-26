@@ -132,7 +132,7 @@ export const factoringCompanies: FactoringCompany[] = [
     minAmount: 300000,
     maxAmount: "3億円", // 公式コラム「買取可能額は30万円～3億円」（accelfacter.co.jp/column/factoring/factoring-corporation/・2026年10月25日確認）。トップ・FAQ には金額の記載なし
     personalSupport: true,
-    features: ["低手数料", "柔軟な審査", "全国対応"],
+    features: ["3社間0.5%〜", "柔軟な審査", "全国対応"],
     description: "手数料は2社間1〜12%・3社間0.5〜10.5%（公式表示）です。審査結果は最短1時間で出ます（公式FAQ）。公式コラムでは、審査通過率93%超・買取可能額30万円〜3億円・入金は最短2時間としています。",
     pros: [
       "手数料の目安は3社間0.5〜10.5%・2社間1〜12%（公式FAQ）",
@@ -299,7 +299,7 @@ export const factoringCompanies: FactoringCompany[] = [
     minAmount: 100000,
     maxAmount: "無制限",
     personalSupport: true,
-    features: ["低手数料", "AI審査", "迅速な入金"],
+    features: ["手数料1〜9.5%", "AI審査", "迅速な入金"],
     description: "手数料は1%〜9.5%です（公式FAQ。公式は「ファクタリング業界最低水準の手数料」と表示）。AI審査により、最短30分で入金されます。", // paytoday.jp トップ「1％〜というファクタリング業界最低水準の手数料を実現」（2026年10月25日確認）
     pros: [
       "手数料1%〜9.5%（公式FAQ「1%からで上限９．５％」）。公式は「ファクタリング業界最低水準の手数料」と表示", // paytoday.jp トップ・FAQ（2026年10月23日確認・10月25日再確認）
