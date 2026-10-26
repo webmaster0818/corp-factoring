@@ -240,5 +240,5 @@ A. ペイトナー・ラボル・QuQuMo・PayToday・FREENANCEは、いずれも
 - [個人事業主向けファクタリングガイド](/articles/article-factoring-kojin-jigyonushi/)
 - [即日ファクタリングおすすめガイド](/articles/article-factoring-sokujitsu/)
 - [ファクタリングの審査基準と通過率を上げるポイント](/articles/article-factoring-shinsa/)
-- [ファクタリングおすすめ20選｜手数料・即日対応を比較](/articles/article-factoring-osusume/)
+- [ファクタリングおすすめ19選｜手数料・即日対応を比較](/articles/article-factoring-osusume/)
 - [ファクタリング手数料の相場と安い会社12選](/articles/article-factoring-tesuryo/)

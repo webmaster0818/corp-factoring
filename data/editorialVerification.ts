@@ -41,8 +41,8 @@ export const editorialVerifications: { [slug: string]: EditorialVerification } =
       },
       {
         label: "手数料レンジ",
-        value: "2社間 3.5%〜（公式表示 3.5〜12.5%）／3社間 0.5%〜",
-        source: "公式サイト（2026年7月21日確認・/fees/ の24社比較と同一データ）",
+        value: "2社間 3.5%〜／3社間 0.5%〜／2.5社間（電ふぁく）1.8%〜。上限は公式に記載なし",
+        source: "公式「よくあるご質問」（2026年10月26日確認）",
       },
       {
         label: "入金スピード",

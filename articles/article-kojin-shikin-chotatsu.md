@@ -295,7 +295,7 @@ CIC（https://www.cic.co.jp）で、自身の信用情報を確認できます�
 - [個人事業主向けビジネスローンおすすめ15選](/articles/article-business-loan-kojin/)
 - [日本政策金融公庫で個人事業主が融資を受ける方法](/articles/article-jfc-kojin/)
 - [個人事業主が使える補助金・助成金15選](/articles/article-kojin-hojokin/)
-- [個人事業主向けファクタリングおすすめ15選](/articles/article-factoring-kojin-jigyonushi/)
+- [個人事業主向けファクタリングおすすめ14選](/articles/article-factoring-kojin-jigyonushi/)
 
 
 ---

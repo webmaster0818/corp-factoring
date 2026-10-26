@@ -172,7 +172,7 @@ A: あります。公式サイトでは、ペイトナーが審査を土日祝�
 以下の記事もあわせてご覧ください。
 
 - [ファクタリングとは？仕組み・手数料・メリデメ解説](/articles/article-factoring-toha/)
-- [ファクタリングおすすめ20選｜手数料・即日対応を比較](/articles/article-factoring-osusume/)
+- [ファクタリングおすすめ19選｜手数料・即日対応を比較](/articles/article-factoring-osusume/)
 - [ファクタリング会社の比較｜手数料・スピード・審査で選ぶ](/articles/article-factoring-hikaku/)
 - [ファクタリングの審査基準と落ちる理由7選](/articles/article-factoring-shinsa/)
 - [ファクタリングは違法か｜合法である根拠と違法な会社の見分け方](/articles/article-factoring-ihou/)

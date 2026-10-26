@@ -193,7 +193,7 @@ A. 少額（30万円以下）は交渉の余地が少ない傾向があります
 - [手数料が安いファクタリング会社ランキング](/articles/article-factoring-tesuryo-yasui/)
 - [ファクタリング会社の比較](/articles/article-factoring-hikaku/)
 - [2社間・3社間ファクタリングの違いと選び方](/articles/article-factoring-2sha-3sha/)
-- [ファクタリングおすすめ20選｜手数料・即日対応を比較](/articles/article-factoring-osusume/)
+- [ファクタリングおすすめ19選｜手数料・即日対応を比較](/articles/article-factoring-osusume/)
 - [ファクタリング詐欺の手口と見分け方](/articles/article-factoring-sagi/)
 
 ---

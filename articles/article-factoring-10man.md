@@ -222,4 +222,4 @@ A. ビートレーディングは注文書ファクタリングに対応して�
 - [ファクタリング手数料の相場と安い会社12選](/articles/article-factoring-tesuryo/)
 - [手数料が安いファクタリング会社ランキング](/articles/article-factoring-tesuryo-yasui/)
 - [ファクタリングの審査基準と通過率を高めるポイント](/articles/article-factoring-shinsa/)
-- [個人事業主向けファクタリングおすすめ15選](/articles/article-factoring-kojin-jigyonushi/)
+- [個人事業主向けファクタリングおすすめ14選](/articles/article-factoring-kojin-jigyonushi/)

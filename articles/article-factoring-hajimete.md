@@ -258,7 +258,7 @@ A. 2社間ファクタリングであれば、取引先への通知はありま�
 以下の記事もあわせてご覧ください。
 
 - [ファクタリングとは？仕組みをわかりやすく解説](/articles/article-factoring-toha/)
-- [ファクタリングおすすめ20選｜手数料・即日対応を比較](/articles/article-factoring-osusume/)
+- [ファクタリングおすすめ19選｜手数料・即日対応を比較](/articles/article-factoring-osusume/)
 - [ファクタリング手数料の相場と安い会社12選](/articles/article-factoring-tesuryo/)
 - [ファクタリングの審査基準と通過率を上げるポイント](/articles/article-factoring-shinsa/)
 - [ファクタリングのメリット・デメリット解説](/articles/article-factoring-merit-demerit/)

@@ -253,5 +253,5 @@ A. 利用できます。ただし、個人事業主の場合は、法人より�
 - [ファクタリング手数料の相場と安い会社12選](/articles/article-factoring-tesuryo/)
 - [ファクタリングとは？仕組みをわかりやすく解説](/articles/article-factoring-toha/)
 - [ファクタリング会社の比較](/articles/article-factoring-hikaku/)
-- [ファクタリングおすすめ20選｜手数料・即日対応を比較](/articles/article-factoring-osusume/)
+- [ファクタリングおすすめ19選｜手数料・即日対応を比較](/articles/article-factoring-osusume/)
 - [ファクタリングの口コミ・評判まとめ](/articles/article-factoring-kuchikomi/)

@@ -265,7 +265,7 @@ A. ファクタリングの手数料は、「売上債権売却損」または�
 以下の記事もあわせてご覧ください。
 
 - [個人事業主向けファクタリングガイド](/articles/article-factoring-kojin-jigyonushi/)
-- [ファクタリングおすすめ20選｜手数料・即日対応を比較](/articles/article-factoring-osusume/)
+- [ファクタリングおすすめ19選｜手数料・即日対応を比較](/articles/article-factoring-osusume/)
 - [ファクタリング会社の比較](/articles/article-factoring-hikaku/)
 - [即日ファクタリングおすすめガイド](/articles/article-factoring-sokujitsu/)
 - [ファクタリングの口コミ・評判まとめ](/articles/article-factoring-kuchikomi/)

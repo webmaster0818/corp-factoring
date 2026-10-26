@@ -207,6 +207,6 @@ A. ネット銀行の口座（PayPay銀行・楽天銀行等）をお持ちの�
 
 - [ファクタリングとは？仕組みをわかりやすく解説](/articles/article-factoring-toha/)
 - [即日ファクタリングおすすめガイド](/articles/article-factoring-sokujitsu/)
-- [ファクタリングおすすめ20選｜手数料・即日対応を比較](/articles/article-factoring-osusume/)
+- [ファクタリングおすすめ19選｜手数料・即日対応を比較](/articles/article-factoring-osusume/)
 - [ファクタリング手数料の相場と安い会社12選](/articles/article-factoring-tesuryo/)
 - [ファクタリングの審査基準と通過率を上げるポイント](/articles/article-factoring-shinsa/)

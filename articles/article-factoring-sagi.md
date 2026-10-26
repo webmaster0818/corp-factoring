@@ -209,7 +209,7 @@ A. 給与ファクタリング（会社員の給与を対象）は違法であ�
 
 - [ファクタリング違法業者の見分け方と安全な利用法](/articles/article-factoring-ihou/)
 - [ファクタリングとは？仕組みをわかりやすく解説](/articles/article-factoring-toha/)
-- [ファクタリングおすすめ20選｜手数料・即日対応を比較](/articles/article-factoring-osusume/)
+- [ファクタリングおすすめ19選｜手数料・即日対応を比較](/articles/article-factoring-osusume/)
 - [ファクタリングの審査基準と通過率を上げるポイント](/articles/article-factoring-shinsa/)
 - [ファクタリングの口コミ・評判まとめ](/articles/article-factoring-kuchikomi/)
 - [ファクタリングのメリット・デメリット解説](/articles/article-factoring-merit-demerit/)

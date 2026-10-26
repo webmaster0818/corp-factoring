@@ -255,6 +255,6 @@ A. 同じ売掛金を複数社に申し込むことは、「二重譲渡」に�
 
 - [ファクタリングの審査基準と通過率を上げるポイント](/articles/article-factoring-shinsa/)
 - [ファクタリングとは？仕組みをわかりやすく解説](/articles/article-factoring-toha/)
-- [ファクタリングおすすめ20選｜手数料・即日対応を比較](/articles/article-factoring-osusume/)
+- [ファクタリングおすすめ19選｜手数料・即日対応を比較](/articles/article-factoring-osusume/)
 - [ファクタリング違法業者の見分け方と安全な利用法](/articles/article-factoring-ihou/)
 - [ファクタリングのメリット・デメリット解説](/articles/article-factoring-merit-demerit/)

@@ -359,7 +359,7 @@ CIC（https://www.cic.co.jp）で、自身の信用情報を確認できます�
 - [個人事業主がお金を借りる方法9選](/articles/article-kojin-okane-kariru/)
 - [日本政策金融公庫で個人事業主が融資を受ける方法](/articles/article-jfc-kojin/)
 - [個人事業主が融資を受ける方法7選](/articles/article-kojin-jigyonushi-yushi/)
-- [個人事業主向けファクタリングおすすめ15選](/articles/article-factoring-kojin-jigyonushi/)
+- [個人事業主向けファクタリングおすすめ14選](/articles/article-factoring-kojin-jigyonushi/)
 
 
 ---

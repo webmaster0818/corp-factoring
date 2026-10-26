@@ -170,7 +170,7 @@
 以下の記事もあわせてご覧ください。
 
 - [個人事業主の資金調達方法10選](/articles/article-kojin-shikin-chotatsu/)
-- [個人事業主向けファクタリングおすすめ15選](/articles/article-factoring-kojin-jigyonushi/)
+- [個人事業主向けファクタリングおすすめ14選](/articles/article-factoring-kojin-jigyonushi/)
 - [請求書買取サービスおすすめ10選](/articles/article-seikyusho-kaitori/)
 - [日本政策金融公庫で個人事業主が融資を受ける方法](/articles/article-jfc-kojin/)
 - [個人事業主が使える補助金・助成金15選](/articles/article-kojin-hojokin/)

@@ -203,6 +203,6 @@ A. カード売掛金（信用力が高い）の場合は3〜8%程度、一般�
 
 - [ファクタリングとは？仕組みをわかりやすく解説](/articles/article-factoring-toha/)
 - [業種別ファクタリング活用ガイド](/articles/article-factoring-gyoushu-guide/)
-- [ファクタリングおすすめ20選｜手数料・即日対応を比較](/articles/article-factoring-osusume/)
+- [ファクタリングおすすめ19選｜手数料・即日対応を比較](/articles/article-factoring-osusume/)
 - [即日ファクタリングおすすめガイド](/articles/article-factoring-sokujitsu/)
 - [ファクタリング手数料の相場と安い会社12選](/articles/article-factoring-tesuryo/)

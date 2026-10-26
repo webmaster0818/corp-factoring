@@ -164,7 +164,7 @@
 - [個人事業主が融資を受ける方法7選](/articles/article-kojin-jigyonushi-yushi/)
 - [個人事業主向けビジネスローンおすすめ15選](/articles/article-business-loan-kojin/)
 - [日本政策金融公庫で個人事業主が融資を受ける方法](/articles/article-jfc-kojin/)
-- [個人事業主向けファクタリングおすすめ15選](/articles/article-factoring-kojin-jigyonushi/)
+- [個人事業主向けファクタリングおすすめ14選](/articles/article-factoring-kojin-jigyonushi/)
 
 
 ---

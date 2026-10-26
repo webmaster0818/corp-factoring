@@ -285,7 +285,7 @@ A. 利用できる会社があります。アクセルファクター、メン�
 以下の記事もあわせてご覧ください。
 
 - [即日ファクタリングおすすめガイド](/articles/article-factoring-sokujitsu/)
-- [ファクタリングおすすめ20選｜手数料・即日対応を比較](/articles/article-factoring-osusume/)
+- [ファクタリングおすすめ19選｜手数料・即日対応を比較](/articles/article-factoring-osusume/)
 - [ファクタリング会社の比較](/articles/article-factoring-hikaku/)
 - [ファクタリングの口コミ・評判まとめ](/articles/article-factoring-kuchikomi/)
 - [ファクタリング手数料の相場と安い会社12選](/articles/article-factoring-tesuryo/)

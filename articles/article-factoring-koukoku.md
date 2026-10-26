@@ -205,6 +205,6 @@ A. 継続して利用できます。同じ会社を継続して利用すると�
 
 - [ファクタリングとは？仕組みをわかりやすく解説](/articles/article-factoring-toha/)
 - [業種別ファクタリング活用ガイド](/articles/article-factoring-gyoushu-guide/)
-- [ファクタリングおすすめ20選｜手数料・即日対応を比較](/articles/article-factoring-osusume/)
+- [ファクタリングおすすめ19選｜手数料・即日対応を比較](/articles/article-factoring-osusume/)
 - [ファクタリング手数料の相場と安い会社12選](/articles/article-factoring-tesuryo/)
 - [2社間・3社間ファクタリングの違いと選び方](/articles/article-factoring-2sha-3sha/)

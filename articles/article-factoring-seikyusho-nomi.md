@@ -205,6 +205,6 @@ A. オンライン型のサービス（QuQuMo・PayToday・ペイトナー等）
 
 - [ファクタリングとは？仕組みをわかりやすく解説](/articles/article-factoring-toha/)
 - [ファクタリングの契約の流れと注意点](/articles/article-factoring-keiyaku/)
-- [ファクタリングおすすめ20選｜手数料・即日対応を比較](/articles/article-factoring-osusume/)
+- [ファクタリングおすすめ19選｜手数料・即日対応を比較](/articles/article-factoring-osusume/)
 - [即日ファクタリングおすすめガイド](/articles/article-factoring-sokujitsu/)
 - [2社間・3社間ファクタリングの違いと選び方](/articles/article-factoring-2sha-3sha/)

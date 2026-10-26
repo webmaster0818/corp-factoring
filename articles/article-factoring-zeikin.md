@@ -205,5 +205,5 @@ A. 税金滞納自体は、手数料に影響しないケースが多いとい�
 - [ファクタリングとは？仕組みをわかりやすく解説](/articles/article-factoring-toha/)
 - [ファクタリングの審査基準と通過率を上げるポイント](/articles/article-factoring-shinsa/)
 - [ファクタリング違法業者の見分け方と安全な利用法](/articles/article-factoring-ihou/)
-- [ファクタリングおすすめ20選｜手数料・即日対応を比較](/articles/article-factoring-osusume/)
+- [ファクタリングおすすめ19選｜手数料・即日対応を比較](/articles/article-factoring-osusume/)
 - [ファクタリングのメリット・デメリット解説](/articles/article-factoring-merit-demerit/)

@@ -25,7 +25,7 @@ const menuCategories = [
   {
     title: "おすすめ・口コミ",
     links: [
-      { href: "/articles/article-factoring-osusume", label: "おすすめ20選" },
+      { href: "/articles/article-factoring-osusume", label: "おすすめ19選" },
       { href: "/articles/article-factoring-sokujitsu", label: "即日対応15選" },
       { href: "/articles/article-factoring-hikaku", label: "ファクタリング会社比較" },
       { href: "/articles/article-factoring-kuchikomi", label: "口コミ・評判" },

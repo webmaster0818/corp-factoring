@@ -329,7 +329,7 @@ CIC・JICCの信用情報が確認されます。以下に該当する場合、�
 - [個人事業主が融資を受ける方法7選](/articles/article-kojin-jigyonushi-yushi/)
 - [個人事業主向けビジネスローンおすすめ15選](/articles/article-business-loan-kojin/)
 - [個人事業主が使える補助金・助成金15選](/articles/article-kojin-hojokin/)
-- [個人事業主向けファクタリングおすすめ15選](/articles/article-factoring-kojin-jigyonushi/)
+- [個人事業主向けファクタリングおすすめ14選](/articles/article-factoring-kojin-jigyonushi/)
 
 
 ---

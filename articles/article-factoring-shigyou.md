@@ -200,5 +200,5 @@ A. 個人のクライアントへの請求書は、審査が厳しくなる場�
 - [ファクタリングとは？仕組みをわかりやすく解説](/articles/article-factoring-toha/)
 - [業種別ファクタリング活用ガイド](/articles/article-factoring-gyoushu-guide/)
 - [個人事業主向けファクタリングガイド](/articles/article-factoring-kojin-jigyonushi/)
-- [ファクタリングおすすめ20選｜手数料・即日対応を比較](/articles/article-factoring-osusume/)
+- [ファクタリングおすすめ19選｜手数料・即日対応を比較](/articles/article-factoring-osusume/)
 - [ファクタリング手数料の相場と安い会社12選](/articles/article-factoring-tesuryo/)

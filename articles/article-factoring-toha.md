@@ -295,11 +295,11 @@ Webデザイナーが、A社に50万円の請求書を発行したとします�
 
 以下の記事もあわせてご覧ください。
 
-- [ファクタリングおすすめ20選｜手数料・即日対応を比較](/articles/article-factoring-osusume/)
+- [ファクタリングおすすめ19選｜手数料・即日対応を比較](/articles/article-factoring-osusume/)
 - [ファクタリング手数料の相場と安い会社12選](/articles/article-factoring-tesuryo/)
 - [即日ファクタリングおすすめ15選](/articles/article-factoring-sokujitsu/)
 - [ファクタリングのメリット・デメリットガイド](/articles/article-factoring-merit-demerit/)
-- [個人事業主向けファクタリングおすすめ15選](/articles/article-factoring-kojin-jigyonushi/)
+- [個人事業主向けファクタリングおすすめ14選](/articles/article-factoring-kojin-jigyonushi/)
 - [個人事業主の資金調達方法10選](/articles/article-kojin-shikin-chotatsu/)
 
 

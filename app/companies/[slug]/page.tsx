@@ -757,7 +757,7 @@ export default function CompanyPage({
                       手数料を抑えたい方
                     </h4>
                     <p className="text-gray-600 leading-relaxed">
-                      手数料は{company.fees.min}%からと業界でも低い水準のため、費用を抑えられます。
+                      手数料は{company.fees.min}%からです。上限と実際の率は、見積もりで確認してください。
                     </p>
                   </div>
                 </div>

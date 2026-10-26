@@ -106,7 +106,7 @@ export function Footer() {
               </li>
               <li>
                 <Link href="/articles/article-factoring-osusume" className="text-gray-400 hover:text-white transition">
-                  おすすめ20選
+                  おすすめ19選
                 </Link>
               </li>
               <li>
