@@ -296,10 +296,6 @@ const defaultDetails: CompanyDetailData = {
     {
       question: "土日に対応していますか？",
       answer: "営業時間については公式サイトをご確認ください。"
-    },
-    {
-      question: "利用できない業種はありますか？",
-      answer: "基本的にどの業種でも利用できます。詳しくは各社にお問い合わせください。"
     }
   ],
   comparisons: []
