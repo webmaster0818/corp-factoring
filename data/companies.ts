@@ -132,7 +132,7 @@ export const factoringCompanies: FactoringCompany[] = [
     minAmount: 300000,
     maxAmount: "3億円", // 公式コラム「買取可能額は30万円～3億円」（accelfacter.co.jp/column/factoring/factoring-corporation/・2026年10月25日確認）。トップ・FAQ には金額の記載なし
     personalSupport: true,
-    features: ["3社間0.5%〜", "柔軟な審査", "全国対応"],
+    features: ["3社間0.5%〜", "審査結果最短1時間", "全国対応"], // 旧「柔軟な審査」は出典なし→公式FAQ「最短1時間で審査結果」（2026年10月27日確認）
     description: "手数料は2社間1〜12%・3社間0.5〜10.5%（公式表示）です。審査結果は最短1時間で出ます（公式FAQ）。公式コラムでは、審査通過率93%超・買取可能額30万円〜3億円・入金は最短2時間としています。",
     pros: [
       "手数料の目安は3社間0.5〜10.5%・2社間1〜12%（公式FAQ）",
@@ -147,11 +147,11 @@ export const factoringCompanies: FactoringCompany[] = [
     ],
     reviewCount: 1650,
     companyInfo: {
-      established: "2018年",
+      established: "2018年10月",
       capital: "2億7,052万円（グループ総資本金）",
       address: "東京都豊島区高田3丁目32番1号 大東ビル3階"
-    },
-    requiredDocuments: ["請求書", "通帳", "身分証明書"],
+    }, // accelfacter.co.jp/company/ の会社概要（2026年10月27日確認。設立年月日「平成30年10月」）
+    requiredDocuments: ["請求書など売掛金額が確認できる書類", "通帳3か月分の写し", "身分証明書", "（利用金額により）決算書"], // 公式FAQ「審査にはどのような書類が必要ですか？」（2026年10月27日確認）
     url: "https://accelfacter.co.jp/",
     category: ["手数料安い", "審査甘い"]
   },

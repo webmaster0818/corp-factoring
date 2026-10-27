@@ -79,7 +79,7 @@ export const companyUseCases: { [key: string]: UseCaseExample[] } = {
     {
       title: "製造業の設備投資資金",
       situation: "新規受注増加で設備増強が必要だが、融資審査に時間がかかる",
-      solution: "柔軟な審査のもと、売掛債権を売却して資金を調達",
+      solution: "営業時間内で書類がそろっていれば最短1時間で審査結果が出る（公式FAQ）アクセルファクターで売掛債権を売却",
       result: "売掛債権を売却して設備資金を確保し、設備を導入"
     }
   ]
