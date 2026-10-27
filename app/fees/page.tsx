@@ -62,6 +62,9 @@ export default function FeesPage() {
             <p className="text-gray-600 text-lg leading-relaxed">
               手数料の相場と計算方法、手数料を抑えるための方法を解説します。無料の手数料シミュレーターで、入金額の目安も確認できます。
             </p>
+            <p className="text-gray-600 text-sm leading-relaxed mt-3">
+              このページは、手数料が安い会社を公式値で比べるためのページです。手数料の内訳や、100万円の請求書で手元に残る金額のシミュレーションは「<Link href="/articles/article-factoring-tesuryo/" className="text-blue-600 hover:text-blue-700 underline">ファクタリング手数料の相場と内訳</Link>」で詳しく解説しています。
+            </p>
           </div>
         </div>
 
