@@ -762,19 +762,7 @@ export default function CompanyPage({
                   </div>
                 </div>
               )}
-              {company.category.includes("審査甘い") && (
-                <div className="flex items-start gap-4 bg-blue-50 p-5 rounded-xl border border-blue-100">
-                  <span className="text-3xl">✅</span>
-                  <div>
-                    <h4 className="font-black text-gray-900 mb-2 text-lg">
-                      審査に不安がある方
-                    </h4>
-                    <p className="text-gray-600 leading-relaxed">
-                      審査が柔軟で、赤字決算や税金滞納がある場合でも利用できる可能性があります。
-                    </p>
-                  </div>
-                </div>
-              )}
+              {/* 旧「審査に不安がある方：審査が柔軟で、赤字決算や税金滞納がある場合でも…」は出典のない共通文のため削除（2026-10-28）。各社の審査の記載は公式の出典つきの個別データに限る */}
               {company.personalSupport && (
                 <div className="flex items-start gap-4 bg-sky-50 p-5 rounded-xl border border-sky-100">
                   <span className="text-3xl"></span>
