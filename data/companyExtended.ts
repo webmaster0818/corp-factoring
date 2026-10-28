@@ -86,14 +86,10 @@ export const companyUseCases: { [key: string]: UseCaseExample[] } = {
 };
 
 // デフォルト値を返すヘルパー関数
-export function getCompanyStrengths(slug: string): string[] {
-  return companyStrengths[slug] || [
-    "取引実績",
-    // 旧「柔軟な審査」は出典のない既定値のため削除（2026-10-28）
-    "迅速な入金",
-    "サポート体制",
-    "幅広い業種への対応"
-  ];
+// 個別の強みデータがない会社は null を返す（ページ側で companies.ts / feeIndex の公式確認値から「主な条件」を組み立てる）。
+// 旧既定値「取引実績」「迅速な入金」「サポート体制」「幅広い業種への対応」（と10/28削除の「柔軟な審査」）は、全社共通で出典のない評価語だったため削除（2026-10-28）
+export function getCompanyStrengths(slug: string): string[] | null {
+  return companyStrengths[slug] ?? null;
 }
 
 export function getCompanyUseCases(slug: string): UseCaseExample[] {
@@ -107,7 +103,7 @@ export function getCompanyUseCases(slug: string): UseCaseExample[] {
     {
       title: "緊急の資金調達",
       situation: "急な受注で外注費・仕入れ費用が必要",
-      solution: "即日入金により資金を確保",
+      solution: "売掛金を支払期日より前に現金化して、費用を確保",
       result: "受注に必要な費用を期日までに支払い"
     }
   ];

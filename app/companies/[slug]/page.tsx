@@ -142,6 +142,15 @@ export default function CompanyPage({
       : company.amountText ?? `${company.minAmount === 0 ? "下限なし" : `${(company.minAmount / 10000).toFixed(0)}万円`}〜${company.maxAmount}`;
   // speed は「最短即日」「即日」など表記が混在するため、「最短」の二重表記を防ぐ
   const speedLabel = company.speed.startsWith("最短") ? company.speed : `最短${company.speed}`;
+  // 強み欄：個別の強みデータ（companyExtended.ts）がない会社は、評価語ではなく公式確認値（早見表・/fees/ と同じ値）だけで「主な条件」を組み立てる（2026-10-28）
+  const keyConditions: string[] = strengths ?? [
+    company.speedIsReview
+      ? `公式FAQでは、${company.speed}が出るとされています。入金までの時間は、公式サイトに記載がありません。`
+      : `入金までの時間は${speedLabel}です。`,
+    `2社間ファクタリングの手数料は${feeRow ? feeRow.fee2 : company.fees.max > 0 ? feeRange(company.fees) : `${company.fees.min}%〜`}です。`,
+    `買取可能額は${amountLabel}です。`,
+    ...(company.personalSupport ? ["個人事業主・フリーランスの利用に対応しています。"] : []),
+  ];
 
   // 指名×具体サブ意図（営業時間・審査・必要書類・個人事業主可否）の即答FAQ。
   // 早見表と同じ一次確認済みフィールドから生成し、検索クエリと同じ言い回しで
@@ -465,7 +474,7 @@ export default function CompanyPage({
             </a>
             <a href="#strengths" className="text-gray-700 hover:text-blue-600 font-medium py-3 px-4 bg-gray-50 rounded hover:bg-blue-50 transition border border-transparent hover:border-blue-200 flex items-center gap-3">
               <span className="text-blue-600">→</span>
-              {company.name}の強み
+              {strengths ? `${company.name}の強み` : "おすすめの方・主な条件"}
             </a>
             <a href="#use-cases" className="text-gray-700 hover:text-blue-600 font-medium py-3 px-4 bg-gray-50 rounded hover:bg-blue-50 transition border border-transparent hover:border-blue-200 flex items-center gap-3">
               <span className="text-blue-600">→</span>
@@ -800,11 +809,16 @@ export default function CompanyPage({
         <section className="mb-12">
           <Card className="border-2 border-gray-100 shadow-sm">
             <CardHeader className="bg-gray-50 border-b border-gray-100">
-              <CardTitle className="text-2xl font-black text-gray-900">{company.name}の強み</CardTitle>
+              <CardTitle className="text-2xl font-black text-gray-900">{strengths ? `${company.name}の強み` : `${company.name}の主な条件`}</CardTitle>
+              {!strengths && (
+                <p className="text-sm text-gray-600 mt-2">
+                  当サイトが公式サイトで確認した、入金までの時間・手数料・買取可能額などの条件です。手数料の出典と確認日は、<Link href="/fees/" className="text-blue-600 hover:underline">24社の手数料の比較</Link>に掲載しています。
+                </p>
+              )}
             </CardHeader>
             <CardContent className="pt-6">
               <ul className="space-y-4">
-                {strengths.map((strength, index) => (
+                {keyConditions.map((strength, index) => (
                   <li key={index} className="flex items-start gap-4 bg-blue-50 p-5 rounded-xl border border-blue-100">
                     <span className="text-2xl font-black text-blue-600">{index + 1}</span>
                     <p className="text-gray-700 leading-relaxed font-medium flex-1">{strength}</p>

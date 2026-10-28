@@ -199,7 +199,7 @@ export const factoringCompanies: FactoringCompany[] = [
     minAmount: 500000,
     maxAmount: "2億円（応相談）",
     personalSupport: true,
-    features: ["迅速な入金", "土日祝も受付", "オンライン完結"],
+    features: ["最短2時間で入金", "土日祝も受付", "オンライン完結"],
     description: "ピーエムジー株式会社（東京本社・大阪支店・福岡支店ほか全国12拠点）のファクタリングです。電話は8:00〜20:00、Webは24時間受付で、どちらも土日祝に対応しています。買取額は50万円からで、入金は最短2時間です（2026年10月18日公式確認）。",
     pros: [
       "最短2時間で入金",
@@ -299,7 +299,7 @@ export const factoringCompanies: FactoringCompany[] = [
     minAmount: 100000,
     maxAmount: "無制限",
     personalSupport: true,
-    features: ["手数料1〜9.5%", "AI審査", "迅速な入金"],
+    features: ["手数料1〜9.5%", "AI審査", "最短30分で入金"],
     description: "手数料は1%〜9.5%です（公式FAQ。公式は「ファクタリング業界最低水準の手数料」と表示）。AI審査により、最短30分で入金されます。", // paytoday.jp トップ「1％〜というファクタリング業界最低水準の手数料を実現」（2026年10月25日確認）
     pros: [
       "手数料1%〜9.5%（公式FAQ「1%からで上限９．５％」）。公式は「ファクタリング業界最低水準の手数料」と表示", // paytoday.jp トップ・FAQ（2026年10月23日確認・10月25日再確認）
