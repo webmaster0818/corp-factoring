@@ -10,7 +10,7 @@ import { DEFAULT_OG_IMAGES } from "@/lib/og";
 
 const SITE = "https://corp-factoring.com";
 const SLUG = "top-management";
-const CHECKED_AT = "2026年8月7日"; // 公式サイト一次確認日（operatingHoursMap登録日）
+const CHECKED_AT = "2026年10月28日"; // 公式サイト一次確認日（operatingHoursMap登録日）
 
 // 営業時間比較表に載せる他社（operatingHoursMapに一次確認値がある会社のみ）
 const COMPARE_SLUGS = ["ennavi", "labol", "pmg", "accel-factor", "no1"];
@@ -52,7 +52,7 @@ export default function TopManagementHoursPage() {
     return { slug, name: c?.name ?? slug, hours: oh.weekdays, sat: oh.saturday, sun: oh.sunday };
   });
 
-  const answer = `${company.name}の営業時間は「平日 ${h.weekdays}」で、土日祝は休業（年末年始も休業）です。申込から契約まではオンライン完結に対応しています（公式サイト・${CHECKED_AT}確認）。`;
+  const answer = `${company.name}の営業時間は「平日 ${h.weekdays}」で、土日祝は休業（年末年始も休業）です。電話はフリーダイヤル 0120-36-2005 で、公式サイト上部に「【営業時間】10:00〜19:00／土日祝・年末年始を除く」と表示されています（公式サイト・${CHECKED_AT}確認）。申込から契約まではオンライン完結に対応しています（公式・2026年8月7日確認）。`;
 
   const faqs = [
     {
@@ -79,7 +79,7 @@ export default function TopManagementHoursPage() {
     headline: "トップマネジメントの営業時間・受付時間は？【公式確認】",
     description:
       "トップマネジメントの営業時間・受付時間を公式サイトで確認した内容をもとに解説しています。土日祝の扱い、営業時間外の申込の扱い、他社との比較も掲載しています。",
-    dateModified: "2026-08-16",
+    dateModified: "2026-10-28",
     author: {
       "@type": "Organization",
       name: "ファクタリング比較ナビ",
@@ -131,7 +131,7 @@ export default function TopManagementHoursPage() {
           {company.name}の営業時間・受付時間
         </h1>
         <p className="mt-2 text-xs text-gray-500">
-          最終確認日：2026年8月16日（営業時間の公式サイト確認日：{CHECKED_AT}）
+          最終確認日：2026年10月28日（営業時間の公式サイト確認日：{CHECKED_AT}）
         </p>
 
         {/* 結論の即答（H1直下） */}

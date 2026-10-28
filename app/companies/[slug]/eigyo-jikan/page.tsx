@@ -20,11 +20,21 @@ const SLUGS: string[] = [...HOURS_SLUGS];
 const NAME_ALIAS: { [slug: string]: string } = { pmg: "PMG（ピーエムジー）" };
 // 営業時間を再確認したページは最終確認日も更新する
 const PAGE_UPDATED_OVERRIDE: { [slug: string]: [string, string] } = {
-  pmg: ["2026年10月18日", "2026-10-18"],
-  paytner: ["2026年10月14日", "2026-10-14"],
+  pmg: ["2026年10月28日", "2026-10-28"],
+  paytner: ["2026年10月28日", "2026-10-28"],
+  "support-kinyu": ["2026年10月28日", "2026-10-28"],
   no1: ["2026年10月14日", "2026-10-14"],
   "factor-plan": ["2026年10月14日", "2026-10-14"],
   try: ["2026年10月14日", "2026-10-14"],
+};
+
+// 冒頭の即答に足す、会社ごとの公式確認値（受付手段・時間外の扱い）。公式に書かれていることだけを書く
+const ANSWER_EXTRA: { [slug: string]: string } = {
+  "support-kinyu":
+    "電話（0120-162-022）の受付時間も平日9:30〜18:00です。運営するオンラインのFACTOR⁺U（ファクトル）は、Web申請を24時間受け付けますが、営業時間外の申請への対応は翌営業日です。",
+  paytner:
+    "原則、当日19:00までの申込は当日中に審査結果が連絡され、19:00以降の申請は翌営業日の入金です。審査完了後の振込は土日祝を含む365日、オペレーターの対応は平日10:00〜19:00です。",
+  pmg: "PMG（ピーエムジー）の電話（0120-901-680）は平日・土日・祝日とも8:00〜20:00、Webフォームは24時間受付です。振込時間外に契約が完了した場合は翌営業日の振込です。",
 };
 
 export function generateStaticParams() {
@@ -94,7 +104,7 @@ export default async function CompanyHoursPage({ params }: { params: Promise<{ s
     ? `土曜は${h.saturday ?? "公式サイトでは確認できず"}、日曜は${h.sunday ?? "公式サイトでは確認できず"}${h.holidays ? `、祝日は${h.holidays}` : ""}です。`
     : `土曜・日曜・祝日の個別の受付体制は、公式サイトでは確認できませんでした。`;
 
-  const answer = `${company.name}の受付時間は公式表示で「${h.weekdays}」です。${weekendSentence}（公式サイト・${checkedAt}確認）`;
+  const answer = `${company.name}の受付時間は公式表示で「${h.weekdays}」です。${weekendSentence}${ANSWER_EXTRA[slug] ?? ""}（公式サイト・${checkedAt}確認）`;
 
   const offHoursAnswer =
     is24h || offHoursDocumented

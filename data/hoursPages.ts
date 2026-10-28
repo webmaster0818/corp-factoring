@@ -36,16 +36,16 @@ export const HOURS_CHECKED_AT: { [slug: string]: string } = {
   "accel-factor": "2026年7月8日",
   freenance: "2026年7月8日",
   paytoday: "2026年10月19日",
-  "support-kinyu": "2026年10月23日",
-  paytner: "2026年10月19日",
+  "support-kinyu": "2026年10月28日",
+  paytner: "2026年10月28日",
   labol: "2026年10月19日",
-  pmg: "2026年10月18日",
+  pmg: "2026年10月28日",
   jtc: "2026年7月29日",
   no1: "2026年10月14日",
   "factor-plan": "2026年10月14日",
   try: "2026年10月14日",
   ququmo: "2026年8月22日",
-  "top-management": "2026年8月7日",
+  "top-management": "2026年10月28日",
 };
 
 // 営業時間比較表に載せる候補（operatingHoursMapに一次確認値がある会社のみ）。

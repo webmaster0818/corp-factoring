@@ -137,7 +137,7 @@ export default function CompanyPage({
   const lead = getCompanyLead(slug);
   // 買取可能額：公式で再確認した会社（lead あり）は /fees/ と同じ一次確認値を表示する
   const amountLabel =
-    lead && feeRow
+    lead && feeRow && !lead.keepCompanyAmount
       ? feeRow.amount
       : company.amountText ?? `${company.minAmount === 0 ? "下限なし" : `${(company.minAmount / 10000).toFixed(0)}万円`}〜${company.maxAmount}`;
   // speed は「最短即日」「即日」など表記が混在するため、「最短」の二重表記を防ぐ
