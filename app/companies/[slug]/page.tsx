@@ -39,6 +39,15 @@ const CATEGORY_LABEL: { [key: string]: string } = {
   一括申込: "一括申込",
 };
 
+// 「柔軟な審査」ラベルは、公式サイトに審査の柔軟さを示す自社の記載がある会社だけ表示する（2026-10-28 公式確認）。
+// 記載がない会社（アクセルファクター・ラボル・いーばんく）は category を残したまま（診断ツールの絞り込み用）ラベルを出さない
+const FLEX_SHINSA_SOURCE: { [slug: string]: { quote: string; source: string; url: string } } = {
+  "mentor-capital": { quote: "簡単審査 柔軟かつ迅速な対応 赤字･債務超過･個人事業・税金滞納でもOK！", source: "公式トップページ", url: "https://mentor-capital.jp/" },
+  "best-factor": { quote: "審査通過率92.25％を誇る柔軟審査が強みのファクタリング会社", source: "公式サイトのガイド記事", url: "https://bestfactor.jp/guides/factoring-fee-rate/" },
+  try: { quote: "赤字・小規模でも相談できるのが、ファクタリングのトライの柔軟審査です。", source: "公式トップページ", url: "https://www.factoring-try-sko.co.jp/" },
+};
+const showCategory = (slug: string, c: string) => c !== "審査甘い" || !!FLEX_SHINSA_SOURCE[slug];
+
 export async function generateStaticParams() {
   return factoringCompanies.map((company) => ({
     slug: company.slug,
@@ -60,7 +69,7 @@ export async function generateMetadata({
     };
   }
 
-  const categoryText = company.category.slice(0, 3).map((c) => CATEGORY_LABEL[c] ?? c).join("・");
+  const categoryText = company.category.filter((c) => showCategory(slug, c)).slice(0, 3).map((c) => CATEGORY_LABEL[c] ?? c).join("・");
   const metaFeeRow = feeIndex.find((r) => r.slug === slug);
   const metaFeeUndisclosed = !!metaFeeRow && /非公示|確認できず|個別査定/.test(metaFeeRow.fee2);
   const feeText = metaFeeUndisclosed
@@ -713,12 +722,19 @@ export default function CompanyPage({
                 <div className="bg-gray-50 p-4 rounded-lg">
                   <h3 className="font-bold text-gray-700 mb-2 text-sm">カテゴリ</h3>
                   <div className="flex flex-wrap gap-1.5">
-                    {company.category.map((cat, index) => (
+                    {company.category.filter((cat) => showCategory(slug, cat)).map((cat, index) => (
                       <Badge key={index} className="bg-blue-100 text-blue-700 border-blue-200 text-xs font-bold">
                         {CATEGORY_LABEL[cat] ?? cat}
                       </Badge>
                     ))}
                   </div>
+                  {company.category.includes("審査甘い") && FLEX_SHINSA_SOURCE[slug] && (
+                    <p className="text-xs text-gray-600 mt-2 leading-relaxed">
+                      「柔軟な審査」は公式の表記によります：「{FLEX_SHINSA_SOURCE[slug].quote}」（
+                      <a href={FLEX_SHINSA_SOURCE[slug].url} target="_blank" rel="noopener noreferrer" className="underline">{FLEX_SHINSA_SOURCE[slug].source}</a>
+                      ・2026年10月28日確認）
+                    </p>
+                  )}
                 </div>
               </div>
               <div className="bg-gray-50 p-4 rounded-lg">

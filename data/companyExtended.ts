@@ -89,7 +89,7 @@ export const companyUseCases: { [key: string]: UseCaseExample[] } = {
 export function getCompanyStrengths(slug: string): string[] {
   return companyStrengths[slug] || [
     "取引実績",
-    "柔軟な審査",
+    // 旧「柔軟な審査」は出典のない既定値のため削除（2026-10-28）
     "迅速な入金",
     "サポート体制",
     "幅広い業種への対応"
