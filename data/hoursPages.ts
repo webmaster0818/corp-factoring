@@ -22,6 +22,7 @@ export const HOURS_SLUGS = [
   "ennavi",
   "freenance",
   "ququmo",
+  "be-trading",
 ] as const;
 
 // 静的セグメントで実装済みの営業時間子ページ（動的ルートの generateStaticParams からは除外する）
@@ -46,6 +47,7 @@ export const HOURS_CHECKED_AT: { [slug: string]: string } = {
   try: "2026年10月14日",
   ququmo: "2026年8月22日",
   "top-management": "2026年10月28日",
+  "be-trading": "2026年10月29日",
 };
 
 // 営業時間比較表に載せる候補（operatingHoursMapに一次確認値がある会社のみ）。
