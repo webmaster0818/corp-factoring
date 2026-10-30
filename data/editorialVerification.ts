@@ -162,7 +162,7 @@ export const editorialVerifications: { [slug: string]: EditorialVerification } =
         label: "手数料レンジ",
         value:
           "一律10%（公式表示）。3社間ファクタリングの取扱いは公式サイトでは確認できず",
-        source: "公式サイト（2026年7月21日確認・/fees/ の24社比較と同一データ）",
+        source: "公式サイト（2026年7月21日確認・/fees/ の比較表と同一データ）",
       },
       {
         label: "入金スピード",
@@ -220,7 +220,7 @@ export const editorialVerifications: { [slug: string]: EditorialVerification } =
       {
         label: "手数料レンジ",
         value: "2社間 1〜12%／3社間 0.5〜10.5%（公式表示）",
-        source: "公式サイト（2026年7月21日確認・/fees/ の24社比較と同一データ）",
+        source: "公式サイト（2026年7月21日確認・/fees/ の比較表と同一データ）",
       },
       {
         label: "入金スピード",
@@ -288,7 +288,7 @@ export const editorialVerifications: { [slug: string]: EditorialVerification } =
       {
         label: "手数料レンジ",
         value: "2社間 1%〜（上限は公式非公表）／3社間は非対応",
-        source: "公式サイト（2026年7月21日確認・/fees/ の24社比較と同一データ）",
+        source: "公式サイト（2026年7月21日確認・/fees/ の比較表と同一データ）",
       },
       {
         label: "入金スピード",

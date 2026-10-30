@@ -1,16 +1,12 @@
 import Link from "next/link";
-import { getConditionRows } from "@/data/conditions";
+import { getConditionRows, type ConditionDef } from "@/data/conditions";
+import type { FeeIndexRow } from "@/data/feeIndex";
 import { feeCheckedAt } from "@/data/feeIndex";
 
-// 条件別記事の冒頭に出す比較表（公式確認値から自動で作る）
-export function ConditionTable({ articleSlug }: { articleSlug: string }) {
-  const data = getConditionRows(articleSlug);
-  if (!data || data.rows.length === 0) return null;
-  const { def, rows } = data;
+const FIRST = 10;
+
+function RowsTable({ def, rows }: { def: ConditionDef; rows: FeeIndexRow[] }) {
   return (
-    <section className="my-8 rounded-xl border border-gray-200 bg-white p-4 md:p-6">
-      <h2 className="text-lg font-bold text-[#1B3A5C]">{def.heading}</h2>
-      <p className="mt-2 text-xs leading-relaxed text-gray-600">{def.criteria}</p>
       <div className="mt-3 overflow-x-auto">
         <table className="w-full min-w-[640px] border-collapse text-sm">
           <thead>
@@ -35,6 +31,25 @@ export function ConditionTable({ articleSlug }: { articleSlug: string }) {
           </tbody>
         </table>
       </div>
+  );
+}
+
+// 条件別記事の冒頭に出す比較表（公式確認値から自動で作る）
+export function ConditionTable({ articleSlug }: { articleSlug: string }) {
+  const data = getConditionRows(articleSlug);
+  if (!data || data.rows.length === 0) return null;
+  const { def, rows } = data;
+  return (
+    <section className="my-8 rounded-xl border border-gray-200 bg-white p-4 md:p-6">
+      <h2 className="text-lg font-bold text-[#1B3A5C]">{def.heading}</h2>
+      <p className="mt-2 text-xs leading-relaxed text-gray-600">{def.criteria}</p>
+      <RowsTable def={def} rows={rows.slice(0, FIRST)} />
+      {rows.length > FIRST && (
+        <details className="mt-2">
+          <summary className="cursor-pointer text-sm text-blue-600">残りの{rows.length - FIRST}社を表示</summary>
+          <RowsTable def={def} rows={rows.slice(FIRST)} />
+        </details>
+      )}
       <p className="mt-2 text-xs leading-relaxed text-gray-500">
         ※当サイトが各社の公式サイトで確認した値です（基準日{feeCheckedAt}、その後に再確認した会社は<Link href="/fees/" className="text-blue-600 underline">手数料比較</Link>に確認日を記載）。掲載会社が増えると、この表にも自動で追加されます。
       </p>

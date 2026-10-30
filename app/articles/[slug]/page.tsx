@@ -8,6 +8,7 @@ import { factoringCompanies, feeRange } from "@/data/companies";
 import { getTopicForArticle, getRelatedSlugs } from "@/data/topics";
 import { DEFAULT_OG_IMAGES } from "@/lib/og";
 import { toJaDate } from "@/lib/pageDates";
+import { ConditionTable } from "@/components/ConditionTable";
 
 export async function generateStaticParams() {
   const slugs = getAllArticleSlugs();
@@ -177,6 +178,8 @@ export default async function ArticlePage({
               </span>
             )}
           </div>
+
+          <ConditionTable articleSlug={slug} />
 
           <div
             className="prose prose-gray max-w-none

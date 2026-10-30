@@ -625,7 +625,7 @@ export const companyLeads: { [slug: string]: CompanyLead } = {
     ],
     related: [
       { href: "/companies/accel-factor/eigyo-jikan/", label: "アクセルファクターの営業時間（詳細）" },
-      { href: "/fees/", label: "24社の手数料・入金スピードの比較" },
+      { href: "/fees/", label: "掲載各社の手数料・入金スピードの比較" },
       { href: "/articles/article-factoring-kuchikomi/", label: "ファクタリング会社の口コミ件数・評価の比較" },
     ],
     sources: [
@@ -760,7 +760,7 @@ export const companyLeads: { [slug: string]: CompanyLead } = {
     ],
     related: [
       { href: "/companies/support-kinyu/eigyo-jikan/", label: "日本中小企業金融サポート機構の営業時間・土日の扱い" },
-      { href: "/fees/", label: "24社の手数料を公式値で比較" },
+      { href: "/fees/", label: "掲載各社の手数料を公式値で比較" },
     ],
     // 「ファクトル 口コミ」：ファクトル単体と運営元（機構）の口コミを分けて掲載（2026年10月26日に各サイトの表示を確認）
     sourcesCheckedAt: "2026年10月30日（みん評・ファクログ・ITreviewは10月26日）",
@@ -936,7 +936,7 @@ export const companyLeads: { [slug: string]: CompanyLead } = {
     ],
     related: [
       { href: "/companies/paytoday/", label: "PayToday（ペイトゥデイ）の評判・手数料（別サービス）" },
-      { href: "/fees/", label: "24社の手数料を公式値で比較" },
+      { href: "/fees/", label: "掲載各社の手数料を公式値で比較" },
     ],
     faqs: [
       { question: "エントゥデイ（¥Today）の運営会社は？", answer: "株式会社ミネルバです（運営責任者 浅井公一、東京都品川区上大崎3丁目14番34号プラスワン402、電話 050-1785-3563）。公式の運営組織欄の設立表記は2026年3月です（2026年10月16日に公式サイトで確認）。一部の比較記事では運営元が別の名称で紹介されていますが、現在の公式表記は株式会社ミネルバです。なお、国税庁の法人番号公表サイトでは、公式記載の所在地と一致する株式会社ミネルバの登録を確認できませんでした（本店所在地が別の可能性もあります）。" },
