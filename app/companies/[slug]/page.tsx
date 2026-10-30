@@ -149,7 +149,7 @@ export default function CompanyPage({
       : `入金までの時間は${speedLabel}です。`,
     `2社間ファクタリングの手数料は${feeRow ? feeRow.fee2 : company.fees.max > 0 ? feeRange(company.fees) : `${company.fees.min}%〜`}です。`,
     `買取可能額は${amountLabel}です。`,
-    ...(company.personalSupport ? ["個人事業主・フリーランスの利用に対応しています。"] : []),
+    ...(company.personalNote ? [`${company.personalNote}。`] : company.personalSupport ? ["個人事業主・フリーランスの利用に対応しています。"] : []),
   ];
 
   // 指名×具体サブ意図（営業時間・審査・必要書類・個人事業主可否）の即答FAQ。
@@ -173,7 +173,9 @@ export default function CompanyPage({
         },
         {
           question: `${company.name}は個人事業主・フリーランスでも利用できますか？`,
-          answer: company.personalSupport
+          answer: company.personalNote
+            ? `${company.personalNote}。`
+            : company.personalSupport
             ? `${company.name}は個人事業主・フリーランスの利用にも対応しています。`
             : `${company.name}は主に法人向けのサービスで、個人事業主・フリーランスの利用は要問い合わせです。`,
         },
@@ -385,7 +387,7 @@ export default function CompanyPage({
                 ) : (
                   <>{company.name}は<strong>{speedLabel}での入金</strong>に対応し、</>
                 )}
-                {company.personalSupport ? "個人事業主・フリーランスも利用できます。" : "主に法人向けのサービスです。"}
+                {company.personalNote ? `${company.personalNote}。` : company.personalSupport ? "個人事業主・フリーランスも利用できます。" : "主に法人向けのサービスです。"}
                 営業時間・必要書類・手数料など、問い合わせの多い項目を、公式サイトで確認した情報をもとに掲載しています。
               </p>
               <div className="overflow-x-auto">
@@ -424,7 +426,7 @@ export default function CompanyPage({
                     </tr>
                     <tr>
                       <th className="text-left align-top bg-gray-50 px-3 py-2.5 font-bold text-gray-700 whitespace-nowrap">個人事業主・フリーランス</th>
-                      <td className="px-3 py-2.5 text-gray-800">{company.personalSupport ? "対応" : "要問い合わせ（主に法人向け）"}</td>
+                      <td className="px-3 py-2.5 text-gray-800">{company.personalNote ?? (company.personalSupport ? "対応" : "要問い合わせ（主に法人向け）")}</td>
                     </tr>
                   </tbody>
                 </table>
@@ -549,7 +551,9 @@ export default function CompanyPage({
               <div className="bg-sky-50 p-5 rounded-xl border border-sky-100">
                 <h3 className="font-bold text-gray-700 mb-2 text-sm">個人事業主</h3>
                 <p className="text-xl font-bold text-gray-900">
-                  {company.personalSupport ? (
+                  {company.personalNote ? (
+                    <span className="text-gray-800 font-bold text-base">{company.personalNote}</span>
+                  ) : company.personalSupport ? (
                     <span className="text-green-600 font-black">対応</span>
                   ) : (
                     <span className="text-gray-500 font-bold">要問い合わせ（主に法人向け）</span>
@@ -796,7 +800,7 @@ export default function CompanyPage({
                       個人事業主・フリーランスの方
                     </h4>
                     <p className="text-gray-600 leading-relaxed">
-                      個人事業主・フリーランスにも対応しています。
+                      {company.personalNote ? `${company.personalNote}。` : "個人事業主・フリーランスにも対応しています。"}
                     </p>
                   </div>
                 </div>

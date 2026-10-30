@@ -41,7 +41,7 @@ export const HOURS_CHECKED_AT: { [slug: string]: string } = {
   paytner: "2026年10月28日",
   labol: "2026年10月19日",
   pmg: "2026年10月28日",
-  jtc: "2026年7月29日",
+  jtc: "2026年10月30日",
   no1: "2026年10月14日",
   "factor-plan": "2026年10月14日",
   try: "2026年10月14日",
