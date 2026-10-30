@@ -318,7 +318,7 @@ export const factoringCompanies: FactoringCompany[] = [
       capital: "1億円",
       address: "東京都港区南青山2-2-15 ウィン青山836"
     },
-    requiredDocuments: ["請求書", "通帳"],
+    requiredDocuments: ["買取を希望する請求書", "本人確認書類（顔写真付き）", "直近6か月分以上の入出金明細（必須ではない）", "決算書・確定申告書（必須ではない）"], // paytoday.jp/faq「申込に必要な書類は何ですか？」（2026年10月30日確認）
     url: "https://paytoday.jp/",
     category: ["手数料安い", "即日"]
   },
