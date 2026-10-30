@@ -10,6 +10,7 @@ import { getCompanyDetails } from "@/data/companyDetails";
 import { getEditorialVerification } from "@/data/editorialVerification";
 import { feeIndex, FEE_COMPANY_COUNT } from "@/data/feeIndex";
 import { HOURS_LINK_SLUGS } from "@/data/hoursPages";
+import { SUBPAGE_SLUGS } from "@/data/subPages";
 import { getCompanyLead } from "@/data/companyLead";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
@@ -436,6 +437,13 @@ export default function CompanyPage({
               )}
               <p className="mt-2 text-xs text-gray-500">※ ご利用前に、公式サイトにて最新の条件をご確認ください。手数料を公表していない会社は、見積もりにより個別に提示されます。</p>
               <div className="mt-4 border-t border-gray-100 pt-3">
+                {SUBPAGE_SLUGS.includes(slug) && (
+                  <p className="mb-3 text-sm">
+                    <Link href={`/companies/${slug}/tesuryo/`} className="text-blue-600 underline">{company.name}の手数料と100万円の計算例 →</Link>
+                    <span className="mx-2 text-gray-300">|</span>
+                    <Link href={`/companies/${slug}/shinsa/`} className="text-blue-600 underline">{company.name}の審査時間・必要書類 →</Link>
+                  </p>
+                )}
                 <p className="text-xs font-bold text-gray-600 mb-2">関連記事：</p>
                 <div className="flex flex-wrap gap-x-4 gap-y-1.5 text-xs">
                   <Link href="/articles/article-factoring-shinsa/" className="text-blue-600 hover:underline">ファクタリングの審査基準と通過のポイント →</Link>
