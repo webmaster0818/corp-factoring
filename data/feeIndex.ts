@@ -43,3 +43,6 @@ export const feeIndex: FeeIndexRow[] = [
   { slug: "factor-plan", name: "ファクタープラン", fee2: "非公示（「明朗手数料」表記のみ・要見積もり）", fee3: "対応（率は非公示）", speed: "最短即日", amount: "50万円〜5,000万円", target: "法人限定", online: "可（クラウドサイン電子契約）", recheck: "2026年10月14日再確認", speedCheckedAt: "2026年10月14日" },
   { slug: "try", name: "ファクタリングのTRY", fee2: "3%〜（下限のみ）", fee3: "1.2%〜（下限のみ）", speed: "最短2時間（オンライン契約）", amount: "10万円〜1億円（以上は相談可）", target: "法人・個人事業主", online: "可（クラウドサイン）", recheck: "2026年10月14日再確認", speedCheckedAt: "2026年10月14日" },
 ];
+
+// 掲載社数（表示の「◯社」はこの値を使う。固定の数字を書かない）
+export const FEE_COMPANY_COUNT = feeIndex.length;

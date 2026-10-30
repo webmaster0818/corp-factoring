@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import type { Metadata } from "next";
 import { getCompanyBySlug } from "@/data/companies";
 import { getCompanyDetails } from "@/data/companyDetails";
-import { feeIndex, feeCheckedAt } from "@/data/feeIndex";
+import { feeIndex, feeCheckedAt, FEE_COMPANY_COUNT } from "@/data/feeIndex";
 import { HOURS_SLUGS, HOURS_CHECKED_AT, HOURS_COMPARE_POOL } from "@/data/hoursPages";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
@@ -328,7 +328,7 @@ export default async function CompanyHoursPage({ params }: { params: Promise<{ s
           <p className="text-sm font-bold text-gray-800">関連ページ</p>
           <ul className="mt-2 space-y-1.5 text-sm">
             <li>・<Link href={`/companies/${slug}/`} className="text-blue-600 underline">{company.name}の評判・手数料・必要書類の解説</Link></li>
-            <li>・<Link href="/fees/" className="text-blue-600 underline">ファクタリング24社の手数料・最短入金の比較（公式サイトで確認）</Link></li>
+            <li>・<Link href="/fees/" className="text-blue-600 underline">ファクタリング{FEE_COMPANY_COUNT}社の手数料・最短入金の比較（公式サイトで確認）</Link></li>
             <li>・<Link href="/#comparison" className="text-blue-600 underline">ファクタリング会社の比較一覧</Link></li>
           </ul>
         </section>

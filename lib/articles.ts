@@ -3,6 +3,7 @@ import path from 'path';
 import { remark } from 'remark';
 import html from 'remark-html';
 import gfm from 'remark-gfm'; // Markdown の表を <table> に（無いと表が | 区切りの文字のまま出ていた）
+import { getLastmod, getFirstCommitDate } from './pageDates';
 
 const articlesDirectory = path.join(process.cwd(), 'articles');
 
@@ -86,7 +87,6 @@ export async function getArticleBySlug(slug: string): Promise<Article | null> {
   }
 
   const fileContents = fs.readFileSync(fullPath, 'utf8');
-  const stats = fs.statSync(fullPath);
   const title = extractTitle(fileContents);
   const keyword = extractKeyword(fileContents);
   const contentMarkdown = extractContent(fileContents);
@@ -103,8 +103,8 @@ export async function getArticleBySlug(slug: string): Promise<Article | null> {
     keyword,
     description: extractDescription(fileContents),
     content: processedContent.toString(),
-    datePublished: stats.birthtime.toISOString(),
-    dateModified: stats.mtime.toISOString(),
+    datePublished: getFirstCommitDate(`articles/${slug}.md`) ?? '',
+    dateModified: getLastmod(`/articles/${slug}/`) ?? '',
     faqs,
   };
 }

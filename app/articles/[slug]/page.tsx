@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { FEE_COMPANY_COUNT } from "@/data/feeIndex";
 import type { Metadata } from "next";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
@@ -6,6 +7,7 @@ import { getAllArticleSlugs, getArticleBySlug, getAllArticles } from "@/lib/arti
 import { factoringCompanies, feeRange } from "@/data/companies";
 import { getTopicForArticle, getRelatedSlugs } from "@/data/topics";
 import { DEFAULT_OG_IMAGES } from "@/lib/og";
+import { toJaDate } from "@/lib/pageDates";
 
 export async function generateStaticParams() {
   const slugs = getAllArticleSlugs();
@@ -155,7 +157,7 @@ export default async function ArticlePage({
           </h1>
 
           <div className="mb-6 flex items-center gap-3 text-sm text-gray-500">
-            <span>更新日: 2026年4月</span>
+            {article.dateModified && <span>更新日: {toJaDate(article.dateModified)}</span>}
             {article.keyword && (
               <span className="bg-[#1B3A5C]/10 text-[#1B3A5C] text-xs font-medium px-3 py-1 rounded-full">
                 {article.keyword}
@@ -243,12 +245,12 @@ export default async function ArticlePage({
         {/* 手数料記事 → /fees/ データ資産への導線（手数料クラスタの相互リンク） */}
         {slug.includes("tesuryo") && (
           <section className="mt-12 bg-[#F0F6FC] border border-[#1B3A5C]/15 rounded-xl p-6">
-            <h2 className="text-lg font-bold text-[#1B3A5C] mb-2">24社の手数料を公式サイトの確認データで比較できます</h2>
+            <h2 className="text-lg font-bold text-[#1B3A5C] mb-2">{FEE_COMPANY_COUNT}社の手数料を公式サイトの確認データで比較できます</h2>
             <p className="text-sm text-gray-700 mb-4">
               各社の手数料（2社間・3社間の公表値）は、当サイトが各社の公式サイトを1件ずつ確認して掲載しています。会社ごとの手数料は、以下の比較表でご確認いただけます。
             </p>
             <Link href="/fees/" className="inline-block bg-[#1B3A5C] text-white text-sm font-bold px-5 py-2.5 rounded-lg hover:opacity-90 transition">
-              24社の手数料比較表を見る →
+              {FEE_COMPANY_COUNT}社の手数料比較表を見る →
             </Link>
           </section>
         )}
@@ -337,8 +339,8 @@ export default async function ArticlePage({
             "@type": "Article",
             "headline": article.title,
             "description": `${article.title}について、公式情報や公的資料をもとに解説しています。`,
-            "datePublished": article.datePublished,
-            "dateModified": article.dateModified,
+            ...(article.datePublished ? { "datePublished": article.datePublished } : {}),
+            ...(article.dateModified ? { "dateModified": article.dateModified } : {}),
             "author": {
               "@type": "Organization",
               "name": "ファクタリング比較ナビ",

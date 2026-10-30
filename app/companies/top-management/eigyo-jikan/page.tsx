@@ -2,7 +2,7 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { getCompanyBySlug } from "@/data/companies";
 import { getCompanyDetails } from "@/data/companyDetails";
-import { feeIndex } from "@/data/feeIndex";
+import { feeIndex, FEE_COMPANY_COUNT } from "@/data/feeIndex";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { OtherHoursLinks } from "@/components/OtherHoursLinks";
@@ -243,7 +243,7 @@ export default function TopManagementHoursPage() {
           <ul className="mt-2 space-y-1.5 text-sm">
             <li>・<Link href={`/companies/${SLUG}/`} className="text-blue-600 underline">{company.name}の評判・手数料・必要書類の解説</Link></li>
             <li>・<Link href="/articles/article-ennavi-vs-top-management/" className="text-blue-600 underline">えんナビと{company.name}の比較（手数料・入金スピード・営業時間）</Link></li>
-            <li>・<Link href="/fees/" className="text-blue-600 underline">ファクタリング24社の手数料・最短入金の比較（公式サイトで確認）</Link></li>
+            <li>・<Link href="/fees/" className="text-blue-600 underline">ファクタリング{FEE_COMPANY_COUNT}社の手数料・最短入金の比較（公式サイトで確認）</Link></li>
           </ul>
         </section>
 

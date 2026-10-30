@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { FEE_COMPANY_COUNT } from "@/data/feeIndex";
 import { ComparisonTable } from "@/components/ComparisonTable";
 import { FAQ } from "@/components/FAQ";
 import { DiagnosisTool } from "@/components/DiagnosisTool";
@@ -69,7 +70,7 @@ export default function Home() {
                   href="#ranking"
                   className="inline-block bg-[#1B3A5C] text-white font-bold py-2.5 px-6 rounded-md text-sm hover:bg-[#152d47] transition"
                 >
-                  掲載24社を見る →
+                  掲載{FEE_COMPANY_COUNT}社を見る →
                 </Link>
               </div>
             </div>
@@ -77,7 +78,7 @@ export default function Home() {
 
           <div className="text-center">
             <div className="inline-flex items-center gap-2 bg-blue-50 border border-blue-200 px-5 py-2 rounded-md text-sm font-medium mb-6">
-              <span className="text-gray-700">2026年4月 最新版｜<span className="text-[#1B3A5C] font-bold">24社</span>を比較</span>
+              <span className="text-gray-700">公式サイトで確認｜<span className="text-[#1B3A5C] font-bold">{FEE_COMPANY_COUNT}社</span>を比較</span>
             </div>
             <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black text-gray-900 leading-[1.2] mb-5">
               ファクタリング会社の<br />
@@ -110,7 +111,7 @@ export default function Home() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-2 md:grid-cols-4 gap-6 text-center">
             <div>
-              <p className="text-3xl lg:text-4xl font-black text-[#1B3A5C]">24社</p>
+              <p className="text-3xl lg:text-4xl font-black text-[#1B3A5C]">{FEE_COMPANY_COUNT}社</p>
               <p className="text-gray-500 text-sm mt-1">掲載会社数</p>
             </div>
             <div>
