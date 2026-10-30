@@ -71,10 +71,12 @@ export default async function CompanyFeePage({ params }: { params: Promise<{ slu
     .slice(0, 5)
     .map((x) => x.r);
 
-  const upperUnknown = r2.min !== undefined && r2.max === undefined;
+  // 2社間の提供がなく3社間だけ率が出ている会社（例：カイポケ早期入金）は3社間の率で判定する
+  const upperUnknown =
+    (r2.min !== undefined && r2.max === undefined) || (r2.min === undefined && r3.min !== undefined && r3.max === undefined);
   const answer = `${company.name}の手数料は、公式表示で2社間ファクタリングが「${row.fee2}」${has3 ? `、3社間ファクタリングが「${row.fee3}」` : "です（3社間は公式に対応の記載がありません）"}${has3 ? "です" : ""}。${
     upperUnknown ? "上限の率は公式に記載がないため、実際の率は見積もりで確認する必要があります。" : ""
-  }${r2.min === undefined ? "率が公式に示されていないため、見積もりで確認する必要があります。" : ""}（公式サイト・${checked}確認）`;
+  }${r2.min === undefined && r3.min === undefined ? "率が公式に示されていないため、見積もりで確認する必要があります。" : ""}（公式サイト・${checked}確認）`;
 
   const faqs = [
     { question: `${company.name}の手数料はいくらですか？`, answer },

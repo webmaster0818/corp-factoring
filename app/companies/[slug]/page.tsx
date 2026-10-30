@@ -148,7 +148,9 @@ export default function CompanyPage({
     company.speedIsReview
       ? `公式FAQでは、${company.speed}が出るとされています。入金までの時間は、公式サイトに記載がありません。`
       : `入金までの時間は${speedLabel}です。`,
-    `2社間ファクタリングの手数料は${feeRow ? feeRow.fee2 : company.fees.max > 0 ? feeRange(company.fees) : `${company.fees.min}%〜`}です。`,
+    feeRow && /^2社間の提供なし/.test(feeRow.fee2)
+      ? `2社間ファクタリングの提供はなく、3社間の手数料は${feeRow.fee3}です。`
+      : `2社間ファクタリングの手数料は${feeRow ? feeRow.fee2 : company.fees.max > 0 ? feeRange(company.fees) : `${company.fees.min}%〜`}です。`,
     `買取可能額は${amountLabel}です。`,
     ...(company.personalNote ? [`${company.personalNote}。`] : company.personalSupport ? ["個人事業主・フリーランスの利用に対応しています。"] : []),
   ];

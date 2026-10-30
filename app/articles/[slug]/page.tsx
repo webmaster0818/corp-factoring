@@ -79,6 +79,19 @@ export default async function ArticlePage({
     pmg: ["PMG", "ピーエムジー"],
     "mf-earlypayment": ["Money Forward 早期入金", "マネーフォワード早期入金", "マネーフォワード 早期入金"],
     "yen-today": ["¥Today", "エントゥデイ"],
+    // 2026年10月31日 新規掲載12社
+    msfj: ["MSFJ"],
+    levanta: ["レバンタ"],
+    "trust-gateway": ["トラストゲートウェイ"],
+    bion: ["バイオン"],
+    rfd: ["RFD株式会社", "RFD"],
+    "owl-keizai": ["アウル経済"],
+    "invoice-pay": ["インボイスPay", "インボイスペイ", "InvoicePay"],
+    "kaipoke-early": ["カイポケ早期入金", "カイポケ"],
+    urikakedo: ["うりかけ堂", "売掛堂"],
+    kaisoku: ["買速"],
+    olta: ["OLTA", "オルタ"],
+    "gmo-btob-hayabarai": ["GMO BtoB早払い", "BtoB早払い"],
   };
   const articleText = article ? article.content.replace(/<[^>]+>/g, " ") : "";
   const mentionedCompanies = article

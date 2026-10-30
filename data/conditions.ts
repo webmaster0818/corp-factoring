@@ -29,7 +29,7 @@ const minutes = (r: FeeIndexRow) => {
   return 24 * 60; // 「最短即日」のみ
 };
 const kojinOk = (r: FeeIndexRow) =>
-  /個人|フリーランス/.test(r.target) && !/個人事業主は利用不可|個人事業主・フリーランス不可|法人のみ|法人限定|法人専用|原則法人|受付.*停止/.test(r.target);
+  /個人|フリーランス/.test(r.target) && !/個人事業主は利用不可|個人事業主・フリーランス不可|法人のみ|法人限定|法人専用|原則法人|受付.*停止|取扱.*停止|個人事業主の可否は記載なし/.test(r.target);
 // 利用可能額の下限（円）。読み取れない場合は undefined
 const minAmountYen = (r: FeeIndexRow): number | undefined => {
   if (/下限(上限)?なし|下限.*記載なし|数万円/.test(r.amount)) return /数万円/.test(r.amount) ? 50000 : 0;
