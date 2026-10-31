@@ -123,8 +123,8 @@ export const editorialVerifications: { [slug: string]: EditorialVerification } =
       },
       {
         label: "必要書類",
-        value: "請求書・通帳・身分証明書",
-        source: "公式サイト（当サイトで確認・個別の確認日は非記録）",
+        value: "公式サイトに必要書類の一覧の記載なし",
+        source: "公式サイト（2026年10月18日確認・比較記事 article-ennavi-vs-top-management と同じ確認）",
       },
     ],
     checkpoints: [

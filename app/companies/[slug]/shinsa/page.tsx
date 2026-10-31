@@ -50,10 +50,14 @@ export default async function CompanyScreeningPage({ params }: { params: Promise
   const rateFacts = pickFacts(slug, /通過率|実績表示/);
   const auditFacts = lead?.auditFacts ?? [];
 
-  const docText = docFacts.length ? docFacts.map((f) => f.value).join(" ") : "";
+  // 「一覧の記載なし」等の事実は「公式表示で「…」」の形にせず、明示なしとして書く
+  const docListed = docFacts.filter((f) => !/記載なし|一覧の記載なし|確認できず/.test(f.value));
+  const docText = docListed.length ? docListed.map((f) => f.value).join(" ") : "";
+  // 確認日は事実の出典に書かれた日付を優先（事実ごとに再確認している会社があるため）
+  const docDate = docFacts.map((f) => f.source.match(/\d{4}年\d{1,2}月\d{1,2}日/)?.[0]).find(Boolean) ?? ev.checkedAt;
   const answer = `${company.name}の最短入金は公式表示で「${row.speed}」、対象は「${row.target}」です。${
     docText ? `必要書類は、公式表示で「${docText}」です。` : "必要書類は公式サイトで確認できた範囲では明示されていません。"
-  }（公式サイト・${ev.checkedAt}確認）`;
+  }（公式サイト・${docDate}確認）`;
 
   // 対象が近い他社（同じ審査ページを持つ会社から、個人事業主対応の有無が同じ会社を最大5社）
   const isKojin = (t: string) => /個人|フリーランス/.test(t) && !/個人事業主は利用不可|個人事業主・フリーランス不可|法人のみ|法人限定|法人専用|原則法人/.test(t);
