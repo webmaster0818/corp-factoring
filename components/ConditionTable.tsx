@@ -4,6 +4,8 @@ import type { FeeIndexRow } from "@/data/feeIndex";
 import { feeCheckedAt } from "@/data/feeIndex";
 
 const FIRST = 10;
+// data/conditionFacts.ts の公式の記載を使う表（行ごとに確認日を出す）
+const FACT_KEYS = ["donichi", "kessansho", "kakutei", "touki", "docs", "shinryou", "kaigo"];
 
 function RowsTable({ def, rows }: { def: ConditionDef; rows: FeeIndexRow[] }) {
   return (
@@ -51,7 +53,9 @@ export function ConditionTable({ articleSlug }: { articleSlug: string }) {
         </details>
       )}
       <p className="mt-2 text-xs leading-relaxed text-gray-500">
-        ※当サイトが各社の公式サイトで確認した値です（基準日{feeCheckedAt}、その後に再確認した会社は<Link href="/fees/" className="text-blue-600 underline">手数料比較</Link>に確認日を記載）。掲載会社が増えると、この表にも自動で追加されます。
+        {FACT_KEYS.includes(def.key)
+          ? <>※公式の記載と確認日は各行に記載しています。手数料・最短入金は当サイトが各社の公式サイトで確認した値です（<Link href="/fees/" className="text-blue-600 underline">手数料比較</Link>に確認日を記載）。</>
+          : <>※当サイトが各社の公式サイトで確認した値です（基準日{feeCheckedAt}、その後に再確認した会社は<Link href="/fees/" className="text-blue-600 underline">手数料比較</Link>に確認日を記載）。掲載会社が増えると、この表にも自動で追加されます。</>}
       </p>
     </section>
   );

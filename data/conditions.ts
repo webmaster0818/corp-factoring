@@ -5,6 +5,7 @@
 // 編集部の主観による順位は付けない。条件に当てはまるかの判定に使った公式表記は、表にそのまま出す。
 import { feeIndex, type FeeIndexRow } from "./feeIndex";
 import { parseRate } from "./subPages";
+import { conditionFacts, type ConditionFactKey } from "./conditionFacts";
 
 export interface ConditionDef {
   key: string;
@@ -16,6 +17,26 @@ export interface ConditionDef {
   sortKey?: (r: FeeIndexRow) => number; // 小さい順
   limit?: number;
 }
+
+// 条件別の公式記載（data/conditionFacts.ts）から行を選ぶための補助。
+// 値は「可」「条件付き（…）」「不要と明記」「一覧に記載なし」など、公式の記載を当サイトが区分したもの。
+const fact = (r: FeeIndexRow, k: ConditionFactKey) => conditionFacts[r.slug]?.[k];
+const factIs = (k: ConditionFactKey, ...vals: string[]) => (r: FeeIndexRow) => {
+  const v = fact(r, k)?.value ?? "";
+  return vals.some((x) => v === x || v.startsWith(x + "（"));
+};
+const rankBy = (k: ConditionFactKey, order: string[]) => (r: FeeIndexRow) => {
+  const v = fact(r, k)?.value ?? "";
+  const i = order.findIndex((x) => v === x || v.startsWith(x + "（"));
+  return (i < 0 ? 9 : i) * 10000 + (parseRate(r.fee2).min ?? 99);
+};
+const short = (t: string, n = 90) => (t.length > n ? t.slice(0, n) + "…" : t);
+const factEvidence = (k: ConditionFactKey) => (r: FeeIndexRow) => {
+  const f = fact(r, k);
+  if (!f) return "";
+  const quote = f.quote ? `「${short(f.quote)}」` : "";
+  return `${f.value}${quote ? "：" + quote : ""}${f.note ? `（${short(f.note, 60)}）` : ""}（${f.checkedAt}確認）`;
+};
 
 // 「最短2時間」「最短30分」「最短即日」は当日、「最短1日」「最短2営業日」は当日ではない
 const head = (s: string) => s.split(/[（(]/)[0];
@@ -102,6 +123,83 @@ export const CONDITIONS: { [articleSlug: string]: ConditionDef } = {
     evidence: (r) => r.online,
     match: (r) => /^可/.test(r.online),
     sortKey: minutes,
+  },
+
+  "article-factoring-donichi": {
+    key: "donichi",
+    heading: "土日祝の審査・入金について公式の記載がある会社",
+    criteria: "公式サイトに、土日祝にも審査や入金を行うと書いている会社（可）と、受付・相談だけなど条件付きで書いている会社を載せています。「可」を先に、同じ区分の中は2社間の手数料の下限が低い順に並べています。年末年始など特定の日を名指しした記載ではないため、利用する日の対応は公式サイトで確認してください。",
+    evidenceLabel: "土日祝の対応（公式の記載）",
+    evidence: factEvidence("donichi"),
+    match: factIs("donichi", "可", "条件付き"),
+    sortKey: rankBy("donichi", ["可", "条件付き"]),
+  },
+  "article-factoring-2sha-3sha": {
+    key: "sansha",
+    heading: "3社間ファクタリングに対応する会社（3社間の手数料の下限が低い順）",
+    criteria: "公式サイトで3社間ファクタリングに対応していると確認できた会社を、3社間の手数料の下限が低い順に並べています（率を公表していない会社は末尾）。2社間は、ほぼすべての掲載会社が対応しているため表にしていません。",
+    evidenceLabel: "3社間の手数料（公式表示）",
+    evidence: (r) => r.fee3,
+    match: factIs("sansha", "可", "条件付き"),
+    sortKey: (r) => parseRate(r.fee3).min ?? 99,
+  },
+  "article-factoring-kessansho-fuyou": {
+    key: "kessansho",
+    heading: "決算書の提出について公式の記載がある会社",
+    criteria: "公式サイトで決算書を「不要」と明記している会社を先に、次に条件付きの会社、最後に公式の必要書類の一覧に決算書が入っていない会社を載せています。一覧に入っていない会社でも、審査の途中で追加の書類を求められることがあります。",
+    evidenceLabel: "決算書の扱い（公式の記載）",
+    evidence: factEvidence("kessansho"),
+    match: factIs("kessansho", "不要と明記", "条件付き", "一覧に記載なし"),
+    sortKey: rankBy("kessansho", ["不要と明記", "条件付き", "一覧に記載なし"]),
+  },
+  "article-factoring-kakutei-shinkokusho-nashi": {
+    key: "kakutei",
+    heading: "確定申告書の提出について公式の記載がある会社（個人事業主が使える会社）",
+    criteria: "個人事業主が使える会社のうち、公式サイトで確定申告書を「不要」と明記している会社を先に、次に条件付きの会社、最後に公式の必要書類の一覧に確定申告書が入っていない会社を載せています。一覧に入っていない会社でも、審査の途中で追加の書類を求められることがあります。",
+    evidenceLabel: "確定申告書の扱い（公式の記載）",
+    evidence: factEvidence("kakutei"),
+    match: (r) => kojinOk(r) && factIs("kakutei", "不要と明記", "条件付き", "一覧に記載なし")(r),
+    sortKey: rankBy("kakutei", ["不要と明記", "条件付き", "一覧に記載なし"]),
+  },
+  "article-factoring-saiken-touki": {
+    key: "touki",
+    heading: "債権譲渡登記をしない・留保できると公式に書いている会社",
+    criteria: "公式サイトで、債権譲渡登記を行わない、または登記を留保できると書いている会社（可）と、金額や契約内容による条件付きの会社を載せています。「可」を先に、同じ区分の中は2社間の手数料の下限が低い順です。",
+    evidenceLabel: "登記の扱い（公式の記載）",
+    evidence: factEvidence("touki"),
+    match: factIs("touki", "可", "条件付き"),
+    sortKey: rankBy("touki", ["可", "条件付き"]),
+  },
+  "article-factoring-hitsuyou-shorui": {
+    key: "docs",
+    heading: "公式に挙げている必要書類の数（少ない順）",
+    criteria: "各社の公式サイトに書かれた必要書類の一覧を、申込時に求められる書類の数が少ない順に並べています（同じ数の会社は2社間の手数料の下限が低い順）。一覧を載せていない会社は表に入れていません。審査の途中や契約時に追加の書類を求められる場合があります。",
+    evidenceLabel: "必要書類（公式の記載）",
+    evidence: (r) => {
+      const f = fact(r, "docs");
+      if (!f) return "";
+      return `${f.count}点：${(f.list ?? []).join("・")}${f.note ? `（${short(f.note, 60)}）` : ""}（${f.checkedAt}確認）`;
+    },
+    match: (r) => (fact(r, "docs")?.count ?? 0) > 0,
+    sortKey: (r) => (fact(r, "docs")?.count ?? 99) * 1000 + (parseRate(r.fee2).min ?? 99),
+  },
+  "article-factoring-iryou": {
+    key: "shinryou",
+    heading: "診療報酬債権を扱うと公式に書いている会社",
+    criteria: "公式サイトで、診療報酬債権の買取に対応すると書いている会社（可）と、条件付きの会社を載せています。医療機関の利用事例があるだけの会社は入れていません。表は当サイトの掲載会社から作っています。本文の比較表は、掲載会社以外の専門サービスも含めて別に選んだものです。「可」を先に、同じ区分の中は2社間の手数料の下限が低い順です。",
+    evidenceLabel: "診療報酬（公式の記載）",
+    evidence: factEvidence("shinryou"),
+    match: factIs("shinryou", "可", "条件付き"),
+    sortKey: rankBy("shinryou", ["可", "条件付き"]),
+  },
+  "article-factoring-kaigo": {
+    key: "kaigo",
+    heading: "介護報酬債権を扱うと公式に書いている会社",
+    criteria: "公式サイトで、介護報酬債権の買取に対応すると書いている会社を載せています。介護事業者の利用事例があるだけの会社は入れていません。表は当サイトの掲載会社から作っています。本文の比較表は、掲載会社以外の専門サービスも含めて別に選んだものです。並びは2社間の手数料の下限が低い順です。",
+    evidenceLabel: "介護報酬（公式の記載）",
+    evidence: factEvidence("kaigo"),
+    match: factIs("kaigo", "可", "条件付き"),
+    sortKey: rankBy("kaigo", ["可", "条件付き"]),
   },
 };
 
