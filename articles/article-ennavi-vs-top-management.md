@@ -72,7 +72,7 @@
 
 ### 6. 運営会社
 
-えんナビの運営は株式会社インターテック（2017年創業）、トップマネジメントは株式会社トップ・マネジメント（平成21年4月21日設立・資本金5,000万円）です。えんナビの ennavi-factoring.net の会社情報ページには旧所在地（台東区東上野）が残っていますが、両サイトのフッターと ennavi.tokyo の会社概要は中央区日本橋本町です。
+えんナビの運営は株式会社インターテック（2017年創業）、トップマネジメントは株式会社トップ・マネジメント（平成21年4月21日設立・資本金5,000万円）です。えんナビの所在地は、ennavi.tokyo の会社概要と ennavi-factoring.net トップのフッターで中央区日本橋本町です（2026年11月1日確認）。
 
 ---
 
@@ -128,7 +128,7 @@ A: どちらも使えます。えんナビは ennavi.tokyo のトップに「法
 
 ## 出典（すべて2026年10月18日確認）
 
-- えんナビ：[ennavi-factoring.net（トップ）](https://ennavi-factoring.net/)／[よくあるご質問](https://ennavi-factoring.net/faq)／[会社情報](https://ennavi-factoring.net/company)／[ennavi.tokyo（トップ）](https://ennavi.tokyo/)／[会社概要](https://ennavi.tokyo/company/)／[よくあるご質問](https://ennavi.tokyo/faq/)
+- えんナビ：[ennavi-factoring.net（トップ）](https://ennavi-factoring.net/)／[ennavi.tokyo（トップ）](https://ennavi.tokyo/)／[会社概要](https://ennavi.tokyo/company/)／[よくあるご質問](https://ennavi.tokyo/faq/)
 - トップマネジメント：[公式トップ](https://top-management.co.jp/)／[よくある質問](https://top-management.co.jp/faq/)／[サービス](https://top-management.co.jp/service/)／[オンラインファクタリング](https://top-management.co.jp/service/online/)／[ご契約までの流れ](https://top-management.co.jp/flow/)／[会社概要](https://top-management.co.jp/company/)
 
 各社の詳細は個別ページでも解説しています。
