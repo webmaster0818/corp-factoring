@@ -64,6 +64,11 @@ export const editorialVerifications: { [slug: string]: EditorialVerification } =
         value: "Google Maps上の「株式会社トップ・マネジメント」の実評価は4.5（30件）",
         source: "Google Maps（Places APIで取得・2026年6月13日時点。評価は変動します）",
       },
+      {
+        label: "取扱債権（見積書・受注書・発注書）",
+        value: "「見積書・受注書・発注書ファクタリング」として、「お仕事の注文や発注を受けた段階、更には見積りの段階でもファクタリングが行なえる」と表示。見積書の段階での手数料・条件の記載はなし",
+        source: "公式「商品案内」（top-management.co.jp/service/・2026年10月31日確認）",
+      },
     ],
     checkpoints: [
       "実際の手数料率は売掛先の信用力や債権内容で変動するため、見積もりで「手数料率」と「その他費用の有無・内訳」を必ず確認してください",
