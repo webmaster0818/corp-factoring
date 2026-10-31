@@ -40,6 +40,8 @@ export const topics: Topic[] = [
         heading: "医療・介護",
         description: "診療報酬・介護報酬債権を入金前に資金化する方法と、選び方を解説しています。",
         slugs: [
+          "article-factoring-shougai-fukushi",
+          "article-factoring-houmon-kango",
           "article-factoring-iryou",
           "article-factoring-kaigo",
           "article-factoring-clinic-kaigyou",
