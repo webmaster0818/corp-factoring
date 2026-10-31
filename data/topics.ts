@@ -219,6 +219,7 @@ export const topics: Topic[] = [
         heading: "利用の流れ・書類・スピード",
         description: "申込から入金までの実務を解説します。",
         slugs: [
+          "article-factoring-nenmatsu-nenshi",
           "article-factoring-kaigyoutodoke-nashi",
           "article-factoring-seikyusho-kakikata",
           "article-factoring-kessansho-fuyou",
