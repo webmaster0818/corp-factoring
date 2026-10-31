@@ -93,6 +93,14 @@ export default async function ArticlePage({
     kaisoku: ["買速"],
     olta: ["OLTA", "オルタ"],
     "gmo-btob-hayabarai": ["GMO BtoB早払い", "BtoB早払い"],
+    // 2026年11月1日 新規掲載7社
+    goodplus: ["GoodPlus", "グッドプラス"],
+    "next-one": ["ネクストワン", "Next One"],
+    kkt: ["KKT株式会社", "KKT（ケーケーティー）", "ケーケーティー"],
+    coolpay: ["CoolPay", "クールペイ"],
+    "factoring-zero": ["ファクタリングZERO"],
+    "nishinihon-factor": ["西日本ファクター"],
+    "jigyoshikin-agent": ["事業資金エージェント"],
   };
   const articleText = article ? article.content.replace(/<[^>]+>/g, " ") : "";
   const mentionedCompanies = article

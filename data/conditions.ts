@@ -28,12 +28,17 @@ const minutes = (r: FeeIndexRow) => {
   if (hh) return Number(hh[1]) * 60;
   return 24 * 60; // 「最短即日」のみ
 };
-const kojinOk = (r: FeeIndexRow) =>
-  /個人|フリーランス/.test(r.target) && !/個人事業主は利用不可|個人事業主・フリーランス不可|法人のみ|法人限定|法人専用|原則法人|受付.*停止|取扱.*停止|個人事業主の可否は記載なし/.test(r.target);
+// 「売掛先は法人のみ」は売掛先の条件で利用者の条件ではないため、判定から外す（西日本ファクター・CoolPay 2026-11-01）。
+// 「法人・個人事業主の別は明記なし」は個人事業主の可否が公式で確認できないため対象外（CoolPay）
+const kojinOk = (r: FeeIndexRow) => {
+  const t = r.target.replace(/売掛先は[^。）、]*/g, "");
+  return /個人|フリーランス/.test(t) && !/個人事業主は利用不可|個人事業主・フリーランス不可|個人事業主不可|法人のみ|法人限定|法人専用|原則法人|受付.*停止|取扱.*停止|個人事業主の可否は記載なし|別は明記なし/.test(t);
+};
 // 利用可能額の下限（円）。読み取れない場合は undefined
 const minAmountYen = (r: FeeIndexRow): number | undefined => {
   if (/下限(上限)?なし|下限.*記載なし|数万円/.test(r.amount)) return /数万円/.test(r.amount) ? 50000 : 0;
-  const m = r.amount.match(/^(?:最低)?(\d[\d,]*)(万)?円/);
+  // 「対象債権1万円以上」（GoodPlus）のように前置きのある下限も読む
+  const m = r.amount.match(/^(?:最低|対象債権)?(\d[\d,]*)(万)?円/);
   if (!m) return undefined;
   return Number(m[1].replace(/,/g, "")) * (m[2] ? 10000 : 1);
 };

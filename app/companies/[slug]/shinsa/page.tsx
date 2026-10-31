@@ -60,7 +60,11 @@ export default async function CompanyScreeningPage({ params }: { params: Promise
   }（公式サイト・${docDate}確認）`;
 
   // 対象が近い他社（同じ審査ページを持つ会社から、個人事業主対応の有無が同じ会社を最大5社）
-  const isKojin = (t: string) => /個人|フリーランス/.test(t) && !/個人事業主は利用不可|個人事業主・フリーランス不可|法人のみ|法人限定|法人専用|原則法人/.test(t);
+  // 「売掛先は法人のみ」は利用者の条件ではないため外して判定する（data/conditions.ts の kojinOk と同じ扱い）
+  const isKojin = (target: string) => {
+    const t = target.replace(/売掛先は[^。）、]*/g, "");
+    return /個人|フリーランス/.test(t) && !/個人事業主は利用不可|個人事業主・フリーランス不可|個人事業主不可|法人のみ|法人限定|法人専用|原則法人|受付.*停止|取扱.*停止|個人事業主の可否は記載なし|別は明記なし/.test(t);
+  };
   const others = feeIndex
     .filter((r) => r.slug !== slug && SUBPAGE_SLUGS.includes(r.slug) && isKojin(r.target) === isKojin(row.target))
     .slice(0, 5);
