@@ -219,6 +219,8 @@ export const topics: Topic[] = [
         heading: "利用の流れ・書類・スピード",
         description: "申込から入金までの実務を解説します。",
         slugs: [
+          "article-factoring-site-120nichi",
+          "article-factoring-kakutei-shinkokusho-nashi",
           "article-factoring-mooshikomi-nagare",
           "article-factoring-hitsuyou-shorui",
           "article-factoring-seikyusho-nomi",
@@ -293,6 +295,16 @@ export const topics: Topic[] = [
           "article-factoring-kojinjouhou",
           "article-factoring-mynumber",
           "article-factoring-urikakesaki-tousan",
+        ],
+      },
+      {
+        heading: "資金が足りないとき",
+        description: "給料・外注費・税金などの支払いに間に合わない場合に、今日・今週できることを整理しています。",
+        slugs: [
+          "article-factoring-kyuryo-haraenai",
+          "article-shiharai-maniawanai",
+          "article-shikin-short-taisaku",
+          "article-gaichuhi-haraenai",
         ],
       },
       {
