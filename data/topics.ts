@@ -29,6 +29,7 @@ export const topics: Topic[] = [
         heading: "建設・製造・物流",
         description: "入金サイトが長く、ファクタリングの利用が最も多い業種です。",
         slugs: [
+          "article-factoring-hitori-oyakata",
           "article-factoring-kensetsu",
           "article-factoring-seizou",
           "article-factoring-unsou",
@@ -114,6 +115,7 @@ export const topics: Topic[] = [
         heading: "他の資金調達手段との違い",
         description: "融資・手形・でんさい等との費用や条件の違いを比較しています。",
         slugs: [
+          "article-factoring-vs-shinyou-hoken",
           "article-factoring-vs-ginkou",
           "article-factoring-vs-yuushi",
           "article-factoring-vs-business-loan",
@@ -289,6 +291,7 @@ export const topics: Topic[] = [
         heading: "法律・安全性・トラブル対策",
         description: "違法業者を避け、契約上のトラブルを防ぐための知識を解説します。",
         slugs: [
+          "article-factoring-kaisha-shurui",
           "article-factoring-yatte-ikenai",
           "article-factoring-jiko-hasan",
           "article-factoring-shiharai-okure",
