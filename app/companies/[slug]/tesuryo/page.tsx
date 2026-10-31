@@ -31,7 +31,9 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const row = feeIndex.find((r) => r.slug === slug);
   if (!company || !row || !SUBPAGE_SLUGS.includes(slug)) return { title: "ページが見つかりません" };
   const title = `${company.name}の手数料は？2社間・3社間の率と100万円の計算例【公式確認】`;
-  const description = `${company.name}の手数料は公式表示で2社間「${row.fee2}」${isNotOffered(row.fee3) ? "" : `、3社間「${row.fee3}」`}。100万円の請求書を売った場合の手取りの計算例、手数料以外の費用、他社との比較を、公式サイトで確認した内容（${checkedOf(slug)}確認）で掲載しています。`;
+  const descriptionFull = `${company.name}の手数料は公式表示で2社間「${row.fee2}」${isNotOffered(row.fee3) ? "" : `、3社間「${row.fee3}」`}。100万円の請求書を売った場合の手取りの計算例、手数料以外の費用、他社との比較を、公式サイトで確認した内容（${checkedOf(slug)}確認）で掲載しています。`;
+  const descriptionShort = `${company.name}の手数料は公式表示で2社間「${row.fee2}」。手取りの計算例・手数料以外の費用・他社比較を掲載しています（${checkedOf(slug)}確認）。`;
+  const description = descriptionFull.length <= 160 ? descriptionFull : descriptionShort.length <= 160 ? descriptionShort : `${company.name}の手数料を公式表示で確認し、手取りの計算例・手数料以外の費用・他社比較を掲載しています（${checkedOf(slug)}確認）。`;
   return {
     title,
     description,
@@ -245,7 +247,7 @@ export default async function CompanyFeePage({ params }: { params: Promise<{ slu
                 {others.map((o) => (
                   <tr key={o.slug} className="border-b border-gray-100 last:border-0">
                     <td className="px-3 py-2.5">
-                      <Link href={`/companies/${o.slug}/tesuryo/`} className="text-blue-600 hover:underline">{o.name}</Link>
+                      <Link href={SUBPAGE_SLUGS.includes(o.slug) ? `/companies/${o.slug}/tesuryo/` : `/companies/${o.slug}/`} className="text-blue-600 hover:underline">{o.name}</Link>
                     </td>
                     <td className="px-3 py-2.5 text-gray-800">{o.fee2}</td>
                     <td className="px-3 py-2.5 text-gray-800">{o.fee3}</td>

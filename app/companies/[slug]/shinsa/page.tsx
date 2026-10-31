@@ -24,7 +24,9 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const row = feeIndex.find((r) => r.slug === slug);
   if (!company || !row || !SUBPAGE_SLUGS.includes(slug)) return { title: "ページが見つかりません" };
   const title = `${company.name}の審査は？審査時間・必要書類・対象を公式確認`;
-  const description = `${company.name}の審査について、公式サイトで確認した審査時間・最短入金（${row.speed}）・必要書類・対象（${row.target}）・審査で見られる点を掲載しています。審査に通らなかった場合の次の手も解説します。`;
+  const descriptionFull = `${company.name}の審査について、公式サイトで確認した審査時間・最短入金（${row.speed}）・必要書類・対象（${row.target}）・審査で見られる点を掲載しています。審査に通らなかった場合の次の手も解説します。`;
+  const descriptionShort = `${company.name}の審査について、公式サイトで確認した審査時間・最短入金（${row.speed}）・必要書類・対象・審査で見られる点と、通らなかった場合の次の手を掲載しています。`;
+  const description = descriptionFull.length <= 160 ? descriptionFull : descriptionShort.length <= 160 ? descriptionShort : `${company.name}の審査について、公式サイトで確認した審査時間・必要書類・対象・審査で見られる点と、通らなかった場合の次の手を掲載しています。`;
   return {
     title,
     description,
