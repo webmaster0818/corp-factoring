@@ -11,7 +11,7 @@ export const SUBPAGE_SLUGS: string[] = feeIndex.map((r) => r.slug).filter((s) =>
 // 「1〜12%」「4%〜」「一律10%」「0.5〜15%」などから下限・上限を取り出す（取れない場合は undefined）
 export function parseRate(text: string): { min?: number; max?: number; flat?: boolean } {
   const t = text.replace(/[％]/g, "%").replace(/[～~]/g, "〜");
-  const flat = t.match(/一律\s*(\d+(?:\.\d+)?)%/);
+  const flat = t.match(/^一律\s*(\d+(?:\.\d+)?)%/); // 先頭の「一律」だけ（「3〜10%（…一律10%）」は幅として読む）
   if (flat) return { min: Number(flat[1]), max: Number(flat[1]), flat: true };
   const range = t.match(/^(\d+(?:\.\d+)?)%?\s*〜\s*(\d+(?:\.\d+)?)%/);
   if (range) return { min: Number(range[1]), max: Number(range[2]) };
