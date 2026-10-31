@@ -219,6 +219,9 @@ export const topics: Topic[] = [
         heading: "利用の流れ・書類・スピード",
         description: "申込から入金までの実務を解説します。",
         slugs: [
+          "article-factoring-24jikan-yakan",
+          "article-factoring-line-kanketsu",
+          "article-factoring-aimitsumori",
           "article-factoring-nenmatsu-nenshi",
           "article-factoring-kaigyoutodoke-nashi",
           "article-factoring-seikyusho-kakikata",
@@ -243,6 +246,7 @@ export const topics: Topic[] = [
         heading: "手数料",
         description: "手数料の相場の把握と交渉により、総費用は大きく変わります。",
         slugs: [
+          "article-factoring-kakeme-nenritsu",
           "article-factoring-tesuryo",
           "article-factoring-tesuryo-yasui",
           "article-factoring-tesuryo-koushou",
@@ -252,6 +256,9 @@ export const topics: Topic[] = [
         heading: "審査",
         description: "審査で確認されるポイントと、審査に通らなかった場合の対処法を解説します。",
         slugs: [
+          "article-factoring-urikakesaki-kojin",
+          "article-factoring-shoki-torihiki",
+          "article-factoring-blacklist-saimuchouka",
           "article-factoring-shinsetsu-houjin",
           "article-factoring-urikakesaki-shinsa",
           "article-factoring-shinsa-nashi",
@@ -282,6 +289,8 @@ export const topics: Topic[] = [
         heading: "法律・安全性・トラブル対策",
         description: "違法業者を避け、契約上のトラブルを防ぐための知識を解説します。",
         slugs: [
+          "article-factoring-yatte-ikenai",
+          "article-factoring-jiko-hasan",
           "article-factoring-shiharai-okure",
           "article-factoring-tasha-riyouchu",
           "article-factoring-sashiosae",
