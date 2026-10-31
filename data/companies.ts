@@ -423,7 +423,12 @@ export const factoringCompanies: FactoringCompany[] = [
       capital: "5,000万円",
       address: "東京都千代田区鍛冶町1-4-3 竹内ビル2階"
     },
-    requiredDocuments: ["請求書", "通帳", "身分証明書", "商業登記簿謄本"],
+    requiredDocuments: [
+      "本人確認書類（運転免許証など）",
+      "売掛債権の成因資料（請求書・契約書・発注書など）",
+      "売掛先との取引が確認できる資料（入金履歴が分かる銀行通帳など）",
+      "（審査により）決算書・登記簿謄本（法人）／開業届・確定申告書（個人事業主・フリーランス）"
+    ], // 公式FAQ「ファクタリングの「必要書類」は何ですか？」：原則3点が必須、ほかは審査で必要になる場合（2026年11月1日確認）
     url: "https://top-management.co.jp/",
     category: ["高額", "3社間"]
   },
@@ -469,15 +474,15 @@ export const factoringCompanies: FactoringCompany[] = [
     nameKana: "えんなび",
     slug: "ennavi",
     rating: 4.0,
-    fees: { min: 5.0, max: 0 }, // 公式は「手数料5%」の表示のみ。上限率は公式に記載なし（2026年10月17日確認）
+    fees: { min: 5.0, max: 0 }, // ennavi-factoring.net トップの「手数料5%」の表示のみ（ennavi.tokyo には率の記載なし）。上限率は公式に記載なし（2026年11月1日確認）
     speed: "最短1日",
     minAmount: 300000,
     maxAmount: "5000万円",
-    personalSupport: true, // ennavi.tokyo「法人様から個人事業主様まで対応」（2026年10月19日確認。ennavi-factoring.net には利用対象の記載なし）
+    personalSupport: true, // ennavi.tokyo「法人様から個人事業主様まで対応」（2026年11月1日確認。ennavi-factoring.net のトップには利用対象の記載なし。同サイトの下層ページは2026年11月1日時点で表示されず確認できない）
     features: ["少額対応", "24時間対応", "法人・個人事業主に対応"],
     description: "30万円から利用でき、最短1日で入金されます。24時間受付で、土日祝も申し込むことができます。",
     pros: [
-      "下限は30万円（ennavi-factoring.net）／50万円（ennavi.tokyo）と公式の表記が異なる",
+      "下限は30万円（ennavi-factoring.net トップ）／50万円（ennavi.tokyo）と公式の表記が異なる（2026年11月1日確認）",
       "24時間対応",
       "土日祝も申込可能",
       "個人事業主にも対応（ennavi.tokyo の表示）",
@@ -490,9 +495,9 @@ export const factoringCompanies: FactoringCompany[] = [
     companyInfo: {
       established: "公式に記載なし",
       capital: "公式に記載なし",
-      address: "東京都中央区日本橋本町4-3-4 東海日本橋ビル3階" // 公式2サイトのフッター・ennavi.tokyo 会社概要（2026年10月18日確認）。ennavi-factoring.net の会社情報ページは旧所在地（東上野）のまま
+      address: "東京都中央区日本橋本町4-3-4 東海日本橋ビル3階" // ennavi.tokyo 会社概要・ennavi-factoring.net トップのフッター（2026年11月1日確認）
     },
-    requiredDocuments: ["請求書", "通帳", "身分証明書"],
+    requiredDocuments: ["公式サイトに必要書類の一覧の記載なし（ennavi.tokyo のトップ・会社概要・よくあるご質問、ennavi-factoring.net のトップ・2026年11月1日確認）"],
     url: "https://ennavi-factoring.net/",
     category: ["即日", "24時間"]
   },
@@ -1202,7 +1207,7 @@ export const factoringCompanies: FactoringCompany[] = [
       "最短利用期間は3ヶ月",
       "入金は請求額の80%まで（残り20%は後日）",
       "一部都道府県では支払機関で債権譲渡ができず契約できない場合あり（障害者自立支援給付費も一部都道府県は不可）",
-      "国保連との3社間契約が中心（2社間の提供なし）"
+      "国保連・社保との3社間の契約が中心（2社間は公式に記載なし・2026年11月1日確認）"
     ],
     reviewCount: 0,
     companyInfo: {

@@ -65,6 +65,11 @@ export const editorialVerifications: { [slug: string]: EditorialVerification } =
         source: "公式サイト（2026年8月7日確認）",
       },
       {
+        label: "必要書類",
+        value: "原則3点が必須：ご本人様確認書類（運転免許証など）・売掛債権の成因資料（請求書、契約書、発注書など）・売掛先との取引が確認できる資料（入金履歴が分かる銀行通帳など）。審査により決算書・登記簿謄本（法人）、開業届・確定申告書（個人事業主・フリーランス）が必要な場合あり。契約時は法人印鑑証明と会社実印（契約内容により代表者実印）。オンライン（電ふぁく）は本人確認書類・請求書・昨年度の決算書・直近7ヶ月の入出金明細をメールで送付し、契約は DocuSign（実印不要）",
+        source: "公式「よくあるご質問」top-management.co.jp/faq/・「契約までの流れ」/flow/・「オンラインファクタリング」/service/online（2026年11月1日確認）",
+      },
+      {
         label: "第三者評価（参考）",
         value: "Google Maps上の「株式会社トップ・マネジメント」の実評価は4.5（30件）",
         source: "Google Maps（Places APIで取得・2026年6月13日時点。評価は変動します）",
@@ -95,13 +100,13 @@ export const editorialVerifications: { [slug: string]: EditorialVerification } =
       {
         label: "運営会社",
         value:
-          "株式会社インターテック（公式「会社情報」の会社名表記）",
-        source: "公式サイト会社概要（当サイトで確認）",
+          "株式会社インターテック（ennavi.tokyo 会社概要の会社情報の表の会社名表記）",
+        source: "ennavi.tokyo 会社概要（2026年11月1日確認）",
       },
       {
         label: "所在地",
-        value: "東京都中央区日本橋本町4-3-4 東海日本橋ビル3階（公式2サイトのフッター・ennavi.tokyo の会社概要）。ennavi-factoring.net の「会社情報」ページは旧所在地の〒110-0015 東京都台東区東上野3丁目5-9 本池田第二ビル4階のまま",
-        source: "公式サイトのフッター・ennavi.tokyo 会社概要（2026年10月18日確認）、ennavi-factoring.net「会社情報」（2026年10月14日確認）",
+        value: "東京都中央区日本橋本町4-3-4 東海日本橋ビル3階（ennavi.tokyo 会社概要・ennavi-factoring.net トップのフッター）",
+        source: "ennavi.tokyo 会社概要・ennavi-factoring.net トップ（2026年11月1日確認）",
       },
       {
         label: "許認可・登録",
@@ -112,29 +117,29 @@ export const editorialVerifications: { [slug: string]: EditorialVerification } =
       {
         label: "手数料レンジ",
         value:
-          "ennavi-factoring.net のトップに「業界最低水準の手数料（手数料5%）」と表示。上限率・2社間と3社間の別は公式に記載なし（要見積もり）",
-        source: "ennavi-factoring.net トップ（2026年10月19日確認）",
+          "ennavi-factoring.net のトップに「業界最低水準の手数料（手数料5%）」と表示。上限率は公式に記載なし（要見積もり）。2社間・3社間とも対応と記載（ennavi.tokyo トップ「2社間、3社間に対応させていただいております。」。会社概要には「2社間に特化。」とある）。3社間の率は記載なし",
+        source: "ennavi-factoring.net トップ・ennavi.tokyo トップ・会社概要（2026年11月1日確認）",
       },
       {
         label: "入金スピード",
-        value: "最短1日・即日資金化可能（ennavi-factoring.net）／最短即日（ennavi.tokyo）と、サイトによって表記が異なる。契約時間は約45分",
-        source: "公式2サイトの会社情報・トップ（2026年10月19日確認）",
+        value: "最短1日・即日資金化可能（ennavi.tokyo 会社概要）／最短即日（ennavi.tokyo トップ）と、公式内で表記が異なる。ennavi-factoring.net トップは「最短1日」「即日資金化」。契約時間は約45分（ennavi.tokyo 会社概要）",
+        source: "ennavi.tokyo 会社概要・トップ、ennavi-factoring.net トップ（2026年11月1日確認）",
       },
       {
         label: "買取可能額",
-        value: "30万円〜5,000万円（ennavi-factoring.net：FAQ「最低30万円から買取」）／50万円〜5,000万円（ennavi.tokyo）",
-        source: "公式2サイト（2026年10月19日確認）",
+        value: "30万円〜5,000万円（ennavi-factoring.net トップの画像表記「30万〜5000万まで対応可能」）／50万円〜5,000万円（ennavi.tokyo トップ・会社概要・よくあるご質問）",
+        source: "ennavi-factoring.net トップ・ennavi.tokyo トップ・会社概要・よくあるご質問（2026年11月1日確認）",
       },
       {
         label: "営業時間",
         value:
-          "フリーダイヤル0120-007-567は「24時間365日対応」（ennavi-factoring.net）・「24時間年中無休」（ennavi.tokyo）。ennavi.tokyo に「お申込み・ご相談は24時間365日受け付けています」と記載。入金の締め時刻・土日祝の振込の可否は記載なし",
-        source: "公式2サイト（2026年10月19日確認）",
+          "フリーダイヤル0120-007-567は「24時間365日対応」（ennavi-factoring.net トップ）・「24時間年中無休」（ennavi.tokyo トップ）。ennavi.tokyo のトップに「お申込み・ご相談は24時間365日受け付けています」、会社概要に「24時間365日対応。」と記載。入金の締め時刻・土日祝の振込の可否は記載なし",
+        source: "ennavi-factoring.net トップ・ennavi.tokyo トップ・会社概要（2026年11月1日確認）",
       },
       {
         label: "必要書類",
-        value: "公式サイトに必要書類の一覧の記載なし",
-        source: "公式サイト（2026年10月18日確認・比較記事 article-ennavi-vs-top-management と同じ確認）",
+        value: "公式サイトに必要書類の一覧の記載なし（ennavi.tokyo のトップ・会社概要・よくあるご質問、ennavi-factoring.net のトップ）",
+        source: "公式2サイト（2026年11月1日確認）",
       },
     ],
     checkpoints: [

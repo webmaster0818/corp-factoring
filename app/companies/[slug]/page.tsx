@@ -149,8 +149,8 @@ export default function CompanyPage({
     company.speedIsReview
       ? `公式FAQでは、${company.speed}が出るとされています。入金までの時間は、公式サイトに記載がありません。`
       : `入金までの時間は${speedLabel}です。`,
-    feeRow && /^2社間の提供なし/.test(feeRow.fee2)
-      ? `2社間ファクタリングの提供はなく、3社間の手数料は${feeRow.fee3}です。`
+    feeRow && /^(2社間の提供なし|公式に2社間の記載なし)/.test(feeRow.fee2)
+      ? `2社間ファクタリングは公式に記載がなく、3社間の手数料は${feeRow.fee3}です。`
       : `2社間ファクタリングの手数料は${feeRow ? feeRow.fee2 : company.fees.max > 0 ? feeRange(company.fees) : `${company.fees.min}%〜`}です。`,
     `買取可能額は${amountLabel}です。`,
     ...(company.personalNote ? [`${company.personalNote}。`] : company.personalSupport ? ["個人事業主・フリーランスの利用に対応しています。"] : []),
@@ -173,7 +173,11 @@ export default function CompanyPage({
         },
         {
           question: `${company.name}の必要書類は？`,
-          answer: `主な必要書類は「${company.requiredDocuments.slice(0, 4).join("・")}」などです。会社や審査状況により追加書類を求められる場合があるため、詳細は公式サイトでご確認ください。`,
+          // 必要書類の一覧が公式に無い会社（requiredDocuments が「公式…記載なし／明示なし」の1件だけ）は、書類名として並べない
+          answer:
+            company.requiredDocuments.length === 1 && /^公式.*(記載なし|明示なし)/.test(company.requiredDocuments[0])
+              ? `${company.name}の必要書類は、${company.requiredDocuments[0]}です。必要な書類は申込時に確認してください。`
+              : `主な必要書類は「${company.requiredDocuments.slice(0, 4).join("・")}」などです。会社や審査状況により追加書類を求められる場合があるため、詳細は公式サイトでご確認ください。`,
         },
         {
           question: `${company.name}は個人事業主・フリーランスでも利用できますか？`,
