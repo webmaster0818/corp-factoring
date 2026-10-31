@@ -38,9 +38,9 @@ const factEvidence = (k: ConditionFactKey) => (r: FeeIndexRow) => {
   return `${f.value}${quote ? "：" + quote : ""}${f.note ? `（${short(f.note, 60)}）` : ""}（${f.checkedAt}確認）`;
 };
 
-// 「最短2時間」「最短30分」「最短即日」は当日、「最短1日」「最短2営業日」は当日ではない
+// 「最短2時間」「最短30分」「最短即日」は当日、「最短1日」「最短2営業日」「通常即日から数日程度」は当日ではない（「24時間365日」の365日は日数ではないので除く）
 const head = (s: string) => s.split(/[（(]/)[0];
-const sameDay = (r: FeeIndexRow) => /即日|\d+\s*(時間|分)/.test(head(r.speed)) && !/営業日|\d+日/.test(head(r.speed).replace(/即日/g, ""));
+const sameDay = (r: FeeIndexRow) => /即日|\d+\s*(時間|分)/.test(head(r.speed)) && !/営業日|\d+日|数日/.test(head(r.speed).replace(/即日|365日/g, ""));
 const minutes = (r: FeeIndexRow) => {
   const h = head(r.speed);
   const m = h.match(/(\d+)\s*分/);

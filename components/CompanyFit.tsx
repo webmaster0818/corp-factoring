@@ -10,7 +10,7 @@ import { parseRate, isNotOffered, SUBPAGE_SLUGS } from "@/data/subPages";
 const isKojin = (t: string) =>
   /個人|フリーランス/.test(t) && !/個人事業主は利用不可|個人事業主・フリーランス不可|法人のみ|法人限定|法人専用|原則法人|受付.*停止|取扱.*停止/.test(t);
 const head = (s: string) => s.split(/[（(]/)[0];
-const sameDay = (r: FeeIndexRow) => /即日|\d+\s*(時間|分)/.test(head(r.speed)) && !/営業日|\d+日/.test(head(r.speed).replace(/即日/g, ""));
+const sameDay = (r: FeeIndexRow) => /即日|\d+\s*(時間|分)/.test(head(r.speed)) && !/営業日|\d+日|数日/.test(head(r.speed).replace(/即日|365日/g, ""));
 const minAmountYen = (r: FeeIndexRow): number | undefined => {
   if (/下限(上限)?なし|下限.*記載なし/.test(r.amount)) return 0;
   const m = r.amount.match(/^(?:最低)?(\d[\d,]*)(万)?円/);
