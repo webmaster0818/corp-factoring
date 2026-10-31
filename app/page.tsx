@@ -164,7 +164,7 @@ export default function Home() {
                   <li className="flex items-start gap-2">
                     <span className="text-orange-600 mt-1">×</span>
                     <span className="text-gray-700">
-                      手数料がやや高い（1〜20%）
+                      手数料がやや高い
                     </span>
                   </li>
                 </ul>
@@ -179,7 +179,7 @@ export default function Home() {
                 <ul className="space-y-2">
                   <li className="flex items-start gap-2">
                     <span className="text-green-600 mt-1">✓</span>
-                    <span className="text-gray-700">手数料が安い（1〜10%）</span>
+                    <span className="text-gray-700">手数料が安い</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-orange-600 mt-1">×</span>

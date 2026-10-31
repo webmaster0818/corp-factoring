@@ -207,7 +207,7 @@ export function FeeSimulator() {
                 <ul className="space-y-2 text-sm text-gray-700">
                   <li className="flex items-start gap-2">
                     <span className="text-blue-600 mt-0.5">✓</span>
-                    <span>3社間ファクタリングは、2社間ファクタリングより手数料が低い傾向があります（1%〜10%）</span>
+                    <span>3社間ファクタリングは、2社間ファクタリングより手数料が低い傾向があります</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <span className="text-blue-600 mt-0.5">✓</span>

@@ -213,8 +213,6 @@ export const topics: Topic[] = [
           "article-factoring-hajimete",
           "article-factoring-faq",
           "article-factoring-urikakekin",
-          "article-factoring-seikou-jirei",
-          "article-factoring-shijou-kibo",
         ],
       },
       {

@@ -114,7 +114,7 @@ export default function FeesPage() {
               <div className="space-y-6">
                 <div>
                   <p className="text-gray-700 leading-relaxed mb-6">
-                    ファクタリング手数料は、契約形態（2社間・3社間）や取引金額、売掛先の信用力によって大きく異なります。
+                    手数料の相場を示す公的な統計は見当たりません。ファクタリング手数料は、契約形態（2社間・3社間）や取引金額、売掛先の信用力によって大きく異なります。各社の公式表示は、このページの比較表で確認できます。
                   </p>
                 </div>
 
@@ -124,8 +124,8 @@ export default function FeesPage() {
                     <h3 className="font-black text-blue-700 mb-4 text-xl">2社間ファクタリング</h3>
                     <div className="space-y-3">
                       <div>
-                        <p className="text-sm text-gray-600 mb-1">手数料相場</p>
-                        <p className="text-3xl font-black text-blue-600">5%〜20%</p>
+                        <p className="text-sm text-gray-600 mb-1">手数料</p>
+                        <p className="text-xl font-black text-blue-600">会社ごとに異なる</p>
                       </div>
                       <ul className="space-y-2 text-sm text-gray-700">
                         <li className="flex items-start gap-2">
@@ -148,8 +148,8 @@ export default function FeesPage() {
                     <h3 className="font-black text-green-700 mb-4 text-xl">3社間ファクタリング</h3>
                     <div className="space-y-3">
                       <div>
-                        <p className="text-sm text-gray-600 mb-1">手数料相場</p>
-                        <p className="text-3xl font-black text-green-600">1%〜10%</p>
+                        <p className="text-sm text-gray-600 mb-1">手数料</p>
+                        <p className="text-xl font-black text-green-600">会社ごとに異なる</p>
                       </div>
                       <ul className="space-y-2 text-sm text-gray-700">
                         <li className="flex items-start gap-2">
@@ -361,7 +361,7 @@ export default function FeesPage() {
                   },
                   {
                     title: "5. 3社間ファクタリングを検討する",
-                    description: "売掛先への通知に支障がない場合は、3社間ファクタリングを選ぶことで手数料を大幅に抑えられます（1%〜10%程度）。",
+                    description: "売掛先への通知に支障がない場合は、3社間ファクタリングを選ぶことで手数料を抑えられます。",
                     icon: "✅",
                     color: "emerald"
                   }
@@ -407,7 +407,7 @@ export default function FeesPage() {
                 {[
                   {
                     q: "ファクタリング手数料の相場はいくらですか？",
-                    a: "2社間ファクタリングは5%〜20%、3社間ファクタリングは1%〜10%が相場です。取引金額や売掛先の信用力によって変動します。"
+                    a: "手数料の相場を示す公的な統計は見当たりません。手数料は、契約形態（2社間・3社間）や取引金額、売掛先の信用力によって変わります。各社の公式表示は、このページの比較表で確認できます。"
                   },
                   {
                     q: "手数料が安いファクタリング会社は信頼できますか？",
