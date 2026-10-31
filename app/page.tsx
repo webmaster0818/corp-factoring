@@ -52,7 +52,8 @@ export default function Home() {
           {/* Eyecatch Image with Text Overlay */}
           <div className="relative rounded-2xl overflow-hidden shadow-xl mb-10 mx-auto h-[280px] sm:h-[320px] lg:h-[400px]">
             <img
-              src="/images/hero-eyecatch-v3.png"
+              src="/images/hero-eyecatch-v3.webp"
+              fetchPriority="high"
               alt="法人向けファクタリングおすすめ15選 - 手数料・審査・入金スピードの比較（2026年最新版）"
               className="w-full h-full object-cover object-[50%_30%] lg:object-[50%_35%]"
               width="1344"
@@ -219,7 +220,7 @@ export default function Home() {
                   {/* Company Screenshot */}
                   <div className="mb-4 rounded-lg overflow-hidden border border-gray-200">
                     <img
-                      src={`/images/companies/${company.slug}.png`}
+                      src={`/images/companies/${company.slug}.webp`}
                       alt={`${company.name}公式サイトのスクリーンショット - ファクタリング手数料${company.fees.min > 0 ? (company.fees.max > 0 ? feeRange(company.fees) : `${company.fees.min}%〜`) : "要見積もり"}`}
                       className={`w-full object-cover object-top ${company.slug === 'ququmo' ? 'h-24' : 'h-40'}`}
                       width="1200"

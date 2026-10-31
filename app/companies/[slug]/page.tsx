@@ -1,4 +1,5 @@
 import React from "react";
+import { CompanyCompareTable, CompanyNotFor } from "@/components/CompanyFit";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import type { Metadata } from "next";
@@ -260,12 +261,12 @@ export default function CompanyPage({
         {(slug === 'ququmo' || slug === 'accel-factor' || slug === 'best-factor') && (
           <div className="mb-8">
             <img
-              src={`/images/companies/${slug}.png`}
+              src={`/images/companies/${slug}.webp`}
               alt={`${company.name}の評判・口コミ・手数料の解説`}
               className="w-full rounded-lg shadow-md"
               width="1200"
               height="630"
-              loading="lazy"
+              fetchPriority="high"
             />
           </div>
         )}
@@ -893,6 +894,9 @@ export default function CompanyPage({
           </CardContent>
         </Card>
 
+        {/* 合わない可能性がある方（公式表示から機械的に作る・P0-4） */}
+        <CompanyNotFor slug={slug} />
+
         {/* 強み */}
         <section className="mb-12">
           <Card className="border-2 border-gray-100 shadow-sm">
@@ -1194,6 +1198,9 @@ export default function CompanyPage({
             </CardContent>
           </Card>
         </section>
+
+        {/* 条件の近い会社との比較（feeIndex の公式表示・P0-4） */}
+        <CompanyCompareTable slug={slug} />
 
         {/* 他社比較 */}
         {details.comparisons.length > 0 && (
