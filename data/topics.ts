@@ -267,6 +267,8 @@ export const topics: Topic[] = [
         heading: "ファクタリングの種類・仕組み",
         description: "注文書・将来債権・リバースなど、応用的な類型を解説します。",
         slugs: [
+          "article-po-finance-hikaku",
+          "article-factoring-kenshu-mae",
           "article-factoring-chuumonsho",
           "article-factoring-shourai-saiken",
           "article-factoring-non-recourse",
@@ -279,6 +281,10 @@ export const topics: Topic[] = [
         heading: "法律・安全性・トラブル対策",
         description: "違法業者を避け、契約上のトラブルを防ぐための知識を解説します。",
         slugs: [
+          "article-factoring-shiharai-okure",
+          "article-factoring-tasha-riyouchu",
+          "article-factoring-sashiosae",
+          "article-factoring-ginkou-yuushi-eikyou",
           "article-factoring-ihou",
           "article-factoring-ihou-gyousha",
           "article-factoring-sagi",
