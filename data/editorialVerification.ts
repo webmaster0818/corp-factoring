@@ -1104,7 +1104,7 @@ export const editorialVerifications: { [slug: string]: EditorialVerification } =
       { label: "契約方法", value: "「手続きも原則オンライン完結」。「ご面談は原則不要です。基本的なやりとりは、お電話・メール等のオンラインで完結いたします。」最終お買取同意前ならキャンセル可", source: "公式サービストップ（mfkessai.co.jp/fast-receivables/top）・よくある質問（mfkessai.co.jp/fast-receivables/faq）（2026年10月31日確認）" },
       { label: "債権譲渡登記", value: "トップは「お取引先様への通知、債権譲渡登記は不要」。利用規約第10条では、当社が対抗要件具備を選択した場合は通知・債権譲渡登記・承諾のいずれかを当社が指定して求める旨を規定", source: "公式サービストップ（mfkessai.co.jp/fast-receivables/top）・利用規約（c.mfkessai.co.jp/pdf/terms/mfkessai/fast-receivables.pdf）（2026年10月31日確認）" },
       { label: "償還請求権", value: "「当社は、取引先企業の無資力により、譲り受けた対象債権の回収ができなかった場合でも、登録企業に対してその買い戻しを請求しません。」ただし表明保証違反・取引の取消等の場合は譲渡合意解除・譲渡対価の返還請求と違約金あり（利用規約第13条）", source: "公式「利用規約」（c.mfkessai.co.jp/pdf/terms/mfkessai/fast-receivables.pdf・2026年10月31日確認）" },
-      { label: "必要書類", value: "インターネットバンキングの連携（原則必須。利用がない場合は通帳PDF）・決算書2期分（トップでは直近2期分の決算書および直近までの試算表）・請求書など売掛金を確認できる資料。マネーフォワード クラウド会計利用者は債権情報の入力で口座連携・決算書提出を省略可", source: "公式「よくある質問」（mfkessai.co.jp/fast-receivables/faq）・サービストップ（mfkessai.co.jp/fast-receivables/top）（2026年10月31日確認）" },
+      { label: "必要書類", value: "インターネットバンキングの連携（原則必須。利用がない場合は通帳PDF）・決算書2期分（トップでは直近2期分の決算書および直近までの試算表）・請求書など売掛金を確認できる資料（トップの「売掛債権の証憑」は「契約書、請求書、発注書など取引内容と金額、入金予定日が確認できるもの」・2026年11月1日確認）。マネーフォワード クラウド会計利用者は債権情報の入力で口座連携・決算書提出を省略可", source: "公式「よくある質問」（mfkessai.co.jp/fast-receivables/faq）・サービストップ（mfkessai.co.jp/fast-receivables/top）（2026年10月31日確認・売掛債権の証憑は11月1日確認）" },
       { label: "受付時間", value: "AI仮審査は「24時間365日」。電話窓口の受付時間は公式に記載なし", source: "公式サービストップ（mfkessai.co.jp/fast-receivables/top・2026年10月31日確認）" },
     ],
     checkpoints: [
