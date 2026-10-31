@@ -219,6 +219,8 @@ export const topics: Topic[] = [
         heading: "利用の流れ・書類・スピード",
         description: "申込から入金までの実務を解説します。",
         slugs: [
+          "article-factoring-kaigyoutodoke-nashi",
+          "article-factoring-seikyusho-kakikata",
           "article-factoring-kessansho-fuyou",
           "article-factoring-tsucho-nashi",
           "article-factoring-site-120nichi",
@@ -249,6 +251,7 @@ export const topics: Topic[] = [
         heading: "審査",
         description: "審査で確認されるポイントと、審査に通らなかった場合の対処法を解説します。",
         slugs: [
+          "article-factoring-shinsa-nashi",
           "article-factoring-shinsa",
           "article-factoring-shinsa-amai",
           "article-factoring-shinsa-ochita",
@@ -313,6 +316,7 @@ export const topics: Topic[] = [
         heading: "税務・会計・資金繰り",
         description: "仕訳・消費税の扱いから資金繰りの改善までを解説します。",
         slugs: [
+          "article-factoring-invoice-mitouroku",
           "article-factoring-kanjokamoku",
           "article-factoring-shiwake",
           "article-factoring-kessansho",
