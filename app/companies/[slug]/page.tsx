@@ -194,7 +194,7 @@ export default function CompanyPage({
     ? [
         {
           question: `${company.name}の手数料はいくらですか？`,
-          answer: `${company.name}の手数料は、公式表示で2社間ファクタリングが「${feeRow.fee2}」${/^[―—\-\s]*$|非対応/.test(feeRow.fee3) ? "" : `、3社間が「${feeRow.fee3}」`}です。実際の手数料は売掛先の信用力・買取金額・継続利用の有無などで変動します。公式サイトで確認した最新の値は、当サイトの${FEE_COMPANY_COUNT}社の手数料比較（/fees/）でご確認いただけます。`,
+          answer: `${company.name}の手数料は、公式表示で2社間ファクタリングが「${feeRow.fee2}」${/^[―—\-\s]*$|非対応|^公式に3社間の記載なし/.test(feeRow.fee3) ? "" : `、3社間が「${feeRow.fee3}」`}です。実際の手数料は売掛先の信用力・買取金額・継続利用の有無などで変動します。公式サイトで確認した最新の値は、当サイトの${FEE_COMPANY_COUNT}社の手数料比較（/fees/）でご確認いただけます。`,
         },
       ]
     : [];

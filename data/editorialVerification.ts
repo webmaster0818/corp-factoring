@@ -317,7 +317,7 @@ export const editorialVerifications: { [slug: string]: EditorialVerification } =
       },
       {
         label: "手数料レンジ",
-        value: "2社間 1%〜（上限は公式非公表）／3社間は非対応",
+        value: "2社間 1%〜（上限は公式非公表）／3社間は公式に記載なし（公式はサービスを2社間ファクタリングと説明・2026年11月1日確認）",
         source: "公式サイト（2026年7月21日確認・/fees/ の比較表と同一データ）",
       },
       {

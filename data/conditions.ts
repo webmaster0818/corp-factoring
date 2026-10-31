@@ -30,6 +30,11 @@ const rankBy = (k: ConditionFactKey, order: string[]) => (r: FeeIndexRow) => {
   const i = order.findIndex((x) => v === x || v.startsWith(x + "（"));
   return (i < 0 ? 9 : i) * 10000 + (parseRate(r.fee2).min ?? 99);
 };
+// 表記が一定でない欄（「例示：100万円8%／…1.5%」「公式内で表記が異なる（1.5%〜7%／…）」）から、表示の中で最も低い率を取る
+const lowestPct = (t: string) => {
+  const v = [...t.matchAll(/(\d+(?:\.\d+)?)\s*[%％]/g)].map((m) => Number(m[1]));
+  return v.length ? Math.min(...v) : 99;
+};
 const short = (t: string, n = 90) => (t.length > n ? t.slice(0, n) + "…" : t);
 const factEvidence = (k: ConditionFactKey) => (r: FeeIndexRow) => {
   const f = fact(r, k);
@@ -137,11 +142,11 @@ export const CONDITIONS: { [articleSlug: string]: ConditionDef } = {
   "article-factoring-2sha-3sha": {
     key: "sansha",
     heading: "3社間ファクタリングに対応する会社（3社間の手数料の下限が低い順）",
-    criteria: "公式サイトで3社間ファクタリングに対応していると確認できた会社を、3社間の手数料の下限が低い順に並べています（率を公表していない会社は末尾）。2社間は、ほぼすべての掲載会社が対応しているため表にしていません。",
+    criteria: "公式サイトで3社間ファクタリングに対応していると確認できた会社を、3社間の手数料の下限が低い順に並べています（ページによって率の表記が異なる会社・金額別の例示だけの会社は、表示の中で最も低い率で並べ、率を公表していない会社は末尾）。2社間は、掲載43社のうち40社が対応と記載しているため表にしていません。",
     evidenceLabel: "3社間の手数料（公式表示）",
     evidence: (r) => r.fee3,
     match: factIs("sansha", "可", "条件付き"),
-    sortKey: (r) => parseRate(r.fee3).min ?? 99,
+    sortKey: (r) => parseRate(r.fee3).min ?? lowestPct(r.fee3),
   },
   "article-factoring-kessansho-fuyou": {
     key: "kessansho",

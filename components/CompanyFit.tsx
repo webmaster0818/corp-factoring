@@ -80,7 +80,7 @@ export function CompanyNotFor({ slug }: { slug: string }) {
   if (!row) return null;
   const items: { who: string; why: string }[] = [];
   if (!isKojin(row.target)) items.push({ who: "個人事業主・フリーランスの方", why: `対象の公式表示：${row.target}` });
-  if (isNotOffered(row.fee3) || /^非対応/.test(row.fee3)) items.push({ who: "売掛先の承諾を得て、3社間で手数料を抑えたい方", why: `3社間の公式表示：${row.fee3}` });
+  if (isNotOffered(row.fee3) || /^非対応|^公式に3社間の記載なし/.test(row.fee3)) items.push({ who: "売掛先の承諾を得て、3社間で手数料を抑えたい方", why: `3社間の公式表示：${row.fee3}` });
   const min = minAmountYen(row);
   if (min !== undefined && min >= 500000) items.push({ who: `${(min / 10000).toLocaleString()}万円未満の少額の売掛金を資金化したい方`, why: `利用可能額の公式表示：${row.amount}` });
   if (!sameDay(row)) items.push({ who: "申込の当日中に入金が必要な方", why: `最短入金の公式表示：${row.speed}` });
