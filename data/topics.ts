@@ -251,6 +251,8 @@ export const topics: Topic[] = [
         heading: "審査",
         description: "審査で確認されるポイントと、審査に通らなかった場合の対処法を解説します。",
         slugs: [
+          "article-factoring-shinsetsu-houjin",
+          "article-factoring-urikakesaki-shinsa",
           "article-factoring-shinsa-nashi",
           "article-factoring-shinsa",
           "article-factoring-shinsa-amai",
