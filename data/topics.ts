@@ -254,6 +254,7 @@ export const topics: Topic[] = [
           "article-factoring-tesuryo",
           "article-factoring-tesuryo-yasui",
           "article-factoring-tesuryo-koushou",
+          "article-factoring-koushiki-data",
         ],
       },
       {
