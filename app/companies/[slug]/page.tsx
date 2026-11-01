@@ -21,6 +21,7 @@ import { Footer } from "@/components/Footer";
 import { ReviewSection } from "@/components/ReviewSection";
 import { EditorialVerificationSection } from "@/components/EditorialVerification";
 import { getAllArticles } from "@/lib/articles";
+import { hasShinsaOchita, SHINSA_OCHITA_TITLE, SHINSA_OCHITA_ANCHOR } from "@/lib/shinsaOchita";
 import { DEFAULT_OG_IMAGES, DEFAULT_OG_IMAGE_URL } from "@/lib/og";
 
 // category はロジック用の内部キー。画面表示はこのラベルを使う（ビジネス文書基準 2026-10-16）
@@ -457,6 +458,12 @@ export default function CompanyPage({
                     <Link href={`/companies/${slug}/tesuryo/`} className="text-blue-600 underline">{company.name}の手数料と100万円の計算例 →</Link>
                     <span className="mx-2 text-gray-300">|</span>
                     <Link href={`/companies/${slug}/shinsa/`} className="text-blue-600 underline">{company.name}の審査時間・必要書類 →</Link>
+                    {hasShinsaOchita(slug) && (
+                      <>
+                        <span className="mx-2 text-gray-300">|</span>
+                        <Link href={`/companies/${slug}/shinsa/#${SHINSA_OCHITA_ANCHOR}`} className="text-blue-600 underline">{SHINSA_OCHITA_TITLE} →</Link>
+                      </>
+                    )}
                   </p>
                 )}
                 <p className="text-xs font-bold text-gray-600 mb-2">関連記事：</p>

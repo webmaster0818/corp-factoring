@@ -11,6 +11,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { DEFAULT_OG_IMAGES } from "@/lib/og";
 import { getLastmod, toJaDate } from "@/lib/pageDates";
+import { getShinsaOchitaHtml, SHINSA_OCHITA_TITLE, SHINSA_OCHITA_ANCHOR } from "@/lib/shinsaOchita";
 
 const SITE = "https://corp-factoring.com";
 
@@ -43,6 +44,7 @@ export default async function CompanyScreeningPage({ params }: { params: Promise
   const ev = editorialVerifications[slug];
   if (!company || !row || !ev) notFound();
   const lead = getCompanyLead(slug);
+  const ochitaHtml = await getShinsaOchitaHtml(slug);
 
   const timeFacts = pickFacts(slug, /審査|入金スピード|受付/);
   const docFacts = pickFacts(slug, /必要書類/);
@@ -137,6 +139,21 @@ export default async function CompanyScreeningPage({ params }: { params: Promise
           <p className="text-sm font-bold text-blue-900">回答</p>
           <p className="mt-1 text-sm leading-relaxed text-gray-800">{answer}</p>
         </div>
+
+        {ochitaHtml && (
+          <section id={SHINSA_OCHITA_ANCHOR} className="mt-8 scroll-mt-20">
+            <h2 className="text-lg font-bold text-gray-900">{company.name}の{SHINSA_OCHITA_TITLE}</h2>
+            <div
+              className="mt-3 text-sm leading-relaxed text-gray-800
+                [&_h3]:mt-5 [&_h3]:mb-2 [&_h3]:text-base [&_h3]:font-bold [&_h3]:text-gray-900
+                [&_p]:mt-2
+                [&_ul]:mt-2 [&_ul]:list-disc [&_ul]:space-y-1.5 [&_ul]:pl-5
+                [&_a]:text-blue-600 [&_a]:underline"
+              dangerouslySetInnerHTML={{ __html: ochitaHtml }}
+            />
+            <p className="mt-3 text-xs leading-relaxed text-gray-500">※各社の公式サイトの記載を当サイトが確認した日付つきで整理したもので、審査の結果を保証するものではありません。次の手に挙げた会社は条件の違いで選んだもので、順位ではありません。</p>
+          </section>
+        )}
 
         <section className="mt-8">
           <h2 className="text-lg font-bold text-gray-900">審査時間と入金までの時間</h2>
