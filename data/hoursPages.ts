@@ -1,9 +1,9 @@
 // 営業時間子ページ（/companies/<slug>/eigyo-jikan/）の対象スラッグと、公式一次確認日。
 //
-// 掲載条件：
-//   1) GSCで「会社名 営業時間」等のサブ意図に表示実績がある
-//   2) かつ operatingHoursMap（または個別詳細データ）に公式サイトの一次確認値がある
-// 表示実績の無い意図は親レビューのFAQに留め、薄いページ・カニバリを避ける。
+// 掲載条件（2026年11月1日改定・運営者の方針「faclog gap B7：営業時間ページを全社にそろえる」による）：
+//   operatingHoursMap（または個別詳細データ）に、公式サイトで一次確認した営業時間・受付時間の値がある会社はすべて掲載する。
+//   旧条件の「GSCで『会社名 営業時間』等の表示実績があること」は廃止。
+//   公式サイトに営業時間・受付時間の記載が一つもない会社（例：coolpay）は、薄いページになるため掲載しない。
 //
 // 確認日は data/companyDetails.ts の operatingHoursMap の note に記載した確認日と一致させること。
 // 新たに公式確認していない会社は、既存の確認日をそのまま引き継ぐ（日付の繰り上げ禁止）。
@@ -23,7 +23,66 @@ export const HOURS_SLUGS = [
   "freenance",
   "ququmo",
   "be-trading",
+  // ▼ 2026年11月1日 追加（B7：各社公式サイトで営業時間を一次確認）
+  "best-factor",
+  "mf-earlypayment",
+  "mentor-capital",
+  "minna-factoring",
+  "yen-today",
+  "ebank",
+  "invoice-factor",
+  "safe-trust",
+  "ace-trust",
+  "msfj",
+  "levanta",
+  "trust-gateway",
+  "bion",
+  "rfd",
+  "owl-keizai",
+  "invoice-pay",
+  "kaipoke-early",
+  "urikakedo",
+  "kaisoku",
+  "olta",
+  "gmo-btob-hayabarai",
+  "goodplus",
+  "next-one",
+  "kkt",
+  "factoring-zero",
+  "nishinihon-factor",
+  "jigyoshikin-agent",
 ] as const;
+
+// 2026年11月1日に追加した営業時間ページ（ページの最終確認日を2026年11月1日とする）
+export const HOURS_ADDED_20261101: string[] = [
+  "best-factor",
+  "mf-earlypayment",
+  "mentor-capital",
+  "minna-factoring",
+  "yen-today",
+  "ebank",
+  "invoice-factor",
+  "safe-trust",
+  "ace-trust",
+  "msfj",
+  "levanta",
+  "trust-gateway",
+  "bion",
+  "rfd",
+  "owl-keizai",
+  "invoice-pay",
+  "kaipoke-early",
+  "urikakedo",
+  "kaisoku",
+  "olta",
+  "gmo-btob-hayabarai",
+  "goodplus",
+  "next-one",
+  "kkt",
+  "factoring-zero",
+  "nishinihon-factor",
+  "jigyoshikin-agent",
+];
 
 // 静的セグメントで実装済みの営業時間子ページ（動的ルートの generateStaticParams からは除外する）
 export const HOURS_STATIC_SLUGS = ["top-management"] as const;
@@ -48,6 +107,34 @@ export const HOURS_CHECKED_AT: { [slug: string]: string } = {
   ququmo: "2026年8月22日",
   "top-management": "2026年10月28日",
   "be-trading": "2026年10月29日",
+  // ▼ 2026年11月1日 追加分（各社公式サイトで確認）
+  "best-factor": "2026年11月1日",
+  "mf-earlypayment": "2026年11月1日",
+  "mentor-capital": "2026年11月1日",
+  "minna-factoring": "2026年11月1日",
+  "yen-today": "2026年11月1日",
+  "ebank": "2026年11月1日",
+  "invoice-factor": "2026年11月1日",
+  "safe-trust": "2026年11月1日",
+  "ace-trust": "2026年11月1日",
+  "msfj": "2026年11月1日",
+  "levanta": "2026年11月1日",
+  "trust-gateway": "2026年11月1日",
+  "bion": "2026年11月1日",
+  "rfd": "2026年11月1日",
+  "owl-keizai": "2026年11月1日",
+  "invoice-pay": "2026年11月1日",
+  "kaipoke-early": "2026年11月1日",
+  "urikakedo": "2026年11月1日",
+  "kaisoku": "2026年11月1日",
+  "olta": "2026年11月1日",
+  "gmo-btob-hayabarai": "2026年11月1日",
+  "goodplus": "2026年11月1日",
+  "next-one": "2026年11月1日",
+  "kkt": "2026年11月1日",
+  "factoring-zero": "2026年11月1日",
+  "nishinihon-factor": "2026年11月1日",
+  "jigyoshikin-agent": "2026年11月1日",
 };
 
 // 営業時間比較表に載せる候補（operatingHoursMapに一次確認値がある会社のみ）。

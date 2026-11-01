@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 import { getCompanyBySlug } from "@/data/companies";
 import { getCompanyDetails } from "@/data/companyDetails";
 import { feeIndex, feeCheckedAt, FEE_COMPANY_COUNT } from "@/data/feeIndex";
-import { HOURS_SLUGS, HOURS_CHECKED_AT, HOURS_COMPARE_POOL } from "@/data/hoursPages";
+import { HOURS_SLUGS, HOURS_CHECKED_AT, HOURS_COMPARE_POOL, HOURS_ADDED_20261101 } from "@/data/hoursPages";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { OtherHoursLinks } from "@/components/OtherHoursLinks";
@@ -37,6 +37,12 @@ const ANSWER_EXTRA: { [slug: string]: string } = {
     "原則、当日19:00までの申込は当日中に審査結果が連絡され、19:00以降の申請は翌営業日の入金です。審査完了後の振込は土日祝を含む365日、オペレーターの対応は平日10:00〜19:00です。",
   "be-trading":
     "Webフォーム・LINEの利用相談と、ポータルサイトからの審査申込は24時間受け付けていますが、電話の問い合わせと審査・入金は営業時間内のみで、営業時間外・土日の問い合わせや審査依頼への対応は翌営業日です。",
+  "best-factor":
+    "公式の即日ファクタリングのページでは、土日祝日について「フォームからのご相談は24時間受け付けていますが、審査・契約・振込の実行は営業日や金融機関の処理状況に左右されます。土日祝日の即日入金を前提にせず、次の営業日に向けて早めにご相談ください」と案内されています。",
+  ebank:
+    "電話の受付時間は公式サイトの画像で表示されています。一方、公式サイトの「ファクタリングでの現金化のながれ」には「お電話・メールどちらでも問題ございませんのでお気軽にご連絡ください。24時間対応可能です。」とも記載されており、ページ内で表記が異なります。",
+  "mentor-capital":
+    "各ページには「365日24時間 全国対応可能」との記載もありますが、電話以外の受付手段の時間や土日祝の審査・入金の扱いは区別して書かれていません。",
   pmg: "PMG（ピーエムジー）の電話（0120-901-680）は平日・土日・祝日とも8:00〜20:00、Webフォームは24時間受付です。振込時間外に契約が完了した場合は翌営業日の振込です。",
 };
 
@@ -149,8 +155,26 @@ export default async function CompanyHoursPage({ params }: { params: Promise<{ s
     })
     .filter((r) => Boolean(getCompanyBySlug(r.slug)));
 
+  // 比較表の注記に出す確認日の範囲（表に載せた会社の HOURS_CHECKED_AT から算出する）
+  const toKey = (d: string) => {
+    const m = d.match(/^(\d{4})年(\d{1,2})月(\d{1,2})日/);
+    return m ? Number(m[1]) * 10000 + Number(m[2]) * 100 + Number(m[3]) : 0;
+  };
+  const compareDates = [slug, ...compareRows.map((r) => r.slug)]
+    .map((s) => HOURS_CHECKED_AT[s])
+    .filter((d): d is string => Boolean(d))
+    .sort((a, b) => toKey(a) - toKey(b));
+  const compareDateRange =
+    compareDates.length === 0
+      ? ""
+      : compareDates[0] === compareDates[compareDates.length - 1]
+        ? compareDates[0]
+        : `${compareDates[0]}〜${compareDates[compareDates.length - 1]}`;
+
   const displayName = NAME_ALIAS[slug] ?? company.name;
-  const [pageUpdated, pageUpdatedIso] = PAGE_UPDATED_OVERRIDE[slug] ?? [PAGE_UPDATED, PAGE_UPDATED_ISO];
+  const [pageUpdated, pageUpdatedIso] =
+    PAGE_UPDATED_OVERRIDE[slug] ??
+    (HOURS_ADDED_20261101.includes(slug) ? ["2026年11月1日", "2026-11-01"] : [PAGE_UPDATED, PAGE_UPDATED_ISO]);
   const pageTitle = `${displayName}の営業時間・受付時間は？${titleLabel(checkedAt)}`;
 
   const articleLd = {
@@ -304,7 +328,7 @@ export default async function CompanyHoursPage({ params }: { params: Promise<{ s
             </table>
           </div>
           <p className="mt-2 text-xs leading-relaxed text-gray-500">
-            ※各社の営業時間は当サイトが各社の公式サイトで確認した内容です（確認日は2026年7月8日〜8月22日・会社により異なります）。「公式では確認できず」は、公式サイトに記載がなかった項目です。
+            ※各社の営業時間は当サイトが各社の公式サイトで確認した内容です（確認日は{compareDateRange}・会社により異なります）。「公式では確認できず」は、公式サイトに記載がなかった項目です。
           </p>
         </section>
 
