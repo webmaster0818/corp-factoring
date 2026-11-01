@@ -9,23 +9,23 @@ import { feeIndex, feeCheckedAt, FEE_COMPANY_COUNT } from "@/data/feeIndex";
 import { DEFAULT_OG_IMAGES, DEFAULT_OG_IMAGE_URL } from "@/lib/og";
 
 export const metadata = {
-  title: "ファクタリング手数料が安い会社10選【2026年最新】相場・計算方法・抑える方法",
-  description: "ファクタリング手数料の相場と計算方法、手数料が安いファクタリング会社10社を解説しています。手数料を抑えるためのポイント、2社間・3社間の違いもあわせて掲載し、無料の手数料シミュレーターも提供しています。",
-  keywords: "ファクタリング,手数料,安い,相場,計算,シミュレーター",
+  title: `ファクタリング会社${FEE_COMPANY_COUNT}社の手数料一覧（公式表示）｜安い会社10選・計算方法`,
+  description: `ファクタリング会社${FEE_COMPANY_COUNT}社の手数料を各社の公式サイトの表示で一覧にしています。手数料が安い会社10社、計算方法、手数料を抑えるためのポイント、2社間・3社間の違いもあわせて掲載し、無料の手数料シミュレーターも提供しています。`,
+  keywords: "ファクタリング,手数料,安い,一覧,計算,シミュレーター",
   alternates: {
     canonical: "/fees",
   },
   openGraph: {
-    title: "ファクタリング手数料が安い会社10選【2026年最新】",
-    description: "ファクタリング手数料の相場と計算方法、手数料が安いファクタリング会社10社を解説しています。",
+    title: `ファクタリング会社${FEE_COMPANY_COUNT}社の手数料一覧（公式表示）｜安い会社10選`,
+    description: `ファクタリング会社${FEE_COMPANY_COUNT}社の手数料を各社の公式サイトの表示で一覧にし、手数料が安い会社10社と計算方法を解説しています。`,
     type: "article",
     images: DEFAULT_OG_IMAGES,
   },
   twitter: {
     card: "summary",
     images: [DEFAULT_OG_IMAGE_URL],
-    title: "ファクタリング手数料が安い会社10選【2026年最新】",
-    description: "ファクタリング手数料の相場と計算方法、手数料が安いファクタリング会社10社を解説しています。",
+    title: `ファクタリング会社${FEE_COMPANY_COUNT}社の手数料一覧（公式表示）｜安い会社10選`,
+    description: `ファクタリング会社${FEE_COMPANY_COUNT}社の手数料を各社の公式サイトの表示で一覧にし、手数料が安い会社10社と計算方法を解説しています。`,
   },
 };
 
@@ -60,7 +60,7 @@ export default function FeesPage() {
               ファクタリング手数料が安い会社10選
             </h1>
             <p className="text-gray-600 text-lg leading-relaxed">
-              手数料の相場と計算方法、手数料を抑えるための方法を解説します。無料の手数料シミュレーターで、入金額の目安も確認できます。
+              各社の公式サイトに表示された手数料の一覧と計算方法、手数料を抑えるための方法を解説します。無料の手数料シミュレーターで、入金額の目安も確認できます。
             </p>
             <p className="text-gray-600 text-sm leading-relaxed mt-3">
               このページは、手数料が安い会社を公式値で比べるためのページです。手数料の内訳や、100万円の請求書で手元に残る金額のシミュレーションは「<Link href="/articles/article-factoring-tesuryo/" className="text-blue-600 hover:text-blue-700 underline">ファクタリング手数料の相場と内訳</Link>」で詳しく解説しています。
