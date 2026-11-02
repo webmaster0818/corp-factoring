@@ -181,11 +181,11 @@ export const factoringCompanies: FactoringCompany[] = [
     ],
     reviewCount: 1420,
     companyInfo: {
-      established: "2017年",
+      established: "2017年1月",
       capital: "7,000万円",
-      address: "東京都新宿区西新宿3-7-1 新宿パークタワーN棟28階"
-    },
-    requiredDocuments: ["請求書", "通帳", "身分証明書"],
+      address: "東京都新宿区西新宿1-6-1 新宿エルタワー24階"
+    }, // 公式トップの会社概要（東京本社。大阪支社・福岡支社あり）・企業情報（2026年11月2日確認）。旧所在地「西新宿3-7-1 新宿パークタワーN棟28階」は公式に記載なし
+    requiredDocuments: ["本人確認書類（免許証・パスポートなど）", "入出金の通帳（WEB通帳可）", "請求書・見積書・基本契約書などの取引契約書類", "契約時：納税証明書・印鑑証明書・登記簿謄本"], // 公式FAQ「必要書類を教えてください」（2026年11月2日確認）
     url: "https://bestfactor.jp/",
     category: ["審査甘い", "少額", "個人事業主"]
   },
@@ -493,7 +493,7 @@ export const factoringCompanies: FactoringCompany[] = [
     ],
     reviewCount: 580,
     companyInfo: {
-      established: "公式に記載なし",
+      established: "2017年創業", // ennavi.tokyo 会社概要「株式会社インターテックは、2017年創業のファクタリング会社です」（2026年11月2日確認）
       capital: "公式に記載なし",
       address: "東京都中央区日本橋本町4-3-4 東海日本橋ビル3階" // ennavi.tokyo 会社概要・ennavi-factoring.net トップのフッター（2026年11月1日確認）
     },

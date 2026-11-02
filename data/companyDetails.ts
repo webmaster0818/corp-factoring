@@ -163,9 +163,9 @@ const beTradingDetails: CompanyDetailData = {
     {
       companyName: "ベストファクター",
       amount: "30万円〜1億円",
-      speed: "最短30分",
+      speed: "最短6時間（2社間・必要書類がそろっている場合。公式FAQ・2026年11月2日確認）",
       target: "個人事業主・法人",
-      note: "入金までの時間が短い"
+      note: "2社間・3社間に対応"
     },
     {
       companyName: "ペイトナー",
