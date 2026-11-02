@@ -8,6 +8,22 @@ import { factoringCompanies, feeRange } from "@/data/companies";
 import { feeIndex, feeCheckedAt, FEE_COMPANY_COUNT } from "@/data/feeIndex";
 import { DEFAULT_OG_IMAGES, DEFAULT_OG_IMAGE_URL } from "@/lib/og";
 
+// Dataset の期間・更新日は、表のデータの確認日（feeCheckedAt・各行の recheck / speedCheckedAt）から算出する（2026-11-02）
+const toIsoDates = (text: string): string[] => {
+  const out: string[] = [];
+  let year = "";
+  for (const m of text.matchAll(/(?:(\d{4})年)?(\d{1,2})月(\d{1,2})日/g)) {
+    if (m[1]) year = m[1];
+    if (!year) continue;
+    out.push(`${year}-${m[2].padStart(2, "0")}-${m[3].padStart(2, "0")}`);
+  }
+  return out;
+};
+const feeDatasetStart = toIsoDates(feeCheckedAt)[0];
+const feeDatasetEnd = [feeCheckedAt, ...feeIndex.flatMap((r) => [r.recheck ?? "", r.speedCheckedAt ?? ""])]
+  .flatMap(toIsoDates)
+  .reduce((a, b) => (b > a ? b : a), feeDatasetStart);
+
 export const metadata = {
   title: `ファクタリング会社${FEE_COMPANY_COUNT}社の手数料一覧（公式表示）｜安い会社10選・計算方法`,
   description: `ファクタリング会社${FEE_COMPANY_COUNT}社の手数料を各社の公式サイトの表示で一覧にしています。手数料が安い会社10社、計算方法、手数料を抑えるためのポイント、2社間・3社間の違いもあわせて掲載し、無料の手数料シミュレーターも提供しています。`,
@@ -517,8 +533,8 @@ export default function FeesPage() {
             "name": `ファクタリング${feeIndex.length}社 手数料・入金スピード比較データ（公式サイトで確認）`,
             "description": `ファクタリング主要${feeIndex.length}社の手数料率（2社間／3社間）・最短入金・利用可能額・対象・オンライン完結可否を、各社の公式サイトで1件ずつ確認して集計したデータセットです。`,
             "creator": { "@type": "Organization", "name": "corp-factoring 編集部", "url": "https://corp-factoring.com/" },
-            "temporalCoverage": "2026-07-07",
-            "dateModified": "2026-07-07",
+            "temporalCoverage": `${feeDatasetStart}/${feeDatasetEnd}`,
+            "dateModified": feeDatasetEnd,
             "spatialCoverage": { "@type": "Place", "name": "日本" },
             "measurementTechnique": "各社公式サイトに表示された手数料率・入金スピード・条件の確認",
             "variableMeasured": ["2社間手数料率", "3社間手数料率", "最短入金", "利用可能額", "オンライン完結可否"],
