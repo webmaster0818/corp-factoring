@@ -209,8 +209,7 @@ export default function CompanyPage({
     ...(details?.faqs ?? []),
   ];
 
-  // 構造化データ（JSON-LD）。aggregateRating は Google Maps の実評価が
-  // 確認できた会社のみ実値で出力し、未確認の会社では出力しない（架空評価を出さない）。
+  // 構造化データ（JSON-LD）。aggregateRating は出力しない（writing-standards §9・2026-11-03）。
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "FinancialProduct",
@@ -224,17 +223,6 @@ export default function CompanyPage({
         "addressLocality": company.companyInfo.address,
       }
     },
-    ...(realRating
-      ? {
-          aggregateRating: {
-            "@type": "AggregateRating",
-            ratingValue: realRating.rating,
-            reviewCount: realRating.count,
-            bestRating: 5,
-            worstRating: 1,
-          },
-        }
-      : {}),
     ...(feeUndisclosed || company.fees.max === 0
       ? {}
       : {

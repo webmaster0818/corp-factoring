@@ -366,96 +366,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* VOICE Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="container mx-auto px-4 max-w-5xl">
-          <div className="text-center mb-12">
-            <Badge className="mb-4 text-sm bg-[#1B3A5C] text-white">VOICE</Badge>
-            <h2 className="text-3xl font-bold text-gray-900 mb-2">
-              利用者の声
-            </h2>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-6">
-            <Card>
-              <CardContent className="p-6">
-                <div className="mb-4">
-                  <div className="w-12 h-12 bg-blue-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mb-3">
-                    A
-                  </div>
-                  <div className="text-sm text-gray-600 mb-1">
-                    製造業 / 30代男性
-                  </div>
-                  <div className="text-sm text-gray-600 mb-3">
-                    利用額: 500万円
-                  </div>
-                </div>
-                <p className="text-gray-700 mb-4 leading-relaxed">
-                  「銀行融資が間に合わない時にファクタリングを利用。申込から2時間で入金され、資金繰りが一気に解決しました。手数料も想像より安かったです。」
-                </p>
-                <div className="flex gap-1 text-yellow-500">
-                  {[...Array(5)].map((_, i) => (
-                    <span key={i}>★</span>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardContent className="p-6">
-                <div className="mb-4">
-                  <div className="w-12 h-12 bg-green-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mb-3">
-                    B
-                  </div>
-                  <div className="text-sm text-gray-600 mb-1">
-                    IT企業 / 40代女性
-                  </div>
-                  <div className="text-sm text-gray-600 mb-3">
-                    利用額: 1,200万円
-                  </div>
-                </div>
-                <p className="text-gray-700 mb-4 leading-relaxed">
-                  「オンライン完結で対面不要なのが助かりました。書類もたった2点で済み、忙しい中でもスムーズに資金調達できました。」
-                </p>
-                <div className="flex gap-1 text-yellow-500">
-                  {[...Array(5)].map((_, i) => (
-                    <span key={i}>★</span>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
-
-            <Card>
-              <CardContent className="p-6">
-                <div className="mb-4">
-                  <div className="w-12 h-12 bg-orange-600 text-white rounded-full flex items-center justify-center text-2xl font-bold mb-3">
-                    C
-                  </div>
-                  <div className="text-sm text-gray-600 mb-1">
-                    建設業 / 20代男性
-                  </div>
-                  <div className="text-sm text-gray-600 mb-3">
-                    利用額: 300万円
-                  </div>
-                </div>
-                <p className="text-gray-700 mb-4 leading-relaxed">
-                  「創業2年目で銀行融資を断られましたが、ファクタリングなら赤字でも利用OK。このサイトで比較して最安の会社を見つけられました。」
-                </p>
-                <div className="flex gap-1 text-yellow-500">
-                  {[...Array(5)].map((_, i) => (
-                    <span key={i}>★</span>
-                  ))}
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-
-          <p className="text-center text-sm text-gray-500 mt-6">
-            ※ 利用者の感想であり、効果を保証するものではありません。
-          </p>
-        </div>
-      </section>
-
       {/* FAQ Section */}
       <section id="faq" className="py-16 bg-white">
         <div className="container mx-auto px-4 max-w-5xl">
@@ -501,10 +411,10 @@ export default function Home() {
               <CardContent className="p-6 text-center">
                 <div className="w-12 h-12 bg-blue-100 text-[#1B3A5C] rounded-full flex items-center justify-center text-xl font-bold mx-auto mb-4">03</div>
                 <h3 className="font-bold text-gray-900 mb-2">
-                  利用者の声を参考にしています
+                  口コミは出典を明記して掲載しています
                 </h3>
                 <p className="text-sm text-gray-600">
-                  実際にファクタリングを利用した方の声を参考に、利用時の実情に即した情報の提供に努めます。
+                  口コミや評価は、掲載元のURLと取得日がわかるものだけを載せています。出典のない声や独自の星評価は掲載しません。
                 </p>
               </CardContent>
             </Card>
