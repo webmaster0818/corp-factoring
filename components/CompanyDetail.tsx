@@ -23,7 +23,7 @@ export function CompanyDetail({ company }: CompanyDetailProps) {
                 const rr = getRealRating(company.slug);
                 return rr ? (
                   <CardDescription className="text-lg mt-2">
-                    ★ {rr.rating.toFixed(1)} (Google {rr.count.toLocaleString()}件の評価)
+                    ★ {rr.rating.toFixed(1)} (Googleマップ {rr.count.toLocaleString()}件の評価・{rr.fetchedAt}時点)
                   </CardDescription>
                 ) : null;
               })()}

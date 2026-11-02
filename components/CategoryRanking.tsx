@@ -42,7 +42,7 @@ export function CategoryRanking({ title, companies, icon }: CategoryRankingProps
                     <div className="flex items-center gap-2 text-sm text-gray-600 mb-2">
                       <span>★ {rr.rating.toFixed(1)}</span>
                       <span>•</span>
-                      <span>Google {rr.count.toLocaleString()}件</span>
+                      <span>Googleマップ {rr.count.toLocaleString()}件・{rr.fetchedAt}時点</span>
                     </div>
                   ) : null;
                 })()}
