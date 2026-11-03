@@ -9,7 +9,7 @@
 
 開業届を提出していない個人事業主でも、開業届を申込の条件や必要書類に挙げていない会社であれば、ファクタリングに申し込めます。当サイトが掲載する36社のうち、必要書類の記載状況を公式で確認できた34社の公式表示を確認したところ、開業届に触れているのは3社で、OLTAはフリーランスの利用に開業届の提出を条件とし、QuQuMoは個人事業主に「開業届または確定申告書一式」を求め、ベストファクターは「開業届のみでも申込可」としています。屋号について記載している会社はありませんでした。以下では、各社の公式表示の分類と、国税庁が案内する開業届の提出期限・屋号欄の扱いをご説明します。
 
-個人事業主向けの会社の特徴は[個人事業主向けファクタリング14選](/articles/article-factoring-kojin-jigyonushi/)と[個人事業主向けファクタリング8選](/articles/article-factoring-kojin-osusume/)でご案内しています。確定申告書や通帳を出せない場合は、[確定申告書なしでファクタリングは使えるか](/articles/article-factoring-kakutei-shinkokusho-nashi/)と[通帳コピーなしでファクタリングは使えるか](/articles/article-factoring-tsucho-nashi/)をご覧ください。
+個人事業主向けの会社の特徴は[個人事業主向けファクタリング14選](/articles/article-factoring-kojin-jigyonushi/)でご案内しています。確定申告書や通帳を出せない場合は、[確定申告書なしでファクタリングは使えるか](/articles/article-factoring-kakutei-shinkokusho-nashi/)と[通帳コピーなしでファクタリングは使えるか](/articles/article-factoring-tsucho-nashi/)をご覧ください。
 
 ## 必要書類の記載状況を確認できた34社の公式表示を個人事業主の観点で分類した結果
 
@@ -174,6 +174,5 @@ A: 所得税法229条と国税庁の案内では、事業を開始した日の�
 ## 関連記事
 
 - [個人事業主向けファクタリング14選](/articles/article-factoring-kojin-jigyonushi/)
-- [個人事業主向けファクタリング8選](/articles/article-factoring-kojin-osusume/)
 - [確定申告書なしでファクタリングは使えるか](/articles/article-factoring-kakutei-shinkokusho-nashi/)
 - [通帳コピーなしでファクタリングは使えるか](/articles/article-factoring-tsucho-nashi/)

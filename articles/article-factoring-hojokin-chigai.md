@@ -193,7 +193,7 @@
 ### 段階4：設備投資
 → **補助金+ファクタリング+銀行融資**の組み合わせ
 
-詳しくは[各種資金調達手段の比較](/articles/article-factoring-vs-yuushi/)をご覧ください。
+詳しくは[各種資金調達手段の比較](/articles/article-factoring-vs-ginkou/)をご覧ください。
 
 ---
 

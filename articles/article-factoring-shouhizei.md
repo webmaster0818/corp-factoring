@@ -102,5 +102,5 @@ A: 利用できます。消費税の課税状況にかかわらず、ファク�
 ## 関連記事
 
 - [ファクタリング 勘定科目](/articles/article-factoring-kanjokamoku)
-- [ファクタリング 仕訳](/articles/article-factoring-shiwake)
+- [ファクタリング 仕訳](/articles/article-factoring-kanjokamoku)
 - [ファクタリング 税金](/articles/article-factoring-zeikin)

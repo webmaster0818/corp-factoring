@@ -125,7 +125,7 @@
 
 ### ポイント4: 債権譲渡の登記
 
-2社間ファクタリングの場合、[債権譲渡登記](/articles/article-factoring-saiken-jyouto/)が必要になることがあります。登記費用（登録免許税7,500円＋司法書士報酬）が追加で発生するため、事前に確認してください。
+2社間ファクタリングの場合、[債権譲渡登記](/articles/article-factoring-saiken-touki/)が必要になることがあります。登記費用（登録免許税7,500円＋司法書士報酬）が追加で発生するため、事前に確認してください。
 
 ### ポイント5: 契約書の交付
 
@@ -188,7 +188,7 @@
 - [ファクタリング契約書の注意点](/articles/article-factoring-keiyaku/)
 - [ファクタリングは違法？やばい？安全な業者の見分け方](/articles/article-factoring-ihou/)
 - [2社間と3社間ファクタリングの違い](/articles/article-factoring-2sha-3sha/)
-- [債権譲渡とファクタリングの関係](/articles/article-factoring-saiken-jyouto/)
+- [債権譲渡とファクタリングの関係](/articles/article-factoring-saiken-touki/)
 
 ---
 

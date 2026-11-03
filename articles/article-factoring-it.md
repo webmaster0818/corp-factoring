@@ -168,7 +168,7 @@ IT業界でファクタリングを利用した場合の仕訳例は、以下の
 （借方）売上債権売却損 80,000
 ```
 
-手数料は「売上債権売却損」として営業外費用に計上します。消費税は非課税取引です。詳しくは[ファクタリングの仕訳・会計処理](/articles/article-factoring-shiwake/)をご覧ください。
+手数料は「売上債権売却損」として営業外費用に計上します。消費税は非課税取引です。詳しくは[ファクタリングの仕訳・会計処理](/articles/article-factoring-kanjokamoku/)をご覧ください。
 
 ---
 
@@ -195,7 +195,7 @@ IT・Web制作業界では、プロジェクト型の事業に特有の入金の
 - [個人事業主向けファクタリング活用ガイド](/articles/article-factoring-kojin-jigyonushi/)
 - [請求書を即日現金化する方法](/articles/article-seikyusho-genkinkan/)
 - [【業種別】ファクタリング活用ガイド](/articles/article-factoring-gyoushu-guide/)
-- [ファクタリングの仕訳・会計処理](/articles/article-factoring-shiwake/)
+- [ファクタリングの仕訳・会計処理](/articles/article-factoring-kanjokamoku/)
 
 ---
 

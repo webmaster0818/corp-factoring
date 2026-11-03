@@ -188,7 +188,7 @@
 - [違法業者からの勧誘](/articles/article-factoring-ihou-gyousha/)には応じない
 - 経済的に苦しい状況でも、決して行わない
 
-資金繰りに困った場合は、まず正規のファクタリング会社の[比較](/articles/article-factoring-osusume/)や、[他の資金調達手段](/articles/article-factoring-vs-yuushi/)をご検討ください。
+資金繰りに困った場合は、まず正規のファクタリング会社の[比較](/articles/article-factoring-osusume/)や、[他の資金調達手段](/articles/article-factoring-vs-ginkou/)をご検討ください。
 
 ---
 

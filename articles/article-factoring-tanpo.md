@@ -21,7 +21,7 @@
 
 ファクタリングで担保が不要なのは、売掛金そのものを売却する取引であるためです。担保を取らなくても、ファクタリング会社は売掛金を回収する権利を取得します。
 
-[融資との違い](/articles/article-factoring-vs-yuushi/)もご覧ください。
+[融資との違い](/articles/article-factoring-vs-ginkou/)もご覧ください。
 
 ---
 

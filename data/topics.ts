@@ -119,7 +119,6 @@ export const topics: Topic[] = [
         slugs: [
           "article-factoring-vs-shinyou-hoken",
           "article-factoring-vs-ginkou",
-          "article-factoring-vs-yuushi",
           "article-factoring-vs-business-loan",
           "article-factoring-vs-abl",
           "article-factoring-vs-densai",
@@ -162,7 +161,6 @@ export const topics: Topic[] = [
         description: "少額・即日入金など、個人事業主に多い利用方法を解説します。",
         slugs: [
           "article-factoring-kojin-jigyonushi",
-          "article-factoring-kojin-osusume",
           "article-factoring-kojin-sokujitsu",
           "article-factoring-kojin-kakutei",
           "article-factoring-shougaku",
@@ -316,7 +314,6 @@ export const topics: Topic[] = [
           "article-factoring-hansha",
           "article-factoring-kyuuryo-gisou",
           "article-factoring-nijuujouto",
-          "article-factoring-saiken-jyouto",
           "article-factoring-saiken-touki",
           "article-factoring-rentai-hoshou",
           "article-factoring-keiei-hoshou",
@@ -342,7 +339,6 @@ export const topics: Topic[] = [
         slugs: [
           "article-factoring-invoice-mitouroku",
           "article-factoring-kanjokamoku",
-          "article-factoring-shiwake",
           "article-factoring-kessansho",
           "article-factoring-houjinzei",
           "article-factoring-shouhizei",

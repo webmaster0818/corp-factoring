@@ -104,6 +104,6 @@ A: 1年に複数回利用すると、資金繰りが厳しいと見られる可�
 
 ## 関連記事
 
-- [ファクタリング 仕訳](/articles/article-factoring-shiwake)
+- [ファクタリング 仕訳](/articles/article-factoring-kanjokamoku)
 - [ファクタリング 法人税](/articles/article-factoring-houjinzei)
 - [ファクタリング キャッシュフロー](/articles/article-factoring-cash-flow)

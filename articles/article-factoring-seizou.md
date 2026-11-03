@@ -160,7 +160,7 @@
 | 設備の緊急修繕 | ファクタリング | 銀行融資では間に合わない |
 | 運転資金の安定的な確保 | 銀行融資（当座貸越） | 低金利で、必要なときに引き出せる |
 
-[ファクタリングと融資の違い](/articles/article-factoring-vs-yuushi/)もあわせてご覧ください。
+[ファクタリングと融資の違い](/articles/article-factoring-vs-ginkou/)もあわせてご覧ください。
 
 ---
 
@@ -189,7 +189,7 @@
 - [【2026年最新】ファクタリングおすすめランキング](/articles/article-factoring-osusume/)
 - [建設業向けファクタリング活用ガイド](/articles/article-factoring-kensetsu/)
 - [2社間と3社間ファクタリングの違い](/articles/article-factoring-2sha-3sha/)
-- [ファクタリングと融資の違い](/articles/article-factoring-vs-yuushi/)
+- [ファクタリングと融資の違い](/articles/article-factoring-vs-ginkou/)
 - [【業種別】ファクタリング活用ガイド](/articles/article-factoring-gyoushu-guide/)
 
 ---

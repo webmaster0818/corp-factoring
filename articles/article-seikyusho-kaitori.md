@@ -833,7 +833,7 @@ AI審査を採用しているサービスでは、PAYTODAYが「審査結果は�
 - 消費税は**非課税**（金融取引のため）
 - 売上自体は変わらない（売掛金を早期に回収しただけ）
 
-詳しくは、[ファクタリングの仕訳・勘定科目の処理方法](/articles/article-factoring-shiwake/)と[ファクタリングと確定申告（個人事業主向け）](/articles/article-factoring-kojin-kakutei/)をご参照ください。
+詳しくは、[ファクタリングの仕訳・勘定科目の処理方法](/articles/article-factoring-kanjokamoku/)と[ファクタリングと確定申告（個人事業主向け）](/articles/article-factoring-kojin-kakutei/)をご参照ください。
 
 ### 5. 継続利用による費用の増加のリスク
 
@@ -891,7 +891,7 @@ AI審査を採用しているサービスでは、PAYTODAYが「審査結果は�
 - 銀行融資は難しいが、信用情報に大きな問題はない
 - 中程度の金額（数十万〜数百万円）が必要
 
-[ファクタリングと銀行融資の比較](/articles/article-factoring-vs-ginkou/)と[ファクタリングとビジネスローンの違い](/articles/article-factoring-vs-yuushi/)もあわせてご覧ください。
+[ファクタリングと銀行融資の比較](/articles/article-factoring-vs-ginkou/)と[ファクタリングとビジネスローンの違い](/articles/article-factoring-vs-ginkou/)もあわせてご覧ください。
 
 ---
 
@@ -1138,7 +1138,7 @@ IT業界では請求書払いが一般的で、案件単位の支払いサイト
 
 **利用・手続き関連**
 - [請求書を現金化する方法3選｜最速・最安を比較](/articles/article-seikyusho-genkinkan/)
-- [ファクタリングの仕訳・勘定科目の処理方法](/articles/article-factoring-shiwake/)
+- [ファクタリングの仕訳・勘定科目の処理方法](/articles/article-factoring-kanjokamoku/)
 - [ファクタリングの確定申告・税務処理（個人事業主向け）](/articles/article-factoring-kojin-kakutei/)
 - [ファクタリング審査に落ちた原因と対策](/articles/article-factoring-shinsa-ochita/)
 

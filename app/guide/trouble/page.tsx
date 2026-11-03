@@ -72,7 +72,7 @@ const groups: HubGroup[] = [
       "article-factoring-rentai-hoshou",
       "article-factoring-keiei-hoshou",
       "article-factoring-tanpo",
-      "article-factoring-saiken-jyouto",
+      "article-factoring-saiken-touki",
       "article-factoring-saiken-touki",
       "article-factoring-nijuujouto",
     ],
