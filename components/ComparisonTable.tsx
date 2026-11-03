@@ -49,7 +49,7 @@ export function ComparisonTable({ companies }: ComparisonTableProps) {
                     const rr = getRealRating(company.slug);
                     return rr ? (
                       <div className="text-xs text-gray-500 mt-1">
-                        ★ {rr.rating.toFixed(1)} (Googleマップ {rr.count.toLocaleString()}件・{rr.fetchedAt}時点)
+                        Googleマップの口コミ {rr.count.toLocaleString()}件（{rr.fetchedAt}時点）
                       </div>
                     ) : null;
                   })()}

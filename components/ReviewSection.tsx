@@ -26,15 +26,15 @@ export function ReviewSection({ companyName, realRating, pros, cons }: ReviewSec
             <div className="bg-amber-50 border border-amber-200 rounded-xl p-6 mb-6">
               <div className="flex flex-wrap items-center gap-4">
                 <div className="text-center">
-                  <p className="text-4xl font-black text-amber-600">★ {realRating.rating.toFixed(1)}</p>
-                  <p className="text-xs text-gray-600 mt-1">{realRating.count.toLocaleString()}件の実評価</p>
+                  <p className="text-3xl font-black text-amber-700">{realRating.count.toLocaleString()}件</p>
+                  <p className="text-xs text-gray-600 mt-1">Googleマップの口コミ</p>
                 </div>
                 <div className="flex-1 min-w-[200px]">
                   <p className="text-sm text-gray-700">
-                    Googleマップ上の「{realRating.entity}」の実評価です。
+                    Googleマップ上の「{realRating.entity}」に寄せられた口コミの件数です。Googleマップの点数（★）は表示していません。口コミの本文はGoogleマップでご確認ください。
                   </p>
                   <p className="text-xs text-gray-500 mt-1">
-                    出典: Google Maps（Places APIで取得）／ {realRating.fetchedAt}時点。評価は変動します。
+                    出典: Google Maps（Places APIで取得）／ {realRating.fetchedAt}時点。件数は変動します。
                   </p>
                 </div>
               </div>

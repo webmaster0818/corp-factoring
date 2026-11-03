@@ -163,9 +163,9 @@ export function DiagnosisTool() {
                         const rr = getRealRating(company.slug);
                         return rr ? (
                           <div className="bg-purple-50 p-3 rounded">
-                            <div className="text-xs text-gray-600 mb-1">Google評価</div>
+                            <div className="text-xs text-gray-600 mb-1">Googleマップの口コミ</div>
                             <div className="font-bold text-purple-700">
-                              ★{rr.rating.toFixed(1)} (Googleマップ {rr.count.toLocaleString()}件・{rr.fetchedAt}時点)
+                              {rr.count.toLocaleString()}件（{rr.fetchedAt}時点）
                             </div>
                           </div>
                         ) : null;

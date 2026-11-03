@@ -249,10 +249,8 @@ export default function Home() {
                           {(() => {
                             const rr = getRealRating(company.slug);
                             return rr ? (
-                              <div className="flex items-center gap-2 mb-2">
-                                <span className="text-yellow-500 text-lg">★</span>
-                                <span className="text-lg font-semibold">{rr.rating.toFixed(1)}</span>
-                                <span className="text-xs text-gray-500">Googleマップ {rr.count.toLocaleString()}件・{rr.fetchedAt}時点</span>
+                              <div className="text-xs text-gray-500 mb-2">
+                                Googleマップの口コミ {rr.count.toLocaleString()}件（{rr.fetchedAt}時点）
                               </div>
                             ) : null;
                           })()}

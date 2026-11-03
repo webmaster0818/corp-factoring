@@ -39,6 +39,8 @@
 
 ## 【総合ランキング】ファクタリングおすすめTOP19
 
+※順位は掲載順で、公式表示の優劣を示すものではありません。
+
 ### 総合1位: ビートレーディング
 
 取引実績9.1万社以上・累計買取額1,824億円（2026年3月時点）を公式に表示しています。
@@ -405,7 +407,7 @@ AI審査により、最短30分で入金されます。手数料は1%〜です�
 |---|---|---|
 | 即日入金に対応する会社 | 公式表示の最短入金が早い順 | [即日ファクタリング](/articles/article-factoring-sokujitsu-osusume/) |
 | 2社間の手数料の下限が低い会社 | 公式表示の下限が低い順 | [手数料が安いファクタリング](/articles/article-factoring-tesuryo-yasui/) |
-| 個人事業主・フリーランスが使える会社 | 2社間の手数料の下限が低い順 | [個人事業主向けファクタリング](/articles/article-factoring-kojin-osusume/) |
+| 個人事業主・フリーランスが使える会社 | 2社間の手数料の下限が低い順 | [個人事業主向けファクタリング](/articles/article-factoring-kojin-jigyonushi/) |
 | 10万円以下から使える会社 | 利用可能額の下限が低い順 | [少額のファクタリング](/articles/article-factoring-shougaku/) |
 | 1億円以上・上限なしの高額に対応する会社 | 2社間の手数料の下限が低い順 | [高額のファクタリング](/articles/article-factoring-ooguchi/) |
 | オンラインで契約まで完結できる会社 | 公式表示の最短入金が早い順 | [オンラインファクタリング](/articles/article-online-factoring/) |

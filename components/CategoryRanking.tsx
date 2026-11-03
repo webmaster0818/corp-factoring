@@ -40,9 +40,7 @@ export function CategoryRanking({ title, companies, icon }: CategoryRankingProps
                   const rr = getRealRating(company.slug);
                   return rr ? (
                     <div className="flex items-center gap-2 text-sm text-gray-600 mb-2">
-                      <span>★ {rr.rating.toFixed(1)}</span>
-                      <span>•</span>
-                      <span>Googleマップ {rr.count.toLocaleString()}件・{rr.fetchedAt}時点</span>
+                      <span>Googleマップの口コミ {rr.count.toLocaleString()}件（{rr.fetchedAt}時点）</span>
                     </div>
                   ) : null;
                 })()}

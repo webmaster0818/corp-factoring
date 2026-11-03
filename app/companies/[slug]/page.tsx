@@ -338,16 +338,9 @@ export default function CompanyPage({
               )}
               {realRating && (
                 <div className="flex items-center gap-4 mb-4">
-                  <div className="flex items-center gap-2 bg-amber-50 px-4 py-2 rounded-lg border border-amber-200">
-                    <span className="text-xl font-bold text-amber-600">
-                      ★ {realRating.rating.toFixed(1)}
-                    </span>
-                    <span className="text-gray-500">/</span>
-                    <span className="text-sm text-gray-500">5.0</span>
-                    <span className="text-gray-400 text-sm ml-2">
-                      （Google Maps実評価 {realRating.count.toLocaleString()}件・{realRating.fetchedAt}時点）
-                    </span>
-                  </div>
+                  <a href="#reviews" className="text-sm text-gray-600 underline">
+                    Googleマップの口コミ {realRating.count.toLocaleString()}件（{realRating.fetchedAt}時点）
+                  </a>
                 </div>
               )}
               <div className="flex flex-wrap gap-2">
