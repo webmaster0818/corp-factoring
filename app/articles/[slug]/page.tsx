@@ -101,6 +101,11 @@ export default async function ArticlePage({
     "factoring-zero": ["ファクタリングZERO"],
     "nishinihon-factor": ["西日本ファクター"],
     "jigyoshikin-agent": ["事業資金エージェント"],
+    // 2026年11月3日 新規掲載4社（「ウィット」は運営会社名としても出るが、同じ会社のため検出してよい）
+    escom: ["エスコム"],
+    wit: ["ウィット"],
+    kensetsukun: ["けんせつくん"],
+    factors: ["ファクターズ"],
   };
   const articleText = article ? article.content.replace(/<[^>]+>/g, " ") : "";
   const mentionedCompanies = article

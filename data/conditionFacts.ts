@@ -1,5 +1,6 @@
 // 条件別の比較表（data/conditions.ts）で使う、各社の公式の記載。
 // 2026年11月1日に各社の公式サイトで確認（既に当サイトのデータで公式確認済みの項目は、その確認日を使用）。
+// 2026年11月3日に新規掲載4社（escom・wit・kensetsukun・factors）を各社の公式サイトで確認して追加（計47社）。
 // value は公式の記載を当サイトが区分したもの：「可」「不可」「条件付き（…）」「不要と明記」「一覧に記載なし」「公式に記載なし」。
 // quote は公式の文言の抜き出し、source は出典ページ。推測で埋めた値はない。
 export type ConditionFactKey = "donichi" | "nisha" | "sansha" | "kessansho" | "kakutei" | "touki" | "docs" | "shinryou" | "kaigo";
@@ -477,5 +478,50 @@ export const conditionFacts: { [slug: string]: Partial<Record<ConditionFactKey, 
     docs: {"value": "一覧あり", "source": "https://js-agent.com/", "checkedAt": "2026年11月1日", "quote": "必要書類はありますか？ 本人確認資料(免許証/マイナンバーカード等) ご入金がわかる通帳、売掛金がわかるご請求書をご準備ください。", "list": ["本人確認資料（免許証／マイナンバーカード等）", "入金がわかる通帳", "売掛金がわかる請求書"], "count": 3},
     shinryou: {"value": "公式に記載なし", "source": "https://js-agent.net/", "checkedAt": "2026年11月1日"},
     kaigo: {"value": "公式に記載なし", "source": "https://js-agent.net/", "checkedAt": "2026年11月1日"},
+  },
+  // ▼ 2026年11月3日 新規掲載4社（各社公式サイトで確認。記載のない項目は「公式に記載なし」）
+  "escom": {
+    donichi: {"value": "公式に記載なし", "source": "https://scom-f.jp/company.php", "checkedAt": "2026年11月3日", "quote": "フリーダイヤル ０１２０-４４-７５４５ （お問合せコード：ＳＣ） 平日9:00～19:00", "note": "電話受付の表示のみ。土日祝の審査・入金の記載なし"},
+    nisha: {"value": "可", "source": "https://scom-f.jp/ファクタリングとは/", "checkedAt": "2026年11月3日", "quote": "２社間ファクタリングは、お客様と当社のみの間で行う取引です。 当社から売掛先様に連絡などは一切行いませんので"},
+    sansha: {"value": "可", "source": "https://scom-f.jp/ファクタリングとは/", "checkedAt": "2026年11月3日", "quote": "手数料重視 手数料1.5%〜の使いやすファクタリングです。 ３社間ファクタリングは、お客様と当社と売掛先様の間で行う取引です。", "note": "LPの画像は「手数料1.5〜8%」"},
+    kessansho: {"value": "不可", "source": "https://scom-f.jp/必要書類/", "checkedAt": "2026年11月3日", "quote": "審査時の必要書類 身分証明書（免許証・パスポートなど顔写真付き） 決算書（直近2期分） 売掛先への請求書 入出金の通帳", "note": "審査時の必要書類に決算書（直近2期分）"},
+    kakutei: {"value": "不可", "source": "https://scom-f.jp/よくある質問/", "checkedAt": "2026年11月3日", "quote": "個人事業主は利用できますか？ 申し訳ございませんが、当社は法人様のみ利用可とさせていただいております。", "note": "対象外（法人のみ）"},
+    touki: {"value": "公式に記載なし", "source": "https://scom-f.jp/", "checkedAt": "2026年11月3日"},
+    docs: {"value": "一覧あり", "source": "https://scom-f.jp/必要書類/", "checkedAt": "2026年11月3日", "quote": "審査時の必要書類 身分証明書（免許証・パスポートなど顔写真付き） 決算書（直近2期分） 売掛先への請求書 入出金の通帳", "note": "契約時は印鑑証明・会社謄本（履歴事項全部証明書２通）・社判・実印", "list": ["身分証明書（免許証・パスポートなど顔写真付き）", "決算書（直近2期分）", "売掛先への請求書", "入出金の通帳"], "count": 4},
+    shinryou: {"value": "可", "source": "https://scom-f.jp/診療報酬ファクタリング/", "checkedAt": "2026年11月3日", "quote": "診療報酬債権買取サービス 社会保険や国民健康保険といった先々に入金予定の診療報酬債権お買い取りいたします。", "note": "「買取金額の1.5%〜が手数料」"},
+    kaigo: {"value": "可", "source": "https://scom-f.jp/介護報酬ファクタリング/", "checkedAt": "2026年11月3日", "quote": "障害者総合支援法・児童福祉法に基づくどんな介護報酬債権でも 対応いたします。", "note": "「買取金額の1.5%〜が手数料」"},
+  },
+  "wit": {
+    donichi: {"value": "公式に記載なし", "source": "https://witservice.co.jp/factoring/", "checkedAt": "2026年11月3日", "quote": "0120-117-297 受付時間：09:00～18:00／ご相談・お申込みはこちら 24時間365日オンラインで受付中", "note": "曜日・土日祝の審査・入金の記載なし。銀行営業時間外の入金は翌営業日"},
+    nisha: {"value": "可", "source": "https://witservice.co.jp/factoring/", "checkedAt": "2026年11月3日", "quote": "取引先にも知られず簡単な２社間契約は勿論、 手数料重視の３社間取引も対応可能 です。"},
+    sansha: {"value": "可", "source": "https://witservice.co.jp/factoring/", "checkedAt": "2026年11月3日", "quote": "取引先にも知られず簡単な２社間契約は勿論、 手数料重視の３社間取引も対応可能 です。", "note": "率は公式に記載なし"},
+    kessansho: {"value": "公式に記載なし", "source": "https://witservice.co.jp/factoring/", "checkedAt": "2026年11月3日", "note": "必要書類の一覧の記載なし"},
+    kakutei: {"value": "公式に記載なし", "source": "https://witservice.co.jp/factoring/", "checkedAt": "2026年11月3日", "note": "必要書類の一覧の記載なし"},
+    touki: {"value": "公式に記載なし", "source": "https://witservice.co.jp/factoring/", "checkedAt": "2026年11月3日"},
+    docs: {"value": "公式に一覧の記載なし", "source": "https://witservice.co.jp/factoring/", "checkedAt": "2026年11月3日", "quote": "発注時の注文書または入金待ちの請求書さえあれば、 ス マ ホ だ け で 、 全国どこでも利用可能。", "note": "必要書類の一覧の記載なし"},
+    shinryou: {"value": "公式に記載なし", "source": "https://witservice.co.jp/factoring/", "checkedAt": "2026年11月3日"},
+    kaigo: {"value": "公式に記載なし", "source": "https://witservice.co.jp/factoring/", "checkedAt": "2026年11月3日"},
+  },
+  "kensetsukun": {
+    donichi: {"value": "公式に記載なし", "source": "https://xn--y8jd4aybzqd.jp/", "checkedAt": "2026年11月3日", "quote": "0120-227-726 受付時間：09：00～18：00", "note": "曜日・土日祝の審査・入金の記載なし。銀行営業時間外の入金は翌営業日"},
+    nisha: {"value": "公式に記載なし", "source": "https://xn--y8jd4aybzqd.jp/", "checkedAt": "2026年11月3日", "note": "2社間・3社間の別の記載なし"},
+    sansha: {"value": "公式に記載なし", "source": "https://xn--y8jd4aybzqd.jp/", "checkedAt": "2026年11月3日", "note": "2社間・3社間の別の記載なし"},
+    kessansho: {"value": "公式に記載なし", "source": "https://xn--y8jd4aybzqd.jp/", "checkedAt": "2026年11月3日", "note": "必要書類の一覧の記載なし"},
+    kakutei: {"value": "公式に記載なし", "source": "https://xn--y8jd4aybzqd.jp/", "checkedAt": "2026年11月3日", "note": "必要書類の一覧の記載なし"},
+    touki: {"value": "公式に記載なし", "source": "https://xn--y8jd4aybzqd.jp/", "checkedAt": "2026年11月3日"},
+    docs: {"value": "公式に一覧の記載なし", "source": "https://xn--y8jd4aybzqd.jp/", "checkedAt": "2026年11月3日", "note": "必要書類の一覧の記載なし"},
+    shinryou: {"value": "公式に記載なし", "source": "https://xn--y8jd4aybzqd.jp/", "checkedAt": "2026年11月3日"},
+    kaigo: {"value": "公式に記載なし", "source": "https://xn--y8jd4aybzqd.jp/", "checkedAt": "2026年11月3日"},
+  },
+  "factors": {
+    donichi: {"value": "公式に記載なし", "source": "https://factors.tokyo/", "checkedAt": "2026年11月3日", "quote": "0120-690-070 通話無料：平日9:00〜19:00", "note": "電話受付の表示のみ。土日祝の審査・入金の記載なし（運営会社の旧LP factorplan.net/factors/ は「休業日(土・日・祝)」）"},
+    nisha: {"value": "公式に記載なし", "source": "https://factors.tokyo/", "checkedAt": "2026年11月3日", "note": "取引先に知られないよう配慮するとの記載はあるが、2社間・3社間の別の記載なし"},
+    sansha: {"value": "公式に記載なし", "source": "https://factors.tokyo/", "checkedAt": "2026年11月3日"},
+    kessansho: {"value": "公式に記載なし", "source": "https://factors.tokyo/", "checkedAt": "2026年11月3日", "note": "必要書類の一覧の記載なし"},
+    kakutei: {"value": "公式に記載なし", "source": "https://factors.tokyo/", "checkedAt": "2026年11月3日", "note": "必要書類の一覧の記載なし"},
+    touki: {"value": "公式に記載なし", "source": "https://factors.tokyo/", "checkedAt": "2026年11月3日"},
+    docs: {"value": "公式に一覧の記載なし", "source": "https://factors.tokyo/", "checkedAt": "2026年11月3日", "note": "必要書類の一覧の記載なし"},
+    shinryou: {"value": "公式に記載なし", "source": "https://factors.tokyo/", "checkedAt": "2026年11月3日"},
+    kaigo: {"value": "公式に記載なし", "source": "https://factors.tokyo/", "checkedAt": "2026年11月3日"},
   },
 };

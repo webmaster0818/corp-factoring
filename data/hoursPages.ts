@@ -51,6 +51,11 @@ export const HOURS_SLUGS = [
   "factoring-zero",
   "nishinihon-factor",
   "jigyoshikin-agent",
+  // ▼ 2026年11月3日 追加（新規掲載4社。各社公式サイトで受付時間を一次確認）
+  "escom",
+  "wit",
+  "kensetsukun",
+  "factors",
 ] as const;
 
 // 2026年11月1日に追加した営業時間ページ（ページの最終確認日を2026年11月1日とする）
@@ -135,6 +140,11 @@ export const HOURS_CHECKED_AT: { [slug: string]: string } = {
   "factoring-zero": "2026年11月1日",
   "nishinihon-factor": "2026年11月1日",
   "jigyoshikin-agent": "2026年11月1日",
+  // ▼ 2026年11月3日 追加分（新規掲載4社・各社公式サイトで確認）
+  "escom": "2026年11月3日",
+  "wit": "2026年11月3日",
+  "kensetsukun": "2026年11月3日",
+  "factors": "2026年11月3日",
 };
 
 // 営業時間比較表に載せる候補（operatingHoursMapに一次確認値がある会社のみ）。

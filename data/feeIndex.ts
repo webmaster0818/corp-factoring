@@ -1,4 +1,4 @@
-// ファクタリング43社（当初24社＋2026年10月31日新規12社＋2026年11月1日新規7社）の手数料・入金スピード等を各社公式サイトで一次確認（確認日 2026年7月21日。前回7月7日。jtc/yen-todayは2026年7月29日追加確認。A8提携9社＝paytner/mentor-capital/ebank/invoice-factor/no1/safe-trust/ace-trust/factor-plan/try の行は2026年10月14日に再確認して更新。support-kinyu/yen-today は2026年10月16日に再確認。be-trading/best-factor の手数料と accel-factor の利用可能額は2026年10月17日に再確認して更新。best-factor の入金スピードと ennavi の手数料も2026年10月17日に再確認して更新。accel-factor の入金スピードと best-factor の契約方法（online）は2026年10月18日に再確認して更新。mf-earlypayment・jtc の行は2026年10月30日に再確認して更新。msfj〜gmo-btob-hayabarai の12行は2026年10月31日に新規掲載。goodplus〜jigyoshikin-agent の7行は2026年11月1日に新規掲載（計43社）。be-trading の手数料、pmg・paytoday・freenance の手数料・対象は2026年11月3日に再確認して更新）。
+// ファクタリング47社（当初24社＋2026年10月31日新規12社＋2026年11月1日新規7社＋2026年11月3日新規4社）の手数料・入金スピード等を各社公式サイトで一次確認（確認日 2026年7月21日。前回7月7日。jtc/yen-todayは2026年7月29日追加確認。A8提携9社＝paytner/mentor-capital/ebank/invoice-factor/no1/safe-trust/ace-trust/factor-plan/try の行は2026年10月14日に再確認して更新。support-kinyu/yen-today は2026年10月16日に再確認。be-trading/best-factor の手数料と accel-factor の利用可能額は2026年10月17日に再確認して更新。best-factor の入金スピードと ennavi の手数料も2026年10月17日に再確認して更新。accel-factor の入金スピードと best-factor の契約方法（online）は2026年10月18日に再確認して更新。mf-earlypayment・jtc の行は2026年10月30日に再確認して更新。msfj〜gmo-btob-hayabarai の12行は2026年10月31日に新規掲載。goodplus〜jigyoshikin-agent の7行は2026年11月1日に新規掲載。escom・wit・kensetsukun・factors の4行は2026年11月3日に新規掲載（計47社）。be-trading の手数料、pmg・paytoday・freenance の手数料・対象は2026年11月3日に再確認して更新）。
 // 再確認した行は recheck に確認日と項目を入れて /fees/ の表に表示する。speedCheckedAt は入金スピードを確認した日（営業時間ページに表示）。
 // 公式に明示のない手数料率は「非公示（要見積もり）」と正直に記載。月次で再確認して更新する。
 
@@ -64,6 +64,13 @@ export const feeIndex: FeeIndexRow[] = [
   { slug: "nishinihon-factor", name: "西日本ファクター", fee2: "非公示（審査後に手数料を説明）", fee3: "対応あり（率は公式に記載なし）", speed: "最短即日（トップ・1,000万円まで）／最短1日（FAQ）", amount: "10万円〜3,000万円（10万円以上は2026年10月6日から）", target: "法人・個人事業主（売掛先は法人のみ。対応地域は九州・中国・関西）", online: "可（クラウド契約・完全非対面）", recheck: "2026年11月1日確認（新規掲載）", speedCheckedAt: "2026年11月1日" },
   { slug: "jigyoshikin-agent", name: "事業資金エージェント", fee2: "5%〜20%（公式FAQの通常の範囲。申込LPは「1.5%～」）", fee3: "1.5%〜9%（公式FAQ）", speed: "最短2時間（申込LP）。FAQは500万円まで当日・1,000万円超は最短3日", amount: "10万円〜最大2億円（申込LP）", target: "法人・個人事業主（設立間もない場合は売掛金の入金3ヶ月以上）", online: "可（オンライン完結・非対面）", recheck: "2026年11月1日確認（新規掲載）", speedCheckedAt: "2026年11月1日" },
   // { slug: "sokula", ... } は掲載見送り：公式 sokula.info が2026年11月1日時点で公開されておらず（DNSにAレコードなし）、一次確認できる値がない
+  // ▼ 2026年11月3日 新規掲載4社（記事内で言及していた会社を各社公式サイトで確認・p5_20261103/new_companies/<slug>.json）
+  { slug: "escom", name: "エスコム（S-COM）", fee2: "5%〜（公式FAQ「最低５％から」。比較表は5%～12%、LPは5〜10%）", fee3: "1.5%〜（LPは1.5〜8%）", speed: "最短即日（契約完了後5分〜30分以内に振込）", amount: "30万円〜（1億円は目安で限度額ではない・公式FAQ）", target: "法人のみ（個人事業主不可）", online: "公式内で記載が異なる（電子契約ページはクラウドサイン対応、比較表の契約方法は「面談・郵送」。2社間は面談あり・ビデオ通話可）", recheck: "2026年11月3日確認（新規掲載）", speedCheckedAt: "2026年11月3日" },
+  { slug: "wit", name: "ウィット（Wit）", fee2: "非公示（率の記載なし）", fee3: "対応あり（率は公式に記載なし）", speed: "最短2時間（審査結果は審査開始から30分程度。銀行営業時間外は翌営業日）", amount: "下限なし・上限なし（500万円以下の小口専門をうたう）", target: "法人・個人事業主", online: "可（完全オンライン・非対面）", recheck: "2026年11月3日確認（新規掲載）", speedCheckedAt: "2026年11月3日" },
+  { slug: "kensetsukun", name: "けんせつくん", fee2: "2%〜（下限のみ・2社間/3社間の別は記載なし）", fee3: "公式に記載なし", speed: "最短2時間（銀行営業時間外は翌営業日）", amount: "公式に記載なし", target: "建設業の法人・個人事業主（運営は株式会社ウィット）", online: "可（完全オンライン・メールフォーム/LINE）", recheck: "2026年11月3日確認（新規掲載）", speedCheckedAt: "2026年11月3日" },
+  // ファクターズはファクタープラン（factor-plan）と同じ株式会社ワイズコーポレーションの別サービス（旧名称ではない。運営会社サイトが別サービスとして紹介）。
+  // 運営会社の旧LP（factorplan.net/factors/）の「手数料３％～」（タイトル・メタ説明）・「最小30万円～最大3,000万円」（画像）は現行の公式サイト factors.tokyo にないため、現行値として扱わない
+  { slug: "factors", name: "ファクターズ（ワイズコーポレーション）", fee2: "非公示（公式サイトに率の記載なし）", fee3: "公式に記載なし", speed: "最短4時間（午前中申込で最短15時入金）", amount: "公式サイト（factors.tokyo）に記載なし", target: "中小企業・一人親方（公式トップは「中小企業・個人事業主」の資金繰りの支援実績と記載）", online: "公式に記載なし", recheck: "2026年11月3日確認（新規掲載）", speedCheckedAt: "2026年11月3日" },
 ];
 
 // 掲載社数（表示の「◯社」はこの値を使う。固定の数字を書かない）

@@ -71,18 +71,18 @@
 
 ## ファクタリングの償還請求権：当サイトの記録で確認できること
 
-当サイトは、掲載している43社の公式サイト・利用規約から、償還請求権に関する記載を確認日つきで記録しています。項目名に「償還」を含む記録がある会社は24社で、そのうち23社が、売掛先の倒産などで回収できなくても利用者に代金の返還や買戻しを求めない旨を公式に記載しています。
+当サイトは、掲載している47社の公式サイト・利用規約から、償還請求権に関する記載を確認日つきで記録しています。項目名に「償還」を含む記録がある会社は25社で、そのうち24社が、売掛先の倒産などで回収できなくても利用者に代金の返還や買戻しを求めない旨を公式に記載しています。
 
 | 公式の記載 | 社数 | 会社 |
 |---|---|---|
-| 償還請求権なし（ノンリコース）、または売掛先の倒産で返還・支払いを求めないと記載 | 23 | [ペイトナー](/companies/paytner/)・[メンターキャピタル](/companies/mentor-capital/)・[株式会社No.1](/companies/no1/)・[エーストラスト](/companies/ace-trust/)・[バイオン](/companies/bion/)・[アウル経済](/companies/owl-keizai/)・[インボイスPay](/companies/invoice-pay/)・[うりかけ堂](/companies/urikakedo/)・[買速](/companies/kaisoku/)・[OLTA](/companies/olta/)・[ビートレーディング](/companies/be-trading/)・[ベストファクター](/companies/best-factor/)・[FREENANCE](/companies/freenance/)・[JTC](/companies/jtc/)・[マネーフォワード 早期入金](/companies/mf-earlypayment/)・[みんなのファクタリング](/companies/minna-factoring/)・[PayToday](/companies/paytoday/)・[PMG](/companies/pmg/)・[GoodPlus](/companies/goodplus/)・[ネクストワン](/companies/next-one/)・[CoolPay](/companies/coolpay/)・[西日本ファクター](/companies/nishinihon-factor/)・[事業資金エージェント](/companies/jigyoshikin-agent/) |
+| 償還請求権なし（ノンリコース）、または売掛先の倒産で返還・支払いを求めないと記載 | 24 | [ペイトナー](/companies/paytner/)・[メンターキャピタル](/companies/mentor-capital/)・[株式会社No.1](/companies/no1/)・[エーストラスト](/companies/ace-trust/)・[バイオン](/companies/bion/)・[アウル経済](/companies/owl-keizai/)・[インボイスPay](/companies/invoice-pay/)・[うりかけ堂](/companies/urikakedo/)・[買速](/companies/kaisoku/)・[OLTA](/companies/olta/)・[ビートレーディング](/companies/be-trading/)・[ベストファクター](/companies/best-factor/)・[FREENANCE](/companies/freenance/)・[JTC](/companies/jtc/)・[マネーフォワード 早期入金](/companies/mf-earlypayment/)・[みんなのファクタリング](/companies/minna-factoring/)・[PayToday](/companies/paytoday/)・[PMG](/companies/pmg/)・[GoodPlus](/companies/goodplus/)・[ネクストワン](/companies/next-one/)・[CoolPay](/companies/coolpay/)・[西日本ファクター](/companies/nishinihon-factor/)・[事業資金エージェント](/companies/jigyoshikin-agent/)・[ファクターズ](/companies/factors/)（運営会社サイトの記載） |
 | 償還請求権の有無は明記なし | 1 | [GMO BtoB早払い](/companies/gmo-btob-hayabarai/)（「代金回収はGMOペイメントゲートウェイが行うため、未回収は軽減されます」との記載） |
 
-確認日：2026年10月14日（ペイトナー・メンターキャピタル・株式会社No.1・エーストラスト）、2026年11月1日（GoodPlus・ネクストワン・CoolPay・西日本ファクター・事業資金エージェント）、2026年10月31日（そのほかの15社）。
+確認日：2026年10月14日（ペイトナー・メンターキャピタル・株式会社No.1・エーストラスト）、2026年11月1日（GoodPlus・ネクストワン・CoolPay・西日本ファクター・事業資金エージェント）、2026年11月3日（ファクターズ）、2026年10月31日（そのほかの15社）。
 
 ノンリコースであっても、例外がある会社があります。FREENANCEは表明保証違反や取引先からの直接受領の場合に額面相当額の支払義務を、マネーフォワード 早期入金は表明保証違反・取引の取消などの場合に譲渡対価の返還請求と違約金を、みんなのファクタリングは表明保証違反などで解除となった場合に買取代金の返還と違約金を、それぞれ利用規約に定めています（2026年10月31日確認）。GoodPlusも、表明保証や遵守事項に違反した場合の額面金額相当額の支払義務を利用規約に定めています（2026年11月1日確認）。売掛先の倒産のリスクを移せるのは、契約の条件を守っている場合に限られます。
 
-残る19社は、当サイトの記録に償還請求権の項目がありません。申込時に、契約書で償還請求権の有無を確認してください。
+残る22社は、当サイトの記録に償還請求権の項目がありません。申込時に、契約書で償還請求権の有無を確認してください。
 
 ## 使い分けの考え方
 
