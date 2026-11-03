@@ -23,7 +23,7 @@ export interface FactoringCompany {
   nameKana: string;
   slug: string;
   logo?: string;
-  rating: number;
+  // 評価（rating）と口コミ件数（reviewCount）は持たない。★は data/realRatings.ts（Googleマップ・取得日つき）だけを使う（writing-standards §9・2026-11-03）
   fees: {
     min: number;
     max: number;
@@ -39,7 +39,6 @@ export interface FactoringCompany {
   description: string;
   pros: string[];
   cons: string[];
-  reviewCount: number;
   companyInfo: {
     established: string;
     capital: string;
@@ -60,7 +59,6 @@ export const factoringCompanies: FactoringCompany[] = [
     name: "ビートレーディング",
     nameKana: "びーとれーでぃんぐ",
     slug: "be-trading",
-    rating: 4.8,
     fees: { min: 2.0, max: 0 }, // 公式表示は「手数料2%〜」（2社間4%〜・3社間2%〜）。上限率は公式に記載なし（2026年10月17日確認）
     speed: "最短2時間",
     minAmount: 0,
@@ -79,7 +77,6 @@ export const factoringCompanies: FactoringCompany[] = [
       "手数料上限がやや高め",
       "初回は面談が必要な場合あり"
     ],
-    reviewCount: 2850,
     companyInfo: {
       established: "2012年",
       capital: "7,000万円",
@@ -94,7 +91,6 @@ export const factoringCompanies: FactoringCompany[] = [
     name: "QuQuMo",
     nameKana: "ククモ",
     slug: "ququmo",
-    rating: 4.7,
     fees: { min: 1.0, max: 0 },
     speed: "最短2時間",
     minAmount: 0,
@@ -112,7 +108,6 @@ export const factoringCompanies: FactoringCompany[] = [
       "対面相談は不可",
       "2社間ファクタリングのみ（公式「当社との直接の2社間ファクタリング」）" // ququmo.net（2026年10月22日確認）
     ],
-    reviewCount: 1820,
     companyInfo: {
       established: "公式に記載なし",
       capital: "公式に記載なし",
@@ -127,7 +122,6 @@ export const factoringCompanies: FactoringCompany[] = [
     name: "アクセルファクター",
     nameKana: "あくせるふぁくたー",
     slug: "accel-factor",
-    rating: 4.6,
     fees: { min: 1.0, max: 12.0 },
     speed: "最短2時間", // 公式コラム（法人向けファクタリングおすすめ20選・更新日2026.10.12）「入金は最短2時間」・運転資金のコラム（2026.10.15）「最短2時間での資金化が可能」（2026年10月25日確認）。審査結果は公式FAQ「最短1時間」
     minAmount: 300000,
@@ -146,7 +140,6 @@ export const factoringCompanies: FactoringCompany[] = [
     cons: [
       "電話受付は平日10:00〜18:30（公式表示）"
     ],
-    reviewCount: 1650,
     companyInfo: {
       established: "2018年10月",
       capital: "2億7,052万円（グループ総資本金）",
@@ -161,7 +154,6 @@ export const factoringCompanies: FactoringCompany[] = [
     name: "ベストファクター",
     nameKana: "べすとふぁくたー",
     slug: "best-factor",
-    rating: 4.7,
     fees: { min: 2.0, max: 20.0 },
     speed: "最短6時間",
     minAmount: 300000,
@@ -179,7 +171,6 @@ export const factoringCompanies: FactoringCompany[] = [
     cons: [
       "手数料上限が20%とやや高め"
     ],
-    reviewCount: 1420,
     companyInfo: {
       established: "2017年1月",
       capital: "7,000万円",
@@ -194,7 +185,6 @@ export const factoringCompanies: FactoringCompany[] = [
     name: "PMG",
     nameKana: "ぴーえむじー",
     slug: "pmg",
-    rating: 4.5,
     fees: { min: 0, max: 0 }, // 公式は手数料の範囲を記載せず「買取率98%（売買手数料2%）」と表示・実際の率は個別査定（2026年10月19日確認）。旧値 1〜10% は公式で確認できず
     speed: "最短2時間",
     minAmount: 500000,
@@ -212,7 +202,6 @@ export const factoringCompanies: FactoringCompany[] = [
     cons: [
       "実績が他社より少ない"
     ],
-    reviewCount: 980,
     companyInfo: {
       established: "2015年6月",
       capital: "1億円",
@@ -227,7 +216,6 @@ export const factoringCompanies: FactoringCompany[] = [
     name: "ペイトナー",
     nameKana: "ぺいとなー",
     slug: "paytner",
-    rating: 4.4,
     fees: { min: 10.0, max: 10.0 },
     speed: "最短即日",
     minAmount: 10000,
@@ -245,7 +233,6 @@ export const factoringCompanies: FactoringCompany[] = [
     cons: [
       "手数料が一律10%（少額だと割高）"
     ],
-    reviewCount: 2150,
     companyInfo: {
       established: "2019年2月",
       capital: "8億6,745万円（資本準備金含む・2026年1月の公式発表時点）",
@@ -261,7 +248,6 @@ export const factoringCompanies: FactoringCompany[] = [
     name: "ラボル",
     nameKana: "らぼる",
     slug: "labol",
-    rating: 4.4,
     fees: { min: 10.0, max: 10.0 },
     speed: "最短30分",
     minAmount: 10000,
@@ -279,7 +265,6 @@ export const factoringCompanies: FactoringCompany[] = [
       "手数料が一律10%",
       "買取対象は法人が取引先となる請求書のみ（公式FAQ）" // labol.co.jp トップのFAQ「個人間での取引の請求書は利用できますか？」（2026年10月22日確認）
     ],
-    reviewCount: 1680,
     companyInfo: {
       established: "2021年12月",
       capital: "8億6,300万円（2025年12月31日現在・資本準備金含む）",
@@ -294,7 +279,6 @@ export const factoringCompanies: FactoringCompany[] = [
     name: "PayToday",
     nameKana: "ぺいとぅでい",
     slug: "paytoday",
-    rating: 4.6,
     fees: { min: 1.0, max: 9.5 },
     speed: "最短30分",
     minAmount: 100000,
@@ -312,7 +296,6 @@ export const factoringCompanies: FactoringCompany[] = [
     cons: [
       "最低買取額10万円から"
     ], // 旧 cons「実績がやや少ない」は出典なし（公式トップは累計申込額のサービス実績を掲載）→削除（2026年10月23日）
-    reviewCount: 850,
     companyInfo: {
       established: "2020年",
       capital: "1億円",
@@ -327,7 +310,6 @@ export const factoringCompanies: FactoringCompany[] = [
     name: "日本中小企業金融サポート機構",
     nameKana: "にほんちゅうしょうきぎょうきんゆうさぽーときこう",
     slug: "support-kinyu",
-    rating: 4.5,
     fees: { min: 1.5, max: 0 }, // 上限率は公式で確認できず（2026年10月16日確認。公式表示は「1.5%〜」のみ）
     speed: "最短3時間",
     minAmount: 0,
@@ -347,7 +329,6 @@ export const factoringCompanies: FactoringCompany[] = [
       "入金まで最短3時間とやや遅い",
       "審査が慎重"
     ],
-    reviewCount: 1250,
     companyInfo: {
       established: "2017年5月",
       capital: "一般社団法人（資本金の制度なし）",
@@ -362,7 +343,6 @@ export const factoringCompanies: FactoringCompany[] = [
     name: "Money Forward 早期入金",
     nameKana: "まねーふぉわーど あーりーぺいめんと",
     slug: "mf-earlypayment",
-    rating: 4.3,
     fees: { min: 0.5, max: 0 }, // 公式トップ「手数料率は0.5%〜」。上限率は公式（トップ・よくあるご質問・利用規約）に記載なし（2026年10月30日確認）。旧値 10% は出典なし
     speed: "最短即日", // 公式トップ「最短即日で入金可能」（必要書類提出後の目安）。公式FAQは「お申込みから平均3～5営業日」（2026年10月30日確認）。旧値「最短2営業日」は出典なし
     minAmount: 0,
@@ -383,7 +363,6 @@ export const factoringCompanies: FactoringCompany[] = [
       "入金まで最短2営業日",
       "審査が厳しめ"
     ],
-    reviewCount: 620,
     companyInfo: {
       established: "2017年3月（運営会社 マネーフォワードケッサイ株式会社）",
       capital: "449,975,000円（運営会社 マネーフォワードケッサイ株式会社）",
@@ -398,7 +377,6 @@ export const factoringCompanies: FactoringCompany[] = [
     name: "トップマネジメント",
     nameKana: "とっぷまねじめんと",
     slug: "top-management",
-    rating: 4.2,
     fees: { min: 0.5, max: 0 }, // 公式FAQ「2社間3.5％～、3社間0.5％～、2.5社間1.8%～」。上限率は公式（トップ・商品案内・FAQ・コラム等93ページ）に記載なし（2026年10月26日確認）。旧値 12.5% は出典なし
     speed: "最短即日",
     minAmount: 300000,
@@ -417,7 +395,6 @@ export const factoringCompanies: FactoringCompany[] = [
       "最低買取額30万円",
       "手数料の上限は公式に記載なし"
     ],
-    reviewCount: 890,
     companyInfo: {
       established: "2009年",
       capital: "5,000万円",
@@ -437,7 +414,6 @@ export const factoringCompanies: FactoringCompany[] = [
     name: "メンターキャピタル",
     nameKana: "めんたーきゃぴたる",
     slug: "mentor-capital",
-    rating: 4.1,
     fees: { min: 0, max: 0 },
     speed: "最短即日",
     minAmount: 300000,
@@ -457,7 +433,6 @@ export const factoringCompanies: FactoringCompany[] = [
       "手数料率が公式で非公示のため、事前に見積もりでの確認が必要",
       "買取額の下限・上限が公式に記載されていない"
     ],
-    reviewCount: 720,
     companyInfo: {
       established: "公式サイトでは確認できず",
       capital: "3,000万円",
@@ -473,7 +448,6 @@ export const factoringCompanies: FactoringCompany[] = [
     name: "えんナビ",
     nameKana: "えんなび",
     slug: "ennavi",
-    rating: 4.0,
     fees: { min: 5.0, max: 0 }, // ennavi-factoring.net トップの「手数料5%」の表示のみ（ennavi.tokyo には率の記載なし）。上限率は公式に記載なし（2026年11月1日確認）
     speed: "最短1日",
     minAmount: 300000,
@@ -491,7 +465,6 @@ export const factoringCompanies: FactoringCompany[] = [
     cons: [
       "手数料率が公式で非公示のため、事前に見積もりでの確認が必要"
     ],
-    reviewCount: 580,
     companyInfo: {
       established: "2017年創業", // ennavi.tokyo 会社概要「株式会社インターテックは、2017年創業のファクタリング会社です」（2026年11月2日確認）
       capital: "公式に記載なし",
@@ -506,7 +479,6 @@ export const factoringCompanies: FactoringCompany[] = [
     name: "FREENANCE",
     nameKana: "ふりーなんす",
     slug: "freenance",
-    rating: 4.3,
     fees: { min: 3.0, max: 10.0 },
     speed: "最短即日",
     minAmount: 10000,
@@ -522,7 +494,6 @@ export const factoringCompanies: FactoringCompany[] = [
       "手数料3%〜10%"
     ],
     cons: [], // 旧「審査がやや厳しい」は出典なしのため削除（2026年10月22日）
-    reviewCount: 1380,
     companyInfo: {
       established: "2012年7月（運営会社 フリー株式会社）", // corp.freee.co.jp/company/（2026年10月21日確認）
       capital: "公式に記載なし",
@@ -537,7 +508,6 @@ export const factoringCompanies: FactoringCompany[] = [
     name: "みんなのファクタリング",
     nameKana: "みんなのふぁくたりんぐ",
     slug: "minna-factoring",
-    rating: 4.0,
     fees: { min: 0, max: 0 }, // 手数料はサービスサイト・利用規約・運営会社の事業紹介に記載なし（2026年10月22日確認）。旧値 3〜15% は出典なし
     speed: "最短60分", // サービスサイト「土日祝でも最短60分でお振込」（2026年10月22日確認）
     minAmount: 0,
@@ -559,7 +529,6 @@ export const factoringCompanies: FactoringCompany[] = [
       "利用者が法人の場合、利用規約は買取実行の条件に「利用者の代表者が、当社所定の様式による保証書を、当社所定の方法により、当社に差し入れ済みであること」を挙げています（利用規約第10条・2026年10月28日確認）", // minnanofactoring.net/terms 第10条1項5号の原文（2026年10月28日 ヘッドレス描画で再確認。サービスサイトは トップ・利用規約・プライバシーポリシー・お問い合わせのみで FAQ・コラム・ヘルプのページなし）
       "給与債権など直接請求できない債権や、手形・小切手・電子記録債権が発行された債権は対象外（利用規約第11条）" // 同 第11条1号・4号（2026年10月23日確認）
     ],
-    reviewCount: 420,
     companyInfo: {
       established: "2023年1月20日", // 運営 株式会社チェンジ 会社概要 change-corp.jp/company/（2026年10月22日再確認・資本金 10,000,000円・住所とも一致）
       capital: "1,000万円",
@@ -574,7 +543,6 @@ export const factoringCompanies: FactoringCompany[] = [
     name: "JTC",
     nameKana: "じぇいてぃーしー",
     slug: "jtc",
-    rating: 0,
     fees: { min: 1.2, max: 10.0 },
     speed: "最短即日",
     minAmount: 1000000,
@@ -595,7 +563,6 @@ export const factoringCompanies: FactoringCompany[] = [
       "個人事業主の利用は売掛先の承諾（3社間）が前提",
       "契約は事前予約制"
     ],
-    reviewCount: 0,
     companyInfo: {
       established: "2013年6月",
       capital: "8,000万円",
@@ -610,7 +577,6 @@ export const factoringCompanies: FactoringCompany[] = [
     name: "¥Today（エントゥデイ）",
     nameKana: "えんとぅでい",
     slug: "yen-today",
-    rating: 0,
     fees: { min: 0, max: 0 },
     speed: "最短30分",
     minAmount: 0,
@@ -630,7 +596,6 @@ export const factoringCompanies: FactoringCompany[] = [
       "手数料は紹介先各社の見積もり次第（サービス側では決まらない）",
       "運営会社の設立が2026年3月と新しく実績の蓄積はこれから"
     ],
-    reviewCount: 0,
     companyInfo: {
       established: "2026年3月",
       capital: "公式サイトでは確認できず",
@@ -645,7 +610,6 @@ export const factoringCompanies: FactoringCompany[] = [
     name: "いーばんく（アクシアプラス）",
     nameKana: "いーばんく",
     slug: "ebank",
-    rating: 0,
     fees: { min: 4.0, max: 0 },
     speed: "最短即日",
     minAmount: 0,
@@ -665,7 +629,6 @@ export const factoringCompanies: FactoringCompany[] = [
       "個人事業主の利用可否が公式サイトに明示されていない",
       "設立2019年4月と比較的新しい"
     ],
-    reviewCount: 0,
     companyInfo: {
       established: "2019年4月",
       capital: "1,000万円",
@@ -681,7 +644,6 @@ export const factoringCompanies: FactoringCompany[] = [
     name: "インボイスファクター",
     nameKana: "いんぼいすふぁくたー",
     slug: "invoice-factor",
-    rating: 0,
     fees: { min: 0.5, max: 0 },
     speed: "最短2時間",
     minAmount: 0,
@@ -699,7 +661,6 @@ export const factoringCompanies: FactoringCompany[] = [
       "公式サイトがLPのみでサービス情報の記載が限定的",
       "設立2019年4月と比較的新しい"
     ],
-    reviewCount: 0,
     companyInfo: {
       established: "2019年4月",
       capital: "1,000万円",
@@ -715,7 +676,6 @@ export const factoringCompanies: FactoringCompany[] = [
     name: "株式会社No.1",
     nameKana: "なんばーわん",
     slug: "no1",
-    rating: 0,
     fees: { min: 0.5, max: 15.0 },
     speed: "最短30分",
     minAmount: 500000,
@@ -735,7 +695,6 @@ export const factoringCompanies: FactoringCompany[] = [
       "最低買取額が50万円〜で少額には不向き",
       "受付は平日9:00〜19:00のみ（土日祝休）"
     ],
-    reviewCount: 0,
     companyInfo: {
       established: "2016年1月",
       capital: "8,000万円",
@@ -751,7 +710,6 @@ export const factoringCompanies: FactoringCompany[] = [
     name: "セーフトラスト",
     nameKana: "せーふとらすと",
     slug: "safe-trust",
-    rating: 0,
     fees: { min: 0, max: 0 },
     speed: "最短即日",
     minAmount: 200000,
@@ -772,7 +730,6 @@ export const factoringCompanies: FactoringCompany[] = [
       "設立年・資本金・代表者が公式サイトで確認できず",
       "給与ファクタリング・個人間取引は不可"
     ],
-    reviewCount: 0,
     companyInfo: {
       established: "公式サイトでは確認できず",
       capital: "900万円",
@@ -788,7 +745,6 @@ export const factoringCompanies: FactoringCompany[] = [
     name: "エーストラスト",
     nameKana: "えーすとらすと",
     slug: "ace-trust",
-    rating: 0,
     fees: { min: 1.0, max: 15.0 },
     speed: "最短2時間",
     minAmount: 0,
@@ -808,7 +764,6 @@ export const factoringCompanies: FactoringCompany[] = [
       "買取可能額・必要書類の明示なし",
       "個人事業主の利用可否が明示されていない"
     ],
-    reviewCount: 0,
     companyInfo: {
       established: "公式サイトでは確認できず",
       capital: "公式サイトでは確認できず",
@@ -824,7 +779,6 @@ export const factoringCompanies: FactoringCompany[] = [
     name: "ファクタープラン",
     nameKana: "ふぁくたーぷらん",
     slug: "factor-plan",
-    rating: 0,
     fees: { min: 0, max: 0 },
     speed: "最短即日",
     minAmount: 500000,
@@ -844,7 +798,6 @@ export const factoringCompanies: FactoringCompany[] = [
       "手数料率の公式表示がなく要見積もり（「明朗手数料」表記のみ）",
       "最低買取額50万円〜"
     ],
-    reviewCount: 0,
     companyInfo: {
       established: "2017年3月（運営: 株式会社ワイズコーポレーション）",
       capital: "公式サイトでは確認できず",
@@ -860,7 +813,6 @@ export const factoringCompanies: FactoringCompany[] = [
     name: "ファクタリングのTRY",
     nameKana: "ふぁくたりんぐのとらい",
     slug: "try",
-    rating: 0,
     fees: { min: 3.0, max: 0 },
     speed: "最短2時間",
     minAmount: 100000,
@@ -880,7 +832,6 @@ export const factoringCompanies: FactoringCompany[] = [
       "設立年・資本金・代表者が公式サイトで確認できず",
       "必要書類の明示なし"
     ],
-    reviewCount: 0,
     companyInfo: {
       established: "2018年2月（運営: 株式会社SKO）",
       capital: "1,000万円",
@@ -891,13 +842,12 @@ export const factoringCompanies: FactoringCompany[] = [
     affiliateUrl: "https://px.a8.net/svt/ejp?a8mat=4B650J+4BEE5M+50EQ+5YJRM",
     category: ["即日", "審査甘い"]
   },
-  // ▼ 2026年10月31日 新規掲載12社（各社公式サイトで確認・p0_20261031/official/<slug>.json）。口コミ・評価は作らない（rating/reviewCount は 0）。ASP計測リンクなし
+  // ▼ 2026年10月31日 新規掲載12社（各社公式サイトで確認・p0_20261031/official/<slug>.json）。口コミ・評価は作らない。ASP計測リンクなし
   {
     id: 25,
     name: "MSFJ",
     nameKana: "えむえすえふじぇい",
     slug: "msfj",
-    rating: 0,
     fees: { min: 1.8, max: 9.8 }, // 公式トップの比較表「手数料率 1.8％～9.8％」。トップ見出しは「1.8％〜」、建設業欄は1.8％～10％、個人事業主ページは3.8%～9.8%（2026年10月31日確認）
     speed: "最短30分（公式トップ）／最短60分（建設業欄・LP）",
     minAmount: 100000,
@@ -922,7 +872,6 @@ export const factoringCompanies: FactoringCompany[] = [
       "クラウドサイン契約でも印鑑証明等の郵送が必要な場合あり（公式「ご利用の流れ」）",
       "電話受付は平日10:00〜19:00"
     ],
-    reviewCount: 0,
     companyInfo: {
       established: "2017年9月（創業2015年11月）",
       capital: "900万円",
@@ -937,7 +886,6 @@ export const factoringCompanies: FactoringCompany[] = [
     name: "レバンタ",
     nameKana: "ればんた",
     slug: "levanta",
-    rating: 0,
     fees: { min: 4.0, max: 10.0 }, // 公式「レバンタの強み」手数料率4.0％～10.0％（2026年10月31日確認）
     speed: "最短即日（契約後最短10分で振込）",
     minAmount: 100000,
@@ -963,7 +911,6 @@ export const factoringCompanies: FactoringCompany[] = [
       "手数料以外の費用の有無は公式に記載なし（見積り無料の記載のみ）",
       "電話受付は平日9:00〜18:00"
     ],
-    reviewCount: 0,
     companyInfo: {
       established: "2023年7月",
       capital: "公式サイトでは確認できず",
@@ -978,7 +925,6 @@ export const factoringCompanies: FactoringCompany[] = [
     name: "トラストゲートウェイ",
     nameKana: "とらすとげーとうぇい",
     slug: "trust-gateway",
-    rating: 0,
     fees: { min: 1.5, max: 9.5 }, // 公式トップ「買取手数料 1.5％～9.5％ ※申し込み審査により上限手数料を超える場合が御座います」。売掛金買取ページは2.0％〜（2026年10月31日確認）
     speed: "最短即日",
     minAmount: 100000,
@@ -1004,7 +950,6 @@ export const factoringCompanies: FactoringCompany[] = [
       "必要書類が多い（商業登記簿謄本・印鑑証明書・決算書コピー・成因資料など）",
       "受付は平日9:00〜18:00（土・日・祝・当社休業日を除く）"
     ],
-    reviewCount: 0,
     companyInfo: {
       established: "2017年（平成29年）2月",
       capital: "8,000万円",
@@ -1019,7 +964,6 @@ export const factoringCompanies: FactoringCompany[] = [
     name: "バイオン",
     nameKana: "ばいおん",
     slug: "bion",
-    rating: 0,
     fees: { min: 10, max: 10 }, // 公式「料金」サービス利用料 申請金額の10%（別途振込手数料500円）（2026年10月31日確認）
     speed: "最短60分（即日買取）",
     minAmount: 50000,
@@ -1043,7 +987,6 @@ export const factoringCompanies: FactoringCompany[] = [
       "二社間のみ（3社間の提供の記載なし）・買取上限額は公式に記載なし",
       "設立年は公式に記載なし"
     ],
-    reviewCount: 0,
     companyInfo: {
       established: "公式サイトでは確認できず",
       capital: "5,000万円",
@@ -1058,7 +1001,6 @@ export const factoringCompanies: FactoringCompany[] = [
     name: "RFD株式会社",
     nameKana: "あーるえふでぃー",
     slug: "rfd",
-    rating: 0,
     fees: { min: 3.0, max: 0 }, // 公式LP（rfd-tokyo.com/lp1/）「手数料 3 % 〜」。上限率は公式に記載なし（2026年10月31日確認）
     speed: "最短2時間（公式LP）／最短即日〜3日程度（公式トップ）",
     minAmount: 0,
@@ -1083,7 +1025,6 @@ export const factoringCompanies: FactoringCompany[] = [
       "債権譲渡登記・償還請求権・手数料以外の費用は公式に記載なし",
       "電話受付は平日10:00〜18:00"
     ],
-    reviewCount: 0,
     companyInfo: {
       established: "2019年8月",
       capital: "3,000万円",
@@ -1098,7 +1039,6 @@ export const factoringCompanies: FactoringCompany[] = [
     name: "アウル経済",
     nameKana: "あうるけいざい",
     slug: "owl-keizai",
-    rating: 0,
     fees: { min: 1.0, max: 10.0 }, // 公式LP（owl-economy.jp/lp04/）FAQ「概ね手数料率1〜10％程度」。LP画像は「手数料1%〜」（2026年10月31日確認）
     speed: "最短即日（公式LP「通常即日から数日程度」）",
     minAmount: 500000,
@@ -1124,7 +1064,6 @@ export const factoringCompanies: FactoringCompany[] = [
       "電話受付時間の表記が異なる（LP平日10:00〜18:00／コーポレートサイト平日9:30〜19:00）",
       "債権譲渡登記・手数料以外の費用は公式に記載なし"
     ],
-    reviewCount: 0,
     companyInfo: {
       established: "1997年（平成9年）8月",
       capital: "4,850万円",
@@ -1139,7 +1078,6 @@ export const factoringCompanies: FactoringCompany[] = [
     name: "インボイスPay",
     nameKana: "いんぼいすぺい",
     slug: "invoice-pay",
-    rating: 0,
     fees: { min: 2.5, max: 10.0 }, // 公式「買取手数料は 2.5 % ～ 6 %」（実勢手数料）。公式資料PDF p.3 に赤字決算・設立1年未満等の場合は最大10%（2026年10月31日確認）
     speed: "最短即日",
     minAmount: 200000,
@@ -1165,7 +1103,6 @@ export const factoringCompanies: FactoringCompany[] = [
       "資本金は公式に記載なし",
       "「業界最安」は他社からの乗換希望客を対象とした自社調査（2019/1/1〜2025/12/31）に基づく表示"
     ],
-    reviewCount: 0,
     companyInfo: {
       established: "2018年11月（運営: スマートヘッジ株式会社）",
       capital: "公式サイトでは確認できず",
@@ -1180,7 +1117,6 @@ export const factoringCompanies: FactoringCompany[] = [
     name: "カイポケ早期入金",
     nameKana: "かいぽけそうきにゅうきん",
     slug: "kaipoke-early",
-    rating: 0,
     fees: { min: 0.96, max: 0 }, // 公式「手数料0.96%～」＋初回手数料5,000円・月額費用2,000円。上限率は公式に記載なし（2026年10月31日確認。articles/article-factoring-kaigo.md の10/30確認値と一致）
     speed: "最短5営業日（請求から）",
     minAmount: 0,
@@ -1209,7 +1145,6 @@ export const factoringCompanies: FactoringCompany[] = [
       "一部都道府県では支払機関で債権譲渡ができず契約できない場合あり（障害者自立支援給付費も一部都道府県は不可）",
       "国保連・社保との3社間の契約が中心（2社間は公式に記載なし・2026年11月1日確認）"
     ],
-    reviewCount: 0,
     companyInfo: {
       established: "2014年1月（運営: 株式会社エス・エム・エス フィナンシャルサービス）",
       capital: "1億500万円",
@@ -1224,7 +1159,6 @@ export const factoringCompanies: FactoringCompany[] = [
     name: "うりかけ堂",
     nameKana: "うりかけどう",
     slug: "urikakedo",
-    rating: 0,
     fees: { min: 1.5, max: 0 }, // 公式トップ「手数料1.5%～」。「ファクタリングとは」ページは「手数料2%～」、旧サイト urikakedo.co.jp は2社間2.3％～。上限率は記載なし（2026年10月31日確認）
     speed: "最短90分（公式トップ）／最短即日・書類がそろえば2時間（公式FAQ）",
     minAmount: 300000,
@@ -1249,7 +1183,6 @@ export const factoringCompanies: FactoringCompany[] = [
       "旧サイト（urikakedo.co.jp）に旧住所・旧条件が残っている",
       "3社間の提供有無・手数料以外の費用は公式に記載なし"
     ],
-    reviewCount: 0,
     companyInfo: {
       established: "公式サイトでは確認できず（運営: 株式会社hs1）",
       capital: "公式サイトでは確認できず",
@@ -1264,7 +1197,6 @@ export const factoringCompanies: FactoringCompany[] = [
     name: "買速",
     nameKana: "かいそく",
     slug: "kaisoku",
-    rating: 0,
     fees: { min: 1.0, max: 10.0 }, // 公式FAQ「1%〜10%」。公式トップ・サービスページは「買取手数料 2%〜」（2026年10月31日確認。両方の表記を pros/feeIndex に併記）
     speed: "最短30分",
     minAmount: 100000,
@@ -1289,7 +1221,6 @@ export const factoringCompanies: FactoringCompany[] = [
       "設立2022年7月と「創業10年以上」の表記が併存",
       "資本金は公式に記載なし"
     ],
-    reviewCount: 0,
     companyInfo: {
       established: "2022年7月（運営: サンドボックス株式会社）",
       capital: "公式サイトでは確認できず",
@@ -1304,7 +1235,6 @@ export const factoringCompanies: FactoringCompany[] = [
     name: "OLTA",
     nameKana: "おるた",
     slug: "olta",
-    rating: 0,
     fees: { min: 2.0, max: 9.0 }, // 公式「費用は手数料2〜9%のみ 手数料は諸経費などすべて込み」（2026年10月31日確認）
     speed: "最短即日",
     minAmount: 0,
@@ -1332,7 +1262,6 @@ export const factoringCompanies: FactoringCompany[] = [
       "振込は契約後、即日ないし翌営業日（時間帯により翌営業日）",
       "契約後の解除は不可（特定商取引法に基づく表記）"
     ],
-    reviewCount: 0,
     companyInfo: {
       established: "2017年4月",
       capital: "70億5,305万円（資本準備金含む・2026年8月末時点）",
@@ -1347,7 +1276,6 @@ export const factoringCompanies: FactoringCompany[] = [
     name: "GMO BtoB早払い",
     nameKana: "じーえむおーびーとぅーびーはやばらい",
     slug: "gmo-btob-hayabarai",
-    rating: 0,
     fees: { min: 1.0, max: 12.0 }, // 公式「注文書買取：2%~12% 請求書買取：1%~10%」（審査の上提示）（2026年10月31日確認）
     speed: "最短2営業日（利用審査完了後）",
     minAmount: 1000000,
@@ -1374,7 +1302,6 @@ export const factoringCompanies: FactoringCompany[] = [
       "償還請求権の有無は公式に明記なし",
       "レセプト債権（診療報酬・介護報酬）は対象外・一部業種は買取を控えている"
     ],
-    reviewCount: 0,
     companyInfo: {
       established: "1995年3月（運営: GMOペイメントゲートウェイ株式会社）",
       capital: "連結資本金133億23百万円",
@@ -1384,13 +1311,12 @@ export const factoringCompanies: FactoringCompany[] = [
     url: "https://www.gmo-pg.com/service/hayabarai/",
     category: ["法人専用"]
   },
-  // ▼ 2026年11月1日 新規掲載7社（各社公式サイトで確認・p2_20261101/new_companies/<slug>.json）。口コミ・評価は作らない（rating/reviewCount は 0）。ASP計測リンクなし。SOKULAは公式サイト到達不可のため見送り
+  // ▼ 2026年11月1日 新規掲載7社（各社公式サイトで確認・p2_20261101/new_companies/<slug>.json）。口コミ・評価は作らない。ASP計測リンクなし。SOKULAは公式サイト到達不可のため見送り
   {
     id: 37,
     name: "GoodPlus",
     nameKana: "ぐっどぷらす",
     slug: "goodplus",
-    rating: 0,
     fees: { min: 5.0, max: 15.0 }, // 公式ファクタリングページ「他社との比較」表「5％～15％の使いやすい手数料」。2社間・3社間別の率は記載なし（2026年11月1日確認）
     speed: "最短90分（公式トップ）／最短即日（ファクタリングページ）",
     minAmount: 10000,
@@ -1416,7 +1342,6 @@ export const factoringCompanies: FactoringCompany[] = [
       "売掛先が個人の請求書の扱いがFAQ（対象外）と利用規約（個人事業者も可）で異なる",
       "設立年・資本金は公式に記載なし"
     ],
-    reviewCount: 0,
     companyInfo: {
       established: "公式サイトでは確認できず",
       capital: "公式サイトでは確認できず",
@@ -1431,7 +1356,6 @@ export const factoringCompanies: FactoringCompany[] = [
     name: "ネクストワン",
     nameKana: "ねくすとわん",
     slug: "next-one",
-    rating: 0,
     fees: { min: 5.0, max: 10.0 }, // 2社間の率を採用：公式「手数料」ページ「２社間取引は、5％～10％」。3社間は本文1.5％～7％／同ページ比較表1.5％～8％／FAQ平均1.5％～4％と表記が分かれる（2026年11月1日確認）
     speed: "最短即日",
     minAmount: 300000,
@@ -1457,7 +1381,6 @@ export const factoringCompanies: FactoringCompany[] = [
       "最低取扱金額は30万円",
       "設立年は公式に記載なし。電話受付は9:00〜19:00（土日曜・祝日休み）"
     ],
-    reviewCount: 0,
     companyInfo: {
       established: "公式サイトでは確認できず",
       capital: "1000万円",
@@ -1472,7 +1395,6 @@ export const factoringCompanies: FactoringCompany[] = [
     name: "KKT",
     nameKana: "けーけーてぃー",
     slug: "kkt",
-    rating: 0,
     fees: { min: 3.7, max: 0 }, // 保守的に法人向けLP（kkt-inc.co.jp/la/）の「手数料3.7%〜」を採用。旧LP（/fpt/）の「1%〜」は採らない。上限率は公式に記載なし（2026年11月1日確認）
     speed: "最短即日",
     minAmount: 0,
@@ -1498,7 +1420,6 @@ export const factoringCompanies: FactoringCompany[] = [
       "資本金・代表者名は公式に記載なし",
       "公式「よくある質問」ページは本文が空"
     ],
-    reviewCount: 0,
     companyInfo: {
       established: "令和6年2月6日（会社概要。旧LPは2021年5月25日）",
       capital: "公式サイトでは確認できず",
@@ -1513,7 +1434,6 @@ export const factoringCompanies: FactoringCompany[] = [
     name: "CoolPay",
     nameKana: "くーるぺい",
     slug: "coolpay",
-    rating: 0,
     fees: { min: 0, max: 0 }, // 手数料率は公式に記載なし（審査完了後に買取額と手数料を提示）。非公示の会社（mentor-capital 等）と同じ扱い（2026年11月1日確認）
     speed: "最短60分",
     minAmount: 150000,
@@ -1538,7 +1458,6 @@ export const factoringCompanies: FactoringCompany[] = [
       "電話番号・受付時間の掲載なし（問い合わせはフォーム・メール）",
       "法人・個人事業主の別、債権譲渡登記の扱いは公式に記載なし"
     ],
-    reviewCount: 0,
     companyInfo: {
       established: "2007年12月（運営: 株式会社エムライズ）",
       capital: "999万円",
@@ -1553,7 +1472,6 @@ export const factoringCompanies: FactoringCompany[] = [
     name: "ファクタリングZERO",
     nameKana: "ふぁくたりんぐぜろ",
     slug: "factoring-zero",
-    rating: 0,
     fees: { min: 1.5, max: 10.0 }, // 公式「買い取り手数料は…1.5%～10％」。2社間・3社間別の率は記載なし（2026年11月1日確認）
     speed: "最短即日",
     minAmount: 200000,
@@ -1579,7 +1497,6 @@ export const factoringCompanies: FactoringCompany[] = [
       "日曜・祝日は定休日（営業時間9:00〜19:00）",
       "最低買取額は20万円"
     ],
-    reviewCount: 0,
     companyInfo: {
       established: "平成23年12月（運営: 株式会社スリートラスト）",
       capital: "9,000万円",
@@ -1594,7 +1511,6 @@ export const factoringCompanies: FactoringCompany[] = [
     name: "西日本ファクター",
     nameKana: "にしにほんふぁくたー",
     slug: "nishinihon-factor",
-    rating: 0,
     fees: { min: 0, max: 0 }, // 手数料率は公式に記載なし（審査完了後に手数料・契約条件を説明）。非公示の会社（mentor-capital 等）と同じ扱い（2026年11月1日確認）
     speed: "最短即日（公式トップ・1,000万円まで）／最短1日（公式FAQ）",
     minAmount: 100000,
@@ -1619,7 +1535,6 @@ export const factoringCompanies: FactoringCompany[] = [
       "土日・祝日は休業（平日9:00〜18:00）",
       "資本金・債権譲渡登記の要否は公式に記載なし"
     ],
-    reviewCount: 0,
     companyInfo: {
       established: "平成29年9月",
       capital: "公式サイトでは確認できず",
@@ -1634,7 +1549,6 @@ export const factoringCompanies: FactoringCompany[] = [
     name: "事業資金エージェント",
     nameKana: "じぎょうしきんえーじぇんと",
     slug: "jigyoshikin-agent",
-    rating: 0,
     fees: { min: 5.0, max: 20.0 }, // 2社間の率を採用：公式FAQ（js-agent.net/qa.html）「通常３社間取引で1.5%〜9%、２社間取引で5%〜20%」。申込LP（js-agent.com）は「1.5%～」（2026年11月1日確認）
     speed: "最短2時間（申込LP）",
     minAmount: 100000,
@@ -1660,7 +1574,6 @@ export const factoringCompanies: FactoringCompany[] = [
       "債権譲渡登記の扱いは公式に記載なし",
       "日曜・祝祭日は休み（受付9:00〜19:00）"
     ],
-    reviewCount: 0,
     companyInfo: {
       established: "公式サイトでは確認できず（運営: ANNEX株式会社）",
       capital: "公式サイトでは確認できず",
