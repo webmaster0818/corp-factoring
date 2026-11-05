@@ -74,7 +74,7 @@ export const CONDITIONS: { [articleSlug: string]: ConditionDef } = {
   "article-factoring-sokujitsu-osusume": {
     key: "sokujitsu",
     heading: "即日入金に対応する会社（公式表示の最短入金が早い順）",
-    criteria: "公式サイトの最短入金の表示が「最短◯分」「最短◯時間」「最短即日」の会社を載せ、表示の時間が短い順に並べています。最短の時間は書類がそろっている場合などの条件付きの値です。",
+    criteria: "公式サイトの最短入金の表示が「最短◯分」「最短◯時間」「最短即日」の会社を載せ、表示の時間が短い順に掲載しています。最短の時間は書類がそろっている場合などの条件付きの値です。",
     evidenceLabel: "最短入金（公式表示）",
     evidence: (r) => r.speed,
     match: sameDay,
@@ -83,7 +83,7 @@ export const CONDITIONS: { [articleSlug: string]: ConditionDef } = {
   "article-factoring-kojin-osusume": {
     key: "kojin",
     heading: "個人事業主・フリーランスが使える会社（2社間の手数料の下限が低い順）",
-    criteria: "公式サイトで対象に個人事業主またはフリーランスが含まれている会社を載せ、2社間の手数料の下限が低い順に並べています（率を公表していない会社は末尾）。",
+    criteria: "公式サイトで対象に個人事業主またはフリーランスが含まれている会社を載せ、2社間の手数料の下限が低い順に掲載しています（率を公表していない会社は末尾）。",
     evidenceLabel: "対象（公式表示）",
     evidence: (r) => r.target,
     match: kojinOk,
@@ -92,7 +92,7 @@ export const CONDITIONS: { [articleSlug: string]: ConditionDef } = {
   "article-factoring-tesuryo-yasui": {
     key: "tesuryo",
     heading: "2社間の手数料の下限が低い会社（公式表示の下限が低い順）",
-    criteria: "公式サイトに2社間の手数料率が示されている会社を、下限の率が低い順に並べています。下限は最も条件が良い場合の値で、上限の記載がない会社もあります。",
+    criteria: "公式サイトに2社間の手数料率が示されている会社を、下限の率が低い順に掲載しています。下限は最も条件が良い場合の値で、上限の記載がない会社もあります。",
     evidenceLabel: "2社間の手数料（公式表示）",
     evidence: (r) => r.fee2,
     match: (r) => parseRate(r.fee2).min !== undefined,
@@ -102,7 +102,7 @@ export const CONDITIONS: { [articleSlug: string]: ConditionDef } = {
   "article-factoring-shougaku": {
     key: "shougaku",
     heading: "10万円以下から使える会社（利用可能額の下限が低い順）",
-    criteria: "公式サイトの利用可能額の下限が10万円以下、または下限なしの会社を、下限が低い順に並べています。",
+    criteria: "公式サイトの利用可能額の下限が10万円以下、または下限なしの会社を、下限が低い順に掲載しています。",
     evidenceLabel: "利用可能額（公式表示）",
     evidence: (r) => r.amount,
     match: (r) => {
@@ -123,7 +123,7 @@ export const CONDITIONS: { [articleSlug: string]: ConditionDef } = {
   "article-online-factoring": {
     key: "online",
     heading: "オンラインで契約まで完結できる会社（公式表示の最短入金が早い順）",
-    criteria: "公式サイトでオンライン完結（来店・面談なしの契約）が「可」と確認できた会社を、最短入金の表示が短い順に並べています。初回だけ面談が必要など条件がある場合は、表の表記をご確認ください。",
+    criteria: "公式サイトでオンライン完結（来店・面談なしの契約）が「可」と確認できた会社を、最短入金の表示が短い順に掲載しています。初回だけ面談が必要など条件がある場合は、表の表記をご確認ください。",
     evidenceLabel: "オンライン完結（公式表示）",
     evidence: (r) => r.online,
     match: (r) => /^可/.test(r.online),
@@ -133,7 +133,7 @@ export const CONDITIONS: { [articleSlug: string]: ConditionDef } = {
   "article-factoring-donichi": {
     key: "donichi",
     heading: "土日祝の審査・入金について公式の記載がある会社",
-    criteria: "公式サイトに、土日祝にも審査や入金を行うと書いている会社（可）と、受付・相談だけなど条件付きで書いている会社を載せています。「可」を先に、同じ区分の中は2社間の手数料の下限が低い順に並べています。年末年始など特定の日を名指しした記載ではないため、利用する日の対応は公式サイトで確認してください。",
+    criteria: "公式サイトに、土日祝にも審査や入金を行うと書いている会社（可）と、受付・相談だけなど条件付きで書いている会社を載せています。「可」を先に、同じ区分の中は2社間の手数料の下限が低い順に掲載しています。年末年始など特定の日を名指しした記載ではないため、利用する日の対応は公式サイトで確認してください。",
     evidenceLabel: "土日祝の対応（公式の記載）",
     evidence: factEvidence("donichi"),
     match: factIs("donichi", "可", "条件付き"),
@@ -142,7 +142,7 @@ export const CONDITIONS: { [articleSlug: string]: ConditionDef } = {
   "article-factoring-2sha-3sha": {
     key: "sansha",
     heading: "3社間ファクタリングに対応する会社（3社間の手数料の下限が低い順）",
-    criteria: "公式サイトで3社間ファクタリングに対応していると確認できた会社を、3社間の手数料の下限が低い順に並べています（ページによって率の表記が異なる会社・金額別の例示だけの会社は、表示の中で最も低い率で並べ、率を公表していない会社は末尾）。2社間は、掲載47社のうち42社が対応と記載しているため表にしていません。",
+    criteria: "公式サイトで3社間ファクタリングに対応していると確認できた会社を、3社間の手数料の下限が低い順に掲載しています（ページによって率の表記が異なる会社・金額別の例示だけの会社は、表示の中で最も低い率で並べ、率を公表していない会社は末尾）。2社間は、掲載47社のうち42社が対応と記載しているため表にしていません。",
     evidenceLabel: "3社間の手数料（公式表示）",
     evidence: (r) => r.fee3,
     match: factIs("sansha", "可", "条件付き"),
@@ -178,7 +178,7 @@ export const CONDITIONS: { [articleSlug: string]: ConditionDef } = {
   "article-factoring-hitsuyou-shorui": {
     key: "docs",
     heading: "公式に挙げている必要書類の数（少ない順）",
-    criteria: "各社の公式サイトに書かれた必要書類の一覧を、申込時に求められる書類の数が少ない順に並べています（同じ数の会社は2社間の手数料の下限が低い順）。一覧を載せていない会社は表に入れていません。審査の途中や契約時に追加の書類を求められる場合があります。",
+    criteria: "各社の公式サイトに書かれた必要書類の一覧を、申込時に求められる書類の数が少ない順に掲載しています（同じ数の会社は2社間の手数料の下限が低い順）。一覧を載せていない会社は表に入れていません。審査の途中や契約時に追加の書類を求められる場合があります。",
     evidenceLabel: "必要書類（公式の記載）",
     evidence: (r) => {
       const f = fact(r, "docs");

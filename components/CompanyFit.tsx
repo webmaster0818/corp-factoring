@@ -40,7 +40,7 @@ export function CompanyCompareTable({ slug }: { slug: string }) {
       <h2 className="text-2xl font-black text-gray-900 mb-2">{row.name}と条件の近い会社（公式表示で比較）</h2>
       <p className="text-sm text-gray-600 mb-4">
         {isKojin(row.target) ? "個人事業主・フリーランスも使える会社" : "個人事業主の利用が公式表示にない会社"}のうち、
-        {parseRate(row.fee2).min === undefined ? "2社間の手数料の下限が低い順" : `2社間の手数料の下限が${row.name}に近い順`}に4社を並べています。値は各社の公式サイトの表示で、順位や評価ではありません。
+        {parseRate(row.fee2).min === undefined ? "2社間の手数料の下限が低い順" : `2社間の手数料の下限が${row.name}に近い順`}に4社を掲載しています。値は各社の公式サイトの表示で、順位や評価ではありません。
       </p>
       <div className="overflow-x-auto">
         <table className="w-full text-sm border border-gray-200">
