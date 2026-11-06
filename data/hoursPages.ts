@@ -106,7 +106,7 @@ export const HOURS_CHECKED_AT: { [slug: string]: string } = {
   labol: "2026年10月31日",
   pmg: "2026年10月28日",
   jtc: "2026年10月30日",
-  no1: "2026年10月14日",
+  no1: "2026年11月6日",
   "factor-plan": "2026年10月14日",
   try: "2026年10月14日",
   ququmo: "2026年8月22日",
