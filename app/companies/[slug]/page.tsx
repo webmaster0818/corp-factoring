@@ -144,7 +144,8 @@ export default function CompanyPage({
       ? feeRow.amount
       : company.amountText ?? `${company.minAmount === 0 ? "下限なし" : `${(company.minAmount / 10000).toFixed(0)}万円`}〜${company.maxAmount}`;
   // speed は「最短即日」「即日」など表記が混在するため、「最短」の二重表記を防ぐ
-  const speedLabel = company.speed.startsWith("最短") ? company.speed : `最短${company.speed}`;
+  // 「最短」の表示がない会社（起点つきの日数で入金時期を示す報酬専用サービスなど。例「取引申込受付の翌営業日から4営業日後」）には「最短」を足さない（2026-11-06）
+  const speedLabel = company.speed.startsWith("最短") || /から|後/.test(company.speed) ? company.speed : `最短${company.speed}`;
   // 強み欄：個別の強みデータ（companyExtended.ts）がない会社は、評価語ではなく公式確認値（早見表・/fees/ と同じ値）だけで「主な条件」を組み立てる（2026-10-28）
   const keyConditions: string[] = strengths ?? [
     company.speedIsReview

@@ -56,6 +56,13 @@ export const HOURS_SLUGS = [
   "wit",
   "kensetsukun",
   "factors",
+  // ▼ 2026年11月6日 追加（新規掲載6社。各社公式サイトで受付時間を一次確認）
+  "kensetsu-pay",
+  "bizpay",
+  "chatwork-sakibarai",
+  "mufg-factor",
+  "ricoh-lease",
+  "medley",
 ] as const;
 
 // 2026年11月1日に追加した営業時間ページ（ページの最終確認日を2026年11月1日とする）
@@ -145,6 +152,13 @@ export const HOURS_CHECKED_AT: { [slug: string]: string } = {
   "wit": "2026年11月3日",
   "kensetsukun": "2026年11月3日",
   "factors": "2026年11月3日",
+  // ▼ 2026年11月6日 追加分（新規掲載6社・各社公式サイトで確認）
+  "kensetsu-pay": "2026年11月6日",
+  "bizpay": "2026年11月6日",
+  "chatwork-sakibarai": "2026年11月6日",
+  "mufg-factor": "2026年11月6日",
+  "ricoh-lease": "2026年11月6日",
+  "medley": "2026年11月6日",
 };
 
 // 営業時間比較表に載せる候補（operatingHoursMapに一次確認値がある会社のみ）。

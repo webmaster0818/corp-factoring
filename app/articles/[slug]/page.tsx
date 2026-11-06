@@ -106,6 +106,13 @@ export default async function ArticlePage({
     wit: ["ウィット"],
     kensetsukun: ["けんせつくん"],
     factors: ["ファクターズ"],
+    // 2026年11月6日 新規掲載6社
+    "kensetsu-pay": ["建設Pay"],
+    bizpay: ["ビジペイ"],
+    "chatwork-sakibarai": ["Chatwork 先払い", "Chatwork先払い"],
+    "mufg-factor": ["三菱ＵＦＪファクター", "三菱UFJファクター"],
+    "ricoh-lease": ["リコーリース"],
+    medley: ["メドレー早期資金サポート"],
   };
   const articleText = article ? article.content.replace(/<[^>]+>/g, " ") : "";
   const mentionedCompanies = article

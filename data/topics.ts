@@ -124,6 +124,8 @@ export const topics: Topic[] = [
           "article-factoring-vs-densai",
           "article-factoring-vs-tegata",
           "article-factoring-vs-genkinka",
+          "article-factoring-vs-card-barai",
+          "article-factoring-vs-rbf",
           "article-factoring-hojokin-chigai",
           "article-factoring-kyuuryo-chigai",
           "article-factoring-maebarai",

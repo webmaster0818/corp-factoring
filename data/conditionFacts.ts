@@ -1,6 +1,7 @@
 // 条件別の比較表（data/conditions.ts）で使う、各社の公式の記載。
 // 2026年11月1日に各社の公式サイトで確認（既に当サイトのデータで公式確認済みの項目は、その確認日を使用）。
 // 2026年11月3日に新規掲載4社（escom・wit・kensetsukun・factors）を各社の公式サイトで確認して追加（計47社）。
+// 2026年11月6日に新規掲載6社（kensetsu-pay・bizpay・chatwork-sakibarai・mufg-factor・ricoh-lease・medley）を各社の公式サイトで確認して追加（計53社）。
 // value は公式の記載を当サイトが区分したもの：「可」「不可」「条件付き（…）」「不要と明記」「一覧に記載なし」「公式に記載なし」。
 // quote は公式の文言の抜き出し、source は出典ページ。推測で埋めた値はない。
 export type ConditionFactKey = "donichi" | "nisha" | "sansha" | "kessansho" | "kakutei" | "touki" | "docs" | "shinryou" | "kaigo";
@@ -523,5 +524,73 @@ export const conditionFacts: { [slug: string]: Partial<Record<ConditionFactKey, 
     docs: {"value": "公式に一覧の記載なし", "source": "https://factors.tokyo/", "checkedAt": "2026年11月3日", "note": "必要書類の一覧の記載なし"},
     shinryou: {"value": "公式に記載なし", "source": "https://factors.tokyo/", "checkedAt": "2026年11月3日"},
     kaigo: {"value": "公式に記載なし", "source": "https://factors.tokyo/", "checkedAt": "2026年11月3日"},
+  },
+
+  // ▼ 2026年11月6日 新規掲載6社（各社公式サイトで確認。記載のない項目は「公式に記載なし」）
+  "kensetsu-pay": {
+    donichi: {"value": "不可", "source": "https://kensetsu-pay.com/", "checkedAt": "2026年11月6日", "quote": "受付時間 10:00～18:00（土・日・祝日を除く）", "note": "建設Payの会社概要の電話受付時間（土・日・祝日を除く）。ヘッダーは「平日9:00～18:00」。サイトからの申込は24時間受付"},
+    nisha: {"value": "可", "source": "https://kensetsu-pay.com/", "checkedAt": "2026年11月6日", "quote": "2社間ファクタリングの大きなメリットは、売掛債権譲渡通知を省略してご契約いただけるため、お取引先との信頼関係に影響を与えないという点。"},
+    sansha: {"value": "可", "source": "https://kensetsu-pay.com/", "checkedAt": "2026年11月6日", "quote": "2社間ファクタリングと比べると手数料が割安になるというメリットがあります。", "note": "3社間は売掛債権譲渡通知が必須。率は公式に記載なし"},
+    kessansho: {"value": "公式に記載なし", "source": "https://kensetsu-pay.com/", "checkedAt": "2026年11月6日", "note": "必要書類は請求書または発注書・代表者の身分証明書・預金通帳で、決算書の記載なし"},
+    kakutei: {"value": "公式に記載なし", "source": "https://kensetsu-pay.com/", "checkedAt": "2026年11月6日", "quote": "建設業者様であればご相談に応じます。", "note": "個人事業主の必要書類の記載なし"},
+    touki: {"value": "公式に記載なし", "source": "https://kensetsu-pay.com/", "checkedAt": "2026年11月6日"},
+    docs: {"value": "一覧あり", "source": "https://kensetsu-pay.com/", "checkedAt": "2026年11月6日", "quote": "請求書または発注書", "list": ["請求書または発注書", "代表者の身分証明書", "預金通帳（指定期間のコピー）"], "count": 3},
+    shinryou: {"value": "公式に記載なし", "source": "https://kensetsu-pay.com/", "checkedAt": "2026年11月6日"},
+    kaigo: {"value": "公式に記載なし", "source": "https://kensetsu-pay.com/", "checkedAt": "2026年11月6日"},
+  },
+  "bizpay": {
+    donichi: {"value": "不可", "source": "https://untensupport.com/b-pay/", "checkedAt": "2026年11月6日", "quote": "受付時間 /9:00〜17:00（土日祝休み）", "note": "運営会社欄の電話受付時間。土日祝の審査・入金の記載なし"},
+    nisha: {"value": "可", "source": "https://untensupport.com/b-pay/", "checkedAt": "2026年11月6日", "quote": "2社間 登記なし 完全対応", "note": "公式トップの画像の表示"},
+    sansha: {"value": "公式に記載なし", "source": "https://untensupport.com/b-pay/", "checkedAt": "2026年11月6日", "note": "実績の画像に「3社間取引」の例があるが、サービスとしての記載なし"},
+    kessansho: {"value": "公式に記載なし", "source": "https://untensupport.com/b-pay/", "checkedAt": "2026年11月6日", "quote": "初回のみ、以下の書類が必要です。", "note": "初回の必要書類は身分証明書と通帳コピー（3か月分）で、決算書の記載なし"},
+    kakutei: {"value": "公式に記載なし", "source": "https://untensupport.com/b-pay/", "checkedAt": "2026年11月6日", "note": "個人事業主の可否の記載なし"},
+    touki: {"value": "不要と明記", "source": "https://untensupport.com/b-pay/", "checkedAt": "2026年11月6日", "quote": "2社間 登記なし 完全対応", "note": "2社間の場合（公式トップの画像の表示）"},
+    docs: {"value": "一覧あり", "source": "https://untensupport.com/b-pay/", "checkedAt": "2026年11月6日", "quote": "初回のみ、以下の書類が必要です。", "note": "必要に応じて追加書類あり。請求書のアップロードはご利用の流れに記載", "list": ["身分証明書（運転免許証など）", "事業で使用している全ての銀行口座の通帳コピー（3か月分）"], "count": 2},
+    shinryou: {"value": "公式に記載なし", "source": "https://untensupport.com/b-pay/", "checkedAt": "2026年11月6日"},
+    kaigo: {"value": "公式に記載なし", "source": "https://untensupport.com/b-pay/", "checkedAt": "2026年11月6日"},
+  },
+  "chatwork-sakibarai": {
+    donichi: {"value": "不可", "source": "https://dx-center.chatwork.com/service/prepaid/", "checkedAt": "2026年11月6日", "quote": "※営業時間内（平日10:00〜18:00）", "note": "サービスページは平日10:00〜18:00、LPは10:00～19:00（曜日の記載なし）。土日祝の審査・振込の記載なし"},
+    nisha: {"value": "可", "source": "https://dx-center.chatwork.com/lp/prepaid-1/", "checkedAt": "2026年11月6日", "quote": "Chatwork 先払いから取引先に連絡することは原則としてございません。", "note": "2社間ファクタリングで取引先への通知は不要"},
+    sansha: {"value": "公式に記載なし", "source": "https://dx-center.chatwork.com/lp/prepaid-1/", "checkedAt": "2026年11月6日"},
+    kessansho: {"value": "不要と明記", "source": "https://dx-center.chatwork.com/lp/prepaid-1/", "checkedAt": "2026年11月6日", "quote": "1.請求書 2.顔写真付き身分証明書", "note": "必須3点（請求書・顔写真付き身分証明書・実態確認資料）で、事業計画書・決算書は不要と記載"},
+    kakutei: {"value": "公式に記載なし", "source": "https://dx-center.chatwork.com/lp/prepaid-1/", "checkedAt": "2026年11月6日", "quote": "1.請求書 2.顔写真付き身分証明書", "note": "必須3点に確定申告書は含まれない（実態確認資料はサイトURLまたは口座入出金履歴）"},
+    touki: {"value": "公式に記載なし", "source": "https://dx-center.chatwork.com/lp/prepaid-1/", "checkedAt": "2026年11月6日"},
+    docs: {"value": "一覧あり", "source": "https://dx-center.chatwork.com/lp/prepaid-1/", "checkedAt": "2026年11月6日", "quote": "1.請求書 2.顔写真付き身分証明書", "note": "③実態確認資料（サイトURL〈SNS・HP・ポートフォリオ等〉または口座入出金履歴〈直近3ヶ月程度〉のどちらか）", "list": ["請求書", "顔写真付き身分証明書", "実態確認資料（サイトURLまたは口座入出金履歴）"], "count": 3},
+    shinryou: {"value": "公式に記載なし", "source": "https://dx-center.chatwork.com/lp/prepaid-1/", "checkedAt": "2026年11月6日"},
+    kaigo: {"value": "公式に記載なし", "source": "https://dx-center.chatwork.com/lp/prepaid-1/", "checkedAt": "2026年11月6日"},
+  },
+  "mufg-factor": {
+    donichi: {"value": "不可", "source": "https://www.muf.bk.mufg.jp/shinryo/", "checkedAt": "2026年11月6日", "quote": "お電話でのお問い合わせ：0120-101-102 9：00～17：00（土日・祝日を除く）", "note": "専用WEBサイトは24時間365日利用可。入金は取引申込受付日の翌営業日から起算して4営業日後（営業日ベース）"},
+    nisha: {"value": "公式に記載なし", "source": "https://www.muf.bk.mufg.jp/shinryo/", "checkedAt": "2026年11月6日", "note": "DX審査支払機構・国保に債権譲渡通知を行う方式"},
+    sansha: {"value": "可", "source": "https://www.muf.bk.mufg.jp/shinryo/", "checkedAt": "2026年11月6日", "quote": "お客さまと当社は連名で、DX審査支払機構・国保に債権譲渡通知を行います。", "note": "債務者（DX審査支払機構・国保）に通知する方式"},
+    kessansho: {"value": "公式に記載なし", "source": "https://cdn.muf.bk.mufg.jp/wp-content/uploads/2026/10/23100713/riyou_jouken_shousai_6.pdf", "checkedAt": "2026年11月6日", "note": "審査申込時の必要書類は確定申告書（別表1）または納税証明書（その2）など"},
+    kakutei: {"value": "不可", "source": "https://cdn.muf.bk.mufg.jp/wp-content/uploads/2026/10/23100713/riyou_jouken_shousai_6.pdf", "checkedAt": "2026年11月6日", "note": "審査申込時の必要書類に確定申告書（別表1）または納税証明書（その2）"},
+    touki: {"value": "公式に記載なし", "source": "https://www.muf.bk.mufg.jp/shinryo/", "checkedAt": "2026年11月6日"},
+    docs: {"value": "一覧あり", "source": "https://cdn.muf.bk.mufg.jp/wp-content/uploads/2026/10/23100711/goriyo_sinsa_shorui_10.pdf", "checkedAt": "2026年11月6日", "quote": "① 保険医療機関指定通知書 または 保険薬局指定通知書", "note": "法人の医療機関・薬局の審査申込時の一覧（個人事業主・介護事業所は別の一覧）", "list": ["保険医療機関（保険薬局）指定通知書", "院長の医師免許証または薬剤師免許証", "保険医（保険薬剤師）登録票", "診療報酬入金口座の通帳（直近2ヵ月分）", "請求金額を確認できる資料（直近2カ月分）", "支払額決定通知書（直近2カ月分）", "確定申告書（別表1）または納税証明書（その2）", "納税証明書（その3の3）", "本人確認資料"], "count": 9},
+    shinryou: {"value": "可", "source": "https://www.muf.bk.mufg.jp/shinryo/", "checkedAt": "2026年11月6日", "quote": "本サービスの「診療報酬」は 医科・歯科の「診療報酬」と調剤薬局の「調剤報酬」、介護事業所の「介護報酬」を対象としています"},
+    kaigo: {"value": "可", "source": "https://www.muf.bk.mufg.jp/shinryo/", "checkedAt": "2026年11月6日", "quote": "本サービスの「診療報酬」は 医科・歯科の「診療報酬」と調剤薬局の「調剤報酬」、介護事業所の「介護報酬」を対象としています", "note": "介護報酬は2026年10月30日に取扱開始・国保宛請求額の90%を買取"},
+  },
+  "ricoh-lease": {
+    donichi: {"value": "不可", "source": "https://www.r-lease.co.jp/business/service/kaigo/", "checkedAt": "2026年11月6日", "quote": "フリーダイヤル0120-727-702（受付時間：平日 9:00~17:00）", "note": "電話受付の表示のみ。土日祝の審査・入金の記載なし"},
+    nisha: {"value": "公式に記載なし", "source": "https://www.r-lease.co.jp/faq/kaigo/", "checkedAt": "2026年11月6日", "note": "国保連に債権譲渡通知を送る方式"},
+    sansha: {"value": "可", "source": "https://www.r-lease.co.jp/faq/kaigo/", "checkedAt": "2026年11月6日", "quote": "介護事業者様と弊社の連名で、国保連に対して内容証明郵便にて債権譲渡通知を送付することになります。"},
+    kessansho: {"value": "不可", "source": "https://www.r-lease.co.jp/faq/kaigo/", "checkedAt": "2026年11月6日", "quote": "決算書直近3期分（貸借対照表、損益計算書、販売費一般管理費、株主資本変動計算書、付属の勘定科目明細をご提出ください。）", "note": "3期に満たない場合は提出できる範囲、設立1年未満・新規法人は事業計画書"},
+    kakutei: {"value": "公式に記載なし", "source": "https://www.r-lease.co.jp/faq/kaigo/", "checkedAt": "2026年11月6日", "note": "必要書類は法人の書類（商業登記簿謄本・法人印鑑証明書）。個人事業主の可否の記載なし"},
+    touki: {"value": "公式に記載なし", "source": "https://www.r-lease.co.jp/faq/kaigo/", "checkedAt": "2026年11月6日"},
+    docs: {"value": "一覧あり", "source": "https://www.r-lease.co.jp/faq/kaigo/", "checkedAt": "2026年11月6日", "quote": "決算書直近3期分（貸借対照表、損益計算書、販売費一般管理費、株主資本変動計算書、付属の勘定科目明細をご提出ください。）", "list": ["利用申込書（指定フォーマット）", "商業登記簿謄本（2ヶ月以内）", "法人印鑑証明書（2ヶ月以内）", "決算書直近3期分", "支払い額決定通知書（事業所毎 直近3か月分）", "事業所の指定通知書（写し）", "事業所パンフレット"], "count": 7},
+    shinryou: {"value": "条件付き（公式内で表記が異なる）", "source": "https://www.rl-shukin.jp/lp_kaigo_f02/", "checkedAt": "2026年11月6日", "quote": "介護報酬・自立支援給付費・訪問看護療養費・診療報酬・調剤報酬", "note": "資料請求ページは診療・調剤報酬も対象と記載。企業サイトの対象は介護報酬・障害サービス・訪問看護療養費"},
+    kaigo: {"value": "可", "source": "https://www.r-lease.co.jp/business/service/kaigo/about/", "checkedAt": "2026年11月6日", "quote": "介護報酬ファクタリングサービスとは、介護事業者様が国民健康保険団体連合会（国保連）に対して請求する介護保険給付費を弊社が前払いするサービスです。"},
+  },
+  "medley": {
+    donichi: {"value": "不可", "source": "https://www.medley-fs.co.jp/factoring", "checkedAt": "2026年11月6日", "quote": "営業時間 9:00〜18:00（平日のみ）", "note": "Webの問い合わせは24時間受付。土日祝の審査・入金の記載なし"},
+    nisha: {"value": "公式に記載なし", "source": "https://www.medley-fs.co.jp/factoring", "checkedAt": "2026年11月6日", "quote": "3者間ファクタリングを採用、通常2ヶ月かかる入金を最短1週間で現金化が可能です。", "note": "3者間を採用と記載"},
+    sansha: {"value": "可", "source": "https://www.medley-fs.co.jp/factoring", "checkedAt": "2026年11月6日", "quote": "3者間ファクタリングを採用、通常2ヶ月かかる入金を最短1週間で現金化が可能です。"},
+    kessansho: {"value": "公式に記載なし", "source": "https://www.medley-fs.co.jp/factoring", "checkedAt": "2026年11月6日", "note": "審査時の必要書類一覧に決算書の記載なし（LPは「決算書・来店 不要」と表示）"},
+    kakutei: {"value": "公式に記載なし", "source": "https://www.medley-fs.co.jp/factoring", "checkedAt": "2026年11月6日", "note": "必要書類は履歴事項全部証明書などで、個人事業主の扱いの記載なし"},
+    touki: {"value": "公式に記載なし", "source": "https://www.medley-fs.co.jp/factoring", "checkedAt": "2026年11月6日"},
+    docs: {"value": "一覧あり", "source": "https://www.medley-fs.co.jp/factoring", "checkedAt": "2026年11月6日", "quote": "（3）連帯保証人（代表者）様の本人確認書類→運転免許証の表裏もしくは健康保険証の表裏、医師の場合は医師免許証、薬剤師の場合は薬剤師免許証", "note": "他社利用中は契約書類と残高がわかるもの・パンフレット等も", "list": ["履歴事項全部証明書", "印鑑証明書", "連帯保証人（代表者）の本人確認書類", "許認可証の写し", "請求書（直近8ヶ月分）", "支払決定通知書（直近6ヶ月分）", "入金が確認できる通帳明細（直近6か月分）"], "count": 7},
+    shinryou: {"value": "可", "source": "https://www.medley-fs.co.jp/factoring", "checkedAt": "2026年11月6日", "quote": "対象債権 : 診療報酬債権、介護給付費債権、障がい者自立支援給付費債権、調剤報酬債権"},
+    kaigo: {"value": "可", "source": "https://www.medley-fs.co.jp/factoring", "checkedAt": "2026年11月6日", "quote": "対象債権 : 診療報酬債権、介護給付費債権、障がい者自立支援給付費債権、調剤報酬債権"},
   },
 };
