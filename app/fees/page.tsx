@@ -222,6 +222,9 @@ export default function FeesPage() {
               <p className="text-sm text-gray-700 leading-relaxed mb-2">
                 主要{FEE_COMPANY_COUNT}社の<strong>手数料率（2社間/3社間）・最短入金・利用可能額・対象・オンライン完結</strong>を、各社の公式サイトで<strong>{feeCheckedAt}に1件ずつ確認</strong>し、一覧にしています（その後に再確認した会社は、会社名の下に確認日を記載しています）。公式サイトに手数料率の記載がない会社は「非公示（要見積もり）」と記載しています。改定の頻度が高い分野のため、月に1回を目安に再確認し、更新しています。
               </p>
+              <p className="text-sm mb-3">
+                <Link href="/compare/" className="text-blue-600 hover:underline">会社を選んで比較リストで並べて比べる（最大4社） →</Link>
+              </p>
               <div className="overflow-x-auto rounded-xl border border-gray-200 mb-3">
                 <table className="w-full text-xs sm:text-sm min-w-[900px]">
                   <thead>

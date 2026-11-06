@@ -454,6 +454,11 @@ export default function CompanyPage({
                   <Link href="/articles/article-factoring-hitsuyou-shorui/" className="text-blue-600 hover:underline">必要書類の一覧 →</Link>
                   <Link href="/fees/" className="text-blue-600 hover:underline">{FEE_COMPANY_COUNT}社の手数料を比較 →</Link>
                 </div>
+                {feeIndex.some((r) => r.slug === slug) && (
+                  <p className="mt-3 text-xs">
+                    <Link href={`/compare/?c=${slug}`} className="text-blue-600 hover:underline">この会社を比較リストに追加 →</Link>
+                  </p>
+                )}
               </div>
             </CardContent>
           </Card>
