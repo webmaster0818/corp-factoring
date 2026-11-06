@@ -97,7 +97,7 @@ export async function generateMetadata({
 
   return {
     title: `${company.name}の評判・手数料・営業時間・必要書類【公式確認】`,
-    description: `${company.name}のファクタリングサービスについて解説しています。${company.speedIsReview ? `${feeText}で、公式FAQでは${company.speed}が出るとされています。` : `${feeText}、${company.speed}で入金が可能です。`}Googleマップの評価、メリット・デメリット、必要書類、活用シーンを掲載しています。`,
+    description: `${company.name}のファクタリングサービスについて解説しています。${company.speedIsReview ? `${feeText}で、公式FAQでは${company.speed}が出るとされています。` : `${feeText}、${company.speed}で入金が可能です。`}Googleマップの口コミ件数、メリット・デメリット、必要書類、活用シーンを掲載しています。`,
     keywords: `${company.name},${company.nameKana},ファクタリング,評判,口コミ,手数料,${categoryText}`,
     openGraph: {
       title: `${company.name}の評判・手数料・営業時間・必要書類【公式確認】`,
