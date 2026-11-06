@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { FactoringCompany, factoringCompanies, feeRange } from "@/data/companies";
 import { getRealRating } from "@/data/realRatings";
+import { getApprovalRate } from "@/data/approvalRates";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -100,7 +101,10 @@ export function DiagnosisTool() {
         return aSpeed - bSpeed;
       });
     } else if (answers.priority === "approval") {
-      filtered = filtered.filter((c) => c.category.includes("審査甘い"));
+      // 公式サイトに審査通過率の記載がある会社だけを、通過率の高い順に並べる
+      filtered = filtered
+        .filter((c) => getApprovalRate(c.slug))
+        .sort((a, b) => (getApprovalRate(b.slug)?.value ?? 0) - (getApprovalRate(a.slug)?.value ?? 0));
     }
 
     // 緊急度で絞り込み
@@ -129,8 +133,15 @@ export function DiagnosisTool() {
               条件に合うファクタリング会社
             </p>
             <p className="text-sm text-gray-600">
-              選択された条件に合う会社は、以下の3社です
+              {result.length > 0
+                ? `選択された条件に合う会社は、以下の${result.length}社です`
+                : "選択された条件に合う会社は見つかりませんでした。条件を変えてお試しください"}
             </p>
+            {answers.priority === "approval" && (
+              <p className="text-xs text-gray-500 mt-2">
+                「審査の通りやすさ」では、公式サイトに審査通過率の記載がある会社だけを、記載の数字が高い順に表示しています。通過率は各社が公表している値です。
+              </p>
+            )}
           </div>
 
           <div className="space-y-6 mb-8">
@@ -159,6 +170,18 @@ export function DiagnosisTool() {
                         <div className="text-xs text-gray-600 mb-1">入金スピード</div>
                         <div className="font-bold text-green-700">{company.speed}</div>
                       </div>
+                      {(() => {
+                        const ar = answers.priority === "approval" ? getApprovalRate(company.slug) : null;
+                        return ar ? (
+                          <div className="bg-amber-50 p-3 rounded">
+                            <div className="text-xs text-gray-600 mb-1">審査通過率（公式表示）</div>
+                            <div className="font-bold text-amber-700">{ar.label}</div>
+                            <div className="text-xs text-gray-500 mt-1">
+                              <a href={ar.sourceUrl} target="_blank" rel="noopener noreferrer" className="underline">出典</a>（{ar.checkedAt}確認）
+                            </div>
+                          </div>
+                        ) : null;
+                      })()}
                       {(() => {
                         const rr = getRealRating(company.slug);
                         return rr ? (
