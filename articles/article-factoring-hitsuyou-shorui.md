@@ -147,7 +147,7 @@
 
 ### 決算書・確定申告書
 
-決算書は、法人の財務の状況を確認する書類です。一覧に入れている12社のうち、[セーフトラスト](/companies/safe-trust/)と[買速](/companies/kaisoku/)は「法人のみ」（2026年11月1日確認）、[レバンタ](/companies/levanta/)は「決算書（法人）」と限っています（2026年10月31日確認）。個人事業主の場合は、決算書の代わりに確定申告書を求める会社があり、[バイオン](/companies/bion/)は「直近の決算書（個人事業主は確定申告書一式）」、[OLTA](/companies/olta/)は個人事業主に「確定申告書第一表の控え・開業届」を求めています（2026年10月31日確認）。決算書や確定申告書を出さずに申し込める会社は、[決算書なしで使えるファクタリング](/articles/article-factoring-kessansho-fuyou/)と[確定申告書なしで使えるファクタリング](/articles/article-factoring-kakutei-shinkokusho-nashi/)でご案内しています。
+決算書は、法人の財務の状況を確認する書類です。一覧に入れている13社のうち、[セーフトラスト](/companies/safe-trust/)と[買速](/companies/kaisoku/)は「法人のみ」（2026年11月1日確認）、[レバンタ](/companies/levanta/)は「決算書（法人）」と限っています（2026年10月31日確認）。個人事業主の場合は、決算書の代わりに確定申告書を求める会社があり、[バイオン](/companies/bion/)は「直近の決算書（個人事業主は確定申告書一式）」、[OLTA](/companies/olta/)は個人事業主に「確定申告書第一表の控え・開業届」を求めています（2026年10月31日確認）。決算書や確定申告書を出さずに申し込める会社は、[決算書なしで使えるファクタリング](/articles/article-factoring-kessansho-fuyou/)と[確定申告書なしで使えるファクタリング](/articles/article-factoring-kakutei-shinkokusho-nashi/)でご案内しています。
 
 ### 取引を示す書類（契約書・発注書など）
 
