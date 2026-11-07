@@ -30,7 +30,7 @@ export const conditionFacts: { [slug: string]: Partial<Record<ConditionFactKey, 
     kaigo: {"value": "公式に記載なし", "source": "https://ququmo.net/", "checkedAt": "2026年11月1日"},
   },
   "accel-factor": {
-    donichi: {"value": "不可", "source": "", "checkedAt": "2026年10月31日", "quote": "電話受付 平日 10:00〜18:30／土日祝 休業（申込フォーム・LINE資金調達診断はWebから送れるが、受付時刻や「24時間受付」の記載は公式に見当たらない）"},
+    donichi: {"value": "公式に記載なし", "source": "https://accelfacter.co.jp/", "checkedAt": "2026年11月7日", "quote": "受付時間 平日 10:00～18:30", "note": "電話受付の表示のみ。土日祝の審査・入金・休業の記載なし（公式トップ・会社概要・よくあるご質問・お知らせで確認。2026年11月7日に区分を見直し：電話受付が平日だけの表示の会社は「公式に記載なし」）。申込フォーム・LINE資金調達診断はWebから送れるが、受付時刻や「24時間受付」の記載は公式に見当たらない"},
     nisha: {"value": "可", "source": "https://accelfacter.co.jp/faq.php", "checkedAt": "2026年11月1日", "quote": "2社間ファクタリングで1～12％・3社間ファクタリングで0.5～10.5％を目安にしていただいております"},
     sansha: {"value": "可", "source": "https://accelfacter.co.jp/faq.php", "checkedAt": "2026年11月1日", "quote": "2社間ファクタリングで1～12％・3社間ファクタリングで0.5～10.5％を目安にしていただいております"},
     kessansho: {"value": "条件付き（必要書類3点には含まれないが、利用金額によっては提出を求める場合あり）", "source": "https://accelfacter.co.jp/faq.php", "checkedAt": "2026年11月1日", "quote": "①請求書などの売掛金額が確認できる書類、②通帳3か月分の写し、③身分証明書が必要です。ご利用金額によっては決算書のご提出をお願いする場合もございます。"},
