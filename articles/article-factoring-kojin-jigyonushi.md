@@ -34,7 +34,7 @@
 
 | 項目 | ファクタリング | ビジネスローン | 銀行融資 |
 |------|-------------|-------------|---------|
-| **資金化スピード** | 当日中を最短として表示する会社がある（当サイト掲載53社中46社） | 金融機関により異なる | 金融機関により異なる |
+| **資金化スピード** | 当日中を最短として表示する会社がある（当サイト掲載53社中37社。ほかに公式内で表示が異なる10社） | 金融機関により異なる | 金融機関により異なる |
 | **審査対象** | 売掛先の信用力を判断材料に挙げる会社がある | 申込者の返済能力 | 申込者の返済能力 |
 | **返済義務** | なし（売却） | あり | あり |
 | **手数料/金利** | 各社の公式表示（[手数料一覧](/fees/)） | 金融機関により異なる | 金融機関により異なる |
@@ -46,7 +46,7 @@
 売掛先の信用力を審査で重視すると公式に書いている会社があります（例：買速・MSFJ〈2026年10月31日確認〉）。個人事業主が使える34社のうち、赤字決算でも利用できると公式に書いている会社は7社（アクセルファクター・メンターキャピタル・JTC・レバンタ・RFD・買速・トラストゲートウェイ）、税金の滞納中でも利用できると書いている会社は6社（メンターキャピタル・RFD・買速・ファクタリングのTRY・トラストゲートウェイ・うりかけ堂）です。このほか、建設Payは赤字決算・税金滞納の場合も相談できるとし、三菱ＵＦＪファクターは赤字決算・債務超過でも申し込める一方、税金・社会保険料の滞納がある場合は申し込めないと記載しています（2026年10月31日〜11月6日確認。詳しくは[ファクタリングの審査は何を見る？](/articles/article-factoring-shinsa-amai/)）。
 
 **2. 最短即日で現金化できる**
-ファクタリングは、当日中の入金を最短として表示する会社があります（当サイト掲載53社中46社）。急な支払いや予想外の出費にも対応できます。
+ファクタリングは、当日中の入金を最短として表示する会社があります（当サイト掲載53社中37社。ほかに公式内のページによって最短の表示が異なる会社が10社）。急な支払いや予想外の出費にも対応できます。
 
 **3. 借入にならない**
 債権の売却で、借入にはなりません（信用情報の扱いは[ブラック・債務超過・税金滞納中でも使える？](/articles/article-factoring-blacklist-saimuchouka/)）。
@@ -210,8 +210,8 @@
 | 区分 | 社数 | 会社 |
 |---|---:|---|
 | 個人事業主が使える | 34 | [ビートレーディング](/companies/be-trading/)・[QuQuMo](/companies/ququmo/)・[アクセルファクター](/companies/accel-factor/)・[ベストファクター](/companies/best-factor/)・[ペイトナー](/companies/paytner/)・[ラボル](/companies/labol/)・[PayToday](/companies/paytoday/)・[日本中小企業金融サポート機構](/companies/support-kinyu/)・[トップ・マネジメント](/companies/top-management/)・[メンターキャピタル](/companies/mentor-capital/)・[えんナビ](/companies/ennavi/)・[FREENANCE](/companies/freenance/)・[JTC](/companies/jtc/)・[株式会社No.1](/companies/no1/)・[セーフトラスト](/companies/safe-trust/)・[ファクタリングのTRY](/companies/try/)・[MSFJ](/companies/msfj/)・[レバンタ](/companies/levanta/)・[トラストゲートウェイ](/companies/trust-gateway/)・[バイオン](/companies/bion/)・[RFD](/companies/rfd/)・[うりかけ堂](/companies/urikakedo/)・[買速](/companies/kaisoku/)・[OLTA](/companies/olta/)・[GoodPlus](/companies/goodplus/)・[ファクタリングZERO](/companies/factoring-zero/)・[西日本ファクター](/companies/nishinihon-factor/)・[事業資金エージェント](/companies/jigyoshikin-agent/)・[ウィット](/companies/wit/)・[けんせつくん](/companies/kensetsukun/)・[ファクターズ](/companies/factors/)・[建設Pay](/companies/kensetsu-pay/)・[Chatwork 先払い](/companies/chatwork-sakibarai/)・[三菱ＵＦＪファクター](/companies/mufg-factor/) |
-| 法人に限ると公式に記載 | 9 | [マネーフォワード 早期入金](/companies/mf-earlypayment/)・[¥Today](/companies/yen-today/)・[ファクタープラン](/companies/factor-plan/)・[アウル経済](/companies/owl-keizai/)・[インボイスPay](/companies/invoice-pay/)（取扱停止）・[GMO BtoB早払い](/companies/gmo-btob-hayabarai/)・[ネクストワン](/companies/next-one/)・[KKT](/companies/kkt/)・[エスコム](/companies/escom/) |
-| 公式内で表記が分かれる | 2 | [PMG](/companies/pmg/)（よくある質問は個人事業主も可、一部のページは法人のみ）・[エーストラスト](/companies/ace-trust/)（原則法人、個人事業主は公式内で表記が分かれる） |
+| 法人に限ると公式に記載 | 8 | [マネーフォワード 早期入金](/companies/mf-earlypayment/)・[¥Today](/companies/yen-today/)・[ファクタープラン](/companies/factor-plan/)・[アウル経済](/companies/owl-keizai/)・[インボイスPay](/companies/invoice-pay/)（取扱停止）・[GMO BtoB早払い](/companies/gmo-btob-hayabarai/)・[ネクストワン](/companies/next-one/)・[エスコム](/companies/escom/) |
+| 公式内で表記が分かれる | 3 | [PMG](/companies/pmg/)（よくある質問は個人事業主も可、一部のページは法人のみ）・[エーストラスト](/companies/ace-trust/)（原則法人、個人事業主は公式内で表記が分かれる）・[KKT](/companies/kkt/)（法人向けの案内ページは法人のみ、以前の案内ページの見積りフォームには個人事業主の選択肢あり） |
 | 個人事業主の可否を公式で確認できない | 8 | [みんなのファクタリング](/companies/minna-factoring/)・[いーばんく](/companies/ebank/)・[インボイスファクター](/companies/invoice-factor/)・[カイポケ早期入金](/companies/kaipoke-early/)・[CoolPay](/companies/coolpay/)・[ビジペイ](/companies/bizpay/)・[リコーリース](/companies/ricoh-lease/)・[メドレー早期資金サポート](/companies/medley/) |
 
 確認日は2026年7月21日〜11月6日です。前半の14社のうち、みんなのファクタリング（「事業主様向け」の表示・2026年10月31日確認）だけが34社に入りません。
