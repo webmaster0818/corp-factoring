@@ -40,3 +40,22 @@
 .prose table { display: block; max-width: 100%; overflow-x: auto; border-collapse: collapse; margin: 1.25rem 0; font-size: 0.9rem; }
 .prose th, .prose td { border: 1px solid #e5e7eb; padding: 0.5rem 0.75rem; text-align: left; vertical-align: top; white-space: normal; min-width: 6rem; }
 .prose th { background: #f3f4f6; font-weight: 700; color: #111827; }
+/* 記事本文の見出し・段落・リスト・画像。page.tsx の prose-* 指定は typography プラグインが無く効いていなかったので、同じ意図の最低限をここで付ける */
+.prose { color: #374151; line-height: 1.85; }
+.prose h2 { font-size: 1.25rem; font-weight: 700; color: #111827; margin: 2.5rem 0 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid #e5e7eb; line-height: 1.5; }
+.prose h3 { font-size: 1.125rem; font-weight: 700; color: #111827; margin: 2rem 0 0.75rem; line-height: 1.5; }
+.prose h4 { font-weight: 700; color: #111827; margin: 1.5rem 0 0.5rem; }
+.prose p { margin: 0 0 1rem; }
+.prose ul { list-style: disc; padding-left: 1.5rem; margin: 1rem 0; }
+.prose ol { list-style: decimal; padding-left: 1.5rem; margin: 1rem 0; }
+.prose li { margin: 0.25rem 0; }
+.prose li > p { margin: 0; }
+.prose a { color: #2563eb; }
+.prose a:hover { text-decoration: underline; }
+.prose strong { color: #111827; font-weight: 700; }
+.prose blockquote { border-left: 4px solid #60a5fa; background: #eff6ff; padding: 0.75rem 1rem; margin: 1.25rem 0; border-radius: 0 0.5rem 0.5rem 0; }
+.prose blockquote > :last-child { margin-bottom: 0; }
+.prose hr { margin: 2rem 0; border-color: #e5e7eb; }
+.prose img { max-width: 100%; height: auto; margin: 1.5rem 0 0.5rem; }
+.prose p:has(> img) { margin-bottom: 0.25rem; }
+
