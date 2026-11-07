@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="460" height="476" viewBox="0 0 460 476" role="img" aria-labelledby="t d" font-family="'Hiragino Kaku Gothic ProN','Hiragino Sans','Noto Sans JP','Noto Sans CJK JP','Yu Gothic','YuGothic','Meiryo',sans-serif">
+<title id="t">オンラインでの契約（公式の記載）</title>
+<desc id="d">可39社、可（初回は原則対面、審査結果や金額によって対面が必須になる場合ありなどの記載あり）3社、公式内で記載が異なる3社、オンライン対応・オンライン面談の記載のみ（契約までの完結の記載なし）4社、確認できず・書類は郵送4社</desc>
+<rect width="460" height="476" fill="#ffffff"/>
+<rect x="0.5" y="0.5" width="459" height="475" fill="none" stroke="#dbe3ec"/>
+<text x="18" y="30" font-size="20" font-weight="700" fill="#1f2937">オンラインでの契約（公式の記載）</text>
+<text x="18" y="65" font-size="17" fill="#1f2937">可</text>
+<rect x="18" y="74" width="366" height="18" rx="3" fill="#e8edf3"/>
+<rect x="18" y="74" width="269.3" height="18" rx="3" fill="#1B3A5C"/>
+<text x="442" y="89" font-size="17" font-weight="700" text-anchor="end" fill="#1f2937">39社</text>
+<text x="18" y="125" font-size="17" fill="#1f2937">可（初回は原則対面、審査結果や金額によって</text>
+<text x="18" y="147" font-size="17" fill="#1f2937">対面が必須になる場合ありなどの記載あり）</text>
+<rect x="18" y="156" width="366" height="18" rx="3" fill="#e8edf3"/>
+<rect x="18" y="156" width="20.7" height="18" rx="3" fill="#1B3A5C"/>
+<text x="442" y="171" font-size="17" font-weight="700" text-anchor="end" fill="#1f2937">3社</text>
+<text x="18" y="207" font-size="17" fill="#1f2937">公式内で記載が異なる</text>
+<rect x="18" y="216" width="366" height="18" rx="3" fill="#e8edf3"/>
+<rect x="18" y="216" width="20.7" height="18" rx="3" fill="#8494a8"/>
+<text x="442" y="231" font-size="17" font-weight="700" text-anchor="end" fill="#1f2937">3社</text>
+<text x="18" y="267" font-size="17" fill="#1f2937">オンライン対応・オンライン面談の記載のみ</text>
+<text x="18" y="289" font-size="17" fill="#1f2937">（契約までの完結の記載なし）</text>
+<rect x="18" y="298" width="366" height="18" rx="3" fill="#e8edf3"/>
+<rect x="18" y="298" width="27.6" height="18" rx="3" fill="#8494a8"/>
+<text x="442" y="313" font-size="17" font-weight="700" text-anchor="end" fill="#1f2937">4社</text>
+<text x="18" y="349" font-size="17" fill="#1f2937">確認できず・書類は郵送</text>
+<rect x="18" y="358" width="366" height="18" rx="3" fill="#e8edf3"/>
+<rect x="18" y="358" width="27.6" height="18" rx="3" fill="#8494a8"/>
+<text x="442" y="373" font-size="17" font-weight="700" text-anchor="end" fill="#1f2937">4社</text>
+<line x1="18" y1="394" x2="442" y2="394" stroke="#cbd5e1" stroke-width="1"/>
+<text x="18" y="418" font-size="15" fill="#4b5563">母数：当サイト掲載53社／各社公式サイトの表示</text>
+<text x="18" y="440" font-size="15" fill="#4b5563">（主に2026年10月14日〜11月6日確認）</text>
+<text x="18" y="462" font-size="15" fill="#4b5563">薄い帯の長さ＝53社／当サイト調べ（2026年11月）</text>
+</svg>
