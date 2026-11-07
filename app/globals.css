@@ -40,6 +40,8 @@
 .prose table { display: block; max-width: 100%; overflow-x: auto; border-collapse: collapse; margin: 1.25rem 0; font-size: 0.9rem; }
 .prose th, .prose td { border: 1px solid #e5e7eb; padding: 0.5rem 0.75rem; text-align: left; vertical-align: top; white-space: normal; min-width: 6rem; }
 .prose th { background: #f3f4f6; font-weight: 700; color: #111827; }
+/* 本文のコードブロック（計算例・流れの図）がスマホ幅でページごと横にはみ出さないよう、折り返す */
+.prose pre { max-width: 100%; overflow-x: auto; white-space: pre-wrap; overflow-wrap: anywhere; }
 /* 記事本文の見出し・段落・リスト・画像。page.tsx の prose-* 指定は typography プラグインが無く効いていなかったので、同じ意図の最低限をここで付ける */
 .prose { color: #374151; line-height: 1.85; }
 .prose h2 { font-size: 1.25rem; font-weight: 700; color: #111827; margin: 2.5rem 0 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid #e5e7eb; line-height: 1.5; }

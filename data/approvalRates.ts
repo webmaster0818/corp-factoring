@@ -20,6 +20,7 @@ export const approvalRates: { [slug: string]: ApprovalRate } = {
   "no1": { value: 95, label: "95%以上", sourceUrl: "https://no1service.co.jp/factoring-service/", checkedAt: "2026年11月6日" },
   "ebank": { value: 90, label: "90%以上", sourceUrl: "https://tomodachi-my.com/", checkedAt: "2026年11月6日" },
   "safe-trust": { value: 90, label: "90%以上", sourceUrl: "https://safe-trust.co.jp/", checkedAt: "2026年11月6日" },
+  "msfj": { value: 90, label: "90％以上", sourceUrl: "https://www.msfj.co.jp/lp2/", checkedAt: "2026年11月7日" },
   "ace-trust": { value: 90, label: "90%以上", sourceUrl: "https://ace-trust.com/", checkedAt: "2026年11月6日" },
 };
 

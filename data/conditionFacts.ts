@@ -572,7 +572,7 @@ export const conditionFacts: { [slug: string]: Partial<Record<ConditionFactKey, 
     kaigo: {"value": "可", "source": "https://www.muf.bk.mufg.jp/shinryo/", "checkedAt": "2026年11月6日", "quote": "本サービスの「診療報酬」は 医科・歯科の「診療報酬」と調剤薬局の「調剤報酬」、介護事業所の「介護報酬」を対象としています", "note": "介護報酬は2026年10月30日に取扱開始・国保宛請求額の90%を買取"},
   },
   "ricoh-lease": {
-    donichi: {"value": "不可", "source": "https://www.r-lease.co.jp/business/service/kaigo/", "checkedAt": "2026年11月6日", "quote": "フリーダイヤル0120-727-702（受付時間：平日 9:00~17:00）", "note": "電話受付の表示のみ。土日祝の審査・入金の記載なし"},
+    donichi: {"value": "公式に記載なし", "source": "https://www.r-lease.co.jp/business/service/kaigo/", "checkedAt": "2026年11月6日", "quote": "フリーダイヤル0120-727-702（受付時間：平日 9:00~17:00）", "note": "電話受付の表示のみ。土日祝の審査・入金の記載なし（2026年11月7日に区分を見直し：電話受付が平日だけの表示の会社は「公式に記載なし」）"},
     nisha: {"value": "公式に記載なし", "source": "https://www.r-lease.co.jp/faq/kaigo/", "checkedAt": "2026年11月6日", "note": "国保連に債権譲渡通知を送る方式"},
     sansha: {"value": "可", "source": "https://www.r-lease.co.jp/faq/kaigo/", "checkedAt": "2026年11月6日", "quote": "介護事業者様と弊社の連名で、国保連に対して内容証明郵便にて債権譲渡通知を送付することになります。"},
     kessansho: {"value": "不可", "source": "https://www.r-lease.co.jp/faq/kaigo/", "checkedAt": "2026年11月6日", "quote": "決算書直近3期分（貸借対照表、損益計算書、販売費一般管理費、株主資本変動計算書、付属の勘定科目明細をご提出ください。）", "note": "3期に満たない場合は提出できる範囲、設立1年未満・新規法人は事業計画書"},
