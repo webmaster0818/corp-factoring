@@ -61,10 +61,12 @@ const kojinOk = (r: FeeIndexRow) => {
   return /個人|フリーランス/.test(t) && !/個人事業主は利用不可|個人事業主・フリーランス不可|個人事業主不可|法人のみ|法人限定|法人専用|原則法人|受付.*停止|取扱.*停止|個人事業主の可否は記載なし|別は明記なし/.test(t);
 };
 // 利用可能額の下限（円）。読み取れない場合は undefined
+// 「下限なし」「下限上限なし」と公式が明記している会社だけを0円（下限なし）とし、「下限の記載なし」（書いていない）は読み取れないものとして扱う（2026-11-07）
 const minAmountYen = (r: FeeIndexRow): number | undefined => {
-  if (/下限(上限)?なし|下限.*記載なし|数万円/.test(r.amount)) return /数万円/.test(r.amount) ? 50000 : 0;
-  // 「対象債権1万円以上」（GoodPlus）のように前置きのある下限も読む
-  const m = r.amount.match(/^(?:最低|対象債権)?(\d[\d,]*)(万)?円/);
+  if (/数万円/.test(r.amount)) return 50000;
+  if (/下限(上限)?なし/.test(r.amount)) return 0;
+  // 「対象債権1万円以上」（GoodPlus）・「売掛先1社につき10万円〜」（レバンタ）・「売掛先1社に対して10万円〜」（トラストゲートウェイ）のように前置きのある下限も読む
+  const m = r.amount.match(/^(?:最低|対象債権|売掛先1社(?:につき|に対して))?(\d[\d,]*)(万)?円/);
   if (!m) return undefined;
   return Number(m[1].replace(/,/g, "")) * (m[2] ? 10000 : 1);
 };
@@ -168,12 +170,12 @@ export const CONDITIONS: { [articleSlug: string]: ConditionDef } = {
   },
   "article-factoring-saiken-touki": {
     key: "touki",
-    heading: "債権譲渡登記をしない・留保できると公式に書いている会社",
-    criteria: "公式サイトで、債権譲渡登記を行わない、または登記を留保できると書いている会社（可）と、金額や契約内容による条件付きの会社を載せています。「可」を先に、同じ区分の中は2社間の手数料の下限が低い順です。",
+    heading: "債権譲渡登記をしない・留保できる・不要と公式に書いている会社",
+    criteria: "公式サイトで、債権譲渡登記を行わない、または登記を留保できると書いている会社（可）、登記は不要と明記している会社と、金額や契約内容による条件付きの会社を載せています。「可」「不要と明記」「条件付き」の順に、同じ区分の中は2社間の手数料の下限が低い順です。",
     evidenceLabel: "登記の扱い（公式の記載）",
     evidence: factEvidence("touki"),
-    match: factIs("touki", "可", "条件付き"),
-    sortKey: rankBy("touki", ["可", "条件付き"]),
+    match: factIs("touki", "可", "不要と明記", "条件付き"),
+    sortKey: rankBy("touki", ["可", "不要と明記", "条件付き"]),
   },
   "article-factoring-hitsuyou-shorui": {
     key: "docs",
