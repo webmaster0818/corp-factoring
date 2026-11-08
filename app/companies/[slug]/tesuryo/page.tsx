@@ -8,6 +8,7 @@ import { SUBPAGE_SLUGS, parseRate, isNotOffered, pickFacts } from "@/data/subPag
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { DEFAULT_OG_IMAGES } from "@/lib/og";
+import { SubPageIntroBox } from "@/components/SubPageIntroBox";
 import { getLastmod, toJaDate } from "@/lib/pageDates";
 
 const SITE = "https://corp-factoring.com";
@@ -146,6 +147,7 @@ export default async function CompanyFeePage({ params }: { params: Promise<{ slu
           <p className="text-sm font-bold text-blue-900">回答</p>
           <p className="mt-1 text-sm leading-relaxed text-gray-800">{answer}</p>
         </div>
+        <SubPageIntroBox slug={slug} kind="tesuryo" />
 
         <section className="mt-8">
           <h2 className="text-lg font-bold text-gray-900">公式サイトで確認した手数料と条件</h2>

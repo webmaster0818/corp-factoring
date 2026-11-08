@@ -9,6 +9,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { OtherHoursLinks } from "@/components/OtherHoursLinks";
 import { DEFAULT_OG_IMAGES } from "@/lib/og";
+import { SubPageIntroBox } from "@/components/SubPageIntroBox";
 
 const SITE = "https://corp-factoring.com";
 const PAGE_UPDATED = "2026年8月22日";
@@ -248,6 +249,7 @@ export default async function CompanyHoursPage({ params }: { params: Promise<{ s
           <p className="text-sm font-bold text-blue-900">回答</p>
           <p className="mt-1 text-sm leading-relaxed text-gray-800">{answer}</p>
         </div>
+        <SubPageIntroBox slug={slug} kind="eigyo-jikan" />
 
         {/* 営業時間・定休日の詳細 */}
         <section className="mt-8">

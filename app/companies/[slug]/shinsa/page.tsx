@@ -10,6 +10,7 @@ import { HOURS_LINK_SLUGS } from "@/data/hoursPages";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { DEFAULT_OG_IMAGES } from "@/lib/og";
+import { SubPageIntroBox } from "@/components/SubPageIntroBox";
 import { getLastmod, toJaDate } from "@/lib/pageDates";
 import { getShinsaOchitaHtml, SHINSA_OCHITA_TITLE, SHINSA_OCHITA_ANCHOR } from "@/lib/shinsaOchita";
 
@@ -139,6 +140,7 @@ export default async function CompanyScreeningPage({ params }: { params: Promise
           <p className="text-sm font-bold text-blue-900">回答</p>
           <p className="mt-1 text-sm leading-relaxed text-gray-800">{answer}</p>
         </div>
+        <SubPageIntroBox slug={slug} kind="shinsa" />
 
         {ochitaHtml && (
           <section id={SHINSA_OCHITA_ANCHOR} className="mt-8 scroll-mt-20">
