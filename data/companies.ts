@@ -231,7 +231,7 @@ export const factoringCompanies: FactoringCompany[] = [
       "個人事業主・一人法人向け（公式表示）" // paytner.co.jp トップ（2026年10月22日確認）
     ],
     cons: [
-      "手数料が一律10%（少額だと割高）"
+      "手数料が一律10%"
     ],
     companyInfo: {
       established: "2019年2月",
