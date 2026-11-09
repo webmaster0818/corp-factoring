@@ -61,7 +61,7 @@ export default async function CompanyScreeningPage({ params }: { params: Promise
     ? /^審査時間(単体)?の(記載|明示)なし/.test(reviewTimeFact.value)
       ? `${company.name}の審査時間は、当サイトが確認した公式ページに単独の記載がありません（${reviewTimeDate}確認）。`
       : `${company.name}の審査時間（公式の記載）：${reviewTimeFact.value.replace(/。$/, "")}（${reviewTimeDate}確認）。`
-    : `${company.name}の審査時間は、公式サイトで確認できた範囲では単独で示されていません。`;
+    : "";
   const docFacts = pickFacts(slug, /必要書類/);
   const targetFacts = pickFacts(slug, /対象|取引方式|契約方式/);
   const rateFacts = pickFacts(slug, /通過率|実績表示/);
