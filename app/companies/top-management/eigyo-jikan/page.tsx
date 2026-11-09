@@ -241,7 +241,9 @@ export default function TopManagementHoursPage() {
         <section className="mt-8 rounded-lg bg-gray-50 p-5">
           <p className="text-sm font-bold text-gray-800">関連ページ</p>
           <ul className="mt-2 space-y-1.5 text-sm">
-            <li>・<Link href={`/companies/${SLUG}/`} className="text-blue-600 underline">{company.name}の評判・手数料・必要書類の解説</Link></li>
+            <li>・<Link href={`/companies/${SLUG}/`} className="text-blue-600 underline">{company.name}の口コミ・評判・会社概要</Link></li>
+            <li>・<Link href={`/companies/${SLUG}/shinsa/`} className="text-blue-600 underline">{company.name}の審査時間・必要書類</Link></li>
+            <li>・<Link href={`/companies/${SLUG}/tesuryo/`} className="text-blue-600 underline">{company.name}の手数料</Link></li>
             <li>・<Link href="/articles/article-ennavi-vs-top-management/" className="text-blue-600 underline">えんナビと{company.name}の比較（手数料・入金スピード・営業時間）</Link></li>
             <li>・<Link href="/fees/" className="text-blue-600 underline">ファクタリング{FEE_COMPANY_COUNT}社の手数料・最短入金の比較（公式サイトで確認）</Link></li>
           </ul>

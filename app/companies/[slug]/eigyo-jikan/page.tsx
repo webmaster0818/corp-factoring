@@ -5,6 +5,7 @@ import { getCompanyBySlug } from "@/data/companies";
 import { getCompanyDetails } from "@/data/companyDetails";
 import { feeIndex, feeCheckedAt, FEE_COMPANY_COUNT } from "@/data/feeIndex";
 import { HOURS_SLUGS, HOURS_CHECKED_AT, HOURS_COMPARE_POOL, HOURS_ADDED_20261101 } from "@/data/hoursPages";
+import { SUBPAGE_SLUGS, pickFacts } from "@/data/subPages";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { OtherHoursLinks } from "@/components/OtherHoursLinks";
@@ -18,7 +19,16 @@ const PAGE_UPDATED_ISO = "2026-08-22";
 const SLUGS: string[] = [...HOURS_SLUGS];
 
 // 検索で使われる別表記（例：「ピーエムジー 営業時間」）を title/H1 に併記する
-const NAME_ALIAS: { [slug: string]: string } = { pmg: "PMG（ピーエムジー）" };
+// no1：同社が運営する「Easy factor（イージーファクター）」の名前で検索されている（公式「会社概要」で運営会社を2026年11月10日確認）
+// support-kinyu：機構が運営するオンラインの FACTOR⁺U（ファクトル）の名前で検索されている（「ファクトル 営業時間」が会社ページに表示・2026年10月27日〜11月7日）
+// ququmo・msfj：カタカナ表記（「ククモ 営業時間」「エムエスエフジェイ 営業時間」）で検索されている
+const NAME_ALIAS: { [slug: string]: string } = {
+  pmg: "PMG（ピーエムジー）",
+  no1: "株式会社No.1（イージーファクター）",
+  "support-kinyu": "日本中小企業金融サポート機構（ファクトル）",
+  ququmo: "QuQuMo（ククモ）",
+  msfj: "MSFJ（エムエスエフジェイ）",
+};
 // 営業時間を再確認したページは最終確認日も更新する
 const PAGE_UPDATED_OVERRIDE: { [slug: string]: [string, string] } = {
   pmg: ["2026年10月28日", "2026-10-28"],
@@ -126,7 +136,25 @@ export default async function CompanyHoursPage({ params }: { params: Promise<{ s
     ? `土曜は${h.saturday ?? "公式サイトでは確認できず"}、日曜は${h.sunday ?? "公式サイトでは確認できず"}${h.holidays ? `、祝日は${h.holidays}` : ""}です。`
     : `土曜・日曜・祝日の個別の受付体制は、公式サイトでは確認できませんでした。`;
 
-  const answer = `${company.name}の受付時間は公式表示で「${h.weekdays}」です。${weekendSentence}${ANSWER_EXTRA[slug] ?? ""}（公式サイト・${checkedAt}確認）`;
+  // 公式で確認した受付時間の事実（editorialVerification の「受付時間」「営業時間」「電話受付」等）。
+  // 審査ページから移した受付時間の事実を、ここに出典つきで残す（2026-11-10 E4）
+  const hoursFacts = pickFacts(slug, /受付|営業時間|年末年始/).filter((f) => !/審査/.test(f.label));
+  // 電話番号：受付時間の事実（出典つき）に1つだけ書かれている番号を優先し、なければ営業時間欄に1つだけ書かれている番号を使う。
+  // 番号が複数ある会社（サイトにより番号が異なる等）は即答に出さず、下の注記・事実欄に任せる
+  const PHONE_RE = /0\d{1,4}-\d{1,4}-\d{3,4}/g;
+  const uniq = (a: string[]) => [...new Set(a)];
+  const factPhones = uniq(hoursFacts.flatMap((f) => f.value.match(PHONE_RE) ?? []));
+  const hoursPhones = uniq(`${h.weekdays} ${h.note ?? ""}`.match(PHONE_RE) ?? []);
+  const phone = factPhones.length === 1 ? factPhones[0] : factPhones.length === 0 && hoursPhones.length === 1 ? hoursPhones[0] : undefined;
+  const phoneFact = phone ? hoursFacts.find((f) => f.value.includes(phone)) : undefined;
+  const phoneDate = phoneFact?.source.match(/\d{4}年\d{1,2}月\d{1,2}日/)?.[0] ?? checkedAt;
+  const baseAnswer = `${company.name}の受付時間は公式表示で「${h.weekdays}」です。${weekendSentence}${ANSWER_EXTRA[slug] ?? ""}`;
+  const showPhone = Boolean(phone && !baseAnswer.includes(phone));
+  // 確認日が営業時間と同じなら文末の確認日にまとめ、違う場合は電話番号の文に自分の確認日を付けて後ろに置く
+  const answer =
+    showPhone && phoneDate === checkedAt
+      ? `${baseAnswer}電話番号は公式表示で ${phone} です。（公式サイト・${checkedAt}確認）`
+      : `${baseAnswer}（公式サイト・${checkedAt}確認）${showPhone ? `電話番号は公式表示で ${phone} です（${phoneDate}確認）。` : ""}`;
 
   const offHoursAnswer =
     is24h || offHoursDocumented
@@ -267,6 +295,19 @@ export default async function CompanyHoursPage({ params }: { params: Promise<{ s
             </table>
           </div>
           {h.note && <p className="mt-3 text-xs leading-relaxed text-gray-500">※{h.note}</p>}
+          {hoursFacts.length > 0 && (
+            <>
+              <h3 className="mt-5 text-base font-bold text-gray-900">公式サイトで確認した受付時間の記載（出典）</h3>
+              <ul className="mt-2 space-y-2 text-sm leading-relaxed text-gray-800">
+                {hoursFacts.map((f, i) => (
+                  <li key={i}>
+                    ・<strong>{f.label}</strong>：{f.value}
+                    <span className="block text-xs text-gray-500">出典：{f.source}</span>
+                  </li>
+                ))}
+              </ul>
+            </>
+          )}
           <p className="mt-2 text-xs leading-relaxed text-gray-500">
             ※本ページの営業時間は{company.name}公式サイトを当サイトが{checkedAt}に確認したものです。公式サイトに記載がない項目は「公式サイトでは確認できず」と記載しています。最新の受付時間は
             <a href={company.url} target="_blank" rel="sponsored nofollow noopener" className="text-blue-600 underline">公式サイト</a>
@@ -288,6 +329,12 @@ export default async function CompanyHoursPage({ params }: { params: Promise<{ s
                   ? "オンラインでの申込は時間帯を問わず可能と公式に表示されていますが、審査・契約の処理が何時から何時まで行われるかは公式サイトでは確認できませんでした。"
                   : "即日入金を希望する場合は、同日の受付時間内に申込・審査・契約まで完了させることが前提になります。"}
               </p>
+              {SUBPAGE_SLUGS.includes(slug) && (
+                <p className="mt-3 text-sm leading-relaxed text-gray-800">
+                  審査時間・必要書類・審査の対象は審査ページにまとめています：
+                  <Link href={`/companies/${slug}/shinsa/`} className="text-blue-600 underline">{company.name}の審査時間・必要書類 →</Link>
+                </p>
+              )}
               <p className="mt-3 text-sm leading-relaxed text-gray-800">
                 {cutoffDocumented
                   ? "即日扱いの締切時刻については、上の受付時間欄・注記に記載した公式表示をご確認ください。条件の詳細は、公式サイトにて直接ご確認ください。"
@@ -365,7 +412,13 @@ export default async function CompanyHoursPage({ params }: { params: Promise<{ s
         <section className="mt-8 rounded-lg bg-gray-50 p-5">
           <p className="text-sm font-bold text-gray-800">関連ページ</p>
           <ul className="mt-2 space-y-1.5 text-sm">
-            <li>・<Link href={`/companies/${slug}/`} className="text-blue-600 underline">{company.name}の評判・手数料・必要書類の解説</Link></li>
+            <li>・<Link href={`/companies/${slug}/`} className="text-blue-600 underline">{company.name}の口コミ・評判・会社概要</Link></li>
+            {SUBPAGE_SLUGS.includes(slug) && (
+              <>
+                <li>・<Link href={`/companies/${slug}/shinsa/`} className="text-blue-600 underline">{company.name}の審査時間・必要書類</Link></li>
+                <li>・<Link href={`/companies/${slug}/tesuryo/`} className="text-blue-600 underline">{company.name}の手数料</Link></li>
+              </>
+            )}
             <li>・<Link href="/fees/" className="text-blue-600 underline">ファクタリング{FEE_COMPANY_COUNT}社の手数料・最短入金の比較（公式サイトで確認）</Link></li>
             <li>・<Link href="/#comparison" className="text-blue-600 underline">ファクタリング会社の比較一覧</Link></li>
           </ul>

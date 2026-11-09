@@ -196,7 +196,7 @@ export const companyLeads: { [slug: string]: CompanyLead } = {
       { label: "ご利用の流れ", url: "https://paytner.co.jp/guide/flow" },
     ],
     related: [
-      { href: "/companies/paytner/eigyo-jikan/", label: "ペイトナーの営業時間・土日の扱い（詳細）" },
+      { href: "/companies/paytner/eigyo-jikan/", label: "ペイトナーの営業時間・土日" },
       { href: "/companies/labol/", label: "ラボル（振込24時間365日）" },
       { href: "/articles/article-factoring-kuchikomi/", label: "ファクタリング会社の口コミ件数の比較" },
     ],
@@ -264,9 +264,9 @@ export const companyLeads: { [slug: string]: CompanyLead } = {
       { label: "日本M&Aセンター M&Aニュース（2025年8月13日）", url: "https://www.nihon-ma.co.jp/news/20250813_4478-13/" },
     ],
     related: [
-      { href: "/companies/freenance/tesuryo/", label: "フリーナンスの手数料（詳細）" },
-      { href: "/companies/freenance/shinsa/", label: "フリーナンスの審査・必要書類" },
-      { href: "/companies/freenance/eigyo-jikan/", label: "フリーナンスの営業時間・振込のタイミング" },
+      { href: "/companies/freenance/tesuryo/", label: "フリーナンスの手数料" },
+      { href: "/companies/freenance/shinsa/", label: "フリーナンスの審査時間・必要書類" },
+      { href: "/companies/freenance/eigyo-jikan/", label: "フリーナンスの営業時間・土日" },
       { href: "/companies/paytner/", label: "ペイトナー（フリーランス向け・手数料一律10%）" },
       { href: "/articles/article-factoring-kuchikomi/", label: "ファクタリング会社の口コミ件数の比較" },
     ],
@@ -335,7 +335,7 @@ export const companyLeads: { [slug: string]: CompanyLead } = {
         note: "比較サイトの記載は、ファクコミは2026年11月5日時点、ファクログは2025年12月15日時点の保存版の表示の例です。条件は申込画面・利用規約で確認してください。",
         links: [
           { href: "/companies/freenance/tesuryo/", label: "フリーナンスの手数料 →" },
-          { href: "/companies/freenance/shinsa/", label: "フリーナンスの審査・必要書類 →" },
+          { href: "/companies/freenance/shinsa/", label: "フリーナンスの審査時間・必要書類 →" },
         ],
       },
     ],
@@ -378,7 +378,7 @@ export const companyLeads: { [slug: string]: CompanyLead } = {
       { label: "ennavi-factoring.net トップ", url: "https://ennavi-factoring.net/" },
     ],
     related: [
-      { href: "/companies/ennavi/eigyo-jikan/", label: "えんナビの営業時間・土日の扱い（詳細）" },
+      { href: "/companies/ennavi/eigyo-jikan/", label: "えんナビの営業時間・土日" },
       { href: "/companies/ennavi/shinsa/", label: "えんナビの審査時間・必要書類" },
       { href: "/companies/ennavi/tesuryo/", label: "えんナビの手数料" },
       { href: "/articles/article-ennavi-vs-top-management/", label: "えんナビとトップ・マネジメントの比較" },
@@ -442,7 +442,7 @@ export const companyLeads: { [slug: string]: CompanyLead } = {
         note: "比較サイトの記載は2026年11月2日時点の表示の例です。条件は見積もり・契約書で確認してください。",
         links: [
           { href: "/companies/ennavi/shinsa/", label: "えんナビの審査時間・必要書類 →" },
-          { href: "/companies/ennavi/eigyo-jikan/", label: "えんナビの営業時間と他社の受付時間の比較 →" },
+          { href: "/companies/ennavi/eigyo-jikan/", label: "えんナビの営業時間・土日 →" },
         ],
       },
     ],
@@ -485,9 +485,9 @@ export const companyLeads: { [slug: string]: CompanyLead } = {
       { label: "企業情報", url: "https://bestfactor.jp/about/" },
     ],
     related: [
-      { href: "/companies/best-factor/eigyo-jikan/", label: "ベストファクターの営業時間（詳細）" },
+      { href: "/companies/best-factor/eigyo-jikan/", label: "ベストファクターの営業時間・土日" },
       { href: "/companies/best-factor/shinsa/", label: "ベストファクターの審査時間・必要書類" },
-      { href: "/companies/best-factor/tesuryo/", label: "ベストファクターの手数料と100万円の計算例" },
+      { href: "/companies/best-factor/tesuryo/", label: "ベストファクターの手数料" },
       { href: "/articles/article-factoring-kuchikomi/", label: "ファクタリング会社の口コミ件数の比較" },
     ],
     sources: [
@@ -545,7 +545,7 @@ export const companyLeads: { [slug: string]: CompanyLead } = {
         ],
         note: "2026年11月2日に公式サイト（bestfactor.jp）で確認。",
         links: [
-          { href: "/companies/best-factor/shinsa/", label: "ベストファクターの審査時間・必要書類（詳細） →" },
+          { href: "/companies/best-factor/shinsa/", label: "ベストファクターの審査時間・必要書類 →" },
         ],
       },
     ],
@@ -715,6 +715,10 @@ export const companyLeads: { [slug: string]: CompanyLead } = {
       "株式会社No.1のファクタリングの口コミは、ファクログに27件、ファクコミに24件（2026年10月14日時点）、FundBridgeに7件（2026年10月15日時点）が掲載されています。ファクコミと FundBridge の件数は2026年11月6日に再確認し、変わっていません。",
       "公式では、手数料0.5%〜15%（3社間0.5〜5%／2社間0.5〜15%）で手数料以外の費用なし、最短30分で振込、買取額50万円〜3億円、償還請求権なし（ノンリコース）と表示しています。運営は2016年1月設立・資本金8,000万円の株式会社No.1（東京都豊島区東池袋）です。",
       "注意点は、受付が平日9:00〜19:00のみで土日祝は休みであること、最低買取額が50万円であること、FAQでは「売掛先1社あたり基本5,000万円まで」とあることです。",
+      "株式会社No.1は、ファクタリングサービス「Easy factor（イージーファクター）」も運営しています。イージーファクターの公式の会社概要に、サービス名「Easy factor イージーファクター」・会社名「株式会社 No.1」と記載されています（easyfactor.jp/company/・2026年11月10日確認）。",
+    ],
+    related: [
+      { href: "/companies/no1/eigyo-jikan/", label: "株式会社No.1（イージーファクター）の営業時間・土日" },
     ],
     checkedAt: "2026年10月14日",
     sources: [
@@ -941,8 +945,8 @@ export const companyLeads: { [slug: string]: CompanyLead } = {
       { label: "お知らせ「営業時間短縮のお知らせ」（2026年10月16日）", url: "https://accelfacter.co.jp/news/20261016564/" },
     ],
     related: [
-      { href: "/companies/accel-factor/eigyo-jikan/", label: "アクセルファクターの営業時間（詳細）" },
-      { href: "/companies/accel-factor/tesuryo/", label: "アクセルファクターの手数料と100万円の計算例" },
+      { href: "/companies/accel-factor/eigyo-jikan/", label: "アクセルファクターの営業時間・土日" },
+      { href: "/companies/accel-factor/tesuryo/", label: "アクセルファクターの手数料" },
       { href: "/companies/accel-factor/shinsa/", label: "アクセルファクターの審査時間・必要書類" },
       { href: "/fees/", label: "掲載各社の手数料・入金スピードの比較" },
       { href: "/articles/article-factoring-kuchikomi/", label: "ファクタリング会社の口コミ件数の比較" },
@@ -984,7 +988,7 @@ export const companyLeads: { [slug: string]: CompanyLead } = {
         ],
         note: "比較サイトには「手数料2%から」「利用額別の手数料表」「早期申込割引」などの記載がありますが、アクセルファクターの公式トップ・よくあるご質問・ファクタリングのページ・公式コラム「法人向けファクタリングおすすめ20選」では確認できませんでした（2026年10月31日）。",
         links: [
-          { href: "/companies/accel-factor/tesuryo/", label: "アクセルファクターの手数料と他社の比較 →" },
+          { href: "/companies/accel-factor/tesuryo/", label: "アクセルファクターの手数料 →" },
           { href: "/fees/", label: "掲載各社の手数料の比較 →" },
         ],
       },
@@ -1003,7 +1007,7 @@ export const companyLeads: { [slug: string]: CompanyLead } = {
           ],
         },
         links: [
-          { href: "/companies/accel-factor/eigyo-jikan/", label: "アクセルファクターの営業時間と他社の受付時間の比較 →" },
+          { href: "/companies/accel-factor/eigyo-jikan/", label: "アクセルファクターの営業時間・土日 →" },
         ],
       },
       {
@@ -1074,9 +1078,9 @@ export const companyLeads: { [slug: string]: CompanyLead } = {
       { label: "よくある質問（複数の請求書を登録したい）", url: "https://labol.co.jp/common/faq/detail/85" },
     ],
     related: [
-      { href: "/companies/labol/eigyo-jikan/", label: "ラボルの営業時間・土日の扱い（詳細）" },
-      { href: "/companies/labol/shinsa/", label: "ラボルの審査時間・必要書類・審査に通らない請求書" },
-      { href: "/companies/labol/tesuryo/", label: "ラボルの手数料10%と100万円の計算例" },
+      { href: "/companies/labol/eigyo-jikan/", label: "ラボルの営業時間・土日" },
+      { href: "/companies/labol/shinsa/", label: "ラボルの審査時間・必要書類" },
+      { href: "/companies/labol/tesuryo/", label: "ラボルの手数料" },
       { href: "/companies/paytner/", label: "ペイトナー（手数料10%・審査は毎日10〜19時）" },
       { href: "/articles/article-factoring-kuchikomi/", label: "ファクタリング会社の口コミ件数の比較" },
     ],
@@ -1121,7 +1125,7 @@ export const companyLeads: { [slug: string]: CompanyLead } = {
         },
         note: "比較サイトの中には「電話・問い合わせ窓口は平日10:00〜19:00」「土日祝は10:00〜16:00」と書くものがありますが、ラボルの公式トップ・よくある質問・運営会社のページにはこれらの時刻の記載がなく、公式FAQは電話での問い合わせを受け付けていないとしています（2026年10月31日確認）。年末年始・夜間の扱いも公式には個別の記載がありません。",
         links: [
-          { href: "/companies/labol/eigyo-jikan/", label: "ラボルの営業時間と他社の受付時間の比較 →" },
+          { href: "/companies/labol/eigyo-jikan/", label: "ラボルの営業時間・土日 →" },
         ],
       },
       {
@@ -1140,7 +1144,7 @@ export const companyLeads: { [slug: string]: CompanyLead } = {
           "審査状況や申込時間帯によっては希望に添えない場合がある（公式トップ）",
         ],
         links: [
-          { href: "/companies/labol/shinsa/", label: "ラボルの審査時間・必要書類・審査に通らない請求書 →" },
+          { href: "/companies/labol/shinsa/", label: "ラボルの審査時間・必要書類 →" },
         ],
       },
       {
@@ -1209,7 +1213,7 @@ export const companyLeads: { [slug: string]: CompanyLead } = {
       { label: "国税庁 法人番号公表サイト（法人番号 6011705001466）", url: "https://www.houjin-bangou.nta.go.jp/henkorireki-johoto.html?selHouzinNo=6011705001466" },
     ],
     related: [
-      { href: "/companies/support-kinyu/eigyo-jikan/", label: "日本中小企業金融サポート機構の営業時間・土日の扱い" },
+      { href: "/companies/support-kinyu/eigyo-jikan/", label: "ファクトル（日本中小企業金融サポート機構）の営業時間・土日" },
       { href: "/fees/", label: "掲載各社の手数料を公式値で比較" },
     ],
     // 「ファクトル 口コミ」：ファクトル単体と運営元（機構）の口コミを分けて掲載（2026年10月26日に各サイトの表示を確認）
@@ -1281,7 +1285,7 @@ export const companyLeads: { [slug: string]: CompanyLead } = {
       { label: "公式FAQ（即日入金）", url: "https://betrading.jp/service/faq/15/" },
     ],
     related: [
-      { href: "/companies/be-trading/eigyo-jikan/", label: "ビートレーディングの営業時間・土日の扱い（詳細）" },
+      { href: "/companies/be-trading/eigyo-jikan/", label: "ビートレーディングの営業時間・土日" },
       { href: "/companies/pmg/", label: "PMG（土日祝も電話8:00〜20:00）" },
       { href: "/companies/paytner/", label: "ペイトナー（審査は土日祝も10:00〜19:00）" },
     ],
@@ -1346,7 +1350,7 @@ export const companyLeads: { [slug: string]: CompanyLead } = {
       { site: "FundBridge", url: "https://fundbridge.jp/factoring/top-management/", note: "9件。表示されている投稿日は2026年3月2日" },
     ],
     related: [
-      { href: "/companies/top-management/eigyo-jikan/", label: "トップマネジメントの営業時間・土日の扱い（詳細）" },
+      { href: "/companies/top-management/eigyo-jikan/", label: "トップマネジメントの営業時間・土日" },
       { href: "/companies/pmg/", label: "PMG（土日祝も電話8:00〜20:00）" },
       { href: "/companies/paytner/", label: "ペイトナー（審査は土日祝も10:00〜19:00）" },
       { href: "/articles/article-ennavi-vs-top-management/", label: "えんナビとトップマネジメントの比較" },
@@ -1380,7 +1384,7 @@ export const companyLeads: { [slug: string]: CompanyLead } = {
       { label: "公式トップ（ご利用の流れ）", url: "https://paytoday.jp/" },
     ],
     related: [
-      { href: "/companies/paytoday/eigyo-jikan/", label: "PayTodayの営業時間（平日9:00〜17:00）" },
+      { href: "/companies/paytoday/eigyo-jikan/", label: "PayTodayの営業時間・土日（平日9:00〜17:00）" },
       { href: "/articles/article-factoring-hitsuyou-shorui/", label: "ファクタリングの必要書類（会社ごとの違い）" },
       { href: "/companies/yen-today/", label: "エントゥデイ（¥Today）は別サービス" },
     ],

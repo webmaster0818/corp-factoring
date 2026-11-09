@@ -306,7 +306,7 @@ export default function CompanyPage({
                   <p className="mt-2 text-xs text-gray-500">
                     公式サイト等で{lead.checkedAt}に確認。
                     {HOURS_LINK_SLUGS.includes(slug) && !lead.related?.some((r) => r.href.endsWith("/eigyo-jikan/")) && (
-                      <> <Link href={`/companies/${slug}/eigyo-jikan/`} className="text-blue-600 underline">{company.name}の営業時間・土日の扱いはこちら →</Link></>
+                      <> <Link href={`/companies/${slug}/eigyo-jikan/`} className="text-blue-600 underline">{company.name}の営業時間・土日 →</Link></>
                     )}
                     {lead.sources && lead.sources.length > 0 && (
                       <> <a href="#review-sources" className="text-blue-600 underline">口コミの出典一覧へ</a>／<a href="#editorial-check" className="text-blue-600 underline">公式で確認した事実へ</a></>
@@ -399,7 +399,7 @@ export default function CompanyPage({
                         {details.operatingHours.saturday && <>／土 {details.operatingHours.saturday}</>}
                         {details.operatingHours.sunday && <>／日 {details.operatingHours.sunday}</>}
                         {HOURS_LINK_SLUGS.includes(slug) && (
-                          <> — <Link href={`/companies/${slug}/eigyo-jikan/`} className="text-blue-600 underline whitespace-nowrap">営業時間の詳細</Link></>
+                          <> — <Link href={`/companies/${slug}/eigyo-jikan/`} className="text-blue-600 underline whitespace-nowrap">{company.name}の営業時間・土日</Link></>
                         )}
                       </td>
                     </tr>
@@ -435,11 +435,21 @@ export default function CompanyPage({
               )}
               <p className="mt-2 text-xs text-gray-500">※ ご利用前に、公式サイトにて最新の条件をご確認ください。手数料を公表していない会社は、見積もりにより個別に提示されます。</p>
               <div className="mt-4 border-t border-gray-100 pt-3">
-                {SUBPAGE_SLUGS.includes(slug) && (
+                {(SUBPAGE_SLUGS.includes(slug) || HOURS_LINK_SLUGS.includes(slug)) && (
                   <p className="mb-3 text-sm">
-                    <Link href={`/companies/${slug}/tesuryo/`} className="text-blue-600 underline">{company.name}の手数料と100万円の計算例 →</Link>
-                    <span className="mx-2 text-gray-300">|</span>
+                    {HOURS_LINK_SLUGS.includes(slug) && (
+                      <>
+                        <Link href={`/companies/${slug}/eigyo-jikan/`} className="text-blue-600 underline">{company.name}の営業時間・土日 →</Link>
+                        {SUBPAGE_SLUGS.includes(slug) && <span className="mx-2 text-gray-300">|</span>}
+                      </>
+                    )}
+                    {SUBPAGE_SLUGS.includes(slug) && (
+                      <>
                     <Link href={`/companies/${slug}/shinsa/`} className="text-blue-600 underline">{company.name}の審査時間・必要書類 →</Link>
+                    <span className="mx-2 text-gray-300">|</span>
+                    <Link href={`/companies/${slug}/tesuryo/`} className="text-blue-600 underline">{company.name}の手数料 →</Link>
+                      </>
+                    )}
                     {hasShinsaOchita(slug) && (
                       <>
                         <span className="mx-2 text-gray-300">|</span>

@@ -9,6 +9,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { DEFAULT_OG_IMAGES } from "@/lib/og";
 import { SubPageIntroBox } from "@/components/SubPageIntroBox";
+import { HOURS_LINK_SLUGS } from "@/data/hoursPages";
 import { getLastmod, toJaDate } from "@/lib/pageDates";
 
 const SITE = "https://corp-factoring.com";
@@ -280,7 +281,8 @@ export default async function CompanyFeePage({ params }: { params: Promise<{ slu
           <p className="text-sm font-bold text-gray-800">関連ページ</p>
           <ul className="mt-2 space-y-1.5 text-sm">
             <li>・<Link href={`/companies/${slug}/`} className="text-blue-600 underline">{company.name}の口コミ・評判・会社概要</Link></li>
-            <li>・<Link href={`/companies/${slug}/shinsa/`} className="text-blue-600 underline">{company.name}の審査（審査時間・必要書類・対象）</Link></li>
+            <li>・<Link href={`/companies/${slug}/shinsa/`} className="text-blue-600 underline">{company.name}の審査時間・必要書類</Link></li>
+            {HOURS_LINK_SLUGS.includes(slug) && <li>・<Link href={`/companies/${slug}/eigyo-jikan/`} className="text-blue-600 underline">{company.name}の営業時間・土日</Link></li>}
             <li>・<Link href="/fees/" className="text-blue-600 underline">ファクタリング{FEE_COMPANY_COUNT}社の手数料・最短入金の比較（公式サイトで確認）</Link></li>
             <li>・<Link href="/articles/article-factoring-tesuryo/" className="text-blue-600 underline">ファクタリングの手数料の相場と計算方法</Link></li>
           </ul>

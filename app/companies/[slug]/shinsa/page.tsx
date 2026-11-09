@@ -47,7 +47,21 @@ export default async function CompanyScreeningPage({ params }: { params: Promise
   const lead = getCompanyLead(slug);
   const ochitaHtml = await getShinsaOchitaHtml(slug);
 
-  const timeFacts = pickFacts(slug, /審査|入金スピード|受付/);
+  // 受付時間・営業時間の事実は営業時間ページ（/eigyo-jikan/）に出典つきで載せ、審査ページでは1行の要約とリンクにする（2026-11-10 E4）。
+  // 営業時間ページがない会社（coolpay 等）は従来どおり審査ページに残す。項目名に「審査」を含むもの（例「審査の対応時間」）は審査の事実として残す
+  const hasHoursPage = HOURS_LINK_SLUGS.includes(slug);
+  const isHoursFact = (label: string) => /受付|営業時間/.test(label) && !/審査/.test(label);
+  const allTimeFacts = pickFacts(slug, /審査|入金スピード|受付/);
+  const timeFacts = hasHoursPage ? allTimeFacts.filter((f) => !isHoursFact(f.label)) : allTimeFacts;
+  const movedHoursFacts = hasHoursPage ? allTimeFacts.filter((f) => isHoursFact(f.label)) : [];
+  // 冒頭の即答に出す審査時間（項目名「審査時間」「審査の対応時間」の公式確認値）
+  const reviewTimeFact = pickFacts(slug, /^審査(時間|の対応時間)$/)[0];
+  const reviewTimeDate = reviewTimeFact?.source.match(/\d{4}年\d{1,2}月\d{1,2}日/)?.[0] ?? ev.checkedAt;
+  const reviewTimeText = reviewTimeFact
+    ? /^審査時間(単体)?の(記載|明示)なし/.test(reviewTimeFact.value)
+      ? `${company.name}の審査時間は、当サイトが確認した公式ページに単独の記載がありません（${reviewTimeDate}確認）。`
+      : `${company.name}の審査時間（公式の記載）：${reviewTimeFact.value.replace(/。$/, "")}（${reviewTimeDate}確認）。`
+    : `${company.name}の審査時間は、公式サイトで確認できた範囲では単独で示されていません。`;
   const docFacts = pickFacts(slug, /必要書類/);
   const targetFacts = pickFacts(slug, /対象|取引方式|契約方式/);
   const rateFacts = pickFacts(slug, /通過率|実績表示/);
@@ -58,9 +72,10 @@ export default async function CompanyScreeningPage({ params }: { params: Promise
   const docText = docListed.length ? docListed.map((f) => f.value).join(" ") : "";
   // 確認日は事実の出典に書かれた日付を優先（事実ごとに再確認している会社があるため）
   const docDate = docFacts.map((f) => f.source.match(/\d{4}年\d{1,2}月\d{1,2}日/)?.[0]).find(Boolean) ?? ev.checkedAt;
-  const answer = `${company.name}の最短入金は公式表示で「${row.speed}」、対象は「${row.target}」です。${
+  // 冒頭の即答は「審査時間 → 必要書類 → 対象 → 最短入金」の順（検索語「◯◯ 審査時間」「◯◯ 必要書類」に先に答える。2026-11-10 E4）
+  const answer = `${reviewTimeText}${
     docText ? `必要書類は、公式表示で「${docText}」です。` : "必要書類は公式サイトで確認できた範囲では明示されていません。"
-  }（公式サイト・${docDate}確認）`;
+  }対象は「${row.target}」、最短入金は公式表示で「${row.speed}」です。（公式サイト・${docDate}確認）`;
 
   // 対象が近い他社（同じ審査ページを持つ会社から、個人事業主対応の有無が同じ会社を最大5社）
   // 「売掛先は法人のみ」は利用者の条件ではないため外して判定する（data/conditions.ts の kojinOk と同じ扱い）
@@ -161,9 +176,10 @@ export default async function CompanyScreeningPage({ params }: { params: Promise
           <h2 className="text-lg font-bold text-gray-900">審査時間と入金までの時間</h2>
           <p className="mt-3 text-sm leading-relaxed text-gray-800">最短入金の公式表示は「{row.speed}」、オンライン完結は「{row.online}」です。</p>
           {timeFacts.length > 0 && <Facts items={timeFacts} />}
-          {HOURS_LINK_SLUGS.includes(slug) && (
-            <p className="mt-3 text-sm">
-              <Link href={`/companies/${slug}/eigyo-jikan/`} className="text-blue-600 underline">{company.name}の営業時間・土日の扱い →</Link>
+          {hasHoursPage && (
+            <p className="mt-3 text-sm leading-relaxed text-gray-800">
+              受付時間・土日祝の扱い{movedHoursFacts.length > 0 ? "（公式で確認した電話・Webの受付時間）" : ""}は営業時間ページにまとめています：
+              <Link href={`/companies/${slug}/eigyo-jikan/`} className="text-blue-600 underline">{company.name}の営業時間・土日 →</Link>
             </p>
           )}
         </section>
@@ -244,7 +260,8 @@ export default async function CompanyScreeningPage({ params }: { params: Promise
           <p className="text-sm font-bold text-gray-800">関連ページ</p>
           <ul className="mt-2 space-y-1.5 text-sm">
             <li>・<Link href={`/companies/${slug}/`} className="text-blue-600 underline">{company.name}の口コミ・評判・会社概要</Link></li>
-            <li>・<Link href={`/companies/${slug}/tesuryo/`} className="text-blue-600 underline">{company.name}の手数料と100万円の計算例</Link></li>
+            <li>・<Link href={`/companies/${slug}/tesuryo/`} className="text-blue-600 underline">{company.name}の手数料</Link></li>
+            {hasHoursPage && <li>・<Link href={`/companies/${slug}/eigyo-jikan/`} className="text-blue-600 underline">{company.name}の営業時間・土日</Link></li>}
             <li>・<Link href="/fees/" className="text-blue-600 underline">ファクタリング{FEE_COMPANY_COUNT}社の手数料・最短入金の比較（公式サイトで確認）</Link></li>
           </ul>
         </section>
