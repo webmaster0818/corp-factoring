@@ -42,7 +42,7 @@ export function ReviewSection({ companyName, realRating, pros, cons }: ReviewSec
           ) : (
             <div className="bg-gray-50 border border-gray-200 rounded-xl p-6 mb-6">
               <p className="text-sm text-gray-600">
-                {companyName}については、社名・所在地が一致するGoogleマップ上の評価を確認できませんでした（2026年6月13日時点）。確認が取れ次第掲載します。
+                {companyName}のGoogleマップの口コミの件数は、当サイトでは掲載していません。
               </p>
             </div>
           )}
