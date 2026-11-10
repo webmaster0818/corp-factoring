@@ -917,7 +917,7 @@ export const editorialVerifications: { [slug: string]: EditorialVerification } =
       { label: "取引方式", value: "2社間ファクタリング（売掛先・取引先に通知されない）。3社間を提供する旨の明記なし", source: "公式「よくある質問」（urikakedo.com/question・2026年10月31日確認）" },
       { label: "契約方法", value: "クラウドサインでオンライン契約が可能。来訪は不要で、営業スタッフの出張にも対応", source: "公式「よくある質問」（urikakedo.com/question・2026年10月31日確認）" },
       { label: "債権譲渡登記", value: "「積極的な登記はいたしません」。まれに顧客の要望で設定するケースあり", source: "公式「ファクタリングとは」（urikakedo.com/factoring・2026年10月31日確認）" },
-      { label: "償還請求権", value: "償還請求権の無いファクタリングで、返還義務は発生しない", source: "公式「よくある質問」（urikakedo.com/question・2026年10月31日確認）" },
+      { label: "償還請求権", value: "償還請求権のないファクタリングで、返還義務は発生しない", source: "公式「よくある質問」（urikakedo.com/question・2026年10月31日確認）" },
       { label: "必要書類", value: "本人確認書類・入出金の通帳（Web通帳含む）・取引先との契約関連書類（請求書／見積書／基本契約書等）", source: "公式「よくある質問」（urikakedo.com/question・2026年10月31日確認）" },
       { label: "受付時間", value: "会社概要は「平日 AM9:30よりPM19:30（土日祝休み）」。一方、公式トップは「24時間365日 相談可能」、FAQは「24時間365日対応」と表記", source: "公式「会社概要」（urikakedo.com/company）・公式トップ・よくある質問（2026年10月31日確認）" },
       { label: "公式の実績表示", value: "FAQは「審査通過率は92%を超えております」、公式トップは売掛金対応率98%と表示", source: "公式「よくある質問」（urikakedo.com/question）・公式トップ（2026年10月31日確認）" },
