@@ -92,7 +92,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   if (!company || !SLUGS.includes(slug)) return { title: "ページが見つかりません" };
   const h = getCompanyDetails(slug).operatingHours;
   const checkedAt = HOURS_CHECKED_AT[slug] ?? "";
-  const title = `${NAME_ALIAS[slug] ?? company.name}の営業時間・受付時間は？${titleLabel(checkedAt)}`;
+  const title = `${NAME_ALIAS[slug] ?? company.name}の営業時間・受付時間は？土日祝の対応も${titleLabel(checkedAt)}`;
   const description = `${NAME_ALIAS[slug] ?? company.name}の受付時間は公式表示で「${h.weekdays}」。公式サイトで確認した営業時間、土日祝の扱い、営業時間外の申込の扱い、他社との受付時間の比較を掲載しています。掲載情報には確認日を記載しています。`;
   return {
     title,
@@ -216,7 +216,7 @@ export default async function CompanyHoursPage({ params }: { params: Promise<{ s
   const [pageUpdated, pageUpdatedIso] =
     PAGE_UPDATED_OVERRIDE[slug] ??
     (HOURS_ADDED_20261101.includes(slug) ? ["2026年11月1日", "2026-11-01"] : [PAGE_UPDATED, PAGE_UPDATED_ISO]);
-  const pageTitle = `${displayName}の営業時間・受付時間は？${titleLabel(checkedAt)}`;
+  const pageTitle = `${displayName}の営業時間・受付時間は？土日祝の対応も${titleLabel(checkedAt)}`;
 
   const articleLd = {
     "@context": "https://schema.org",
@@ -266,7 +266,7 @@ export default async function CompanyHoursPage({ params }: { params: Promise<{ s
         </nav>
 
         <h1 className="text-2xl font-bold text-gray-900 md:text-3xl">
-          {displayName}の営業時間・受付時間
+          {displayName}の営業時間・受付時間（土日祝の対応）
         </h1>
         <p className="mt-2 text-xs text-gray-500">
           最終確認日：{pageUpdated}（営業時間の公式サイト確認日：{checkedAt}）
@@ -355,6 +355,9 @@ export default async function CompanyHoursPage({ params }: { params: Promise<{ s
           <p className="mt-3 text-sm leading-relaxed text-gray-800">{offHoursAnswer}</p>
           <p className="mt-3 text-sm leading-relaxed text-gray-800">
             土日祝の受付・対応を希望する場合は、24時間365日受付を掲げる会社を含めて比較することをおすすめします。以下の比較表に、当サイトが公式サイトで確認した各社の受付時間を掲載しています。
+          </p>
+          <p className="mt-3 text-sm">
+            <Link href="/articles/article-factoring-donichi/" className="text-blue-600 underline">ファクタリングの土日対応：土日祝に審査・入金できる会社と平日のみの会社 →</Link>
           </p>
         </section>
 

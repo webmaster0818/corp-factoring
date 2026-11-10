@@ -17,7 +17,7 @@ const COMPARE_SLUGS = ["ennavi", "labol", "pmg", "accel-factor", "no1"];
 
 export async function generateMetadata(): Promise<Metadata> {
   const title =
-    "トップマネジメントの営業時間・受付時間は？【公式確認】";
+    "トップマネジメントの営業時間・受付時間は？土日祝の対応も【公式確認】";
   const description =
     "トップマネジメントの営業時間は平日10:00〜19:00（土日祝・年末年始は休業）。公式サイトで確認した受付時間、営業時間外の申込の扱い、他社との営業時間の比較を解説します。掲載情報には確認日を記載しています。";
   return {
@@ -76,7 +76,7 @@ export default function TopManagementHoursPage() {
   const articleLd = {
     "@context": "https://schema.org",
     "@type": "Article",
-    headline: "トップマネジメントの営業時間・受付時間は？【公式確認】",
+    headline: "トップマネジメントの営業時間・受付時間は？土日祝の対応も【公式確認】",
     description:
       "トップマネジメントの営業時間・受付時間を公式サイトで確認した内容をもとに解説しています。土日祝の扱い、営業時間外の申込の扱い、他社との比較も掲載しています。",
     dateModified: "2026-10-28",
@@ -128,7 +128,7 @@ export default function TopManagementHoursPage() {
         </nav>
 
         <h1 className="text-2xl font-bold text-gray-900 md:text-3xl">
-          {company.name}の営業時間・受付時間
+          {company.name}の営業時間・受付時間（土日祝の対応）
         </h1>
         <p className="mt-2 text-xs text-gray-500">
           最終確認日：2026年10月28日（営業時間の公式サイト確認日：{CHECKED_AT}）
@@ -184,6 +184,9 @@ export default function TopManagementHoursPage() {
           </p>
           <p className="mt-3 text-sm leading-relaxed text-gray-800">
             土日祝の受付・対応を希望する場合は、24時間365日受付を掲げる会社を含めて比較することをおすすめします。以下の比較表に、当サイトが公式サイトで確認した各社の受付時間を掲載しています。
+          </p>
+          <p className="mt-3 text-sm">
+            <Link href="/articles/article-factoring-donichi/" className="text-blue-600 underline">ファクタリングの土日対応：土日祝に審査・入金できる会社と平日のみの会社 →</Link>
           </p>
         </section>
 

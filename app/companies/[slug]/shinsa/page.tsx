@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const company = getCompanyBySlug(slug);
   const row = feeIndex.find((r) => r.slug === slug);
   if (!company || !row || !SUBPAGE_SLUGS.includes(slug)) return { title: "ページが見つかりません" };
-  const title = `${company.name}の審査は？審査時間・必要書類・対象を公式確認`;
+  const title = `${company.name}の審査は？審査時間・必要書類・審査落ちの理由を公式確認`;
   const descriptionFull = `${company.name}の審査について、公式サイトで確認した審査時間・最短入金（${row.speed}）・必要書類・対象（${row.target}）・審査で見られる点を掲載しています。審査に通らなかった場合の次の手も解説します。`;
   const descriptionShort = `${company.name}の審査について、公式サイトで確認した審査時間・最短入金（${row.speed}）・必要書類・対象・審査で見られる点と、通らなかった場合の次の手を掲載しています。`;
   const description = descriptionFull.length <= 160 ? descriptionFull : descriptionShort.length <= 160 ? descriptionShort : `${company.name}の審査について、公式サイトで確認した審査時間・必要書類・対象・審査で見られる点と、通らなかった場合の次の手を掲載しています。`;
@@ -146,7 +146,7 @@ export default async function CompanyScreeningPage({ params }: { params: Promise
           <Link href="/" className="hover:underline">ホーム</Link> ＞{" "}
           <Link href={`/companies/${slug}/`} className="hover:underline">{company.name}</Link> ＞ 審査
         </nav>
-        <h1 className="text-2xl font-bold text-gray-900 md:text-3xl">{company.name}の審査（審査時間・必要書類・対象）</h1>
+        <h1 className="text-2xl font-bold text-gray-900 md:text-3xl">{company.name}の審査（審査時間・必要書類・審査落ちの理由）</h1>
         <p className="mt-2 text-xs text-gray-500">
           {lastmod ? `更新日：${toJaDate(lastmod)}／` : ""}公式情報の編集部確認日：{ev.checkedAt}
         </p>

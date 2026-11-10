@@ -9,6 +9,8 @@ import { getTopicForArticle, getRelatedSlugs } from "@/data/topics";
 import { DEFAULT_OG_IMAGES } from "@/lib/og";
 import { toJaDate } from "@/lib/pageDates";
 import { ConditionTable } from "@/components/ConditionTable";
+import { SUBPAGE_SLUGS } from "@/data/subPages";
+import { HOURS_LINK_SLUGS } from "@/data/hoursPages";
 
 export async function generateStaticParams() {
   const slugs = getAllArticleSlugs();
@@ -290,6 +292,36 @@ export default async function ArticlePage({
             </Link>
           </section>
         )}
+
+        {/* 会社別ページへの導線（審査落ち→各社の審査ページ／土日→各社の営業時間ページ） */}
+        {(slug === "article-factoring-shinsa-ochita" || slug === "article-factoring-donichi") && (() => {
+          const isShinsa = slug === "article-factoring-shinsa-ochita";
+          const sub = isShinsa ? "shinsa" : "eigyo-jikan";
+          const allowed = isShinsa ? SUBPAGE_SLUGS : HOURS_LINK_SLUGS;
+          const list = factoringCompanies.filter((c) => allowed.includes(c.slug));
+          return (
+            <section className="mt-12">
+              <h2 className="text-lg font-bold text-[#1B3A5C] mb-2 flex items-center gap-2">
+                <span className="w-1 h-6 bg-[#1B3A5C] rounded-full inline-block"></span>
+                {isShinsa ? "会社別の審査（審査時間・必要書類・審査落ちの理由）" : "会社別の営業時間・土日祝の対応"}
+              </h2>
+              <p className="text-sm text-gray-700 mb-3">
+                {isShinsa
+                  ? `各社の公式サイトで確認した審査時間・必要書類と、公式の記載から分かる対象外になる条件を、会社ごとのページにまとめています（${list.length}社）。`
+                  : `各社の公式サイトで確認した営業時間・受付時間と、土日祝の扱いを、会社ごとのページにまとめています（${list.length}社）。`}
+              </p>
+              <ul className="grid grid-cols-2 md:grid-cols-3 gap-x-4 gap-y-1 text-sm">
+                {list.map((c) => (
+                  <li key={c.slug}>
+                    <Link href={`/companies/${c.slug}/${sub}/`} className="text-blue-600 underline">
+                      {c.name}の{isShinsa ? "審査" : "営業時間"}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          );
+        })()}
 
         {/* 関連記事 */}
         {relatedArticles.length > 0 && (
