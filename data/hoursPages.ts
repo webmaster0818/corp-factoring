@@ -63,6 +63,12 @@ export const HOURS_SLUGS = [
   "mufg-factor",
   "ricoh-lease",
   "medley",
+  // ▼ 2026年11月10日 追加（新規掲載6社のうち、公式サイトに営業時間・受付時間の記載がある5社。スリーエスは記載がないため掲載しない）
+  "sokuderu",
+  "jps",
+  "fps-medical",
+  "progress",
+  "jbl",
 ] as const;
 
 // 2026年11月1日に追加した営業時間ページ（ページの最終確認日を2026年11月1日とする）
@@ -159,6 +165,12 @@ export const HOURS_CHECKED_AT: { [slug: string]: string } = {
   "mufg-factor": "2026年11月6日",
   "ricoh-lease": "2026年11月6日",
   "medley": "2026年11月6日",
+  // ▼ 2026年11月10日 追加分（新規掲載・各社公式サイトで確認）
+  "sokuderu": "2026年11月10日",
+  "jps": "2026年11月10日",
+  "fps-medical": "2026年11月10日",
+  "progress": "2026年11月10日",
+  "jbl": "2026年11月10日",
 };
 
 // 営業時間比較表に載せる候補（operatingHoursMapに一次確認値がある会社のみ）。

@@ -115,6 +115,13 @@ export default async function ArticlePage({
     "mufg-factor": ["三菱ＵＦＪファクター", "三菱UFJファクター"],
     "ricoh-lease": ["リコーリース"],
     medley: ["メドレー早期資金サポート"],
+    // 2026年11月10日 新規掲載6社
+    "three-s": ["スリーエス"],
+    sokuderu: ["ソクデル"],
+    jps: ["JPS"],
+    "fps-medical": ["FPSメディカル", "アクリーティブ"],
+    progress: ["プログレス", "株式会社Progress"],
+    jbl: ["JBL", "売掛金PAY"],
   };
   const articleText = article ? article.content.replace(/<[^>]+>/g, " ") : "";
   const mentionedCompanies = article

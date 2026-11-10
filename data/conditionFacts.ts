@@ -2,6 +2,7 @@
 // 2026年11月1日に各社の公式サイトで確認（既に当サイトのデータで公式確認済みの項目は、その確認日を使用）。
 // 2026年11月3日に新規掲載4社（escom・wit・kensetsukun・factors）を各社の公式サイトで確認して追加（計47社）。
 // 2026年11月6日に新規掲載6社（kensetsu-pay・bizpay・chatwork-sakibarai・mufg-factor・ricoh-lease・medley）を各社の公式サイトで確認して追加（計53社）。
+// 2026年11月10日に新規掲載6社（three-s・sokuderu・jps・fps-medical・progress・jbl）を各社の公式サイトで確認して追加（計59社）。
 // value は公式の記載を当サイトが区分したもの：「可」「不可」「条件付き（…）」「不要と明記」「一覧に記載なし」「公式に記載なし」。
 // quote は公式の文言の抜き出し、source は出典ページ。推測で埋めた値はない。
 export type ConditionFactKey = "donichi" | "nisha" | "sansha" | "kessansho" | "kakutei" | "touki" | "docs" | "shinryou" | "kaigo";
@@ -592,5 +593,72 @@ export const conditionFacts: { [slug: string]: Partial<Record<ConditionFactKey, 
     docs: {"value": "一覧あり", "source": "https://www.medley-fs.co.jp/factoring", "checkedAt": "2026年11月6日", "quote": "（3）連帯保証人（代表者）様の本人確認書類→運転免許証の表裏もしくは健康保険証の表裏、医師の場合は医師免許証、薬剤師の場合は薬剤師免許証", "note": "他社利用中は契約書類と残高がわかるもの・パンフレット等も", "list": ["履歴事項全部証明書", "印鑑証明書", "連帯保証人（代表者）の本人確認書類", "許認可証の写し", "請求書（直近8ヶ月分）", "支払決定通知書（直近6ヶ月分）", "入金が確認できる通帳明細（直近6か月分）"], "count": 7},
     shinryou: {"value": "可", "source": "https://www.medley-fs.co.jp/factoring", "checkedAt": "2026年11月6日", "quote": "対象債権 : 診療報酬債権、介護給付費債権、障がい者自立支援給付費債権、調剤報酬債権"},
     kaigo: {"value": "可", "source": "https://www.medley-fs.co.jp/factoring", "checkedAt": "2026年11月6日", "quote": "対象債権 : 診療報酬債権、介護給付費債権、障がい者自立支援給付費債権、調剤報酬債権"},
+  },
+  // ▼ 2026年11月10日 新規掲載6社（各社公式サイトで確認。記載のない項目は「公式に記載なし」）
+  "three-s": {
+    donichi: {"value": "公式に記載なし", "source": "https://3s-threes.com/flow/", "checkedAt": "2026年11月10日", "note": "営業時間・受付時間・土日祝の記載なし。申込は24時間可能と記載"},
+    nisha: {"value": "可", "source": "https://3s-threes.com/qa/", "checkedAt": "2026年11月10日", "quote": "３社間契約では通知・承諾が必要となりますが、２社間契約の場合ですと通知・承諾を留保という形ですので必要ありません。"},
+    sansha: {"value": "可", "source": "https://3s-threes.com/qa/", "checkedAt": "2026年11月10日", "quote": "３社間契約では通知・承諾が必要となりますが、２社間契約の場合ですと通知・承諾を留保という形ですので必要ありません。", "note": "3社間の率は記載なし"},
+    kessansho: {"value": "一覧に記載なし", "source": "https://3s-threes.com/flow/", "checkedAt": "2026年11月10日", "quote": "必要書類は【通帳３か月分】【買取対象請求書】の2点のみ"},
+    kakutei: {"value": "一覧に記載なし", "source": "https://3s-threes.com/flow/", "checkedAt": "2026年11月10日", "quote": "必要書類は【通帳３か月分】【買取対象請求書】の2点のみ"},
+    touki: {"value": "可", "source": "https://3s-threes.com/qa/", "checkedAt": "2026年11月10日", "quote": "原則は不要ですが、登記が必要な場合があります。", "note": "利用者の了承を得ずに登記を設定しないと記載"},
+    docs: {"value": "一覧あり", "source": "https://3s-threes.com/flow/", "checkedAt": "2026年11月10日", "quote": "必要書類は【通帳３か月分】【買取対象請求書】の2点のみ", "list": ["通帳（3か月分）", "買取対象の請求書"], "count": 2},
+    shinryou: {"value": "公式に記載なし", "source": "https://3s-threes.com/3s_service/", "checkedAt": "2026年11月10日"},
+    kaigo: {"value": "公式に記載なし", "source": "https://3s-threes.com/3s_service/", "checkedAt": "2026年11月10日"},
+  },
+  "sokuderu": {
+    donichi: {"value": "不可", "source": "https://www.sokuderu.com/company.html", "checkedAt": "2026年11月10日", "quote": "営業時間 9:30～18:30 定休日 土、日、祝日、年末年始", "note": "公式トップに「土日祝・営業時間外のお申込みはこちら」としてLINE登録の案内あり。土日祝の審査・入金の記載なし"},
+    nisha: {"value": "可", "source": "https://www.sokuderu.com/about.html", "checkedAt": "2026年11月10日", "quote": "2社間ファクタリングは売掛先に知られることなく資金調達が可能です。"},
+    sansha: {"value": "可", "source": "https://www.sokuderu.com/about.html", "checkedAt": "2026年11月10日", "quote": "ソクデルでは2社間、3社間のファクタリングで対応が可能となります。", "note": "介護報酬・診療報酬の項の記載。同ページは一般の3社間ファクタリングも案内。「ご利用までの流れ」は2社間ファクタリング契約と記載"},
+    kessansho: {"value": "不可", "source": "https://www.sokuderu.com/merit.html", "checkedAt": "2026年11月10日", "quote": "身分証明書、請求書、通帳、決算書等をご用意下さい。"},
+    kakutei: {"value": "公式に記載なし", "source": "https://www.sokuderu.com/merit.html", "checkedAt": "2026年11月10日", "quote": "身分証明書、請求書、通帳、決算書等をご用意下さい。", "note": "個人事業主も利用可。個人事業主の確定申告書の扱いの記載なし"},
+    touki: {"value": "可", "source": "https://www.sokuderu.com/faq.html", "checkedAt": "2026年11月10日", "quote": "原則登記はしておりません。"},
+    docs: {"value": "一覧あり", "source": "https://www.sokuderu.com/merit.html", "checkedAt": "2026年11月10日", "quote": "身分証明書、請求書、通帳、決算書等をご用意下さい。", "note": "Q&Aは買取実行に必要な書類として「見積書、発注書、請求書、通知書、納品書（検収書）など」", "list": ["身分証明書", "請求書", "通帳", "決算書等"], "count": 4},
+    shinryou: {"value": "可", "source": "https://www.sokuderu.com/about.html", "checkedAt": "2026年11月10日", "quote": "ソクデルでは2社間、3社間のファクタリングで対応が可能となります。", "note": "介護報酬・診療報酬ファクタリングの項"},
+    kaigo: {"value": "可", "source": "https://www.sokuderu.com/about.html", "checkedAt": "2026年11月10日", "quote": "ソクデルでは2社間、3社間のファクタリングで対応が可能となります。", "note": "介護報酬・診療報酬ファクタリングの項"},
+  },
+  "jps": {
+    donichi: {"value": "不可", "source": "https://www.jps-tokyo.co.jp/company/", "checkedAt": "2026年11月10日", "quote": "営業時間／9：30～19：00 定休日／ 土・日・祝"},
+    nisha: {"value": "可", "source": "https://www.jps-tokyo.co.jp/faq/", "checkedAt": "2026年11月10日", "quote": "通知が必要な3社間ファクタリング、通知が不要な2社ファクタリングのサービスをご用意しております。"},
+    sansha: {"value": "可", "source": "https://www.jps-tokyo.co.jp/faq/", "checkedAt": "2026年11月10日", "quote": "通知が必要な3社間ファクタリング、通知が不要な2社ファクタリングのサービスをご用意しております。", "note": "3社間の手数料は原則2〜8%"},
+    kessansho: {"value": "不可", "source": "https://www.jps-tokyo.co.jp/guide/", "checkedAt": "2026年11月10日", "quote": "【必要書類】 ・通帳の写し ・請求書 ・決算書 ・代表者様の身分証明書"},
+    kakutei: {"value": "不可", "source": "https://www.jps-tokyo.co.jp/faq/", "checkedAt": "2026年11月10日", "note": "対象外（法人限定）"},
+    touki: {"value": "可", "source": "https://www.jps-tokyo.co.jp/faq/", "checkedAt": "2026年11月10日", "quote": "原則登記は不要です。"},
+    docs: {"value": "一覧あり", "source": "https://www.jps-tokyo.co.jp/guide/", "checkedAt": "2026年11月10日", "quote": "【必要書類】 ・通帳の写し ・請求書 ・決算書 ・代表者様の身分証明書", "list": ["通帳の写し", "請求書", "決算書", "代表者の身分証明書"], "count": 4},
+    shinryou: {"value": "可", "source": "https://www.jps-tokyo.co.jp/factoring/medical-fees-factoring/", "checkedAt": "2026年11月10日", "quote": "診療報酬ファクタリングでは、社保や国保の診療報酬債権でファクタリングのお取引が可能です。"},
+    kaigo: {"value": "可", "source": "https://www.jps-tokyo.co.jp/factoring/medical-fees-factoring/", "checkedAt": "2026年11月10日", "quote": "JPSでは介護報酬ファクタリングや調剤報酬ファクタリングを含めて”診療報酬ファクタリング”と称しています。"},
+  },
+  "fps-medical": {
+    donichi: {"value": "不可", "source": "https://accretive-factoring.jp/company/", "checkedAt": "2026年11月10日", "quote": "営業時間 平日 9:00～18:00", "note": "申込は専用サイト「Medicare in」から24時間365日。土日祝の審査・入金の記載なし"},
+    nisha: {"value": "公式に記載なし", "source": "https://accretive-factoring.jp/faq/", "checkedAt": "2026年11月10日", "quote": "支払担当機関への債権譲渡通知書の発送は当社が代行いたしますので、ご安心ください。", "note": "支払担当機関に債権譲渡を通知する方式"},
+    sansha: {"value": "可", "source": "https://accretive-factoring.jp/faq/", "checkedAt": "2026年11月10日", "quote": "支払担当機関への債権譲渡通知書の発送は当社が代行いたしますので、ご安心ください。", "note": "診療報酬ファクタリングのページは「大きくは3者間に区分できますが」と説明。手数料率は月0.25%〜"},
+    kessansho: {"value": "一覧に記載なし", "source": "https://accretive-factoring.jp/faq/", "checkedAt": "2026年11月10日", "quote": "まだ開業して間もないため決算書がないのですが、申込みは可能ですか？ 可能です。", "note": "審査の書類は指定通知書・請求書・決定額通知書など（申込内容により変わる）"},
+    kakutei: {"value": "一覧に記載なし", "source": "https://accretive-factoring.jp/faq/", "checkedAt": "2026年11月10日", "quote": "指定通知書、請求書、決定額通知書などをご提出いただきます。", "note": "個人事業主も利用可"},
+    touki: {"value": "不要と明記", "source": "https://accretive-factoring.jp/faq/", "checkedAt": "2026年11月10日", "quote": "債権譲渡登記は必要ですか？ 不要です。"},
+    docs: {"value": "一覧あり", "source": "https://accretive-factoring.jp/faq/", "checkedAt": "2026年11月10日", "quote": "指定通知書、請求書、決定額通知書などをご提出いただきます。", "note": "審査時の書類。契約時は印鑑証明書・履歴事項全部証明書。申込内容により必要書類は変わる", "list": ["指定通知書", "請求書", "決定額通知書"], "count": 3},
+    shinryou: {"value": "可", "source": "https://www.accretive.jp/service/finance_medicare_factoring/", "checkedAt": "2026年11月10日", "quote": "医療機関様、調剤薬局様、介護事業者様等が、国保連や支払基金（支払担当機関）に対して有する診療、調剤、介護報酬債権等を、当社が譲り受けることにより、早期に資金化（お支払）するサービスです。"},
+    kaigo: {"value": "可", "source": "https://www.accretive.jp/service/finance_medicare_factoring/", "checkedAt": "2026年11月10日", "quote": "医療機関様、調剤薬局様、介護事業者様等が、国保連や支払基金（支払担当機関）に対して有する診療、調剤、介護報酬債権等を、当社が譲り受けることにより、早期に資金化（お支払）するサービスです。"},
+  },
+  "progress": {
+    donichi: {"value": "不可", "source": "https://progresstokyo.com/", "checkedAt": "2026年11月10日", "quote": "受付時間：平日 10:00～18：00 定休日：土日・祝日"},
+    nisha: {"value": "可", "source": "https://progresstokyo.com/", "checkedAt": "2026年11月10日", "quote": "お客さまと弊社で行う2社間ファクタリングであればお取引先さまに知られることはありません。"},
+    sansha: {"value": "可", "source": "https://progresstokyo.com/", "checkedAt": "2026年11月10日", "quote": "当社では3者間ファクタリングも実施しておりますが", "note": "手数料ページは3社間3%から"},
+    kessansho: {"value": "不可", "source": "https://progresstokyo.com/conditions", "checkedAt": "2026年11月10日", "quote": "面談の際には身分証含め、下記の書類をご用意ください。", "note": "面談時の書類に決算書を含む"},
+    kakutei: {"value": "公式に記載なし", "source": "https://progresstokyo.com/conditions", "checkedAt": "2026年11月10日", "note": "個人事業主も利用可。面談時の書類は決算書・住民票などで、個人事業主の確定申告書の扱いの記載なし"},
+    touki: {"value": "可", "source": "https://progresstokyo.com/", "checkedAt": "2026年11月10日", "quote": "弊社ファクタリングサービスでは、原則として登記なしでご利用いただけます。"},
+    docs: {"value": "一覧あり", "source": "https://progresstokyo.com/conditions", "checkedAt": "2026年11月10日", "quote": "面談の際には身分証含め、下記の書類をご用意ください。", "note": "請求書・契約書・支払通知書などは送信フォームから送ることも可", "list": ["売掛金の請求書・契約書・支払通知書など", "登記簿謄本", "印鑑証明", "決算書", "実印", "身分証明書", "入金口座・当座照合表（原本）", "住民票"], "count": 8},
+    shinryou: {"value": "可", "source": "https://progresstokyo.com/", "checkedAt": "2026年11月10日", "quote": "医療法人や介護事業者向けのサービスです。 介護報酬や診療報酬の支払通知書や給付費請求書を売掛債権として買い取らせていただきます。"},
+    kaigo: {"value": "可", "source": "https://progresstokyo.com/", "checkedAt": "2026年11月10日", "quote": "医療法人や介護事業者向けのサービスです。 介護報酬や診療報酬の支払通知書や給付費請求書を売掛債権として買い取らせていただきます。"},
+  },
+  "jbl": {
+    donichi: {"value": "条件付き（公式内で表記が異なる：会社案内などは土日祝の契約・振込に対応、ヘッダーの受付時間は平日9:00〜19:00）", "source": "https://jbl.tokyo/company/", "checkedAt": "2026年11月10日", "quote": "土・日・祝日の契約とお振込にも対応しているため、365日いつでも最短即日で事業資金を調達できます。", "note": "よくある質問は土日祝の入金も条件は同じで受付は9時〜19時。同社の売掛金PAYのサイトの営業時間は平日9:00〜19:00"},
+    nisha: {"value": "可", "source": "https://jbl.tokyo/faq/", "checkedAt": "2026年11月10日", "quote": "3社間ファクタリングは、売掛先（取引先）への債権譲渡通知が必須となりますが、2社間ファクタリングの場合は売掛先への通知は必要ございません。"},
+    sansha: {"value": "可", "source": "https://jbl.tokyo/flow/", "checkedAt": "2026年11月10日", "quote": "3社間ファクタリングをご希望の場合は、売掛先企業様の審査も実施", "note": "3社間の率は記載なし"},
+    kessansho: {"value": "不可", "source": "https://jbl.tokyo/flow/", "checkedAt": "2026年11月10日", "quote": "決算書 直近1期分 (個人事業主様は確定申告書をご用意ください)"},
+    kakutei: {"value": "不可", "source": "https://jbl.tokyo/flow/", "checkedAt": "2026年11月10日", "quote": "決算書 直近1期分 (個人事業主様は確定申告書をご用意ください)", "note": "個人事業主は確定申告書が必要"},
+    touki: {"value": "条件付き（原則必要。事業や資金繰りに支障が生じる可能性がある場合は留保も可）", "source": "https://jbl.tokyo/faq/", "checkedAt": "2026年11月10日", "quote": "原則必要ですが、お客様の事業内容や今後の資金繰り等に支障が生じる可能性がある場合は留保してご契約することもできます。"},
+    docs: {"value": "一覧あり", "source": "https://jbl.tokyo/flow/", "checkedAt": "2026年11月10日", "quote": "売却希望の請求書／代表者様の身分証明書／預金通帳・当座勘定照合表／決算書／その他成因資料", "list": ["売却希望の請求書", "代表者の身分証明書（顔写真付き）", "預金通帳・当座勘定照合表（過去6ヶ月分）", "決算書（直近1期分。個人事業主は確定申告書）", "その他成因資料"], "count": 5},
+    shinryou: {"value": "可", "source": "https://jbl.tokyo/", "checkedAt": "2026年11月10日", "quote": "医療・介護事業者様向けのファクタリングサービス。各種報酬債権の早期回収を実現します"},
+    kaigo: {"value": "可", "source": "https://jbl.tokyo/", "checkedAt": "2026年11月10日", "quote": "医療・介護事業者様向けのファクタリングサービス。各種報酬債権の早期回収を実現します"},
   },
 };

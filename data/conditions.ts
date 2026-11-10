@@ -144,11 +144,12 @@ export const CONDITIONS: { [articleSlug: string]: ConditionDef } = {
   "article-factoring-2sha-3sha": {
     key: "sansha",
     heading: "3社間ファクタリングに対応する会社（3社間の手数料の下限が低い順）",
-    criteria: "公式サイトで3社間ファクタリングに対応していると確認できた会社を、3社間の手数料の下限が低い順に掲載しています（ページによって率の表記が異なる会社・金額別の例示だけの会社は、表示の中で最も低い率で並べ、率を公表していない会社は末尾）。2社間は、掲載53社のうち45社が対応と記載しているため表にしていません。",
+    criteria: "公式サイトで3社間ファクタリングに対応していると確認できた会社を、3社間の手数料の下限が低い順に掲載しています（ページによって率の表記が異なる会社・金額別の例示だけの会社は、表示の中で最も低い率で並べ、率を公表していない会社と、月あたりの率で示している報酬専用のサービスは末尾）。2社間は、掲載59社のうち50社が対応と記載しているため表にしていません。",
     evidenceLabel: "3社間の手数料（公式表示）",
     evidence: (r) => r.fee3,
     match: factIs("sansha", "可", "条件付き"),
-    sortKey: (r) => parseRate(r.fee3).min ?? lowestPct(r.fee3),
+    // 「月0.25%〜」のような月あたりの率（FPSメディカル）は1回あたりの率と並べられないため末尾に置く（2026-11-10）
+    sortKey: (r) => (/^月/.test(r.fee3) ? 98 : parseRate(r.fee3).min ?? lowestPct(r.fee3)),
   },
   "article-factoring-kessansho-fuyou": {
     key: "kessansho",

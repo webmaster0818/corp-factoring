@@ -173,10 +173,10 @@ export default function FeesPage() {
               <div className="rounded-lg border border-gray-200 bg-gray-50 p-4 text-sm text-gray-700 mb-6">
                 <ul className="space-y-1.5 list-disc pl-5">
                   <li><strong>並びの基準：</strong>各社の公式サイトに表示された2社間ファクタリングの手数料の下限の率が低い順です。同じ率の会社は当サイトの掲載順で、順位やおすすめではありません。</li>
-                  <li><strong>母数：</strong>当サイト掲載の{FEE_COMPANY_COUNT}社。そのうち2社間手数料の下限の率を公表している28社（一律の率の会社を除く）の中で、下限が2%未満だった{LOW_FEE2.length}社です。</li>
+                  <li><strong>母数：</strong>当サイト掲載の{FEE_COMPANY_COUNT}社。そのうち2社間手数料の下限の率を公表している31社（一律の率の会社を除く）の中で、下限が2%未満だった{LOW_FEE2.length}社です。</li>
                   <li><strong>含めていない会社：</strong>一律の率の会社（ペイトナー・ラボル・バイオン・Chatwork 先払い。いずれも一律10%）、公式内でページによって下限の表示が異なる会社（例：建設Payはサイトに1%〜、運営会社の自社サイトに2%〜）、率を公表していない会社、2社間の手数料の記載がない会社。</li>
                   <li><strong>確認日：</strong>{LOW_FEE2_CHECKED}に{LOW_FEE2.length}社の公式サイトで下限の表示を確認しました。2社間・3社間の欄は当サイトの記録（下の一覧と同じ）です。</li>
-                  <li>区分の方法は「<Link href="/articles/article-factoring-koushiki-data/" className="text-blue-600 underline">ファクタリング会社53社の公式表示の集計</Link>」の表1（2社間手数料の下限の分布）と同じです。</li>
+                  <li>区分の方法は「<Link href="/articles/article-factoring-koushiki-data/" className="text-blue-600 underline">ファクタリング会社59社の公式表示の集計</Link>」の表1（2社間手数料の下限の分布）と同じです。</li>
                 </ul>
               </div>
 
@@ -214,7 +214,7 @@ export default function FeesPage() {
               <div id="low-fee-3" className="mt-8">
                 <h3 className="text-lg font-black text-gray-900 mb-2">3社間の手数料の下限を数字で示している会社（参考）</h3>
                 <p className="text-sm text-gray-700 leading-relaxed mb-3">
-                  3社間ファクタリング（売掛先の承諾を得て売掛金を譲渡する方式）は、2社間とは別に示します。当サイトの記録（2026年10月14日〜11月8日確認）で、3社間の手数料の下限が1.2%以下と表示している会社は次のとおりです。医療・介護の報酬だけを対象とするサービスは、対象が限られるため分けて記載しています。
+                  3社間ファクタリング（売掛先の承諾を得て売掛金を譲渡する方式）は、2社間とは別に示します。当サイトの記録（2026年10月14日〜11月10日確認）で、3社間の手数料の下限が1.2%以下と表示している会社は次のとおりです。医療・介護の報酬だけを対象とするサービスは、対象が限られるため分けて記載しています。
                 </p>
                 <div className="overflow-x-auto rounded-xl border border-gray-200">
                   <table className="w-full text-sm">
@@ -246,7 +246,7 @@ export default function FeesPage() {
                 </div>
                 <p className="text-sm font-bold text-gray-900 mt-4 mb-2">医療・介護の報酬専用のサービス</p>
                 <ul className="space-y-1.5 text-sm text-gray-700 list-disc pl-5">
-                  {["mufg-factor", "kaipoke-early", "medley"].map((slug) => {
+                  {["mufg-factor", "kaipoke-early", "medley", "fps-medical"].map((slug) => {
                     const r = feeIndex.find((x) => x.slug === slug);
                     if (!r) return null;
                     return (
@@ -257,7 +257,7 @@ export default function FeesPage() {
                   })}
                 </ul>
                 <p className="text-xs text-gray-500 mt-2">
-                  ※ 三菱ＵＦＪファクターは診療報酬、カイポケ早期入金・メドレー早期資金サポートは介護・医療などの報酬を、国保連・支払基金への通知で買い取るサービスです。一般の企業間の請求書には使えません。メドレーの「最安0.3%〜」はメドレーグループのサービスの利用実績がある場合の率です。
+                  ※ 三菱ＵＦＪファクターは診療報酬、カイポケ早期入金・メドレー早期資金サポート・FPSメディカル（アクリーティブ）は介護・医療などの報酬を、国保連・支払基金への通知で買い取るサービスです。一般の企業間の請求書には使えません。メドレーの「最安0.3%〜」はメドレーグループのサービスの利用実績がある場合の率です。FPSメディカル（アクリーティブ）の「月0.25%〜」は月あたりの率（年率換算3%〜）で、1回あたりの率とは単位が異なります。
                 </p>
               </div>
             </CardContent>
@@ -273,7 +273,7 @@ export default function FeesPage() {
             <CardContent className="pt-6">
               <div className="space-y-6">
                 <p className="text-gray-700 leading-relaxed">
-                  手数料の相場を示す公的な統計は見当たりません。当サイトでは、平均を出さず、各社の公式表示を社数で数えています（「<Link href="/articles/article-factoring-koushiki-data/" className="text-blue-600 underline">53社の公式表示の集計</Link>」）。
+                  手数料の相場を示す公的な統計は見当たりません。当サイトでは、平均を出さず、各社の公式表示を社数で数えています（「<Link href="/articles/article-factoring-koushiki-data/" className="text-blue-600 underline">59社の公式表示の集計</Link>」）。
                 </p>
 
                 <div className="grid md:grid-cols-2 gap-6">
@@ -281,21 +281,21 @@ export default function FeesPage() {
                     <h3 className="font-black text-blue-700 mb-3 text-xl">2社間ファクタリング</h3>
                     <p className="text-sm text-gray-700 mb-2">売掛先に知らせずに、利用者とファクタリング会社の2社で契約する方式です。</p>
                     <ul className="space-y-1.5 text-sm text-gray-700 list-disc pl-5">
-                      <li>掲載53社のうち、2社間に対応すると公式に記載している会社は45社</li>
-                      <li>2社間手数料の下限の率を公表している28社のうち、12社が2%未満、5社が5%以上</li>
+                      <li>掲載59社のうち、2社間に対応すると公式に記載している会社は50社</li>
+                      <li>2社間手数料の下限の率を公表している31社のうち、12社が2%未満、7社が5%以上</li>
                     </ul>
                   </div>
                   <div className="bg-green-50 p-5 rounded-xl border border-green-100">
                     <h3 className="font-black text-green-700 mb-3 text-xl">3社間ファクタリング</h3>
                     <p className="text-sm text-gray-700 mb-2">売掛先の承諾を得て、売掛先から直接ファクタリング会社に支払ってもらう方式です。売掛先に利用が知られます。</p>
                     <ul className="space-y-1.5 text-sm text-gray-700 list-disc pl-5">
-                      <li>掲載53社のうち、3社間に対応すると公式に記載している会社は30社、そのうち3社間の率を数字で示している会社は15社</li>
-                      <li>2社間・3社間の両方の下限を数字で示している11社では、3社間の下限が2社間より低い会社が8社、同じ会社が3社、高い会社は0社</li>
+                      <li>掲載59社のうち、3社間に対応すると公式に記載している会社は36社、そのうち3社間の率を数字で示している会社は18社</li>
+                      <li>2社間・3社間の両方の下限を数字で示している12社では、3社間の下限が2社間より低い会社が9社、同じ会社が3社、高い会社は0社</li>
                     </ul>
                   </div>
                 </div>
                 <p className="text-xs text-gray-500">
-                  ※ 11社の内訳（2社間の下限→3社間の下限）：ビートレーディング4%→2%、アクセルファクター1%→0.5%、トップ・マネジメント3.5%→0.5%、エーストラスト5%→1.0%、ファクタリングのTRY3%→1.2%、エスコム5%→1.5%、事業資金エージェント5%→1.5%、ネクストワン5%→1.5%（3社間は公式内で表記が異なり、いずれも1.5%〜）、株式会社No.1・ベストファクター・インボイスPayは同じ率。当サイトの記録（2026年10月14日〜11月8日確認）から数えました。
+                  ※ 12社の内訳（2社間の下限→3社間の下限）：ビートレーディング4%→2%、アクセルファクター1%→0.5%、トップ・マネジメント3.5%→0.5%、エーストラスト5%→1.0%、ファクタリングのTRY3%→1.2%、エスコム5%→1.5%、事業資金エージェント5%→1.5%、ネクストワン5%→1.5%（3社間は公式内で表記が異なり、いずれも1.5%〜）、JPS5%→2%（よくある質問の原則）、株式会社No.1・ベストファクター・インボイスPayは同じ率。当サイトの記録（2026年10月14日〜11月10日確認）から数えました。
                 </p>
 
                 <div>
@@ -404,7 +404,7 @@ export default function FeesPage() {
                   },
                   {
                     title: "2. 3社間ファクタリングを使えるか確かめる",
-                    description: "2社間・3社間の両方の下限を数字で示している11社では、3社間の下限が2社間より低い会社が8社、同じ会社が3社でした。売掛先の承諾を得られる場合は、3社間の見積もりも取ってみてください。",
+                    description: "2社間・3社間の両方の下限を数字で示している12社では、3社間の下限が2社間より低い会社が9社、同じ会社が3社でした。売掛先の承諾を得られる場合は、3社間の見積もりも取ってみてください。",
                     color: "emerald",
                   },
                   {

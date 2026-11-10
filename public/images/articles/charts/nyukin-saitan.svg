@@ -1,33 +1,33 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="460" height="476" viewBox="0 0 460 476" role="img" aria-labelledby="t d" font-family="'Hiragino Kaku Gothic ProN','Hiragino Sans','Noto Sans JP','Noto Sans CJK JP','Yu Gothic','YuGothic','Meiryo',sans-serif">
 <title id="t">最短入金の表示（公式）の分布</title>
-<desc id="d">最短60分以内（「最短5分」〜「最短60分」）12社、最短60分超〜6時間（「最短90分」〜「最短6時間」）11社、最短即日（時間の表示なし）14社、公式内で最短の表示が異なる10社、当日以外の表示（最短1日・営業日・数日）6社</desc>
+<desc id="d">最短60分以内（「最短5分」〜「最短60分」）13社、最短60分超〜6時間（「最短90分」〜「最短6時間」）11社、最短即日（時間の表示なし）16社、公式内で最短の表示が異なる12社、当日以外の表示（最短1日・営業日・数日）7社</desc>
 <rect width="460" height="476" fill="#ffffff"/>
 <rect x="0.5" y="0.5" width="459" height="475" fill="none" stroke="#dbe3ec"/>
 <text x="18" y="30" font-size="20" font-weight="700" fill="#1f2937">最短入金の表示（公式）の分布</text>
 <text x="18" y="65" font-size="17" fill="#1f2937">最短60分以内</text>
 <text x="18" y="87" font-size="17" fill="#1f2937">（「最短5分」〜「最短60分」）</text>
 <rect x="18" y="96" width="366" height="18" rx="3" fill="#e8edf3"/>
-<rect x="18" y="96" width="82.9" height="18" rx="3" fill="#1B3A5C"/>
-<text x="442" y="111" font-size="17" font-weight="700" text-anchor="end" fill="#1f2937">12社</text>
+<rect x="18" y="96" width="80.6" height="18" rx="3" fill="#1B3A5C"/>
+<text x="442" y="111" font-size="17" font-weight="700" text-anchor="end" fill="#1f2937">13社</text>
 <text x="18" y="147" font-size="17" fill="#1f2937">最短60分超〜6時間</text>
 <text x="18" y="169" font-size="17" fill="#1f2937">（「最短90分」〜「最短6時間」）</text>
 <rect x="18" y="178" width="366" height="18" rx="3" fill="#e8edf3"/>
-<rect x="18" y="178" width="76.0" height="18" rx="3" fill="#1B3A5C"/>
+<rect x="18" y="178" width="68.2" height="18" rx="3" fill="#1B3A5C"/>
 <text x="442" y="193" font-size="17" font-weight="700" text-anchor="end" fill="#1f2937">11社</text>
 <text x="18" y="229" font-size="17" fill="#1f2937">最短即日（時間の表示なし）</text>
 <rect x="18" y="238" width="366" height="18" rx="3" fill="#e8edf3"/>
-<rect x="18" y="238" width="96.7" height="18" rx="3" fill="#1B3A5C"/>
-<text x="442" y="253" font-size="17" font-weight="700" text-anchor="end" fill="#1f2937">14社</text>
+<rect x="18" y="238" width="99.3" height="18" rx="3" fill="#1B3A5C"/>
+<text x="442" y="253" font-size="17" font-weight="700" text-anchor="end" fill="#1f2937">16社</text>
 <text x="18" y="289" font-size="17" fill="#1f2937">公式内で最短の表示が異なる</text>
 <rect x="18" y="298" width="366" height="18" rx="3" fill="#e8edf3"/>
-<rect x="18" y="298" width="69.1" height="18" rx="3" fill="#8494a8"/>
-<text x="442" y="313" font-size="17" font-weight="700" text-anchor="end" fill="#1f2937">10社</text>
+<rect x="18" y="298" width="74.4" height="18" rx="3" fill="#8494a8"/>
+<text x="442" y="313" font-size="17" font-weight="700" text-anchor="end" fill="#1f2937">12社</text>
 <text x="18" y="349" font-size="17" fill="#1f2937">当日以外の表示（最短1日・営業日・数日）</text>
 <rect x="18" y="358" width="366" height="18" rx="3" fill="#e8edf3"/>
-<rect x="18" y="358" width="41.4" height="18" rx="3" fill="#1B3A5C"/>
-<text x="442" y="373" font-size="17" font-weight="700" text-anchor="end" fill="#1f2937">6社</text>
+<rect x="18" y="358" width="43.4" height="18" rx="3" fill="#1B3A5C"/>
+<text x="442" y="373" font-size="17" font-weight="700" text-anchor="end" fill="#1f2937">7社</text>
 <line x1="18" y1="394" x2="442" y2="394" stroke="#cbd5e1" stroke-width="1"/>
-<text x="18" y="418" font-size="15" fill="#4b5563">母数：当サイト掲載53社／各社公式サイトの表示</text>
-<text x="18" y="440" font-size="15" fill="#4b5563">（主に2026年10月14日〜11月6日確認）</text>
-<text x="18" y="462" font-size="15" fill="#4b5563">薄い帯の長さ＝53社／当サイト調べ（2026年11月）</text>
+<text x="18" y="418" font-size="15" fill="#4b5563">母数：当サイト掲載59社／各社公式サイトの表示</text>
+<text x="18" y="440" font-size="15" fill="#4b5563">（主に2026年10月14日〜11月10日確認）</text>
+<text x="18" y="462" font-size="15" fill="#4b5563">薄い帯の長さ＝59社／当サイト調べ（2026年11月）</text>
 </svg>
