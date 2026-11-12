@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://corp-factoring.com/</loc><lastmod>2026-11-12</lastmod><changefreq>weekly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://corp-factoring.com/articles/</loc><lastmod>2026-11-10</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://corp-factoring.com/articles/</loc><lastmod>2026-11-12</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://corp-factoring.com/topics/kiso/</loc><lastmod>2026-11-10</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://corp-factoring.com/topics/hikaku/</loc><lastmod>2026-10-16</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
-  <url><loc>https://corp-factoring.com/topics/gyoushu/</loc><lastmod>2026-10-26</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://corp-factoring.com/topics/hikaku/</loc><lastmod>2026-11-12</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
+  <url><loc>https://corp-factoring.com/topics/gyoushu/</loc><lastmod>2026-11-12</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://corp-factoring.com/topics/kojin/</loc><lastmod>2026-10-16</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
   <url><loc>https://corp-factoring.com/about/</loc><lastmod>2026-10-16</lastmod><changefreq>monthly</changefreq><priority>0.3</priority></url>
   <url><loc>https://corp-factoring.com/fees/</loc><lastmod>2026-11-10</lastmod><changefreq>weekly</changefreq><priority>0.8</priority></url>
@@ -37,7 +37,7 @@
   <url><loc>https://corp-factoring.com/articles/article-factoring-kaigo/</loc><lastmod>2026-11-10</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://corp-factoring.com/articles/article-factoring-keiyaku/</loc><lastmod>2026-11-10</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://corp-factoring.com/articles/article-factoring-kensetsu/</loc><lastmod>2026-11-10</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
-  <url><loc>https://corp-factoring.com/articles/article-factoring-kojin-jigyonushi/</loc><lastmod>2026-11-11</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://corp-factoring.com/articles/article-factoring-kojin-jigyonushi/</loc><lastmod>2026-11-12</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://corp-factoring.com/articles/article-factoring-kojin-sokujitsu/</loc><lastmod>2026-11-10</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://corp-factoring.com/articles/article-factoring-koukoku/</loc><lastmod>2026-11-10</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://corp-factoring.com/articles/article-factoring-kouri/</loc><lastmod>2026-11-10</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
@@ -363,11 +363,14 @@
   <url><loc>https://corp-factoring.com/articles/article-factoring-kakeme-nenritsu/</loc><lastmod>2026-11-10</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://corp-factoring.com/articles/article-factoring-hitori-oyakata/</loc><lastmod>2026-11-10</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://corp-factoring.com/articles/article-factoring-kaisha-shurui/</loc><lastmod>2026-11-10</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://corp-factoring.com/articles/article-factoring-vs-shinyou-hoken/</loc><lastmod>2026-11-10</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://corp-factoring.com/articles/article-factoring-vs-shinyou-hoken/</loc><lastmod>2026-11-12</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://corp-factoring.com/articles/article-factoring-shougai-fukushi/</loc><lastmod>2026-11-10</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://corp-factoring.com/articles/article-factoring-houmon-kango/</loc><lastmod>2026-11-10</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <url><loc>https://corp-factoring.com/articles/article-factoring-koushiki-data/</loc><lastmod>2026-11-10</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-  <url><loc>https://corp-factoring.com/articles/article-factoring-vs-card-barai/</loc><lastmod>2026-11-10</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://corp-factoring.com/articles/article-zaiko-factoring/</loc><lastmod>2026-11-12</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://corp-factoring.com/articles/article-yachin-factoring/</loc><lastmod>2026-11-12</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://corp-factoring.com/articles/article-urikake-hosho-hikaku/</loc><lastmod>2026-11-12</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://corp-factoring.com/articles/article-factoring-vs-card-barai/</loc><lastmod>2026-11-12</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://corp-factoring.com/articles/article-factoring-vs-rbf/</loc><lastmod>2026-11-10</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://corp-factoring.com/companies/bizpay/</loc><lastmod>2026-11-12</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
   <url><loc>https://corp-factoring.com/companies/bizpay/eigyo-jikan/</loc><lastmod>2026-11-10</lastmod><changefreq>monthly</changefreq><priority>0.6</priority></url>
