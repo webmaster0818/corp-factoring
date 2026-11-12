@@ -17,7 +17,7 @@ repo_head: 8652850
 - [日本中小企業金融サポート機構](/companies/support-kinyu/shinsa/)：売掛先が法人であれば個人事業主も利用でき、買取可能額は下限・上限なし（実績1万円〜2億円）としています（機構公式・2026年10月16日確認）
 - [MSFJ](/companies/msfj/shinsa/)：対象を法人・個人事業主・フリーランスとし、創業して間もない場合も利用できるとしています（公式トップ・よくある質問・2026年10月31日確認）
 - 関連：[ファクタリングの審査に落ちる理由と対処法](/articles/article-factoring-shinsa-ochita/)
-- 関連：[個人事業主が使えるファクタリング会社](/articles/article-factoring-kojin-osusume/)
+- 関連：[個人事業主が使えるファクタリング会社](/articles/article-factoring-kojin-jigyonushi/)
 
 ## 照合用の根拠
 - 原則法人限定｜conditionFacts ace-trust kakutei｜quote「当社のファクタリングは原則として法人様限定です。ただし、フリーランスや個人事業主様でもお取引内容によっては可能な場合もあります」source ace-trust.com/faq/｜2026年11月1日（feeIndex target「原則法人（個人事業主は公式内で表記が分かれる）」とも整合）

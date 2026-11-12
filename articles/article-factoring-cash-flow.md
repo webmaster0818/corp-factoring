@@ -159,6 +159,6 @@ A: 金銭債権の譲渡は消費税の非課税取引です（国税庁タッ�
 
 ## 関連記事
 
-- [ファクタリング 決算書](/articles/article-factoring-kessansho)
-- [ファクタリング 仕訳](/articles/article-factoring-kanjokamoku)
-- [ファクタリング 法人税](/articles/article-factoring-houjinzei)
+- [ファクタリング 決算書](/articles/article-factoring-kessansho/)
+- [ファクタリング 仕訳](/articles/article-factoring-kanjokamoku/)
+- [ファクタリング 法人税](/articles/article-factoring-houjinzei/)

@@ -21,6 +21,7 @@ export const metadata: Metadata = {
     description:
       "違法業者の見分け方、契約書で確認する条項、契約後のトラブル対処、公的な相談窓口までをまとめた法務ハブです。",
     type: "article",
+    url: "https://corp-factoring.com/guide/trouble/",
     images: DEFAULT_OG_IMAGES,
   },
 };

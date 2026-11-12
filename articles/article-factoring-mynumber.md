@@ -118,6 +118,6 @@ A: 個人情報保護委員会への通報、ファクタリング会社への�
 
 ## 関連記事
 
-- [ファクタリング 必要書類](/articles/article-factoring-hitsuyou-shorui)
-- [ファクタリング 個人情報保護](/articles/article-factoring-kojinjouhou)
-- [ファクタリング 反社チェック](/articles/article-factoring-hansha)
+- [ファクタリング 必要書類](/articles/article-factoring-hitsuyou-shorui/)
+- [ファクタリング 個人情報保護](/articles/article-factoring-kojinjouhou/)
+- [ファクタリング 反社チェック](/articles/article-factoring-hansha/)

@@ -43,6 +43,7 @@ export async function generateMetadata({
       title: `${article.title}｜ファクタリング比較ナビ`,
       description: article.description ?? `${article.title}について、公式情報や公的資料をもとに解説しています。`,
       type: "article",
+      url: `https://corp-factoring.com/articles/${slug}/`,
       images: DEFAULT_OG_IMAGES,
     },
   };
@@ -182,11 +183,11 @@ export default async function ArticlePage({
         const isGyoushu = slug_str.includes('kensetsu') || slug_str.includes('unsou') || slug_str.includes('iryou') || slug_str.includes('seizou') || slug_str.includes('gyoushu');
         const isKojin = slug_str.includes('kojin') || slug_str.includes('freelance') || slug_str.includes('sogyo') || slug_str.includes('kaigyo') || slug_str.includes('shikin') || slug_str.includes('akaji') || slug_str.includes('seido-yuushi') || slug_str.includes('business-loan') || slug_str.includes('jfc') || slug_str.includes('hojokin') || slug_str.includes('kakuteishinkoku');
         const isSeikyushoKaitori = slug_str === 'article-seikyusho-kaitori';
-        const eyecatchSrc = isSeikyushoKaitori ? '/images/seikyusho-kaitori-hero.png' : isGyoushu ? '/images/articles/gyoushu-article.jpg' : isKojin ? '/images/articles/kojin-jigyonushi.jpg' : '/images/articles/factoring-article.jpg';
+        const eyecatchSrc = isSeikyushoKaitori ? '/images/seikyusho-kaitori-hero.webp' : isGyoushu ? '/images/articles/gyoushu-article.webp' : isKojin ? '/images/articles/kojin-jigyonushi.webp' : '/images/articles/factoring-article.webp';
         return (
           <div className="max-w-4xl mx-auto px-6 mt-8">
             <div className="rounded-xl overflow-hidden shadow-sm">
-              <img src={eyecatchSrc} alt={article.title} className="w-full h-48 md:h-64 object-cover" />
+              <img src={eyecatchSrc} alt={article.title} className="w-full h-48 md:h-64 object-cover" width="1024" height="1024" fetchPriority="high" decoding="async" />
             </div>
           </div>
         );
@@ -391,15 +392,15 @@ export default async function ArticlePage({
             "@type": "BreadcrumbList",
             "itemListElement": topic
               ? [
-                  { "@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://corp-factoring.com" },
-                  { "@type": "ListItem", "position": 2, "name": "コラム", "item": "https://corp-factoring.com/articles" },
-                  { "@type": "ListItem", "position": 3, "name": topic.name, "item": `https://corp-factoring.com/topics/${topic.slug}` },
-                  { "@type": "ListItem", "position": 4, "name": article.title, "item": `https://corp-factoring.com/articles/${slug}` },
+                  { "@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://corp-factoring.com/" },
+                  { "@type": "ListItem", "position": 2, "name": "コラム", "item": "https://corp-factoring.com/articles/" },
+                  { "@type": "ListItem", "position": 3, "name": topic.name, "item": `https://corp-factoring.com/topics/${topic.slug}/` },
+                  { "@type": "ListItem", "position": 4, "name": article.title, "item": `https://corp-factoring.com/articles/${slug}/` },
                 ]
               : [
-                  { "@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://corp-factoring.com" },
-                  { "@type": "ListItem", "position": 2, "name": "コラム", "item": "https://corp-factoring.com/articles" },
-                  { "@type": "ListItem", "position": 3, "name": article.title, "item": `https://corp-factoring.com/articles/${slug}` },
+                  { "@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://corp-factoring.com/" },
+                  { "@type": "ListItem", "position": 2, "name": "コラム", "item": "https://corp-factoring.com/articles/" },
+                  { "@type": "ListItem", "position": 3, "name": article.title, "item": `https://corp-factoring.com/articles/${slug}/` },
                 ],
           }),
         }}

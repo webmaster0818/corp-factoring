@@ -117,7 +117,7 @@ export default async function CompanyScreeningPage({ params }: { params: Promise
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
       itemListElement: [
-        { "@type": "ListItem", position: 1, name: "ホーム", item: SITE },
+        { "@type": "ListItem", position: 1, name: "ホーム", item: `${SITE}/` },
         { "@type": "ListItem", position: 2, name: company.name, item: `${SITE}/companies/${slug}/` },
         { "@type": "ListItem", position: 3, name: "審査", item: `${SITE}/companies/${slug}/shinsa/` },
       ],

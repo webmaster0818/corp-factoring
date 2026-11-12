@@ -29,7 +29,7 @@
 
 請求書・通帳・本人確認書類を挙げる会社があります。たとえばKKTは「身分証明書・通帳のコピー・請求書・発注書・契約書」（[公式サイト](https://kkt-inc.co.jp/)）、事業資金エージェントは「本人確認資料(免許証/マイナンバーカード等) ご入金がわかる通帳、売掛金がわかるご請求書」（[申込サイト](https://js-agent.com/)）としています（いずれも2026年11月10日確認）。決算書・印鑑証明などを求める会社もあり、ネクストワンは公式の必要書類ページで面談時に決算書（直近2期分）、契約時に印鑑証明・納税証明書などを挙げています（[必要書類](https://next1-one.jp/documents.php)・2026年11月10日確認）。
 
-→ 詳細は「[ファクタリング 必要書類](/articles/article-factoring-hitsuyou-shorui)」をご覧ください
+→ 詳細は「[ファクタリング 必要書類](/articles/article-factoring-hitsuyou-shorui/)」をご覧ください
 
 ## Step 3. 本申込と書類の提出
 
@@ -112,6 +112,6 @@ A: キャンセルの扱いや費用は会社によって異なります。契�
 
 ## 関連記事
 
-- [ファクタリング 必要書類](/articles/article-factoring-hitsuyou-shorui)
-- [ファクタリング 即日入金](/articles/article-factoring-sokujitsu)
-- [ファクタリング 入金時間](/articles/article-factoring-nyuukin-jikan)
+- [ファクタリング 必要書類](/articles/article-factoring-hitsuyou-shorui/)
+- [ファクタリング 即日入金](/articles/article-factoring-sokujitsu/)
+- [ファクタリング 入金時間](/articles/article-factoring-nyuukin-jikan/)

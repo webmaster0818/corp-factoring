@@ -112,6 +112,6 @@ A: 売掛金がある場合は可能です。売掛金を早期に資金化し�
 
 ## 関連記事
 
-- [ファクタリング 業種別ガイド](/articles/article-factoring-gyoushu-guide)
-- [ファクタリング 運送](/articles/article-factoring-unsou)
-- [ファクタリング AI 審査](/articles/article-factoring-ai-shinsa)
+- [ファクタリング 業種別ガイド](/articles/article-factoring-gyoushu-guide/)
+- [ファクタリング 運送](/articles/article-factoring-unsou/)
+- [ファクタリング AI 審査](/articles/article-factoring-ai-shinsa/)

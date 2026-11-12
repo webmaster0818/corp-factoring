@@ -32,6 +32,7 @@ export async function generateMetadata({
       title: `${topic.title}｜ファクタリング比較ナビ`,
       description: topic.description,
       type: "website",
+      url: `https://corp-factoring.com/topics/${topic.slug}/`,
       images: DEFAULT_OG_IMAGES,
     },
   };

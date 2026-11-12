@@ -104,6 +104,6 @@ A: 個人事業主は、「売上原価」または「販管費」として経�
 
 ## 関連記事
 
-- [ファクタリング 消費税](/articles/article-factoring-shouhizei)
-- [ファクタリング 勘定科目](/articles/article-factoring-kanjokamoku)
-- [ファクタリング 決算書](/articles/article-factoring-kessansho)
+- [ファクタリング 消費税](/articles/article-factoring-shouhizei/)
+- [ファクタリング 勘定科目](/articles/article-factoring-kanjokamoku/)
+- [ファクタリング 決算書](/articles/article-factoring-kessansho/)

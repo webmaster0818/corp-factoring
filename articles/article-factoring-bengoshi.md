@@ -125,6 +125,6 @@ A: 案件の詳細を開示する必要はありません。売掛先名・金�
 
 ## 関連記事
 
-- [ファクタリング 業種別ガイド](/articles/article-factoring-gyoushu-guide)
-- [ファクタリング 個人情報保護](/articles/article-factoring-kojinjouhou)
-- [ファクタリング 反社チェック](/articles/article-factoring-hansha)
+- [ファクタリング 業種別ガイド](/articles/article-factoring-gyoushu-guide/)
+- [ファクタリング 個人情報保護](/articles/article-factoring-kojinjouhou/)
+- [ファクタリング 反社チェック](/articles/article-factoring-hansha/)

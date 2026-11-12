@@ -107,6 +107,6 @@ A: おおむねそのとおりです。ただし、事業の状況・売掛金�
 
 ## 関連記事
 
-- [ファクタリング 銀行融資 違い](/articles/article-factoring-vs-ginkou)
-- [ファクタリング 手形割引 違い](/articles/article-factoring-vs-tegata)
-- [ファクタリング 信用情報 載らない](/articles/article-factoring-shinyou-jouhou)
+- [ファクタリング 銀行融資 違い](/articles/article-factoring-vs-ginkou/)
+- [ファクタリング 手形割引 違い](/articles/article-factoring-vs-tegata/)
+- [ファクタリング 信用情報 載らない](/articles/article-factoring-shinyou-jouhou/)

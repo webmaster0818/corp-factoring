@@ -120,6 +120,6 @@ A: 2 社間であれば通知されません。3 社間の場合は、売掛先�
 
 ## 関連記事
 
-- [ファクタリング 個人事業主](/articles/article-factoring-kojin-jigyonushi)
-- [ファクタリング フードデリバリー Uber](/articles/article-factoring-delivery)
-- [ファクタリング AI 審査](/articles/article-factoring-ai-shinsa)
+- [ファクタリング 個人事業主](/articles/article-factoring-kojin-jigyonushi/)
+- [ファクタリング フードデリバリー Uber](/articles/article-factoring-delivery/)
+- [ファクタリング AI 審査](/articles/article-factoring-ai-shinsa/)

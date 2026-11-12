@@ -1,3 +1,5 @@
+import { existsSync } from "fs";
+import { join } from "path";
 import Link from "next/link";
 import { FEE_COMPANY_COUNT } from "@/data/feeIndex";
 import { ComparisonTable } from "@/components/ComparisonTable";
@@ -217,7 +219,8 @@ export default function Home() {
                 className="hover:shadow-lg transition-shadow"
               >
                 <CardContent className="p-6">
-                  {/* Company Screenshot */}
+                  {/* Company Screenshot（画像があるのは一部の会社のみ。無い会社は枠ごと出さない） */}
+                  {existsSync(join(process.cwd(), "public", "images", "companies", `${company.slug}.webp`)) && (
                   <div className="mb-4 rounded-lg overflow-hidden border border-gray-200">
                     <img
                       src={`/images/companies/${company.slug}.webp`}
@@ -228,6 +231,7 @@ export default function Home() {
                       loading="lazy"
                     />
                   </div>
+                  )}
                   <div className="flex items-start gap-6">
                     <div className="flex-shrink-0">
                       <div className={`w-12 h-12 rounded-full flex items-center justify-center text-xl font-bold ${

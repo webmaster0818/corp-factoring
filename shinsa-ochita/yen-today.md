@@ -16,7 +16,7 @@ repo_head: 8652850
 - [ペイトナー](/companies/paytner/shinsa/)：対象を「個人事業主・一人法人（法人も可）」としています（公式サイト・2026年10月14日確認）
 - [ラボル](/companies/labol/shinsa/)：対象を「フリーランス・個人事業主・小規模事業者（法人アカウントあり）」としています（公式サイト・2026年10月26日確認）
 - 関連：[ファクタリングの審査に落ちる理由と対処法](/articles/article-factoring-shinsa-ochita/)
-- 関連：[個人事業主が使えるファクタリング会社](/articles/article-factoring-kojin-osusume/)
+- 関連：[個人事業主が使えるファクタリング会社](/articles/article-factoring-kojin-jigyonushi/)
 
 ## 照合用の根拠
 - 法人専用｜editorialVerification yen-today「対象」｜「法人のみ。個人・個人事業主・フリーランスは利用不可」｜2026年10月16日

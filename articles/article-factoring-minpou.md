@@ -102,6 +102,6 @@ A: 民法上は可能です。ただし、ファクタリング会社が売掛�
 
 ## 関連記事
 
-- [ファクタリング 二重譲渡 リスク](/articles/article-factoring-nijuujouto)
-- [ファクタリング 債権譲渡登記](/articles/article-factoring-saiken-touki)
-- [ファクタリング 将来債権](/articles/article-factoring-shourai-saiken)
+- [ファクタリング 二重譲渡 リスク](/articles/article-factoring-nijuujouto/)
+- [ファクタリング 債権譲渡登記](/articles/article-factoring-saiken-touki/)
+- [ファクタリング 将来債権](/articles/article-factoring-shourai-saiken/)

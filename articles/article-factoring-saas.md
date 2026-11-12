@@ -127,7 +127,7 @@ A: ファクタリングの審査で見られるのは、主に売掛先の信�
 
 ## 関連記事
 
-- [ファクタリング 業種別ガイド](/articles/article-factoring-gyoushu-guide)
-- [ファクタリング インフルエンサー](/articles/article-factoring-influencer)
-- [ファクタリング AI 審査](/articles/article-factoring-ai-shinsa)
+- [ファクタリング 業種別ガイド](/articles/article-factoring-gyoushu-guide/)
+- [ファクタリング インフルエンサー](/articles/article-factoring-influencer/)
+- [ファクタリング AI 審査](/articles/article-factoring-ai-shinsa/)
 - [ファクタリングとRBF（レベニュー・ベースド・ファイナンス）の違い](/articles/article-factoring-vs-rbf/)

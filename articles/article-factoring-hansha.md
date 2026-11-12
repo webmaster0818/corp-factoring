@@ -109,6 +109,6 @@ A: 通常は数時間〜半日です。AI で自動化しているファクタ�
 
 ## 関連記事
 
-- [ファクタリング 違法業者](/articles/article-factoring-ihou-gyousha)
-- [ファクタリング 契約](/articles/article-factoring-keiyaku)
-- [ファクタリング 個人情報保護](/articles/article-factoring-kojinjouhou)
+- [ファクタリング 違法業者](/articles/article-factoring-ihou-gyousha/)
+- [ファクタリング 契約](/articles/article-factoring-keiyaku/)
+- [ファクタリング 個人情報保護](/articles/article-factoring-kojinjouhou/)

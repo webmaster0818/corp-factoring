@@ -121,7 +121,7 @@ export default async function CompanyFeePage({ params }: { params: Promise<{ slu
       "@context": "https://schema.org",
       "@type": "BreadcrumbList",
       itemListElement: [
-        { "@type": "ListItem", position: 1, name: "ホーム", item: SITE },
+        { "@type": "ListItem", position: 1, name: "ホーム", item: `${SITE}/` },
         { "@type": "ListItem", position: 2, name: company.name, item: `${SITE}/companies/${slug}/` },
         { "@type": "ListItem", position: 3, name: "手数料", item: `${SITE}/companies/${slug}/tesuryo/` },
       ],

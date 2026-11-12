@@ -253,7 +253,7 @@ export default async function CompanyHoursPage({ params }: { params: Promise<{ s
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     itemListElement: [
-      { "@type": "ListItem", position: 1, name: "ホーム", item: SITE },
+      { "@type": "ListItem", position: 1, name: "ホーム", item: `${SITE}/` },
       { "@type": "ListItem", position: 2, name: company.name, item: `${SITE}/companies/${slug}/` },
       { "@type": "ListItem", position: 3, name: "営業時間・受付時間", item: `${SITE}/companies/${slug}/eigyo-jikan/` },
     ],

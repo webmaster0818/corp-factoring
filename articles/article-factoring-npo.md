@@ -120,6 +120,6 @@ A: 寄付金を受け取る権利として理論上は可能ですが、ファ�
 
 ## 関連記事
 
-- [ファクタリング 業種別ガイド](/articles/article-factoring-gyoushu-guide)
-- [ファクタリング 補助金 助成金 違い](/articles/article-factoring-hojokin-chigai)
-- [ファクタリング 法人税](/articles/article-factoring-houjinzei)
+- [ファクタリング 業種別ガイド](/articles/article-factoring-gyoushu-guide/)
+- [ファクタリング 補助金 助成金 違い](/articles/article-factoring-hojokin-chigai/)
+- [ファクタリング 法人税](/articles/article-factoring-houjinzei/)

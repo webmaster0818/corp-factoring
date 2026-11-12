@@ -164,9 +164,9 @@ A: 当サイトでは、優先的な処理の可否を各社の公式サイト�
 
 ## 関連記事
 
-- [ファクタリング 即日](/articles/article-factoring-sokujitsu)
-- [ファクタリング 個人事業主 即日](/articles/article-factoring-kojin-sokujitsu)
-- [ファクタリング AI 審査](/articles/article-factoring-ai-shinsa)
+- [ファクタリング 即日](/articles/article-factoring-sokujitsu/)
+- [ファクタリング 個人事業主 即日](/articles/article-factoring-kojin-sokujitsu/)
+- [ファクタリング AI 審査](/articles/article-factoring-ai-shinsa/)
 - [即日入金のファクタリング会社を公式表示で比較](/articles/article-factoring-sokujitsu-osusume/)
 - [土日・祝日に対応しているファクタリング会社](/articles/article-factoring-donichi/)
 - [夜間・24時間でファクタリングの入金は受けられる？](/articles/article-factoring-24jikan-yakan/)

@@ -109,6 +109,6 @@ A: 不要です。貸金業の登録をしている「ファクタリング会�
 
 ## 関連記事
 
-- [ファクタリング 違法業者 見分け方](/articles/article-factoring-ihou-gyousha)
-- [ファクタリング 貸金業法](/articles/article-factoring-kashikingyou)
-- [ファクタリング 訴訟 裁判例](/articles/article-factoring-soshou)
+- [ファクタリング 違法業者 見分け方](/articles/article-factoring-ihou-gyousha/)
+- [ファクタリング 貸金業法](/articles/article-factoring-kashikingyou/)
+- [ファクタリング 訴訟 裁判例](/articles/article-factoring-soshou/)

@@ -89,7 +89,7 @@ export async function generateMetadata({
       title: lead.metaTitle,
       description: lead.metaDescription,
       keywords: `${company.name},${company.nameKana},口コミ,評判,ファクタリング,手数料,営業時間`,
-      openGraph: { title: lead.metaTitle, description: lead.metaDescription, type: "article", images: DEFAULT_OG_IMAGES },
+      openGraph: { title: lead.metaTitle, description: lead.metaDescription, type: "article", url: `https://corp-factoring.com/companies/${slug}/`, images: DEFAULT_OG_IMAGES },
       twitter: { card: "summary", images: [DEFAULT_OG_IMAGE_URL], title: lead.metaTitle, description: lead.metaDescription },
       alternates: { canonical: `/companies/${slug}` },
     };
@@ -103,6 +103,7 @@ export async function generateMetadata({
       title: `${company.name}の評判・手数料・営業時間・必要書類【公式確認】`,
       description: `${feeText}、${company.speed}${company.speedIsReview ? "" : "で入金"}。${company.description}`,
       type: "article",
+      url: `https://corp-factoring.com/companies/${slug}/`,
       images: DEFAULT_OG_IMAGES,
     },
     twitter: {
@@ -1360,8 +1361,8 @@ export default function CompanyPage({
             "@context": "https://schema.org",
             "@type": "BreadcrumbList",
             "itemListElement": [
-              { "@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://corp-factoring.com" },
-              { "@type": "ListItem", "position": 2, "name": company.name, "item": `https://corp-factoring.com/companies/${slug}` },
+              { "@type": "ListItem", "position": 1, "name": "ホーム", "item": "https://corp-factoring.com/" },
+              { "@type": "ListItem", "position": 2, "name": company.name, "item": `https://corp-factoring.com/companies/${slug}/` },
             ],
           }),
         }}

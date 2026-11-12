@@ -121,6 +121,6 @@ A: 問題はありません。月謝は売掛金として、法的に債権譲�
 
 ## 関連記事
 
-- [ファクタリング 個人事業主](/articles/article-factoring-kojin-jigyonushi)
-- [ファクタリング 小口](/articles/article-factoring-shougaku)
-- [ファクタリング 業種別ガイド](/articles/article-factoring-gyoushu-guide)
+- [ファクタリング 個人事業主](/articles/article-factoring-kojin-jigyonushi/)
+- [ファクタリング 小口](/articles/article-factoring-shougaku/)
+- [ファクタリング 業種別ガイド](/articles/article-factoring-gyoushu-guide/)
