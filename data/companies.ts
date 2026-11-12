@@ -700,7 +700,7 @@ export const factoringCompanies: FactoringCompany[] = [
     },
     requiredDocuments: ["請求書", "通帳コピー", "決算書（直近二期分・契約前の確認時）", "取引先との基本契約書（契約前の確認時）"],
     url: "https://no1service.co.jp/",
-    affiliateUrl: "https://px.a8.net/svt/ejp?a8mat=4B650J+48F84Q+4EKW+TS3OI",
+    // 2026-11-12 A8.net の掲載停止依頼（No.1 の法人向けファクタリング 11/30 18:00 終了）を受けて計測リンクを外した
     category: ["手数料安い", "即日"]
   },
   {
