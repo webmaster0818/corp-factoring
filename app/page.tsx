@@ -15,6 +15,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import type { Metadata } from "next";
 import { DEFAULT_OG_IMAGES } from "@/lib/og";
+import { AREAS, AREA_SLUGS, AREA_CHECKED_AT } from "@/data/areaOffices";
 
 // canonical はページごとに自己参照で指定する（ルートレイアウトの canonical: "/" 既定値は全ページ継承の事故源のため撤去）
 // og:url もルートレイアウトから撤去し（下層ページが TOP の URL を継承していたため）、TOP でのみ指定する
@@ -365,6 +366,28 @@ export default function Home() {
       <section id="simulator" className="py-16 bg-white">
         <div className="container mx-auto px-4">
           <FeeSimulator />
+        </div>
+      </section>
+
+      {/* 地域別（拠点の所在地を公式で確認した会社の一覧へ） */}
+      <section id="area" className="py-12 bg-gray-50 border-t border-gray-100">
+        <div className="container mx-auto px-4 max-w-5xl">
+          <h2 className="text-2xl font-bold text-gray-900 mb-2">拠点のある地域から探す</h2>
+          <p className="text-sm text-gray-600 mb-5">
+            本社・支社・支店・営業所などの所在地を、各社の公式サイトで確認した会社の一覧です（{AREA_CHECKED_AT}確認）。
+          </p>
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-3">
+            {AREA_SLUGS.map((a) => (
+              <Link
+                key={a}
+                href={`/area/${a}/`}
+                className="block bg-white rounded-lg border border-gray-200 p-4 text-center hover:border-blue-300 hover:shadow-sm transition"
+              >
+                <span className="block font-bold text-gray-900">{AREAS[a].name}</span>
+                <span className="block text-xs text-gray-500 mt-1">{AREAS[a].entries.length}社</span>
+              </Link>
+            ))}
+          </div>
         </div>
       </section>
 
