@@ -5,6 +5,22 @@ import html from 'remark-html';
 import gfm from 'remark-gfm'; // Markdown の表を <table> に（無いと表が | 区切りの文字のまま出ていた）
 import { getLastmod, getFirstCommitDate } from './pageDates';
 
+// 「**…「売却」**という点」のように、閉じの ** の直前が約物・直後が文字だと Markdown の強調にならず ** がそのまま出る。
+// 変換前に、1行の中の ** を左から順に組にして目印の文字（私用領域 U+E000/U+E001）に置き換え、HTML にしたあとで <strong> に戻す（コードブロック内は対象外）
+const BOLD_OPEN = '\uE000';
+const BOLD_CLOSE = '\uE001';
+function markBold(md: string): string {
+  let inCode = false;
+  return md.split('\n').map((line) => {
+    if (/^\s*```/.test(line)) { inCode = !inCode; return line; }
+    if (inCode) return line;
+    return line.replace(/\*\*([^*\n]+?)\*\*/g, `${BOLD_OPEN}$1${BOLD_CLOSE}`);
+  }).join('\n');
+}
+function restoreBold(htmlStr: string): string {
+  return htmlStr.split(BOLD_OPEN).join('<strong>').split(BOLD_CLOSE).join('</strong>');
+}
+
 // 記事内の SVG 図に width/height を付ける（レイアウトのずれ防止）。値は SVG ファイル自身の width/height 属性から読む
 function addSvgSize(htmlStr: string): string {
   return htmlStr.replace(/<img src="(\/images\/[^"]+\.svg)"([^>]*?)>/g, (m, src: string, rest: string) => {
@@ -111,14 +127,14 @@ export async function getArticleBySlug(slug: string): Promise<Article | null> {
   const processedContent = await remark()
     .use(gfm, { singleTilde: false }) // 「1~12%」のような範囲表記が取り消し線にならないように
     .use(html)
-    .process(contentMarkdown);
+    .process(markBold(contentMarkdown));
 
   return {
     slug,
     title,
     keyword,
     description: extractDescription(fileContents),
-    content: addSvgSize(processedContent.toString()),
+    content: restoreBold(addSvgSize(processedContent.toString())),
     datePublished: getFirstCommitDate(`articles/${slug}.md`) ?? '',
     dateModified: getLastmod(`/articles/${slug}/`) ?? '',
     faqs,
