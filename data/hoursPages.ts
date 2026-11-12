@@ -122,7 +122,7 @@ export const HOURS_CHECKED_AT: { [slug: string]: string } = {
   no1: "2026年11月6日",
   "factor-plan": "2026年10月14日",
   try: "2026年10月14日",
-  ququmo: "2026年8月22日",
+  ququmo: "2026年11月12日",
   "top-management": "2026年10月28日",
   "be-trading": "2026年10月29日",
   // ▼ 2026年11月1日 追加分（各社公式サイトで確認）
