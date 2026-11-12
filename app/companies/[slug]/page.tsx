@@ -23,6 +23,7 @@ import { EditorialVerificationSection } from "@/components/EditorialVerification
 import { getAllArticles } from "@/lib/articles";
 import { hasShinsaOchita, SHINSA_OCHITA_TITLE, SHINSA_OCHITA_ANCHOR } from "@/lib/shinsaOchita";
 import { DEFAULT_OG_IMAGES, DEFAULT_OG_IMAGE_URL } from "@/lib/og";
+import { AREAS, AREA_SLUGS } from "@/data/areaOffices";
 
 // category はロジック用の内部キー。画面表示はこのラベルを使う（ビジネス文書基準 2026-10-16）
 const CATEGORY_LABEL: { [key: string]: string } = {
@@ -841,6 +842,17 @@ export default function CompanyPage({
               <div className="bg-gray-50 p-4 rounded-lg">
                 <h3 className="font-bold text-gray-700 mb-2 text-sm">所在地</h3>
                 <p className="text-gray-900 font-medium">{company.companyInfo.address}</p>
+                {AREA_SLUGS.some((a) => AREAS[a].entries.some((e) => e.slug === slug)) && (
+                  <p className="text-xs text-gray-600 mt-2 leading-relaxed">
+                    拠点のある地域の一覧：
+                    {AREA_SLUGS.filter((a) => AREAS[a].entries.some((e) => e.slug === slug)).map((a, i) => (
+                      <span key={a}>
+                        {i > 0 && "・"}
+                        <Link href={`/area/${a}/`} className="text-blue-700 underline">{AREAS[a].name}のファクタリング会社</Link>
+                      </span>
+                    ))}
+                  </p>
+                )}
               </div>
             </div>
           </CardContent>
