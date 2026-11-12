@@ -5,6 +5,22 @@ import html from 'remark-html';
 import gfm from 'remark-gfm'; // Markdown の表を <table> に（無いと表が | 区切りの文字のまま出ていた）
 import { getLastmod, getFirstCommitDate } from './pageDates';
 
+// 記事内の SVG 図に width/height を付ける（レイアウトのずれ防止）。値は SVG ファイル自身の width/height 属性から読む
+function addSvgSize(htmlStr: string): string {
+  return htmlStr.replace(/<img src="(\/images\/[^"]+\.svg)"([^>]*?)>/g, (m, src: string, rest: string) => {
+    if (/\swidth=/.test(rest)) return m;
+    try {
+      const svg = fs.readFileSync(path.join(process.cwd(), 'public', src), 'utf8').slice(0, 600);
+      const w = svg.match(/<svg[^>]*\swidth="(\d+(?:\.\d+)?)"/);
+      const h = svg.match(/<svg[^>]*\sheight="(\d+(?:\.\d+)?)"/);
+      if (!w || !h) return m;
+      return `<img src="${src}"${rest} width="${w[1]}" height="${h[1]}">`;
+    } catch {
+      return m;
+    }
+  });
+}
+
 const articlesDirectory = path.join(process.cwd(), 'articles');
 
 export interface Article {
@@ -102,7 +118,7 @@ export async function getArticleBySlug(slug: string): Promise<Article | null> {
     title,
     keyword,
     description: extractDescription(fileContents),
-    content: processedContent.toString(),
+    content: addSvgSize(processedContent.toString()),
     datePublished: getFirstCommitDate(`articles/${slug}.md`) ?? '',
     dateModified: getLastmod(`/articles/${slug}/`) ?? '',
     faqs,
