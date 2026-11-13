@@ -58,8 +58,12 @@ function SectionHeading({ title, lead, id }: { title: React.ReactNode; lead?: Re
   );
 }
 
+const FEE_AXIS = 20;
+
 export default function Home() {
   const topCompanies = factoringCompanies;
+  // FV の絞り込みカード：条件別に見ると同じ定義（入金スピードの表示が「最短30分」かつ 個人事業主に対応）
+  const filterCount = topCompanies.filter((c) => c.speed === "最短30分" && c.personalSupport).length;
   const rankOf = (slug: string) => topCompanies.findIndex((c) => c.slug === slug) + 1;
   const preview = topCompanies.slice(0, 5);
   const logoCompanies = topCompanies.filter((c) => hasShot(c.slug)).slice(0, 8);
@@ -105,9 +109,9 @@ export default function Home() {
                 <span className="inline-block w-5 h-px bg-blue-600" aria-hidden="true" />
                 フリーランス・個人事業主・法人向け<br className="sm:hidden" />ファクタリング比較
               </p>
-              <h1 className="text-[25px] sm:text-[34px] lg:text-[36px] font-bold text-ink leading-[1.4] tracking-[0.01em] mb-5">
+              <h1 className="text-[25px] sm:text-[34px] lg:text-[33px] xl:text-[34px] font-bold text-ink leading-[1.4] tracking-[0.01em] mb-5">
                 ファクタリング会社の<br />
-                <span className="text-blue-600">手数料・審査・入金スピード</span>
+                <span className="fv-mark text-blue-600">手数料・審査・入金スピード</span>
                 <span className="inline-block">を比較</span>
               </h1>
               <p className="text-[15px] sm:text-base text-gray-600 leading-[1.9] max-w-xl mb-7">
@@ -146,41 +150,92 @@ export default function Home() {
                   無料診断ツール →
                 </Link>
               </div>
+
+              {/* 信頼の要点（サイト内で既に記載している事実のみ） */}
+              <ul className="mt-6 flex flex-col sm:flex-row sm:flex-wrap gap-x-6 gap-y-2.5 text-[12.5px] text-gray-600">
+                <li className="flex items-center gap-2"><span className="text-blue-600 shrink-0"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5"><rect x="3" y="3.5" width="14" height="13" rx="1.5" /><path d="M3 7h14M6.5 10.5h7M6.5 13.5h4.5" strokeLinecap="round" /></svg></span>各社の公式サイトの情報をもとに掲載</li>
+                <li className="flex items-center gap-2"><span className="text-blue-600 shrink-0"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M4 4.5h12v8.5H9l-3.5 3v-3H4z" strokeLinejoin="round" /><path d="M7.5 8.7h5" strokeLinecap="round" /></svg></span>口コミは出典を明記</li>
+                <li className="flex items-center gap-2"><span className="text-blue-600 shrink-0"><svg aria-hidden="true" width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M10 2.8l5.8 2.2v4.6c0 3.6-2.5 6.2-5.8 7.6-3.3-1.4-5.8-4-5.8-7.6V5z" strokeLinejoin="round" /><path d="M7.4 10l1.9 1.9 3.4-3.6" strokeLinecap="round" strokeLinejoin="round" /></svg></span>診断は個人情報の入力不要</li>
+              </ul>
             </div>
 
-            {/* 比較プレビュー（ランキングと同じデータ） */}
-            <div className="min-w-0 bg-white border border-line rounded-lg shadow-[0_1px_2px_rgba(20,40,74,0.04),0_8px_24px_-12px_rgba(20,40,74,0.12)]">
-              <div className="px-5 pt-5 pb-3 border-b border-line">
-                <h2 className="text-lg font-bold text-ink">資金調達の選択肢を比較・検討する</h2>
-                <p className="text-xs text-gray-500 mt-1">公式サイトで確認｜<span className="font-semibold text-ink num">{FEE_COMPANY_COUNT}社</span>を比較</p>
+            {/* 比較プレビュー（ランキングと同じデータ）。PC は重ねたカード構成、SP は1枚 */}
+            <div className="relative min-w-0 lg:pt-7 lg:pl-4 lg:pb-[76px]">
+              {/* 背景の淡い光 */}
+              <div aria-hidden="true" className="hero-glow hidden lg:block" />
+
+              {/* (c) 確認スタンプ */}
+              <div className="hidden lg:flex fv-in fv-d3 absolute -top-1 right-6 z-20 items-center gap-2.5 bg-white/95 border border-line rounded-md pl-2.5 pr-3.5 py-2 layer-shadow-sm">
+                <svg aria-hidden="true" width="26" height="26" viewBox="0 0 26 26" fill="none" stroke="#1F6AAE" strokeWidth="1.5"><circle cx="13" cy="13" r="11.5" /><circle cx="13" cy="13" r="8.5" strokeDasharray="2 2.2" /><path d="M9 13.2l2.6 2.6L17.2 10" strokeLinecap="round" strokeLinejoin="round" /></svg>
+                <span className="leading-tight">
+                  <span className="block text-[12px] font-bold text-ink">各社の公式サイトで確認</span>
+                  <span className="block text-[10px] text-gray-500 num">掲載{FEE_COMPANY_COUNT}社</span>
+                </span>
               </div>
-              <table className="w-full text-[13px] sm:text-sm num">
-                <thead>
-                  <tr className="text-[11px] text-gray-500 border-b border-line">
-                    <th className="text-left font-medium py-2 pl-4 sm:pl-5 pr-2">会社名</th>
-                    <th className="text-left font-medium py-2 px-2">手数料</th>
-                    <th className="text-left font-medium py-2 pl-2 pr-4 sm:pr-5">入金スピード</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {preview.map((c, i) => (
-                    <tr key={c.slug} className="border-b border-line last:border-0">
-                      <td className="py-3 pl-4 sm:pl-5 pr-2">
-                        <Link href={`/companies/${c.slug}/`} className="flex items-center gap-2.5 font-semibold text-ink hover:text-blue-600">
-                          <span className={`inline-flex w-5 h-5 shrink-0 items-center justify-center rounded-sm text-[11px] font-bold ${i < 3 ? "bg-ink text-white" : "border border-line text-gray-600"}`}>{i + 1}</span>
-                          <span className="min-w-0">{c.name}</span>
-                        </Link>
-                      </td>
-                      <td className="py-3 px-2 font-bold text-ink whitespace-nowrap">{feeText(c)}</td>
-                      <td className="py-3 pl-2 pr-4 sm:pr-5 text-gray-700 whitespace-nowrap">{c.speed}</td>
+
+              {/* (a) メインの比較カード */}
+              <div className="fv-in fv-d1 relative z-10 bg-white border border-line rounded-lg layer-shadow">
+                <div className="px-4 sm:px-5 pt-5 pb-3 border-b border-line">
+                  <h2 className="text-lg font-bold text-ink">資金調達の選択肢を比較・検討する</h2>
+                  <p className="text-xs text-gray-500 mt-1">公式サイトで確認｜<span className="font-semibold text-ink num">{FEE_COMPANY_COUNT}社</span>を比較</p>
+                </div>
+                <table className="w-full text-[13px] sm:text-sm num">
+                  <thead>
+                    <tr className="text-[11px] text-gray-500 border-b border-line">
+                      <th className="text-left font-medium py-2 pl-4 sm:pl-5 pr-2">会社名</th>
+                      <th className="text-left font-medium py-2 px-2 whitespace-nowrap">手数料<span aria-hidden="true" className="hidden sm:inline text-gray-400 font-normal ml-1.5 num">0〜{FEE_AXIS}%</span></th>
+                      <th className="text-left font-medium py-2 pl-2 pr-4 sm:pr-5 whitespace-nowrap">入金スピード</th>
                     </tr>
-                  ))}
-                </tbody>
-              </table>
-              <div className="px-5 py-3 border-t border-line bg-soft rounded-b-lg">
-                <Link href="#ranking" className="text-sm font-bold text-blue-600 hover:underline">
-                  掲載{FEE_COMPANY_COUNT}社を見る →
-                </Link>
+                  </thead>
+                  <tbody>
+                    {preview.map((c, i) => {
+                      const lo = c.fees.min, hi = c.fees.max;
+                      const hasBar = lo > 0;
+                      const left = (Math.min(lo, FEE_AXIS) / FEE_AXIS) * 100;
+                      const width = hi > 0 ? Math.max(((Math.min(hi, FEE_AXIS) - lo) / FEE_AXIS) * 100, 1.5) : 100 - left;
+                      return (
+                      <tr key={c.slug} className="border-b border-line last:border-0 align-top">
+                        <td className="py-3 pl-4 sm:pl-5 pr-2">
+                          <Link href={`/companies/${c.slug}/`} className="flex items-center gap-2.5 font-semibold text-ink hover:text-blue-600">
+                            <span className={`inline-flex w-5 h-5 shrink-0 items-center justify-center rounded-sm text-[11px] font-bold ${i < 3 ? "bg-ink text-white" : "border border-line text-gray-600"}`}>{i + 1}</span>
+                            <span className="min-w-0">{c.name}</span>
+                          </Link>
+                        </td>
+                        <td className="py-3 px-2 sm:w-[36%]">
+                          <span className="block font-bold text-ink whitespace-nowrap">{feeText(c)}</span>
+                          {hasBar && (
+                            <span aria-hidden="true" className="fee-track mt-1.5 hidden sm:block">
+                              <span
+                                className={hi > 0 ? "fee-fill" : "fee-fill fee-open"}
+                                style={{ left: `${left}%`, width: `${width}%` }}
+                              />
+                            </span>
+                          )}
+                        </td>
+                        <td className="py-3 pl-2 pr-4 sm:pr-5 text-gray-700 whitespace-nowrap">{c.speed}</td>
+                      </tr>
+                      );
+                    })}
+                  </tbody>
+                </table>
+                <div className="flex items-center justify-between gap-3 px-4 sm:px-5 py-3 border-t border-line bg-soft rounded-b-lg">
+                  <Link href="#ranking" className="text-sm font-bold text-blue-600 hover:underline">
+                    掲載{FEE_COMPANY_COUNT}社を見る →
+                  </Link>
+                  
+                </div>
+              </div>
+
+              {/* (b) 条件の絞り込み状態（条件別に見ると同じ定義で件数を計算） */}
+              <div className="hidden lg:flex fv-in fv-d2 absolute z-20 -right-3 bottom-0 items-end gap-5 bg-white border border-line rounded-md px-4 py-3 layer-shadow-sm">
+                <div>
+                <p className="text-[11px] text-gray-500 mb-1.5">条件で絞り込み</p>
+                <div className="flex flex-wrap gap-1.5">
+                  <span className="inline-flex items-center gap-1 text-[12px] font-semibold text-blue-700 bg-blue-50 border border-blue-200 rounded-sm px-2 py-0.5"><svg aria-hidden="true" width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M2 5.2l2 2L8 3" strokeLinecap="round" strokeLinejoin="round" /></svg>最短30分</span>
+                  <span className="inline-flex items-center gap-1 text-[12px] font-semibold text-blue-700 bg-blue-50 border border-blue-200 rounded-sm px-2 py-0.5"><svg aria-hidden="true" width="10" height="10" viewBox="0 0 10 10" fill="none" stroke="currentColor" strokeWidth="1.5"><path d="M2 5.2l2 2L8 3" strokeLinecap="round" strokeLinejoin="round" /></svg>個人事業主に対応</span>
+                </div>
+                </div>
+                <p className="text-[12px] text-ink pl-4 border-l border-line whitespace-nowrap">該当 <span className="text-2xl font-bold num">{filterCount}</span> 社</p>
               </div>
             </div>
           </div>
