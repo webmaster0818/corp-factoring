@@ -291,7 +291,7 @@ export default function TroubleGuidePage() {
 
       <main className="max-w-5xl mx-auto px-6 py-12">
         {/* 目次 */}
-        <nav className="bg-white border border-gray-200 rounded-xl p-6 mb-12">
+        <nav className="bg-white border border-gray-200 rounded-md p-6 mb-12">
           <h2 className="text-lg font-bold text-[#1B3A5C] mb-3">このページの構成</h2>
           <ul className="space-y-2 text-sm text-gray-700 list-disc pl-5">
             {groups.map((g) => (
@@ -322,7 +322,7 @@ export default function TroubleGuidePage() {
                 <Link
                   key={slug}
                   href={`/articles/${slug}/`}
-                  className="block bg-white rounded-lg border border-gray-200 p-4 hover:shadow-md hover:border-[#1B3A5C]/30 transition"
+                  className="block bg-white rounded-lg border border-gray-200 p-4 hover:shadow-sm hover:border-[#1B3A5C]/30 transition"
                 >
                   <span className="text-sm text-gray-900 font-medium leading-snug">
                     {titleBySlug.get(slug) ?? slug}
@@ -370,7 +370,7 @@ export default function TroubleGuidePage() {
         </section>
 
         {/* 手数料データへの導線 */}
-        <section className="mb-12 bg-white border border-gray-200 rounded-xl p-6">
+        <section className="mb-12 bg-white border border-gray-200 rounded-md p-6">
           <h2 className="text-lg font-bold text-[#1B3A5C] mb-2">条件の比較には公式サイトの確認データをご利用ください</h2>
           <p className="text-sm text-gray-700 mb-4">
             各社の手数料・入金スピード・利用可能額は、当サイトが各社の公式サイトを1件ずつ確認して掲載しています（確認日 {feeCheckedAt}）。公式サイトに記載のない項目は「非公示」と記載しています。

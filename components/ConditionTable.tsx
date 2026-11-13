@@ -42,7 +42,7 @@ export function ConditionTable({ articleSlug }: { articleSlug: string }) {
   if (!data || data.rows.length === 0) return null;
   const { def, rows } = data;
   return (
-    <section className="my-8 rounded-xl border border-gray-200 bg-white p-4 md:p-6">
+    <section className="my-8 rounded-md border border-gray-200 bg-white p-4 md:p-6">
       <h2 className="text-lg font-bold text-[#1B3A5C]">{def.heading}</h2>
       <p className="mt-2 text-xs leading-relaxed text-gray-600">{def.criteria}</p>
       <RowsTable def={def} rows={rows.slice(0, FIRST)} />

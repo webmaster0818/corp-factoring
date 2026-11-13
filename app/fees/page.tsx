@@ -93,10 +93,10 @@ export default function FeesPage() {
 
       <div className="container mx-auto px-4 max-w-5xl py-12">
         {/* ヘッダー */}
-        <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-2xl shadow-lg p-8 mb-8 border border-green-100">
+        <div className="bg-white rounded-md p-6 sm:p-8 mb-8 border border-gray-200">
           <div className="text-center">
-            <Badge className="mb-4 bg-green-500 hover:bg-green-600 text-white font-bold">手数料の解説</Badge>
-            <h1 className="text-3xl sm:text-4xl font-black text-gray-900 mb-4 leading-tight">
+            <Badge className="mb-4 bg-transparent hover:bg-transparent text-[#1B3A5C] border border-[#1B3A5C]/40 rounded-sm font-bold">手数料の解説</Badge>
+            <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4 leading-tight">
               ファクタリング手数料が安い会社は？{FEE_COMPANY_COUNT}社の公式表示で比較
             </h1>
           </div>
@@ -108,7 +108,7 @@ export default function FeesPage() {
               下限は最も条件が良い場合の率で、上限を表示していない会社もあります。実際の手数料は、各社の見積もりで確かめてください。3社間ファクタリング（売掛先の承諾を得る方式）の下限は、{nameOf("accel-factor")}・{nameOf("no1")}・トップ・マネジメントが0.5%〜と表示しています（当サイトの記録・2026年10月14日〜11月8日確認。<a href="#low-fee-3" className="text-blue-600 underline">3社間の一覧</a>）。
             </p>
           </div>
-          <div id="calc" className="mt-5 rounded-xl border border-green-200 bg-white p-4 text-sm text-gray-800">
+          <div id="calc" className="mt-5 rounded-md border border-green-200 bg-white p-4 text-sm text-gray-800">
             <p className="font-bold text-gray-900 mb-1">手数料の計算方法</p>
             <p>
               手数料 ＝ 売掛金額（請求額）× 手数料率 ＋ その他の費用（振込手数料など）<br />
@@ -126,7 +126,7 @@ export default function FeesPage() {
         {/* 目次 */}
         <Card className="mb-8 border-2 border-gray-100 shadow-sm">
           <CardHeader className="bg-gray-50 border-b border-gray-100">
-            <CardTitle className="text-2xl font-black text-gray-900">目次</CardTitle>
+            <CardTitle className="text-2xl font-bold text-gray-900">目次</CardTitle>
           </CardHeader>
           <CardContent className="pt-6">
             <ul className="space-y-2">
@@ -168,7 +168,7 @@ export default function FeesPage() {
         <section id="low-fee" className="mb-12">
           <Card className="border-2 border-gray-100 shadow-sm">
             <CardHeader className="bg-gray-50 border-b border-gray-100">
-              <CardTitle className="text-2xl font-black text-gray-900">2社間手数料の下限が2%未満の{LOW_FEE2.length}社（公式表示の低い順）</CardTitle>
+              <CardTitle className="text-2xl font-bold text-gray-900">2社間手数料の下限が2%未満の{LOW_FEE2.length}社（公式表示の低い順）</CardTitle>
             </CardHeader>
             <CardContent className="pt-6">
               <div className="rounded-lg border border-gray-200 bg-gray-50 p-4 text-sm text-gray-700 mb-6">
@@ -184,13 +184,13 @@ export default function FeesPage() {
               <div className="space-y-6">
                 {lowFee2Groups.map((g) => (
                   <div key={g.low}>
-                    <h3 className="text-lg font-black text-gray-900 mb-3">
+                    <h3 className="text-lg font-bold text-gray-900 mb-3">
                       2社間の下限 {g.low}%〜（{g.rows.length}社）
                     </h3>
                     <div className="space-y-3">
                       {g.rows.map(({ slug, row }) => (
-                        <div key={slug} className="rounded-xl border-2 border-gray-100 bg-white p-4">
-                          <h4 className="text-base font-black text-gray-900 mb-2">
+                        <div key={slug} className="rounded-md border-2 border-gray-100 bg-white p-4">
+                          <h4 className="text-base font-bold text-gray-900 mb-2">
                             <Link href={`/companies/${slug}`} className="text-blue-700 hover:underline">{row.name}</Link>
                           </h4>
                           <dl className="grid grid-cols-[4.5rem_1fr] gap-x-3 gap-y-1.5 text-sm text-gray-700">
@@ -213,11 +213,11 @@ export default function FeesPage() {
 
               {/* 3社間の下限（2社間とは別に表示） */}
               <div id="low-fee-3" className="mt-8">
-                <h3 className="text-lg font-black text-gray-900 mb-2">3社間の手数料の下限を数字で示している会社（参考）</h3>
+                <h3 className="text-lg font-bold text-gray-900 mb-2">3社間の手数料の下限を数字で示している会社（参考）</h3>
                 <p className="text-sm text-gray-700 leading-relaxed mb-3">
                   3社間ファクタリング（売掛先の承諾を得て売掛金を譲渡する方式）は、2社間とは別に示します。当サイトの記録（2026年10月14日〜11月10日確認）で、3社間の手数料の下限が1.2%以下と表示している会社は次のとおりです。医療・介護の報酬だけを対象とするサービスは、対象が限られるため分けて記載しています。
                 </p>
-                <div className="overflow-x-auto rounded-xl border border-gray-200">
+                <div className="overflow-x-auto rounded-md border border-gray-200">
                   <table className="w-full text-sm">
                     <thead>
                       <tr className="bg-gray-800 text-white">
@@ -269,7 +269,7 @@ export default function FeesPage() {
         <section id="market" className="mb-12">
           <Card className="border-2 border-gray-100 shadow-sm">
             <CardHeader className="bg-gray-50 border-b border-gray-100">
-              <CardTitle className="text-2xl font-black text-gray-900">2社間・3社間の手数料の違いと、手数料が変わる条件</CardTitle>
+              <CardTitle className="text-2xl font-bold text-gray-900">2社間・3社間の手数料の違いと、手数料が変わる条件</CardTitle>
             </CardHeader>
             <CardContent className="pt-6">
               <div className="space-y-6">
@@ -278,16 +278,16 @@ export default function FeesPage() {
                 </p>
 
                 <div className="grid md:grid-cols-2 gap-6">
-                  <div className="bg-blue-50 p-5 rounded-xl border border-blue-100">
-                    <h3 className="font-black text-blue-700 mb-3 text-xl">2社間ファクタリング</h3>
+                  <div className="bg-blue-50 p-5 rounded-md border border-blue-100">
+                    <h3 className="font-bold text-blue-700 mb-3 text-xl">2社間ファクタリング</h3>
                     <p className="text-sm text-gray-700 mb-2">売掛先に知らせずに、利用者とファクタリング会社の2社で契約する方式です。</p>
                     <ul className="space-y-1.5 text-sm text-gray-700 list-disc pl-5">
                       <li>掲載59社のうち、2社間に対応すると公式に記載している会社は50社</li>
                       <li>2社間手数料の下限の率を公表している31社のうち、12社が2%未満、7社が5%以上</li>
                     </ul>
                   </div>
-                  <div className="bg-green-50 p-5 rounded-xl border border-green-100">
-                    <h3 className="font-black text-green-700 mb-3 text-xl">3社間ファクタリング</h3>
+                  <div className="bg-green-50 p-5 rounded-md border border-green-100">
+                    <h3 className="font-bold text-green-700 mb-3 text-xl">3社間ファクタリング</h3>
                     <p className="text-sm text-gray-700 mb-2">売掛先の承諾を得て、売掛先から直接ファクタリング会社に支払ってもらう方式です。売掛先に利用が知られます。</p>
                     <ul className="space-y-1.5 text-sm text-gray-700 list-disc pl-5">
                       <li>掲載59社のうち、3社間に対応すると公式に記載している会社は36社、そのうち3社間の率を数字で示している会社は18社</li>
@@ -300,7 +300,7 @@ export default function FeesPage() {
                 </p>
 
                 <div>
-                  <h3 className="font-black text-gray-900 mb-3 text-xl">手数料が変わる条件（各社の公式の記載）</h3>
+                  <h3 className="font-bold text-gray-900 mb-3 text-xl">手数料が変わる条件（各社の公式の記載）</h3>
                   <p className="text-sm text-gray-700 leading-relaxed mb-4">
                     日本中小企業金融サポート機構は、よくある質問で「実際の手数料は、売掛金の金額、入金予定日までの期間、売掛先の信用力、契約方法などによって変動します。」と案内しています（{LOW_FEE2_CHECKED}確認）。ほかの会社の公式表示にも、次のような例があります。
                   </p>
@@ -332,13 +332,13 @@ export default function FeesPage() {
         <section id="fee-index" className="mb-12">
           <Card className="border-2 border-gray-100 shadow-sm">
             <CardHeader className="bg-gray-50 border-b border-gray-100">
-              <CardTitle className="text-2xl font-black text-gray-900">ファクタリング{FEE_COMPANY_COUNT}社 手数料・入金スピード比較（公式サイトで確認）</CardTitle>
+              <CardTitle className="text-2xl font-bold text-gray-900">ファクタリング{FEE_COMPANY_COUNT}社 手数料・入金スピード比較（公式サイトで確認）</CardTitle>
             </CardHeader>
             <CardContent className="pt-6">
               <p className="text-sm text-gray-700 leading-relaxed mb-2">
                 主要{FEE_COMPANY_COUNT}社の<strong>手数料率（2社間/3社間）・最短入金・利用可能額・対象・オンライン完結</strong>を、各社の公式サイトで<strong>{feeCheckedAt}に1件ずつ確認</strong>し、一覧にしています（その後に再確認した会社は、会社名の下に確認日を記載しています）。公式サイトに手数料率の記載がない会社は「非公示（要見積もり）」と記載しています。改定の頻度が高い分野のため、月に1回を目安に再確認し、更新しています。
               </p>
-              <div className="overflow-x-auto rounded-xl border border-gray-200 mb-3">
+              <div className="overflow-x-auto rounded-md border border-gray-200 mb-3">
                 <table className="w-full text-xs sm:text-sm min-w-[900px]">
                   <thead>
                     <tr className="bg-gray-800 text-white">
@@ -393,7 +393,7 @@ export default function FeesPage() {
         <section id="tips" className="mb-12">
           <Card className="border-2 border-gray-100 shadow-sm">
             <CardHeader className="bg-gray-50 border-b border-gray-100">
-              <CardTitle className="text-2xl font-black text-gray-900">手数料を抑えるために確かめたい4つの点</CardTitle>
+              <CardTitle className="text-2xl font-bold text-gray-900">手数料を抑えるために確かめたい4つの点</CardTitle>
             </CardHeader>
             <CardContent className="pt-6">
               <div className="space-y-6">
@@ -419,8 +419,8 @@ export default function FeesPage() {
                     color: "sky",
                   },
                 ].map((tip, index) => (
-                  <div key={index} className={`bg-${tip.color}-50 p-6 rounded-xl border border-${tip.color}-100`}>
-                    <h3 className="font-black text-gray-900 mb-2 text-lg">{tip.title}</h3>
+                  <div key={index} className={`bg-${tip.color}-50 p-6 rounded-md border border-${tip.color}-100`}>
+                    <h3 className="font-bold text-gray-900 mb-2 text-lg">{tip.title}</h3>
                     <p className="text-gray-700 leading-relaxed">{tip.description}</p>
                   </div>
                 ))}
@@ -436,7 +436,7 @@ export default function FeesPage() {
         <section id="simulator" className="mb-12">
           <Card className="border-2 border-gray-100 shadow-sm">
             <CardHeader className="bg-gray-50 border-b border-gray-100">
-              <CardTitle className="text-2xl font-black text-gray-900">手数料シミュレーター（無料）</CardTitle>
+              <CardTitle className="text-2xl font-bold text-gray-900">手数料シミュレーター（無料）</CardTitle>
             </CardHeader>
             <CardContent className="pt-6">
               <p className="text-gray-700 leading-relaxed mb-6">
@@ -451,7 +451,7 @@ export default function FeesPage() {
         <section id="faq" className="mb-12">
           <Card className="border-2 border-gray-100 shadow-sm">
             <CardHeader className="bg-gray-50 border-b border-gray-100">
-              <CardTitle className="text-2xl font-black text-gray-900">よくある質問</CardTitle>
+              <CardTitle className="text-2xl font-bold text-gray-900">よくある質問</CardTitle>
             </CardHeader>
             <CardContent className="pt-6">
               <div className="space-y-6">
@@ -485,8 +485,8 @@ export default function FeesPage() {
                     a: "日本中小企業金融サポート機構は、実際の手数料が売掛金の金額、入金予定日までの期間、売掛先の信用力、契約方法などによって変動すると案内しています。インボイスPayのように、売掛先の信用などにより最大10%と表示している会社もあります。"
                   }
                 ].map((faq, index) => (
-                  <div key={index} className="bg-blue-50 p-6 rounded-xl border border-blue-100">
-                    <h4 className="font-black text-gray-900 mb-3 text-lg">Q. {faq.q}</h4>
+                  <div key={index} className="bg-blue-50 p-6 rounded-md border border-blue-100">
+                    <h4 className="font-bold text-gray-900 mb-3 text-lg">Q. {faq.q}</h4>
                     <p className="text-gray-700 leading-relaxed pl-4 border-l-4 border-blue-500">
                       A. {faq.a}
                     </p>
@@ -506,7 +506,7 @@ export default function FeesPage() {
               { slug: "article-factoring-tesuryo-yasui", label: "ファクタリング手数料が安い会社の選び方" },
               { slug: "article-factoring-tesuryo-koushou", label: "ファクタリング手数料の交渉方法・引き下げ方" },
             ].map((a) => (
-              <Link key={a.slug} href={`/articles/${a.slug}`} className="block bg-white border border-gray-200 rounded-xl p-4 hover:border-[#1B3A5C] hover:shadow-md transition">
+              <Link key={a.slug} href={`/articles/${a.slug}`} className="block bg-white border border-gray-200 rounded-md p-4 hover:border-[#1B3A5C] hover:shadow-sm transition">
                 <span className="text-xs font-semibold text-[#1B3A5C] bg-[#F0F6FC] px-2 py-0.5 rounded-full">解説記事</span>
                 <p className="mt-2 text-sm font-medium text-gray-800 leading-snug">{a.label}</p>
               </Link>
@@ -515,8 +515,8 @@ export default function FeesPage() {
         </section>
 
         {/* CTA */}
-        <div className="bg-gradient-to-br from-orange-500 via-amber-500 to-orange-600 rounded-2xl shadow-2xl shadow-orange-500/30 p-10 text-center text-white mb-8">
-          <h2 className="text-3xl font-black mb-4">
+        <div className="bg-[#1B3A5C] rounded-md p-8 sm:p-10 text-center text-white mb-8">
+          <h2 className="text-3xl font-bold mb-4">
             手数料が安いファクタリング会社を診断する
           </h2>
           <p className="mb-8 text-orange-100 text-lg leading-relaxed">
@@ -525,13 +525,13 @@ export default function FeesPage() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link
               href="/#diagnosis"
-              className="bg-white text-orange-600 font-black py-4 px-10 rounded-2xl hover:bg-gray-100 transition shadow-lg"
+              className="bg-white text-orange-600 font-bold py-4 px-10 rounded-md hover:bg-gray-100 transition shadow-sm"
             >
               無料診断を始める
             </Link>
             <Link
               href="/#ranking"
-              className="bg-orange-700 text-white font-bold py-4 px-10 rounded-2xl hover:bg-orange-800 transition border-2 border-orange-400"
+              className="bg-orange-700 text-white font-bold py-4 px-10 rounded-md hover:bg-orange-800 transition border-2 border-orange-400"
             >
               掲載会社の一覧を見る
             </Link>

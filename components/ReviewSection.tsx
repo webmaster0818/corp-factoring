@@ -14,7 +14,7 @@ export function ReviewSection({ companyName, realRating, pros, cons }: ReviewSec
     <section id="reviews" className="mb-12 scroll-mt-4">
       <Card className="border-2 border-gray-100 shadow-sm">
         <CardHeader className="bg-gray-50 border-b border-gray-100">
-          <CardTitle className="text-2xl font-black text-gray-900">
+          <CardTitle className="text-2xl font-bold text-gray-900">
             {companyName}の口コミ・評判
           </CardTitle>
           <p className="text-sm text-gray-600 mt-2">
@@ -23,10 +23,10 @@ export function ReviewSection({ companyName, realRating, pros, cons }: ReviewSec
         </CardHeader>
         <CardContent className="pt-6">
           {realRating ? (
-            <div className="bg-amber-50 border border-amber-200 rounded-xl p-6 mb-6">
+            <div className="bg-amber-50 border border-amber-200 rounded-md p-6 mb-6">
               <div className="flex flex-wrap items-center gap-4">
                 <div className="text-center">
-                  <p className="text-3xl font-black text-amber-700">{realRating.count.toLocaleString()}件</p>
+                  <p className="text-3xl font-bold text-amber-700">{realRating.count.toLocaleString()}件</p>
                   <p className="text-xs text-gray-600 mt-1">Googleマップの口コミ</p>
                 </div>
                 <div className="flex-1 min-w-[200px]">
@@ -40,7 +40,7 @@ export function ReviewSection({ companyName, realRating, pros, cons }: ReviewSec
               </div>
             </div>
           ) : (
-            <div className="bg-gray-50 border border-gray-200 rounded-xl p-6 mb-6">
+            <div className="bg-gray-50 border border-gray-200 rounded-md p-6 mb-6">
               <p className="text-sm text-gray-600">
                 {companyName}のGoogleマップの口コミの件数は、当サイトでは掲載していません。
               </p>

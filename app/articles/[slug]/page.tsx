@@ -186,7 +186,7 @@ export default async function ArticlePage({
         const eyecatchSrc = isSeikyushoKaitori ? '/images/seikyusho-kaitori-hero.webp' : isGyoushu ? '/images/articles/gyoushu-article.webp' : isKojin ? '/images/articles/kojin-jigyonushi.webp' : '/images/articles/factoring-article.webp';
         return (
           <div className="max-w-4xl mx-auto px-6 mt-8">
-            <div className="rounded-xl overflow-hidden shadow-sm">
+            <div className="rounded-md overflow-hidden shadow-sm">
               <img src={eyecatchSrc} alt={article.title} className="w-full h-48 md:h-64 object-cover" width="1024" height="1024" fetchPriority="high" decoding="async" />
             </div>
           </div>
@@ -229,7 +229,7 @@ export default async function ArticlePage({
 
         {/* この記事に登場する会社の個別ページ */}
         {mentionedCompanies.length > 0 && (
-          <section className="mt-12 bg-white border border-gray-200 rounded-xl p-6">
+          <section className="mt-12 bg-white border border-gray-200 rounded-md p-6">
             <h2 className="text-lg font-bold text-[#1B3A5C] mb-2">この記事に登場する会社の口コミ・評判</h2>
             <p className="text-xs text-gray-500 mb-4">各社のページでは、公式サイトで確認した手数料・入金スピード・会社概要と、口コミの出典を掲載しています。掲載情報には確認日を記載しています。</p>
             <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2 text-sm">
@@ -253,7 +253,7 @@ export default async function ArticlePage({
               <Link
                 key={company.slug}
                 href={`/companies/${company.slug}`}
-                className="bg-white border border-gray-200 rounded-lg p-4 hover:shadow-md hover:border-[#1B3A5C]/30 transition group"
+                className="bg-white border border-gray-200 rounded-lg p-4 hover:shadow-sm hover:border-[#1B3A5C]/30 transition group"
               >
                 <div className="flex items-center justify-between mb-2">
                   <h3 className="text-sm font-bold text-gray-900 group-hover:text-[#1B3A5C] transition">
@@ -273,7 +273,7 @@ export default async function ArticlePage({
         </section>
 
         {/* CTA */}
-        <div className="mt-12 bg-gradient-to-r from-[#1B3A5C] to-[#2a5280] rounded-xl p-8 text-white text-center">
+        <div className="mt-12 bg-[#1B3A5C] rounded-md p-8 text-white text-center">
           <h2 className="text-xl font-bold mb-3">
             条件に合うファクタリング会社を診断できます
           </h2>
@@ -290,7 +290,7 @@ export default async function ArticlePage({
 
         {/* 手数料記事 → /fees/ データ資産への導線（手数料クラスタの相互リンク） */}
         {slug.includes("tesuryo") && (
-          <section className="mt-12 bg-[#F0F6FC] border border-[#1B3A5C]/15 rounded-xl p-6">
+          <section className="mt-12 bg-[#F0F6FC] border border-[#1B3A5C]/15 rounded-md p-6">
             <h2 className="text-lg font-bold text-[#1B3A5C] mb-2">{FEE_COMPANY_COUNT}社の手数料を公式サイトの確認データで比較できます</h2>
             <p className="text-sm text-gray-700 mb-4">
               各社の手数料（2社間・3社間の公表値）は、当サイトが各社の公式サイトを1件ずつ確認して掲載しています。会社ごとの手数料は、以下の比較表でご確認いただけます。
@@ -343,7 +343,7 @@ export default async function ArticlePage({
                 <Link
                   key={related.slug}
                   href={`/articles/${related.slug}`}
-                  className="bg-white border border-gray-200 rounded-lg p-5 hover:shadow-md hover:border-[#1B3A5C]/30 transition group"
+                  className="bg-white border border-gray-200 rounded-lg p-5 hover:shadow-sm hover:border-[#1B3A5C]/30 transition group"
                 >
                   {related.keyword && (
                     <span className="inline-block bg-[#1B3A5C]/10 text-[#1B3A5C] text-xs font-medium px-2.5 py-1 rounded-full mb-3">

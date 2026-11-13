@@ -23,12 +23,12 @@ export function ComparisonTable({ companies }: ComparisonTableProps) {
       <Table>
         <TableHeader>
           <TableRow>
-            <TableHead className="w-[60px]">順位</TableHead>
+            <TableHead className="w-[64px] whitespace-nowrap">順位</TableHead>
             <TableHead className="min-w-[180px]">会社名</TableHead>
             <TableHead className="min-w-[120px]">手数料</TableHead>
-            <TableHead className="min-w-[120px]">入金スピード</TableHead>
-            <TableHead className="min-w-[120px]">買取可能額</TableHead>
-            <TableHead className="w-[80px]">個人</TableHead>
+            <TableHead className="min-w-[160px]">入金スピード</TableHead>
+            <TableHead className="min-w-[200px]">買取可能額</TableHead>
+            <TableHead className="w-[64px] whitespace-nowrap text-center">個人</TableHead>
             <TableHead className="min-w-[200px]">特徴</TableHead>
             <TableHead className="w-[100px]"></TableHead>
           </TableRow>
@@ -36,11 +36,8 @@ export function ComparisonTable({ companies }: ComparisonTableProps) {
         <TableBody>
           {companies.map((company, index) => (
             <TableRow key={company.id}>
-              <TableCell className="font-bold text-center">
-                {index === 0 && <span className="text-2xl">🥇</span>}
-                {index === 1 && <span className="text-2xl">🥈</span>}
-                {index === 2 && <span className="text-2xl">🥉</span>}
-                {index > 2 && <span className="text-lg">{index + 1}位</span>}
+              <TableCell className="font-bold text-center whitespace-nowrap">
+                <span className={`text-sm tabular-nums ${index < 3 ? "text-[#1B3A5C]" : "text-gray-600"}`}>{index + 1}位</span>
               </TableCell>
               <TableCell>
                 <div>
@@ -56,12 +53,12 @@ export function ComparisonTable({ companies }: ComparisonTableProps) {
                 </div>
               </TableCell>
               <TableCell>
-                <div className="font-semibold text-primary">
+                <div className="font-semibold text-ink whitespace-nowrap">
                   {company.fees.max > 0 ? `${feeRange(company.fees)}` : company.fees.min > 0 ? `${company.fees.min}%〜` : "要見積もり"}
                 </div>
               </TableCell>
               <TableCell>
-                <Badge variant="secondary" className="whitespace-nowrap">
+                <Badge variant="secondary" className="whitespace-normal font-normal">
                   {company.speed}
                 </Badge>
               </TableCell>
@@ -78,9 +75,9 @@ export function ComparisonTable({ companies }: ComparisonTableProps) {
               </TableCell>
               <TableCell className="text-center">
                 {company.personalSupport ? (
-                  <span className="text-green-600 font-bold">✅</span>
+                  <span className="text-[#1B3A5C] font-bold" aria-label="対応">○</span>
                 ) : (
-                  <span className="text-gray-400">❌</span>
+                  <span className="text-gray-400" aria-label="非対応">—</span>
                 )}
               </TableCell>
               <TableCell>

@@ -14,7 +14,7 @@ export function EditorialVerificationSection({ companyName, data }: EditorialVer
     <section id="editorial-check" className="mb-8 scroll-mt-4">
       <Card className="border-2 border-blue-100 shadow-sm">
         <CardHeader className="bg-blue-50 border-b border-blue-100">
-          <CardTitle className="text-2xl font-black text-gray-900">
+          <CardTitle className="text-2xl font-bold text-gray-900">
             {companyName}について編集部が確認した事実
           </CardTitle>
           <p className="text-sm text-gray-600 mt-2">

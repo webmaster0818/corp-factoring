@@ -70,7 +70,7 @@ export default function ArticlesPage() {
               <Link
                 key={topic.slug}
                 href={`/topics/${topic.slug}`}
-                className="bg-white rounded-lg border border-gray-200 p-5 hover:shadow-lg hover:border-blue-300 transition group"
+                className="bg-white rounded-lg border border-gray-200 p-5 hover:shadow-sm hover:border-blue-300 transition group"
               >
                 <h3 className="text-base font-bold text-gray-900 group-hover:text-blue-600 transition mb-2">
                   {topic.name}
@@ -90,7 +90,7 @@ export default function ArticlesPage() {
             <Link
               key={article.slug}
               href={`/articles/${article.slug}`}
-              className="bg-white rounded-lg border border-gray-200 p-6 hover:shadow-lg hover:border-blue-200 transition group"
+              className="bg-white rounded-lg border border-gray-200 p-6 hover:shadow-sm hover:border-blue-200 transition group"
             >
               {article.keyword && (
                 <span className="inline-block bg-blue-50 text-blue-600 text-xs font-medium px-2.5 py-1 rounded-full mb-3">
@@ -108,7 +108,7 @@ export default function ArticlesPage() {
         </div>
 
         {/* CTA */}
-        <div className="mt-16 bg-gradient-to-r from-blue-600 to-blue-700 rounded-xl p-8 text-white text-center">
+        <div className="mt-16 bg-[#1B3A5C] rounded-md p-8 text-white text-center">
           <h2 className="text-xl font-bold mb-3">
             条件に合うファクタリング会社を診断できます
           </h2>

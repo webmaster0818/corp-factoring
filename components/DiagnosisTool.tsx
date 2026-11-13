@@ -148,10 +148,10 @@ export function DiagnosisTool() {
             {result.map((company, index) => (
               <div
                 key={company.id}
-                className="border rounded-lg p-6 hover:shadow-lg transition-shadow"
+                className="border rounded-lg p-6 hover:shadow-sm transition-shadow"
               >
                 <div className="flex items-start gap-4">
-                  <div className="flex-shrink-0 w-10 h-10 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-white font-bold">
+                  <div className="flex-shrink-0 w-10 h-10 rounded-sm bg-[#1B3A5C] flex items-center justify-center text-white font-bold">
                     {index + 1}
                   </div>
                   

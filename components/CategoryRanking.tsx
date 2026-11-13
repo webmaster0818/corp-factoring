@@ -26,10 +26,10 @@ export function CategoryRanking({ title, companies, icon }: CategoryRankingProps
           {companies.map((company, index) => (
             <div
               key={company.id}
-              className="flex items-center gap-4 p-4 border rounded-lg hover:shadow-md transition-shadow"
+              className="flex items-center gap-4 p-4 border rounded-lg hover:shadow-sm transition-shadow"
             >
               {/* 順位 */}
-              <div className="flex-shrink-0 w-12 h-12 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center text-white font-bold text-xl">
+              <div className="flex-shrink-0 w-12 h-12 rounded-sm bg-[#1B3A5C] flex items-center justify-center text-white font-bold text-xl">
                 {index + 1}
               </div>
 

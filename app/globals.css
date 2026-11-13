@@ -4,26 +4,27 @@
 
 @layer base {
   :root {
+    /* 紺（#1B3A5C）を基調に、グレーの中間色だけで組む */
     --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --foreground: 218 57% 18%;
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 218 57% 18%;
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
-    --primary: 221.2 83.2% 53.3%;
-    --primary-foreground: 210 40% 98%;
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 221.2 83.2% 53.3%;
-    --radius: 0.5rem;
+    --popover-foreground: 215 28% 17%;
+    --primary: 208 70% 33%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 213 25% 95%;
+    --secondary-foreground: 211 45% 22%;
+    --muted: 213 25% 96%;
+    --muted-foreground: 215 14% 40%;
+    --accent: 213 25% 95%;
+    --accent-foreground: 211 45% 22%;
+    --destructive: 0 60% 45%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 214 18% 88%;
+    --input: 214 18% 85%;
+    --ring: 208 70% 40%;
+    --radius: 0.375rem;
   }
 }
 
@@ -31,33 +32,74 @@
   * {
     @apply border-border;
   }
+  html {
+    -webkit-text-size-adjust: 100%;
+  }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans;
+    font-size: 16px;
+    line-height: 1.8;
+    letter-spacing: 0.02em;
+    font-feature-settings: "palt" 0;
+    overflow-wrap: anywhere;
+  }
+  h1, h2, h3, h4 {
+    line-height: 1.5;
+    letter-spacing: 0.03em;
+  }
+  a {
+    text-underline-offset: 0.2em;
+  }
+  table {
+    font-variant-numeric: tabular-nums;
   }
 }
 
 /* 記事本文の表（remark-gfm で出力）。typography プラグインが無いので最低限の見た目をここで付ける。スマホでは横スクロール */
 .prose table { display: block; max-width: 100%; overflow-x: auto; border-collapse: collapse; margin: 1.25rem 0; font-size: 0.9rem; }
-.prose th, .prose td { border: 1px solid #e5e7eb; padding: 0.5rem 0.75rem; text-align: left; vertical-align: top; white-space: normal; min-width: 6rem; }
-.prose th { background: #f3f4f6; font-weight: 700; color: #111827; }
+.prose th, .prose td { border: 1px solid #dfe5ec; padding: 0.5rem 0.75rem; text-align: left; vertical-align: top; white-space: normal; min-width: 6rem; }
+.prose th { background: #f3f6fa; font-weight: 700; color: #1f2937; }
 /* 本文のコードブロック（計算例・流れの図）がスマホ幅でページごと横にはみ出さないよう、折り返す */
 .prose pre { max-width: 100%; overflow-x: auto; white-space: pre-wrap; overflow-wrap: anywhere; }
 /* 記事本文の見出し・段落・リスト・画像。page.tsx の prose-* 指定は typography プラグインが無く効いていなかったので、同じ意図の最低限をここで付ける */
-.prose { color: #374151; line-height: 1.85; }
-.prose h2 { font-size: 1.25rem; font-weight: 700; color: #111827; margin: 2.5rem 0 1rem; padding-bottom: 0.5rem; border-bottom: 1px solid #e5e7eb; line-height: 1.5; }
-.prose h3 { font-size: 1.125rem; font-weight: 700; color: #111827; margin: 2rem 0 0.75rem; line-height: 1.5; }
+.prose { color: #2b3440; line-height: 1.9; font-size: 1rem; }
+.prose h2 { font-size: 1.3rem; font-weight: 700; color: #1B3A5C; margin: 3rem 0 1.25rem; padding: 0.15rem 0 0.15rem 0.85rem; border-left: 4px solid #1B3A5C; line-height: 1.5; }
+.prose h3 { font-size: 1.125rem; font-weight: 700; color: #1f2937; margin: 2.25rem 0 0.75rem; padding-bottom: 0.4rem; border-bottom: 1px solid #dfe5ec; line-height: 1.5; }
 .prose h4 { font-weight: 700; color: #111827; margin: 1.5rem 0 0.5rem; }
 .prose p { margin: 0 0 1rem; }
 .prose ul { list-style: disc; padding-left: 1.5rem; margin: 1rem 0; }
 .prose ol { list-style: decimal; padding-left: 1.5rem; margin: 1rem 0; }
 .prose li { margin: 0.25rem 0; }
 .prose li > p { margin: 0; }
-.prose a { color: #2563eb; }
-.prose a:hover { text-decoration: underline; }
+.prose a { color: #1F6AAE; text-decoration: underline; text-decoration-color: #9FB3CB; }
+.prose a:hover { text-decoration-color: currentColor; }
 .prose strong { color: #111827; font-weight: 700; }
-.prose blockquote { border-left: 4px solid #60a5fa; background: #eff6ff; padding: 0.75rem 1rem; margin: 1.25rem 0; border-radius: 0 0.5rem 0.5rem 0; }
+.prose blockquote { border-left: 3px solid #9FB3CB; background: #F3F6FA; padding: 0.75rem 1rem; margin: 1.25rem 0; border-radius: 0; color: #374151; }
 .prose blockquote > :last-child { margin-bottom: 0; }
 .prose hr { margin: 2rem 0; border-color: #e5e7eb; }
 .prose img { max-width: 100%; height: auto; margin: 1.5rem 0 0.5rem; }
 .prose p:has(> img) { margin-bottom: 0.25rem; }
 
+
+/* ===== 2026-11 デザイン改修：共通の見出し・表・部品 ===== */
+/* セクション見出し：左寄せ＋左罫線 */
+.section-title { font-size: 1.5rem; font-weight: 700; color: #14284A; border-left: 4px solid #1F6AAE; padding: 0.1rem 0 0.1rem 0.85rem; line-height: 1.45; }
+@media (max-width: 640px) { .section-title { font-size: 1.3rem; } }
+.section-lead { color: #4b5563; font-size: 0.95rem; margin-top: 0.5rem; }
+/* 表ラッパー：表の中だけ横スクロールし、ページは横にはみ出さない */
+.table-scroll { max-width: 100%; overflow-x: auto; -webkit-overflow-scrolling: touch; }
+/* 本文の画像・埋め込みがはみ出さないように */
+img, video, iframe { max-width: 100%; }
+@media (max-width: 640px) {
+  .prose { font-size: 1rem; }
+  .prose table { font-size: 0.875rem; }
+}
+
+/* TOP ファーストビュー：方眼の背景（CSSのみ・周辺に向けて薄くする） */
+.hero-grid { position: relative; background-color: #F5F8FB; isolation: isolate; }
+.hero-grid::before { content: ""; position: absolute; inset: 0; z-index: -1;
+  background-image: linear-gradient(#E1E8F0 1px, transparent 1px), linear-gradient(90deg, #E1E8F0 1px, transparent 1px);
+  background-size: 28px 28px; background-position: -1px -1px;
+  -webkit-mask-image: radial-gradient(ellipse 80% 70% at 70% 30%, #000 30%, transparent 85%);
+          mask-image: radial-gradient(ellipse 80% 70% at 70% 30%, #000 30%, transparent 85%); }
+.num { font-variant-numeric: tabular-nums; font-feature-settings: "tnum" 1; }

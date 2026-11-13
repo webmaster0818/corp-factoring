@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useState } from "react";
+import { FEE_COMPANY_COUNT } from "@/data/feeIndex";
 
 const menuCategories = [
   {
@@ -56,42 +57,54 @@ export function Header() {
   return (
     <header className="sticky top-0 z-50">
       {/* 景品表示法対応: 広告表記バー */}
-      <div className="bg-gray-100 border-b border-gray-200">
-        <div className="max-w-7xl mx-auto px-6 py-1.5 flex items-center justify-center gap-2 text-xs text-gray-500">
-          <span className="bg-blue-600 text-white font-bold px-2 py-0.5 rounded text-[10px]">PR</span>
+      <div className="bg-soft border-b border-line">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 py-1.5 flex items-center justify-center gap-2 text-[11px] sm:text-xs text-gray-600 leading-snug">
+          <span className="border border-gray-400 text-gray-600 font-semibold px-1.5 rounded-sm text-[10px] leading-4 shrink-0">PR</span>
           <span>当サイトはアフィリエイトプログラムによる収益を得ています。掲載の順番はサービスへの評価に影響しません。</span>
         </div>
       </div>
-      <div className="bg-white border-b border-gray-200">
-      <div className="max-w-7xl mx-auto px-6 h-17 flex items-center justify-between">
+      <div className="bg-white/95 backdrop-blur border-b border-line">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-4">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2.5">
-          <img src="/images/logo-88.webp" alt="ファクタリング比較ナビ ロゴ" className="w-11 h-11" width="44" height="44" />
-          <span className="text-[19px] font-bold text-[#1B3A5C] tracking-wide">
+        <Link href="/" className="flex items-center gap-2.5 shrink-0">
+          <img src="/images/logo-88.webp" alt="ファクタリング比較ナビ ロゴ" className="w-9 h-9" width="44" height="44" />
+          <span className="text-[17px] font-bold text-ink tracking-wide">
             ファクタリング比較ナビ
           </span>
         </Link>
 
+        {/* 掲載数（サイト内の既存の数値のみ） */}
+        <div className="hidden lg:flex items-center gap-5 pl-5 border-l border-line text-ink">
+          <div className="leading-tight">
+            <span className="block text-[10px] text-gray-500">掲載会社数</span>
+            <span className="text-base font-bold tabular-nums">{FEE_COMPANY_COUNT}<span className="text-xs font-semibold ml-0.5">社</span></span>
+          </div>
+          <div className="leading-tight">
+            <span className="block text-[10px] text-gray-500">比較項目数</span>
+            <span className="text-base font-bold tabular-nums">50+</span>
+          </div>
+        </div>
+
         {/* Desktop Navigation */}
-        <div className="hidden md:flex items-center gap-7">
-          <Link href="/#ranking" className="text-gray-600 hover:text-[#1B3A5C] font-medium text-sm">
+        <div className="hidden md:flex items-center gap-6 ml-auto">
+          <Link href="/#ranking" className="text-ink/80 hover:text-blue-600 font-medium text-sm">
             ランキング
           </Link>
-          <Link href="/#comparison" className="text-gray-600 hover:text-[#1B3A5C] font-medium text-sm">
+          <Link href="/#comparison" className="text-ink/80 hover:text-blue-600 font-medium text-sm">
             比較表
           </Link>
-          <Link href="/#diagnosis" className="text-gray-600 hover:text-[#1B3A5C] font-medium text-sm">
+          <Link href="/#diagnosis" className="text-ink/80 hover:text-blue-600 font-medium text-sm">
             診断
           </Link>
-          <Link href="/articles" className="text-gray-600 hover:text-[#1B3A5C] font-medium text-sm">
+          <Link href="/articles" className="text-ink/80 hover:text-blue-600 font-medium text-sm">
             コラム
           </Link>
-          <Link href="/#faq" className="text-gray-600 hover:text-[#1B3A5C] font-medium text-sm">
+          <Link href="/#faq" className="text-ink/80 hover:text-blue-600 font-medium text-sm">
             FAQ
           </Link>
           <Link
             href="/#diagnosis"
-            className="bg-[#1B3A5C] text-white px-6 py-2.5 rounded-md font-bold text-sm hover:bg-[#152d47] transition"
+            className="bg-cta text-white px-5 py-2.5 rounded-md font-bold text-sm hover:bg-cta-hover transition"
           >
             無料診断する
           </Link>
@@ -100,12 +113,12 @@ export function Header() {
         {/* Hamburger Button (Mobile) */}
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden flex flex-col gap-1.5 p-2"
+          className="md:hidden flex flex-col gap-1.5 p-2 -mr-2"
           aria-label="メニュー"
         >
-          <span className={`block w-6 h-0.5 bg-[#1B3A5C] transition-transform ${isOpen ? 'rotate-45 translate-y-2' : ''}`} />
-          <span className={`block w-6 h-0.5 bg-[#1B3A5C] transition-opacity ${isOpen ? 'opacity-0' : ''}`} />
-          <span className={`block w-6 h-0.5 bg-[#1B3A5C] transition-transform ${isOpen ? '-rotate-45 -translate-y-2' : ''}`} />
+          <span className={`block w-6 h-0.5 bg-ink transition-transform ${isOpen ? 'rotate-45 translate-y-2' : ''}`} />
+          <span className={`block w-6 h-0.5 bg-ink transition-opacity ${isOpen ? 'opacity-0' : ''}`} />
+          <span className={`block w-6 h-0.5 bg-ink transition-transform ${isOpen ? '-rotate-45 -translate-y-2' : ''}`} />
         </button>
       </div>
 
@@ -115,7 +128,7 @@ export function Header() {
           <div className="px-6 py-4">
             {menuCategories.map((category) => (
               <div key={category.title} className="mb-4">
-                <h3 className="text-xs font-bold text-[#1B3A5C] uppercase tracking-wider mb-2 pb-1 border-b border-gray-100">
+                <h3 className="text-xs font-bold text-ink tracking-wider mb-2 pb-1 border-b border-gray-100">
                   {category.title}
                 </h3>
                 <div className="space-y-1">
@@ -138,7 +151,7 @@ export function Header() {
               <Link
                 href="/#diagnosis"
                 onClick={() => setIsOpen(false)}
-                className="block w-full bg-[#1B3A5C] text-white text-center py-3 rounded-md font-bold text-sm hover:bg-[#152d47] transition"
+                className="block w-full bg-cta text-white text-center py-3 rounded-md font-bold text-sm hover:bg-cta-hover transition"
               >
                 無料診断する
               </Link>

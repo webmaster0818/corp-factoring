@@ -206,19 +206,19 @@ export function FeeSimulator() {
                 </h4>
                 <ul className="space-y-2 text-sm text-gray-700">
                   <li className="flex items-start gap-2">
-                    <span className="text-blue-600 mt-0.5">✓</span>
+                    <span aria-hidden="true" className="mt-[0.72em] h-1.5 w-1.5 shrink-0 bg-[#1B3A5C]" />
                     <span>3社間ファクタリングは、2社間ファクタリングより手数料が低い傾向があります</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-blue-600 mt-0.5">✓</span>
+                    <span aria-hidden="true" className="mt-[0.72em] h-1.5 w-1.5 shrink-0 bg-[#1B3A5C]" />
                     <span>売掛金額が大きいほど、手数料率は低くなる傾向があります</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-blue-600 mt-0.5">✓</span>
+                    <span aria-hidden="true" className="mt-[0.72em] h-1.5 w-1.5 shrink-0 bg-[#1B3A5C]" />
                     <span>入金までの期間が短いほど、手数料は低くなります</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-blue-600 mt-0.5">✓</span>
+                    <span aria-hidden="true" className="mt-[0.72em] h-1.5 w-1.5 shrink-0 bg-[#1B3A5C]" />
                     <span>売掛先の信用力が高いほど、審査では有利になります</span>
                   </li>
                 </ul>

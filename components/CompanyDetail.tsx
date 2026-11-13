@@ -103,7 +103,7 @@ export function CompanyDetail({ company }: CompanyDetailProps) {
           <ul className="space-y-2">
             {company.pros.map((pro, idx) => (
               <li key={idx} className="flex items-start">
-                <span className="text-green-600 mr-2 mt-1">✓</span>
+                <span aria-hidden="true" className="mt-[0.72em] h-1.5 w-1.5 shrink-0 bg-green-600 mr-2" />
                 <span className="text-gray-700">{pro}</span>
               </li>
             ))}
@@ -120,7 +120,7 @@ export function CompanyDetail({ company }: CompanyDetailProps) {
           <ul className="space-y-2">
             {company.cons.map((con, idx) => (
               <li key={idx} className="flex items-start">
-                <span className="text-red-600 mr-2 mt-1">×</span>
+                <span aria-hidden="true" className="mt-[0.72em] h-1.5 w-1.5 shrink-0 bg-gray-500 mr-2" />
                 <span className="text-gray-700">{con}</span>
               </li>
             ))}

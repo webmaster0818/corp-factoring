@@ -197,11 +197,11 @@ export function FAQ() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
-      <div className="text-center mb-8">
-        <h2 className="text-3xl font-bold text-gray-900 mb-2">
+      <div className="mb-6">
+        <h2 className="text-lg font-bold text-ink mb-1">
           よくある質問（FAQ）
         </h2>
-        <p className="text-gray-600">
+        <p className="text-sm text-gray-600">
           ファクタリングに関するよくある質問を{faqItems.length}項目掲載しています
         </p>
       </div>

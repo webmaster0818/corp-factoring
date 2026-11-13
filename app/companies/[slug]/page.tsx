@@ -259,7 +259,7 @@ export default function CompanyPage({
             <img
               src={`/images/companies/${slug}.webp`}
               alt={`${company.name}の評判・口コミ・手数料の解説`}
-              className="w-full rounded-lg shadow-md"
+              className="w-full rounded-lg shadow-sm"
               width="1200"
               height="630"
               fetchPriority="high"
@@ -362,13 +362,13 @@ export default function CompanyPage({
               href={company.affiliateUrl ?? company.url}
               target="_blank"
               rel={company.affiliateUrl ? "sponsored nofollow noopener" : "nofollow noopener"}
-              className="bg-blue-600 text-white font-bold py-4 px-10 rounded-lg text-center shadow-sm hover:bg-blue-700 hover:shadow-md transition"
+              className="bg-blue-600 text-white font-bold py-4 px-10 rounded-lg text-center shadow-sm hover:bg-blue-700 hover:shadow-sm transition"
             >
               公式サイトで詳細を見る →
             </a>
             <Link
               href="/#diagnosis"
-              className="bg-white border-2 border-sky-500 text-sky-600 font-bold py-4 px-10 rounded-2xl hover:bg-sky-50 transition text-center"
+              className="bg-white border-2 border-sky-500 text-sky-600 font-bold py-4 px-10 rounded-md hover:bg-sky-50 transition text-center"
             >
               無料診断ツール
             </Link>
@@ -379,7 +379,7 @@ export default function CompanyPage({
         <section id="quick-answer" className="mb-8 scroll-mt-4">
           <Card className="border-2 border-blue-100 shadow-sm">
             <CardHeader className="bg-blue-50 border-b border-blue-100">
-              <h2 className="leading-none tracking-tight text-xl font-black text-gray-900">{company.name}の営業時間・審査スピード・必要書類の概要</h2>
+              <h2 className="leading-none tracking-tight text-xl font-bold text-gray-900">{company.name}の営業時間・審査スピード・必要書類の概要</h2>
             </CardHeader>
             <CardContent className="pt-5">
               <p className="text-sm text-gray-700 leading-relaxed mb-4">
@@ -477,7 +477,7 @@ export default function CompanyPage({
           <section key={sec.id} id={sec.id} className="mb-8 scroll-mt-4">
             <Card className="border-2 border-gray-100 shadow-sm">
               <CardHeader className="bg-gray-50 border-b border-gray-100">
-                <h2 className="text-2xl font-black leading-none tracking-tight text-gray-900">{sec.heading}</h2>
+                <h2 className="text-2xl font-bold leading-none tracking-tight text-gray-900">{sec.heading}</h2>
               </CardHeader>
               <CardContent className="pt-5">
                 {sec.intro?.map((t, i) => (
@@ -616,35 +616,35 @@ export default function CompanyPage({
         {/* 基本情報 */}
         <Card className="mb-8 border-2 border-gray-100 shadow-sm">
           <CardHeader className="bg-gray-50 border-b border-gray-100">
-            <h2 className="leading-none tracking-tight text-2xl font-black text-gray-900">基本情報</h2>
+            <h2 className="leading-none tracking-tight text-2xl font-bold text-gray-900">基本情報</h2>
           </CardHeader>
           <CardContent className="pt-6">
             <div className="grid md:grid-cols-2 gap-6">
-              <div className="bg-blue-50 p-5 rounded-xl border border-blue-100">
+              <div className="bg-blue-50 p-5 rounded-md border border-blue-100">
                 <h3 className="font-bold text-gray-700 mb-2 text-sm">手数料</h3>
-                <p className="text-3xl font-black text-blue-600">
+                <p className="text-3xl font-bold text-blue-600">
                   {feeUndisclosed || company.fees.min === 0 ? "要見積もり" : company.fees.max > 0 ? `${feeRange(company.fees)}` : `${company.fees.min}%〜`}
                 </p>
               </div>
-              <div className="bg-green-50 p-5 rounded-xl border border-green-100">
+              <div className="bg-green-50 p-5 rounded-md border border-green-100">
                 <h3 className="font-bold text-gray-700 mb-2 text-sm">入金スピード</h3>
-                <p className="text-3xl font-black text-green-600">
+                <p className="text-3xl font-bold text-green-600">
                   {company.speed}
                 </p>
               </div>
-              <div className="bg-gray-50 p-5 rounded-xl border border-gray-200">
+              <div className="bg-gray-50 p-5 rounded-md border border-gray-200">
                 <h3 className="font-bold text-gray-700 mb-2 text-sm">買取可能額</h3>
                 <p className="text-xl font-bold text-gray-900">
                   {amountLabel}
                 </p>
               </div>
-              <div className="bg-sky-50 p-5 rounded-xl border border-sky-100">
+              <div className="bg-sky-50 p-5 rounded-md border border-sky-100">
                 <h3 className="font-bold text-gray-700 mb-2 text-sm">個人事業主</h3>
                 <p className="text-xl font-bold text-gray-900">
                   {company.personalNote ? (
                     <span className="text-gray-800 font-bold text-base">{company.personalNote}</span>
                   ) : company.personalSupport ? (
-                    <span className="text-green-600 font-black">対応</span>
+                    <span className="text-green-600 font-bold">対応</span>
                   ) : (
                     <span className="text-gray-500 font-bold">要問い合わせ（主に法人向け）</span>
                   )}
@@ -655,7 +655,7 @@ export default function CompanyPage({
         </Card>
 
         {/* 手数料比較ハブへの内部リンク（回遊強化） */}
-        <div className="mb-12 rounded-xl border border-blue-100 bg-blue-50/60 p-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+        <div className="mb-12 rounded-md border border-blue-100 bg-blue-50/60 p-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
           <p className="text-sm text-gray-700 leading-relaxed">
             手数料や入金スピードは、会社ごとに大きく異なります。
             <span className="font-bold">公式サイトで確認したファクタリング{FEE_COMPANY_COUNT}社の比較表</span>で、
@@ -674,16 +674,16 @@ export default function CompanyPage({
           <section id="performance" className="mb-12 scroll-mt-4">
             <Card className="border-2 border-gray-100 shadow-sm">
               <CardHeader className="bg-gray-50 border-b border-gray-100">
-                <h2 className="leading-none tracking-tight text-2xl font-black text-gray-900">{company.name}の実績推移</h2>
+                <h2 className="leading-none tracking-tight text-2xl font-bold text-gray-900">{company.name}の実績推移</h2>
               </CardHeader>
               <CardContent className="pt-6">
                 <div className="overflow-x-auto">
                   <table className="w-full text-sm">
                     <thead>
                       <tr className="border-b-2 border-gray-300">
-                        <th className="text-left p-3 font-black bg-gray-100">年度</th>
-                        <th className="text-right p-3 font-black bg-gray-100">買取債権額</th>
-                        <th className="text-right p-3 font-black bg-gray-100">利用者数</th>
+                        <th className="text-left p-3 font-bold bg-gray-100">年度</th>
+                        <th className="text-right p-3 font-bold bg-gray-100">買取債権額</th>
+                        <th className="text-right p-3 font-bold bg-gray-100">利用者数</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -710,14 +710,14 @@ export default function CompanyPage({
           <section id="media" className="mb-12 scroll-mt-4">
             <Card className="border-2 border-gray-100 shadow-sm">
               <CardHeader className="bg-gray-50 border-b border-gray-100">
-                <h2 className="leading-none tracking-tight text-2xl font-black text-gray-900">{company.name}のメディア掲載実績</h2>
+                <h2 className="leading-none tracking-tight text-2xl font-bold text-gray-900">{company.name}のメディア掲載実績</h2>
               </CardHeader>
               <CardContent className="pt-6">
                 <div className="space-y-4">
                   {details.mediaCoverage.map((media, index) => (
-                    <div key={index} className="bg-gradient-to-r from-blue-50 to-gray-50 p-6 rounded-lg border border-blue-100">
+                    <div key={index} className="bg-white p-6 rounded-lg border border-blue-100">
                       <div className="flex items-start gap-4">
-                        <div className="flex-shrink-0 w-12 h-12 bg-blue-500 text-white rounded-full flex items-center justify-center font-black text-lg">
+                        <div className="flex-shrink-0 w-12 h-12 bg-blue-500 text-white rounded-full flex items-center justify-center font-bold text-lg">
                                                   </div>
                         <div className="flex-grow">
                           <h3 className="font-bold text-xl mb-2 text-gray-900">{media.name}</h3>
@@ -750,19 +750,19 @@ export default function CompanyPage({
         {/* メリット・デメリット */}
         <Card id="pros-cons" className="mb-8 border-2 border-gray-100 shadow-sm scroll-mt-4">
           <CardHeader className="bg-gray-50 border-b border-gray-100">
-            <h2 className="leading-none tracking-tight text-2xl font-black text-gray-900">メリット・デメリット</h2>
+            <h2 className="leading-none tracking-tight text-2xl font-bold text-gray-900">メリット・デメリット</h2>
           </CardHeader>
           <CardContent className="pt-6">
             <div className="grid md:grid-cols-2 gap-6">
               {/* メリット */}
-              <div className="bg-green-50 p-6 rounded-xl border border-green-100">
-                <h3 className="font-black text-green-700 mb-4 text-xl">
+              <div className="bg-green-50 p-6 rounded-md border border-green-100">
+                <h3 className="font-bold text-green-700 mb-4 text-xl">
                   メリット
                 </h3>
                 <ul className="space-y-3">
                   {company.pros.map((pro, index) => (
                     <li key={index} className="flex items-start gap-3">
-                      <span className="text-green-600 mt-0.5 text-lg font-bold">✓</span>
+                      <span aria-hidden="true" className="mt-[0.72em] h-1.5 w-1.5 shrink-0 bg-green-600" />
                       <span className="text-gray-700 leading-relaxed">{pro}</span>
                     </li>
                   ))}
@@ -771,14 +771,14 @@ export default function CompanyPage({
 
               {/* デメリット（出典のある項目が無い会社は表示しない） */}
               {company.cons.length > 0 && (
-              <div className="bg-blue-50 p-6 rounded-xl border border-blue-100">
-                <h3 className="font-black text-blue-700 mb-4 text-xl">
+              <div className="bg-gray-50 p-6 rounded-md border border-gray-200">
+                <h3 className="font-bold text-gray-800 mb-4 text-xl">
                   デメリット
                 </h3>
                 <ul className="space-y-3">
                   {company.cons.map((con, index) => (
                     <li key={index} className="flex items-start gap-3">
-                      <span className="text-blue-600 mt-0.5 text-lg font-bold">✗</span>
+                      <span aria-hidden="true" className="mt-[0.72em] h-1.5 w-1.5 shrink-0 bg-gray-500" />
                       <span className="text-gray-700 leading-relaxed">{con}</span>
                     </li>
                   ))}
@@ -792,7 +792,7 @@ export default function CompanyPage({
         {/* 必要書類 */}
         <Card className="mb-8 border-2 border-gray-100 shadow-sm">
           <CardHeader className="bg-gray-50 border-b border-gray-100">
-            <h2 className="leading-none tracking-tight text-2xl font-black text-gray-900">必要書類</h2>
+            <h2 className="leading-none tracking-tight text-2xl font-bold text-gray-900">必要書類</h2>
           </CardHeader>
           <CardContent className="pt-6">
             <ul className="space-y-3">
@@ -809,7 +809,7 @@ export default function CompanyPage({
         {/* 会社情報 */}
         <Card className="mb-8 border-2 border-gray-100 shadow-sm">
           <CardHeader className="bg-gray-50 border-b border-gray-100">
-            <h2 className="leading-none tracking-tight text-2xl font-black text-gray-900">会社情報</h2>
+            <h2 className="leading-none tracking-tight text-2xl font-bold text-gray-900">会社情報</h2>
           </CardHeader>
           <CardContent className="pt-6">
             <div className="space-y-4">
@@ -862,15 +862,15 @@ export default function CompanyPage({
         {/* こんな人におすすめ */}
         <Card id="strengths" className="mb-8 border-2 border-gray-100 shadow-sm scroll-mt-4">
           <CardHeader className="bg-gray-50 border-b border-gray-100">
-            <h2 className="leading-none tracking-tight text-2xl font-black text-gray-900">このような方におすすめです</h2>
+            <h2 className="leading-none tracking-tight text-2xl font-bold text-gray-900">このような方におすすめです</h2>
           </CardHeader>
           <CardContent className="pt-6">
             <div className="space-y-4">
               {company.category.includes("即日") && (
-                <div className="flex items-start gap-4 bg-gray-50 p-5 rounded-xl border border-gray-200">
+                <div className="flex items-start gap-4 bg-gray-50 p-5 rounded-md border border-gray-200">
                   <span className="text-3xl"></span>
                   <div>
-                    <h4 className="font-black text-gray-900 mb-2 text-lg">
+                    <h4 className="font-bold text-gray-900 mb-2 text-lg">
                       急ぎで資金が必要な方
                     </h4>
                     <p className="text-gray-600 leading-relaxed">
@@ -880,10 +880,10 @@ export default function CompanyPage({
                 </div>
               )}
               {company.category.includes("手数料安い") && !feeUndisclosed && (
-                <div className="flex items-start gap-4 bg-green-50 p-5 rounded-xl border border-green-100">
+                <div className="flex items-start gap-4 bg-green-50 p-5 rounded-md border border-green-100">
                   <span className="text-3xl"></span>
                   <div>
-                    <h4 className="font-black text-gray-900 mb-2 text-lg">
+                    <h4 className="font-bold text-gray-900 mb-2 text-lg">
                       手数料を抑えたい方
                     </h4>
                     <p className="text-gray-600 leading-relaxed">
@@ -894,10 +894,10 @@ export default function CompanyPage({
               )}
               {/* 旧「審査に不安がある方：審査が柔軟で、赤字決算や税金滞納がある場合でも…」は出典のない共通文のため削除（2026-10-28）。各社の審査の記載は公式の出典つきの個別データに限る */}
               {company.personalSupport && (
-                <div className="flex items-start gap-4 bg-sky-50 p-5 rounded-xl border border-sky-100">
+                <div className="flex items-start gap-4 bg-sky-50 p-5 rounded-md border border-sky-100">
                   <span className="text-3xl"></span>
                   <div>
-                    <h4 className="font-black text-gray-900 mb-2 text-lg">
+                    <h4 className="font-bold text-gray-900 mb-2 text-lg">
                       個人事業主・フリーランスの方
                     </h4>
                     <p className="text-gray-600 leading-relaxed">
@@ -917,7 +917,7 @@ export default function CompanyPage({
         <section className="mb-12">
           <Card className="border-2 border-gray-100 shadow-sm">
             <CardHeader className="bg-gray-50 border-b border-gray-100">
-              <h2 className="leading-none tracking-tight text-2xl font-black text-gray-900">{strengths ? `${company.name}の強み` : `${company.name}の主な条件`}</h2>
+              <h2 className="leading-none tracking-tight text-2xl font-bold text-gray-900">{strengths ? `${company.name}の強み` : `${company.name}の主な条件`}</h2>
               {!strengths && (
                 <p className="text-sm text-gray-600 mt-2">
                   当サイトが公式サイトで確認した、入金までの時間・手数料・買取可能額などの条件です。手数料の出典と確認日は、<Link href="/fees/" className="text-blue-600 hover:underline">{FEE_COMPANY_COUNT}社の手数料の比較</Link>に掲載しています。
@@ -927,8 +927,8 @@ export default function CompanyPage({
             <CardContent className="pt-6">
               <ul className="space-y-4">
                 {keyConditions.map((strength, index) => (
-                  <li key={index} className="flex items-start gap-4 bg-blue-50 p-5 rounded-xl border border-blue-100">
-                    <span className="text-2xl font-black text-blue-600">{index + 1}</span>
+                  <li key={index} className="flex items-start gap-4 bg-blue-50 p-5 rounded-md border border-blue-100">
+                    <span className="text-2xl font-bold text-blue-600">{index + 1}</span>
                     <p className="text-gray-700 leading-relaxed font-medium flex-1">{strength}</p>
                   </li>
                 ))}
@@ -941,7 +941,7 @@ export default function CompanyPage({
         <section id="use-cases" className="mb-12 scroll-mt-4">
           <Card className="border-2 border-gray-100 shadow-sm">
             <CardHeader className="bg-gray-50 border-b border-gray-100">
-              <h2 className="leading-none tracking-tight text-2xl font-black text-gray-900">{company.name}が向いている活用シーン</h2>
+              <h2 className="leading-none tracking-tight text-2xl font-bold text-gray-900">{company.name}が向いている活用シーン</h2>
               <p className="text-sm text-gray-500 mt-2">
                 ※ 以下は一般的な利用シーンのイメージです。特定の利用者の実例ではありません。
               </p>
@@ -949,8 +949,8 @@ export default function CompanyPage({
             <CardContent className="pt-6">
               <div className="space-y-6">
                 {useCases.map((useCase, index) => (
-                  <div key={index} className="bg-gradient-to-br from-gray-50 to-blue-50 p-6 rounded-xl border border-gray-200">
-                    <h3 className="font-black text-gray-900 mb-4 text-xl">{useCase.title}</h3>
+                  <div key={index} className="bg-gray-50 p-6 rounded-md border border-gray-200">
+                    <h3 className="font-bold text-gray-900 mb-4 text-xl">{useCase.title}</h3>
                     <div className="space-y-4">
                       <div>
                         <h4 className="font-bold text-gray-700 mb-2 text-sm">想定される状況</h4>
@@ -973,7 +973,7 @@ export default function CompanyPage({
           <section id="review-sources" className="mb-8 scroll-mt-4">
             <Card className="border-2 border-gray-100 shadow-sm">
               <CardHeader className="bg-gray-50 border-b border-gray-100">
-                <h2 className="leading-none tracking-tight text-2xl font-black text-gray-900">{company.name}の口コミ・評判の掲載先（出典一覧）</h2>
+                <h2 className="leading-none tracking-tight text-2xl font-bold text-gray-900">{company.name}の口コミ・評判の掲載先（出典一覧）</h2>
                 <p className="text-sm text-gray-600 mt-2">
                   {company.name}の口コミが掲載されている主なサイトと、{lead.sourcesCheckedAt ?? lead.checkedAt}時点の掲載状況です。当サイトでは、口コミ本文の転載や体験談の作成は行わず、掲載先と件数のみを掲載しています。評価は投稿の時期・件数によって変わるため、各サイトにて原文をご確認ください。
                 </p>
@@ -1057,7 +1057,7 @@ export default function CompanyPage({
         <section id="offices" className="mb-12 scroll-mt-4">
           <Card className="border-2 border-gray-100 shadow-sm">
             <CardHeader className="bg-gray-50 border-b border-gray-100">
-              <h2 className="leading-none tracking-tight text-2xl font-black text-gray-900">{company.name}の営業時間・事業拠点</h2>
+              <h2 className="leading-none tracking-tight text-2xl font-bold text-gray-900">{company.name}の営業時間・事業拠点</h2>
             </CardHeader>
             <CardContent className="pt-6">
               <div className="mb-8">
@@ -1118,13 +1118,13 @@ export default function CompanyPage({
         <section id="audit" className="mb-12 scroll-mt-4">
           <Card className="border-2 border-gray-100 shadow-sm">
             <CardHeader className="bg-gray-50 border-b border-gray-100">
-              <h2 className="leading-none tracking-tight text-2xl font-black text-gray-900">{company.name}の審査について</h2>
+              <h2 className="leading-none tracking-tight text-2xl font-bold text-gray-900">{company.name}の審査について</h2>
             </CardHeader>
             <CardContent className="pt-6">
               {details.audit.passRate && (
                 <div className="mb-6 bg-blue-50 p-6 rounded-lg border-2 border-blue-100">
                   <h3 className="font-bold text-lg mb-2">審査通過率</h3>
-                  <p className="text-3xl font-black text-blue-600">{details.audit.passRate}</p>
+                  <p className="text-3xl font-bold text-blue-600">{details.audit.passRate}</p>
                 </div>
               )}
               {lead?.auditTable && (
@@ -1158,7 +1158,7 @@ export default function CompanyPage({
               <ul className="space-y-3">
                 {(lead?.auditFacts ?? details.audit.features).map((feature, index) => (
                   <li key={index} className="flex items-start gap-3">
-                    <span className="text-blue-500 text-xl mt-1">✓</span>
+                    <span aria-hidden="true" className="mt-[0.72em] h-1.5 w-1.5 shrink-0 bg-[#1B3A5C]" />
                     <span className="text-gray-700">{feature}</span>
                   </li>
                 ))}
@@ -1171,14 +1171,14 @@ export default function CompanyPage({
         <section id="flow" className="mb-12 scroll-mt-4">
           <Card className="border-2 border-gray-100 shadow-sm">
             <CardHeader className="bg-gray-50 border-b border-gray-100">
-              <h2 className="leading-none tracking-tight text-2xl font-black text-gray-900">{company.name}の利用の流れ</h2>
+              <h2 className="leading-none tracking-tight text-2xl font-bold text-gray-900">{company.name}の利用の流れ</h2>
             </CardHeader>
             <CardContent className="pt-6">
               <div className="space-y-6">
                 {(lead?.flow ?? details.flow).map((step) => (
                   <div key={step.step} className="flex gap-6">
                     <div className="flex-shrink-0">
-                      <div className="w-16 h-16 bg-blue-500 text-white rounded-full flex items-center justify-center font-black text-2xl">
+                      <div className="w-16 h-16 bg-blue-500 text-white rounded-full flex items-center justify-center font-bold text-2xl">
                         {step.step}
                       </div>
                     </div>
@@ -1200,7 +1200,7 @@ export default function CompanyPage({
         <section id="faq" className="mb-12 scroll-mt-4">
           <Card className="border-2 border-gray-100 shadow-sm">
             <CardHeader className="bg-gray-50 border-b border-gray-100">
-              <h2 className="leading-none tracking-tight text-2xl font-black text-gray-900">{company.name}のよくある質問</h2>
+              <h2 className="leading-none tracking-tight text-2xl font-bold text-gray-900">{company.name}のよくある質問</h2>
             </CardHeader>
             <CardContent className="pt-6">
               <div className="space-y-6">
@@ -1223,17 +1223,17 @@ export default function CompanyPage({
           <section id="comparison" className="mb-12 scroll-mt-4">
             <Card className="border-2 border-gray-100 shadow-sm">
               <CardHeader className="bg-gray-50 border-b border-gray-100">
-                <h2 className="leading-none tracking-tight text-2xl font-black text-gray-900">{company.name}と他社の比較</h2>
+                <h2 className="leading-none tracking-tight text-2xl font-bold text-gray-900">{company.name}と他社の比較</h2>
               </CardHeader>
               <CardContent className="pt-6">
                 <div className="overflow-x-auto">
                   <table className="w-full">
                     <thead>
                       <tr className="border-b-2 border-gray-200">
-                        <th className="text-left p-4 font-black">会社名</th>
-                        <th className="text-left p-4 font-black">取扱額</th>
-                        <th className="text-left p-4 font-black">入金スピード</th>
-                        <th className="text-left p-4 font-black">対象</th>
+                        <th className="text-left p-4 font-bold">会社名</th>
+                        <th className="text-left p-4 font-bold">取扱額</th>
+                        <th className="text-left p-4 font-bold">入金スピード</th>
+                        <th className="text-left p-4 font-bold">対象</th>
                       </tr>
                     </thead>
                     <tbody>
@@ -1269,8 +1269,8 @@ export default function CompanyPage({
         )}
 
         {/* CTA */}
-        <div className="bg-gradient-to-br from-blue-500 via-gray-500 to-blue-600 rounded-2xl shadow-2xl shadow-blue-500/30 p-10 text-center text-white mb-8">
-          <h2 className="text-3xl font-black mb-4">
+        <div className="bg-[#1B3A5C] rounded-md p-8 sm:p-10 text-center text-white mb-8">
+          <h2 className="text-3xl font-bold mb-4">
             {company.name}で無料見積もり
           </h2>
           <p className="mb-8 text-blue-100 text-lg leading-relaxed">
@@ -1281,13 +1281,13 @@ export default function CompanyPage({
               href={company.affiliateUrl ?? company.url}
               target="_blank"
               rel={company.affiliateUrl ? "sponsored nofollow noopener" : "nofollow noopener"}
-              className="bg-white text-blue-600 font-black py-4 px-10 rounded-2xl hover:bg-gray-100 transition shadow-lg"
+              className="bg-cta text-white font-bold py-4 px-10 rounded-md hover:bg-cta-hover transition"
             >
               公式サイトへ →
             </a>
             <Link
               href="/#diagnosis"
-              className="bg-blue-700 text-white font-bold py-4 px-10 rounded-2xl hover:bg-orange-800 transition border-2 border-orange-400"
+              className="bg-transparent text-white font-bold py-4 px-10 rounded-md hover:bg-white/10 transition border border-white/50"
             >
               無料診断ツール
             </Link>
@@ -1305,7 +1305,7 @@ export default function CompanyPage({
                   <Link
                     key={article.slug}
                     href={`/articles/${article.slug}`}
-                    className="block border border-gray-200 rounded-xl p-5 hover:shadow-md transition bg-white"
+                    className="block border border-gray-200 rounded-md p-5 hover:shadow-sm transition bg-white"
                   >
                     {article.keyword && (
                       <span

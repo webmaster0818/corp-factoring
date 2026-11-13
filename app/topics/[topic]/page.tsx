@@ -150,7 +150,7 @@ export default async function TopicPage({
                 <Link
                   key={slug}
                   href={`/articles/${slug}`}
-                  className="block bg-white rounded-lg border border-gray-200 p-5 hover:shadow-md hover:border-blue-300 transition"
+                  className="block bg-white rounded-lg border border-gray-200 p-5 hover:shadow-sm hover:border-blue-300 transition"
                 >
                   <span className="text-gray-900 font-medium leading-snug">
                     {titleBySlug.get(slug) ?? slug}
@@ -162,7 +162,7 @@ export default async function TopicPage({
         ))}
 
         {/* CTA to comparison content */}
-        <section className="mt-16 bg-white rounded-xl border border-gray-200 p-8">
+        <section className="mt-16 bg-white rounded-md border border-gray-200 p-8">
           <h2 className="text-xl font-bold text-gray-900 mb-3">
             ファクタリング会社の比較
           </h2>

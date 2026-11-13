@@ -37,7 +37,7 @@ export function CompanyCompareTable({ slug }: { slug: string }) {
   const href = (s: string) => (SUBPAGE_SLUGS.includes(s) ? `/companies/${s}/tesuryo/` : `/companies/${s}/`);
   return (
     <section id="official-compare" className="mb-12 scroll-mt-4">
-      <h2 className="text-2xl font-black text-gray-900 mb-2">{row.name}と条件の近い会社（公式表示で比較）</h2>
+      <h2 className="text-2xl font-bold text-gray-900 mb-2">{row.name}と条件の近い会社（公式表示で比較）</h2>
       <p className="text-sm text-gray-600 mb-4">
         {isKojin(row.target) ? "個人事業主・フリーランスも使える会社" : "個人事業主の利用が公式表示にない会社"}のうち、
         {parseRate(row.fee2).min === undefined ? "2社間の手数料の下限が低い順" : `2社間の手数料の下限が${row.name}に近い順`}に4社を掲載しています。値は各社の公式サイトの表示で、順位や評価ではありません。
@@ -89,7 +89,7 @@ export function CompanyNotFor({ slug }: { slug: string }) {
   if (items.length === 0) return null;
   return (
     <section id="not-for" className="mb-12 scroll-mt-4">
-      <h2 className="text-2xl font-black text-gray-900 mb-2">{row.name}が合わない可能性がある方</h2>
+      <h2 className="text-2xl font-bold text-gray-900 mb-2">{row.name}が合わない可能性がある方</h2>
       <p className="text-sm text-gray-600 mb-4">公式サイトの表示から、条件に合わない可能性がある場合をまとめました。最新の条件は公式サイトや見積もりで確認してください。</p>
       <ul className="space-y-3">
         {items.map((it) => (
