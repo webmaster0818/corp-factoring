@@ -18,33 +18,33 @@ export default function TermsPage() {
       <Header />
 
       {/* Breadcrumbs */}
-      <nav className="bg-gray-50 py-3">
-        <div className="container mx-auto px-4">
-          <div className="text-sm text-gray-600">
+      <div className="page-head">
+        <div className="container mx-auto px-4 max-w-4xl pt-5 pb-9">
+          <nav className="crumbs mb-6">
             <Link href="/" className="hover:text-[#1B3A5C] transition">
               ホーム
             </Link>
             <span className="mx-2">/</span>
             <span className="text-gray-900 font-medium">利用規約</span>
-          </div>
-        </div>
-      </nav>
-
-      {/* Main Content */}
-      <main className="py-12">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <h1 className="text-3xl font-bold text-gray-900 mb-8 pb-4 border-b-2 border-[#1B3A5C]">
+          </nav>
+          <h1 className="text-[24px] sm:text-[30px] font-bold text-ink leading-[1.45] tracking-[0.01em]">
             利用規約
           </h1>
+        </div>
+      </div>
 
-          <div className="bg-white rounded-lg shadow-sm p-8 md:p-12 space-y-10 text-gray-700 leading-relaxed">
+      {/* Main Content */}
+      <main className="py-10">
+        <div className="container mx-auto px-4 max-w-4xl">
+
+          <div className="bg-white rounded-md border border-line p-6 md:p-10 space-y-10 text-gray-700 leading-relaxed">
             <p>
               この利用規約（以下「本規約」）は、株式会社MediaX（以下「当社」）が運営するウェブサイト「ファクタリング比較ナビ」（以下「本サイト」）の利用条件を定めるものです。本サイトをご利用いただくすべての方（以下「利用者」）に本規約が適用されます。
             </p>
 
             {/* 第1条 */}
             <section>
-              <h2 className="text-xl font-bold text-[#1B3A5C] mb-3">
+              <h2 className="section-title section-title-sm mb-4">
                 第1条（サービスの目的）
               </h2>
               <p>
@@ -54,7 +54,7 @@ export default function TermsPage() {
 
             {/* 第2条 */}
             <section>
-              <h2 className="text-xl font-bold text-[#1B3A5C] mb-3">
+              <h2 className="section-title section-title-sm mb-4">
                 第2条（定義）
               </h2>
               <p>本規約において、以下の用語は次の意味で使用します。</p>
@@ -73,7 +73,7 @@ export default function TermsPage() {
 
             {/* 第3条 */}
             <section>
-              <h2 className="text-xl font-bold text-[#1B3A5C] mb-3">
+              <h2 className="section-title section-title-sm mb-4">
                 第3条（規約への同意）
               </h2>
               <p>
@@ -83,7 +83,7 @@ export default function TermsPage() {
 
             {/* 第4条 */}
             <section>
-              <h2 className="text-xl font-bold text-[#1B3A5C] mb-3">
+              <h2 className="section-title section-title-sm mb-4">
                 第4条（規約の変更）
               </h2>
               <p>
@@ -93,7 +93,7 @@ export default function TermsPage() {
 
             {/* 第5条 */}
             <section>
-              <h2 className="text-xl font-bold text-[#1B3A5C] mb-3">
+              <h2 className="section-title section-title-sm mb-4">
                 第5条（サービス内容）
               </h2>
               <p>本サイトは以下のサービスを提供します。</p>
@@ -109,7 +109,7 @@ export default function TermsPage() {
 
             {/* 第6条 */}
             <section>
-              <h2 className="text-xl font-bold text-[#1B3A5C] mb-3">
+              <h2 className="section-title section-title-sm mb-4">
                 第6条（サービスの変更・中断・終了）
               </h2>
               <p>
@@ -119,7 +119,7 @@ export default function TermsPage() {
 
             {/* 第7条 */}
             <section>
-              <h2 className="text-xl font-bold text-[#1B3A5C] mb-3">
+              <h2 className="section-title section-title-sm mb-4">
                 第7条（禁止事項）
               </h2>
               <p>
@@ -158,7 +158,7 @@ export default function TermsPage() {
 
             {/* 第8条 */}
             <section>
-              <h2 className="text-xl font-bold text-[#1B3A5C] mb-3">
+              <h2 className="section-title section-title-sm mb-4">
                 第8条（知的財産権）
               </h2>
               <p>
@@ -168,7 +168,7 @@ export default function TermsPage() {
 
             {/* 第9条 */}
             <section>
-              <h2 className="text-xl font-bold text-[#1B3A5C] mb-3">
+              <h2 className="section-title section-title-sm mb-4">
                 第9条（広告・アフィリエイトプログラムについて）
               </h2>
               <p>
@@ -181,7 +181,7 @@ export default function TermsPage() {
 
             {/* 第10条 */}
             <section>
-              <h2 className="text-xl font-bold text-[#1B3A5C] mb-3">
+              <h2 className="section-title section-title-sm mb-4">
                 第10条（外部リンクについて）
               </h2>
               <p>
@@ -191,7 +191,7 @@ export default function TermsPage() {
 
             {/* 第11条 */}
             <section>
-              <h2 className="text-xl font-bold text-[#1B3A5C] mb-3">
+              <h2 className="section-title section-title-sm mb-4">
                 第11条（情報の正確性について）
               </h2>
               <p>
@@ -201,7 +201,7 @@ export default function TermsPage() {
 
             {/* 第12条 */}
             <section>
-              <h2 className="text-xl font-bold text-[#1B3A5C] mb-3">
+              <h2 className="section-title section-title-sm mb-4">
                 第12条（免責事項）
               </h2>
               <ol className="list-decimal pl-6 space-y-2">
@@ -222,7 +222,7 @@ export default function TermsPage() {
 
             {/* 第13条 */}
             <section>
-              <h2 className="text-xl font-bold text-[#1B3A5C] mb-3">
+              <h2 className="section-title section-title-sm mb-4">
                 第13条（利用者の自己責任）
               </h2>
               <p>
@@ -232,7 +232,7 @@ export default function TermsPage() {
 
             {/* 第14条 */}
             <section>
-              <h2 className="text-xl font-bold text-[#1B3A5C] mb-3">
+              <h2 className="section-title section-title-sm mb-4">
                 第14条（個人情報の取扱い）
               </h2>
               <p>
@@ -249,7 +249,7 @@ export default function TermsPage() {
 
             {/* 第15条 */}
             <section>
-              <h2 className="text-xl font-bold text-[#1B3A5C] mb-3">
+              <h2 className="section-title section-title-sm mb-4">
                 第15条（通知・連絡）
               </h2>
               <p>
@@ -259,7 +259,7 @@ export default function TermsPage() {
 
             {/* 第16条 */}
             <section>
-              <h2 className="text-xl font-bold text-[#1B3A5C] mb-3">
+              <h2 className="section-title section-title-sm mb-4">
                 第16条（権利義務の譲渡禁止）
               </h2>
               <p>
@@ -269,7 +269,7 @@ export default function TermsPage() {
 
             {/* 第17条 */}
             <section>
-              <h2 className="text-xl font-bold text-[#1B3A5C] mb-3">
+              <h2 className="section-title section-title-sm mb-4">
                 第17条（分離可能性）
               </h2>
               <p>
@@ -279,7 +279,7 @@ export default function TermsPage() {
 
             {/* 第18条 */}
             <section>
-              <h2 className="text-xl font-bold text-[#1B3A5C] mb-3">
+              <h2 className="section-title section-title-sm mb-4">
                 第18条（損害賠償）
               </h2>
               <p>
@@ -289,7 +289,7 @@ export default function TermsPage() {
 
             {/* 第19条 */}
             <section>
-              <h2 className="text-xl font-bold text-[#1B3A5C] mb-3">
+              <h2 className="section-title section-title-sm mb-4">
                 第19条（準拠法）
               </h2>
               <p>本規約の解釈にあたっては、日本法を準拠法とします。</p>
@@ -297,7 +297,7 @@ export default function TermsPage() {
 
             {/* 第20条 */}
             <section>
-              <h2 className="text-xl font-bold text-[#1B3A5C] mb-3">
+              <h2 className="section-title section-title-sm mb-4">
                 第20条（管轄裁判所）
               </h2>
               <p>

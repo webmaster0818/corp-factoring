@@ -152,14 +152,14 @@ export default async function AreaPage({ params }: { params: Promise<{ area: str
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-white">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(itemListJsonLd) }} />
       <Header />
 
-      <div className="bg-white border-b border-gray-100">
-        <div className="max-w-5xl mx-auto px-4 sm:px-6 py-3">
-          <nav className="text-sm text-gray-400" aria-label="パンくず">
+      <div className="bg-soft">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 pt-4">
+          <nav className="crumbs" aria-label="パンくず">
             <Link href="/" className="hover:text-gray-700 transition">ホーム</Link>
             {" > "}
             <Link href="/#area" className="hover:text-gray-700 transition">地域</Link>
@@ -169,10 +169,10 @@ export default async function AreaPage({ params }: { params: Promise<{ area: str
         </div>
       </div>
 
-      <section className="bg-white py-10 border-b border-gray-100">
+      <section className="page-head pt-6 pb-10 sm:pb-12">
         <div className="max-w-5xl mx-auto px-4 sm:px-6">
-          <p className="text-sm font-semibold text-blue-600 mb-2">地域別｜{area.scope}（{AREA_CHECKED_AT}に各社の公式サイトで確認）</p>
-          <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-snug">
+          <p className="page-label mb-3">地域別｜{area.scope}（{AREA_CHECKED_AT}に各社の公式サイトで確認）</p>
+          <h1 className="text-[24px] sm:text-[30px] font-bold text-ink leading-[1.45] tracking-[0.01em] mb-4">
             {area.name}に拠点があるファクタリング会社{n}社
           </h1>
           <p className="text-gray-700 leading-relaxed mb-3">
@@ -214,7 +214,7 @@ export default async function AreaPage({ params }: { params: Promise<{ area: str
 
         {s.head.length > 0 && (
           <section className="mb-10">
-            <h2 className="text-xl font-bold text-gray-900 mb-2 border-l-4 border-blue-600 pl-3">
+            <h2 className="section-title section-title-sm mb-3">
               本社（会社概要の所在地）が{area.scope}にある会社（{s.head.length}社）
             </h2>
             <p className="text-sm text-gray-600 mb-4">会社概要で本社または所在地として書かれている住所が{area.scope}にある会社です。</p>
@@ -228,7 +228,7 @@ export default async function AreaPage({ params }: { params: Promise<{ area: str
 
         {s.branch.length > 0 && (
           <section className="mb-10">
-            <h2 className="text-xl font-bold text-gray-900 mb-2 border-l-4 border-blue-600 pl-3">
+            <h2 className="section-title section-title-sm mb-3">
               {area.scope}に支社・支店・営業所などがある会社（{s.branch.length}社）
             </h2>
             <p className="text-sm text-gray-600 mb-4">本社は{area.scope}の外にあり、{area.scope}には支社・支店・営業所などを置いている会社です。</p>
@@ -271,12 +271,12 @@ export default async function AreaPage({ params }: { params: Promise<{ area: str
               <Link
                 key={a.slug}
                 href={`/area/${a.slug}/`}
-                className="px-4 py-2 bg-white border border-blue-200 rounded-full text-blue-700 text-sm hover:bg-blue-50 transition"
+                className="px-4 py-2 bg-white border border-blue-200 rounded-md text-blue-700 text-sm hover:bg-blue-50 transition"
               >
                 {a.name}のファクタリング会社（{a.entries.length}社）
               </Link>
             ))}
-            <Link href="/#ranking" className="px-4 py-2 bg-white border border-gray-200 rounded-full text-gray-700 text-sm hover:bg-gray-50 transition">
+            <Link href="/#ranking" className="px-4 py-2 bg-white border border-gray-200 rounded-md text-gray-700 text-sm hover:bg-gray-50 transition">
               掲載{TOTAL}社の一覧
             </Link>
           </div>

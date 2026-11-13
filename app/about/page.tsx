@@ -16,16 +16,20 @@ export default function AboutPage() {
   return (
     <div className="min-h-screen bg-white text-gray-900">
       <Header />
-      <main className="max-w-4xl mx-auto px-4 py-12">
-        <nav className="text-xs text-gray-500 mb-6">
+      <div className="page-head">
+        <div className="max-w-4xl mx-auto px-4 pt-5 pb-9">
+          <nav className="crumbs mb-6">
           <Link href="/" className="hover:underline">トップ</Link>
           <span className="mx-2">&gt;</span>
           <span>運営者情報</span>
         </nav>
-        <h1 className="text-3xl md:text-4xl font-bold mb-8">運営者情報・サイトについて</h1>
+          <h1 className="text-[24px] sm:text-[30px] font-bold text-ink leading-[1.45] tracking-[0.01em]">運営者情報・サイトについて</h1>
+        </div>
+      </div>
+      <main className="max-w-4xl mx-auto px-4 py-10">
 
         <section className="mb-10 prose prose-gray max-w-none text-sm leading-relaxed space-y-4">
-          <h2 className="text-xl font-bold mt-2 mb-3">{SITE_NAME} について</h2>
+          <h2 className="section-title section-title-sm mt-2 mb-4">{SITE_NAME} について</h2>
           <p>
             {SITE_NAME} は、株式会社MediaXが運営する比較・情報サイトです。利用者がファクタリング会社やサービスを適切に選定できるよう、独自の調査、公式情報および業界データにもとづく情報を提供することを目的としています。
           </p>
@@ -35,8 +39,8 @@ export default function AboutPage() {
         </section>
 
         <section className="mb-10 prose prose-gray max-w-none text-sm leading-relaxed space-y-4">
-          <h2 className="text-xl font-bold mt-2 mb-3">運営会社</h2>
-          <dl className="grid grid-cols-1 md:grid-cols-[160px,1fr] gap-y-2 border border-gray-200 rounded-lg p-6">
+          <h2 className="section-title section-title-sm mt-2 mb-4">運営会社</h2>
+          <dl className="grid grid-cols-1 md:grid-cols-[160px,1fr] gap-y-2 border border-line rounded-md p-6">
             <dt className="font-semibold">会社名</dt>
             <dd>株式会社MediaX</dd>
             <dt className="font-semibold">所在地</dt>
@@ -53,7 +57,7 @@ export default function AboutPage() {
         </section>
 
         <section className="mb-10 prose prose-gray max-w-none text-sm leading-relaxed space-y-4">
-          <h2 className="text-xl font-bold mt-2 mb-3">編集方針</h2>
+          <h2 className="section-title section-title-sm mt-2 mb-4">編集方針</h2>
           <ul className="list-disc pl-6 space-y-1">
             <li><strong>独自性</strong>：他サイトの転載ではなく、独自の調査・分析・比較にもとづいて作成しています</li>
             <li><strong>正確性</strong>：公式サイト・公的データを参照し、事実確認を経て公開しています</li>
@@ -64,7 +68,7 @@ export default function AboutPage() {
         </section>
 
         <section className="mb-10 prose prose-gray max-w-none text-sm leading-relaxed space-y-4">
-          <h2 className="text-xl font-bold mt-2 mb-3">料金・条件データの確認手順</h2>
+          <h2 className="section-title section-title-sm mt-2 mb-4">料金・条件データの確認手順</h2>
           <p>
             ファクタリングの手数料・入金スピード・利用条件は改定の頻度が高く、掲載情報が古くなりやすい分野です。当サイトでは、<a href="/fees/" className="text-blue-600 hover:underline">手数料・入金スピード比較インデックス</a>をはじめとする料金・条件データについて、次の手順で正確性の確保に努めています。
           </p>
@@ -77,21 +81,21 @@ export default function AboutPage() {
         </section>
 
         <section className="mb-10 prose prose-gray max-w-none text-sm leading-relaxed space-y-4">
-          <h2 className="text-xl font-bold mt-2 mb-3">架空データを掲載しない方針</h2>
+          <h2 className="section-title section-title-sm mt-2 mb-4">架空データを掲載しない方針</h2>
           <p>
             当サイトは、<strong>架空の口コミ・体験談、根拠のない料金・評価（★）を一切掲載しません</strong>。口コミ・評判には出典と調査時点を明記し、公式に確認できない情報は「確認できず」「非公示」と記載します。利用者の資金調達の判断に関わる情報であるため、正確性を最も重視しています。
           </p>
         </section>
 
         <section className="mb-10 prose prose-gray max-w-none text-sm leading-relaxed space-y-4">
-          <h2 className="text-xl font-bold mt-2 mb-3">AI利用方針</h2>
+          <h2 className="section-title section-title-sm mt-2 mb-4">AI利用方針</h2>
           <p>
             当サイトでは、編集作業の効率化のためにAIツール（大規模言語モデル等）を活用する場合があります。ただし、AIを用いて作成したコンテンツは、すべて編集者による事実確認・編集を経たうえで公開しています。また、Googleの「Scaled Content Abuse」ポリシーに準拠し、利用者にとって価値のない大量生成コンテンツは公開しません。
           </p>
         </section>
 
         <section className="mb-10 prose prose-gray max-w-none text-sm leading-relaxed space-y-4">
-          <h2 className="text-xl font-bold mt-2 mb-3">お問い合わせ</h2>
+          <h2 className="section-title section-title-sm mt-2 mb-4">お問い合わせ</h2>
           <p>
             記事の内容に関するお問い合わせ、修正のご依頼、取材・掲載のご相談は、以下までご連絡ください。
           </p>

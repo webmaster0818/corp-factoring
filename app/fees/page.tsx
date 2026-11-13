@@ -80,26 +80,24 @@ export default function FeesPage() {
     <div className="min-h-screen bg-white">
       <Header />
 
-      {/* Breadcrumbs */}
-      <nav className="bg-gray-50 py-3 border-b border-gray-100">
-        <div className="container mx-auto px-4 max-w-5xl">
-          <div className="text-sm text-gray-600">
-            <Link href="/" className="hover:text-orange-600">ホーム</Link>
+      {/* ページ見出し */}
+      <div className="page-head">
+        <div className="container mx-auto px-4 max-w-5xl pt-4 pb-9">
+          <nav className="crumbs mb-7">
+            <Link href="/" >ホーム</Link>
             <span className="mx-2">＞</span>
             <span className="text-gray-900 font-medium">ファクタリング手数料が安い会社（公式表示の比較）</span>
-          </div>
-        </div>
-      </nav>
-
-      <div className="container mx-auto px-4 max-w-5xl py-12">
-        {/* ヘッダー */}
-        <div className="bg-white rounded-md p-6 sm:p-8 mb-8 border border-gray-200">
-          <div className="text-center">
-            <Badge className="mb-4 bg-transparent hover:bg-transparent text-[#1B3A5C] border border-[#1B3A5C]/40 rounded-sm font-bold">手数料の解説</Badge>
-            <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4 leading-tight">
+          </nav>
+          <p className="page-label mb-3">手数料の解説</p>
+          <h1 className="text-[24px] sm:text-[30px] font-bold text-ink leading-[1.45] tracking-[0.01em]">
               ファクタリング手数料が安い会社は？{FEE_COMPANY_COUNT}社の公式表示で比較
             </h1>
-          </div>
+        </div>
+      </div>
+
+      <div className="container mx-auto px-4 max-w-5xl py-10">
+        {/* ヘッダー */}
+        <div className="bg-white rounded-md p-5 sm:p-7 mb-8 border border-line layer-shadow-sm">
           <div className="text-left space-y-3 text-gray-800 leading-relaxed">
             <p>
               当サイト掲載の{FEE_COMPANY_COUNT}社の公式表示で、<strong>2社間ファクタリングの手数料の下限が最も低いのは、{nameOf("mf-earlypayment")}・{nameOf("invoice-factor")}・{nameOf("no1")}の3社（いずれも0.5%〜）</strong>です。次いで{nameOf("ququmo")}・{nameOf("accel-factor")}・{nameOf("paytoday")}・{nameOf("owl-keizai")}・{nameOf("gmo-btob-hayabarai")}（請求書買取）が1%〜で、下限が2%未満の会社は{LOW_FEE2.length}社でした（{LOW_FEE2_CHECKED}に各社の公式サイトで確認）。
@@ -108,7 +106,7 @@ export default function FeesPage() {
               下限は最も条件が良い場合の率で、上限を表示していない会社もあります。実際の手数料は、各社の見積もりで確かめてください。3社間ファクタリング（売掛先の承諾を得る方式）の下限は、{nameOf("accel-factor")}・{nameOf("no1")}・トップ・マネジメントが0.5%〜と表示しています（当サイトの記録・2026年10月14日〜11月8日確認。<a href="#low-fee-3" className="text-blue-600 underline">3社間の一覧</a>）。
             </p>
           </div>
-          <div id="calc" className="mt-5 rounded-md border border-green-200 bg-white p-4 text-sm text-gray-800">
+          <div id="calc" className="mt-5 rounded-md border border-line bg-soft p-4 text-sm text-gray-800">
             <p className="font-bold text-gray-900 mb-1">手数料の計算方法</p>
             <p>
               手数料 ＝ 売掛金額（請求額）× 手数料率 ＋ その他の費用（振込手数料など）<br />
@@ -124,9 +122,9 @@ export default function FeesPage() {
         </div>
 
         {/* 目次 */}
-        <Card className="mb-8 border-2 border-gray-100 shadow-sm">
-          <CardHeader className="bg-gray-50 border-b border-gray-100">
-            <CardTitle className="text-2xl font-bold text-gray-900">目次</CardTitle>
+        <Card className="mb-8 border border-line">
+          <CardHeader className="bg-white border-b border-line pb-4">
+            <CardTitle className="section-title section-title-sm">目次</CardTitle>
           </CardHeader>
           <CardContent className="pt-6">
             <ul className="space-y-2">
@@ -166,8 +164,8 @@ export default function FeesPage() {
 
         {/* 1. 2社間手数料の下限が2%未満の会社（公式表示の低い順・順位ではない） */}
         <section id="low-fee" className="mb-12">
-          <Card className="border-2 border-gray-100 shadow-sm">
-            <CardHeader className="bg-gray-50 border-b border-gray-100">
+          <Card className="border border-line">
+            <CardHeader className="bg-white border-b border-line pb-4">
               <CardTitle className="text-2xl font-bold text-gray-900">2社間手数料の下限が2%未満の{LOW_FEE2.length}社（公式表示の低い順）</CardTitle>
             </CardHeader>
             <CardContent className="pt-6">
@@ -267,8 +265,8 @@ export default function FeesPage() {
 
         {/* 2. 2社間・3社間の違いと手数料が変わる条件（当サイトの記録で数えた事実・公式の記載のみ） */}
         <section id="market" className="mb-12">
-          <Card className="border-2 border-gray-100 shadow-sm">
-            <CardHeader className="bg-gray-50 border-b border-gray-100">
+          <Card className="border border-line">
+            <CardHeader className="bg-white border-b border-line pb-4">
               <CardTitle className="text-2xl font-bold text-gray-900">2社間・3社間の手数料の違いと、手数料が変わる条件</CardTitle>
             </CardHeader>
             <CardContent className="pt-6">
@@ -330,8 +328,8 @@ export default function FeesPage() {
 
         {/* 一次確認 手数料・入金スピード比較インデックス */}
         <section id="fee-index" className="mb-12">
-          <Card className="border-2 border-gray-100 shadow-sm">
-            <CardHeader className="bg-gray-50 border-b border-gray-100">
+          <Card className="border border-line">
+            <CardHeader className="bg-white border-b border-line pb-4">
               <CardTitle className="text-2xl font-bold text-gray-900">ファクタリング{FEE_COMPANY_COUNT}社 手数料・入金スピード比較（公式サイトで確認）</CardTitle>
             </CardHeader>
             <CardContent className="pt-6">
@@ -391,8 +389,8 @@ export default function FeesPage() {
 
         {/* 4. 手数料を抑えるために確かめたい点（各社の公式表示・当サイトの記録にもとづく） */}
         <section id="tips" className="mb-12">
-          <Card className="border-2 border-gray-100 shadow-sm">
-            <CardHeader className="bg-gray-50 border-b border-gray-100">
+          <Card className="border border-line">
+            <CardHeader className="bg-white border-b border-line pb-4">
               <CardTitle className="text-2xl font-bold text-gray-900">手数料を抑えるために確かめたい4つの点</CardTitle>
             </CardHeader>
             <CardContent className="pt-6">
@@ -434,8 +432,8 @@ export default function FeesPage() {
 
         {/* 4. シミュレーター */}
         <section id="simulator" className="mb-12">
-          <Card className="border-2 border-gray-100 shadow-sm">
-            <CardHeader className="bg-gray-50 border-b border-gray-100">
+          <Card className="border border-line">
+            <CardHeader className="bg-white border-b border-line pb-4">
               <CardTitle className="text-2xl font-bold text-gray-900">手数料シミュレーター（無料）</CardTitle>
             </CardHeader>
             <CardContent className="pt-6">
@@ -449,8 +447,8 @@ export default function FeesPage() {
 
         {/* 5. FAQ */}
         <section id="faq" className="mb-12">
-          <Card className="border-2 border-gray-100 shadow-sm">
-            <CardHeader className="bg-gray-50 border-b border-gray-100">
+          <Card className="border border-line">
+            <CardHeader className="bg-white border-b border-line pb-4">
               <CardTitle className="text-2xl font-bold text-gray-900">よくある質問</CardTitle>
             </CardHeader>
             <CardContent className="pt-6">
@@ -507,7 +505,7 @@ export default function FeesPage() {
               { slug: "article-factoring-tesuryo-koushou", label: "ファクタリング手数料の交渉方法・引き下げ方" },
             ].map((a) => (
               <Link key={a.slug} href={`/articles/${a.slug}`} className="block bg-white border border-gray-200 rounded-md p-4 hover:border-[#1B3A5C] hover:shadow-sm transition">
-                <span className="text-xs font-semibold text-[#1B3A5C] bg-[#F0F6FC] px-2 py-0.5 rounded-full">解説記事</span>
+                <span className="text-xs font-semibold text-[#1B3A5C] bg-[#F0F6FC] px-2 py-0.5 rounded-md">解説記事</span>
                 <p className="mt-2 text-sm font-medium text-gray-800 leading-snug">{a.label}</p>
               </Link>
             ))}

@@ -134,24 +134,28 @@ export default async function CompanyFeePage({ params }: { params: Promise<{ slu
       {ld.map((o, i) => (
         <script key={i} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(o) }} />
       ))}
-      <main className="mx-auto max-w-3xl px-4 py-8">
-        <nav className="mb-4 text-xs text-gray-500">
+      <div className="page-head">
+        <div className="mx-auto max-w-3xl px-4 pt-5 pb-8 sm:pb-10">
+          <nav className="crumbs mb-6">
           <Link href="/" className="hover:underline">ホーム</Link> ＞{" "}
           <Link href={`/companies/${slug}/`} className="hover:underline">{company.name}</Link> ＞ 手数料
         </nav>
-        <h1 className="text-2xl font-bold text-gray-900 md:text-3xl">{company.name}の手数料（2社間・3社間）</h1>
-        <p className="mt-2 text-xs text-gray-500">
+          <h1 className="text-[24px] sm:text-[30px] font-bold text-ink leading-[1.45] tracking-[0.01em]">{company.name}の手数料（2社間・3社間）</h1>
+          <p className="mt-3 text-xs text-gray-500 num">
           {lastmod ? `更新日：${toJaDate(lastmod)}／` : ""}手数料の公式サイト確認日：{checked}
         </p>
+        </div>
+      </div>
+      <main className="mx-auto max-w-3xl px-4 py-8">
 
-        <div className="mt-5 rounded-lg border-l-4 border-blue-500 bg-blue-50 p-4">
-          <p className="text-sm font-bold text-blue-900">回答</p>
+        <div className="mt-5 rounded-md border border-line border-l-4 border-l-blue-600 bg-white p-4 layer-shadow-sm">
+          <p className="text-sm font-bold text-blue-700">回答</p>
           <p className="mt-1 text-sm leading-relaxed text-gray-800">{answer}</p>
         </div>
         <SubPageIntroBox slug={slug} kind="tesuryo" />
 
         <section className="mt-8">
-          <h2 className="text-lg font-bold text-gray-900">公式サイトで確認した手数料と条件</h2>
+          <h2 className="section-title section-title-sm">公式サイトで確認した手数料と条件</h2>
           <div className="mt-3 overflow-hidden rounded-lg border border-gray-200">
             <table className="w-full text-sm">
               <tbody>
@@ -181,7 +185,7 @@ export default async function CompanyFeePage({ params }: { params: Promise<{ slu
         </section>
 
         <section className="mt-8">
-          <h2 className="text-lg font-bold text-gray-900">100万円の請求書を売った場合の計算例</h2>
+          <h2 className="section-title section-title-sm">100万円の請求書を売った場合の計算例</h2>
           {examples.length > 0 ? (
             <>
               <div className="mt-3 overflow-x-auto rounded-lg border border-gray-200">
@@ -216,7 +220,7 @@ export default async function CompanyFeePage({ params }: { params: Promise<{ slu
         </section>
 
         <section className="mt-8">
-          <h2 className="text-lg font-bold text-gray-900">手数料以外の費用</h2>
+          <h2 className="section-title section-title-sm">手数料以外の費用</h2>
           {costFacts.length > 0 ? (
             <ul className="mt-3 space-y-2 text-sm leading-relaxed text-gray-800">
               {costFacts.map((f, i) => (
@@ -229,7 +233,7 @@ export default async function CompanyFeePage({ params }: { params: Promise<{ slu
         </section>
 
         <section className="mt-8">
-          <h2 className="text-lg font-bold text-gray-900">2社間の手数料の下限が低い他社との比較</h2>
+          <h2 className="section-title section-title-sm">2社間の手数料の下限が低い他社との比較</h2>
           <div className="mt-3 overflow-x-auto rounded-lg border border-gray-200">
             <table className="w-full min-w-[560px] text-sm">
               <thead>
@@ -266,7 +270,7 @@ export default async function CompanyFeePage({ params }: { params: Promise<{ slu
         </section>
 
         <section className="mt-8">
-          <h2 className="text-lg font-bold text-gray-900">{company.name}の手数料に関するよくある質問</h2>
+          <h2 className="section-title section-title-sm">{company.name}の手数料に関するよくある質問</h2>
           <div className="mt-3 space-y-5">
             {faqs.map((f, i) => (
               <div key={i} className="rounded-lg border border-gray-200 p-4">

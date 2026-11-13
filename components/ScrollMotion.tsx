@@ -19,6 +19,7 @@ export function ScrollMotion() {
     const root = document.documentElement;
     root.classList.add("js-motion");
 
+    const pending = new Set<HTMLElement>();
     // 1) 表示に入ったら is-in を付ける（同じタイミングで入った要素は順に少しずつ遅らせる）
     const reveal = new IntersectionObserver(
       (entries) => {
@@ -29,12 +30,40 @@ export function ScrollMotion() {
           const el = e.target as HTMLElement;
           el.style.setProperty("--d", `${Math.min(i, 6) * 80}ms`);
           el.classList.add("is-in");
+          pending.delete(el);
           reveal.unobserve(el);
         });
       },
       { rootMargin: "0px 0px -8% 0px", threshold: 0.12 }
     );
-    document.querySelectorAll<HTMLElement>("[data-reveal],[data-bars]").forEach((el) => reveal.observe(el));
+    // 下層ページ用：見出し・表・図・カードに自動で付ける（本文の段落には付けない）。
+    // 読み込み時にすでに画面内にあるものは対象外にして、表示直後のちらつきを避ける
+    const vh = window.innerHeight;
+    document
+      .querySelectorAll<HTMLElement>(".section-title, .prose h2, .prose table, .prose img, .ui-card, [data-auto-reveal] > *")
+      .forEach((el) => {
+        if (el.hasAttribute("data-reveal") || el.closest("[data-reveal]")) return;
+        if (el.getBoundingClientRect().top < vh) return;
+        el.setAttribute("data-reveal", "");
+      });
+    document.querySelectorAll<HTMLElement>("[data-reveal],[data-bars]").forEach((el) => {
+      pending.add(el);
+      reveal.observe(el);
+    });
+    // 速いスクロールやページ内リンクで一度も画面に入らずに通り過ぎた要素は、そのまま表示にする
+    let lastSweep = 0;
+    const sweep = (now: number) => {
+      if (now - lastSweep < 200 || pending.size === 0) return;
+      lastSweep = now;
+      pending.forEach((el) => {
+        if (el.getBoundingClientRect().bottom < 0) {
+          el.style.setProperty("--d", "0ms");
+          el.classList.add("is-in");
+          pending.delete(el);
+          reveal.unobserve(el);
+        }
+      });
+    };
 
     // 2) 数字のカウントアップ（終わったら元の文字列をそのまま戻す）
     const counted = new IntersectionObserver(
@@ -72,6 +101,7 @@ export function ScrollMotion() {
     let ticking = false;
     const update = () => {
       ticking = false;
+      sweep(performance.now());
       const y = window.scrollY;
       const max = root.scrollHeight - window.innerHeight;
       if (barRef.current) barRef.current.style.transform = `scaleX(${max > 0 ? Math.min(y / max, 1) : 0})`;
@@ -84,7 +114,13 @@ export function ScrollMotion() {
         });
       }
     };
+    let settle: ReturnType<typeof setTimeout> | undefined;
     const onScroll = () => {
+      clearTimeout(settle);
+      settle = setTimeout(() => {
+        lastSweep = 0;
+        sweep(performance.now());
+      }, 250);
       if (!ticking) {
         ticking = true;
         requestAnimationFrame(update);
@@ -95,6 +131,7 @@ export function ScrollMotion() {
     update();
 
     return () => {
+      clearTimeout(settle);
       window.removeEventListener("scroll", onScroll);
       window.removeEventListener("resize", onScroll);
       reveal.disconnect();

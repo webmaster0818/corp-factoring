@@ -63,7 +63,8 @@
 .prose pre { max-width: 100%; overflow-x: auto; white-space: pre-wrap; overflow-wrap: anywhere; }
 /* 記事本文の見出し・段落・リスト・画像。page.tsx の prose-* 指定は typography プラグインが無く効いていなかったので、同じ意図の最低限をここで付ける */
 .prose { color: #2b3440; line-height: 1.9; font-size: 1rem; }
-.prose h2 { font-size: 1.3rem; font-weight: 700; color: #1B3A5C; margin: 3rem 0 1.25rem; padding: 0.15rem 0 0.15rem 0.85rem; border-left: 4px solid #1B3A5C; line-height: 1.5; }
+.prose h2 { position: relative; font-size: 1.3rem; font-weight: 700; color: #14284A; margin: 3rem 0 1.25rem; padding: 0.15rem 0 0.15rem calc(4px + 0.85rem); line-height: 1.5; }
+.prose h2::before { content: ""; position: absolute; left: 0; top: 0.15rem; bottom: 0.15rem; width: 4px; background: #1F6AAE; transform-origin: top; }
 .prose h3 { font-size: 1.125rem; font-weight: 700; color: #1f2937; margin: 2.25rem 0 0.75rem; padding-bottom: 0.4rem; border-bottom: 1px solid #dfe5ec; line-height: 1.5; }
 .prose h4 { font-weight: 700; color: #111827; margin: 1.5rem 0 0.5rem; }
 .prose p { margin: 0 0 1rem; }
@@ -131,8 +132,8 @@ img, video, iframe { max-width: 100%; }
 @media (prefers-reduced-motion: no-preference) {
   .js-motion [data-reveal] { opacity: 0; transform: translate3d(0, 18px, 0); transition: opacity .7s ease, transform .8s cubic-bezier(.2,.7,.2,1); transition-delay: var(--d, 0ms); }
   .js-motion [data-reveal].is-in { opacity: 1; transform: none; }
-  .js-motion .section-title[data-reveal]::before { transform: scaleY(0); transition: transform .7s cubic-bezier(.2,.7,.2,1) calc(var(--d, 0ms) + 120ms); }
-  .js-motion .section-title[data-reveal].is-in::before { transform: scaleY(1); }
+  .js-motion .prose h2[data-reveal]::before, .js-motion .section-title[data-reveal]::before { transform: scaleY(0); transition: transform .7s cubic-bezier(.2,.7,.2,1) calc(var(--d, 0ms) + 120ms); }
+  .js-motion .prose h2[data-reveal].is-in::before, .js-motion .section-title[data-reveal].is-in::before { transform: scaleY(1); }
   .js-motion [data-bars] .fee-fill { transform: scaleX(0); transform-origin: 0 50%; transition: transform 1s cubic-bezier(.2,.7,.2,1) .35s; }
   .js-motion [data-bars].is-in .fee-fill { transform: scaleX(1); }
   .js-motion [data-bars].is-in tr:nth-child(2) .fee-fill { transition-delay: .43s; }
@@ -141,3 +142,22 @@ img, video, iframe { max-width: 100%; }
   .js-motion [data-bars].is-in tr:nth-child(5) .fee-fill { transition-delay: .67s; }
   [data-parallax] { will-change: transform; }
 }
+
+/* ===== 下層ページ共通 ===== */
+.page-head { position: relative; background-color: #F5F8FB; isolation: isolate; border-bottom: 1px solid #DCE5EE; }
+.page-head::before { content: ""; position: absolute; inset: 0; z-index: -1;
+  background-image: linear-gradient(#E1E8F0 1px, transparent 1px), linear-gradient(90deg, #E1E8F0 1px, transparent 1px);
+  background-size: 28px 28px; background-position: -1px -1px;
+  -webkit-mask-image: radial-gradient(ellipse 70% 90% at 80% 20%, #000 15%, transparent 80%);
+          mask-image: radial-gradient(ellipse 70% 90% at 80% 20%, #000 15%, transparent 80%); }
+.page-label { display: inline-flex; align-items: center; gap: .5rem; font-size: 13px; font-weight: 600; color: #195790; }
+.page-label::before { content: ""; display: inline-block; width: 1.25rem; height: 1px; background: #1F6AAE; }
+.crumbs { font-size: 12px; color: #6b7280; }
+.crumbs a { color: #4b5563; }
+.crumbs a:hover { color: #1F6AAE; text-decoration: underline; }
+/* 表：枠内だけ横スクロール */
+.overflow-x-auto { -webkit-overflow-scrolling: touch; max-width: 100%; }
+.prose table td { font-variant-numeric: tabular-nums; }
+.prose code { background: #F1F6FB; padding: 0 .3em; border-radius: 3px; font-size: .92em; }
+.section-title.section-title-sm { font-size: 1.25rem; }
+@media (max-width: 640px) { .section-title.section-title-sm { font-size: 1.15rem; } }

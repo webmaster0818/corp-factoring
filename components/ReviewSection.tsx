@@ -12,8 +12,8 @@ interface ReviewSectionProps {
 export function ReviewSection({ companyName, realRating, pros, cons }: ReviewSectionProps) {
   return (
     <section id="reviews" className="mb-12 scroll-mt-4">
-      <Card className="border-2 border-gray-100 shadow-sm">
-        <CardHeader className="bg-gray-50 border-b border-gray-100">
+      <Card className="border border-line">
+        <CardHeader className="bg-white border-b border-line pb-4">
           <CardTitle className="text-2xl font-bold text-gray-900">
             {companyName}の口コミ・評判
           </CardTitle>

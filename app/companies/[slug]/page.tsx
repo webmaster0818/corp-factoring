@@ -242,17 +242,18 @@ export default function CompanyPage({
       <Header />
 
       {/* Breadcrumbs */}
-      <nav className="bg-gray-50 py-3 border-b border-gray-100">
-        <div className="container mx-auto px-4 max-w-5xl">
-          <div className="text-sm text-gray-600">
+      <div className="bg-soft">
+        <div className="container mx-auto px-4 max-w-5xl pt-4">
+          <nav className="crumbs">
             <Link href="/" className="hover:text-blue-600">ホーム</Link>
             <span className="mx-2">＞</span>
             <span className="text-gray-900 font-medium">{company.name}</span>
-          </div>
+          </nav>
         </div>
-      </nav>
+      </div>
 
-      <div className="container mx-auto px-4 max-w-5xl py-12">
+      <div className="page-head pb-1">
+      <div className="container mx-auto px-4 max-w-5xl pt-6 pb-10">
         {/* ヒーロー画像 */}
         {(slug === 'ququmo' || slug === 'accel-factor' || slug === 'best-factor') && (
           <div className="mb-8">
@@ -268,18 +269,19 @@ export default function CompanyPage({
         )}
 
         {/* ヘッダー */}
-        <div id="overview" className="bg-white rounded-lg shadow-sm p-8 mb-8 border border-gray-200 scroll-mt-4">
+        <div id="overview" className="bg-white rounded-lg p-5 sm:p-8 border border-line layer-shadow scroll-mt-4">
           <div className="flex items-start gap-6 mb-6">
             <div className="flex-1">
-              <h1 className="text-4xl font-bold text-gray-900 mb-3 leading-tight">
+              <p className="page-label mb-3">ファクタリング会社</p>
+              <h1 className="text-[24px] sm:text-[30px] font-bold text-ink leading-[1.45] tracking-[0.01em] mb-3">
                 {lead?.h1 ?? company.name}
               </h1>
-              <p className="text-gray-600 text-lg mb-4 leading-relaxed">
+              <p className="text-gray-600 text-[15px] sm:text-base mb-5 leading-[1.9]">
                 {company.description}
               </p>
               {lead && (
-                <div id="lead-answer" className="mb-5 rounded-lg border-l-4 border-blue-500 bg-blue-50 p-4">
-                  <p className="text-base font-bold text-blue-900 mb-2">{lead.leadHeading}</p>
+                <div id="lead-answer" className="mb-5 rounded-md border border-line border-l-4 border-l-blue-600 bg-soft p-4">
+                  <p className="text-base font-bold text-ink mb-2">{lead.leadHeading}</p>
                   <div className="space-y-2">
                     {lead.leadBody.map((t, i) => (
                       <p key={i} className="text-sm leading-relaxed text-gray-800">{t}</p>
@@ -348,7 +350,7 @@ export default function CompanyPage({
               )}
               <div className="flex flex-wrap gap-2">
                 {company.features.map((feature, index) => (
-                  <Badge key={index} className="bg-blue-600 hover:bg-blue-700 text-white font-medium">
+                  <Badge key={index} className="bg-white hover:bg-white text-ink border border-line font-medium">
                     {feature}
                   </Badge>
                 ))}
@@ -356,30 +358,49 @@ export default function CompanyPage({
             </div>
           </div>
 
+          {/* 主な条件（基本情報と同じ値） */}
+          <dl className="grid grid-cols-1 sm:grid-cols-3 border border-line rounded-md divide-y sm:divide-y-0 sm:divide-x divide-line mb-6 num">
+            <div className="px-4 py-3 min-w-0">
+              <dt className="text-xs text-gray-500 mb-0.5">手数料</dt>
+              <dd className="text-lg font-bold text-ink">{feeUndisclosed || company.fees.min === 0 ? "要見積もり" : company.fees.max > 0 ? `${feeRange(company.fees)}` : `${company.fees.min}%〜`}</dd>
+            </div>
+            <div className="px-4 py-3 min-w-0">
+              <dt className="text-xs text-gray-500 mb-0.5">入金スピード</dt>
+              <dd className="text-lg font-bold text-ink">{company.speed}</dd>
+            </div>
+            <div className="px-4 py-3 min-w-0">
+              <dt className="text-xs text-gray-500 mb-0.5">買取可能額</dt>
+              <dd className="text-base font-bold text-ink leading-snug">{amountLabel}</dd>
+            </div>
+          </dl>
+
           {/* CTAボタン（affiliateUrl設定時はアフィリエイトリンク・sponsored） */}
           <div className="flex flex-col sm:flex-row gap-4">
             <a
               href={company.affiliateUrl ?? company.url}
               target="_blank"
               rel={company.affiliateUrl ? "sponsored nofollow noopener" : "nofollow noopener"}
-              className="bg-blue-600 text-white font-bold py-4 px-10 rounded-lg text-center shadow-sm hover:bg-blue-700 hover:shadow-sm transition"
+              className="bg-cta text-white font-bold py-4 px-10 rounded-md text-center hover:bg-cta-hover transition"
             >
               公式サイトで詳細を見る →
             </a>
             <Link
               href="/#diagnosis"
-              className="bg-white border-2 border-sky-500 text-sky-600 font-bold py-4 px-10 rounded-md hover:bg-sky-50 transition text-center"
+              className="bg-white border border-blue-600 text-blue-700 font-bold py-4 px-10 rounded-md hover:bg-blue-50 transition text-center"
             >
               無料診断ツール
             </Link>
           </div>
         </div>
 
+      </div>
+      </div>
+      <div className="container mx-auto px-4 max-w-5xl py-10">
         {/* サブ意図クイックアンサー（営業時間・審査スピード・必要書類などの即答） */}
         <section id="quick-answer" className="mb-8 scroll-mt-4">
-          <Card className="border-2 border-blue-100 shadow-sm">
-            <CardHeader className="bg-blue-50 border-b border-blue-100">
-              <h2 className="leading-none tracking-tight text-xl font-bold text-gray-900">{company.name}の営業時間・審査スピード・必要書類の概要</h2>
+          <Card className="border border-line">
+            <CardHeader className="bg-white border-b border-line pb-4">
+              <h2 className="section-title section-title-sm">{company.name}の営業時間・審査スピード・必要書類の概要</h2>
             </CardHeader>
             <CardContent className="pt-5">
               <p className="text-sm text-gray-700 leading-relaxed mb-4">
@@ -475,9 +496,9 @@ export default function CompanyPage({
         {/* 検索語に直接答える節（companyLead.sections。公式確認値・出典つき） */}
         {lead?.sections?.map((sec) => (
           <section key={sec.id} id={sec.id} className="mb-8 scroll-mt-4">
-            <Card className="border-2 border-gray-100 shadow-sm">
-              <CardHeader className="bg-gray-50 border-b border-gray-100">
-                <h2 className="text-2xl font-bold leading-none tracking-tight text-gray-900">{sec.heading}</h2>
+            <Card className="border border-line">
+              <CardHeader className="bg-white border-b border-line pb-4">
+                <h2 className="section-title section-title-sm">{sec.heading}</h2>
               </CardHeader>
               <CardContent className="pt-5">
                 {sec.intro?.map((t, i) => (
@@ -533,79 +554,79 @@ export default function CompanyPage({
         ))}
 
         {/* 目次 */}
-        <nav className="mb-12 bg-white rounded-lg shadow-sm p-8 border border-gray-200">
-          <h2 className="text-2xl font-bold text-gray-900 mb-6 pb-3 border-b border-gray-200">
+        <nav className="mb-12 bg-white rounded-md p-6 sm:p-8 border border-line">
+          <h2 className="section-title section-title-sm mb-6">
             目次
           </h2>
           <div className="grid md:grid-cols-2 gap-3">
-            <a href="#overview" className="text-gray-700 hover:text-blue-600 font-medium py-3 px-4 bg-gray-50 rounded hover:bg-blue-50 transition border border-transparent hover:border-blue-200 flex items-center gap-3">
+            <a href="#overview" className="text-gray-700 hover:text-blue-600 font-medium py-2.5 px-3 rounded hover:bg-soft transition border-b border-line flex items-center gap-3">
               <span className="text-blue-600">→</span>
               会社概要・基本情報
             </a>
             {lead?.sections?.map((sec) => (
-              <a key={sec.id} href={`#${sec.id}`} className="text-gray-700 hover:text-blue-600 font-medium py-3 px-4 bg-gray-50 rounded hover:bg-blue-50 transition border border-transparent hover:border-blue-200 flex items-center gap-3">
+              <a key={sec.id} href={`#${sec.id}`} className="text-gray-700 hover:text-blue-600 font-medium py-2.5 px-3 rounded hover:bg-soft transition border-b border-line flex items-center gap-3">
                 <span className="text-blue-600">→</span>
                 {sec.heading}
               </a>
             ))}
             {details.performance && details.performance.length > 0 && (
-              <a href="#performance" className="text-gray-700 hover:text-blue-600 font-medium py-3 px-4 bg-gray-50 rounded hover:bg-blue-50 transition border border-transparent hover:border-blue-200 flex items-center gap-3">
+              <a href="#performance" className="text-gray-700 hover:text-blue-600 font-medium py-2.5 px-3 rounded hover:bg-soft transition border-b border-line flex items-center gap-3">
                 <span className="text-blue-600">→</span>
                 実績推移データ
               </a>
             )}
             {details.mediaCoverage && details.mediaCoverage.length > 0 && (
-              <a href="#media" className="text-gray-700 hover:text-blue-600 font-medium py-3 px-4 bg-gray-50 rounded hover:bg-blue-50 transition border border-transparent hover:border-blue-200 flex items-center gap-3">
+              <a href="#media" className="text-gray-700 hover:text-blue-600 font-medium py-2.5 px-3 rounded hover:bg-soft transition border-b border-line flex items-center gap-3">
                 <span className="text-blue-600">→</span>
                 メディア掲載実績
               </a>
             )}
-            <a href="#pros-cons" className="text-gray-700 hover:text-blue-600 font-medium py-3 px-4 bg-gray-50 rounded hover:bg-blue-50 transition border border-transparent hover:border-blue-200 flex items-center gap-3">
+            <a href="#pros-cons" className="text-gray-700 hover:text-blue-600 font-medium py-2.5 px-3 rounded hover:bg-soft transition border-b border-line flex items-center gap-3">
               <span className="text-blue-600">→</span>
               メリット・デメリット
             </a>
-            <a href="#strengths" className="text-gray-700 hover:text-blue-600 font-medium py-3 px-4 bg-gray-50 rounded hover:bg-blue-50 transition border border-transparent hover:border-blue-200 flex items-center gap-3">
+            <a href="#strengths" className="text-gray-700 hover:text-blue-600 font-medium py-2.5 px-3 rounded hover:bg-soft transition border-b border-line flex items-center gap-3">
               <span className="text-blue-600">→</span>
               {strengths ? `${company.name}の強み` : "おすすめの方・主な条件"}
             </a>
-            <a href="#use-cases" className="text-gray-700 hover:text-blue-600 font-medium py-3 px-4 bg-gray-50 rounded hover:bg-blue-50 transition border border-transparent hover:border-blue-200 flex items-center gap-3">
+            <a href="#use-cases" className="text-gray-700 hover:text-blue-600 font-medium py-2.5 px-3 rounded hover:bg-soft transition border-b border-line flex items-center gap-3">
               <span className="text-blue-600">→</span>
               活用シーン
             </a>
             {lead?.sources && lead.sources.length > 0 && (
-              <a href="#review-sources" className="text-gray-700 hover:text-blue-600 font-medium py-3 px-4 bg-gray-50 rounded hover:bg-blue-50 transition border border-transparent hover:border-blue-200 flex items-center gap-3">
+              <a href="#review-sources" className="text-gray-700 hover:text-blue-600 font-medium py-2.5 px-3 rounded hover:bg-soft transition border-b border-line flex items-center gap-3">
                 <span className="text-blue-600">→</span>
                 口コミ・評判の出典
               </a>
             )}
             {editorialVerification && (
-              <a href="#editorial-check" className="text-gray-700 hover:text-blue-600 font-medium py-3 px-4 bg-gray-50 rounded hover:bg-blue-50 transition border border-transparent hover:border-blue-200 flex items-center gap-3">
+              <a href="#editorial-check" className="text-gray-700 hover:text-blue-600 font-medium py-2.5 px-3 rounded hover:bg-soft transition border-b border-line flex items-center gap-3">
                 <span className="text-blue-600">→</span>
                 公式で確認した事実（会社概要・手数料）
               </a>
             )}
-            <a href="#reviews" className="text-gray-700 hover:text-blue-600 font-medium py-3 px-4 bg-gray-50 rounded hover:bg-blue-50 transition border border-transparent hover:border-blue-200 flex items-center gap-3">
+            <a href="#reviews" className="text-gray-700 hover:text-blue-600 font-medium py-2.5 px-3 rounded hover:bg-soft transition border-b border-line flex items-center gap-3">
               <span className="text-blue-600">→</span>
               利用者の口コミ
             </a>
-            <a href="#offices" className="text-gray-700 hover:text-blue-600 font-medium py-3 px-4 bg-gray-50 rounded hover:bg-blue-50 transition border border-transparent hover:border-blue-200 flex items-center gap-3">
+            <a href="#offices" className="text-gray-700 hover:text-blue-600 font-medium py-2.5 px-3 rounded hover:bg-soft transition border-b border-line flex items-center gap-3">
               <span className="text-blue-600">→</span>
               営業時間・拠点
             </a>
-            <a href="#audit" className="text-gray-700 hover:text-blue-600 font-medium py-3 px-4 bg-gray-50 rounded hover:bg-blue-50 transition border border-transparent hover:border-blue-200 flex items-center gap-3">
+            <a href="#audit" className="text-gray-700 hover:text-blue-600 font-medium py-2.5 px-3 rounded hover:bg-soft transition border-b border-line flex items-center gap-3">
               <span className="text-blue-600">→</span>
               審査について
             </a>
-            <a href="#flow" className="text-gray-700 hover:text-blue-600 font-medium py-3 px-4 bg-gray-50 rounded hover:bg-blue-50 transition border border-transparent hover:border-blue-200 flex items-center gap-3">
+            <a href="#flow" className="text-gray-700 hover:text-blue-600 font-medium py-2.5 px-3 rounded hover:bg-soft transition border-b border-line flex items-center gap-3">
               <span className="text-blue-600">→</span>
               利用の流れ
             </a>
-            <a href="#faq" className="text-gray-700 hover:text-blue-600 font-medium py-3 px-4 bg-gray-50 rounded hover:bg-blue-50 transition border border-transparent hover:border-blue-200 flex items-center gap-3">
+            <a href="#faq" className="text-gray-700 hover:text-blue-600 font-medium py-2.5 px-3 rounded hover:bg-soft transition border-b border-line flex items-center gap-3">
               <span className="text-blue-600">→</span>
               よくある質問
             </a>
             {details.comparisons.length > 0 && (
-              <a href="#comparison" className="text-gray-700 hover:text-blue-600 font-medium py-3 px-4 bg-gray-50 rounded hover:bg-blue-50 transition border border-transparent hover:border-blue-200 flex items-center gap-3">
+              <a href="#comparison" className="text-gray-700 hover:text-blue-600 font-medium py-2.5 px-3 rounded hover:bg-soft transition border-b border-line flex items-center gap-3">
                 <span className="text-blue-600">→</span>
                 他社比較
               </a>
@@ -614,32 +635,32 @@ export default function CompanyPage({
         </nav>
 
         {/* 基本情報 */}
-        <Card className="mb-8 border-2 border-gray-100 shadow-sm">
-          <CardHeader className="bg-gray-50 border-b border-gray-100">
-            <h2 className="leading-none tracking-tight text-2xl font-bold text-gray-900">基本情報</h2>
+        <Card className="mb-8 border border-line">
+          <CardHeader className="bg-white border-b border-line pb-4">
+            <h2 className="section-title section-title-sm">基本情報</h2>
           </CardHeader>
           <CardContent className="pt-6">
             <div className="grid md:grid-cols-2 gap-6">
-              <div className="bg-blue-50 p-5 rounded-md border border-blue-100">
-                <h3 className="font-bold text-gray-700 mb-2 text-sm">手数料</h3>
-                <p className="text-3xl font-bold text-blue-600">
+              <div className="bg-soft p-5 rounded-md border border-line">
+                <h3 className="font-bold text-gray-500 mb-1 text-xs">手数料</h3>
+                <p className="text-2xl font-bold text-ink num">
                   {feeUndisclosed || company.fees.min === 0 ? "要見積もり" : company.fees.max > 0 ? `${feeRange(company.fees)}` : `${company.fees.min}%〜`}
                 </p>
               </div>
-              <div className="bg-green-50 p-5 rounded-md border border-green-100">
-                <h3 className="font-bold text-gray-700 mb-2 text-sm">入金スピード</h3>
-                <p className="text-3xl font-bold text-green-600">
+              <div className="bg-soft p-5 rounded-md border border-line">
+                <h3 className="font-bold text-gray-500 mb-1 text-xs">入金スピード</h3>
+                <p className="text-2xl font-bold text-ink">
                   {company.speed}
                 </p>
               </div>
-              <div className="bg-gray-50 p-5 rounded-md border border-gray-200">
-                <h3 className="font-bold text-gray-700 mb-2 text-sm">買取可能額</h3>
+              <div className="bg-soft p-5 rounded-md border border-line">
+                <h3 className="font-bold text-gray-500 mb-1 text-xs">買取可能額</h3>
                 <p className="text-xl font-bold text-gray-900">
                   {amountLabel}
                 </p>
               </div>
-              <div className="bg-sky-50 p-5 rounded-md border border-sky-100">
-                <h3 className="font-bold text-gray-700 mb-2 text-sm">個人事業主</h3>
+              <div className="bg-soft p-5 rounded-md border border-line">
+                <h3 className="font-bold text-gray-500 mb-1 text-xs">個人事業主</h3>
                 <p className="text-xl font-bold text-gray-900">
                   {company.personalNote ? (
                     <span className="text-gray-800 font-bold text-base">{company.personalNote}</span>
@@ -655,7 +676,7 @@ export default function CompanyPage({
         </Card>
 
         {/* 手数料比較ハブへの内部リンク（回遊強化） */}
-        <div className="mb-12 rounded-md border border-blue-100 bg-blue-50/60 p-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
+        <div className="mb-12 rounded-md border border-line bg-soft p-5 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3">
           <p className="text-sm text-gray-700 leading-relaxed">
             手数料や入金スピードは、会社ごとに大きく異なります。
             <span className="font-bold">公式サイトで確認したファクタリング{FEE_COMPANY_COUNT}社の比較表</span>で、
@@ -672,9 +693,9 @@ export default function CompanyPage({
         {/* 実績データの推移 */}
         {details.performance && details.performance.length > 0 && (
           <section id="performance" className="mb-12 scroll-mt-4">
-            <Card className="border-2 border-gray-100 shadow-sm">
-              <CardHeader className="bg-gray-50 border-b border-gray-100">
-                <h2 className="leading-none tracking-tight text-2xl font-bold text-gray-900">{company.name}の実績推移</h2>
+            <Card className="border border-line">
+              <CardHeader className="bg-white border-b border-line pb-4">
+                <h2 className="section-title section-title-sm">{company.name}の実績推移</h2>
               </CardHeader>
               <CardContent className="pt-6">
                 <div className="overflow-x-auto">
@@ -708,16 +729,16 @@ export default function CompanyPage({
         {/* メディア掲載実績 */}
         {details.mediaCoverage && details.mediaCoverage.length > 0 && (
           <section id="media" className="mb-12 scroll-mt-4">
-            <Card className="border-2 border-gray-100 shadow-sm">
-              <CardHeader className="bg-gray-50 border-b border-gray-100">
-                <h2 className="leading-none tracking-tight text-2xl font-bold text-gray-900">{company.name}のメディア掲載実績</h2>
+            <Card className="border border-line">
+              <CardHeader className="bg-white border-b border-line pb-4">
+                <h2 className="section-title section-title-sm">{company.name}のメディア掲載実績</h2>
               </CardHeader>
               <CardContent className="pt-6">
                 <div className="space-y-4">
                   {details.mediaCoverage.map((media, index) => (
                     <div key={index} className="bg-white p-6 rounded-lg border border-blue-100">
                       <div className="flex items-start gap-4">
-                        <div className="flex-shrink-0 w-12 h-12 bg-blue-500 text-white rounded-full flex items-center justify-center font-bold text-lg">
+                        <div className="flex-shrink-0 w-12 h-12 bg-blue-500 text-white rounded-md flex items-center justify-center font-bold text-lg">
                                                   </div>
                         <div className="flex-grow">
                           <h3 className="font-bold text-xl mb-2 text-gray-900">{media.name}</h3>
@@ -748,15 +769,15 @@ export default function CompanyPage({
         )}
 
         {/* メリット・デメリット */}
-        <Card id="pros-cons" className="mb-8 border-2 border-gray-100 shadow-sm scroll-mt-4">
-          <CardHeader className="bg-gray-50 border-b border-gray-100">
-            <h2 className="leading-none tracking-tight text-2xl font-bold text-gray-900">メリット・デメリット</h2>
+        <Card id="pros-cons" className="mb-8 border border-line scroll-mt-4">
+          <CardHeader className="bg-white border-b border-line pb-4">
+            <h2 className="section-title section-title-sm">メリット・デメリット</h2>
           </CardHeader>
           <CardContent className="pt-6">
             <div className="grid md:grid-cols-2 gap-6">
               {/* メリット */}
-              <div className="bg-green-50 p-6 rounded-md border border-green-100">
-                <h3 className="font-bold text-green-700 mb-4 text-xl">
+              <div className="bg-white p-6 rounded-md border border-line border-t-4 border-t-green-600">
+                <h3 className="font-bold text-ink mb-4 text-lg">
                   メリット
                 </h3>
                 <ul className="space-y-3">
@@ -771,8 +792,8 @@ export default function CompanyPage({
 
               {/* デメリット（出典のある項目が無い会社は表示しない） */}
               {company.cons.length > 0 && (
-              <div className="bg-gray-50 p-6 rounded-md border border-gray-200">
-                <h3 className="font-bold text-gray-800 mb-4 text-xl">
+              <div className="bg-white p-6 rounded-md border border-line border-t-4 border-t-gray-400">
+                <h3 className="font-bold text-ink mb-4 text-lg">
                   デメリット
                 </h3>
                 <ul className="space-y-3">
@@ -790,14 +811,14 @@ export default function CompanyPage({
         </Card>
 
         {/* 必要書類 */}
-        <Card className="mb-8 border-2 border-gray-100 shadow-sm">
-          <CardHeader className="bg-gray-50 border-b border-gray-100">
-            <h2 className="leading-none tracking-tight text-2xl font-bold text-gray-900">必要書類</h2>
+        <Card className="mb-8 border border-line">
+          <CardHeader className="bg-white border-b border-line pb-4">
+            <h2 className="section-title section-title-sm">必要書類</h2>
           </CardHeader>
           <CardContent className="pt-6">
             <ul className="space-y-3">
               {company.requiredDocuments.map((doc, index) => (
-                <li key={index} className="flex items-center gap-3 bg-blue-50 p-4 rounded-lg border border-blue-100">
+                <li key={index} className="flex items-center gap-3 bg-soft p-4 rounded-md border border-line">
                   <span className="text-blue-600 text-xl"></span>
                   <span className="text-gray-700 font-medium">{doc}</span>
                 </li>
@@ -807,9 +828,9 @@ export default function CompanyPage({
         </Card>
 
         {/* 会社情報 */}
-        <Card className="mb-8 border-2 border-gray-100 shadow-sm">
-          <CardHeader className="bg-gray-50 border-b border-gray-100">
-            <h2 className="leading-none tracking-tight text-2xl font-bold text-gray-900">会社情報</h2>
+        <Card className="mb-8 border border-line">
+          <CardHeader className="bg-white border-b border-line pb-4">
+            <h2 className="section-title section-title-sm">会社情報</h2>
           </CardHeader>
           <CardContent className="pt-6">
             <div className="space-y-4">
@@ -860,9 +881,9 @@ export default function CompanyPage({
         </Card>
 
         {/* こんな人におすすめ */}
-        <Card id="strengths" className="mb-8 border-2 border-gray-100 shadow-sm scroll-mt-4">
-          <CardHeader className="bg-gray-50 border-b border-gray-100">
-            <h2 className="leading-none tracking-tight text-2xl font-bold text-gray-900">このような方におすすめです</h2>
+        <Card id="strengths" className="mb-8 border border-line scroll-mt-4">
+          <CardHeader className="bg-white border-b border-line pb-4">
+            <h2 className="section-title section-title-sm">このような方におすすめです</h2>
           </CardHeader>
           <CardContent className="pt-6">
             <div className="space-y-4">
@@ -894,7 +915,7 @@ export default function CompanyPage({
               )}
               {/* 旧「審査に不安がある方：審査が柔軟で、赤字決算や税金滞納がある場合でも…」は出典のない共通文のため削除（2026-10-28）。各社の審査の記載は公式の出典つきの個別データに限る */}
               {company.personalSupport && (
-                <div className="flex items-start gap-4 bg-sky-50 p-5 rounded-md border border-sky-100">
+                <div className="flex items-start gap-4 bg-blue-50 p-5 rounded-md border border-blue-100">
                   <span className="text-3xl"></span>
                   <div>
                     <h4 className="font-bold text-gray-900 mb-2 text-lg">
@@ -915,9 +936,9 @@ export default function CompanyPage({
 
         {/* 強み */}
         <section className="mb-12">
-          <Card className="border-2 border-gray-100 shadow-sm">
-            <CardHeader className="bg-gray-50 border-b border-gray-100">
-              <h2 className="leading-none tracking-tight text-2xl font-bold text-gray-900">{strengths ? `${company.name}の強み` : `${company.name}の主な条件`}</h2>
+          <Card className="border border-line">
+            <CardHeader className="bg-white border-b border-line pb-4">
+              <h2 className="section-title section-title-sm">{strengths ? `${company.name}の強み` : `${company.name}の主な条件`}</h2>
               {!strengths && (
                 <p className="text-sm text-gray-600 mt-2">
                   当サイトが公式サイトで確認した、入金までの時間・手数料・買取可能額などの条件です。手数料の出典と確認日は、<Link href="/fees/" className="text-blue-600 hover:underline">{FEE_COMPANY_COUNT}社の手数料の比較</Link>に掲載しています。
@@ -939,9 +960,9 @@ export default function CompanyPage({
 
         {/* 利用シーン・ユースケース */}
         <section id="use-cases" className="mb-12 scroll-mt-4">
-          <Card className="border-2 border-gray-100 shadow-sm">
-            <CardHeader className="bg-gray-50 border-b border-gray-100">
-              <h2 className="leading-none tracking-tight text-2xl font-bold text-gray-900">{company.name}が向いている活用シーン</h2>
+          <Card className="border border-line">
+            <CardHeader className="bg-white border-b border-line pb-4">
+              <h2 className="section-title section-title-sm">{company.name}が向いている活用シーン</h2>
               <p className="text-sm text-gray-500 mt-2">
                 ※ 以下は一般的な利用シーンのイメージです。特定の利用者の実例ではありません。
               </p>
@@ -971,9 +992,9 @@ export default function CompanyPage({
         {/* 口コミ・評判の出典一覧（掲載サイト・確認日のみ。本文の転載はしない） */}
         {lead?.sources && lead.sources.length > 0 && (
           <section id="review-sources" className="mb-8 scroll-mt-4">
-            <Card className="border-2 border-gray-100 shadow-sm">
-              <CardHeader className="bg-gray-50 border-b border-gray-100">
-                <h2 className="leading-none tracking-tight text-2xl font-bold text-gray-900">{company.name}の口コミ・評判の掲載先（出典一覧）</h2>
+            <Card className="border border-line">
+              <CardHeader className="bg-white border-b border-line pb-4">
+                <h2 className="section-title section-title-sm">{company.name}の口コミ・評判の掲載先（出典一覧）</h2>
                 <p className="text-sm text-gray-600 mt-2">
                   {company.name}の口コミが掲載されている主なサイトと、{lead.sourcesCheckedAt ?? lead.checkedAt}時点の掲載状況です。当サイトでは、口コミ本文の転載や体験談の作成は行わず、掲載先と件数のみを掲載しています。評価は投稿の時期・件数によって変わるため、各サイトにて原文をご確認ください。
                 </p>
@@ -1010,7 +1031,7 @@ export default function CompanyPage({
         {/* 公開口コミの傾向（出典・調査年月つき） */}
         {reviewTrend && (
           <section id="review-trends" className="mb-8 scroll-mt-4">
-            <Card className="border-2 border-gray-100 shadow-sm">
+            <Card className="border border-line">
               <div className="p-6 md:p-8">
                 <h2 className="text-xl md:text-2xl font-bold text-gray-900 mb-1">{company.name}の公開口コミの傾向</h2>
                 <p className="text-xs text-gray-500 mb-5">出典：{reviewTrend.source}。口コミの傾向を要約したものであり、個別の体験には差があります。</p>
@@ -1055,9 +1076,9 @@ export default function CompanyPage({
 
         {/* 営業時間・事業拠点 */}
         <section id="offices" className="mb-12 scroll-mt-4">
-          <Card className="border-2 border-gray-100 shadow-sm">
-            <CardHeader className="bg-gray-50 border-b border-gray-100">
-              <h2 className="leading-none tracking-tight text-2xl font-bold text-gray-900">{company.name}の営業時間・事業拠点</h2>
+          <Card className="border border-line">
+            <CardHeader className="bg-white border-b border-line pb-4">
+              <h2 className="section-title section-title-sm">{company.name}の営業時間・事業拠点</h2>
             </CardHeader>
             <CardContent className="pt-6">
               <div className="mb-8">
@@ -1116,9 +1137,9 @@ export default function CompanyPage({
 
         {/* 審査について */}
         <section id="audit" className="mb-12 scroll-mt-4">
-          <Card className="border-2 border-gray-100 shadow-sm">
-            <CardHeader className="bg-gray-50 border-b border-gray-100">
-              <h2 className="leading-none tracking-tight text-2xl font-bold text-gray-900">{company.name}の審査について</h2>
+          <Card className="border border-line">
+            <CardHeader className="bg-white border-b border-line pb-4">
+              <h2 className="section-title section-title-sm">{company.name}の審査について</h2>
             </CardHeader>
             <CardContent className="pt-6">
               {details.audit.passRate && (
@@ -1169,16 +1190,16 @@ export default function CompanyPage({
 
         {/* 利用の流れ */}
         <section id="flow" className="mb-12 scroll-mt-4">
-          <Card className="border-2 border-gray-100 shadow-sm">
-            <CardHeader className="bg-gray-50 border-b border-gray-100">
-              <h2 className="leading-none tracking-tight text-2xl font-bold text-gray-900">{company.name}の利用の流れ</h2>
+          <Card className="border border-line">
+            <CardHeader className="bg-white border-b border-line pb-4">
+              <h2 className="section-title section-title-sm">{company.name}の利用の流れ</h2>
             </CardHeader>
             <CardContent className="pt-6">
               <div className="space-y-6">
                 {(lead?.flow ?? details.flow).map((step) => (
                   <div key={step.step} className="flex gap-6">
                     <div className="flex-shrink-0">
-                      <div className="w-16 h-16 bg-blue-500 text-white rounded-full flex items-center justify-center font-bold text-2xl">
+                      <div className="w-16 h-16 bg-blue-500 text-white rounded-md flex items-center justify-center font-bold text-2xl">
                         {step.step}
                       </div>
                     </div>
@@ -1198,9 +1219,9 @@ export default function CompanyPage({
 
         {/* よくある質問（FAQ） */}
         <section id="faq" className="mb-12 scroll-mt-4">
-          <Card className="border-2 border-gray-100 shadow-sm">
-            <CardHeader className="bg-gray-50 border-b border-gray-100">
-              <h2 className="leading-none tracking-tight text-2xl font-bold text-gray-900">{company.name}のよくある質問</h2>
+          <Card className="border border-line">
+            <CardHeader className="bg-white border-b border-line pb-4">
+              <h2 className="section-title section-title-sm">{company.name}のよくある質問</h2>
             </CardHeader>
             <CardContent className="pt-6">
               <div className="space-y-6">
@@ -1221,9 +1242,9 @@ export default function CompanyPage({
         {/* 他社比較 */}
         {details.comparisons.length > 0 && (
           <section id="comparison" className="mb-12 scroll-mt-4">
-            <Card className="border-2 border-gray-100 shadow-sm">
-              <CardHeader className="bg-gray-50 border-b border-gray-100">
-                <h2 className="leading-none tracking-tight text-2xl font-bold text-gray-900">{company.name}と他社の比較</h2>
+            <Card className="border border-line">
+              <CardHeader className="bg-white border-b border-line pb-4">
+                <h2 className="section-title section-title-sm">{company.name}と他社の比較</h2>
               </CardHeader>
               <CardContent className="pt-6">
                 <div className="overflow-x-auto">
@@ -1299,7 +1320,7 @@ export default function CompanyPage({
           const articles = getAllArticles().slice(0, 3);
           return articles.length > 0 ? (
             <section className="mb-12">
-              <h2 className="text-2xl font-bold text-gray-900 mb-6">関連コラム</h2>
+              <h2 className="section-title mb-6">関連コラム</h2>
               <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
                 {articles.map((article) => (
                   <Link
@@ -1309,7 +1330,7 @@ export default function CompanyPage({
                   >
                     {article.keyword && (
                       <span
-                        className="inline-block text-xs font-semibold px-2.5 py-1 rounded-full mb-3 text-white"
+                        className="inline-block text-xs font-semibold px-2.5 py-1 rounded-md mb-3 text-white"
                         style={{ backgroundColor: "#1B3A5C" }}
                       >
                         {article.keyword}

@@ -50,7 +50,7 @@ export default async function TopicPage({
 
   if (!topic) {
     return (
-      <div className="min-h-screen bg-gray-50">
+      <div className="min-h-screen bg-white">
         <Header />
         <main className="max-w-4xl mx-auto px-6 py-16">
           <h1 className="text-2xl font-bold text-gray-900">ページが見つかりません</h1>
@@ -76,7 +76,7 @@ export default async function TopicPage({
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-white">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
@@ -84,9 +84,9 @@ export default async function TopicPage({
       <Header />
 
       {/* Breadcrumbs */}
-      <div className="bg-white border-b border-gray-100">
-        <div className="max-w-6xl mx-auto px-6 py-3">
-          <nav className="text-sm text-gray-400">
+      <div className="bg-soft">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-4">
+          <nav className="crumbs">
             <Link href="/" className="hover:text-gray-700 transition">
               ホーム
             </Link>
@@ -101,12 +101,12 @@ export default async function TopicPage({
       </div>
 
       {/* Hero */}
-      <section className="bg-white py-12 border-b border-gray-100">
+      <section className="page-head pt-6 pb-10 sm:pb-12">
         <div className="max-w-6xl mx-auto px-6">
-          <p className="text-sm font-semibold text-blue-600 mb-2">
+          <p className="page-label mb-3">
             {topic.name}の記事一覧（全{articleCount}記事）
           </p>
-          <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4">
+          <h1 className="text-[24px] sm:text-[30px] font-bold text-ink leading-[1.45] tracking-[0.01em] mb-4">
             {topic.title.split("｜")[0]}
           </h1>
           {topic.intro.map((p, i) => (
@@ -128,7 +128,7 @@ export default async function TopicPage({
                 <Link
                   key={t.slug}
                   href={`/topics/${t.slug}`}
-                  className="px-3 py-1 bg-white border border-blue-200 rounded-full text-blue-700 hover:bg-blue-100 transition"
+                  className="px-3 py-1 bg-white border border-blue-200 rounded-md text-blue-700 hover:bg-blue-100 transition"
                 >
                   {t.name}
                 </Link>
@@ -138,10 +138,10 @@ export default async function TopicPage({
       </div>
 
       {/* Article groups */}
-      <main className="max-w-6xl mx-auto px-6 py-12">
+      <main className="max-w-6xl mx-auto px-4 sm:px-6 py-10">
         {topic.groups.map((group) => (
           <section key={group.heading} className="mb-12">
-            <h2 className="text-xl font-bold text-gray-900 mb-2 border-l-4 border-blue-600 pl-3">
+            <h2 className="section-title section-title-sm mb-3">
               {group.heading}
             </h2>
             <p className="text-gray-600 text-sm mb-5">{group.description}</p>

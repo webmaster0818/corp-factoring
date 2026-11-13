@@ -247,16 +247,16 @@ export default function TroubleGuidePage() {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-white">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleJsonLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
       <Header />
 
       {/* Breadcrumbs */}
-      <div className="bg-white border-b border-gray-100">
-        <div className="max-w-5xl mx-auto px-6 py-3">
-          <nav className="text-sm text-gray-400">
+      <div className="bg-soft">
+        <div className="max-w-5xl mx-auto px-4 sm:px-6 pt-4">
+          <nav className="crumbs">
             <Link href="/" className="hover:text-gray-700 transition">
               ホーム
             </Link>
@@ -271,10 +271,10 @@ export default function TroubleGuidePage() {
       </div>
 
       {/* Hero */}
-      <section className="bg-white py-12 border-b border-gray-100">
+      <section className="page-head pt-6 pb-10 sm:pb-12">
         <div className="max-w-5xl mx-auto px-6">
-          <p className="text-sm font-semibold text-[#1B3A5C] mb-2">トラブル・法務ハブ</p>
-          <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-tight">
+          <p className="page-label mb-3">トラブル・法務ハブ</p>
+          <h1 className="text-[24px] sm:text-[30px] font-bold text-ink leading-[1.45] tracking-[0.01em] mb-4">
             ファクタリングのトラブル・法務ガイド
           </h1>
           <p className="text-gray-600 leading-relaxed mb-3">
@@ -289,7 +289,7 @@ export default function TroubleGuidePage() {
         </div>
       </section>
 
-      <main className="max-w-5xl mx-auto px-6 py-12">
+      <main className="max-w-5xl mx-auto px-4 sm:px-6 py-10">
         {/* 目次 */}
         <nav className="bg-white border border-gray-200 rounded-md p-6 mb-12">
           <h2 className="text-lg font-bold text-[#1B3A5C] mb-3">このページの構成</h2>
@@ -305,7 +305,7 @@ export default function TroubleGuidePage() {
         {/* テーマ別 */}
         {groups.map((group) => (
           <section key={group.heading} className="mb-12">
-            <h2 className="text-xl font-bold text-gray-900 mb-3 border-l-4 border-[#1B3A5C] pl-3">
+            <h2 className="section-title section-title-sm mb-3">
               {group.heading}
             </h2>
             <p className="text-gray-700 leading-relaxed mb-4">{group.summary}</p>
@@ -335,7 +335,7 @@ export default function TroubleGuidePage() {
 
         {/* 相談窓口 */}
         <section className="mb-12">
-          <h2 className="text-xl font-bold text-gray-900 mb-3 border-l-4 border-[#1B3A5C] pl-3">
+          <h2 className="section-title section-title-sm mb-3">
             公的な相談窓口一覧
           </h2>
           <p className="text-gray-700 leading-relaxed mb-4">
@@ -393,7 +393,7 @@ export default function TroubleGuidePage() {
 
         {/* FAQ */}
         <section className="mb-12">
-          <h2 className="text-xl font-bold text-gray-900 mb-4 border-l-4 border-[#1B3A5C] pl-3">よくある質問</h2>
+          <h2 className="section-title section-title-sm mb-4">よくある質問</h2>
           <div className="space-y-4">
             {faqs.map((faq) => (
               <div key={faq.question} className="bg-white border border-gray-200 rounded-lg p-5">

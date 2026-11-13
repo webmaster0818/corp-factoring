@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { FEE_COMPANY_COUNT } from "@/data/feeIndex";
+import { ScrollMotion } from "@/components/ScrollMotion";
 
 const menuCategories = [
   {
@@ -55,6 +56,8 @@ export function Header() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
+    <>
+    <ScrollMotion />
     <header className="sticky top-0 z-50">
       {/* 景品表示法対応: 広告表記バー */}
       <div className="bg-soft border-b border-line">
@@ -63,7 +66,7 @@ export function Header() {
           <span>当サイトはアフィリエイトプログラムによる収益を得ています。掲載の順番はサービスへの評価に影響しません。</span>
         </div>
       </div>
-      <div className="bg-white/95 backdrop-blur border-b border-line">
+      <div className="bg-white border-b border-line">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between gap-4">
         {/* Logo */}
         <Link href="/" className="flex items-center gap-2.5 shrink-0">
@@ -161,5 +164,6 @@ export function Header() {
       )}
       </div>
     </header>
+    </>
   );
 }

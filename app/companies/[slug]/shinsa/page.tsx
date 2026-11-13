@@ -141,25 +141,29 @@ export default async function CompanyScreeningPage({ params }: { params: Promise
       {ld.map((o, i) => (
         <script key={i} type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(o) }} />
       ))}
-      <main className="mx-auto max-w-3xl px-4 py-8">
-        <nav className="mb-4 text-xs text-gray-500">
+      <div className="page-head">
+        <div className="mx-auto max-w-3xl px-4 pt-5 pb-8 sm:pb-10">
+          <nav className="crumbs mb-6">
           <Link href="/" className="hover:underline">ホーム</Link> ＞{" "}
           <Link href={`/companies/${slug}/`} className="hover:underline">{company.name}</Link> ＞ 審査
         </nav>
-        <h1 className="text-2xl font-bold text-gray-900 md:text-3xl">{company.name}の審査（審査時間・必要書類・審査落ちの理由）</h1>
-        <p className="mt-2 text-xs text-gray-500">
+          <h1 className="text-[24px] sm:text-[30px] font-bold text-ink leading-[1.45] tracking-[0.01em]">{company.name}の審査（審査時間・必要書類・審査落ちの理由）</h1>
+          <p className="mt-3 text-xs text-gray-500 num">
           {lastmod ? `更新日：${toJaDate(lastmod)}／` : ""}公式情報の編集部確認日：{ev.checkedAt}
         </p>
+        </div>
+      </div>
+      <main className="mx-auto max-w-3xl px-4 py-8">
 
-        <div className="mt-5 rounded-lg border-l-4 border-blue-500 bg-blue-50 p-4">
-          <p className="text-sm font-bold text-blue-900">回答</p>
+        <div className="mt-5 rounded-md border border-line border-l-4 border-l-blue-600 bg-white p-4 layer-shadow-sm">
+          <p className="text-sm font-bold text-blue-700">回答</p>
           <p className="mt-1 text-sm leading-relaxed text-gray-800">{answer}</p>
         </div>
         <SubPageIntroBox slug={slug} kind="shinsa" />
 
         {ochitaHtml && (
           <section id={SHINSA_OCHITA_ANCHOR} className="mt-8 scroll-mt-20">
-            <h2 className="text-lg font-bold text-gray-900">{company.name}の{SHINSA_OCHITA_TITLE}</h2>
+            <h2 className="section-title section-title-sm">{company.name}の{SHINSA_OCHITA_TITLE}</h2>
             <div
               className="mt-3 text-sm leading-relaxed text-gray-800
                 [&_h3]:mt-5 [&_h3]:mb-2 [&_h3]:text-base [&_h3]:font-bold [&_h3]:text-gray-900
@@ -173,7 +177,7 @@ export default async function CompanyScreeningPage({ params }: { params: Promise
         )}
 
         <section className="mt-8">
-          <h2 className="text-lg font-bold text-gray-900">審査時間と入金までの時間</h2>
+          <h2 className="section-title section-title-sm">審査時間と入金までの時間</h2>
           <p className="mt-3 text-sm leading-relaxed text-gray-800">最短入金の公式表示は「{row.speed}」、オンライン完結は「{row.online}」です。</p>
           {timeFacts.length > 0 && <Facts items={timeFacts} />}
           {hasHoursPage && (
@@ -185,12 +189,12 @@ export default async function CompanyScreeningPage({ params }: { params: Promise
         </section>
 
         <section className="mt-8">
-          <h2 className="text-lg font-bold text-gray-900">必要書類</h2>
+          <h2 className="section-title section-title-sm">必要書類</h2>
           {docFacts.length > 0 ? <Facts items={docFacts} /> : <p className="mt-3 text-sm leading-relaxed text-gray-800">{faqs[1].answer}</p>}
         </section>
 
         <section className="mt-8">
-          <h2 className="text-lg font-bold text-gray-900">審査の対象と条件</h2>
+          <h2 className="section-title section-title-sm">審査の対象と条件</h2>
           <p className="mt-3 text-sm leading-relaxed text-gray-800">対象は公式表示で「{row.target}」、利用可能額は「{row.amount}」です。</p>
           {targetFacts.length > 0 && <Facts items={targetFacts} />}
           {auditFacts.length > 0 && (
@@ -210,7 +214,7 @@ export default async function CompanyScreeningPage({ params }: { params: Promise
         </section>
 
         <section className="mt-8">
-          <h2 className="text-lg font-bold text-gray-900">審査に通らなかった場合</h2>
+          <h2 className="section-title section-title-sm">審査に通らなかった場合</h2>
           <p className="mt-3 text-sm leading-relaxed text-gray-800">{faqs[3].answer}</p>
           {others.length > 0 && (
             <>
@@ -245,7 +249,7 @@ export default async function CompanyScreeningPage({ params }: { params: Promise
         </section>
 
         <section className="mt-8">
-          <h2 className="text-lg font-bold text-gray-900">{company.name}の審査に関するよくある質問</h2>
+          <h2 className="section-title section-title-sm">{company.name}の審査に関するよくある質問</h2>
           <div className="mt-3 space-y-5">
             {faqs.map((f, i) => (
               <div key={i} className="rounded-lg border border-gray-200 p-4">

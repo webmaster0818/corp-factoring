@@ -32,13 +32,13 @@ export default function ArticlesPage() {
   const articles = getAllArticles();
 
   return (
-    <div className="min-h-screen bg-gray-50">
+    <div className="min-h-screen bg-white">
       <Header />
 
       {/* Breadcrumbs */}
-      <div className="bg-white border-b border-gray-100">
-        <div className="max-w-6xl mx-auto px-6 py-3">
-          <nav className="text-sm text-gray-400">
+      <div className="bg-soft">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-4">
+          <nav className="crumbs">
             <Link href="/" className="hover:text-gray-700 transition">
               ホーム
             </Link>
@@ -49,9 +49,9 @@ export default function ArticlesPage() {
       </div>
 
       {/* Hero */}
-      <section className="bg-white py-12 border-b border-gray-100">
+      <section className="page-head pt-6 pb-10 sm:pb-12">
         <div className="max-w-6xl mx-auto px-6">
-          <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">
+          <h1 className="text-[24px] sm:text-[30px] font-bold text-ink leading-[1.45] tracking-[0.01em] mb-4">
             ファクタリングコラム
           </h1>
           <p className="text-gray-600 leading-relaxed">
@@ -61,7 +61,7 @@ export default function ArticlesPage() {
       </section>
 
       {/* Articles Grid */}
-      <main className="max-w-6xl mx-auto px-6 py-12">
+      <main className="max-w-6xl mx-auto px-4 sm:px-6 py-10">
         {/* Topic hubs */}
         <section className="mb-12">
           <h2 className="text-lg font-bold text-gray-900 mb-4">カテゴリから探す</h2>
@@ -93,7 +93,7 @@ export default function ArticlesPage() {
               className="bg-white rounded-lg border border-gray-200 p-6 hover:shadow-sm hover:border-blue-200 transition group"
             >
               {article.keyword && (
-                <span className="inline-block bg-blue-50 text-blue-600 text-xs font-medium px-2.5 py-1 rounded-full mb-3">
+                <span className="inline-block bg-blue-50 text-blue-600 text-xs font-medium px-2.5 py-1 rounded-md mb-3">
                   {article.keyword}
                 </span>
               )}
@@ -117,7 +117,7 @@ export default function ArticlesPage() {
           </p>
           <Link
             href="/#diagnosis"
-            className="inline-block bg-white text-blue-700 px-8 py-3 rounded-full font-bold text-sm hover:bg-blue-50 transition"
+            className="inline-block bg-cta text-white px-8 py-3 rounded-md font-bold text-sm hover:bg-cta-hover transition"
           >
             無料診断を始める →
           </Link>

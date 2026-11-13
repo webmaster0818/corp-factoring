@@ -18,9 +18,9 @@ export default function PrivacyPage() {
       <Header />
 
       {/* Breadcrumbs */}
-      <nav className="bg-gray-50 py-3">
-        <div className="container mx-auto px-4">
-          <div className="text-sm text-gray-600">
+      <div className="page-head">
+        <div className="container mx-auto px-4 max-w-4xl pt-5 pb-9">
+          <nav className="crumbs mb-6">
             <Link href="/" className="hover:text-[#1B3A5C] transition">
               ホーム
             </Link>
@@ -28,25 +28,25 @@ export default function PrivacyPage() {
             <span className="text-gray-900 font-medium">
               プライバシーポリシー
             </span>
-          </div>
-        </div>
-      </nav>
-
-      {/* Main Content */}
-      <main className="py-12">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <h1 className="text-3xl font-bold text-gray-900 mb-8 pb-4 border-b-2 border-[#1B3A5C]">
+          </nav>
+          <h1 className="text-[24px] sm:text-[30px] font-bold text-ink leading-[1.45] tracking-[0.01em]">
             プライバシーポリシー
           </h1>
+        </div>
+      </div>
 
-          <div className="bg-white rounded-lg shadow-sm p-8 md:p-12 space-y-10 text-gray-700 leading-relaxed">
+      {/* Main Content */}
+      <main className="py-10">
+        <div className="container mx-auto px-4 max-w-4xl">
+
+          <div className="bg-white rounded-md border border-line p-6 md:p-10 space-y-10 text-gray-700 leading-relaxed">
             <p>
               株式会社MediaX（以下「当社」）は、当社が運営するウェブサイト「ファクタリング比較ナビ」（以下「本サイト」）における利用者の個人情報の取扱いについて、以下のとおりプライバシーポリシー（以下「本ポリシー」）を定めます。
             </p>
 
             {/* 第1条 */}
             <section>
-              <h2 className="text-xl font-bold text-[#1B3A5C] mb-3">
+              <h2 className="section-title section-title-sm mb-4">
                 第1条（個人情報の定義）
               </h2>
               <p>
@@ -56,7 +56,7 @@ export default function PrivacyPage() {
 
             {/* 第2条 */}
             <section>
-              <h2 className="text-xl font-bold text-[#1B3A5C] mb-3">
+              <h2 className="section-title section-title-sm mb-4">
                 第2条（個人情報の収集方法）
               </h2>
               <p>
@@ -75,7 +75,7 @@ export default function PrivacyPage() {
 
             {/* 第3条 */}
             <section>
-              <h2 className="text-xl font-bold text-[#1B3A5C] mb-3">
+              <h2 className="section-title section-title-sm mb-4">
                 第3条（個人情報の利用目的）
               </h2>
               <p>当社は、収集した個人情報を以下の目的で利用します。</p>
@@ -106,7 +106,7 @@ export default function PrivacyPage() {
 
             {/* 第4条 */}
             <section>
-              <h2 className="text-xl font-bold text-[#1B3A5C] mb-3">
+              <h2 className="section-title section-title-sm mb-4">
                 第4条（個人情報の第三者提供）
               </h2>
               <p>
@@ -128,7 +128,7 @@ export default function PrivacyPage() {
 
             {/* 第5条 */}
             <section>
-              <h2 className="text-xl font-bold text-[#1B3A5C] mb-3">
+              <h2 className="section-title section-title-sm mb-4">
                 第5条（Google Analyticsの利用について）
               </h2>
               <p>
@@ -145,7 +145,7 @@ export default function PrivacyPage() {
 
             {/* 第6条 */}
             <section>
-              <h2 className="text-xl font-bold text-[#1B3A5C] mb-3">
+              <h2 className="section-title section-title-sm mb-4">
                 第6条（Cookie（クッキー）の使用について）
               </h2>
               <p>本サイトでは、以下の目的でCookieを使用しています。</p>
@@ -166,7 +166,7 @@ export default function PrivacyPage() {
 
             {/* 第7条 */}
             <section>
-              <h2 className="text-xl font-bold text-[#1B3A5C] mb-3">
+              <h2 className="section-title section-title-sm mb-4">
                 第7条（個人情報の管理）
               </h2>
               <p>
@@ -176,7 +176,7 @@ export default function PrivacyPage() {
 
             {/* 第8条 */}
             <section>
-              <h2 className="text-xl font-bold text-[#1B3A5C] mb-3">
+              <h2 className="section-title section-title-sm mb-4">
                 第8条（個人情報の開示・訂正・削除）
               </h2>
               <p>
@@ -186,7 +186,7 @@ export default function PrivacyPage() {
 
             {/* 第9条 */}
             <section>
-              <h2 className="text-xl font-bold text-[#1B3A5C] mb-3">
+              <h2 className="section-title section-title-sm mb-4">
                 第9条（プライバシーポリシーの変更）
               </h2>
               <p>
@@ -196,7 +196,7 @@ export default function PrivacyPage() {
 
             {/* 第10条 */}
             <section>
-              <h2 className="text-xl font-bold text-[#1B3A5C] mb-3">
+              <h2 className="section-title section-title-sm mb-4">
                 第10条（お問い合わせ窓口）
               </h2>
               <p>

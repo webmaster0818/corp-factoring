@@ -134,7 +134,7 @@ export default async function ArticlePage({
 
   if (!article) {
     return (
-      <div className="min-h-screen bg-gray-50">
+      <div className="min-h-screen bg-white">
         <Header />
         <main className="max-w-4xl mx-auto px-6 py-16">
           <h1 className="text-2xl font-bold text-gray-900">記事が見つかりません</h1>
@@ -152,21 +152,21 @@ export default async function ArticlePage({
     <div className="min-h-screen bg-gray-50">
       <Header />
 
-      {/* Breadcrumbs */}
-      <div className="bg-white border-b border-gray-100">
-        <div className="max-w-4xl mx-auto px-6 py-3">
-          <nav className="text-sm text-gray-400">
-            <Link href="/" className="hover:text-gray-700 transition">
+      {/* ページ見出し（写真なし・文字で構成） */}
+      <header className="page-head">
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 pt-4 pb-9 sm:pb-11">
+          <nav className="crumbs mb-7">
+            <Link href="/">
               ホーム
             </Link>
             {" > "}
-            <Link href="/articles" className="hover:text-gray-700 transition">
+            <Link href="/articles">
               コラム
             </Link>
             {topic && (
               <>
                 {" > "}
-                <Link href={`/topics/${topic.slug}`} className="hover:text-gray-700 transition">
+                <Link href={`/topics/${topic.slug}`}>
                   {topic.name}
                 </Link>
               </>
@@ -174,41 +174,25 @@ export default async function ArticlePage({
             {" > "}
             <span className="text-gray-600">{article.title.slice(0, 30)}...</span>
           </nav>
-        </div>
-      </div>
-
-      {/* Article Eyecatch */}
-      {(() => {
-        const slug_str = slug;
-        const isGyoushu = slug_str.includes('kensetsu') || slug_str.includes('unsou') || slug_str.includes('iryou') || slug_str.includes('seizou') || slug_str.includes('gyoushu');
-        const isKojin = slug_str.includes('kojin') || slug_str.includes('freelance') || slug_str.includes('sogyo') || slug_str.includes('kaigyo') || slug_str.includes('shikin') || slug_str.includes('akaji') || slug_str.includes('seido-yuushi') || slug_str.includes('business-loan') || slug_str.includes('jfc') || slug_str.includes('hojokin') || slug_str.includes('kakuteishinkoku');
-        const isSeikyushoKaitori = slug_str === 'article-seikyusho-kaitori';
-        const eyecatchSrc = isSeikyushoKaitori ? '/images/seikyusho-kaitori-hero.webp' : isGyoushu ? '/images/articles/gyoushu-article.webp' : isKojin ? '/images/articles/kojin-jigyonushi.webp' : '/images/articles/factoring-article.webp';
-        return (
-          <div className="max-w-4xl mx-auto px-6 mt-8">
-            <div className="rounded-md overflow-hidden shadow-sm">
-              <img src={eyecatchSrc} alt={article.title} className="w-full h-48 md:h-64 object-cover" width="1024" height="1024" fetchPriority="high" decoding="async" />
-            </div>
-          </div>
-        );
-      })()}
-
-      {/* Article Content */}
-      <main className="max-w-4xl mx-auto px-6 py-8">
-        <article>
-          <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-4 leading-tight">
+          <p className="page-label mb-3">{topic ? topic.name : "コラム"}</p>
+          <h1 className="text-[23px] sm:text-[30px] font-bold text-ink leading-[1.5] tracking-[0.01em] mb-5">
             {article.title}
           </h1>
 
-          <div className="mb-6 flex items-center gap-3 text-sm text-gray-500">
-            {article.dateModified && <span>更新日: {toJaDate(article.dateModified)}</span>}
+          <div className="flex flex-wrap items-center gap-x-3 gap-y-2 text-xs text-gray-500">
+            {article.dateModified && <span className="num">更新日: {toJaDate(article.dateModified)}</span>}
             {article.keyword && (
-              <span className="bg-[#1B3A5C]/10 text-[#1B3A5C] text-xs font-medium px-3 py-1 rounded-full">
+              <span className="bg-white border border-line text-ink/80 text-xs font-medium px-2.5 py-0.5 rounded-sm">
                 {article.keyword}
               </span>
             )}
           </div>
+        </div>
+      </header>
 
+      {/* Article Content */}
+      <main className="max-w-4xl mx-auto px-4 sm:px-6 pt-6 sm:pt-8 pb-10">
+        <article>
           <ConditionTable articleSlug={slug} />
 
           <div
@@ -230,7 +214,7 @@ export default async function ArticlePage({
         {/* この記事に登場する会社の個別ページ */}
         {mentionedCompanies.length > 0 && (
           <section className="mt-12 bg-white border border-gray-200 rounded-md p-6">
-            <h2 className="text-lg font-bold text-[#1B3A5C] mb-2">この記事に登場する会社の口コミ・評判</h2>
+            <h2 className="section-title section-title-sm mb-4">この記事に登場する会社の口コミ・評判</h2>
             <p className="text-xs text-gray-500 mb-4">各社のページでは、公式サイトで確認した手数料・入金スピード・会社概要と、口コミの出典を掲載しています。掲載情報には確認日を記載しています。</p>
             <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-2 text-sm">
               {mentionedCompanies.map((c) => (
@@ -244,8 +228,7 @@ export default async function ArticlePage({
 
         {/* おすすめファクタリング会社 */}
         <section className="mt-12">
-          <h2 className="text-lg font-bold text-[#1B3A5C] mb-4 flex items-center gap-2">
-            <span className="w-1 h-6 bg-[#1B3A5C] rounded-full inline-block"></span>
+          <h2 className="section-title section-title-sm mb-5">
             おすすめファクタリング会社
           </h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -282,7 +265,7 @@ export default async function ArticlePage({
           </p>
           <Link
             href="/#diagnosis"
-            className="inline-block bg-white text-[#1B3A5C] px-8 py-3 rounded-full font-bold text-sm hover:bg-gray-100 transition"
+            className="inline-block bg-cta text-white px-8 py-3 rounded-md font-bold text-sm hover:bg-cta-hover transition"
           >
             無料診断を始める →
           </Link>
@@ -290,8 +273,8 @@ export default async function ArticlePage({
 
         {/* 手数料記事 → /fees/ データ資産への導線（手数料クラスタの相互リンク） */}
         {slug.includes("tesuryo") && (
-          <section className="mt-12 bg-[#F0F6FC] border border-[#1B3A5C]/15 rounded-md p-6">
-            <h2 className="text-lg font-bold text-[#1B3A5C] mb-2">{FEE_COMPANY_COUNT}社の手数料を公式サイトの確認データで比較できます</h2>
+          <section className="mt-12 bg-soft border border-line rounded-md p-6">
+            <h2 className="section-title section-title-sm mb-4">{FEE_COMPANY_COUNT}社の手数料を公式サイトの確認データで比較できます</h2>
             <p className="text-sm text-gray-700 mb-4">
               各社の手数料（2社間・3社間の公表値）は、当サイトが各社の公式サイトを1件ずつ確認して掲載しています。会社ごとの手数料は、以下の比較表でご確認いただけます。
             </p>
@@ -309,8 +292,7 @@ export default async function ArticlePage({
           const list = factoringCompanies.filter((c) => allowed.includes(c.slug));
           return (
             <section className="mt-12">
-              <h2 className="text-lg font-bold text-[#1B3A5C] mb-2 flex items-center gap-2">
-                <span className="w-1 h-6 bg-[#1B3A5C] rounded-full inline-block"></span>
+              <h2 className="section-title section-title-sm mb-4">
                 {isShinsa ? "会社別の審査（審査時間・必要書類・審査落ちの理由）" : "会社別の営業時間・土日祝の対応"}
               </h2>
               <p className="text-sm text-gray-700 mb-3">
@@ -334,8 +316,7 @@ export default async function ArticlePage({
         {/* 関連記事 */}
         {relatedArticles.length > 0 && (
           <section className="mt-12">
-            <h2 className="text-lg font-bold text-[#1B3A5C] mb-4 flex items-center gap-2">
-              <span className="w-1 h-6 bg-[#1B3A5C] rounded-full inline-block"></span>
+            <h2 className="section-title section-title-sm mb-4">
               関連記事
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
@@ -346,7 +327,7 @@ export default async function ArticlePage({
                   className="bg-white border border-gray-200 rounded-lg p-5 hover:shadow-sm hover:border-[#1B3A5C]/30 transition group"
                 >
                   {related.keyword && (
-                    <span className="inline-block bg-[#1B3A5C]/10 text-[#1B3A5C] text-xs font-medium px-2.5 py-1 rounded-full mb-3">
+                    <span className="inline-block bg-[#1B3A5C]/10 text-[#1B3A5C] text-xs font-medium px-2.5 py-1 rounded-sm mb-3">
                       {related.keyword}
                     </span>
                   )}

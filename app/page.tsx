@@ -8,7 +8,6 @@ import { DiagnosisTool } from "@/components/DiagnosisTool";
 import { FeeSimulator } from "@/components/FeeSimulator";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
-import { ScrollMotion } from "@/components/ScrollMotion";
 import { factoringCompanies, feeRange } from "@/data/companies";
 import { getRealRating } from "@/data/realRatings";
 import { Button } from "@/components/ui/button";
@@ -91,7 +90,6 @@ export default function Home() {
     <div className="min-h-screen bg-white text-ink">
       {/* Global Navigation */}
       <Header />
-      <ScrollMotion />
 
       {/* Breadcrumbs */}
       <nav className="bg-white border-b border-line">

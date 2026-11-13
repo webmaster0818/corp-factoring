@@ -18,9 +18,9 @@ export default function ContentPolicyPage() {
       <Header />
 
       {/* Breadcrumbs */}
-      <nav className="bg-gray-50 py-3">
-        <div className="container mx-auto px-4">
-          <div className="text-sm text-gray-600">
+      <div className="page-head">
+        <div className="container mx-auto px-4 max-w-4xl pt-5 pb-9">
+          <nav className="crumbs mb-6">
             <Link href="/" className="hover:text-[#1B3A5C] transition">
               ホーム
             </Link>
@@ -28,25 +28,25 @@ export default function ContentPolicyPage() {
             <span className="text-gray-900 font-medium">
               記事の制作ポリシー
             </span>
-          </div>
-        </div>
-      </nav>
-
-      {/* Main Content */}
-      <main className="py-12">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <h1 className="text-3xl font-bold text-gray-900 mb-8 pb-4 border-b-2 border-[#1B3A5C]">
+          </nav>
+          <h1 className="text-[24px] sm:text-[30px] font-bold text-ink leading-[1.45] tracking-[0.01em]">
             記事の制作ポリシー
           </h1>
+        </div>
+      </div>
 
-          <div className="bg-white rounded-lg shadow-sm p-8 md:p-12 space-y-12 text-gray-700 leading-relaxed">
+      {/* Main Content */}
+      <main className="py-10">
+        <div className="container mx-auto px-4 max-w-4xl">
+
+          <div className="bg-white rounded-md border border-line p-6 md:p-10 space-y-12 text-gray-700 leading-relaxed">
             <p>
               「ファクタリング比較ナビ」では、法人・個人事業主・フリーランスの方々が目的に合ったファクタリングサービスを選定できるよう、以下のポリシーにもとづいて記事を制作しています。
             </p>
 
             {/* 4つの基本方針 */}
             <section>
-              <h2 className="text-2xl font-bold text-[#1B3A5C] mb-6">
+              <h2 className="section-title mb-6">
                 4つの基本方針
               </h2>
 
@@ -54,7 +54,7 @@ export default function ContentPolicyPage() {
                 {/* 方針1 */}
                 <div className="bg-gray-50 rounded-lg p-6 border-l-4 border-[#1B3A5C]">
                   <div className="flex items-center gap-3 mb-3">
-                    <div className="w-10 h-10 bg-[#1B3A5C] text-white rounded-full flex items-center justify-center text-sm font-bold">
+                    <div className="w-10 h-10 bg-[#1B3A5C] text-white rounded-md flex items-center justify-center text-sm font-bold">
                       01
                     </div>
                     <h3 className="text-lg font-bold text-gray-900">
@@ -69,7 +69,7 @@ export default function ContentPolicyPage() {
                 {/* 方針2 */}
                 <div className="bg-gray-50 rounded-lg p-6 border-l-4 border-[#2B5F8A]">
                   <div className="flex items-center gap-3 mb-3">
-                    <div className="w-10 h-10 bg-[#2B5F8A] text-white rounded-full flex items-center justify-center text-sm font-bold">
+                    <div className="w-10 h-10 bg-[#1B3A5C] text-white rounded-md flex items-center justify-center text-sm font-bold">
                       02
                     </div>
                     <h3 className="text-lg font-bold text-gray-900">
@@ -84,7 +84,7 @@ export default function ContentPolicyPage() {
                 {/* 方針3 */}
                 <div className="bg-gray-50 rounded-lg p-6 border-l-4 border-[#3A7CA5]">
                   <div className="flex items-center gap-3 mb-3">
-                    <div className="w-10 h-10 bg-[#3A7CA5] text-white rounded-full flex items-center justify-center text-sm font-bold">
+                    <div className="w-10 h-10 bg-[#1B3A5C] text-white rounded-md flex items-center justify-center text-sm font-bold">
                       03
                     </div>
                     <h3 className="text-lg font-bold text-gray-900">
@@ -99,7 +99,7 @@ export default function ContentPolicyPage() {
                 {/* 方針4 */}
                 <div className="bg-gray-50 rounded-lg p-6 border-l-4 border-[#4A9BC5]">
                   <div className="flex items-center gap-3 mb-3">
-                    <div className="w-10 h-10 bg-[#4A9BC5] text-white rounded-full flex items-center justify-center text-sm font-bold">
+                    <div className="w-10 h-10 bg-[#1B3A5C] text-white rounded-md flex items-center justify-center text-sm font-bold">
                       04
                     </div>
                     <h3 className="text-lg font-bold text-gray-900">
@@ -115,7 +115,7 @@ export default function ContentPolicyPage() {
 
             {/* 記事制作フロー */}
             <section>
-              <h2 className="text-2xl font-bold text-[#1B3A5C] mb-6">
+              <h2 className="section-title mb-6">
                 記事制作フロー
               </h2>
 
@@ -123,7 +123,7 @@ export default function ContentPolicyPage() {
                 {/* Step 1 */}
                 <div className="flex gap-4">
                   <div className="flex-shrink-0">
-                    <div className="w-12 h-12 bg-[#1B3A5C] text-white rounded-full flex items-center justify-center font-bold">
+                    <div className="w-12 h-12 bg-[#1B3A5C] text-white rounded-md flex items-center justify-center font-bold">
                       1
                     </div>
                   </div>
@@ -140,7 +140,7 @@ export default function ContentPolicyPage() {
                 {/* Step 2 */}
                 <div className="flex gap-4">
                   <div className="flex-shrink-0">
-                    <div className="w-12 h-12 bg-[#2B5F8A] text-white rounded-full flex items-center justify-center font-bold">
+                    <div className="w-12 h-12 bg-[#1B3A5C] text-white rounded-md flex items-center justify-center font-bold">
                       2
                     </div>
                   </div>
@@ -157,7 +157,7 @@ export default function ContentPolicyPage() {
                 {/* Step 3 */}
                 <div className="flex gap-4">
                   <div className="flex-shrink-0">
-                    <div className="w-12 h-12 bg-[#3A7CA5] text-white rounded-full flex items-center justify-center font-bold">
+                    <div className="w-12 h-12 bg-[#1B3A5C] text-white rounded-md flex items-center justify-center font-bold">
                       3
                     </div>
                   </div>
@@ -174,7 +174,7 @@ export default function ContentPolicyPage() {
                 {/* Step 4 */}
                 <div className="flex gap-4">
                   <div className="flex-shrink-0">
-                    <div className="w-12 h-12 bg-[#4A9BC5] text-white rounded-full flex items-center justify-center font-bold">
+                    <div className="w-12 h-12 bg-[#1B3A5C] text-white rounded-md flex items-center justify-center font-bold">
                       4
                     </div>
                   </div>
@@ -192,7 +192,7 @@ export default function ContentPolicyPage() {
 
             {/* アフィリエイト広告について */}
             <section>
-              <h2 className="text-2xl font-bold text-[#1B3A5C] mb-4">
+              <h2 className="section-title mb-4">
                 アフィリエイト広告について
               </h2>
               <p>
@@ -205,7 +205,7 @@ export default function ContentPolicyPage() {
 
             {/* お問い合わせ */}
             <section>
-              <h2 className="text-2xl font-bold text-[#1B3A5C] mb-4">
+              <h2 className="section-title mb-4">
                 お問い合わせ
               </h2>
               <p>

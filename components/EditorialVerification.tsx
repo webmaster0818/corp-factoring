@@ -12,8 +12,8 @@ interface EditorialVerificationProps {
 export function EditorialVerificationSection({ companyName, data }: EditorialVerificationProps) {
   return (
     <section id="editorial-check" className="mb-8 scroll-mt-4">
-      <Card className="border-2 border-blue-100 shadow-sm">
-        <CardHeader className="bg-blue-50 border-b border-blue-100">
+      <Card className="border border-line">
+        <CardHeader className="bg-white border-b border-line pb-4">
           <CardTitle className="text-2xl font-bold text-gray-900">
             {companyName}について編集部が確認した事実
           </CardTitle>

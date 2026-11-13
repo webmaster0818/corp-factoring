@@ -122,27 +122,30 @@ export default function TopManagementHoursPage() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqLd) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }} />
-      <main className="mx-auto max-w-3xl px-4 py-8">
-        <nav className="mb-4 text-xs text-gray-500">
+      <div className="page-head">
+        <div className="mx-auto max-w-3xl px-4 pt-5 pb-8 sm:pb-10">
+          <nav className="crumbs mb-6">
           <Link href="/" className="hover:underline">ホーム</Link> ＞ <Link href={`/companies/${SLUG}/`} className="hover:underline">{company.name}</Link> ＞ 営業時間・受付時間
         </nav>
-
-        <h1 className="text-2xl font-bold text-gray-900 md:text-3xl">
+          <h1 className="text-[24px] sm:text-[30px] font-bold text-ink leading-[1.45] tracking-[0.01em]">
           {company.name}の営業時間・受付時間（土日祝の対応）
         </h1>
-        <p className="mt-2 text-xs text-gray-500">
+          <p className="mt-3 text-xs text-gray-500 num">
           最終確認日：2026年10月28日（営業時間の公式サイト確認日：{CHECKED_AT}）
         </p>
+        </div>
+      </div>
+      <main className="mx-auto max-w-3xl px-4 py-8">
 
         {/* 結論の即答（H1直下） */}
-        <div className="mt-5 rounded-lg border-l-4 border-blue-500 bg-blue-50 p-4">
-          <p className="text-sm font-bold text-blue-900">回答</p>
+        <div className="mt-5 rounded-md border border-line border-l-4 border-l-blue-600 bg-white p-4 layer-shadow-sm">
+          <p className="text-sm font-bold text-blue-700">回答</p>
           <p className="mt-1 text-sm leading-relaxed text-gray-800">{answer}</p>
         </div>
 
         {/* 営業時間・定休日の詳細 */}
         <section className="mt-8">
-          <h2 className="text-lg font-bold text-gray-900">{company.name}の営業時間・定休日（公式サイトで確認）</h2>
+          <h2 className="section-title section-title-sm">{company.name}の営業時間・定休日（公式サイトで確認）</h2>
           <div className="mt-3 overflow-hidden rounded-lg border border-gray-200">
             <table className="w-full text-sm">
               <tbody>
@@ -165,7 +168,7 @@ export default function TopManagementHoursPage() {
 
         {/* 申込〜入金の時間帯の目安 */}
         <section className="mt-8">
-          <h2 className="text-lg font-bold text-gray-900">申込から入金までの時間帯の目安</h2>
+          <h2 className="section-title section-title-sm">申込から入金までの時間帯の目安</h2>
           <p className="mt-3 text-sm leading-relaxed text-gray-800">
             {company.name}の入金スピードは公式表示で「{feeRow.speed}」です（2026年7月21日確認）。
             営業時間が平日10:00〜19:00のため、<strong>即日入金を希望する場合は、同日の営業時間内に申込・審査・契約まで完了させる</strong>ことが前提になります。
@@ -178,7 +181,7 @@ export default function TopManagementHoursPage() {
 
         {/* 営業時間外の申し込みの扱い */}
         <section className="mt-8">
-          <h2 className="text-lg font-bold text-gray-900">営業時間外・土日祝の申し込みの扱い</h2>
+          <h2 className="section-title section-title-sm">営業時間外・土日祝の申し込みの扱い</h2>
           <p className="mt-3 text-sm leading-relaxed text-gray-800">
             {company.name}は土日祝・年末年始が休業です。平日19時以降や休業日に申し込んだ場合の扱い（Webフォームでの受付の可否、翌営業日の対応となるか等）は、<strong>公式サイトでは確認できませんでした</strong>（{CHECKED_AT}時点）。
           </p>
@@ -192,7 +195,7 @@ export default function TopManagementHoursPage() {
 
         {/* 他社との営業時間比較 */}
         <section className="mt-8">
-          <h2 className="text-lg font-bold text-gray-900">他社との営業時間の比較（公式サイトで確認）</h2>
+          <h2 className="section-title section-title-sm">他社との営業時間の比較（公式サイトで確認）</h2>
           <div className="mt-3 overflow-x-auto rounded-lg border border-gray-200">
             <table className="w-full min-w-[560px] text-sm">
               <thead>
@@ -227,7 +230,7 @@ export default function TopManagementHoursPage() {
 
         {/* FAQ */}
         <section className="mt-8">
-          <h2 className="text-lg font-bold text-gray-900">{company.name}の営業時間に関するよくある質問</h2>
+          <h2 className="section-title section-title-sm">{company.name}の営業時間に関するよくある質問</h2>
           <div className="mt-3 space-y-5">
             {faqs.map((f, i) => (
               <div key={i} className="rounded-lg border border-gray-200 p-4">
