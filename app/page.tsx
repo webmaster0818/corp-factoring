@@ -8,6 +8,7 @@ import { DiagnosisTool } from "@/components/DiagnosisTool";
 import { FeeSimulator } from "@/components/FeeSimulator";
 import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
+import { ScrollMotion } from "@/components/ScrollMotion";
 import { factoringCompanies, feeRange } from "@/data/companies";
 import { getRealRating } from "@/data/realRatings";
 import { Button } from "@/components/ui/button";
@@ -52,8 +53,8 @@ const conditionLinks = [
 function SectionHeading({ title, lead, id }: { title: React.ReactNode; lead?: React.ReactNode; id?: string }) {
   return (
     <div className="mb-8">
-      <h2 id={id} className="section-title">{title}</h2>
-      {lead && <p className="section-lead pl-[calc(4px+0.85rem)]">{lead}</p>}
+      <h2 id={id} className="section-title" data-reveal="">{title}</h2>
+      {lead && <p className="section-lead pl-[calc(4px+0.85rem)]" data-reveal="">{lead}</p>}
     </div>
   );
 }
@@ -90,6 +91,7 @@ export default function Home() {
     <div className="min-h-screen bg-white text-ink">
       {/* Global Navigation */}
       <Header />
+      <ScrollMotion />
 
       {/* Breadcrumbs */}
       <nav className="bg-white border-b border-line">
@@ -165,7 +167,7 @@ export default function Home() {
               <div aria-hidden="true" className="hero-glow hidden lg:block" />
 
               {/* (c) 確認スタンプ */}
-              <div className="hidden lg:flex fv-in fv-d3 absolute -top-1 right-6 z-20 items-center gap-2.5 bg-white/95 border border-line rounded-md pl-2.5 pr-3.5 py-2 layer-shadow-sm">
+              <div data-parallax="0.09" className="hidden lg:flex fv-in fv-d3 absolute -top-1 right-6 z-20 items-center gap-2.5 bg-white/95 border border-line rounded-md pl-2.5 pr-3.5 py-2 layer-shadow-sm">
                 <svg aria-hidden="true" width="26" height="26" viewBox="0 0 26 26" fill="none" stroke="#1F6AAE" strokeWidth="1.5"><circle cx="13" cy="13" r="11.5" /><circle cx="13" cy="13" r="8.5" strokeDasharray="2 2.2" /><path d="M9 13.2l2.6 2.6L17.2 10" strokeLinecap="round" strokeLinejoin="round" /></svg>
                 <span className="leading-tight">
                   <span className="block text-[12px] font-bold text-ink">各社の公式サイトで確認</span>
@@ -174,12 +176,12 @@ export default function Home() {
               </div>
 
               {/* (a) メインの比較カード */}
-              <div className="fv-in fv-d1 relative z-10 bg-white border border-line rounded-lg layer-shadow">
+              <div data-parallax="0.02" className="fv-in fv-d1 relative z-10 bg-white border border-line rounded-lg layer-shadow">
                 <div className="px-4 sm:px-5 pt-5 pb-3 border-b border-line">
                   <h2 className="text-lg font-bold text-ink">資金調達の選択肢を比較・検討する</h2>
                   <p className="text-xs text-gray-500 mt-1">公式サイトで確認｜<span className="font-semibold text-ink num">{FEE_COMPANY_COUNT}社</span>を比較</p>
                 </div>
-                <table className="w-full text-[13px] sm:text-sm num">
+                <table className="w-full text-[13px] sm:text-sm num" data-bars="">
                   <thead>
                     <tr className="text-[11px] text-gray-500 border-b border-line">
                       <th className="text-left font-medium py-2 pl-4 sm:pl-5 pr-2">会社名</th>
@@ -227,7 +229,7 @@ export default function Home() {
               </div>
 
               {/* (b) 条件の絞り込み状態（条件別に見ると同じ定義で件数を計算） */}
-              <div className="hidden lg:flex fv-in fv-d2 absolute z-20 -right-3 bottom-0 items-end gap-5 bg-white border border-line rounded-md px-4 py-3 layer-shadow-sm">
+              <div data-parallax="0.05" className="hidden lg:flex fv-in fv-d2 absolute z-20 -right-3 bottom-0 items-end gap-5 bg-white border border-line rounded-md px-4 py-3 layer-shadow-sm">
                 <div>
                 <p className="text-[11px] text-gray-500 mb-1.5">条件で絞り込み</p>
                 <div className="flex flex-wrap gap-1.5">
@@ -244,11 +246,11 @@ export default function Home() {
           <dl className="mt-10 grid grid-cols-2 md:grid-cols-4 gap-px bg-line border border-line rounded-lg overflow-hidden">
             <div className="bg-white px-4 py-3 flex items-baseline justify-center gap-2">
               <dt className="order-2 text-xs text-gray-500">掲載会社数</dt>
-              <dd className="order-1 text-lg font-bold text-ink num">{FEE_COMPANY_COUNT}社</dd>
+              <dd className="order-1 text-lg font-bold text-ink num" data-count="">{FEE_COMPANY_COUNT}社</dd>
             </div>
             <div className="bg-white px-4 py-3 flex items-baseline justify-center gap-2">
               <dt className="order-2 text-xs text-gray-500">比較項目数</dt>
-              <dd className="order-1 text-lg font-bold text-ink num">50+</dd>
+              <dd className="order-1 text-lg font-bold text-ink num" data-count="">50+</dd>
             </div>
             <div className="bg-white px-4 py-3 flex items-baseline justify-center gap-2">
               <dt className="order-2 text-xs text-gray-500">情報更新</dt>
@@ -268,7 +270,7 @@ export default function Home() {
           <SectionHeading title="主な掲載会社" lead="各社の個別ページで、公式サイトで確認した手数料・入金スピード・会社概要を掲載しています" />
           <ul className="grid grid-cols-2 sm:grid-cols-4 gap-3 sm:gap-4">
             {logoCompanies.map((c) => (
-              <li key={c.slug} className="min-w-0">
+              <li key={c.slug} className="min-w-0" data-reveal="">
                 <Link href={`/companies/${c.slug}/`} className="group block border border-line rounded-lg overflow-hidden bg-white hover:border-blue-300 transition">
                   <div className="aspect-[1200/420] bg-soft border-b border-line overflow-hidden">
                     <img
@@ -294,7 +296,7 @@ export default function Home() {
           <SectionHeading title="条件別に見る" lead="ランキングと同じ掲載データから条件に当てはまる会社を表示しています。並びは総合ランキングの順位順です" />
           <div className="grid md:grid-cols-3 gap-4">
             {categories.map((cat) => (
-              <div key={cat.title} className="bg-white border border-line rounded-lg flex flex-col min-w-0">
+              <div key={cat.title} className="bg-white border border-line rounded-lg flex flex-col min-w-0" data-reveal="">
                 <h3 className="px-5 pt-4 pb-3 text-[15px] font-bold text-ink border-b border-line">{cat.title}</h3>
                 <ol className="flex-1">
                   {cat.items.map((c) => (
@@ -333,7 +335,7 @@ export default function Home() {
               return (
               <article
                 key={company.id}
-                className="bg-white border border-line rounded-lg p-4 sm:p-5 hover:border-blue-200 transition-colors"
+                className="bg-white border border-line rounded-lg p-4 sm:p-5 hover:border-blue-200 transition-colors" data-reveal=""
               >
                 <div className={`grid gap-4 sm:gap-6 ${shot ? "md:grid-cols-[232px_minmax(0,1fr)]" : ""}`}>
                   {/* Company Screenshot（画像があるのは一部の会社のみ。無い会社は枠ごと出さない） */}
@@ -464,7 +466,7 @@ export default function Home() {
               { title: "2社間ファクタリング", pros: ["売掛先に通知されない", "最短即日で資金化"], cons: ["手数料がやや高い"] },
               { title: "3社間ファクタリング", pros: ["手数料が安い"], cons: ["売掛先への通知が必要", "入金まで数日〜1週間"] },
             ].map((t) => (
-              <div key={t.title} className="border border-line rounded-lg p-5">
+              <div key={t.title} className="border border-line rounded-lg p-5" data-reveal="">
                 <h3 className="text-lg font-bold text-ink mb-4 pb-3 border-b border-line">
                   {t.title}
                 </h3>
@@ -521,7 +523,7 @@ export default function Home() {
               <Link
                 key={a}
                 href={`/area/${a}/`}
-                className="flex items-baseline justify-between bg-white rounded-md border border-line px-4 py-3 hover:border-blue-300 transition"
+                className="flex items-baseline justify-between bg-white rounded-md border border-line px-4 py-3 hover:border-blue-300 transition" data-reveal=""
               >
                 <span className="block font-bold text-ink">{AREAS[a].name}</span>
                 <span className="block text-xs text-gray-500 mt-1 num">{AREAS[a].entries.length}社</span>
@@ -550,7 +552,7 @@ export default function Home() {
               ["02", "掲載情報を毎月更新します", "手数料やキャンペーンの情報を毎月確認し、変更があった項目を更新しています。"],
               ["03", "口コミは出典を明記して掲載しています", "口コミや評価は、掲載元のURLと取得日がわかるものだけを載せています。出典のない声や独自の星評価は掲載しません。"],
             ].map(([n, t, d]) => (
-              <div key={n} className="bg-white border border-line rounded-lg p-5">
+              <div key={n} className="bg-white border border-line rounded-lg p-5" data-reveal="">
                 <div className="text-sm font-bold text-blue-600 num mb-2">{n}</div>
                 <h3 className="font-bold text-ink mb-2">
                   {t}

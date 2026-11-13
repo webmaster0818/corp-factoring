@@ -77,11 +77,11 @@ export function Header() {
         <div className="hidden lg:flex items-center gap-5 pl-5 border-l border-line text-ink">
           <div className="leading-tight">
             <span className="block text-[10px] text-gray-500">掲載会社数</span>
-            <span className="text-base font-bold tabular-nums">{FEE_COMPANY_COUNT}<span className="text-xs font-semibold ml-0.5">社</span></span>
+            <span className="text-base font-bold tabular-nums"><span data-count>{FEE_COMPANY_COUNT}</span><span className="text-xs font-semibold ml-0.5">社</span></span>
           </div>
           <div className="leading-tight">
             <span className="block text-[10px] text-gray-500">比較項目数</span>
-            <span className="text-base font-bold tabular-nums">50+</span>
+            <span className="text-base font-bold tabular-nums" data-count>50+</span>
           </div>
         </div>
 

@@ -83,7 +83,8 @@
 
 /* ===== 2026-11 デザイン改修：共通の見出し・表・部品 ===== */
 /* セクション見出し：左寄せ＋左罫線 */
-.section-title { font-size: 1.5rem; font-weight: 700; color: #14284A; border-left: 4px solid #1F6AAE; padding: 0.1rem 0 0.1rem 0.85rem; line-height: 1.45; }
+.section-title { position: relative; font-size: 1.5rem; font-weight: 700; color: #14284A; padding: 0.1rem 0 0.1rem calc(4px + 0.85rem); line-height: 1.45; }
+.section-title::before { content: ""; position: absolute; left: 0; top: 0.1rem; bottom: 0.1rem; width: 4px; background: #1F6AAE; transform-origin: top; }
 @media (max-width: 640px) { .section-title { font-size: 1.3rem; } }
 .section-lead { color: #4b5563; font-size: 0.95rem; margin-top: 0.5rem; }
 /* 表ラッパー：表の中だけ横スクロールし、ページは横にはみ出さない */
@@ -118,8 +119,25 @@ img, video, iframe { max-width: 100%; }
 .fee-open { background: linear-gradient(90deg, #1F6AAE 0%, rgba(31,106,174,.35) 45%, rgba(31,106,174,0) 100%); }
 /* 控えめな入場アニメーション（opacity/transform のみ・動きを減らす設定では無効） */
 @media (prefers-reduced-motion: no-preference) {
-  .fv-in { animation: fv-in .6s cubic-bezier(.2,.7,.2,1) both; }
+  .fv-in { animation: fv-in .6s cubic-bezier(.2,.7,.2,1) backwards; }
   .fv-d1 { animation-delay: .08s; } .fv-d2 { animation-delay: .22s; } .fv-d3 { animation-delay: .32s; }
   @keyframes fv-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
 }
 .num { font-variant-numeric: tabular-nums; font-feature-settings: "tnum" 1; }
+
+/* ===== スクロール連動（JS が <html> に js-motion を付けたときだけ初期状態を隠す） ===== */
+.read-progress { position: fixed; top: 0; left: 0; right: 0; height: 3px; background: #1F6AAE; transform: scaleX(0); transform-origin: 0 50%; z-index: 60; pointer-events: none; will-change: transform; }
+@media (prefers-reduced-motion: reduce) { .read-progress { display: none; } }
+@media (prefers-reduced-motion: no-preference) {
+  .js-motion [data-reveal] { opacity: 0; transform: translate3d(0, 18px, 0); transition: opacity .7s ease, transform .8s cubic-bezier(.2,.7,.2,1); transition-delay: var(--d, 0ms); }
+  .js-motion [data-reveal].is-in { opacity: 1; transform: none; }
+  .js-motion .section-title[data-reveal]::before { transform: scaleY(0); transition: transform .7s cubic-bezier(.2,.7,.2,1) calc(var(--d, 0ms) + 120ms); }
+  .js-motion .section-title[data-reveal].is-in::before { transform: scaleY(1); }
+  .js-motion [data-bars] .fee-fill { transform: scaleX(0); transform-origin: 0 50%; transition: transform 1s cubic-bezier(.2,.7,.2,1) .35s; }
+  .js-motion [data-bars].is-in .fee-fill { transform: scaleX(1); }
+  .js-motion [data-bars].is-in tr:nth-child(2) .fee-fill { transition-delay: .43s; }
+  .js-motion [data-bars].is-in tr:nth-child(3) .fee-fill { transition-delay: .51s; }
+  .js-motion [data-bars].is-in tr:nth-child(4) .fee-fill { transition-delay: .59s; }
+  .js-motion [data-bars].is-in tr:nth-child(5) .fee-fill { transition-delay: .67s; }
+  [data-parallax] { will-change: transform; }
+}

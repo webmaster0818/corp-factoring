@@ -219,7 +219,7 @@ export function FAQ() {
                   faq => faq.question === item.question
                 );
                 return (
-                  <AccordionItem key={index} value={`item-${globalIndex}`}>
+                  <AccordionItem key={index} value={`item-${globalIndex}`} data-reveal="">
                     <AccordionTrigger className="text-left font-semibold">
                       Q{globalIndex + 1}. {item.question}
                     </AccordionTrigger>
