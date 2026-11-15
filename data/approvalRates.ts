@@ -11,7 +11,7 @@ export interface ApprovalRate {
 }
 
 export const approvalRates: { [slug: string]: ApprovalRate } = {
-  "try": { value: 97, label: "97%", sourceUrl: "https://www.factoring-try-sko.co.jp/", checkedAt: "2026年11月6日" },
+  "try": { value: 97, label: "97%", sourceUrl: "https://www.factoring-try-sko.co.jp/", checkedAt: "2026年11月15日" },
   "trust-gateway": { value: 93.8, label: "93.8%（直近30日平均）", sourceUrl: "https://trustgateway.co.jp/", checkedAt: "2026年11月6日" },
   "accel-factor": { value: 93, label: "93%超", sourceUrl: "https://accelfacter.co.jp/column/factoring/merit-demerit/", checkedAt: "2026年11月6日" },
   "best-factor": { value: 92.2, label: "92.2%", sourceUrl: "https://bestfactor.jp/", checkedAt: "2026年11月6日" },

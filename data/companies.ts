@@ -827,8 +827,8 @@ export const factoringCompanies: FactoringCompany[] = [
       "信用情報機関への照会なし"
     ],
     cons: [
-      "設立年・資本金・代表者が公式サイトで確認できず",
-      "必要書類の明示なし"
+      "営業時間は9:00〜18:00・土日祝定休（電話・Web受付は365日24時間）",
+      "契約時に決算書・確定申告書・印鑑証明・謄本などの提出が必要"
     ],
     companyInfo: {
       established: "2018年2月（運営: 株式会社SKO）",
