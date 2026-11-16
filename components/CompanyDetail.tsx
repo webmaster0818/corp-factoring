@@ -85,10 +85,12 @@ export function CompanyDetail({ company }: CompanyDetailProps) {
                 <span className="font-semibold text-gray-700">設立年</span>
                 <span>{company.companyInfo.established}</span>
               </div>
-              <div className="flex justify-between border-b pb-2">
-                <span className="font-semibold text-gray-700">資本金</span>
-                <span>{company.companyInfo.capital}</span>
-              </div>
+              {company.companyInfo.capital && (
+                <div className="flex justify-between border-b pb-2">
+                  <span className="font-semibold text-gray-700">資本金</span>
+                  <span>{company.companyInfo.capital}</span>
+                </div>
+              )}
             </div>
           </div>
         </CardContent>
@@ -181,10 +183,12 @@ export function CompanyDetail({ company }: CompanyDetailProps) {
               <span className="font-semibold text-gray-700">設立：</span>
               <span className="ml-2">{company.companyInfo.established}</span>
             </div>
-            <div>
-              <span className="font-semibold text-gray-700">資本金：</span>
-              <span className="ml-2">{company.companyInfo.capital}</span>
-            </div>
+            {company.companyInfo.capital && (
+              <div>
+                <span className="font-semibold text-gray-700">資本金：</span>
+                <span className="ml-2">{company.companyInfo.capital}</span>
+              </div>
+            )}
             <div>
               <span className="font-semibold text-gray-700">所在地：</span>
               <span className="ml-2">{company.companyInfo.address}</span>

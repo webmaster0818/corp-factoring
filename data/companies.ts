@@ -41,7 +41,7 @@ export interface FactoringCompany {
   cons: string[];
   companyInfo: {
     established: string;
-    capital: string;
+    capital?: string; // 公式に記載がない会社は省略（欄ごと表示しない）
     address: string;
   };
   requiredDocuments: string[];
@@ -297,9 +297,8 @@ export const factoringCompanies: FactoringCompany[] = [
       "最低買取額10万円から"
     ], // 旧 cons「実績がやや少ない」は出典なし（公式トップは累計申込額のサービス実績を掲載）→削除（2026年10月23日）
     companyInfo: {
-      established: "2020年",
-      capital: "1億円",
-      address: "東京都港区南青山2-2-15 ウィン青山836"
+      established: "2016年4月", // paytoday.jp/company「設立日 平成２８年４月」。資本金は会社概要・トップ・特商法表記に記載なし→欄を外す（旧「2020年・1億円」は出典なし・2026年11月16日確認）
+      address: "東京都港区南青山2-26-37 VORT外苑前Ⅰ 9F" // paytoday.jp/company「本社所在地」（旧住所は公式のどのページにも記載なし・2026年11月16日確認）
     },
     requiredDocuments: ["買取を希望する請求書", "本人確認書類（顔写真付き）", "直近6か月分以上の入出金明細（必須ではない）", "決算書・確定申告書（必須ではない）"], // paytoday.jp/faq「申込に必要な書類は何ですか？」（2026年10月30日確認）
     url: "https://paytoday.jp/",
@@ -892,7 +891,7 @@ export const factoringCompanies: FactoringCompany[] = [
     personalSupport: true,
     personalNote: "法人・個人事業主が利用可（公式表示）。フリーランスについての明記はありません",
     features: ["2社間・3社間対応", "Web完結・出張査定", "掛け目90〜96%"],
-    description: "株式会社レバンタ（2023年7月設立・東京都中央区東日本橋）が運営するファクタリングです。手数料率は4.0％～10.0％で、契約後は最短10分で振り込まれます。2社間・3社間に対応し、Web完結のほか対面相談・出張査定にも対応しています。",
+    description: "株式会社レバンタ（2023年7月設立・東京都中央区日本橋小伝馬町）が運営するファクタリングです。手数料率は4.0％～10.0％で、契約後は最短10分で振り込まれます。2社間・3社間に対応し、Web完結のほか対面相談・出張査定にも対応しています。",
     pros: [
       "手数料率4.0％～10.0％（公式表示）",
       "契約後最短10分で振込（公式「ご利用の流れ」）",
@@ -912,7 +911,7 @@ export const factoringCompanies: FactoringCompany[] = [
     companyInfo: {
       established: "2023年7月",
       capital: "公式サイトでは確認できず",
-      address: "東京都中央区東日本橋2丁目16-11 スワンレイク東日本橋2F"
+      address: "〒103-0001 東京都中央区日本橋小伝馬町7-10 エムジー小伝馬町ビル4F" // lebanta.com/company.html「所在地」（2026年11月16日確認）
     },
     requiredDocuments: ["決算書（法人）／確定申告書（個人事業主）", "請求書", "通帳コピー"],
     url: "https://www.lebanta.com/",

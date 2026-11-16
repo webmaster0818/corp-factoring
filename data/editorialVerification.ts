@@ -706,7 +706,7 @@ export const editorialVerifications: { [slug: string]: EditorialVerification } =
       "当編集部は、外部サイトの口コミの転載や体験談の創作を行いません。この欄には、レバンタ（株式会社レバンタ）の公式サイトから編集部が確認できた事実のみを掲載しています。",
     facts: [
       { label: "運営会社", value: "株式会社レバンタ（2023年7月設立・代表取締役 稲田 佳介）。資本金は公式に記載なし", source: "公式「会社概要」（lebanta.com/company.html・2026年10月31日確認）" },
-      { label: "所在地", value: "〒103-0004 東京都中央区東日本橋2丁目16-11 スワンレイク東日本橋2F", source: "公式「会社概要」（lebanta.com/company.html・2026年10月31日確認）" },
+      { label: "所在地", value: "〒103-0001 東京都中央区日本橋小伝馬町7-10 エムジー小伝馬町ビル4F", source: "公式「会社概要」（lebanta.com/company.html・2026年11月16日確認）" },
       { label: "手数料", value: "手数料率4.0％～10.0％（2社間・3社間別の率は記載なし）。手数料は売掛先企業の業種などの条件により決定", source: "公式「レバンタの強み」（lebanta.com/strength.html）・よくある質問（lebanta.com/faq.html）（2026年10月31日確認）" },
       { label: "手数料以外の費用", value: "手数料以外の費用の有無は記載なし（見積り無料の記載のみ）", source: "公式サイト（lebanta.com・2026年10月31日確認）" },
       { label: "入金スピード", value: "契約後は最短10分で指定口座に振込（最短即日）", source: "公式「ご利用の流れ」（lebanta.com/flow.html・2026年10月31日確認）" },
