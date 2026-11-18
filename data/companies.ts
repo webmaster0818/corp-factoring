@@ -47,6 +47,7 @@ export interface FactoringCompany {
   requiredDocuments: string[];
   url: string;
   affiliateUrl?: string; // アフィリエイトリンク（設定時はCTAがこちらを優先・rel="sponsored nofollow"）
+  a8Html?: string; // A8 のテキストリンク（<a>＋1×1 <img>）。A8 規約で改変禁止のため発行されたまま入れ、CTA はボタンの代わりにこれを表示する
   affiliateImpUrl?: string; // ASP の表示計測用 1×1 画像（felmat の fmimp など・発行されたまま）
   category: string[];
   strengths?: string[];
@@ -275,6 +276,7 @@ export const factoringCompanies: FactoringCompany[] = [
     }, // labol.co.jp/corp/ の会社概要（2026年10月26日確認。旧値：資本金5,000万円・渋谷スクランブルスクエア39階）
     requiredDocuments: ["請求書", "本人確認書類", "取引を示すエビデンス（取引先とのメール・チャット、通帳の入出金履歴など）"], // 公式FAQ（2026年10月26日確認）
     url: "https://labol.co.jp/",
+    a8Html: "<a href=\"https://px.a8.net/svt/ejp?a8mat=4B650J+5CWP9M+40JM+1BMW42\" rel=\"nofollow\">labol（ラボル）</a>  <img border=\"0\" width=\"1\" height=\"1\" src=\"https://www15.a8.net/0.gif?a8mat=4B650J+5CWP9M+40JM+1BMW42\" alt=\"\">",
     category: ["個人事業主", "少額", "審査甘い"]
   },
   {
@@ -407,6 +409,7 @@ export const factoringCompanies: FactoringCompany[] = [
       "（審査により）決算書・登記簿謄本（法人）／開業届・確定申告書（個人事業主・フリーランス）"
     ], // 公式FAQ「ファクタリングの「必要書類」は何ですか？」：原則3点が必須、ほかは審査で必要になる場合（2026年11月1日確認）
     url: "https://top-management.co.jp/",
+    a8Html: "<a href=\"https://px.a8.net/svt/ejp?a8mat=4B650J+5562EI+3JLM+5YJRM\" rel=\"nofollow\">ファクタリング事業資金調達７秒無料お見積り【トップ・マネジメント】</a> <img border=\"0\" width=\"1\" height=\"1\" src=\"https://www14.a8.net/0.gif?a8mat=4B650J+5562EI+3JLM+5YJRM\" alt=\"\">",
     category: ["高額", "3社間"]
   },
   {
@@ -472,6 +475,7 @@ export const factoringCompanies: FactoringCompany[] = [
     },
     requiredDocuments: ["公式サイトに必要書類の一覧の記載なし（ennavi.tokyo のトップ・会社概要・よくあるご質問、ennavi-factoring.net のトップ・2026年11月1日確認）"],
     url: "https://ennavi-factoring.net/",
+    a8Html: "<a href=\"https://px.a8.net/svt/ejp?a8mat=4B650J+4IJLEY+44CA+5YRHE\" rel=\"nofollow\">ファクタリング【えんナビ】</a> <img border=\"0\" width=\"1\" height=\"1\" src=\"https://www12.a8.net/0.gif?a8mat=4B650J+4IJLEY+44CA+5YRHE\" alt=\"\">",
     category: ["即日", "24時間"]
   },
   {
@@ -501,6 +505,7 @@ export const factoringCompanies: FactoringCompany[] = [
     },
     requiredDocuments: ["請求書", "身分証明書"],
     url: "https://freenance.net/",
+    a8Html: "<a href=\"https://px.a8.net/svt/ejp?a8mat=4B650J+5FVVAI+47L8+5YRHE\" rel=\"nofollow\">【FREENANCE】</a>  <img border=\"0\" width=\"1\" height=\"1\" src=\"https://www15.a8.net/0.gif?a8mat=4B650J+5FVVAI+47L8+5YRHE\" alt=\"\">",
     category: ["個人事業主", "少額", "信頼性"]
   },
   {
@@ -706,6 +711,7 @@ export const factoringCompanies: FactoringCompany[] = [
     },
     requiredDocuments: ["請求書", "通帳コピー", "決算書（直近二期分・契約前の確認時）", "取引先との基本契約書（契約前の確認時）"],
     url: "https://no1service.co.jp/",
+    a8Html: "<a href=\"https://px.a8.net/svt/ejp?a8mat=4B650J+37ICMI+4EKW+5YJRM\" rel=\"nofollow\">ファクタリングなら株式会社No.1</a>  <img border=\"0\" width=\"1\" height=\"1\" src=\"https://www18.a8.net/0.gif?a8mat=4B650J+37ICMI+4EKW+5YJRM\" alt=\"\">",
     // 2026-11-12 A8.net の掲載停止依頼（No.1 の法人向けファクタリング 11/30 18:00 終了）を受けて計測リンクを外した
     category: ["手数料安い", "即日"]
   },
@@ -961,6 +967,7 @@ export const factoringCompanies: FactoringCompany[] = [
     },
     requiredDocuments: ["商業登記簿謄本", "印鑑証明書", "代表者身分証明書・住民票", "決算書コピー", "取引先基本契約書（ある場合）", "取引履歴書類（通帳等）", "成因資料（発注書・納品書・請求書等）"],
     url: "https://trustgateway.co.jp/",
+    a8Html: "<a href=\"https://px.a8.net/svt/ejp?a8mat=4B650J+51LGRU+3RD2+62MDE\" rel=\"nofollow\">【PR】最短1日で資金調達のお悩み解決！トラストゲートウェイまで</a> <img border=\"0\" width=\"1\" height=\"1\" src=\"https://www10.a8.net/0.gif?a8mat=4B650J+51LGRU+3RD2+62MDE\" alt=\"\">",
     category: ["即日"]
   },
   {
@@ -1194,6 +1201,7 @@ export const factoringCompanies: FactoringCompany[] = [
     },
     requiredDocuments: ["本人確認書類", "入出金の通帳（Web通帳含む）", "取引先との契約関連書類（請求書／見積書／基本契約書等）"],
     url: "https://urikakedo.com/",
+    a8Html: "<a href=\"https://px.a8.net/svt/ejp?a8mat=4B650J+5AIYUI+4S8A+5YRHE\" rel=\"nofollow\">【うりかけ堂】</a>  <img border=\"0\" width=\"1\" height=\"1\" src=\"https://www14.a8.net/0.gif?a8mat=4B650J+5AIYUI+4S8A+5YRHE\" alt=\"\">",
     category: ["即日", "個人事業主"]
   },
   {
@@ -1232,6 +1240,7 @@ export const factoringCompanies: FactoringCompany[] = [
     },
     requiredDocuments: ["本人確認書類", "通帳のコピー", "請求書", "決算書（法人のみ）"],
     url: "https://kai-soku.jp/",
+    a8Html: "<a href=\"https://px.a8.net/svt/ejp?a8mat=4B650J+490NQI+5LZE+HV7V6\" rel=\"nofollow\">ファクタリングなら買速</a>  <img border=\"0\" width=\"1\" height=\"1\" src=\"https://www11.a8.net/0.gif?a8mat=4B650J+490NQI+5LZE+HV7V6\" alt=\"\">",
     category: ["即日", "個人事業主"]
   },
   {
@@ -1353,6 +1362,7 @@ export const factoringCompanies: FactoringCompany[] = [
     },
     requiredDocuments: ["請求書等（利用規約）", "写真付き公的身分証明書（買取可能の通知後・利用規約）"],
     url: "https://goodplus-service.co.jp/",
+    a8Html: "<a href=\"https://px.a8.net/svt/ejp?a8mat=4B650J+4KBW8A+5DD4+60OXE\" rel=\"nofollow\">【優待実施中】ファクタリングならGoodPlus</a> <img border=\"0\" width=\"1\" height=\"1\" src=\"https://www12.a8.net/0.gif?a8mat=4B650J+4KBW8A+5DD4+60OXE\" alt=\"\">",
     category: ["即日", "個人事業主"]
   },
   {
@@ -1393,6 +1403,7 @@ export const factoringCompanies: FactoringCompany[] = [
     },
     requiredDocuments: ["請求書と通帳（公式FAQ。状況により決算書等を追加）", "面談時は顔写真付き身分証明書、履歴事項全部証明書、決算書（直近2期分）、請求書、成因資料、入出金の通帳など（公式「必要書類」ページ）", "契約時は印鑑証明、履歴事項全部証明書2通、納税証明書、社判・実印（同ページ）"],
     url: "https://next1-one.jp/",
+    a8Html: "<a href=\"https://px.a8.net/svt/ejp?a8mat=4B650J+4GRALM+4OCU+60H7M\" rel=\"nofollow\">ネクストワン【法人専用】</a> <img border=\"0\" width=\"1\" height=\"1\" src=\"https://www18.a8.net/0.gif?a8mat=4B650J+4GRALM+4OCU+60H7M\" alt=\"\">",
     category: ["法人専用", "即日"]
   },
   {
@@ -1509,6 +1520,7 @@ export const factoringCompanies: FactoringCompany[] = [
     },
     requiredDocuments: ["代表者の身分証明証", "成因証書（請求書・納品書・注文書・支払決定通知書等）", "入出金明細"],
     url: "https://factoringzero.jp/",
+    a8Html: "<a href=\"https://px.a8.net/svt/ejp?a8mat=4B650J+4KXBU2+4DJO+5YRHE\" rel=\"nofollow\">資金調達は【ZERO】にお任せ下さい！</a> <img border=\"0\" width=\"1\" height=\"1\" src=\"https://www12.a8.net/0.gif?a8mat=4B650J+4KXBU2+4DJO+5YRHE\" alt=\"\">",
     category: ["即日", "個人事業主"]
   },
   {
@@ -1547,6 +1559,7 @@ export const factoringCompanies: FactoringCompany[] = [
     },
     requiredDocuments: ["商業登記簿謄本", "印鑑証明書", "銀行通帳", "決算書／確定申告書（二期分）", "請求書等（契約書・発注書・納品書など）", "基本契約書（売掛先と取引基本契約がある場合）"],
     url: "https://nishinihonfactor.jp/",
+    a8Html: "<a href=\"https://px.a8.net/svt/ejp?a8mat=4B650J+49M3CA+3XT0+5YJRM\" rel=\"nofollow\">ファクタリングなら西日本ファクター</a> <img border=\"0\" width=\"1\" height=\"1\" src=\"https://www14.a8.net/0.gif?a8mat=4B650J+49M3CA+3XT0+5YJRM\" alt=\"\">",
     category: ["即日", "個人事業主"]
   },
   {
@@ -1627,6 +1640,7 @@ export const factoringCompanies: FactoringCompany[] = [
     },
     requiredDocuments: ["（審査時）身分証明書（免許証・パスポートなど顔写真付き）", "（審査時）決算書（直近2期分）", "（審査時）売掛先への請求書", "（審査時）入出金の通帳", "（契約時）印鑑証明・会社謄本（履歴事項全部証明書2通）・社判・実印"],
     url: "https://scom-f.jp/",
+    a8Html: "<a href=\"https://px.a8.net/svt/ejp?a8mat=4B650J+4JQGMI+4OCA+5YJRM\" rel=\"nofollow\">【エスコム】法人専門</a>  <img border=\"0\" width=\"1\" height=\"1\" src=\"https://www14.a8.net/0.gif?a8mat=4B650J+4JQGMI+4OCA+5YJRM\" alt=\"\">",
     category: ["法人専用", "即日"]
   },
   {
@@ -2085,6 +2099,7 @@ export const factoringCompanies: FactoringCompany[] = [
     },
     requiredDocuments: ["通帳の写し", "請求書", "決算書", "代表者の身分証明書"],
     url: "https://www.jps-tokyo.co.jp/",
+    a8Html: "<a href=\"https://px.a8.net/svt/ejp?a8mat=4B650J+4EYZSA+5RPI+5YRHE\" rel=\"nofollow\">【JPS】</a>  <img border=\"0\" width=\"1\" height=\"1\" src=\"https://www15.a8.net/0.gif?a8mat=4B650J+4EYZSA+5RPI+5YRHE\" alt=\"\">",
     category: ["法人専用", "即日"]
   },
   {

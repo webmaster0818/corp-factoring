@@ -161,3 +161,19 @@ img, video, iframe { max-width: 100%; }
 .prose code { background: #F1F6FB; padding: 0 .3em; border-radius: 3px; font-size: .92em; }
 .section-title.section-title-sm { font-size: 1.25rem; }
 @media (max-width: 640px) { .section-title.section-title-sm { font-size: 1.15rem; } }
+
+/* A8 のテキストリンク（発行されたままの <a>＋1×1 <img>）を CTA ボタンの見た目にする。HTML は変えず、表示だけ整える */
+.a8-cta { position: relative; }
+.a8-cta a {
+  display: block;
+  background: #D2600C;
+  color: #fff;
+  font-weight: 700;
+  padding: 1rem 2.5rem;
+  border-radius: 0.375rem;
+  text-align: center;
+  line-height: 1.5;
+  text-decoration: none;
+}
+.a8-cta a:hover { background: #B5520A; }
+.a8-cta img { position: absolute; }

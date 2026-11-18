@@ -376,6 +376,10 @@ export default function CompanyPage({
 
           {/* CTAボタン（affiliateUrl設定時はアフィリエイトリンク・sponsored） */}
           <div className="flex flex-col sm:flex-row gap-4">
+            {company.a8Html ? (
+              // A8 のテキストリンクは規約で改変禁止のため、発行されたままのHTMLを置く（見た目だけ .a8-cta でボタン風にする）
+              <div className="a8-cta" dangerouslySetInnerHTML={{ __html: company.a8Html }} />
+            ) : (
             <a
               href={company.affiliateUrl ?? company.url}
               target="_blank"
@@ -384,6 +388,7 @@ export default function CompanyPage({
             >
               公式サイトで詳細を見る →
             </a>
+            )}
             {company.affiliateImpUrl && (
               // eslint-disable-next-line @next/next/no-img-element
               <img src={company.affiliateImpUrl} width={1} height={1} alt="" style={{ border: "none", position: "absolute" }} />
@@ -1304,6 +1309,10 @@ export default function CompanyPage({
             見積もりは無料です。見積もりを依頼すると、手数料や条件を確認できます。
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            {company.a8Html ? (
+              // A8 のテキストリンクは規約で改変禁止のため、発行されたままのHTMLを置く（見た目だけ .a8-cta でボタン風にする）
+              <div className="a8-cta" dangerouslySetInnerHTML={{ __html: company.a8Html }} />
+            ) : (
             <a
               href={company.affiliateUrl ?? company.url}
               target="_blank"
@@ -1312,6 +1321,7 @@ export default function CompanyPage({
             >
               公式サイトへ →
             </a>
+            )}
             {company.affiliateImpUrl && (
               // eslint-disable-next-line @next/next/no-img-element
               <img src={company.affiliateImpUrl} width={1} height={1} alt="" style={{ border: "none", position: "absolute" }} />
