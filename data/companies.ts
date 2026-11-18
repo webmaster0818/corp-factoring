@@ -47,6 +47,7 @@ export interface FactoringCompany {
   requiredDocuments: string[];
   url: string;
   affiliateUrl?: string; // アフィリエイトリンク（設定時はCTAがこちらを優先・rel="sponsored nofollow"）
+  affiliateImpUrl?: string; // ASP の表示計測用 1×1 画像（felmat の fmimp など・発行されたまま）
   category: string[];
   strengths?: string[];
   useCases?: UseCaseExample[];
@@ -178,6 +179,8 @@ export const factoringCompanies: FactoringCompany[] = [
     }, // 公式トップの会社概要（東京本社。大阪支社・福岡支社あり）・企業情報（2026年11月2日確認）。旧所在地「西新宿3-7-1 新宿パークタワーN棟28階」は公式に記載なし
     requiredDocuments: ["本人確認書類（免許証・パスポートなど）", "入出金の通帳（WEB通帳可）", "請求書・見積書・基本契約書などの取引契約書類", "契約時：納税証明書・印鑑証明書・登記簿謄本"], // 公式FAQ「必要書類を教えてください」（2026年11月2日確認）
     url: "https://bestfactor.jp/",
+    affiliateUrl: "https://t.felmat.net/fmcl?ak=A3025A.1.I602293.D138031N",
+    affiliateImpUrl: "https://t.felmat.net/fmimp/A3025A.I602293.D138031N",
     category: ["審査甘い", "少額", "個人事業主"]
   },
   {
@@ -567,6 +570,8 @@ export const factoringCompanies: FactoringCompany[] = [
     },
     requiredDocuments: ["入金予定申請フォーム（仮審査・公式サイトでダウンロード）", "請求書（直近3回分）", "通帳（3ヶ月分）"],
     url: "https://j-t-c.info/",
+    affiliateUrl: "https://t.felmat.net/fmcl?ak=B11100M.1.8153592V.D138031N",
+    affiliateImpUrl: "https://t.felmat.net/fmimp/B11100M.8153592V.D138031N",
     category: ["即日", "高額対応"]
   },
   {
@@ -600,6 +605,8 @@ export const factoringCompanies: FactoringCompany[] = [
     },
     requiredDocuments: ["請求書（注文書）", "銀行通帳"],
     url: "https://www.yen-today.jp/",
+    affiliateUrl: "https://t.felmat.net/fmcl?ak=C11991E.1.K1648115.D138031N",
+    affiliateImpUrl: "https://t.felmat.net/fmimp/C11991E.K1648115.D138031N",
     category: ["法人専用", "一括申込"]
   },
   {

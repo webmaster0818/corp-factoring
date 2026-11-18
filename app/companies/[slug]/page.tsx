@@ -384,6 +384,10 @@ export default function CompanyPage({
             >
               公式サイトで詳細を見る →
             </a>
+            {company.affiliateImpUrl && (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img src={company.affiliateImpUrl} width={1} height={1} alt="" style={{ border: "none", position: "absolute" }} />
+            )}
             <Link
               href="/#diagnosis"
               className="bg-white border border-blue-600 text-blue-700 font-bold py-4 px-10 rounded-md hover:bg-blue-50 transition text-center"
@@ -1308,6 +1312,10 @@ export default function CompanyPage({
             >
               公式サイトへ →
             </a>
+            {company.affiliateImpUrl && (
+              // eslint-disable-next-line @next/next/no-img-element
+              <img src={company.affiliateImpUrl} width={1} height={1} alt="" style={{ border: "none", position: "absolute" }} />
+            )}
             <Link
               href="/#diagnosis"
               className="bg-transparent text-white font-bold py-4 px-10 rounded-md hover:bg-white/10 transition border border-white/50"
