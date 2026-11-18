@@ -56,7 +56,7 @@ function descriptionOf(area: AreaDef) {
   const s = summary(area);
   const names = s.rows.slice(0, 3).map((r) => r.company.name).join("・");
   const top = s.wards.slice(0, 2).map(([w, n]) => `${w}${n}か所`).join("・");
-  return `当サイト掲載${TOTAL}社のうち、${area.scope}に本社・支社・支店・営業所などがあると公式サイトで確認できた${s.rows.length}社（本社・所在地${s.head.length}社、支社・営業所など${s.branch.length}社）を、公式表記の住所と出典つきで掲載。${names}など。拠点は${top}が多い（${AREA_CHECKED_AT}確認）。`;
+  return `当サイト掲載${TOTAL}社のうち、${area.scope}に本社・支社・支店・営業所などがあると公式サイトで確認できた${s.rows.length}社（本社・所在地${s.head.length}社、支社・営業所など${s.branch.length}社）を、公式表記の住所と出典を掲載。${names}など。拠点は${top}が多い（${AREA_CHECKED_AT}確認）。`;
 }
 
 export async function generateStaticParams() {
@@ -206,7 +206,7 @@ export default async function AreaPage({ params }: { params: Promise<{ area: str
               並び順は「本社・所在地が{area.scope}にある会社」→「支社・支店・営業所などがある会社」の順で、同じ区分の中は会社名の五十音順です。評価や手数料による順位ではありません。
             </li>
             <li>
-              公式サイトで確認できなかった会社は載せていません。ここに載っていない会社が{area.scope}に拠点を持っていないという意味ではありません。
+              公式サイトで確認できなかった会社は掲載していません。ここに載っていない会社が{area.scope}に拠点を持っていないという意味ではありません。
             </li>
             <li>来店での相談を受け付けているか、どの地域を担当しているかは拠点ごとに異なる場合があります。訪問の前に各社へ問い合わせてください。</li>
           </ul>
