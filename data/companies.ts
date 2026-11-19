@@ -149,6 +149,8 @@ export const factoringCompanies: FactoringCompany[] = [
     }, // accelfacter.co.jp/company/ の会社概要（2026年10月27日確認。設立年月日「平成30年10月」）
     requiredDocuments: ["請求書など売掛金額が確認できる書類", "通帳3か月分の写し", "身分証明書", "（利用金額により）決算書"], // 公式FAQ「審査にはどのような書類が必要ですか？」（2026年10月27日確認）
     url: "https://accelfacter.co.jp/",
+    // 2026-11-19 レントラックス（サイト 392836）のテキストリンク。規約で改変禁止のため発行どおり（tomomi-2 発行 1572888032229728378・MediaXAI 1572883011458961499）
+    a8Html: "<img src=\"https://www.rentracks.jp/adx/p.gifx?idx=0.72174.392836.3847.5792&dna=81737\" border=\"0\" height=\"1\" width=\"1\"><a href=\"https://www.rentracks.jp/adx/r.html?idx=0.72174.392836.3847.5792&dna=81737\" rel=\"nofollow noopener\" target=\"_blank\">アクセルファクター</a>",
     category: ["手数料安い", "審査甘い"]
   },
   {
@@ -1082,6 +1084,8 @@ export const factoringCompanies: FactoringCompany[] = [
     },
     requiredDocuments: ["直近の決算書", "通帳のコピー", "入金予定の請求書"],
     url: "https://owl-economy.jp/lp04/",
+    // 2026-11-19 レントラックス（サイト 392836）のテキストリンク。規約で改変禁止のため発行どおり（tomomi-2 発行 1572888032229728378・MediaXAI 1572883011458961499）
+    a8Html: "<img src=\"https://www.rentracks.jp/adx/p.gifx?idx=0.72174.392836.10246.14632&dna=167358\" border=\"0\" height=\"1\" width=\"1\"><a href=\"https://www.rentracks.jp/adx/r.html?idx=0.72174.392836.10246.14632&dna=167358\" rel=\"nofollow noopener\" target=\"_blank\">アウル経済のファクタリング</a>",
     category: ["法人専用"]
   },
   {
