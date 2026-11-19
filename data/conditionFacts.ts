@@ -269,7 +269,7 @@ export const conditionFacts: { [slug: string]: Partial<Record<ConditionFactKey, 
     kakutei: {"value": "不可", "source": "https://www.factoring-try-sko.co.jp/faq/", "checkedAt": "2026年11月15日", "quote": "決算書、確定申告書、印鑑証明、謄本など、ご契約いただく際に、必要書類についてご案内いたします。", "note": "契約時に必要"},
     touki: {"value": "可", "source": "https://www.factoring-try-sko.co.jp/", "checkedAt": "2026年11月15日", "quote": "債権譲渡登記 なしで 契約可能 債権譲渡登記が不要で、売掛先に知られずに素早くご利用したい方向け"},
     docs: {"value": "一覧あり", "source": "https://www.factoring-try-sko.co.jp/faq/", "checkedAt": "2026年11月15日", "quote": "審査に必要な書類は何ですか？ 下記の書類をご用意いただきます。請求書、発注が確認できる発注書か契約書 売掛先様の住所、連絡先 3か月分の銀行通帳", "note": "審査時4点（売掛先の住所・連絡先は情報）。契約時に決算書・確定申告書など", "list": ["請求書", "発注が確認できる発注書か契約書", "売掛先の住所・連絡先", "3か月分の銀行通帳"], "count": 4},
-    shinryou: {"value": "公式に記載なし", "source": "https://www.factoring-try-sko.co.jp/case/009/", "checkedAt": "2026年11月1日", "quote": "事例9：医療 診療報酬債権での「3社間取引」2日で調達成功 … 国保連を交えた「3社間ファクタリング」を利用。（事例一覧の冒頭は「参考情報として他社事例を紹介します」）", "note": "11月1日の検証で「可」から変更。トップページの事例（「スピード重視で医療系にも対応します」）は現在表示されていない。事例ページに同社が診療報酬債権を買い取ったとの記載はなく、一覧は「他社事例」と表記"},
+    shinryou: {"value": "公式に記載なし", "source": "https://www.factoring-try-sko.co.jp/case/009/", "checkedAt": "2026年11月19日", "quote": "事例9：医療 診療報酬債権での「3社間取引」2日で調達成功 … 国保連を交えた「3社間ファクタリング」を利用。（事例一覧の冒頭は「参考情報として他社事例を紹介します」）", "note": "11月1日の検証で「可」から変更。トップと/service/に医療業E社の事例（「スピード重視で医療系にも対応します」）と「業種制限なし」（医療を含む）の表示がある。事例一覧は「他社事例」と表記し、同社が診療報酬債権を買い取ると書いた箇所はない"},
     kaigo: {"value": "公式に記載なし", "source": "https://www.factoring-try-sko.co.jp/", "checkedAt": "2026年11月1日"},
   },
   "msfj": {
