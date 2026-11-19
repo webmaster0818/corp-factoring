@@ -445,7 +445,8 @@ export const factoringCompanies: FactoringCompany[] = [
     },
     requiredDocuments: ["通帳のコピー（表紙付き・直近3か月分）", "売掛金に関する資料（請求書・契約書など）"],
     url: "https://mentor-capital.jp/",
-    affiliateUrl: "https://px.a8.net/svt/ejp?a8mat=4B650J+510162+5U0K+5YJRM",
+    // 2026-11-19 A8（9,000円）→ felmat 11503（13,200円）に差し替え（MediaXAI 1572903992604754031・tomomi-2 1572906319458074707）。発行どおりのテキストリンク＋1×1
+    a8Html: "<a href=\"https://t.felmat.net/fmcl?ak=A115033.1.81586046.D138031N\" target=\"_blank\" rel=\"nofollow noopener\">今すぐ資金調達！スピード審査のファクタリング「メンターキャピタル」</a><img src=\"https://t.felmat.net/fmimp/A115033.81586046.D138031N\" width=\"1\" height=\"1\" alt=\"\" style=\"border:none;\" />",
     category: ["審査甘い", "即日"]
   },
   {
@@ -477,7 +478,8 @@ export const factoringCompanies: FactoringCompany[] = [
     },
     requiredDocuments: ["公式サイトに必要書類の一覧の記載なし（ennavi.tokyo のトップ・会社概要・よくあるご質問、ennavi-factoring.net のトップ・2026年11月1日確認）"],
     url: "https://ennavi-factoring.net/",
-    a8Html: "<a href=\"https://px.a8.net/svt/ejp?a8mat=4B650J+4IJLEY+44CA+5YRHE\" rel=\"nofollow\">ファクタリング【えんナビ】</a> <img border=\"0\" width=\"1\" height=\"1\" src=\"https://www12.a8.net/0.gif?a8mat=4B650J+4IJLEY+44CA+5YRHE\" alt=\"\">",
+    // 2026-11-19 A8（15,000円）→ レントラックス 5289（17,600円）に差し替え（MediaXAI 1572903992604754031・tomomi-2 1572918042340499477）。発行どおり
+    a8Html: "<img src=\"https://www.rentracks.jp/adx/p.gifx?idx=0.72174.392836.3500.5289&dna=75681\" border=\"0\" height=\"1\" width=\"1\"><a href=\"https://www.rentracks.jp/adx/r.html?idx=0.72174.392836.3500.5289&dna=75681\" rel=\"nofollow noopener\" target=\"_blank\">えんナビ</a>",
     category: ["即日", "24時間"]
   },
   {
