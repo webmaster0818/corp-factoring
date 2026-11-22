@@ -741,7 +741,7 @@ export const factoringCompanies: FactoringCompany[] = [
     ],
     cons: [
       "手数料率の公式表示がなく個別査定",
-      "設立年・資本金・代表者が公式サイトで確認できず",
+      "設立年が公式サイトで確認できず（法人番号の指定は2025年11月）",
       "給与ファクタリング・個人間取引は不可"
     ],
     companyInfo: {
@@ -764,6 +764,7 @@ export const factoringCompanies: FactoringCompany[] = [
     minAmount: 0,
     maxAmount: "5,000万円（審査により1億円）",
     personalSupport: false,
+    personalNote: "個人事業主・フリーランスは利用できません（公式FAQ「【法人様専用】」「請求先が法人でも、申込者が個人事業主の場合は対象外」・2026年11月23日確認）",
     features: ["最短2時間", "オンライン完結", "INBUYS"],
     description: "港区西新橋の債権買取会社。最短2時間で送金、来店・面談不要のオンライン完結型サービス「INBUYS」（2社間のみ）を提供しています。手数料は2社間5〜15%以内・3社間1.0〜4.9%以内（公式表示）で、償還請求権はありません。",
     pros: [
@@ -775,8 +776,8 @@ export const factoringCompanies: FactoringCompany[] = [
     cons: [
       "手数料表記がサイト内で1%〜と2%〜で混在しており実質は個別査定",
       "設立年・資本金が公式サイトで確認できず",
-      "買取可能額・必要書類の明示なし",
-      "個人事業主の利用可否が明示されていない"
+      "個人事業主・フリーランスは利用できない（公式FAQ「法人様専用」）",
+      "振込手数料は利用者負担"
     ],
     companyInfo: {
       established: "公式サイトでは確認できず",
