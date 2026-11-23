@@ -141,7 +141,7 @@ export const HOURS_CHECKED_AT: { [slug: string]: string } = {
   "bion": "2026年11月22日",
   "rfd": "2026年11月1日",
   "owl-keizai": "2026年11月1日",
-  "invoice-pay": "2026年11月1日",
+  "invoice-pay": "2026年11月23日",
   "kaipoke-early": "2026年11月1日",
   "urikakedo": "2026年11月1日",
   "kaisoku": "2026年11月1日",

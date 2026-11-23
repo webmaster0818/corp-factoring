@@ -43,7 +43,7 @@
 | 10万円 | 8社 | [PayToday](/companies/paytoday/)・[ファクタリングのTRY](/companies/try/)・[MSFJ](/companies/msfj/)・[レバンタ](/companies/levanta/)・[トラストゲートウェイ](/companies/trust-gateway/)・[買速](/companies/kaisoku/)・[西日本ファクター](/companies/nishinihon-factor/)・[事業資金エージェント](/companies/jigyoshikin-agent/) | PayTodayのよくある質問は上限・下限なしと回答。MSFJのよくある質問は下限「特にはございません」。西日本ファクターは2026年10月6日から10万円以上に対応 | 10月14日〜11月1日 |
 | 15万円 | 1社 | [CoolPay](/companies/coolpay/) | 2回目以降は3万円から | 11月1日 |
 | 20万円 | 3社 | [セーフトラスト](/companies/safe-trust/)・[インボイスPay](/companies/invoice-pay/)・[ファクタリングZERO](/companies/factoring-zero/) | セーフトラストは20万円以下も相談可としています | 10月31日〜11月7日 |
-| 30万円 | 8社 | [アクセルファクター](/companies/accel-factor/)・[ベストファクター](/companies/best-factor/)・[トップ・マネジメント](/companies/top-management/)・[えんナビ](/companies/ennavi/)・[うりかけ堂](/companies/urikakedo/)・[ネクストワン](/companies/next-one/)・[エスコム](/companies/escom/)・[ビジペイ](/companies/bizpay/) | ベストファクターは公式トップ・個人事業主向けページが「10万円〜」。えんナビは ennavi.tokyo の表示が50万円〜 | 10月25日〜11月7日 |
+| 30万円 | 8社 | [アクセルファクター](/companies/accel-factor/)・[ベストファクター](/companies/best-factor/)・[トップ・マネジメント](/companies/top-management/)・[えんナビ](/companies/ennavi/)・[うりかけ堂](/companies/urikakedo/)・[ネクストワン](/companies/next-one/)・[エスコム](/companies/escom/)・[ビジペイ](/companies/bizpay/) | ベストファクターは公式トップ・個人事業主向けページが「10万円〜」、少額向けのベストファクターQUICKは10万円〜（11月23日確認）。えんナビは ennavi.tokyo の表示が50万円〜 | 10月25日〜11月7日 |
 | 50万円 | 5社 | [PMG](/companies/pmg/)・[株式会社No.1](/companies/no1/)・[ファクタープラン](/companies/factor-plan/)・[アウル経済](/companies/owl-keizai/)・[JPS](/companies/jps/) | アウル経済は原則50万円以上。JPSは50万円〜3億円 | 10月14日〜11月10日 |
 | 100万円 | 3社 | [JTC](/companies/jtc/)・[GMO BtoB早払い](/companies/gmo-btob-hayabarai/)・[三菱ＵＦＪファクター](/companies/mufg-factor/) | GMO BtoB早払いは1回あたりの合計（請求書あたりは数万円から） | 10月31日〜11月6日 |
 | 目安のみ | 2社 | [マネーフォワード 早期入金](/companies/mf-earlypayment/)（数万円〜）・[メドレー早期資金サポート](/companies/medley/)（数十万円〜） | マネーフォワード 早期入金のよくある質問は、最低金額を申込ごとの審査で判断 | 10月31日〜11月6日 |
@@ -159,11 +159,11 @@
 
 **公式の記載：** 東証グロース上場のフリー株式会社（freee）が運営しています。手数料は3〜10%で、フリーナンス口座を報酬の受取先に設定しない場合は一律10%です（2026年10月31日確認）。公式トップでは、無料登録だけで最高5,000万円の保険（あんしん補償）が自動で付帯すると表示しています（2026年11月7日確認）。
 
-### ベストファクター（30万円から・個人事業主は10万円から）
+### ベストファクター（30万円から・個人事業主とベストファクターQUICKは10万円から）
 
 | 項目 | 内容 |
 |------|------|
-| 最低金額 | **30万円以上**（公式のよくある質問。公式トップには「10万円〜」の表記あり） |
+| 最低金額 | **30万円以上**（公式のよくある質問。公式トップには「10万円〜」の表記あり）／少額向けのベストファクターQUICKは10万円〜（2026年11月23日確認） |
 | 手数料 | 2〜20% |
 | 入金スピード | 最短6時間（2社間・必要書類が揃っている場合） |
 | 最大金額 | 1億円 |
