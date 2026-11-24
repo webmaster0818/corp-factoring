@@ -1018,7 +1018,7 @@ export const factoringCompanies: FactoringCompany[] = [
     name: "RFD株式会社",
     nameKana: "あーるえふでぃー",
     slug: "rfd",
-    fees: { min: 3.0, max: 0 }, // 公式LP（rfd-tokyo.com/lp1/）「手数料 3 % 〜」。上限率は公式に記載なし（2026年10月31日確認）
+    fees: { min: 3.0, max: 0 }, // 公式LP（rfd-tokyo.com/lp1/）「手数料 3 % 〜」。上限率は公式に記載なし（2026年10月31日確認・2026年11月24日再確認）
     speed: "最短2時間（公式LP）／最短即日〜3日程度（公式トップ）",
     minAmount: 0,
     maxAmount: "公式に記載なし",
@@ -1656,7 +1656,7 @@ export const factoringCompanies: FactoringCompany[] = [
     name: "ウィット",
     nameKana: "うぃっと",
     slug: "wit",
-    fees: { min: 0, max: 0 }, // 非公示：公式ファクタリングページに率の表示なし（「業界最安水準」の表現のみで数値なし）。2026年11月3日確認
+    fees: { min: 0, max: 0 }, // 非公示：公式ファクタリングページに率の表示なし（「業界最安水準」の表現のみで数値なし）。2026年11月3日確認・2026年11月24日再確認
     speed: "最短2時間",
     minAmount: 0,
     maxAmount: "上限なし",
@@ -1685,7 +1685,7 @@ export const factoringCompanies: FactoringCompany[] = [
       capital: "公式サイトでは確認できず",
       address: "東京都品川区西五反田2-24-4 THE CROSS GOTANDA 4F"
     },
-    requiredDocuments: ["公式サイトに必要書類の一覧の記載なし（「発注時の注文書または入金待ちの請求書」があれば利用できると記載・2026年11月3日確認）"],
+    requiredDocuments: ["公式サイトに必要書類の一覧の記載なし（「発注時の注文書または入金待ちの請求書」があれば利用できると記載・2026年11月24日確認）"],
     url: "https://witservice.co.jp/factoring/",
     category: ["即日", "個人事業主"]
   },
