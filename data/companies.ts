@@ -1697,7 +1697,7 @@ export const factoringCompanies: FactoringCompany[] = [
     name: "けんせつくん",
     nameKana: "けんせつくん",
     slug: "kensetsukun",
-    fees: { min: 2.0, max: 0 }, // 公式「業界最安水準 2％～ の 手数料」の下限のみ。上限・2社間/3社間の別は記載なし（2026年11月3日確認）
+    fees: { min: 2.0, max: 0 }, // 公式「業界最安水準 2％～ の 手数料」の下限のみ。上限・2社間/3社間の別は記載なし（2026年11月25日確認）
     speed: "最短2時間",
     minAmount: 0,
     maxAmount: "公式に記載なし",
@@ -1727,7 +1727,7 @@ export const factoringCompanies: FactoringCompany[] = [
       capital: "公式サイトでは確認できず",
       address: "東京都品川区西五反田2-24-4 THE CROSS GOTANDA 4F"
     },
-    requiredDocuments: ["公式サイトに必要書類の一覧の記載なし（2026年11月3日確認）"],
+    requiredDocuments: ["公式サイトに必要書類の一覧の記載なし（2026年11月25日確認）"],
     url: "https://xn--y8jd4aybzqd.jp/",
     category: ["即日", "個人事業主"]
   },
