@@ -7,7 +7,7 @@ repo_head: d9534b2
 ## 審査に落ちる主な理由と次の手
 
 ### 公式の記載から分かる、対象外になる主な条件
-- 対象は中小企業・一人親方です（公式「ファクターズとは」・2026年11月3日確認）
+- 対象は中小企業・一人親方です（公式「ファクターズとは」・2026年11月25日確認）
 
 当サイトの確認データでは、ファクターズの審査の条件として公式サイトで確認できるのは上の点だけです。利用できる金額、必要書類、2社間・3社間の別は公式サイトに記載がありません。断られた理由がわからない場合は、まず見積もりの窓口（LINE・メール・電話）で確認してください。
 
@@ -16,7 +16,7 @@ repo_head: d9534b2
 - 関連：[一人親方のファクタリング](/articles/article-factoring-hitori-oyakata/)・[ファクタリング審査に落ちた理由と対処法](/articles/article-factoring-shinsa-ochita/)
 
 ## 照合用の根拠
-- 中小企業・一人親方｜editorialVerification factors facts「対象」｜factors.tokyo/factors/「中小企業・一人親方の「今、必要なお金」をご用意する請求書買取サービスです。」｜2026年11月3日
-- 金額・必要書類・2社間/3社間の記載なし｜facts「買取可能額」「必要書類」／conditionFacts factors.nisha/sansha/docs｜2026年11月3日
-- 見積もり窓口｜facts「契約方法」（LINE・メール・電話）｜2026年11月3日
+- 中小企業・一人親方｜editorialVerification factors facts「対象」｜factors.tokyo/factors/「中小企業・一人親方の「今、必要なお金」をご用意する請求書買取サービスです。」｜2026年11月25日
+- 金額・必要書類・2社間/3社間の記載なし｜facts「買取可能額」「必要書類」／conditionFacts factors.nisha/sansha/docs｜2026年11月25日
+- 見積もり窓口｜facts「契約方法」（LINE・メール・電話）｜2026年11月25日
 - アクセルファクター：conditionFacts accel-factor.sansha quote「2社間ファクタリングで1～12％・3社間ファクタリングで0.5～10.5％を目安にしていただいております」｜2026年11月1日

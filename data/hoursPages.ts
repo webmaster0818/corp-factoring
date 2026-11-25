@@ -157,7 +157,7 @@ export const HOURS_CHECKED_AT: { [slug: string]: string } = {
   "escom": "2026年11月3日",
   "wit": "2026年11月24日",
   "kensetsukun": "2026年11月25日",
-  "factors": "2026年11月3日",
+  "factors": "2026年11月25日",
   // ▼ 2026年11月6日 追加分（新規掲載6社・各社公式サイトで確認）
   "kensetsu-pay": "2026年11月6日",
   "bizpay": "2026年11月6日",

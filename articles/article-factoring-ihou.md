@@ -173,7 +173,7 @@
 | [CoolPay](/companies/coolpay/) | よくあるご質問 | 2026年11月1日 |
 | [西日本ファクター](/companies/nishinihon-factor/) | 公式トップ | 2026年11月1日 |
 | [事業資金エージェント](/companies/jigyoshikin-agent/) | 「弊社の強み」（支払いの義務はない旨） | 2026年11月1日 |
-| [ファクターズ](/companies/factors/) | 運営会社サイト | 2026年11月3日 |
+| [ファクターズ](/companies/factors/) | 運営会社サイト | 2026年11月25日 |
 | [建設Pay](/companies/kensetsu-pay/) | 運営会社DMCの自社サイト | 2026年11月6日 |
 | [スリーエス](/companies/three-s/) | Q&A | 2026年11月10日 |
 | [ソクデル](/companies/sokuderu/) | ご利用までの流れ・「ファクタリングについて」 | 2026年11月10日 |

@@ -1736,7 +1736,7 @@ export const factoringCompanies: FactoringCompany[] = [
     name: "ファクターズ",
     nameKana: "ふぁくたーず",
     slug: "factors",
-    fees: { min: 0, max: 0 }, // 非公示：現行の公式サイト factors.tokyo に率の表示なし。運営会社の旧LP（factorplan.net/factors/）のタイトル・メタ説明の「３％～」は現行の公式表示ではないため採らない（2026年11月3日確認）
+    fees: { min: 0, max: 0 }, // 非公示：現行の公式サイト factors.tokyo に率の表示なし。運営会社の旧LP（factorplan.net/factors/）のタイトル・メタ説明の「３％～」は現行の公式表示ではないため採らない（2026年11月25日確認）
     speed: "最短4時間",
     minAmount: 0,
     maxAmount: "公式に記載なし",
@@ -1763,7 +1763,7 @@ export const factoringCompanies: FactoringCompany[] = [
       capital: "公式サイトでは確認できず",
       address: "東京都豊島区池袋2-50-9 第三共立ビル3F"
     },
-    requiredDocuments: ["公式サイトに必要書類の一覧の記載なし（factors.tokyo・2026年11月3日確認）"],
+    requiredDocuments: ["公式サイトに必要書類の一覧の記載なし（factors.tokyo・2026年11月25日確認）"],
     url: "https://factors.tokyo/",
     category: ["即日", "個人事業主"]
   },
