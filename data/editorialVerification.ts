@@ -266,8 +266,8 @@ export const editorialVerifications: { [slug: string]: EditorialVerification } =
       },
       {
         label: "入金スピード",
-        value: "営業時間内で提出書類がそろっていれば、最短1時間で審査結果が出る（公式FAQ）。入金は最短2時間（公式コラム。トップ・FAQ には入金までの時間の記載なし）",
-        source: "公式「よくあるご質問」（2026年10月18日確認）・公式コラム「法人向けファクタリングおすすめ20選」（2026年10月25日確認）",
+        value: "営業時間内で提出書類がそろっていれば、最短1時間で審査結果が出る（公式FAQ）。入金は「最短2時間入金」（公式サービスページ）",
+        source: "公式「よくあるご質問」（2026年10月18日確認）・公式サービスページ accelfacter.co.jp/service/encashment.php（2026年11月27日確認）",
       },
       {
         label: "対象・契約方式",
@@ -276,7 +276,7 @@ export const editorialVerifications: { [slug: string]: EditorialVerification } =
       },
       {
         label: "買取可能額",
-        value: "30万円〜3億円（公式コラム。トップ・サービス・FAQ・会社概要には記載なし）",
+        value: "30万円〜3億円（上限は公式サービスページ「最大3億円まで対応」、下限30万円は公式コラム）",
         source: "公式コラム「法人向けファクタリングおすすめ20選」・運転資金のコラム（2026年10月25日確認）",
       },
       {
