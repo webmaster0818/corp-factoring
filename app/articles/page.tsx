@@ -7,7 +7,7 @@ import { topics } from "@/data/topics";
 import { DEFAULT_OG_IMAGES, DEFAULT_OG_IMAGE_URL } from "@/lib/og";
 
 export const metadata: Metadata = {
-  title: "ファクタリングコラム一覧｜ファクタリング比較ナビ",
+  title: "ファクタリングコラム一覧",
   description:
     "ファクタリングの基礎知識、手数料、審査、おすすめの会社など、資金調達に関する記事を掲載しています。法人・個人事業主・フリーランス向けの情報を扱っています。",
   alternates: {

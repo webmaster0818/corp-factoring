@@ -153,3 +153,11 @@ export function getAllArticles(): { slug: string; title: string; keyword: string
     };
   });
 }
+
+// 記事以外のページ（トップ・/fees/）に、まとめた記事の本文の一部を載せるための変換（記事と同じ処理）
+// 2026-11-27 title 整理：おすすめ19選→トップ、手数料相場12選→/fees/ に 301 でまとめた際、元記事にしかない節を移した
+export async function renderMarkdownFile(relPath: string): Promise<string> {
+  const md = fs.readFileSync(path.join(process.cwd(), relPath), 'utf8');
+  const processed = await remark().use(gfm, { singleTilde: false }).use(html).process(markBold(md));
+  return restoreBold(addSvgSize(processed.toString()));
+}

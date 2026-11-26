@@ -100,13 +100,13 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/articles/article-factoring-tesuryo" className="text-blue-100/80 hover:text-white transition">
-                  手数料の仕組み
+                <Link href="/fees/" className="text-blue-100/80 hover:text-white transition">
+                  手数料の相場・比較
                 </Link>
               </li>
               <li>
-                <Link href="/articles/article-factoring-osusume" className="text-blue-100/80 hover:text-white transition">
-                  おすすめ19選
+                <Link href="/#ranking" className="text-blue-100/80 hover:text-white transition">
+                  おすすめ15選
                 </Link>
               </li>
               <li>

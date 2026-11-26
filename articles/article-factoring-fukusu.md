@@ -168,10 +168,10 @@ A. できます。見積もりの取得後や審査の通過後でも、正式�
 
 以下の記事もあわせてご覧ください。
 
-- [ファクタリングおすすめ19選｜手数料・即日対応を比較](/articles/article-factoring-osusume/)
+- [ファクタリング会社おすすめ比較15選](/)
 - [ファクタリング会社の比較](/articles/article-factoring-hikaku/)
 - [ファクタリング手数料を下げる交渉術](/articles/article-factoring-tesuryo-koushou/)
-- [ファクタリング手数料の相場と安い会社12選](/articles/article-factoring-tesuryo/)
+- [ファクタリング手数料の相場と安い会社（59社の比較）](/fees/)
 - [ファクタリングとは？仕組みをわかりやすく解説](/articles/article-factoring-toha/)
 - [ファクタリングの審査基準と通過率を上げるポイント](/articles/article-factoring-shinsa/)
 

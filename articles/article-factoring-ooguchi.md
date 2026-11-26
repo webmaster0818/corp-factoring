@@ -225,7 +225,7 @@ A. ビートレーディングは、1,000万円規模でも当日に対応した
 以下の記事もあわせてご覧ください。
 
 - [ファクタリングとは？仕組みをわかりやすく解説](/articles/article-factoring-toha/)
-- [ファクタリングおすすめ19選｜手数料・即日対応を比較](/articles/article-factoring-osusume/)
+- [ファクタリング会社おすすめ比較15選](/)
 - [ファクタリング会社の比較](/articles/article-factoring-hikaku/)
-- [ファクタリング手数料の相場と安い会社12選](/articles/article-factoring-tesuryo/)
+- [ファクタリング手数料の相場と安い会社（59社の比較）](/fees/)
 - [ファクタリングの審査基準と通過率を上げるポイント](/articles/article-factoring-shinsa/)

@@ -1,4 +1,4 @@
-# 請求書を現金化する方法3選｜売掛金を最短即日で資金化【2026年最新】
+# 請求書を現金化する方法3選｜売掛金を最短即日で資金化
 
 **対策KW:** 請求書 現金化 / 売掛金 現金化
 **月間検索Vol合計:** 160（請求書現金化90 + 売掛金現金化70）
@@ -146,7 +146,7 @@
 - [ファクタリングとは？仕組み・手数料・メリデメ解説](/articles/article-factoring-toha/)
 - [請求書買取サービスおすすめ10選](/articles/article-seikyusho-kaitori/)
 - [即日ファクタリングおすすめ15選](/articles/article-factoring-sokujitsu/)
-- [ファクタリング手数料の相場と安い会社12選](/articles/article-factoring-tesuryo/)
+- [ファクタリング手数料の相場と安い会社（59社の比較）](/fees/)
 - [ファクタリング59社の手数料・入金スピード比較（公式サイトで確認）](/fees/)
 - [個人事業主の資金調達方法10選](/articles/article-kojin-shikin-chotatsu/)
 

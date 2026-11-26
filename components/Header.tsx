@@ -19,7 +19,7 @@ const menuCategories = [
     links: [
       { href: "/articles/article-factoring-toha", label: "ファクタリングとは？" },
       { href: "/articles/article-factoring-merit-demerit", label: "メリット・デメリット" },
-      { href: "/articles/article-factoring-tesuryo", label: "手数料の仕組み" },
+      { href: "/fees/", label: "手数料の相場・比較" },
       { href: "/articles/article-factoring-shinsa", label: "審査のポイント" },
       { href: "/articles/article-factoring-ihou", label: "違法性と安全性" },
     ],
@@ -27,9 +27,9 @@ const menuCategories = [
   {
     title: "おすすめ・口コミ",
     links: [
-      { href: "/articles/article-factoring-osusume", label: "おすすめ19選" },
+      { href: "/#ranking", label: "おすすめ15選" },
       { href: "/articles/article-factoring-sokujitsu", label: "即日対応15選" },
-      { href: "/articles/article-factoring-hikaku", label: "ファクタリング会社比較" },
+      { href: "/articles/article-factoring-hikaku", label: "会社の選び方" },
       { href: "/articles/article-factoring-kuchikomi", label: "口コミ・評判" },
     ],
   },

@@ -222,6 +222,6 @@ A. 開業直後は取引実績が少なく、審査が難しいケースがあ�
 
 - [ファクタリングとは？仕組みをわかりやすく解説](/articles/article-factoring-toha/)
 - [業種別ファクタリング活用ガイド](/articles/article-factoring-gyoushu-guide/)
-- [ファクタリングおすすめ19選｜手数料・即日対応を比較](/articles/article-factoring-osusume/)
-- [ファクタリング手数料の相場と安い会社12選](/articles/article-factoring-tesuryo/)
+- [ファクタリング会社おすすめ比較15選](/)
+- [ファクタリング手数料の相場と安い会社（59社の比較）](/fees/)
 - [ファクタリングの契約の流れと注意点](/articles/article-factoring-keiyaku/)

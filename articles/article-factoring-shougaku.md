@@ -278,7 +278,7 @@ A: 利用できますが、手数料が毎月発生することを念頭に置�
 以下の記事もあわせてご覧ください。
 
 - [ファクタリングとは？仕組みをわかりやすく解説](/articles/article-factoring-toha/)
-- [ファクタリングおすすめ19選｜法人・個人事業主向けに手数料・即日対応を比較](/articles/article-factoring-osusume/)
+- [ファクタリング会社おすすめ比較15選](/)
 - [個人事業主向けファクタリングガイド](/articles/article-factoring-kojin-jigyonushi/)
-- [ファクタリング手数料の相場と手数料が低い会社12選｜100万円で手元に残る金額のシミュレーション付き](/articles/article-factoring-tesuryo/)
+- [ファクタリング手数料の相場と手数料が低い会社12選｜100万円で手元に残る金額のシミュレーション付き](/fees/)
 - [ファクタリングの審査基準と落ちる理由7選｜審査で見られる点と通過率の公式表示を各社の記載で確認](/articles/article-factoring-shinsa/)

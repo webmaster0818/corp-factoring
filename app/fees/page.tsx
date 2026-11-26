@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/badge";
 import { FeeSimulator } from "@/components/FeeSimulator";
 import { feeIndex, feeCheckedAt, FEE_COMPANY_COUNT } from "@/data/feeIndex";
 import { DEFAULT_OG_IMAGES, DEFAULT_OG_IMAGE_URL } from "@/lib/og";
+import { renderMarkdownFile } from "@/lib/articles";
 
 // Dataset の期間・更新日は、表のデータの確認日（feeCheckedAt・各行の recheck / speedCheckedAt）から算出する（2026-11-02）
 const toIsoDates = (text: string): string[] => {
@@ -54,14 +55,14 @@ const lowFee2Groups = Array.from(new Set(LOW_FEE2.map((x) => x.low))).map((low) 
 const nameOf = (slug: string) => lowFee2Rows.find((x) => x.slug === slug)?.row.name ?? slug;
 
 export const metadata = {
-  title: `ファクタリング手数料が安い会社は？${FEE_COMPANY_COUNT}社の公式表示で比較｜下限2%未満の${LOW_FEE2.length}社・計算方法`,
+  title: `ファクタリング手数料の相場と安い会社｜${FEE_COMPANY_COUNT}社の公式表示を比較・計算方法`,
   description: `2社間ファクタリングの手数料の下限が最も低いのは、公式表示で0.5%〜の3社（マネーフォワード 早期入金・インボイスファクター・株式会社No.1）。${FEE_COMPANY_COUNT}社の公式表示から下限が2%未満の${LOW_FEE2.length}社を低い順に並べ（${LOW_FEE2_CHECKED}確認）、3社間の下限と手数料の計算方法・シミュレーターも掲載。`,
   keywords: "ファクタリング,手数料,安い,一覧,計算,シミュレーター",
   alternates: {
     canonical: "/fees",
   },
   openGraph: {
-    title: `ファクタリング手数料が安い会社は？${FEE_COMPANY_COUNT}社の公式表示で比較｜下限2%未満の${LOW_FEE2.length}社`,
+    title: `ファクタリング手数料の相場と安い会社｜${FEE_COMPANY_COUNT}社の公式表示を比較`,
     description: `${FEE_COMPANY_COUNT}社の公式表示から、2社間手数料の下限が2%未満の${LOW_FEE2.length}社を低い順に並べ、3社間の下限と手数料の計算方法を掲載しています。`,
     type: "article",
     url: "https://corp-factoring.com/fees/",
@@ -70,12 +71,13 @@ export const metadata = {
   twitter: {
     card: "summary",
     images: [DEFAULT_OG_IMAGE_URL],
-    title: `ファクタリング手数料が安い会社は？${FEE_COMPANY_COUNT}社の公式表示で比較｜下限2%未満の${LOW_FEE2.length}社`,
+    title: `ファクタリング手数料の相場と安い会社｜${FEE_COMPANY_COUNT}社の公式表示を比較`,
     description: `${FEE_COMPANY_COUNT}社の公式表示から、2社間手数料の下限が2%未満の${LOW_FEE2.length}社を低い順に並べ、3社間の下限と手数料の計算方法を掲載しています。`,
   },
 };
 
-export default function FeesPage() {
+export default async function FeesPage() {
+  const guideHtml = await renderMarkdownFile("content/merged/fees-guide.md");
   return (
     <div className="min-h-screen bg-white">
       <Header />
@@ -90,7 +92,7 @@ export default function FeesPage() {
           </nav>
           <p className="page-label mb-3">手数料の解説</p>
           <h1 className="text-[24px] sm:text-[30px] font-bold text-ink leading-[1.45] tracking-[0.01em]">
-              ファクタリング手数料が安い会社は？{FEE_COMPANY_COUNT}社の公式表示で比較
+              ファクタリング手数料の相場と安い会社｜{FEE_COMPANY_COUNT}社の公式表示を比較
             </h1>
         </div>
       </div>
@@ -116,7 +118,7 @@ export default function FeesPage() {
               計算例：売掛金額100万円・手数料率5%・振込手数料330円の場合、手数料は50,330円、入金額は949,670円です（率と費用は例です）。
             </p>
             <p className="mt-2">
-              金額を入れて試算するなら<a href="#simulator" className="text-blue-600 underline">手数料シミュレーター</a>、手数料の内訳と相場の考え方は「<Link href="/articles/article-factoring-tesuryo/" className="text-blue-600 hover:text-blue-700 underline">ファクタリング手数料の相場と内訳</Link>」をご覧ください。
+              金額を入れて試算するなら<a href="#simulator" className="text-blue-600 underline">手数料シミュレーター</a>、計算方法・59社の下限の分布・手数料以外の費用は、このページの<a href="#keisan" className="text-blue-600 underline">手数料の計算方法と費用</a>をご覧ください。
             </p>
           </div>
         </div>
@@ -495,13 +497,18 @@ export default function FeesPage() {
           </Card>
         </section>
 
+        {/* 計算方法・分布・手数料以外の費用（2026-11-27 手数料相場12選の記事を /fees/ へ 301 でまとめた際に移した節） */}
+        <section id="keisan" className="mb-8 bg-white border border-gray-200 rounded-lg p-5 sm:p-8 scroll-mt-20">
+          <div className="prose prose-gray max-w-none prose-headings:text-gray-900 prose-headings:font-bold prose-h2:text-xl prose-h2:mt-10 prose-h2:mb-4 prose-h2:pb-2 prose-h2:border-b prose-h2:border-gray-200 prose-h3:text-lg prose-h3:mt-8 prose-h3:mb-3 prose-p:text-gray-700 prose-p:leading-relaxed prose-p:mb-4 prose-a:text-blue-600 prose-a:no-underline hover:prose-a:underline prose-strong:text-gray-900 prose-ul:my-4 prose-li:text-gray-700 prose-table:border-collapse prose-th:bg-gray-100 prose-th:p-3 prose-td:p-3 prose-td:border prose-td:border-gray-200 prose-hr:my-8" dangerouslySetInnerHTML={{ __html: guideHtml }} />
+        </section>
+
         {/* 手数料クラスタの関連記事（相互リンク） */}
         <section className="mb-8">
           <h2 className="text-lg font-bold text-[#1B3A5C] mb-4">手数料に関する解説記事</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
             {[
-              { slug: "article-factoring-tesuryo", label: "ファクタリング手数料の相場と内訳｜2社間・3社間の違い" },
-              { slug: "article-factoring-tesuryo-yasui", label: "ファクタリング手数料が安い会社の選び方" },
+              { slug: "article-factoring-kakeme-nenritsu", label: "ファクタリングの掛け目と手数料の年率換算" },
+              { slug: "article-factoring-kanjokamoku", label: "ファクタリングの仕訳と勘定科目" },
               { slug: "article-factoring-tesuryo-koushou", label: "ファクタリング手数料の交渉方法・引き下げ方" },
             ].map((a) => (
               <Link key={a.slug} href={`/articles/${a.slug}`} className="block bg-white border border-gray-200 rounded-md p-4 hover:border-[#1B3A5C] hover:shadow-sm transition">

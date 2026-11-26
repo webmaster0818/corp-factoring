@@ -93,7 +93,7 @@ export const topics: Topic[] = [
   {
     slug: "hikaku",
     name: "比較・おすすめ",
-    title: "ファクタリング比較・おすすめガイド｜融資・手形割引・でんさいとの違いも解説",
+    title: "ファクタリングと融資・手形割引・でんさいの違い｜資金調達の手段と会社の選び方",
     description:
       "ファクタリング会社の比較・おすすめの選び方と、銀行融資・ビジネスローン・手形割引・でんさい・ABLなど他の資金調達手段との違いを整理しています。自社に適した資金調達方法の検討にご活用ください。",
     intro: [
@@ -105,9 +105,7 @@ export const topics: Topic[] = [
         heading: "おすすめ・ランキング・口コミ",
         description: "目的別にサービスを絞り込みたい方向けの記事です。",
         slugs: [
-          "article-factoring-osusume",
           "article-factoring-hikaku",
-          "article-factoring-houjin-osusume",
           "article-factoring-sokujitsu-osusume",
           "article-online-factoring",
           "article-seikyusho-kaitori",
@@ -254,8 +252,6 @@ export const topics: Topic[] = [
         description: "手数料の相場の把握と交渉により、総費用は大きく変わります。",
         slugs: [
           "article-factoring-kakeme-nenritsu",
-          "article-factoring-tesuryo",
-          "article-factoring-tesuryo-yasui",
           "article-factoring-tesuryo-koushou",
           "article-factoring-koushiki-data",
         ],

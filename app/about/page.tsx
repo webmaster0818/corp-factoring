@@ -4,7 +4,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 
 export const metadata: Metadata = {
-  title: "運営者情報・サイトについて｜ファクタリング比較ナビ",
+  title: "運営者情報・サイトについて",
   description:
     "ファクタリング比較ナビの運営者情報、運営方針、編集ポリシー、お問い合わせ先を掲載しています。",
   alternates: { canonical: "/about" },

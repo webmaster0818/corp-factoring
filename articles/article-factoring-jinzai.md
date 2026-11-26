@@ -213,6 +213,6 @@ A. ファクタリング（売掛金の売却）は、労働者派遣法に抵�
 
 - [ファクタリングとは？仕組みをわかりやすく解説](/articles/article-factoring-toha/)
 - [業種別ファクタリング活用ガイド](/articles/article-factoring-gyoushu-guide/)
-- [ファクタリングおすすめ19選｜手数料・即日対応を比較](/articles/article-factoring-osusume/)
-- [ファクタリング手数料の相場と安い会社12選](/articles/article-factoring-tesuryo/)
+- [ファクタリング会社おすすめ比較15選](/)
+- [ファクタリング手数料の相場と安い会社（59社の比較）](/fees/)
 - [ファクタリングの審査基準と通過率を上げるポイント](/articles/article-factoring-shinsa/)

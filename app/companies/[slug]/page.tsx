@@ -97,11 +97,11 @@ export async function generateMetadata({
   }
 
   return {
-    title: `${company.name}の評判・手数料・営業時間・必要書類【公式確認】`,
+    title: `${company.name}の評判・手数料・必要書類【公式確認】`,
     description: `${company.name}のファクタリングサービスについて解説しています。${company.speedIsReview ? `${feeText}で、公式FAQでは${company.speed}が出るとされています。` : `${feeText}、${company.speed}で入金が可能です。`}Googleマップの口コミ件数、メリット・デメリット、必要書類、活用シーンを掲載しています。`,
     keywords: `${company.name},${company.nameKana},ファクタリング,評判,口コミ,手数料,${categoryText}`,
     openGraph: {
-      title: `${company.name}の評判・手数料・営業時間・必要書類【公式確認】`,
+      title: `${company.name}の評判・手数料・必要書類【公式確認】`,
       description: `${feeText}、${company.speed}${company.speedIsReview ? "" : "で入金"}。${company.description}`,
       type: "article",
       url: `https://corp-factoring.com/companies/${slug}/`,
@@ -110,7 +110,7 @@ export async function generateMetadata({
     twitter: {
       card: "summary",
       images: [DEFAULT_OG_IMAGE_URL],
-      title: `${company.name}の評判・手数料・営業時間・必要書類【公式確認】`,
+      title: `${company.name}の評判・手数料・必要書類【公式確認】`,
       description: `${feeText}、${company.speed}${company.speedIsReview ? "" : "で入金"}。${company.description}`,
     },
     alternates: {
@@ -442,7 +442,7 @@ export default function CompanyPage({
                     <tr className="border-b border-gray-100">
                       <th className="text-left align-top bg-gray-50 px-3 py-2.5 font-bold text-gray-700 whitespace-nowrap">手数料</th>
                       <td className="px-3 py-2.5 text-gray-800">
-                        {feeRow ? feeRow.fee2 : `${feeRange(company.fees)}`}（<Link href="/fees/" className="text-blue-600 hover:underline">{FEE_COMPANY_COUNT}社の手数料の比較</Link>／<Link href="/articles/article-factoring-tesuryo-yasui" className="text-blue-600 hover:underline">手数料の相場と安い会社</Link>）
+                        {feeRow ? feeRow.fee2 : `${feeRange(company.fees)}`}（<Link href="/fees/" className="text-blue-600 hover:underline">{FEE_COMPANY_COUNT}社の手数料の比較</Link>／<Link href="/fees/" className="text-blue-600 hover:underline">手数料の相場と安い会社</Link>）
                       </td>
                     </tr>
                     <tr className="border-b border-gray-100">

@@ -305,7 +305,7 @@
 - 急ぎで、取引先に知られたくない → **2社間**
 - 時間に余裕があり、費用を重視する → **3社間**
 
-ファクタリングの基本的な仕組みについては[ファクタリングとは](/articles/article-factoring-toha/)でご案内しています。手数料の詳細な比較は[ファクタリング手数料の公式表示と計算方法](/articles/article-factoring-tesuryo/)を、審査に不安がある方は[ファクタリングの審査基準](/articles/article-factoring-shinsa/)をご覧ください。
+ファクタリングの基本的な仕組みについては[ファクタリングとは](/articles/article-factoring-toha/)でご案内しています。手数料の詳細な比較は[ファクタリング手数料の公式表示と計算方法](/fees/)を、審査に不安がある方は[ファクタリングの審査基準](/articles/article-factoring-shinsa/)をご覧ください。
 
 ---
 

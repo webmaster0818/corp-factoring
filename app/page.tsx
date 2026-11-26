@@ -12,6 +12,7 @@ import { factoringCompanies, feeRange } from "@/data/companies";
 import { getRealRating } from "@/data/realRatings";
 import { Button } from "@/components/ui/button";
 import type { Metadata } from "next";
+import { renderMarkdownFile } from "@/lib/articles";
 import { DEFAULT_OG_IMAGES } from "@/lib/og";
 import { AREAS, AREA_SLUGS, AREA_CHECKED_AT } from "@/data/areaOffices";
 
@@ -20,7 +21,7 @@ import { AREAS, AREA_SLUGS, AREA_CHECKED_AT } from "@/data/areaOffices";
 export const metadata: Metadata = {
   alternates: { canonical: "/" },
   openGraph: {
-    title: "法人向けファクタリングおすすめ15選【2026年最新】",
+    title: "ファクタリング会社おすすめ比較15選【法人向け】手数料・即日入金・審査で選ぶ",
     description: "手数料・審査・入金スピードを徹底比較。最適なファクタリング会社が見つかります。",
     url: "https://corp-factoring.com/",
     siteName: "ファクタリング比較ナビ",
@@ -60,7 +61,8 @@ function SectionHeading({ title, lead, id }: { title: React.ReactNode; lead?: Re
 
 const FEE_AXIS = 20;
 
-export default function Home() {
+export default async function Home() {
+  const checkpointsHtml = await renderMarkdownFile("content/merged/top-checkpoints.md");
   const topCompanies = factoringCompanies;
   // FV の絞り込みカード：条件別に見ると同じ定義（入金スピードの表示が「最短30分」かつ 個人事業主に対応）
   const filterCount = topCompanies.filter((c) => c.speed === "最短30分" && c.personalSupport).length;
@@ -527,6 +529,16 @@ export default function Home() {
                 <span className="block text-xs text-gray-500 mt-1 num">{AREAS[a].entries.length}社</span>
               </Link>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 選び方（2026-11-27 おすすめ19選の記事をトップへ 301 でまとめた際に移した節） */}
+      <section id="erabikata" className="py-12 lg:py-16 bg-soft border-y border-line scroll-mt-20">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6">
+          <SectionHeading title="ファクタリング会社を選ぶ7つのチェックポイント" />
+          <div className="max-w-4xl bg-white border border-line rounded-lg p-5 sm:p-8">
+            <div className="prose prose-gray max-w-none prose-headings:text-gray-900 prose-headings:font-bold prose-h2:text-xl prose-h2:mt-10 prose-h2:mb-4 prose-h2:pb-2 prose-h2:border-b prose-h2:border-gray-200 prose-h3:text-lg prose-h3:mt-8 prose-h3:mb-3 prose-p:text-gray-700 prose-p:leading-relaxed prose-p:mb-4 prose-a:text-blue-600 prose-a:no-underline hover:prose-a:underline prose-strong:text-gray-900 prose-ul:my-4 prose-li:text-gray-700 prose-table:border-collapse prose-th:bg-gray-100 prose-th:p-3 prose-td:p-3 prose-td:border prose-td:border-gray-200 prose-hr:my-8" dangerouslySetInnerHTML={{ __html: checkpointsHtml }} />
           </div>
         </div>
       </section>

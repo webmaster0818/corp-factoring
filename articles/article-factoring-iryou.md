@@ -240,7 +240,7 @@ A: 患者の自己負担分（窓口負担）は、診療報酬ファクタリ�
 - **入金スピード：** 一般のファクタリング会社は最短2時間〜即日、医療専門のサービスは最短5営業日〜1か月弱
 - **対象：** 介護・障害福祉の報酬にも対応しているかどうか
 
-ファクタリングの基本的な仕組みについては[ファクタリングとは](/articles/article-factoring-toha/)を、[2社間と3社間の違い](/articles/article-factoring-2sha-3sha/)や[手数料の比較](/articles/article-factoring-tesuryo/)もあわせてご確認ください。
+ファクタリングの基本的な仕組みについては[ファクタリングとは](/articles/article-factoring-toha/)を、[2社間と3社間の違い](/articles/article-factoring-2sha-3sha/)や[手数料の比較](/fees/)もあわせてご確認ください。
 
 ---
 

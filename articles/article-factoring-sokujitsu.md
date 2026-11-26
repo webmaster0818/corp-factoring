@@ -1,4 +1,4 @@
-# 即日ファクタリングガイド｜当日中に入金を受ける方法・土日祝対応の会社
+# ファクタリング即日おすすめ15選｜当日入金の締め切り時刻・土日対応を公式で比較
 
 **対策KW:** ファクタリング 即日, ファクタリング 今日中, ファクタリング 土日
 **月間検索Vol:** 6,600（Google 5,280 / Yahoo 1,320）
@@ -336,7 +336,7 @@
 
 ### 手数料が割高になりやすい
 
-即日対応は利便性が高い一方、スピードを優先するほど[手数料](/articles/article-factoring-tesuryo/)が高くなる傾向があります。
+即日対応は利便性が高い一方、スピードを優先するほど[手数料](/fees/)が高くなる傾向があります。
 
 - **即日・2社間:** 10〜20%
 - **数日・3社間:** 1〜9%
@@ -408,8 +408,8 @@
 
 - [ファクタリング土日対応おすすめ5選](/articles/article-factoring-donichi/)
 - [ファクタリングとは？仕組み・手数料・メリデメ解説](/articles/article-factoring-toha/)
-- [ファクタリングおすすめ19選｜手数料・即日対応を比較](/articles/article-factoring-osusume/)
-- [ファクタリング手数料の相場と安い会社12選](/articles/article-factoring-tesuryo/)
+- [ファクタリング会社おすすめ比較15選](/)
+- [ファクタリング手数料の相場と安い会社（59社の比較）](/fees/)
 - [ファクタリングの審査基準と落ちる理由7選](/articles/article-factoring-shinsa/)
 - [請求書買取サービスおすすめ10選](/articles/article-seikyusho-kaitori/)
 - [フリーランスの資金繰り改善ガイド](/articles/article-freelance-shikin/)
