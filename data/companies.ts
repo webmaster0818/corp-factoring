@@ -1773,7 +1773,7 @@ export const factoringCompanies: FactoringCompany[] = [
     name: "建設Pay",
     nameKana: "けんせつぺい",
     slug: "kensetsu-pay",
-    fees: { min: 1.0, max: 0 }, // 建設Payのサイト「1％～」の下限のみ。運営会社DMCの自社サイトは「2%〜」と表記が異なる。上限・2社間/3社間別の率は記載なし（2026年11月6日確認）
+    fees: { min: 1.0, max: 0 }, // 建設Payのサイト「1％～」の下限のみ。運営会社DMCの自社サイトは「2%〜」と表記が異なる。上限・2社間/3社間別の率は記載なし（2026年11月26日確認）
     speed: "最短1時間（契約完了後1時間以内に送金）",
     minAmount: 0,
     maxAmount: "1億円",
@@ -1812,7 +1812,7 @@ export const factoringCompanies: FactoringCompany[] = [
     name: "ビジペイ",
     nameKana: "びじぺい",
     slug: "bizpay",
-    fees: { min: 0, max: 0 }, // 非公示：公式のよくある質問は「お取引内容により異なります。」。率の表示なし（2026年11月6日確認）
+    fees: { min: 0, max: 0 }, // 非公示：公式のよくある質問は「お取引内容により異なります。」。率の表示なし（2026年11月26日確認）
     speed: "最短60分",
     minAmount: 300000,
     maxAmount: "公式に記載なし",
@@ -1850,7 +1850,7 @@ export const factoringCompanies: FactoringCompany[] = [
     name: "Chatwork 先払い",
     nameKana: "ちゃっとわーくさきばらい",
     slug: "chatwork-sakibarai",
-    fees: { min: 10.0, max: 10.0 }, // 公式「依頼金額の10%をサービス利用料」（固定）。別途振込手数料（2026年11月6日確認）
+    fees: { min: 10.0, max: 10.0 }, // 公式「依頼金額の10%をサービス利用料」（固定）。別途振込手数料（2026年11月26日確認）
     speed: "最短即日",
     minAmount: 0,
     maxAmount: "初回50万円・最大100万円",
@@ -1888,7 +1888,7 @@ export const factoringCompanies: FactoringCompany[] = [
     name: "三菱ＵＦＪファクター",
     nameKana: "みつびしゆーえふじぇーふぁくたー",
     slug: "mufg-factor",
-    fees: { min: 0.8, max: 0.8 }, // 診療報酬早期受取オンラインサービス「買取手数料率 一律 0.8%」（利用条件の詳細・2026年11月6日確認）
+    fees: { min: 0.8, max: 0.8 }, // 診療報酬早期受取オンラインサービス「買取手数料率 一律 0.8%」（利用条件の詳細・2026年11月26日確認）
     speed: "取引申込受付の翌営業日から4営業日後",
     minAmount: 1000000,
     maxAmount: "毎月最大5,000万円",

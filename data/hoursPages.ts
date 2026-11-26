@@ -159,10 +159,10 @@ export const HOURS_CHECKED_AT: { [slug: string]: string } = {
   "kensetsukun": "2026年11月25日",
   "factors": "2026年11月25日",
   // ▼ 2026年11月6日 追加分（新規掲載6社・各社公式サイトで確認）
-  "kensetsu-pay": "2026年11月6日",
-  "bizpay": "2026年11月6日",
-  "chatwork-sakibarai": "2026年11月6日",
-  "mufg-factor": "2026年11月6日",
+  "kensetsu-pay": "2026年11月26日",
+  "bizpay": "2026年11月26日",
+  "chatwork-sakibarai": "2026年11月26日",
+  "mufg-factor": "2026年11月26日",
   "ricoh-lease": "2026年11月6日",
   "medley": "2026年11月6日",
   // ▼ 2026年11月10日 追加分（新規掲載・各社公式サイトで確認）
