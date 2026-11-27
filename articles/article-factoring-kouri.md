@@ -136,7 +136,7 @@ A: 売掛先が個人事業主になるため、会社によって扱いが分�
 
 **Q: 仕入れの前に資金を用意したいのですが、請求書がまだありません。**
 
-A: ファクタリングは発生済みの請求書（売掛金）が前提です。請求書がない段階の資金は、融資や制度融資を検討してください。[制度融資とは](/articles/article-seido-yuushi/)で自治体の制度を説明しています。
+A: ファクタリングは発生済みの請求書（売掛金）が前提です。請求書がない段階の資金は、融資や制度融資を検討してください。[制度融資とは](/articles/article-sogyo-yushi/)で自治体の制度を説明しています。
 
 ---
 
@@ -146,7 +146,7 @@ A: ファクタリングは発生済みの請求書（売掛金）が前提で�
 - [売掛先が個人の請求書はファクタリングできる？](/articles/article-factoring-urikakesaki-kojin/)
 - [ファクタリングと取適法（旧下請法）の関係](/articles/article-factoring-shitaukehou/)
 - [在庫ファクタリングとは](/articles/article-zaiko-factoring/)
-- [制度融資とは](/articles/article-seido-yuushi/)
+- [創業融資と開業資金](/articles/article-sogyo-yushi/)
 
 ---
 

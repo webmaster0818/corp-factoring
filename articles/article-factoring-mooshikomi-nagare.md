@@ -113,5 +113,5 @@ A: キャンセルの扱いや費用は会社によって異なります。契�
 ## 関連記事
 
 - [ファクタリング 必要書類](/articles/article-factoring-hitsuyou-shorui/)
-- [ファクタリング 即日入金](/articles/article-factoring-sokujitsu/)
+- [ファクタリング即日おすすめ15選](/articles/article-factoring-sokujitsu/)
 - [ファクタリング 入金時間](/articles/article-factoring-nyuukin-jikan/)

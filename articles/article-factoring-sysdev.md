@@ -226,4 +226,4 @@ A. 企業向けのSaaSの月次請求書（BtoB）であれば、ファクタリ
 - [業種別ファクタリング活用ガイド](/articles/article-factoring-gyoushu-guide/)
 - [個人事業主向けファクタリングガイド](/articles/article-factoring-kojin-jigyonushi/)
 - [ファクタリング会社おすすめ比較15選](/)
-- [即日ファクタリングおすすめガイド](/articles/article-factoring-sokujitsu/)
+- [ファクタリング即日おすすめ15選](/articles/article-factoring-sokujitsu/)

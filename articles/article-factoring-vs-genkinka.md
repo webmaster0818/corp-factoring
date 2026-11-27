@@ -128,7 +128,7 @@ A: 信用情報の記録は、通常 5〜10 年残ります。完全に回復す
 
 ## 関連記事
 
-- [ファクタリング 違法業者の見分け方](/articles/article-factoring-ihou-gyousha/)
+- [ファクタリングは違法か・違法業者の見分け方](/articles/article-factoring-ihou/)
 - [給料ファクタリングとの違い（給与ファクタリングは違法）](/articles/article-factoring-kyuuryo-chigai/)
 - [ファクタリングは信用情報に載らない理由](/articles/article-factoring-shinyou-jouhou/)
 - [ファクタリング59社の手数料・入金スピード比較（公式サイトで確認）](/fees/)

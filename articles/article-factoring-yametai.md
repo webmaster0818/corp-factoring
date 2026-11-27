@@ -109,7 +109,7 @@
 
 融資（民間金融機関、日本政策金融公庫、自治体の制度融資など）や、事業内容によっては補助金・助成金といった制度があります。ただし、対象要件・募集時期・審査の有無は制度ごとに異なり、必ず利用できるものではありません。利用の可否は、各制度の公式情報や、取引金融機関・商工会議所などの窓口で個別にご確認ください。
 
-まずは[資金繰り表の作り方](/articles/article-shikin-gurihyou/)を参考に数か月先の資金の動きを可視化し、どの時期にいくら不足するのかを数字で把握することが出発点です。あわせて[ファクタリングと資金繰り改善](/articles/article-factoring-shikinguri/)もご参照ください。
+まずは[資金繰り表の作り方](/articles/article-shikin-short-taisaku/)を参考に数か月先の資金の動きを可視化し、どの時期にいくら不足するのかを数字で把握することが出発点です。あわせて[ファクタリングと資金繰り改善](/articles/article-factoring-shikinguri/)もご参照ください。
 
 ---
 
@@ -125,7 +125,7 @@
 - 「審査なし」「必ず通る」といった審査の存在を否定する説明をする
 - 取り立てが威圧的である、家族や取引先への連絡をほのめかす
 
-給与を対象とする取引については、実態が貸付にあたるとして問題になった経緯があります。判断の詳細は[ファクタリングは違法か](/articles/article-factoring-ihou/)、[違法業者の見分け方](/articles/article-factoring-ihou-gyousha/)、[給与ファクタリングとの違い](/articles/article-factoring-kyuuryo-gisou/)で解説しています。
+給与を対象とする取引については、実態が貸付にあたるとして問題になった経緯があります。判断の詳細は[ファクタリングは違法か](/articles/article-factoring-ihou/)、[違法業者の見分け方](/articles/article-factoring-ihou/)、[給与ファクタリングとの違い](/articles/article-factoring-kyuuryo-gisou/)で解説しています。
 
 **公的な相談窓口**
 
@@ -158,7 +158,7 @@
 - [ファクタリング契約の解約・途中解約](/articles/article-factoring-kaiyaku/)
 - [ファクタリング会社の乗り換えガイド](/articles/article-factoring-norikae/)
 - [ファクタリング契約後のトラブル事例と対処法](/articles/article-factoring-trouble/)
-- [ファクタリングは違法か](/articles/article-factoring-ihou/)
+- [ファクタリングは違法か・違法業者の見分け方](/articles/article-factoring-ihou/)
 - [手数料比較表（公式サイトで確認したデータ）](/fees/)
 
 ---

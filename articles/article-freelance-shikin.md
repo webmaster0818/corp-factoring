@@ -88,7 +88,7 @@
 
 ### 対策5: 日本政策金融公庫で低金利融資を受ける
 
-融資が決まるまで待てる場合は、[日本政策金融公庫の融資](/articles/article-jfc-kojin/)も選択肢です。公庫の案内では、申込みから融資が決まるまで「平均的には、3週間程度」で、利率は令和8年11月2日現在、無担保・税務申告を2期終えている方の基準利率が年3.95〜5.35%です（[日本政策金融公庫「金利情報」](https://www.jfc.go.jp/n/rate/index.html)・2026年11月16日確認）。ほかの方法との比べ方は「[資金調達方法](/articles/article-kojin-shikin-chotatsu/)」にまとめています。
+融資が決まるまで待てる場合は、[日本政策金融公庫の融資](/articles/article-kojin-shikin-chotatsu/)も選択肢です。公庫の案内では、申込みから融資が決まるまで「平均的には、3週間程度」で、利率は令和8年11月2日現在、無担保・税務申告を2期終えている方の基準利率が年3.95〜5.35%です（[日本政策金融公庫「金利情報」](https://www.jfc.go.jp/n/rate/index.html)・2026年11月16日確認）。ほかの方法との比べ方は「[資金調達方法](/articles/article-kojin-shikin-chotatsu/)」にまとめています。
 
 - 新規開業・スタートアップ支援資金: 最大7,200万円
 - 無担保・無保証人で利用できる
@@ -169,11 +169,9 @@
 
 以下の記事もあわせてご覧ください。
 
-- [個人事業主の資金調達方法10選](/articles/article-kojin-shikin-chotatsu/)
+- [個人事業主の資金調達と融資（公庫・制度融資・補助金）](/articles/article-kojin-shikin-chotatsu/)
 - [個人事業主向けファクタリングおすすめ14選](/articles/article-factoring-kojin-jigyonushi/)
 - [請求書買取サービスおすすめ10選](/articles/article-seikyusho-kaitori/)
-- [日本政策金融公庫で個人事業主が融資を受ける方法](/articles/article-jfc-kojin/)
-- [個人事業主が使える補助金・助成金15選](/articles/article-kojin-hojokin/)
 
 
 ---

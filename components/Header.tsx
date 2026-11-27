@@ -38,8 +38,8 @@ const menuCategories = [
     links: [
       { href: "/articles/article-factoring-kojin-jigyonushi", label: "個人事業主向けFAQ" },
       { href: "/articles/article-freelance-shikin", label: "フリーランス資金繰り" },
-      { href: "/articles/article-kojin-shikin-chotatsu", label: "資金調達10選" },
-      { href: "/articles/article-sogyo-yushi", label: "創業融資ガイド" },
+      { href: "/articles/article-kojin-shikin-chotatsu", label: "個人事業主の資金調達" },
+      { href: "/articles/article-sogyo-yushi", label: "創業融資と開業資金" },
       { href: "/articles/article-seikyusho-kaitori", label: "請求書買取" },
     ],
   },

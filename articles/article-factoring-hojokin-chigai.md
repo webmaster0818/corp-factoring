@@ -156,7 +156,7 @@
 - 金融庁は、ファクタリングとして行われる取引であっても、経済的に貸付けと同様の機能を有しているものは貸金業に該当するおそれがあるとしています（出典：[金融庁](https://www.fsa.go.jp/user/factoring.html)）
 - 貸金業に該当する場合、無登録の業者は違法
 
-詳しくは[偽装給与ファクタリング](/articles/article-factoring-kyuuryo-gisou/)・[違法業者の見分け方](/articles/article-factoring-ihou-gyousha/)をご覧ください。
+詳しくは[偽装給与ファクタリング](/articles/article-factoring-kyuuryo-gisou/)・[違法業者の見分け方](/articles/article-factoring-ihou/)をご覧ください。
 
 ---
 

@@ -131,6 +131,6 @@ A: 法定の権利として、保有個人データの開示をファクタリ�
 
 ## 関連記事
 
-- [ファクタリング 違法業者](/articles/article-factoring-ihou-gyousha/)
+- [ファクタリングは違法か・違法業者の見分け方](/articles/article-factoring-ihou/)
 - [ファクタリング 反社チェック](/articles/article-factoring-hansha/)
 - [ファクタリング マイナンバー](/articles/article-factoring-mynumber/)

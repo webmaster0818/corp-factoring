@@ -360,5 +360,5 @@ A. 見積もりの段階で同じ請求書を複数社に見せることは、�
 - [ファクタリングの審査基準と通過率を上げるポイント](/articles/article-factoring-shinsa/)
 - [ファクタリングとは？仕組みをわかりやすく解説](/articles/article-factoring-toha/)
 - [ファクタリング会社おすすめ比較15選](/)
-- [ファクタリング違法業者の見分け方と安全な利用法](/articles/article-factoring-ihou/)
+- [ファクタリングは違法か・違法業者の見分け方](/articles/article-factoring-ihou/)
 - [ファクタリングのメリット・デメリット解説](/articles/article-factoring-merit-demerit/)

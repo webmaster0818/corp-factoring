@@ -99,7 +99,7 @@
 ### Q5：取り立ての方法は適法か
 - 脅迫的・暴力的な取り立てではないか
 
-詳しくは[違法業者の見分け方](/articles/article-factoring-ihou-gyousha/)をご覧ください。
+詳しくは[違法業者の見分け方](/articles/article-factoring-ihou/)をご覧ください。
 
 ---
 

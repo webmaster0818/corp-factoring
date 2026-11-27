@@ -381,7 +381,7 @@ A. 赤字決算でも利用できると公式に書いている会社があり�
 
 以下の記事もあわせてご覧ください。
 
-- [即日ファクタリングおすすめガイド](/articles/article-factoring-sokujitsu/)
+- [ファクタリング即日おすすめ15選](/articles/article-factoring-sokujitsu/)
 - [ファクタリング会社おすすめ比較15選](/)
 - [ファクタリング会社の比較](/articles/article-factoring-hikaku/)
 - [ファクタリングの口コミ・評判まとめ](/articles/article-factoring-kuchikomi/)

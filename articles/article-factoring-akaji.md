@@ -226,4 +226,4 @@ A. ビートレーディングは注文書ファクタリングに対応して�
 - [ファクタリングの審査基準と通過率を高めるポイント](/articles/article-factoring-shinsa/)
 - [ファクタリングのメリット・デメリット解説](/articles/article-factoring-merit-demerit/)
 - [ファクタリング会社おすすめ比較15選](/)
-- [ファクタリング違法業者の見分け方と安全な利用法](/articles/article-factoring-ihou/)
+- [ファクタリングは違法か・違法業者の見分け方](/articles/article-factoring-ihou/)

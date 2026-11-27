@@ -266,6 +266,6 @@ A. オンラインファクタリングは、全国に対応しています。�
 
 - [ファクタリングとは？仕組みをわかりやすく解説](/articles/article-factoring-toha/)
 - [ファクタリング会社おすすめ比較15選](/)
-- [即日ファクタリングおすすめガイド](/articles/article-factoring-sokujitsu/)
+- [ファクタリング即日おすすめ15選](/articles/article-factoring-sokujitsu/)
 - [ファクタリング手数料の相場と安い会社（59社の比較）](/fees/)
 - [ファクタリングの契約の流れと注意点](/articles/article-factoring-keiyaku/)

@@ -172,5 +172,5 @@ A: 金融庁は、大声での恫喝や勤務先への連絡といった悪質�
 
 - [ファクタリング訴訟・裁判例](/articles/article-factoring-soshou/)
 - [ファクタリングと給与前払いサービスの違い](/articles/article-factoring-maebarai/)
-- [ファクタリング違法業者の見分け方](/articles/article-factoring-ihou-gyousha/)
+- [ファクタリングは違法か・違法業者の見分け方](/articles/article-factoring-ihou/)
 - [金融庁とファクタリング](/articles/article-factoring-kinyuuchou/)

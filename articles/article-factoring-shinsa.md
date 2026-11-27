@@ -251,9 +251,9 @@
 ### 4. ファクタリング以外の資金調達を検討する
 
 それでも審査に通過しない場合は、以下の代替手段を検討してください。
-- **[ビジネスローン](/articles/article-business-loan-kojin/):** 売掛金がなくても申し込める融資（返済が必要）
-- **[日本政策金融公庫](/articles/article-jfc-kojin/):** 政府系金融機関の融資
-- **[補助金・助成金](/articles/article-kojin-hojokin/):** 返済が不要な支援（公募・審査あり）
+- **[ビジネスローン](/articles/article-kojin-shikin-chotatsu/):** 売掛金がなくても申し込める融資（返済が必要）
+- **[日本政策金融公庫](/articles/article-kojin-shikin-chotatsu/):** 政府系金融機関の融資
+- **[補助金・助成金](/articles/article-kojin-shikin-chotatsu/):** 返済が不要な支援（公募・審査あり）
 
 ---
 
@@ -359,7 +359,7 @@ JTCは、仮審査の書類をメールかFAXで送れば「すぐに審査結�
 - [ファクタリング手数料の相場と安い会社（59社の比較）](/fees/)
 - [ファクタリングの口コミ・評判まとめ](/articles/article-factoring-kuchikomi/)
 - [個人事業主向けファクタリングおすすめ14選](/articles/article-factoring-kojin-jigyonushi/)
-- [個人事業主の資金調達方法10選](/articles/article-kojin-shikin-chotatsu/)
+- [個人事業主の資金調達と融資（公庫・制度融資・補助金）](/articles/article-kojin-shikin-chotatsu/)
 
 
 ---

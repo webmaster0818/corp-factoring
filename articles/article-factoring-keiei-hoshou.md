@@ -135,7 +135,7 @@
 #### 4. 個人資産の担保の要求
 不動産・預金等の個人資産を担保とするよう要求する手口です。
 
-これらは、[違法業者の典型的な特徴](/articles/article-factoring-ihou-gyousha/)です。
+これらは、[違法業者の典型的な特徴](/articles/article-factoring-ihou/)です。
 
 ---
 

@@ -311,8 +311,8 @@ Webデザイナーが、A社に50万円の請求書を発行したとします�
 
 ### 利用に適さない人
 - 請求書（売掛金）がない方
-- 融資の審査を待てる方 → [日本政策金融公庫の融資](/articles/article-jfc-kojin/)も選択肢になります
-- 手数料の負担を避けたい方 → [補助金・助成金](/articles/article-kojin-hojokin/)を検討
+- 融資の審査を待てる方 → [日本政策金融公庫の融資](/articles/article-kojin-shikin-chotatsu/)も選択肢になります
+- 手数料の負担を避けたい方 → [補助金・助成金](/articles/article-kojin-shikin-chotatsu/)を検討
 - 恒常的に資金が不足している方 → ファクタリングは一時的な資金繰りの改善策であり、根本的な経営の改善が必要
 
 ---
@@ -381,10 +381,10 @@ Webデザイナーが、A社に50万円の請求書を発行したとします�
 
 - [ファクタリング会社おすすめ比較15選](/)
 - [ファクタリング手数料の相場と安い会社（59社の比較）](/fees/)
-- [即日ファクタリングガイド｜当日中に入金を受ける方法・土日祝対応の会社](/articles/article-factoring-sokujitsu/)
+- [ファクタリング即日おすすめ15選](/articles/article-factoring-sokujitsu/)
 - [ファクタリングのメリット・デメリットガイド](/articles/article-factoring-merit-demerit/)
 - [個人事業主向けファクタリングおすすめ14選](/articles/article-factoring-kojin-jigyonushi/)
-- [個人事業主の資金調達方法10選](/articles/article-kojin-shikin-chotatsu/)
+- [個人事業主の資金調達と融資（公庫・制度融資・補助金）](/articles/article-kojin-shikin-chotatsu/)
 
 
 ---

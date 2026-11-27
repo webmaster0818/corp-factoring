@@ -185,7 +185,7 @@
 
 - [ファクタリングとは？仕組みをわかりやすく解説](/articles/article-factoring-toha/)
 - [ファクタリング契約書の注意点](/articles/article-factoring-keiyaku/)
-- [ファクタリングは違法？やばい？安全な業者の見分け方](/articles/article-factoring-ihou/)
+- [ファクタリングは違法か・違法業者の見分け方](/articles/article-factoring-ihou/)
 - [2社間と3社間ファクタリングの違い](/articles/article-factoring-2sha-3sha/)
 - [債権譲渡とファクタリングの関係](/articles/article-factoring-saiken-touki/)
 

@@ -145,10 +145,10 @@
 
 - [ファクタリングとは？仕組み・手数料・メリデメ解説](/articles/article-factoring-toha/)
 - [請求書買取サービスおすすめ10選](/articles/article-seikyusho-kaitori/)
-- [即日ファクタリングおすすめ15選](/articles/article-factoring-sokujitsu/)
+- [ファクタリング即日おすすめ15選](/articles/article-factoring-sokujitsu/)
 - [ファクタリング手数料の相場と安い会社（59社の比較）](/fees/)
 - [ファクタリング59社の手数料・入金スピード比較（公式サイトで確認）](/fees/)
-- [個人事業主の資金調達方法10選](/articles/article-kojin-shikin-chotatsu/)
+- [個人事業主の資金調達と融資（公庫・制度融資・補助金）](/articles/article-kojin-shikin-chotatsu/)
 
 
 ---

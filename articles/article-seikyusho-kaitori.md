@@ -1148,11 +1148,11 @@ IT業界では請求書払いが一般的で、案件単位の支払いサイト
 **ファクタリング基礎知識**
 - [ファクタリングとは？仕組み・手数料・メリデメ解説](/articles/article-factoring-toha/)
 - [2社間・3社間ファクタリングの違いと選び方](/articles/article-factoring-2sha-3sha/)
-- [ファクタリングは合法？違法業者の見分け方](/articles/article-factoring-ihou/)
+- [ファクタリングは違法か・違法業者の見分け方](/articles/article-factoring-ihou/)
 - [ファクタリングで損しない。メリット・デメリット解説](/articles/article-factoring-merit-demerit/)
 
 **比較・おすすめ記事**
-- [即日ファクタリングおすすめ15選【2026年最新】](/articles/article-factoring-sokujitsu/)
+- [ファクタリング即日おすすめ15選](/articles/article-factoring-sokujitsu/)
 - [手数料が安いファクタリング会社（59社の比較）](/fees/)
 - [個人事業主向けファクタリングおすすめ14選](/articles/article-factoring-kojin-jigyonushi/)
 - [審査が甘い・通りやすいファクタリング会社10選](/articles/article-factoring-shinsa-amai/)
@@ -1167,7 +1167,7 @@ IT業界では請求書払いが一般的で、案件単位の支払いサイト
 **業種別・条件別**
 - [建設業向けファクタリングおすすめ10選](/articles/article-factoring-kensetsu/)
 - [IT・Web制作向けファクタリングおすすめ](/articles/article-factoring-it/)
-- [10万円以下の少額ファクタリングおすすめ4選](/articles/article-factoring-shougaku/)
+- [少額ファクタリング（10万円以下から使える会社）](/articles/article-factoring-shougaku/)
 - [フリーランスの資金繰り改善ガイド](/articles/article-freelance-shikin/)
 
 ---

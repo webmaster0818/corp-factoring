@@ -302,7 +302,7 @@ A: 各社の公式サイトの最新の表示を優先してください。当�
 - [ファクタリング手数料の相場と安い会社（59社の比較）](/fees/)
 - [ファクタリングの審査基準と落ちる理由7選](/articles/article-factoring-shinsa/)
 - [ファクタリングの口コミ・評判まとめ](/articles/article-factoring-kuchikomi/)
-- [個人事業主の資金調達方法10選](/articles/article-kojin-shikin-chotatsu/)
+- [個人事業主の資金調達と融資（公庫・制度融資・補助金）](/articles/article-kojin-shikin-chotatsu/)
 
 
 ---

@@ -261,5 +261,5 @@ A: 例：PayToday は、必須の書類を請求書と顔写真付きの本人�
 ## 関連記事
 
 - [ファクタリング 申し込みの流れ](/articles/article-factoring-mooshikomi-nagare/)
-- [即日ファクタリングガイド](/articles/article-factoring-sokujitsu/)
+- [ファクタリング即日おすすめ15選](/articles/article-factoring-sokujitsu/)
 - [ファクタリング 個人事業主の手続き](/articles/article-factoring-kojin-jigyonushi/)

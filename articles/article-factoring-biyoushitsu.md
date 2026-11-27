@@ -142,7 +142,7 @@ A: ファクタリングは発生済みの請求書を売る仕組みのため�
 - [個人事業主向けファクタリング](/articles/article-factoring-kojin-jigyonushi/)
 - [売掛先が個人の請求書はファクタリングできる？](/articles/article-factoring-urikakesaki-kojin/)
 - [フリーランスの資金繰り改善ガイド](/articles/article-freelance-shikin/)
-- [小口ファクタリング](/articles/article-factoring-shougaku/)
+- [少額ファクタリング（10万円以下から使える会社）](/articles/article-factoring-shougaku/)
 
 ---
 

@@ -202,7 +202,7 @@ A. 実績（累計取引額・社数）を公開しており、手数料の上�
 
 - [ファクタリングの契約の流れと注意点](/articles/article-factoring-keiyaku/)
 - [ファクタリング詐欺の手口と見分け方](/articles/article-factoring-sagi/)
-- [ファクタリング違法業者の見分け方と安全な利用法](/articles/article-factoring-ihou/)
+- [ファクタリングは違法か・違法業者の見分け方](/articles/article-factoring-ihou/)
 - [ファクタリングとは？仕組みをわかりやすく解説](/articles/article-factoring-toha/)
 - [ファクタリングのメリット・デメリット解説](/articles/article-factoring-merit-demerit/)
 - [ファクタリング会社おすすめ比較15選](/)

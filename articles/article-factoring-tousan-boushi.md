@@ -100,7 +100,7 @@
 #### 1週間先にマイナスになる場合
 → 直ちに複数のファクタリング会社に相談し、速やかに実行する
 
-[資金繰り表の作り方](/articles/article-shikin-gurihyou/)もご覧ください。
+[資金繰り表の作り方](/articles/article-shikin-short-taisaku/)もご覧ください。
 
 ---
 
@@ -185,7 +185,7 @@
 1社で即決せず、3社以上から相見積もりを取ってください。
 
 ### 5. 違法業者を避ける
-緊急時ほど、[違法業者](/articles/article-factoring-ihou-gyousha/)を利用してしまいやすくなります。冷静に判断してください。
+緊急時ほど、[違法業者](/articles/article-factoring-ihou/)を利用してしまいやすくなります。冷静に判断してください。
 
 ---
 

@@ -46,7 +46,6 @@ const groups: HubGroup[] = [
     ],
     slugs: [
       "article-factoring-ihou",
-      "article-factoring-ihou-gyousha",
       "article-factoring-kyuuryo-gisou",
       "article-factoring-kyuuryo-chigai",
       "article-factoring-kashikingyou",

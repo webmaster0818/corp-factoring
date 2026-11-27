@@ -150,4 +150,4 @@ A: 回収困難となった売掛金債権等の額と、納付済み掛金総�
 - [ファクタリング後に売掛先が倒産した場合のリスクと対処法](/articles/article-factoring-urikakesaki-tousan/)
 - [売掛保証（保証ファクタリング）の比較](/articles/article-urikake-hosho-hikaku/)
 - [ファクタリングと取引信用保険の違い](/articles/article-factoring-vs-shinyou-hoken/)
-- [資金ショート寸前の会社がやるべきこと](/articles/article-shikin-short-taisaku/)
+- [資金ショート対策と資金繰り表](/articles/article-shikin-short-taisaku/)
