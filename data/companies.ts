@@ -1928,7 +1928,7 @@ export const factoringCompanies: FactoringCompany[] = [
     name: "リコーリース",
     nameKana: "りこーりーす",
     slug: "ricoh-lease",
-    fees: { min: 0, max: 0 }, // 非公示：公式のよくある質問「弊社とのお取引状況やお取り扱いの事業所数により異なります。」（2026年11月6日確認）
+    fees: { min: 0, max: 0 }, // 非公示：公式のよくある質問「弊社とのお取引状況やお取り扱いの事業所数により異なります。」（2026年11月27日確認）
     speed: "国保請求後、請求額確認から5営業日",
     minAmount: 0,
     maxAmount: "請求額の80〜85%",
@@ -1966,7 +1966,7 @@ export const factoringCompanies: FactoringCompany[] = [
     name: "メドレー早期資金サポート",
     nameKana: "めどれーそうきしきんさぽーと",
     slug: "medley",
-    fees: { min: 0, max: 0 }, // 公式の「最安0.3%〜」はメドレーグループのサービス利用実績がある場合の割引手数料で、条件のない下限ではないため採らない（2026年11月6日確認）
+    fees: { min: 0, max: 0 }, // 公式の「最安0.3%〜」はメドレーグループのサービス利用実績がある場合の割引手数料で、条件のない下限ではないため採らない（2026年11月27日確認）
     speed: "書類提出からおおよそ1週間（最短3日の取引実績）",
     minAmount: 0,
     maxAmount: "数億円単位まで",
