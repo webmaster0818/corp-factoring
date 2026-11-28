@@ -114,7 +114,7 @@ export const HOURS_CHECKED_AT: { [slug: string]: string } = {
   "accel-factor": "2026年11月7日",
   freenance: "2026年7月8日",
   paytoday: "2026年10月19日",
-  "support-kinyu": "2026年10月28日",
+  "support-kinyu": "2026年11月28日",
   paytner: "2026年10月28日",
   labol: "2026年10月31日",
   pmg: "2026年11月27日",
